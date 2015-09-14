@@ -8,6 +8,52 @@ module.exports = function(defaults) {
     storeConfigInMeta: false
   });
 
+  // based on instructions at the end of https://www.npmjs.com/package/ember-cli-font-awesome
+  // but using for https://github.com/zavoloklom/material-design-iconic-font
+  // app.import("bower_components/font-awesome/css/font-awesome.css");
+  // app.import("bower_components/font-awesome/fonts/fontawesome-webfont.eot", {
+  //   destDir: "fonts"
+  // });
+  app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.eot", {
+    destDir: "fonts"
+  });
+  app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.svg", {
+    destDir: "fonts"
+  });
+  app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.ttf", {
+    destDir: "fonts"
+  });
+  app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.woff", {
+    destDir: "fonts"
+  });
+  app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.woff2", {
+    destDir: "fonts"
+  });
+
+
+  // // app.import('vendor/preloadstore.js');
+  // app.import('vendor/i18n.js');
+  // app.import('vendor/translations.js');
+  // app.import('vendor/ember-fastclick.js');
+  // app.import('vendor/logster.js');
+  // // app.import('vendor/jquery.pagedown-bootstrap.combined.js');
+  // // app.import('vendor/jquery.pagedown-bootstrap.css');
+  // app.import('vendor/jquery.cookie.js');
+
+  // app.import('vendor/lazyYT/lazyYT.js');
+  // app.import('vendor/lazyYT/lazyYT.css');
+
+
+  // var bootstrapDir = app.bowerDirectory + '/bootstrap-sass-official/assets';
+
+  // // select bootstrap JavaScript components to include
+  // var bootstrapComponents = ['dropdown', 'alert', 'transition', 'tooltip', 'modal'];
+
+  // for (var index in bootstrapComponents) {
+  //   app.import(bootstrapDir + '/javascripts/bootstrap/' + bootstrapComponents[index] + '.js');
+  // }
+
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //

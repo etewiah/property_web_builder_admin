@@ -7039,53 +7039,14 @@ button.close {
 /*
  * Roboto Light
  */
-@font-face {
-  font-family: roboto;
-  src: url('../fonts/roboto/Roboto-Light-webfont.eot');
-  src: url('../fonts/roboto/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto/Roboto-Light-webfont.woff') format('woff'), url('../fonts/roboto/Roboto-Light-webfont.ttf') format('truetype'), url('../fonts/roboto/Roboto-Light-webfont.svg#icon') format('svg');
-  font-weight: 300;
-  font-style: normal;
-}
-/*
- * Roboto Regular
- */
-@font-face {
-  font-family: roboto;
-  src: url('../fonts/roboto/Roboto-Regular-webfont.eot');
-  src: url('../fonts/roboto/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto/Roboto-Regular-webfont.woff') format('woff'), url('../fonts/roboto/Roboto-Regular-webfont.ttf') format('truetype'), url('../fonts/roboto/Roboto-Regular-webfont.svg#icon') format('svg');
-  font-weight: 400;
-  font-style: normal;
-}
-/*
- * Roboto Medium
- */
-@font-face {
-  font-family: roboto;
-  src: url('../fonts/roboto/Roboto-Medium-webfont.eot');
-  src: url('../fonts/roboto/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto/Roboto-Medium-webfont.woff') format('woff'), url('../fonts/roboto/Roboto-Medium-webfont.ttf') format('truetype'), url('../fonts/roboto/Roboto-Medium-webfont.svg#icon') format('svg');
-  font-weight: 500;
-  font-style: normal;
-}
-/*
- * Roboto Bold
- */
-@font-face {
-  font-family: roboto;
-  src: url('../fonts/roboto/Roboto-Bold-webfont.eot');
-  src: url('../fonts/roboto/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto/Roboto-Bold-webfont.woff') format('woff'), url('../fonts/roboto/Roboto-Bold-webfont.ttf') format('truetype'), url('../fonts/roboto/Roboto-Bold-webfont.svg#icon') format('svg');
-  font-weight: 700;
-  font-style: normal;
-}
-/*
- * Shadow Light
- */
-@font-face {
-  font-family: shadowsintolight;
-  src: url('../fonts/shadowsintolight/shadowsintolight-webfont.eot');
-  src: url('../fonts/shadowsintolight/shadowsintolight-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/shadowsintolight/shadowsintolight-webfont.woff') format('woff'), url('../fonts/shadowsintolight/shadowsintolight-webfont.ttf') format('truetype'), url('../fonts/shadowsintolight/shadowsintolight-webfont.svg#icon') format('svg');
-  font-weight: 400;
-  font-style: normal;
-}
+/*ED - took out references to roboto font here*/
+
+
+
+
+
+
+
 /*
  * Vendors
  */
@@ -7095,8 +7056,8 @@ button.close {
  */
 @font-face {
   font-family: 'Material Design Iconic Font';
-  src: url('../fonts/material-icons/Material-Design-Iconic-Font.eot?v=1.0.1');
-  src: url('../fonts/material-icons/Material-Design-Iconic-Font.eot?#iefix&v=1.0.1') format('embedded-opentype'), url('../fonts/material-icons/Material-Design-Iconic-Font.woff?v=1.0.1') format('woff'), url('../fonts/material-icons/Material-Design-Iconic-Font.ttf?v=1.0.1') format('truetype'), url('../fonts/material-icons/Material-Design-Iconic-Font.svg?v=1.0.1#Material-Design-Iconic-Font') format('svg');
+  src: url('../fonts/Material-Design-Iconic-Font.eot?v=1.0.1');
+  src: url('../fonts/Material-Design-Iconic-Font.eot?#iefix&v=1.0.1') format('embedded-opentype'), url('../fonts/Material-Design-Iconic-Font.woff?v=1.0.1') format('woff'), url('../fonts/Material-Design-Iconic-Font.ttf?v=1.0.1') format('truetype'), url('../fonts/Material-Design-Iconic-Font.svg?v=1.0.1#Material-Design-Iconic-Font') format('svg');
   font-weight: normal;
   font-style: normal;
 }
