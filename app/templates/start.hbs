@@ -1,0 +1,319 @@
+<div class="row">
+    
+    <!-- Últimas propiedades -->
+    <div class="col-sm-6">
+        
+        <div class="card">
+            <div class="card-header ch-alt m-b-20">
+                <h2>Últimas propiedades <small>Estas son las últimas propiedades que has introducido.</small></h2>
+                <ul class="actions">
+                    
+                    <li class="dropdown">
+                        <a href="" data-toggle="dropdown">
+                            <i class="md md-more-vert"></i>
+                        </a>
+                        
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="">Añadir propiedad</a>
+                            </li>
+                            <li>
+                                <a href="">Listar propiedades</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <button class="btn bgm-cyan btn-float"><i class="md md-add"></i></button>
+                
+            </div>
+            
+            <div class="card-body">
+                <div class="listview">
+                    
+                    {{#each model as |item|}}
+
+                    <a class="lv-item" href="">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+                            
+                            <div class="media-body">
+                                <div class="lv-title">{{item.ref}}</div>
+                                <small class="lv-small">{{ item.direccion_propiedad }}<span class="precio">{{precio_venta}}€</span></small>
+                                
+                                <button type="button" class="btn btn-icon command-edit btn_editar_inicio" data-id_propiedad="1"><span class="md md-edit"></span></button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    {{/each}}
+
+
+                    <a class="lv-footer" href="">Ver todas las propiedades</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Últimos clientes -->
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header ch-alt m-b-20">
+                <h2>Clientes <small>Éstos son los últimos clientes introducidos:</small></h2>
+                <ul class="actions">
+                    
+                    <li class="dropdown">
+                        <a href="" data-toggle="dropdown">
+                            <i class="md md-more-vert"></i>
+                        </a>
+                        
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="">Añadir cliente</a>
+                            </li>
+                            <li>
+                                <a href="">Listar clientes</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+                
+                <button class="btn bgm-cyan btn-float"><i class="md md-add"></i></button>
+            </div>
+            
+            <div class="card-body">
+                <div class="listview">
+                    
+                    <a class="lv-item" href="">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+                            
+                            <div class="media-body">
+                                <div class="lv-title">Juan Luis Gómez</div>
+                                <small class="lv-small"><i class="fa fa-phone"></i> 677 66 66 66 | <i class="fa fa-envelope"></i> cesar@respirainternet.com</small>
+
+                                <button type="button" class="btn btn-icon command-edit btn_editar_inicio" data-id_propiedad="1"><span class="md md-edit"></span></button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="lv-item" href="">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+                            
+                            <div class="media-body">
+                                <div class="lv-title">Juan Luis Gómez</div>
+                                <small class="lv-small"><i class="fa fa-phone"></i> 677 66 66 66 | <i class="fa fa-envelope"></i> cesar@respirainternet.com</small>
+
+                                <button type="button" class="btn btn-icon command-edit btn_editar_inicio" data-id_propiedad="1"><span class="md md-edit"></span></button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="lv-item" href="">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+                            
+                            <div class="media-body">
+                                <div class="lv-title">Juan Luis Gómez</div>
+                                <small class="lv-small"><i class="fa fa-phone"></i> 677 66 66 66 | <i class="fa fa-envelope"></i> cesar@respirainternet.com</small>
+
+                                <button type="button" class="btn btn-icon command-edit btn_editar_inicio" data-id_propiedad="1"><span class="md md-edit"></span></button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="lv-item" href="">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+                            
+                            <div class="media-body">
+                                <div class="lv-title">Juan Luis Gómez</div>
+                                <small class="lv-small"><i class="fa fa-phone"></i> 677 66 66 66 | <i class="fa fa-envelope"></i> cesar@respirainternet.com</small>
+
+                                <button type="button" class="btn btn-icon command-edit btn_editar_inicio" data-id_propiedad="1"><span class="md md-edit"></span></button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="lv-item" href="">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+                            
+                            <div class="media-body">
+                                <div class="lv-title">Juan Luis Gómez</div>
+                                <small class="lv-small"><i class="fa fa-phone"></i> 677 66 66 66 | <i class="fa fa-envelope"></i> cesar@respirainternet.com</small>
+
+                                <button type="button" class="btn btn-icon command-edit btn_editar_inicio" data-id_propiedad="1"><span class="md md-edit"></span></button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="lv-footer" href="">Ver todos los clientes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    
+    <div class="col-sm-6">
+        <!-- Calendar -->
+        <div id="calendar-widget"></div>
+        
+    </div>
+
+    <!-- Últimas propiedades -->
+    <div class="col-sm-6">
+        
+        <div class="card">
+            <div class="card-header ch-alt m-b-20">
+                <h2>Actividades pendientes <small>Estas son las últimas actividades pendientes que tienes:</small></h2>
+                <ul class="actions">
+                    
+                    <li class="dropdown">
+                        <a href="" data-toggle="dropdown">
+                            <i class="md md-more-vert"></i>
+                        </a>
+                        
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="">Añadir actividad</a>
+                            </li>
+                            <li>
+                                <a href="">Listar actividades</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+                <button class="btn bgm-cyan btn-float"><i class="md md-add"></i></button>
+                
+            </div>
+            
+            <div class="card-body">
+                <div class="listview">
+                    
+                    <a class="lv-item" href="">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+                            
+                            <div class="media-body">
+                                <div class="lv-title">Actividad 1</div>
+                                <small class="lv-small"><b>31/01/2015</b> Llamar a cliente 1 <span class="alert alert-danger">Importante</span></small>
+                                
+                                <button type="button" class="btn btn-icon command-edit btn_editar_inicio" data-id_propiedad="1"><span class="md md-edit"></span></button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="lv-item" href="">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+                            
+                            <div class="media-body">
+                                <div class="lv-title">Actividad 1</div>
+                                <small class="lv-small"><b>31/01/2015</b> Llamar a cliente 1 <span class="alert alert-danger">Importante</span></small>
+                                
+                                <button type="button" class="btn btn-icon command-edit btn_editar_inicio" data-id_propiedad="1"><span class="md md-edit"></span></button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="lv-item" href="">
+                        <div class="media">
+                        
+                            <div class="pull-left">
+                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+                            
+                            <div class="media-body">
+                                <div class="lv-title">Actividad 1</div>
+                                <small class="lv-small"><b>31/01/2015</b> Llamar a cliente 1 <span class="alert alert-danger">Importante</span></small>
+                                
+                                <button type="button" class="btn btn-icon command-edit btn_editar_inicio" data-id_propiedad="1"><span class="md md-edit"></span></button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="lv-item" href="">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+                            
+                            <div class="media-body">
+                                <div class="lv-title">Actividad 1</div>
+                                <small class="lv-small"><b>31/01/2015</b> Llamar a cliente 1 <span class="alert alert-danger">Importante</span></small>
+                                
+                                <button type="button" class="btn btn-icon command-edit btn_editar_inicio" data-id_propiedad="1"><span class="md md-edit"></span></button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="lv-item" href="">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+                            
+                            <div class="media-body">
+                                <div class="lv-title">Actividad 1</div>
+                                <small class="lv-small"><b>31/01/2015</b> Llamar a cliente 1 <span class="alert alert-danger">Importante</span></small>
+                                
+                                <button type="button" class="btn btn-icon command-edit btn_editar_inicio" data-id_propiedad="1"><span class="md md-edit"></span></button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="lv-footer" href="">Ver todas las propiedades</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
