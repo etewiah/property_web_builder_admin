@@ -10,6 +10,7 @@ Router.map(function() {
     this.route('inicio');
   });
 
+  this.route('user');
 });
 
 export default Router;
