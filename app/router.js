@@ -7,7 +7,19 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('start', function() {
+    this.route("default", {
+      path: "/"
+    });
     this.route('inicio');
+    this.route("properties", function() {
+      this.route("default", {
+        path: "/"
+      });
+      this.route("property", {
+        path: "/:ref"
+      });
+    });
+
   });
 
   this.route('user');

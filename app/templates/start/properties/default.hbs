@@ -1,0 +1,79 @@
+<div class="card">
+  <div class="card-header sep25">
+    <h2>Listado de propiedades</h2>
+    <div role="group" class="boton_anadir_propiedad">
+      <a href="editar_propiedad" data-toggle="tooltip" title="Añadir propiedad" class="btn bgm-cyan btn-circulo btn-float waves-effect"><i class="md md-add"></i></a>
+    </div>
+  </div>
+  <div class="card-body card-padding">
+    <table id="data-table-command" class="tabla_propiedades table table-striped table-vmiddle">
+      <thead>
+        <tr>
+          <th data-column-id="id" data-type="text" data-order="desc">Ref</th>
+          <th data-column-id="destacado">Destacado</th>
+          <th data-column-id="localidad">Localidad</th>
+          <th data-column-id="zona">Zona</th>
+          <th data-column-id="tipo">Tipo</th>
+          <th data-column-id="precio">Precio</th>
+          <th data-column-id="hab">Hab</th>
+          <th data-column-id="visible">Visible</th>
+          <th data-column-id="commands" data-formatter="commands" data-sortable="false">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |property|}}
+        <tr {{action "goToProperty" property.id}}>
+          <td>{{property.id}}</td>
+          <td>No</td>
+          <td>Lloret de Mar</td>
+          <td></td>
+          <td>Apartamento</td>
+          <td>Precio</td>
+          <td>2/1</td>
+          <td>Visible</td>
+        </tr>
+        {{/each}}
+        <tr>
+          <td>REK-1037</td>
+          <td>No</td>
+          <td>Lloret de Mar</td>
+          <td></td>
+          <td>Apartamento</td>
+          <td>Precio</td>
+          <td>2/1</td>
+          <td>Visible</td>
+        </tr>
+        <tr>
+          <td>REK-1038</td>
+          <td>No</td>
+          <td>Lloret de Mar</td>
+          <td></td>
+          <td>Apartamento</td>
+          <td>Precio</td>
+          <td>2/1</td>
+          <td>Visible</td>
+        </tr>
+        <tr>
+          <td>REK-1039</td>
+          <td>No</td>
+          <td>Lloret de Mar</td>
+          <td></td>
+          <td>Apartamento</td>
+          <td>Precio</td>
+          <td>2/1</td>
+          <td>Visible</td>
+        </tr>
+        <tr>
+          <td>REK-1040</td>
+          <td>No</td>
+          <td>Lloret de Mar</td>
+          <td></td>
+          <td>Apartamento</td>
+          <td>Precio</td>
+          <td>2/1</td>
+          <td>Visible</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
