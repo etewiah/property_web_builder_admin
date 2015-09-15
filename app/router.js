@@ -11,7 +11,10 @@ Router.map(function() {
   });
 
   this.route('user');
-  this.route('property');
+  this.route("property", {
+    path: "/property/:id"
+  });
+  this.route('properties');
 });
 
 export default Router;
