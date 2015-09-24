@@ -15,8 +15,18 @@ Router.map(function() {
       this.route("default", {
         path: "/"
       });
+      // this.route("property", {
+      //   path: "/:ref"
+      // });
       this.route("property", {
-        path: "/:ref"
+        path: '/:ref'
+      }, function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tab"
+        });
       });
     });
 
