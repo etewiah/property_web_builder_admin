@@ -31,7 +31,31 @@ Router.map(function() {
     });
 
   });
+  this.route('admin', function() {
+    this.route("default", {
+      path: "/"
+    });
+    this.route('inicio');
+    this.route("propiedades", function() {
+      this.route("default", {
+        path: "/"
+      });
+      // this.route("property", {
+      //   path: "/:ref"
+      // });
+      this.route("editar", {
+        path: '/1/editar'
+      }, function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tab"
+        });
+      });
+    });
 
+  });
   this.route('user');
   this.route("property", {
     path: "/property/:id"
