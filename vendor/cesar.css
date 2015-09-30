@@ -1,0 +1,270 @@
+/*/Users/etewiah/Documents/Ed/inmolite3/css/inmolite.css*/
+/* general */
+.precio{
+  color: red;
+}
+
+.sep25{
+  width: 100%;
+  clear: both;
+  float: left;
+  margin-top: 25px;
+}
+
+.sep50{
+  width: 100%;
+  clear: both;
+  float: left;
+  margin-top: 50px;
+}
+
+.sep100{
+  width: 100%;
+  clear: both;
+  float: left;
+  margin-top: 100px;
+}
+
+.input-sm{
+  font-size: 14px;
+}
+
+.input-group:not(.input-group-lg):not(.input-group-sm) .input-group-addon .fa{
+  font-size: 23px;
+  line-height: 100%;
+}
+
+.bootstrap-select.btn-group .btn .filter-option{
+  text-transform: none; /* evitar que los combos salgan en mayúsculas */
+}
+
+
+.negro{
+  color: #000;
+}
+
+.card .card-header:not(.ch-alt){
+  padding-bottom: 
+}
+
+/* header */
+header#header{
+  background: #616161 !important; /* Rojo inmolite */
+  box-shadow: 1px 1px 2px #555;
+  
+}
+
+#sidebar{
+  box-shadow: 1px 0px 1px rgba(0,0,0,.15) !important;
+}
+.logo img{
+  height: 50px;
+  margin: -13px 0 0 0;
+  padding: 10px;
+  background: #fff;
+}
+
+/* menu */
+#sidebar .main-menu>li>a>i{
+  padding: 13px 0 0 0;
+}
+
+#sidebar li.selected{
+  background: #eee;
+}
+
+
+/* breadcrumbs */
+div.seccion_breadcrumbs{
+  margin-bottom: 0;
+  position: relative;
+}
+
+div.seccion_breadcrumbs span{
+  float: left;
+  padding: 8px 20px;
+  font-weight: bold;
+}
+
+a.cerrar_breadcrumbs{
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  color: #777;
+}
+
+a.cerrar_breadcrumbs:hover{
+  color: red;
+}
+
+
+/* inicio */
+div.listview div.media-body{
+  position: relative;
+}
+
+.btn_editar_inicio{
+  position: absolute;
+  right: 0;
+  top: 0px;
+  width: 35px;
+  height: 35px;
+
+}
+
+.media-body a.email{
+  display: inline;
+}
+
+
+
+/* propiedades */
+.bootgrid-header .search,
+.bootgrid-header .actions{
+  float: left;
+  margin-right: 10px;
+}
+
+
+
+/* editar propiedad */
+.form-group.fg-float{
+  margin-top: 20px;
+  clear: both;
+  float: left;
+  width: 100%;
+}
+
+.fg-float .fg-label{
+  color: #333;
+}
+
+.fg-line:not([class*=has-]):after{
+  background: #616161;
+}
+
+.selectpicker.form-control{
+  position: absolute;
+}
+
+.arriba_label{
+  margin-top: -27px;
+}
+
+.iconos_grande{
+  font-size: 16px;
+  color: #333;
+}
+
+a.ayuda{
+  background: #fafafa;
+  display: block;
+  border-radius: 50%;
+  font-size: 12px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 27;
+}
+
+a.ayuda:hover{
+  background: #eee;
+}
+
+#tabla_fotos{
+  width: 100%;
+}
+
+div.alert i{
+  margin-right: 5px;
+}
+
+#tabla_fotos th{
+  text-align: center;
+}
+
+#tabla_fotos td{
+  max-width: 300px;
+    padding: 20px;
+}
+
+#tabla_fotos tr:nth-child(1){
+  background: #eee;
+}
+
+.foto_drag{
+  border: 1px solid #ccc;
+  padding: 20px;
+  transform: scale(1.02,1.02);
+  box-shadow: 1px 1px 2px #ccc;
+}
+
+
+/* clientes */
+.botones_criterios {
+    float: right;
+    margin: 10px 0 -30px;
+    z-index: 27;
+}
+
+#tabla_prop_sele{
+  float: none;
+
+}
+
+.boton_anadir_pago{
+  margin: 0 50px 0 0;
+  float: right;
+}
+
+.boton_anadir_actividad{
+  margin: -20px 50px 0 0;
+  float: right;
+}
+
+.boton_anadir_propiedad,
+.boton_anadir_cliente{
+  position: absolute;
+  right: 0;
+  top: 35px;
+}
+
+.botones_editar a span{
+  margin-top: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+@media (min-width: 768px) {
+  
+  div.seccion_breadcrumbs span{
+    padding: 10px 5px 11px 25px;
+    margin-right: 0;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+.tab-nav>li{
+    display: block;
+    float: none;
+    width: 100%;
+    clear: none;
+  }
+
+}

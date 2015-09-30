@@ -31,6 +31,7 @@ module.exports = function(defaults) {
   });
 
   app.import('vendor/material-admin-functions.js');
+  app.import('vendor/cesar.css');
 
   // // app.import('vendor/preloadstore.js');
   // app.import('vendor/i18n.js');
