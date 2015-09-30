@@ -6,137 +6,17 @@
     <div role="tabpanel">
       <ul data-tab-color="green" class="tab-nav" role="tablist" tabindex="1" style="overflow: hidden; outline: none;">
         <li class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a></li>
-        <li><a href="#situacion" aria-controls="situacion" role="tab" data-toggle="tab">Situación</a></li>
-        <li><a href="#descripcion" aria-controls="descripcion" role="tab" data-toggle="tab">Descripción</a></li>
-        <li><a href="#extras" aria-controls="extras" role="tab" data-toggle="tab">Extras</a></li>
-        <li><a href="#fotos" aria-controls="fotos" role="tab" data-toggle="tab">Fotos</a></li>
-        <li><a href="#video" aria-controls="video" role="tab" data-toggle="tab">Vídeo</a></li>
-        <li><a href="#venta" aria-controls="venta" role="tab" data-toggle="tab">Venta</a></li>
+
+        <li>{{#link-to 'admin.propiedades.editar.tab' 'Descripcion'}}Descripción{{/link-to}}</li>
+        <li>{{#link-to 'admin.propiedades.editar.tab' 'Extras'}}Extras{{/link-to}}</li>
+        <li>{{#link-to 'admin.propiedades.editar.tab' 'Fotos'}}Fotos{{/link-to}}</li>
+        <li>{{#link-to 'admin.propiedades.editar.tab' 'Video'}}Vídeo{{/link-to}}</li>
+
       </ul>
       <div class="tab-content">
-
-        <div role="tabpanel" class="tab-pane" id="venta">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="alert alert-info alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">×</span></button><i class="fa fa-lg fa-info"></i> <b>Atención:</b> Toda la información relativa a ventas sólo es visible por tí.
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="form-group fg-float">
-                <div class="fg-line has- fg-toggled">
-                  <input type="text" class="input-sm form-control fg-input" value="5">
-                </div>
-                <label class="fg-label">Honorarios (%)</label>
-              </div>
-              <div class="form-group fg-float">
-                <div class="fg-line has- fg-toggled">
-                  <input type="text" class="input-sm form-control fg-input" value="100">
-                </div>
-                <label class="fg-label">Cuota Com.</label>
-              </div>
-              <div class="form-group fg-float">
-                <div class="fg-line has- fg-toggled">
-                  <input type="text" class="input-sm form-control fg-input" value="0">
-                </div>
-                <label class="fg-label">Valor Catastral</label>
-              </div>
-              <div class="form-group fg-float">
-                <div class="fg-line has-">
-                  <input type="text" class="input-sm form-control fg-input" value="">
-                </div>
-                <label class="fg-label">Ref. Catastral</label>
-              </div>
-              <div class="form-group fg-float">
-                <div class="fg-line has-">
-                  <input type="text" class="input-sm form-control fg-input" value="">
-                </div>
-                <label class="fg-label">Tasación</label>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="form-group fg-float">
-                <div class="fg-line has-">
-                  <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Si tenemos las escrituras o no."><i class="fa fa-info"></i></a>
-                  <select class="selectpicker" style="display: none;">
-                    <option value="0">No</option>
-                    <option value="1" selected="">Sí</option>
-                  </select>
-                  <div class="btn-group bootstrap-select">
-                    <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="Sí"><span class="filter-option pull-left">Sí</span>&nbsp;<span class="caret"></span></button>
-                    <div class="dropdown-menu open">
-                      <ul class="dropdown-menu inner selectpicker" role="menu">
-                        <li data-original-index="0"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>No</span>"><span class="text">No</span><span class="md md-done check-mark"></span></a></li>
-                        <li data-original-index="1" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Si</span>"><span class="text">Sí</span><span class="md md-done check-mark"></span></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <label class="fg-label arriba_label">Escrituras: </label>
-              </div>
-              <div class="form-group fg-float">
-                <div class="fg-line has-">
-                  <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Si el inmueble tiene hipoteca o no."><i class="fa fa-info"></i></a>
-                  <select class="selectpicker" style="display: none;">
-                    <option value="0" selected="">No</option>
-                    <option value="1">Sí</option>
-                  </select>
-                  <div class="btn-group bootstrap-select">
-                    <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="No"><span class="filter-option pull-left">No</span>&nbsp;<span class="caret"></span></button>
-                    <div class="dropdown-menu open">
-                      <ul class="dropdown-menu inner selectpicker" role="menu">
-                        <li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>No</span>"><span class="text">No</span><span class="md md-done check-mark"></span></a></li>
-                        <li data-original-index="1"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Si</span>"><span class="text">Sí</span><span class="md md-done check-mark"></span></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <label class="fg-label arriba_label">Hipoteca: </label>
-              </div>
-              <div class="form-group fg-float">
-                <div class="fg-line has-">
-                  <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Si tenemos las llaves o no."><i class="fa fa-info"></i></a>
-                  <select class="selectpicker" style="display: none;">
-                    <option value="0">No</option>
-                    <option value="1" selected="">Sí</option>
-                  </select>
-                  <div class="btn-group bootstrap-select">
-                    <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="Sí"><span class="filter-option pull-left">Sí</span>&nbsp;<span class="caret"></span></button>
-                    <div class="dropdown-menu open">
-                      <ul class="dropdown-menu inner selectpicker" role="menu">
-                        <li data-original-index="0"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>No</span>"><span class="text">No</span><span class="md md-done check-mark"></span></a></li>
-                        <li data-original-index="1" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Si</span>"><span class="text">Sí</span><span class="md md-done check-mark"></span></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <label class="fg-label arriba_label">Llaves: </label>
-              </div>
-              <p class="c-black f-500 m-b-20">Situación llaves</p>
-              <div class="form-group">
-                <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Dónde están las llaves matarile rile rile..."><i class="fa fa-info"></i></a>
-                <div class="fg-line">
-                  <textarea class="form-control" rows="5" placeholder="Las tiene el conserje.">Las tiene el conserje.</textarea>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <p class="c-black f-500 m-b-20">Observaciones</p>
-              <div class="form-group">
-                <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Obs. de la venta."><i class="fa fa-info"></i></a>
-                <div class="fg-line">
-                  <textarea class="form-control" rows="5" placeholder="Obs. de la venta.">Obs. de la venta.</textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      {{outlet}}
       </div>
 
-
-      
     </div>
   </div>
 </div>

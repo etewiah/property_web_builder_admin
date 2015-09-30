@@ -50,7 +50,7 @@ Router.map(function() {
           path: "/"
         });
         this.route("tab", {
-          path: "/:tab"
+          path: "/:tabName"
         });
       });
     });
