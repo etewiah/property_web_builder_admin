@@ -2,8 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   actions: {
-    goToProperty(id) {
-      this.transitionTo("start.properties.property", id)
+    editProperty(property) {
+      this.transitionTo("admin.propiedades.editar", property.get('idPropiedad') )
     }
   },
   model() {
