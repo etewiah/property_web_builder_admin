@@ -30,6 +30,7 @@ module.exports = function(defaults) {
     destDir: "fonts"
   });
 
+  app.import('vendor/material-admin-functions.js');
 
   // // app.import('vendor/preloadstore.js');
   // app.import('vendor/i18n.js');
