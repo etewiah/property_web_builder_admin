@@ -14,21 +14,42 @@ module.exports = function(defaults) {
   // app.import("bower_components/font-awesome/fonts/fontawesome-webfont.eot", {
   //   destDir: "fonts"
   // });
-  app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.eot", {
+  // app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.eot", {
+  //   destDir: "fonts"
+  // });
+  // app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.svg", {
+  //   destDir: "fonts"
+  // });
+  // app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.ttf", {
+  //   destDir: "fonts"
+  // });
+  // app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.woff", {
+  //   destDir: "fonts"
+  // });
+  // app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.woff2", {
+  //   destDir: "fonts"
+  // });
+
+  app.import("bower_components/font-awesome/css/font-awesome.css");
+  app.import("bower_components/font-awesome/fonts/fontawesome-webfont.eot", {
     destDir: "fonts"
   });
-  app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.svg", {
+  app.import("bower_components/font-awesome/fonts/fontawesome-webfont.svg", {
     destDir: "fonts"
   });
-  app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.ttf", {
+  app.import("bower_components/font-awesome/fonts/fontawesome-webfont.ttf", {
     destDir: "fonts"
   });
-  app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.woff", {
+  app.import("bower_components/font-awesome/fonts/fontawesome-webfont.woff", {
     destDir: "fonts"
   });
-  app.import("bower_components/material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.woff2", {
+  app.import("bower_components/font-awesome/fonts/fontawesome-webfont.woff2", {
     destDir: "fonts"
   });
+  app.import("bower_components/font-awesome/fonts/FontAwesome.otf", {
+    destDir: "fonts"
+  });
+
 
   app.import('vendor/material-admin-functions.js');
   app.import('vendor/cesar.css');

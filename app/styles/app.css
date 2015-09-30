@@ -7055,9 +7055,10 @@ button.close {
  *  License - https://github.com/zavoloklom/material-design-iconic-font/blob/gh-pages/License.md (Attribution-ShareAlike 4.0 International license)
  */
 @font-face {
-  font-family: 'Material Design Iconic Font';
+/*  font-family: 'Material Design Iconic Font';
   src: url('../fonts/Material-Design-Iconic-Font.eot?v=1.0.1');
   src: url('../fonts/Material-Design-Iconic-Font.eot?#iefix&v=1.0.1') format('embedded-opentype'), url('../fonts/Material-Design-Iconic-Font.woff?v=1.0.1') format('woff'), url('../fonts/Material-Design-Iconic-Font.ttf?v=1.0.1') format('truetype'), url('../fonts/Material-Design-Iconic-Font.svg?v=1.0.1#Material-Design-Iconic-Font') format('svg');
+*/  
   font-weight: normal;
   font-style: normal;
 }
