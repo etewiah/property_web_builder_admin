@@ -6,7 +6,10 @@ export default DS.Model.extend({
   idPropiedad: DS.attr(),
   direccionPropiedad: DS.attr(),
   zonaDireccion: DS.attr(),
-  titleEn: DS.attr()
+  titleEn: DS.attr(),
+  titleEs: DS.attr(),
+  descriptionEn: DS.attr(),
+  descriptionEs: DS.attr()
     // direccionPropiedad: DS.attr('number'),
     // repos: DS.hasMany('repo')
 });

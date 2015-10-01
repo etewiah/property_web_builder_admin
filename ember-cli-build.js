@@ -11,6 +11,17 @@ module.exports = function(defaults) {
 
   app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');
 
+
+  // var bootstrapDir = app.bowerDirectory + '/bootstrap-sass-official/assets';
+
+  // // select bootstrap JavaScript components to include
+  // var bootstrapComponents = ['dropdown', 'alert', 'transition', 'tooltip', 'modal'];
+
+  // for (var index in bootstrapComponents) {
+  //   app.import(bootstrapDir + '/javascripts/bootstrap/' + bootstrapComponents[index] + '.js');
+  // }
+
+  
   // based on instructions at the end of https://www.npmjs.com/package/ember-cli-font-awesome
   // but using for https://github.com/zavoloklom/material-design-iconic-font
   // app.import("bower_components/font-awesome/css/font-awesome.css");
@@ -73,14 +84,7 @@ module.exports = function(defaults) {
   // app.import('vendor/lazyYT/lazyYT.css');
 
 
-  // var bootstrapDir = app.bowerDirectory + '/bootstrap-sass-official/assets';
 
-  // // select bootstrap JavaScript components to include
-  // var bootstrapComponents = ['dropdown', 'alert', 'transition', 'tooltip', 'modal'];
-
-  // for (var index in bootstrapComponents) {
-  //   app.import(bootstrapDir + '/javascripts/bootstrap/' + bootstrapComponents[index] + '.js');
-  // }
 
 
   // Use `app.import` to add additional libraries to the generated
