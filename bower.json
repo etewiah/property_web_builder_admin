@@ -17,5 +17,8 @@
   },
   "resolutions": {
     "ember": "^2.0.0"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.5"
   }
 }

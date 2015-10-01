@@ -8,6 +8,9 @@ module.exports = function(defaults) {
     storeConfigInMeta: false
   });
 
+
+  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');
+
   // based on instructions at the end of https://www.npmjs.com/package/ember-cli-font-awesome
   // but using for https://github.com/zavoloklom/material-design-iconic-font
   // app.import("bower_components/font-awesome/css/font-awesome.css");
