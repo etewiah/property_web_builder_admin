@@ -21,7 +21,7 @@ module.exports = function(defaults) {
   //   app.import(bootstrapDir + '/javascripts/bootstrap/' + bootstrapComponents[index] + '.js');
   // }
 
-  
+
   // based on instructions at the end of https://www.npmjs.com/package/ember-cli-font-awesome
   // but using for https://github.com/zavoloklom/material-design-iconic-font
   // app.import("bower_components/font-awesome/css/font-awesome.css");
@@ -84,6 +84,8 @@ module.exports = function(defaults) {
   // app.import('vendor/lazyYT/lazyYT.css');
 
 
+  app.import('bower_components/summernote/dist/summernote.js');
+  app.import('bower_components/summernote/dist/summernote-bs3.css');
 
 
 
