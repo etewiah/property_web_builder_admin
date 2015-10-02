@@ -3,13 +3,13 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    savePropertyRecord: function() {
-      var propertyRecord = this.get("property");
+    savePropertyResource: function() {
+      var propertyResource = this.get("propertyResource");
       // debugger;
 
       var self = this;
 
-      function transitionToPost(propertyRecord) {
+      function transitionToPost(propertyResource) {
         // debugger;
         // self.transitionToRoute('posts.show', post);
       }
@@ -19,7 +19,7 @@ export default Ember.Component.extend({
         // handle the error
       }
 
-      propertyRecord.save().then(transitionToPost).catch(failure);
+      propertyResource.save().then(transitionToPost).catch(failure);
 
 
     }
