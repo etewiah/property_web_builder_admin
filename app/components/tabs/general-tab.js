@@ -2,10 +2,33 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+  inputFields: [
+    // {
+    //   labelText: "Precio Venta",
+    //   tooltipText: "Precio de venta.",
+    //   fieldName: "precioVenta",
+    //   fieldType: "simpleInput"
+    // }, 
+    {
+      labelText: "Precio Anterior",
+      tooltipText: "El precio antes de la rebaja",
+      fieldName: "precioAntiguo",
+      fieldType: "simpleInput"
+    }, {
+      labelText: "Precio Alquiler",
+      tooltipText: "0 si el inmueble sólo es para venta.",
+      fieldName: "precioAlquiler",
+      fieldType: "simpleInput"
+    }, {
+      labelText: "Precio Alquiler",
+      tooltipText: "0 si el inmueble sólo es para venta.",
+      fieldName: "precioAlquiler",
+      fieldType: "simpleSelect"
+    },
+  ],
   actions: {
     savePropertyResource: function() {
       var propertyResource = this.get("propertyResource");
-      debugger;
 
       var self = this;
 
@@ -28,22 +51,5 @@ export default Ember.Component.extend({
     return this.activeTabName.toLowerCase() === "general";
   }.property("activeTabName"),
 
-  inputFields: [
-  // {
-  //   labelText: "Precio Venta",
-  //   tooltipText: "Precio de venta.",
-  //   fieldName: "precioVenta",
-  //   fieldType: "simpleInput"
-  // }, 
-  {
-    labelText: "Precio Anterior",
-    tooltipText: "El precio antes de la rebaja",
-    fieldName: "precioAntiguo",
-    fieldType: "simpleInput"
-  }, {
-    labelText: "Precio Alquiler",
-    tooltipText: "0 si el inmueble sólo es para venta.",
-    fieldName: "precioAlquiler",
-    fieldType: "simpleInput"
-  }, ],
+
 });

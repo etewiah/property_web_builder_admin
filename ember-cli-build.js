@@ -68,8 +68,8 @@ module.exports = function(defaults) {
   app.import('vendor/material-admin-functions.js');
   app.import('vendor/cesar.css');
 
-  app.import('bower_components/bootstrap-select/dist/css/bootstrap-select.css');
-  app.import('bower_components/bootstrap-select/dist/js/bootstrap-select.js');
+  app.import('vendor/bootstrap-select.css');
+  app.import('vendor/bootstrap-select.js');
 
   // // app.import('vendor/preloadstore.js');
   // app.import('vendor/i18n.js');

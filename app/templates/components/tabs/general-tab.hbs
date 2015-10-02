@@ -31,24 +31,16 @@
       </div>
 
 {{#each inputFields as |inputField|}} 
-<div class="form-group fg-float">
-  {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
-</div>
+  <div class="form-group fg-float">
+    {{#if (eq inputField.fieldType "simpleInput")}}
+        {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
+    {{/if}}
+    {{#if (eq inputField.fieldType "simpleSelect")}}
+        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource}}
+    {{/if}}
+  </div>
 {{/each}}
-      <div class="form-group fg-float">
-        <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="El precio antes de la rebaja"><i class="fa fa-info"></i></a>
-        <div class="fg-line has- fg-toggled">
-          <input type="text" class="input-sm form-control fg-input" value="350.000€">
-        </div>
-        <label class="fg-label">Precio Anterior</label>
-      </div>
-      <div class="form-group fg-float">
-        <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="0 si el inmueble sólo es para venta."><i class="fa fa-info"></i></a>
-        <div class="fg-line has- fg-toggled">
-          <input type="text" class="input-sm form-control fg-input" value="0">
-        </div>
-        <label class="fg-label">Precio Alquiler</label>
-      </div>
+
       <div class="form-group fg-float">
         <div class="fg-line has-">
           <select class="selectpicker" style="display: none;">
