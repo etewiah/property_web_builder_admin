@@ -86,6 +86,7 @@ module.exports = function(defaults) {
 
   app.import('bower_components/summernote/dist/summernote.js');
   app.import('bower_components/summernote/dist/summernote-bs3.css');
+  app.import('bower_components/summernote/dist/summernote.css');
 
 
 
