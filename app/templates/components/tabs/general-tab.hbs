@@ -96,8 +96,23 @@
         <label class="fg-label arriba_label">Origen: </label>
       </div>
       <br>
+
+
       <h4 class="sep50">Alquiler de temporada</h4>
       <div id="toggle_temporadas">
+
+{{#each alquilerDeTemporadaInputFields as |inputField|}} 
+  <div class="form-group fg-float">
+    {{#if (eq inputField.fieldType "simpleInput")}}
+        {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
+    {{/if}}
+    {{#if (eq inputField.fieldType "simpleSelect")}}
+        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource}}
+    {{/if}}
+  </div>
+{{/each}}
+
+
         <div class="form-group fg-float">
           <div class="fg-line has-">
             <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Si el inmueble se alquila por temporadas"><i class="fa fa-info"></i></a>

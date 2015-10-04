@@ -596,26 +596,26 @@ $(document).ready(function(){
     /*
      * Waves Animation
      */
-    (function(){
-        var wavesList = ['.btn'];
+    // (function(){
+    //     var wavesList = ['.btn'];
 
-        for(var x = 0; x < wavesList.length; x++) {
-            if($(wavesList[x])[0]) {
-                if($(wavesList[x]).is('a')) {
-                    $(wavesList[x]).not('.btn-icon, input').addClass('waves-effect waves-button');
-                }
-                else {
-                    $(wavesList[x]).not('.btn-icon, input').addClass('waves-effect');
-                }
-            }
-        }
+    //     for(var x = 0; x < wavesList.length; x++) {
+    //         if($(wavesList[x])[0]) {
+    //             if($(wavesList[x]).is('a')) {
+    //                 $(wavesList[x]).not('.btn-icon, input').addClass('waves-effect waves-button');
+    //             }
+    //             else {
+    //                 $(wavesList[x]).not('.btn-icon, input').addClass('waves-effect');
+    //             }
+    //         }
+    //     }
 
-        setTimeout(function(){
-            if ($('.waves-effect')[0]) {
-               Waves.displayEffect();
-            }
-        });
-    })();
+    //     setTimeout(function(){
+    //         if ($('.waves-effect')[0]) {
+    //            Waves.displayEffect();
+    //         }
+    //     });
+    // })();
     
     /*
      * Lightbox

@@ -2,6 +2,35 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+  alquilerDeTemporadaInputFields: [{
+    labelText: "Temporadas:",
+    tooltipText: "",
+    fieldName: "temporadas",
+    fieldType: "simpleSelect",
+    fieldDbType: "boolean",
+    options: [{
+      value: 1,
+      titleKey: "Si"
+    }, {
+      value: 0,
+      titleKey: "No"
+    }]
+  }, {
+    labelText: "Precio Temp. Alta",
+    tooltipText: false,
+    fieldName: "precioTa",
+    fieldType: "simpleInput"
+  }, {
+    labelText: "Precio Temp. Media",
+    tooltipText: false,
+    fieldName: "precioTm",
+    fieldType: "simpleInput"
+  }, {
+    labelText: "Precio Temp. Baja",
+    tooltipText: false,
+    fieldName: "precioTb",
+    fieldType: "simpleInput"
+  }, ],
   inputFields: [
     // {
     //   labelText: "Precio Venta",
@@ -30,7 +59,16 @@ export default Ember.Component.extend({
       tooltipText: "",
       fieldName: "idOrigenPropiedad",
       fieldType: "simpleSelect",
-      options: [{value: 0, titleKey: "Private"}, {value: 1, titleKey: "Builder"}, {value: 2, titleKey: "Bank"}]
+      options: [{
+        value: 0,
+        titleKey: "Private"
+      }, {
+        value: 1,
+        titleKey: "Builder"
+      }, {
+        value: 2,
+        titleKey: "Bank"
+      }]
     },
   ],
   actions: {
