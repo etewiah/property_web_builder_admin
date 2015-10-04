@@ -1,8 +1,20 @@
 {
   "predef": [
+    "I18n",
+    "$",
+    "PreloadStore",
+    "Ember",
+    "Em",
+    "EmberENV",
+    "EmberPouch",
+    "PouchDB",
+    "google",
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "moment",
+    "Discourse",
+    "Logster"
   ],
   "browser": true,
   "boss": true,
@@ -28,5 +40,5 @@
   "white": false,
   "eqnull": true,
   "esnext": true,
-  "unused": true
+  "unused": false
 }

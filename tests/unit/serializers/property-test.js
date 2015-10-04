@@ -2,10 +2,10 @@
 // import { moduleForModel, test } from 'ember-qunit';
 import { moduleFor, test } from 'ember-qunit';
 
-// moduleForModel('application', 'Unit | Serializer | application', {
-moduleFor('application', 'Unit | Serializer | application', {
+// moduleForModel('property', 'Unit | Serializer | property', {
+moduleFor('property', 'Unit | Serializer | property', {
   // Specify the other units that are required for this test.
-  needs: ['serializer:application']
+  needs: ['serializer:property']
 });
 
 // Replace this with your real tests.
@@ -16,3 +16,5 @@ skip('it serializes records', function(assert) {
 
   assert.ok(serializedRecord);
 });
+
+
