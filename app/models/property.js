@@ -11,7 +11,8 @@ export default DS.Model.extend({
   descriptionEn: DS.attr(),
   descriptionEs: DS.attr(),
   precioAntiguo: DS.attr(),
-  precioAlquiler: DS.attr()
+  precioAlquiler: DS.attr(),
+  idOrigenPropiedad: DS.attr()
 
 
   //   mapa-lat: 39.5160831,

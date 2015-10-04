@@ -20,10 +20,17 @@ export default Ember.Component.extend({
       fieldName: "precioAlquiler",
       fieldType: "simpleInput"
     }, {
-      labelText: "Precio Alquiler",
-      tooltipText: "0 si el inmueble sólo es para venta.",
+      labelText: "Tipo:",
+      tooltipText: "",
       fieldName: "precioAlquiler",
-      fieldType: "simpleSelect"
+      fieldType: "simpleSelect",
+      options: ["Apartamento", "Villa"]
+    }, {
+      labelText: "Origen:",
+      tooltipText: "",
+      fieldName: "idOrigenPropiedad",
+      fieldType: "simpleSelect",
+      options: [{value: 0, titleKey: "Private"}, {value: 1, titleKey: "Builder"}, {value: 2, titleKey: "Bank"}]
     },
   ],
   actions: {

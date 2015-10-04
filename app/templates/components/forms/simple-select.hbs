@@ -1,7 +1,8 @@
 <div class="fg-line has-">
   <select class="selectpicker" style="display: none;">
-    <option>Apartamento</option>
-    <option>Villa</option>
+{{#each fieldDetails.options as |selectValue|}} 
+  <option>{{ selectValue.titleKey }}</option>
+{{/each}}
   </select>
 
 </div>
