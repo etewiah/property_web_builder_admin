@@ -5,9 +5,9 @@ export default Ember.Component.extend({
   characteristicasInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.temporadas",
-      tooltipTextTKey: "toolTips.temporadas",
-      fieldName: "temporadas",
+      labelTextTKey: "fieldLabels.eficienciaEnergia",
+      tooltipTextTKey: "toolTips.eficienciaEnergia",
+      fieldName: "eficienciaEnergia",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
       options: [{
@@ -18,21 +18,49 @@ export default Ember.Component.extend({
         titleKey: "No"
       }]
     }, {
-      labelTextTKey: "fieldLabels.precioTa",
+      labelTextTKey: "fieldLabels.anoConstr",
       tooltipTextTKey: false,
-      fieldName: "precioTa",
+      fieldName: "anoConstr",
       fieldType: "simpleInput"
     }, {
-      labelTextTKey: "fieldLabels.precioTm",
+      labelTextTKey: "fieldLabels.numHabitaciones",
       tooltipTextTKey: false,
-      fieldName: "precioTm",
+      fieldName: "numHabitaciones",
       fieldType: "simpleInput"
     }, {
-      labelTextTKey: "fieldLabels.precioTb",
+      labelTextTKey: "fieldLabels.numBanos",
       tooltipTextTKey: false,
-      fieldName: "precioTb",
+      fieldName: "numBanos",
       fieldType: "simpleInput"
-    }
+    }, {
+      labelTextTKey: "fieldLabels.numAseos",
+      tooltipTextTKey: false,
+      fieldName: "numAseos",
+      fieldType: "simpleInput"
+    }, {
+      labelTextTKey: "fieldLabels.mParcela",
+      tooltipTextTKey: false,
+      fieldName: "mParcela",
+      fieldType: "simpleInput"
+    }, {
+      labelTextTKey: "fieldLabels.mConstruidos",
+      tooltipTextTKey: false,
+      fieldName: "mConstruidos",
+      fieldType: "simpleInput"
+    }, {
+      labelTextTKey: "fieldLabels.garaje",
+      tooltipTextTKey: "toolTips.garaje",
+      fieldName: "numGarajes",
+      fieldType: "simpleSelect",
+      fieldDbType: "boolean",
+      options: [{
+        value: 1,
+        titleKey: "Si"
+      }, {
+        value: 0,
+        titleKey: "No"
+      }]
+    },
   ],
 
   alquilerDeTemporadaInputFields: [
@@ -84,7 +112,7 @@ export default Ember.Component.extend({
       tooltipTextTKey: "toolTips.precioAlquiler",
       fieldName: "precioAlquiler",
       fieldType: "simpleInput"
-    }, 
+    },
     // {
     //   labelTextTKey: "Tipo:",
     //   tooltipTextTKey: "",
