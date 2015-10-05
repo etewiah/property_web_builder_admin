@@ -4,7 +4,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   alquilerDeTemporadaInputFields: [{
     labelText: "Temporadas:",
-    tooltipText: "",
+    tooltipText: "Si el inmueble se alquila por temporadas",
     fieldName: "temporadas",
     fieldType: "simpleSelect",
     fieldDbType: "boolean",

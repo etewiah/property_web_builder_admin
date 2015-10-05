@@ -1,4 +1,6 @@
-<a class="ayuda" data-toggle="tooltip" title="" data-original-title={{fieldDetails.tooltipText}}><i class="fa fa-info"></i></a>
+{{#if fieldDetails.tooltipText}}
+  <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{fieldDetails.tooltipText}}><i class="fa fa-info"></i></a>
+{{/if}}
 <div class="fg-line has- fg-toggled">
   {{input value=inputValue type="text"  class="input-sm form-control fg-input"  }}
 </div>

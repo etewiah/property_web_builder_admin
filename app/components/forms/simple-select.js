@@ -11,7 +11,6 @@ export default Ember.Component.extend({
       currentValueIndex = currentValueIndex ? 1 : 0;
     }
     // 
-
     var fieldOptions = this.get("fieldDetails.options");
     var currentOption = fieldOptions.findBy("value", currentValueIndex);
     var currentOptionTitle = currentOption ? currentOption.titleKey : "";

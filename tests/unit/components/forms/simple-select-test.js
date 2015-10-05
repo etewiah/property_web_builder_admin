@@ -11,7 +11,7 @@ moduleForComponent('forms/simple-select', 'Unit | Component | forms/simple selec
 
 test('it renders', function(assert) {
   assert.expect(1);
-  var propertyResource = {};
+  // var propertyResource = {};
   var fieldDetails = {
     labelText: "Temporadas:",
     tooltipText: "",
