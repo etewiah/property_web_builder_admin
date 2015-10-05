@@ -1,7 +1,7 @@
-{{#if fieldDetails.tooltipText}}
-  <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{fieldDetails.tooltipText}}><i class="fa fa-info"></i></a>
+{{#if fieldDetails.tooltipTextTKey}}
+  <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a>
 {{/if}}
 <div class="fg-line has- fg-toggled">
   {{input value=inputValue type="text"  class="input-sm form-control fg-input"  }}
 </div>
-<label class="fg-label">{{t fieldDetails.labelText }}</label>
+<label class="fg-label">{{t fieldDetails.labelTextTKey }}</label>

@@ -1,5 +1,5 @@
-{{#if fieldDetails.tooltipText}}
-  <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{fieldDetails.tooltipText}}><i class="fa fa-info"></i></a>
+{{#if fieldDetails.tooltipTextTKey}}
+  <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a>
 {{/if}}
 <div class="fg-line has-">
   <select class="selectpicker" style="display: none;">
@@ -9,6 +9,4 @@
   </select>
 
 </div>
-<label class="fg-label arriba_label">{{t fieldDetails.labelText }}</label>
-
-{{!-- <label class="fg-label arriba_label">{{ fieldDetails.labelText }}</label> --}}
+<label class="fg-label arriba_label">{{t fieldDetails.labelTextTKey }}</label>

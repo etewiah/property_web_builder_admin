@@ -18,6 +18,11 @@ export default {
     "precioTb": "Precio Temp. Baja",
 
   },
+  "toolTips": {
+    "temporadas": "Si el inmueble se alquila por temporadas",
+    "precioAntiguo": "El precio antes de la rebaja",
+    "precioAlquiler": "0 si el inmueble sólo es para venta."
+  },
   "some.translation.key": "Text for some.translation.key",
 
   "a": {

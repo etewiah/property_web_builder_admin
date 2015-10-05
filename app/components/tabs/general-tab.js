@@ -5,8 +5,8 @@ export default Ember.Component.extend({
   characteristicasInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelText: "fieldLabels.temporadas",
-      tooltipText: "Si el inmueble se alquila por temporadas",
+      labelTextTKey: "fieldLabels.temporadas",
+      tooltipTextTKey: "toolTips.temporadas",
       fieldName: "temporadas",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
@@ -18,18 +18,18 @@ export default Ember.Component.extend({
         titleKey: "No"
       }]
     }, {
-      labelText: "fieldLabels.precioTa",
-      tooltipText: false,
+      labelTextTKey: "fieldLabels.precioTa",
+      tooltipTextTKey: false,
       fieldName: "precioTa",
       fieldType: "simpleInput"
     }, {
-      labelText: "fieldLabels.precioTm",
-      tooltipText: false,
+      labelTextTKey: "fieldLabels.precioTm",
+      tooltipTextTKey: false,
       fieldName: "precioTm",
       fieldType: "simpleInput"
     }, {
-      labelText: "fieldLabels.precioTb",
-      tooltipText: false,
+      labelTextTKey: "fieldLabels.precioTb",
+      tooltipTextTKey: false,
       fieldName: "precioTb",
       fieldType: "simpleInput"
     }
@@ -38,8 +38,8 @@ export default Ember.Component.extend({
   alquilerDeTemporadaInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelText: "fieldLabels.temporadas",
-      tooltipText: "Si el inmueble se alquila por temporadas",
+      labelTextTKey: "fieldLabels.temporadas",
+      tooltipTextTKey: "toolTips.temporadas",
       fieldName: "temporadas",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
@@ -51,50 +51,50 @@ export default Ember.Component.extend({
         titleKey: "No"
       }]
     }, {
-      labelText: "fieldLabels.precioTa",
-      tooltipText: false,
+      labelTextTKey: "fieldLabels.precioTa",
+      tooltipTextTKey: false,
       fieldName: "precioTa",
       fieldType: "simpleInput"
     }, {
-      labelText: "fieldLabels.precioTm",
-      tooltipText: false,
+      labelTextTKey: "fieldLabels.precioTm",
+      tooltipTextTKey: false,
       fieldName: "precioTm",
       fieldType: "simpleInput"
     }, {
-      labelText: "fieldLabels.precioTb",
-      tooltipText: false,
+      labelTextTKey: "fieldLabels.precioTb",
+      tooltipTextTKey: false,
       fieldName: "precioTb",
       fieldType: "simpleInput"
     }
   ],
   inputFields: [
     // {
-    //   labelText: "Precio Venta",
-    //   tooltipText: "Precio de venta.",
+    //   labelTextTKey: "Precio Venta",
+    //   tooltipTextTKey: "Precio de venta.",
     //   fieldName: "precioVenta",
     //   fieldType: "simpleInput"
     // }, 
     {
-      labelText: "fieldLabels.precioAntiguo",
-      tooltipText: "El precio antes de la rebaja",
+      labelTextTKey: "fieldLabels.precioAntiguo",
+      tooltipTextTKey: "toolTips.precioAntiguo",
       fieldName: "precioAntiguo",
       fieldType: "simpleInput"
     }, {
-      labelText: "fieldLabels.precioAlquiler",
-      tooltipText: "0 si el inmueble sólo es para venta.",
+      labelTextTKey: "fieldLabels.precioAlquiler",
+      tooltipTextTKey: "toolTips.precioAlquiler",
       fieldName: "precioAlquiler",
       fieldType: "simpleInput"
     }, 
     // {
-    //   labelText: "Tipo:",
-    //   tooltipText: "",
+    //   labelTextTKey: "Tipo:",
+    //   tooltipTextTKey: "",
     //   fieldName: "precioAlquiler",
     //   fieldType: "simpleSelect",
     //   options: ["Apartamento", "Villa"]
     // }, 
     {
-      labelText: "fieldLabels.origen",
-      tooltipText: "",
+      labelTextTKey: "fieldLabels.origen",
+      tooltipTextTKey: "",
       fieldName: "idOrigenPropiedad",
       fieldType: "simpleSelect",
       options: [{
