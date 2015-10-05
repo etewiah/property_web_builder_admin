@@ -118,6 +118,21 @@
     </div>
     <div class="col-sm-4">
       <h4>Características</h4>
+
+
+
+{{#each characteristicasInputFields as |inputField|}} 
+  <div class="form-group fg-float">
+    {{#if (eq inputField.fieldType "simpleInput")}}
+        {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
+    {{/if}}
+    {{#if (eq inputField.fieldType "simpleSelect")}}
+        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource}}
+    {{/if}}
+  </div>
+{{/each}}
+
+
       <div class="form-group fg-float">
         <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Elija la eficiencia energética del inmueble"><i class="fa fa-info"></i></a>
         <div class="fg-line has-">

@@ -39,6 +39,7 @@
     "ember-deploy-s3": "0.0.5",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.3",
+    "ember-i18n": "4.1.3",
     "ember-truth-helpers": "1.1.0"
   }
 }
