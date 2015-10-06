@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "bootstrap-sass": "~3.3.5",
-    "summernote": "~0.6.16"
+    "summernote": "~0.6.16",
+    "validate": "~0.8.0"
   }
 }

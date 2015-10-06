@@ -71,6 +71,8 @@ module.exports = function(defaults) {
   app.import('vendor/bootstrap-select.css');
   app.import('vendor/bootstrap-select.js');
 
+  app.import('bower_components/validate/validate.js');
+
   // // app.import('vendor/preloadstore.js');
   // app.import('vendor/i18n.js');
   // app.import('vendor/translations.js');
