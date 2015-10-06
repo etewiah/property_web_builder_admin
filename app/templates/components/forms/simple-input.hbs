@@ -1,7 +1,10 @@
 {{#if fieldDetails.tooltipTextTKey}}
   <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a>
 {{/if}}
-<div class="fg-line has- fg-toggled">
+<div class="fg-line {{if error 'has-error'}} ">
   {{input value=inputValue type="text"  class="input-sm form-control fg-input"  }}
+{{#if error}}
+    <small class="help-block">{{ error }}</small>
+{{/if}}
 </div>
-<label class="fg-label">{{t fieldDetails.labelTextTKey }}</label>
+<label class="fg-label arriba_label">{{t fieldDetails.labelTextTKey }}</label>

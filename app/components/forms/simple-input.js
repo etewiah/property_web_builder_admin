@@ -16,6 +16,12 @@ export default Ember.Component.extend({
   updateValue: Ember.observer('inputValue', function() {
     var inputValue = this.get("inputValue");
     this.set("propertyResource." + this.fieldDetails.fieldName, inputValue);
+    if (inputValue > 3) {
+      this.set("error", "ddddd");
+    }
+    else{
+      this.set("error", "");
+    }
   }),
 
   // propertyResourceSetup: function() {
