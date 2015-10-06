@@ -25,7 +25,7 @@ export default Ember.Component.extend({
 
     var validateErrors = validate({
       inputValue: inputValue
-    }, constraints);
+    }, constraints, {fullMessages: false});
     // debugger;
     if (validateErrors) {
       this.set("errors", validateErrors.inputValue);

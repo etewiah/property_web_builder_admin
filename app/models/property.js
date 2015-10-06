@@ -16,8 +16,15 @@ export default DS.Model.extend({
   precioTa: DS.attr(),
   precioTm: DS.attr(),
   precioTb: DS.attr(),
-  temporadas: DS.attr()
-
+  temporadas: DS.attr(),
+  numHabitaciones: DS.attr(),
+  numBanos: DS.attr(),
+  numAseos: DS.attr(),
+  numGarajes: DS.attr(),
+  mParcela: DS.attr(),
+  mConstruidos: DS.attr(),
+  eficienciaEnergia: DS.attr(),
+  anoConstr: DS.attr()
   //   mapa-lat: 39.5160831,
   // mapa-lng: -0.416378,
   // direccion-fisica: "",

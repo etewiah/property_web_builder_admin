@@ -27,8 +27,10 @@ export default Ember.Component.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 2015,
-          }
+            lessThan: 2016,
+            greaterThan: 1500,
+            message: "Invalid date",
+          },
         }
       }
     }, {
