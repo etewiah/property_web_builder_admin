@@ -21,32 +21,86 @@ export default Ember.Component.extend({
       labelTextTKey: "fieldLabels.anoConstr",
       tooltipTextTKey: false,
       fieldName: "anoConstr",
-      fieldType: "simpleInput"
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 2015,
+          }
+        }
+      }
     }, {
       labelTextTKey: "fieldLabels.numHabitaciones",
       tooltipTextTKey: false,
       fieldName: "numHabitaciones",
-      fieldType: "simpleInput"
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
+          }
+        }
+      }
     }, {
       labelTextTKey: "fieldLabels.numBanos",
       tooltipTextTKey: false,
       fieldName: "numBanos",
-      fieldType: "simpleInput"
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
+          }
+        }
+      }
     }, {
       labelTextTKey: "fieldLabels.numAseos",
       tooltipTextTKey: false,
       fieldName: "numAseos",
-      fieldType: "simpleInput"
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
+          }
+        }
+      }
     }, {
       labelTextTKey: "fieldLabels.mParcela",
       tooltipTextTKey: false,
       fieldName: "mParcela",
-      fieldType: "simpleInput"
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
+          }
+        }
+      }
     }, {
       labelTextTKey: "fieldLabels.mConstruidos",
       tooltipTextTKey: false,
       fieldName: "mConstruidos",
-      fieldType: "simpleInput"
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
+          }
+        }
+      }
     }, {
       labelTextTKey: "fieldLabels.garaje",
       tooltipTextTKey: "toolTips.garaje",
@@ -82,36 +136,74 @@ export default Ember.Component.extend({
       labelTextTKey: "fieldLabels.precioTa",
       tooltipTextTKey: false,
       fieldName: "precioTa",
-      fieldType: "simpleInput"
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
+          }
+        }
+      }
     }, {
       labelTextTKey: "fieldLabels.precioTm",
       tooltipTextTKey: false,
       fieldName: "precioTm",
-      fieldType: "simpleInput"
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
+          }
+        }
+      }
     }, {
       labelTextTKey: "fieldLabels.precioTb",
       tooltipTextTKey: false,
       fieldName: "precioTb",
-      fieldType: "simpleInput"
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
+          }
+        }
+      }
     }
   ],
-  inputFields: [
-    // {
-    //   labelTextTKey: "Precio Venta",
-    //   tooltipTextTKey: "Precio de venta.",
-    //   fieldName: "precioVenta",
-    //   fieldType: "simpleInput"
-    // }, 
-    {
+  inputFields: [{
       labelTextTKey: "fieldLabels.precioAntiguo",
       tooltipTextTKey: "toolTips.precioAntiguo",
       fieldName: "precioAntiguo",
-      fieldType: "simpleInput"
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
+          }
+        }
+      }
     }, {
       labelTextTKey: "fieldLabels.precioAlquiler",
       tooltipTextTKey: "toolTips.precioAlquiler",
       fieldName: "precioAlquiler",
-      fieldType: "simpleInput"
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
+          }
+        }
+      }
     },
     // {
     //   labelTextTKey: "Tipo:",

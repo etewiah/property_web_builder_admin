@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+  // inputType: function(){
+  // }.p
+
   activateTooltip: function() {
     this.$(".ayuda").tooltip();
     // this.set("inputValue", this.get("propertyResource." + this.fieldDetails.fieldName));
@@ -16,12 +19,20 @@ export default Ember.Component.extend({
   updateValue: Ember.observer('inputValue', function() {
     var inputValue = this.get("inputValue");
     this.set("propertyResource." + this.fieldDetails.fieldName, inputValue);
-    if (inputValue > 3) {
-      this.set("error", "ddddd");
+
+
+    var constraints = this.get("fieldDetails.constraints");
+
+    var validateErrors = validate({
+      inputValue: inputValue
+    }, constraints);
+    // debugger;
+    if (validateErrors) {
+      this.set("errors", validateErrors.inputValue);
+    } else {
+      this.set("errors", []);
     }
-    else{
-      this.set("error", "");
-    }
+
   }),
 
   // propertyResourceSetup: function() {
