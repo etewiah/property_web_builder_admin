@@ -1,0 +1,35 @@
+{{#if isActive}}
+<div role="tabpanel" class="tab-pane active" id="general">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4></h4>
+
+
+{{#each extrasInputFields1 as |extrasField|}} 
+  <div class="form-group fg-float">
+    {{forms/simple-select fieldDetails=extrasField propertyResource=propertyResource}}
+
+  </div>
+{{/each}}
+
+
+    </div>
+
+
+    <div class="col-sm-6">
+      <h4></h4>
+
+
+
+
+        {{#each extrasInputFields2 as |extrasField|}} 
+          <div class="form-group fg-float">
+            {{forms/simple-select fieldDetails=extrasField propertyResource=propertyResource}}
+
+          </div>
+        {{/each}}
+
+    </div>
+  </div>
+</div>
+{{/if}}
