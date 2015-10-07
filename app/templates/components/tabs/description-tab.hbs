@@ -1,59 +1,13 @@
 {{#if isActive}}
 <div role="tabpanel" class="tab-pane" id="descripcion">
   <div class="row">
-    <div class="col-sm-12" style="display:none;">
-      <div class="alert alert-info alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">×</span></button><i class="fa fa-lg fa-info"></i> Pinche en el texto para añadir o modificar.
-        <br>Seleccione un texto pinchando y arrastrando con el ratón sobre él para añadir negritas y otros efectos.
-      </div>
+  {{#each languages as |languageSettings|}}
+    <div class="col-sm-12" style="padding-bottom: 3%;">
+      <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right" {{action "savePropertyResource"}}>Save</button>
+      {{forms/property-description languageSettings=languageSettings propertyResource=propertyResource}}
     </div>
+  {{/each}}
   </div>
 
-  <h5>Titulo Inglés</h5>
-  <div class='wysiwyg-container'>
-    {{wysiwyg-editor content=property.titleEn header="Example"}}
-
-    <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" {{action "savePropertyResource"}} >Save</button>
-  </div>
-  <h5>Titulo Español</h5>
-  <div class='wysiwyg-container'>
-    {{wysiwyg-editor content=property.titleEs header="Example"}}
-    <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" {{action "savePropertyResource"}} >Save</button>
-  </div>
-
-
-
-  <h5>Descripcion Inglés</h5>
-  <div class='wysiwyg-container'>
-    {{wysiwyg-editor content=property.descriptionEn header="Example"}}
-
-    <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" {{action "savePropertyResource"}} >Save</button>
-  </div>
-  <h5>Descripcion Español</h5>
-  <div class='wysiwyg-container'>
-    {{wysiwyg-editor content=property.descriptionEs header="Example"}}
-    <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" {{action "savePropertyResource"}} >Save</button>
-  </div>
-
-
-{{!--   {{#if property.descriptionEs}}
-  <h6>Español</h6>
-  <div class="html-editor-airmod note-air-editor note-editable" contenteditable="true" id="note-editor-1">
-    {{{ property.descriptionEs }}}
-  </div>
-  {{/if}}
-  <h6>Inglés</h6>
-  <div class="html-editor-airmod note-air-editor note-editable" contenteditable="true" id="note-editor-1">
-    {{{ property.descriptionEn }}}
-  </div>
-  <h6>Español</h6>
-  <div class="html-editor-airmod note-air-editor note-editable" contenteditable="true" id="note-editor-1">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod quam vel lacinia facilisis. Sed condimentum nisi vel ante maximus, sit amet vestibulum leo euismod. Curabitur viverra faucibus nisi eu molestie. Donec convallis finibus felis porttitor tristique. Nulla pretium est et ante dignissim,
-  </div>
-  <div class="sep100"></div>
-  <h6>Inglés</h6>
-  <div class="html-editor-airmod note-air-editor note-editable" contenteditable="true" id="note-editor-2">
-    Traducción al inglésquam vel lacinia facilisis. Sed condimentum nisi vel ante maximus, sit amet vestibulum leo euismod. Curabitur viverra faucibus nisi eu molestie. Donec convallis finibus felis porttitor tristique. Nulla pretium est et ante dignissim,
-  </div> --}}
 </div>
 {{/if}}

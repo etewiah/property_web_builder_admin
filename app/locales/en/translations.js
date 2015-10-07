@@ -9,6 +9,10 @@ export default {
 
   // "key.with.interpolation": "Text with {{anInterpolation}}"
   "fieldLabels": {
+    "descripcionEspanol": "Descripcion Español",
+    "tituloEspanol": "Titulo Español",
+    "descripcionIngles": "Descripcion Inglés",
+    "tituloIngles": "Titulo Inglés",
     "precioAntiguo": "Original Price",
     "precioAlquiler": "Precio Alquiler",
     "origen": "Origen",

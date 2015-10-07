@@ -2,6 +2,26 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+  languages: [{
+    titleLabelKey: "fieldLabels.tituloIngles",
+    descriptionLabelKey: "fieldLabels.descripcionIngles",
+    titleFieldName: "titleEn",
+    descriptionFieldName: "descriptionEn",
+  }, {
+    titleLabelKey: "fieldLabels.tituloEspanol",
+    descriptionLabelKey: "fieldLabels.descripcionEspanol",
+    titleFieldName: "titleEs",
+    descriptionFieldName: "descriptionEs",
+  }],
+  // languages: function() {
+  //   var languages = [];
+  //   languages.push({
+  //     titleLabelKey: "fieldLabels.tituloIngles",
+  //     descriptionLabelKey: "fieldLabels.descripcionIngles",
+  //     titleValue: this.get("propertyResource.titleEn")
+  //   });
+  //   return languages;
+  // }.property(),
   actions: {
     savePropertyResource: function() {
       var propertyResource = this.get("propertyResource");
@@ -9,11 +29,11 @@ export default Ember.Component.extend({
       // var self = this;
 
       function transitionToPost(propertyResource) {
-          // self.transitionToRoute('posts.show', post);
+        // self.transitionToRoute('posts.show', post);
       }
 
       function failure(reason) {
-          // handle the error
+        // handle the error
       }
 
       propertyResource.save().then(transitionToPost).catch(failure);
