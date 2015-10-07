@@ -2,6 +2,7 @@ import Ember from 'ember';
 import Extras from '../../../../models/extras';
 
 export default Ember.Route.extend({
+  // tabsList: [{}],
   actions: {
     // editProperty(property) {
     //   this.transitionTo("admin.propiedades.editar", property.get('idPropiedad'))
@@ -17,5 +18,22 @@ export default Ember.Route.extend({
     controller.set("activeTabName", activeTabName.toLowerCase());
     controller.set("property", this.modelFor('admin.propiedades.editar'));
     controller.set("extrasObject", model);
+
+    controller.set("tabsList", [{
+      tabValue: "general",
+      tabTitle: "General"
+    }, {
+      tabValue: "descripcion",
+      tabTitle: "Descripción"
+    }, {
+      tabValue: "extras",
+      tabTitle: "Extras"
+    }, {
+      tabValue: "fotos",
+      tabTitle: "Fotos"
+    }, {
+      tabValue: "video",
+      tabTitle: "Video"
+    }]);
   }
 });
