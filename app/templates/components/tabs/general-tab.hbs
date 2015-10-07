@@ -1,10 +1,11 @@
 {{#if isActive}}
 <div role="tabpanel" class="tab-pane active" id="general">
   <div class="row">
+    <div class="col-sm-12">
+        <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "savePropertyResource"}} >Save</button>
+    </div>
     <div class="col-sm-4">
       
-        <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "savePropertyResource"}} >Save</button>
-
       <div class="thumbnail">
         <img src="img/300x200.gif" alt="">
         <div class="caption">

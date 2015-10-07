@@ -8,12 +8,15 @@ export default Ember.Component.extend({
     // find the index of the current value of the field we need to render
     var currentValueIndex = this.get("propertyResource." + this.fieldDetails.fieldName) || 0;
     if (this.get("fieldDetails.fieldDbType") === "boolean") {
+      // in the case of a boolean, retrieving currentValueIndex above could return true, 
+      // in which case we want to convert that to integer 1
       currentValueIndex = currentValueIndex ? 1 : 0;
     }
     // 
     var fieldOptions = this.get("fieldDetails.options");
     var currentOption = fieldOptions.findBy("value", currentValueIndex);
     var currentOptionTitle = currentOption ? currentOption.titleKey : "";
+
     this.$(".selectpicker").selectpicker({
       iconBase: 'fa',
       tickIcon: 'fa-check'

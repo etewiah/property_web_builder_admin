@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Extras from '../../../../models/extras';
 
 export default Ember.Route.extend({
   actions: {
@@ -6,20 +7,15 @@ export default Ember.Route.extend({
     //   this.transitionTo("admin.propiedades.editar", property.get('idPropiedad'))
     // }
   },
-  // model(params) {
-  //   debugger;
-  //   // return this.store.findAll('property'); // or any other user you like
-  // },
+  model(params) {
+    // debugger;
+    var extras = Extras.get(this.paramsFor('admin.propiedades.editar').idPropiedad);
+    return extras;
+  },
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.propiedades.editar.tab').tabName || "";
     controller.set("activeTabName", activeTabName.toLowerCase());
-    // debugger;
     controller.set("property", this.modelFor('admin.propiedades.editar'));
-    // if (this.paramsFor('admin.propiedades.editar.tab').tabName.toLowerCase() === "descripcion") {
-    //   controller.set('descriptionTab', true);
-    // };
-    // if (this.paramsFor('admin.propiedades.editar.tab').tabName === "tt") {
-    //   controller.set('ttTab', true);
-    // };
+    controller.set("extrasObject", model);
   }
 });
