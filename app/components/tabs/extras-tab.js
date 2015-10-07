@@ -3,9 +3,28 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   extrasInputFields1: function() {
-    var extrasInputFields1 = [];
-    var extrasFields1 = this.get("extrasFields1") || [];
-    extrasFields1.forEach(function(fieldName) {
+    var extrasFields = {};
+    var fieldNames = this.get("extrasFieldsNames") || [];
+    var chunkLength = fieldNames.length / 3;
+    // debugger;
+    extrasFields.chunk1 = this.parseInputFields(fieldNames.splice(0, Math.ceil(chunkLength)));
+    extrasFields.chunk2 = this.parseInputFields(fieldNames.splice(0, Math.ceil(chunkLength)));
+    extrasFields.chunk3 = this.parseInputFields(fieldNames);
+    // debugger;
+    return extrasFields;
+  }.property("extrasFieldsNames"),
+  // extrasInputFields2: function() {
+  //   var extrasFields2 = this.get("extrasFields2") || [];
+  //   return this.parseInputFields(extrasFields2);
+  // }.property("extrasFields2"),
+  // extrasInputFields3: function() {
+  //   var extrasFields3 = this.get("extrasFields3") || [];
+  //   return this.parseInputFields(extrasFields3);
+  // }.property("extrasFields3"),
+
+  parseInputFields: function(fieldNames) {
+    var inputFields = [];
+    fieldNames.forEach(function(fieldName) {
       var inputField = {
         fieldName: fieldName,
         fieldDbType: "boolean",
@@ -18,33 +37,12 @@ export default Ember.Component.extend({
         }]
       };
       inputField.labelTextTKey = "fieldLabels.extras." + fieldName;
-      extrasInputFields1.push(inputField);
+      inputFields.push(inputField);
     });
-    // debugger;
-    return extrasInputFields1;
-  }.property("extrasFields1"),
-  extrasInputFields2: function() {
-    var extrasInputFields2 = [];
-    var extrasFields2 = this.get("extrasFields2") || [];
-    extrasFields2.forEach(function(fieldName) {
-      var inputField = {
-        fieldName: fieldName,
-        fieldDbType: "boolean",
-        options: [{
-          value: 1,
-          titleKey: "Si"
-        }, {
-          value: 0,
-          titleKey: "No"
-        }]
-      };
-      inputField.labelTextTKey = "fieldLabels.extras." + fieldName;
-      extrasInputFields2.push(inputField);
-    });
-    // debugger;
-    return extrasInputFields2;
-  }.property("extrasFields2"),
-  extrasFields1: [
+    return inputFields;
+  },
+
+  extrasFieldsNames: [
     "aireAcondicionado",
     "alarma",
     "amueblado",
@@ -77,9 +75,6 @@ export default Ember.Component.extend({
     "piscinaClimatizada",
     "piscinaComunitaria",
     "piscinaPrivada",
-  ],
-  extrasFields2: [
-
     "puertaBlindada",
     "sauna",
     "servPorteria",
@@ -116,122 +111,6 @@ export default Ember.Component.extend({
     "zonaTranquila",
     "escaparate",
     "techoDeMas3Mtos"
-  ],
-  characteristicasInputFields: [
-    //this comment tricks prettify ;) 
-    {
-      labelTextTKey: "fieldLabels.eficienciaEnergia",
-      tooltipTextTKey: "toolTips.eficienciaEnergia",
-      fieldName: "eficienciaEnergia",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-      options: [{
-        value: 1,
-        titleKey: "Si"
-      }, {
-        value: 0,
-        titleKey: "No"
-      }]
-    }, {
-      labelTextTKey: "fieldLabels.anoConstr",
-      tooltipTextTKey: false,
-      fieldName: "anoConstr",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThan: 2016,
-            greaterThan: 1500,
-            message: "Invalid date",
-          },
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.numHabitaciones",
-      tooltipTextTKey: false,
-      fieldName: "numHabitaciones",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.numBanos",
-      tooltipTextTKey: false,
-      fieldName: "numBanos",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.numAseos",
-      tooltipTextTKey: false,
-      fieldName: "numAseos",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.mParcela",
-      tooltipTextTKey: false,
-      fieldName: "mParcela",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.mConstruidos",
-      tooltipTextTKey: false,
-      fieldName: "mConstruidos",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.garaje",
-      tooltipTextTKey: "toolTips.garaje",
-      fieldName: "numGarajes",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-      options: [{
-        value: 1,
-        titleKey: "Si"
-      }, {
-        value: 0,
-        titleKey: "No"
-      }]
-    },
   ],
 
   actions: {
