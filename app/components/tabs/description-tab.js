@@ -13,15 +13,7 @@ export default Ember.Component.extend({
     titleFieldName: "titleEs",
     descriptionFieldName: "descriptionEs",
   }],
-  // languages: function() {
-  //   var languages = [];
-  //   languages.push({
-  //     titleLabelKey: "fieldLabels.tituloIngles",
-  //     descriptionLabelKey: "fieldLabels.descripcionIngles",
-  //     titleValue: this.get("propertyResource.titleEn")
-  //   });
-  //   return languages;
-  // }.property(),
+
   actions: {
     savePropertyResource: function() {
       var propertyResource = this.get("propertyResource");

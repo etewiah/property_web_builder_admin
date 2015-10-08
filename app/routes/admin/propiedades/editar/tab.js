@@ -23,6 +23,9 @@ export default Ember.Route.extend({
       tabValue: "general",
       tabTitle: "General"
     }, {
+      tabValue: "situacion",
+      tabTitle: "Situación"
+    }, {
       tabValue: "descripcion",
       tabTitle: "Descripción"
     }, {
@@ -32,8 +35,8 @@ export default Ember.Route.extend({
       tabValue: "fotos",
       tabTitle: "Fotos"
     }, {
-      tabValue: "video",
-      tabTitle: "Video"
+      tabValue: "venta",
+      tabTitle: "Venta"
     }]);
   }
 });
