@@ -1,1 +1,36 @@
-{{outlet}}
+<aside id="sidebar">
+  <div class="sidebar-inner">
+    <div class="si-inner">
+      <div class="profile-menu">
+        <a href="">
+          <div class="profile-pic">
+            <img src="img/profile-pics/1.jpg" alt="">
+          </div>
+          <div class="profile-info">
+            Bienvenido, {nombre_usuario}
+          </div>
+        </a>
+      </div>
+      <ul class="main-menu">
+
+      {{#each leftNavItems as |tab|}}
+        <li class={{if (eq tab.tabRoute activeTabRoute) "active"}} >{{#link-to tab.tabRoute }} <i class={{tab.tabIconClass}}></i> {{tab.tabTitle}}{{/link-to}}</li>  
+      {{/each}}
+
+{{!--         <li class="selected"><a href="index.php"><i class="fa fa-home"></i> Inicio</a></li>
+        <li><a href="/admin/propiedades"><i class="fa fa-building-o"></i> Propiedades</a></li>
+        <li><a href="/admin/clientes"><i class="fa fa-users"></i> Clientes</a></li>
+        <li><a href="/admin/actividades"><i class="fa fa-calendar"></i> Actividades</a></li>
+        <li><a href="/admin/web"><i class="fa fa-desktop"></i> Web</a></li>
+        <li><a href="/admin/perfil"><i class="fa fa-user"></i> Mi perfil</a></li>
+        <li><a href="/admin/soporte"><i class="fa fa-support"></i> Soporte</a></li>
+        <li><a href="/admin/salir"><i class="fa fa-sign-out"></i> Salir</a></li> --}}
+      </ul>
+    </div>
+  </div>
+</aside>
+<section id="content">
+  <div class="container" id="seccion_ddd">
+    {{outlet}}
+  </div>
+</section>

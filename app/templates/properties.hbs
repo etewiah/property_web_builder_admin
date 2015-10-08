@@ -1,8 +1,0 @@
-{{outlet}}
-<ul>
-{{#each model as |property|}}
-  {{#link-to 'property' property.id }}
-    <li>{{property.name}} ({{property.direccionPropiedad}})</li>
-  {{/link-to}}
-{{/each}}
-</ul>

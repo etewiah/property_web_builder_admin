@@ -1,9 +1,0 @@
-{{outlet}}
-<strong>name is: {{ model.name }}</strong> (total {{ model.publicRepos }})
-<strong>direccionPropiedad is: {{ model.direccionPropiedad }}</strong> 
-
-<ul>
-{{#each model.repos as |repo|}}
-  <li>{{repo.fullName}} ({{repo.language}}, {{repo.stargazersCount}} stars)</li>
-{{/each}}
-</ul>

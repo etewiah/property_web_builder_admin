@@ -5,6 +5,14 @@ var Router = Ember.Router.extend({
   location: config.locationType
 });
 
+
+Ember.Router.reopen( {
+  updateTitle: function() {
+    this.send('setActiveLeftNav');
+  }.on('didTransition'),
+});
+
+
 Router.map(function() {
   this.route('start', function() {
     this.route("default", {
@@ -57,10 +65,10 @@ Router.map(function() {
 
   });
   this.route('user');
-  this.route("property", {
-    path: "/property/:id"
-  });
-  this.route('properties');
+  // this.route("property", {
+  //   path: "/property/:id"
+  // });
+  // this.route('properties');
 });
 
 export default Router;
