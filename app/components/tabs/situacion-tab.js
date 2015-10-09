@@ -2,6 +2,11 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+  actions: {
+    mapClicked: function(dd, ss) {
+      debugger;
+    }
+  },
   situacionLeftInputFields: [
     //this comment tricks prettify ;) 
     {
@@ -94,27 +99,14 @@ export default Ember.Component.extend({
       }
     },
   ],
-  // actions: {
-  //   savePropertyResource: function() {
-  //     var propertyResource = this.get("propertyResource");
 
-  //     // var self = this;
-
-  //     function transitionToPost(propertyResource) {
-  //       // self.transitionToRoute('posts.show', post);
-  //     }
-
-  //     function failure(reason) {
-  //       // handle the error
-  //     }
-
-  //     propertyResource.save().then(transitionToPost).catch(failure);
-
-
-  //   }
-  // },
-
-
+  geo: function() {
+    var geo = {
+      longitude: this.get("propertyResource.mapaLng"),
+      latitude: this.get("propertyResource.mapaLat"),
+    }
+    return geo;
+  }.property(),
   isActive: function() {
     return this.activeTabName.toLowerCase() === "situacion";
   }.property("activeTabName"),

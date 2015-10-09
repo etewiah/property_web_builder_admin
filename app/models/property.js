@@ -24,7 +24,9 @@ export default DS.Model.extend({
   mParcela: DS.attr(),
   mConstruidos: DS.attr(),
   eficienciaEnergia: DS.attr(),
-  anoConstr: DS.attr()
+  anoConstr: DS.attr(),
+  mapaLat: DS.attr(),
+  mapaLng: DS.attr(),
   //   mapa-lat: 39.5160831,
   // mapa-lng: -0.416378,
   // direccion-fisica: "",
