@@ -9,6 +9,12 @@ export default {
 
   // "key.with.interpolation": "Text with {{anInterpolation}}"
   "fieldLabels": {
+    "localidad": "Localidad",
+    "zona": "Zona",
+    "codigoPostal": "Codigo Postal",
+    "direccion": "Direccion",
+    "direccionReal": "Direccion Real",
+    "direccionMapa": "Direccion Mapa",
     "ref": "REF",
     "tipo": "Type",
     "estado": "State",

@@ -2,123 +2,98 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
-  situacionInputFields: [
+  situacionLeftInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.eficienciaEnergia",
-      tooltipTextTKey: "toolTips.eficienciaEnergia",
-      fieldName: "eficienciaEnergia",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-      options: [{
-        value: 1,
-        titleKey: "Si"
-      }, {
-        value: 0,
-        titleKey: "No"
-      }]
-    }, {
-      labelTextTKey: "fieldLabels.anoConstr",
+      labelTextTKey: "fieldLabels.localidad",
       tooltipTextTKey: false,
-      fieldName: "anoConstr",
+      fieldName: "localidad",
       fieldType: "simpleInput",
-      inputType: "number",
+      inputType: "text",
       constraints: {
         inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThan: 2016,
-            greaterThan: 1500,
-            message: "Invalid date",
-          },
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.numHabitaciones",
-      tooltipTextTKey: false,
-      fieldName: "numHabitaciones",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
           }
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.numBanos",
+      labelTextTKey: "fieldLabels.zona",
       tooltipTextTKey: false,
-      fieldName: "numBanos",
+      fieldName: "zona",
       fieldType: "simpleInput",
-      inputType: "number",
+      inputType: "text",
       constraints: {
         inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
           }
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.numAseos",
+      labelTextTKey: "fieldLabels.codigoPostal",
       tooltipTextTKey: false,
-      fieldName: "numAseos",
+      fieldName: "codigoPostal",
       fieldType: "simpleInput",
-      inputType: "number",
+      inputType: "text",
       constraints: {
         inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
           }
         }
       }
-    }, {
-      labelTextTKey: "fieldLabels.mParcela",
-      tooltipTextTKey: false,
-      fieldName: "mParcela",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.mConstruidos",
-      tooltipTextTKey: false,
-      fieldName: "mConstruidos",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.garaje",
-      tooltipTextTKey: "toolTips.garaje",
-      fieldName: "numGarajes",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-      options: [{
-        value: 1,
-        titleKey: "Si"
-      }, {
-        value: 0,
-        titleKey: "No"
-      }]
     },
   ],
-
+  situacionRightInputFields: [
+    //this comment tricks prettify ;) 
+    {
+      labelTextTKey: "fieldLabels.direccion",
+      tooltipTextTKey: false,
+      fieldName: "direccion",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.direccionReal",
+      tooltipTextTKey: false,
+      fieldName: "direccionReal",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.direccionMapa",
+      tooltipTextTKey: false,
+      fieldName: "direccionMapa",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    },
+  ],
   // actions: {
   //   savePropertyResource: function() {
   //     var propertyResource = this.get("propertyResource");

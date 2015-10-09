@@ -5,7 +5,7 @@
 
 
 
-{{#each situacionInputFields as |inputField|}} 
+{{#each situacionLeftInputFields as |inputField|}} 
   <div class="form-group fg-float">
     {{#if (eq inputField.fieldType "simpleInput")}}
         {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
@@ -18,47 +18,23 @@
 
 
 
-      <div class="form-group fg-float">
-        <div class="fg-line has- fg-toggled">
-          <input type="text" class="input-sm form-control fg-input" value="Lloret de Mar">
-        </div>
-        <label class="fg-label">Localidad</label>
-      </div>
-      <div class="form-group fg-float">
-        <div class="fg-line has- fg-toggled">
-          <input type="text" class="input-sm form-control fg-input" value="Centro">
-        </div>
-        <label class="fg-label">Zona</label>
-      </div>
-      <div class="form-group fg-float">
-        <div class="fg-line has- fg-toggled">
-          <input type="text" class="input-sm form-control fg-input" value="08451">
-        </div>
-        <label class="fg-label">Código Postal</label>
-      </div>
+
     </div>
     <div class="col-sm-6">
-      <div class="form-group fg-float">
-        <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Esta dirección sale en la web. Si no quiere que aparezca, deje el campo en blanco."><i class="fa fa-info"></i></a>
-        <div class="fg-line has- fg-toggled">
-          <input type="text" class="input-sm form-control fg-input" value="C/ Mayor 1">
-        </div>
-        <label class="fg-label">Dirección</label>
-      </div>
-      <div class="form-group fg-float">
-        <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Esta dirección no sale en la web. Es para su control interno."><i class="fa fa-info"></i></a>
-        <div class="fg-line has- fg-toggled">
-          <input type="text" class="input-sm form-control fg-input" value="C/ auténtica 17">
-        </div>
-        <label class="fg-label">Dirección real</label>
-      </div>
-      <div class="form-group fg-float">
-        <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Esta dirección se corresponde con las coordenadas del mapa. Para evitar que el sistema ponga el localizador correctamente, ponga el código postal o la localidad y el país. Ej. C/ Mayor 1, 28001 Madrrid (España)"><i class="fa fa-info"></i></a>
-        <div class="fg-line has- fg-toggled">
-          <input type="text" class="input-sm form-control fg-input" value="C/ Mayor 1">
-        </div>
-        <label class="fg-label">Dirección mapa</label>
-      </div>
+
+
+{{#each situacionRightInputFields as |inputField|}} 
+  <div class="form-group fg-float">
+    {{#if (eq inputField.fieldType "simpleInput")}}
+        {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
+    {{/if}}
+    {{#if (eq inputField.fieldType "simpleSelect")}}
+        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource}}
+    {{/if}}
+  </div>
+{{/each}}
+
+
     </div>
   </div>
   <div class="row">
