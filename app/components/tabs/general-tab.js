@@ -229,7 +229,23 @@ export default Ember.Component.extend({
         value: 2,
         titleKey: "Bank"
       }]
-    },
+    }, {
+      labelTextTKey: "fieldLabels.tipo",
+      tooltipTextTKey: "",
+      fieldName: "....",
+      fieldType: "simpleSelect",
+      optionsKey: "propertyTypesSelectValues",
+      options: [{
+        value: 0,
+        titleKey: "Private"
+      }, {
+        value: 1,
+        titleKey: "Builder"
+      }, {
+        value: 2,
+        titleKey: "Bank"
+      }]
+    }
   ],
   actions: {
     savePropertyResource: function() {

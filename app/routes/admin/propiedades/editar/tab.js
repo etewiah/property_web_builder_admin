@@ -17,8 +17,12 @@ export default Ember.Route.extend({
     var activeTabName = this.paramsFor('admin.propiedades.editar.tab').tabName || "";
     controller.set("activeTabName", activeTabName.toLowerCase());
     controller.set("property", this.modelFor('admin.propiedades.editar'));
+    // TODO - get extras from model above and remove line below
     controller.set("extrasObject", model);
-
+    var adminController = this.controllerFor("admin");
+    // debugger;
+    controller.set("fieldKeys", adminController.fieldKeys);
+    
     controller.set("tabsList", [{
       tabValue: "general",
       tabTitle: "General"

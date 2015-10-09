@@ -1,10 +1,16 @@
 import Ember from 'ember';
-// import Extras from '../../../../models/extras';
+import AdminMeta from '../models/admin_meta';
 
 export default Ember.Route.extend({
 
-  setupController(controller, model) {
+  model(params) {
+    // debugger;
+    var adminMeta = AdminMeta.get(this.paramsFor('admin.propiedades.editar').idPropiedad);
+    return adminMeta;
+  },
 
+  setupController(controller, model) {
+    controller.set("fieldKeys", model.selectValues);
     controller.set("leftNavItems", [{
       tabIconClass: "fa fa-home",
       tabTitle: "Inicio",

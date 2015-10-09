@@ -37,12 +37,12 @@
         {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
     {{/if}}
     {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource}}
+        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource fieldKeys=fieldKeys}}
     {{/if}}
   </div>
 {{/each}}
 
-      <div class="form-group fg-float">
+{{!--       <div class="form-group fg-float">
         <div class="fg-line has-">
           <select class="selectpicker" style="display: none;">
             <option>Apartamento</option>
@@ -95,7 +95,7 @@
           </div>
         </div>
         <label class="fg-label arriba_label">Origen: </label>
-      </div>
+      </div> --}}
       <br>
 
 

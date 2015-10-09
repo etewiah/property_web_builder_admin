@@ -2,6 +2,23 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+  fieldOptions: function() {
+    if (this.get("fieldDetails.optionsKey")) {
+      // debugger;
+      return this.get("fieldKeys")[this.get("fieldDetails.optionsKey")];
+    } else if (this.get("fieldDetails.fieldDbType") === "boolean") {
+      // debugger;
+      return [{
+        value: 1,
+        titleKey: "Si"
+      }, {
+        value: 0,
+        titleKey: "No"
+      }];
+    } else {
+      return this.get("fieldDetails.options");
+    }
+  }.property(),
   setupComponent: function() {
     this.$(".ayuda").tooltip();
     // propertyResource obect contains the fields and current value of each field
@@ -13,7 +30,7 @@ export default Ember.Component.extend({
       currentValueIndex = currentValueIndex ? 1 : 0;
     }
     // 
-    var fieldOptions = this.get("fieldDetails.options");
+    var fieldOptions = this.get("fieldOptions");
     var currentOption = fieldOptions.findBy("value", currentValueIndex);
     var currentOptionTitle = currentOption ? currentOption.titleKey : "";
 
@@ -24,7 +41,7 @@ export default Ember.Component.extend({
       var selected = evt.target.value;
       // $(this).find("option:selected").val();
 
-      var fieldOptions = this.get("fieldDetails.options");
+      var fieldOptions = this.get("fieldOptions");
       var selectValue = fieldOptions.findBy("titleKey", selected).value;
       this.set("propertyResource." + this.fieldDetails.fieldName, selectValue);
 
