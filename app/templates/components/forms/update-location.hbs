@@ -1,0 +1,21 @@
+{{#if newAddress}}
+  <h5>{{t languageSettings.titleLabelKey }} Confirm new location:</h5>
+  <div >
+    <label class="fg-label arriba_label">Street:</label>
+    <div class="fg-line">
+      {{input value=newAddress class="input-sm form-control fg-input" }}
+    </div>
+    <label class="fg-label arriba_label">City:</label>
+    <div class="fg-line">
+      {{input value=newCity class="input-sm form-control fg-input" }}
+    </div>
+    <label class="fg-label arriba_label">Post Code:</label>
+    <div class="fg-line">
+      {{input value=newPostCode class="input-sm form-control fg-input" }}
+    </div>
+    <div class="fg-line">
+        <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect"
+        style="margin:2%;" {{action "saveNewAddress"}} >Save</button>
+    </div>
+  </div>
+{{/if}}

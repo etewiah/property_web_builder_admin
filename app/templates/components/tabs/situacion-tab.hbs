@@ -1,6 +1,10 @@
 {{#if isActive}}
 <div role="tabpanel" class="tab-pane" id="situacion">
   <div class="row">
+    <div class="col-sm-12">
+        <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveExtrasObject"}} >Save</button>
+    </div>
+
     <div class="col-sm-6">
 
 
@@ -46,7 +50,9 @@
   </div>
   <div class="row">
     <div class="col-sm-6">
-      <div id="mapa">Aquí el mapa</div>
+      <div >
+      {{forms/update-location newAddress=newAddress updateLocationAction="updateLocationFromMap"}}
+      </div>
       <div>
         {{interactive-gmap geo=geo mapClickedAction="mapClicked" }}
       </div>

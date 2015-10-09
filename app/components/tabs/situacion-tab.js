@@ -3,7 +3,11 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    mapClicked: function(dd, ss) {
+    mapClicked: function(locationInfo) {
+      this.set("newAddress",locationInfo.clickedLocation.formatted_address);
+      debugger;
+    },
+    updateLocationFromMap: function(){
       debugger;
     }
   },

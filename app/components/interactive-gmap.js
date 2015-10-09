@@ -394,31 +394,31 @@ export default Ember.Component.extend({
       that.infoWindows.pushObject(infowindowInstance);
 
 
-      google.maps.event.addListener(marker, 'mouseover', function() {
-        that.showNewInfowindow(infowindowInstance, marker);
-      });
+      // google.maps.event.addListener(marker, 'mouseover', function() {
+      //   that.showNewInfowindow(infowindowInstance, marker);
+      // });
 
 
-      google.maps.event.addListener(marker, 'click', function(event) {
-        // need to show infoWindow for 1st click as tablets do not trigger mouseover
-        if (marker.showingInfoWindow) {
-          that.placeSelected(event, detailsForMarker);
-        } else {
-          that.showNewInfowindow(infowindowInstance, marker);
-        }
-      });
+      // google.maps.event.addListener(marker, 'click', function(event) {
+      //   // need to show infoWindow for 1st click as tablets do not trigger mouseover
+      //   if (marker.showingInfoWindow) {
+      //     that.placeSelected(event, detailsForMarker);
+      //   } else {
+      //     that.showNewInfowindow(infowindowInstance, marker);
+      //   }
+      // });
 
-      google.maps.event.addListener(infowindowInstance, 'domready', function() {
-        // ensure document.getElementById("tmap-infowindow-content") exists....
-        var infWin = document.getElementById("tmap-infowindow-content");
-        if (infWin) {
-          infWin.addEventListener("click", function(event) {
-            event.stopPropagation();
-            that.placeSelected(event, detailsForMarker);
-          });
-        } else {}
+      // google.maps.event.addListener(infowindowInstance, 'domready', function() {
+      //   // ensure document.getElementById("tmap-infowindow-content") exists....
+      //   var infWin = document.getElementById("tmap-infowindow-content");
+      //   if (infWin) {
+      //     infWin.addEventListener("click", function(event) {
+      //       event.stopPropagation();
+      //       that.placeSelected(event, detailsForMarker);
+      //     });
+      //   } else {}
 
-      });
+      // });
 
     });
 
@@ -502,11 +502,11 @@ export default Ember.Component.extend({
 
           that.infoWindows.push(infowindowForClickedLocation);
 
-          var geo = that.get('geo');
+          // var geo = that.get('geo');
           var locationInfo = {
             'clickedLocation': results[0],
             map: that.map,
-            geo: geo
+            // geo: geo
           };
 
           // for map in topic, below is interestShownInPlace in topic controller
@@ -520,13 +520,12 @@ export default Ember.Component.extend({
       }
     });
 
-    // this.get("controller").addEvent(lat, lng);
   },
-  placeSelected: function(event, placeDetails) {
-    // will call showPlaceDetails in topic_controller
-    placeDetails.map = this.map;
-    this.sendAction('markerSelectedAction', placeDetails);
-  },
+  // placeSelected: function(event, placeDetails) {
+  //   // will call showPlaceDetails in topic_controller
+  //   placeDetails.map = this.map;
+  //   this.sendAction('markerSelectedAction', placeDetails);
+  // },
 
 
 });
