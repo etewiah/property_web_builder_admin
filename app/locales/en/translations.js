@@ -9,10 +9,14 @@ export default {
 
   // "key.with.interpolation": "Text with {{anInterpolation}}"
   "fieldLabels": {
+    "ref": "REF",
+    "tipo": "Type",
+    "estado": "State",
     "descripcionEspanol": "Descripcion Español",
     "tituloEspanol": "Titulo Español",
     "descripcionIngles": "Descripcion Inglés",
     "tituloIngles": "Titulo Inglés",
+    "precioVenta": "Precio Venta",
     "precioAntiguo": "Original Price",
     "precioAlquiler": "Precio Alquiler",
     "origen": "Origen",
@@ -185,9 +189,11 @@ export default {
   "toolTips": {
     "temporadas": "Si el inmueble se alquila por temporadas",
     "precioAntiguo": "El precio antes de la rebaja",
-    "precioAlquiler": "0 si el inmueble sólo es para venta.",
+    "precioAlquiler": "0 si el inmueble sólo es para venta",
+    "precioVenta": "Precio de venta",
     "eficienciaEnergia": "Elija la eficiencia energética del inmueble",
-    "garaje": "Si el inmueble dispone de plaza de garaje o no."
+    "garaje": "Si el inmueble dispone de plaza de garaje o no",
+    "ref": "Referencia del inmueble"
   },
   "some.translation.key": "Text for some.translation.key",
 

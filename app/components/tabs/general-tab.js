@@ -178,75 +178,97 @@ export default Ember.Component.extend({
       }
     }
   ],
+
   inputFields: [{
-      labelTextTKey: "fieldLabels.precioAntiguo",
-      tooltipTextTKey: "toolTips.precioAntiguo",
-      fieldName: "precioAntiguo",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
+    labelTextTKey: "fieldLabels.ref",
+    tooltipTextTKey: "toolTips.ref",
+    fieldName: "ref",
+    fieldType: "simpleInput",
+    inputType: "text",
+    constraints: {
+      inputValue: {
+        numericality: {
+          onlyInteger: true,
+          lessThanOrEqualTo: 3000,
         }
       }
-    }, {
-      labelTextTKey: "fieldLabels.precioAlquiler",
-      tooltipTextTKey: "toolTips.precioAlquiler",
-      fieldName: "precioAlquiler",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    },
-    // {
-    //   labelTextTKey: "Tipo:",
-    //   tooltipTextTKey: "",
-    //   fieldName: "precioAlquiler",
-    //   fieldType: "simpleSelect",
-    //   options: ["Apartamento", "Villa"]
-    // }, 
-    {
-      labelTextTKey: "fieldLabels.origen",
-      tooltipTextTKey: "",
-      fieldName: "idOrigenPropiedad",
-      fieldType: "simpleSelect",
-      options: [{
-        value: 0,
-        titleKey: "Private"
-      }, {
-        value: 1,
-        titleKey: "Builder"
-      }, {
-        value: 2,
-        titleKey: "Bank"
-      }]
-    }, {
-      labelTextTKey: "fieldLabels.tipo",
-      tooltipTextTKey: "",
-      fieldName: "....",
-      fieldType: "simpleSelect",
-      optionsKey: "propertyTypesSelectValues",
-      options: [{
-        value: 0,
-        titleKey: "Private"
-      }, {
-        value: 1,
-        titleKey: "Builder"
-      }, {
-        value: 2,
-        titleKey: "Bank"
-      }]
     }
-  ],
+  }, {
+    labelTextTKey: "fieldLabels.precioVenta",
+    tooltipTextTKey: "toolTips.precioVenta",
+    fieldName: "precioVenta",
+    fieldType: "simpleInput",
+    inputType: "number",
+    constraints: {
+      inputValue: {
+        numericality: {
+          onlyInteger: true,
+          lessThanOrEqualTo: 3000,
+        }
+      }
+    }
+  }, {
+    labelTextTKey: "fieldLabels.precioAntiguo",
+    tooltipTextTKey: "toolTips.precioAntiguo",
+    fieldName: "precioAntiguo",
+    fieldType: "simpleInput",
+    inputType: "number",
+    constraints: {
+      inputValue: {
+        numericality: {
+          onlyInteger: true,
+          lessThanOrEqualTo: 3000,
+        }
+      }
+    }
+  }, {
+    labelTextTKey: "fieldLabels.precioAlquiler",
+    tooltipTextTKey: "toolTips.precioAlquiler",
+    fieldName: "precioAlquiler",
+    fieldType: "simpleInput",
+    inputType: "number",
+    constraints: {
+      inputValue: {
+        numericality: {
+          onlyInteger: true,
+          lessThanOrEqualTo: 3000,
+        }
+      }
+    }
+  }, {
+    labelTextTKey: "fieldLabels.tipo",
+    tooltipTextTKey: "",
+    fieldName: "....",
+    fieldType: "simpleSelect",
+    optionsKey: "propertyTypesSelectValues",
+  }, {
+    labelTextTKey: "fieldLabels.estado",
+    tooltipTextTKey: "",
+    fieldName: "...",
+    fieldType: "simpleSelect",
+    options: [{
+      value: 0,
+      titleKey: "Nuevo"
+    }, {
+      value: 1,
+      titleKey: "En construcción"
+    }]
+  }, {
+    labelTextTKey: "fieldLabels.origen",
+    tooltipTextTKey: "",
+    fieldName: "idOrigenPropiedad",
+    fieldType: "simpleSelect",
+    options: [{
+      value: 0,
+      titleKey: "Private"
+    }, {
+      value: 1,
+      titleKey: "Builder"
+    }, {
+      value: 2,
+      titleKey: "Bank"
+    }]
+  }],
   actions: {
     savePropertyResource: function() {
       var propertyResource = this.get("propertyResource");

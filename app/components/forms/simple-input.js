@@ -2,8 +2,7 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
-  // inputType: function(){
-  // }.p
+  // classNames: ['form-group', 'fg-float'],
 
   activateTooltip: function() {
     this.$(".ayuda").tooltip();
@@ -25,7 +24,9 @@ export default Ember.Component.extend({
 
     var validateErrors = validate({
       inputValue: inputValue
-    }, constraints, {fullMessages: false});
+    }, constraints, {
+      fullMessages: false
+    });
     // debugger;
     if (validateErrors) {
       this.set("errors", validateErrors.inputValue);
