@@ -48,9 +48,9 @@ Router.map(function() {
       this.route("default", {
         path: "/"
       });
-      // this.route("property", {
-      //   path: "/:ref"
-      // });
+      this.route("nuevo", {
+        path: "/nuevo"
+      });
       this.route("editar", {
         path: '/:idPropiedad/editar'
       }, function() {

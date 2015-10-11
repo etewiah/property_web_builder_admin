@@ -8,6 +8,14 @@ export default {
   // },
 
   // "key.with.interpolation": "Text with {{anInterpolation}}"
+  "editarPropiedad": "Editar una propiedad",
+  "nuevoPropiedad": "Nuevo propiedad",
+  'buttonLabels': {
+    "editar": "Editar",
+    "nuevo": "Nuevo",
+    "guardar": "Guardar",
+    "crear": "Crear",
+  },
   "fieldLabels": {
     "localidad": "Localidad",
     "zona": "Zona",
