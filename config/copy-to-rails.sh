@@ -1,7 +1,7 @@
 # chmod 755 copy-to-rails.sh
 
 
-TARGET_ASSETS_DIR=../../inmo1/public/fe/default/$(date +%Y-%m-%d)/assets
+TARGET_ASSETS_DIR=../../inmo1/public/fe/client/$(date +%Y-%m-%d)/assets
 mkdir -p $TARGET_ASSETS_DIR
 
 rm -r $TARGET_ASSETS_DIR
@@ -16,7 +16,7 @@ for rf in $ASSETT_FILES
   done
 
 
-TARGET_FONTS_DIR=../../inmo1/public/fe/default/$(date +%Y-%m-%d)/fonts
+TARGET_FONTS_DIR=../../inmo1/public/fe/client/$(date +%Y-%m-%d)/fonts
 mkdir -p $TARGET_FONTS_DIR
 
 rm -r $TARGET_FONTS_DIR
@@ -28,7 +28,7 @@ do
 done
 
 
-TARGET_IMAGES_DIR=../../inmo1/public/fe/default/$(date +%Y-%m-%d)/img
+TARGET_IMAGES_DIR=../../inmo1/public/fe/client/$(date +%Y-%m-%d)/img
 mkdir -p $TARGET_IMAGES_DIR
 
 rm -r $TARGET_IMAGES_DIR

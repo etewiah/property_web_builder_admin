@@ -7,7 +7,7 @@ export default Ember.Component.extend({
       this.set("newAddress",locationInfo.clickedLocation.formatted_address);
       debugger;
     },
-    updateLocationFromMap: function(){
+    updateLocationFromMap: function(newAddressDetails){
       debugger;
     }
   },
