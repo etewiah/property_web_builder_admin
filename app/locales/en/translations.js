@@ -8,15 +8,34 @@ export default {
   // },
 
   // "key.with.interpolation": "Text with {{anInterpolation}}"
+  "true": "Yes",
+  "false": "No",
   "editarPropiedad": "Editar una propiedad",
   "nuevoPropiedad": "Nuevo propiedad",
+  "listadoPropiedades": "Listado de propiedades",
   'buttonLabels': {
     "editar": "Editar",
     "nuevo": "Nuevo",
     "guardar": "Guardar",
     "crear": "Crear",
   },
+
+  "toolTips": {
+    "temporadas": "Si el inmueble se alquila por temporadas",
+    "precioAntiguo": "El precio antes de la rebaja",
+    "precioAlquiler": "0 si el inmueble sólo es para venta",
+    "precioVenta": "Precio de venta",
+    "eficienciaEnergia": "Elija la eficiencia energética del inmueble",
+    "garaje": "Si el inmueble dispone de plaza de garaje o no",
+    "ref": "Referencia del inmueble",
+    "yaencontre": "Sí para publicar en Yaencontre, previo contrato con ellos.",
+    "pisoscom": "Sí para publicar en Pisoscom, previo contrato con ellos.",
+    "idealista": "Sí para publicar en Idealista, previo contrato con ellos."
+  },
   "fieldLabels": {
+    "yaencontre": "Yaencontre",
+    "pisoscom": "Pisoscom",
+    "idealista": "Idealista",
     "localidad": "Localidad",
     "zona": "Zona",
     "codigoPostal": "Codigo Postal",
@@ -201,15 +220,6 @@ export default {
   },
 
 
-  "toolTips": {
-    "temporadas": "Si el inmueble se alquila por temporadas",
-    "precioAntiguo": "El precio antes de la rebaja",
-    "precioAlquiler": "0 si el inmueble sólo es para venta",
-    "precioVenta": "Precio de venta",
-    "eficienciaEnergia": "Elija la eficiencia energética del inmueble",
-    "garaje": "Si el inmueble dispone de plaza de garaje o no",
-    "ref": "Referencia del inmueble"
-  },
   "some.translation.key": "Text for some.translation.key",
 
   "a": {

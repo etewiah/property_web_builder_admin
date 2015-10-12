@@ -4,10 +4,8 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   fieldOptions: function() {
     if (this.get("fieldDetails.optionsKey")) {
-      // debugger;
       return this.get("fieldKeys")[this.get("fieldDetails.optionsKey")];
     } else if (this.get("fieldDetails.fieldDbType") === "boolean") {
-      // debugger;
       return [{
         value: 1,
         titleKey: "Si"
@@ -40,7 +38,6 @@ export default Ember.Component.extend({
     }).val(currentOptionTitle).on('change', function(evt) {
       var selected = evt.target.value;
       // $(this).find("option:selected").val();
-debugger;
       var fieldOptions = this.get("fieldOptions");
       var selectValue = fieldOptions.findBy("titleKey", selected).value;
       this.set("propertyResource." + this.fieldDetails.fieldName, selectValue);

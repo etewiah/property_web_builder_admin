@@ -8,11 +8,6 @@ export default DS.Model.extend({
 
   tTipoPropiedad: Ember.computed('i18n.locale', 'tipoPropiedad', function() {
     return this.get("i18n").t("propertyTypes." + this.get("tipoPropiedad"));
-    // if (this.get('user.isAdmin')) {
-    //   return this.get('i18n').t('admin.edit.title');
-    // } else {
-    //   return this.get('i18n').t('user.edit.title');
-    // }
   }),
   // idPropiedad: DS.attr(),
   direccionPropiedad: DS.attr(),
@@ -48,6 +43,9 @@ export default DS.Model.extend({
   archivado: DS.attr(),
   visible: DS.attr(),
   codigoPostal: DS.attr(),
+  idealista: DS.attr(),
+  yaencontre: DS.attr(),
+  pisoscom: DS.attr(),
 
       // t.string :origen_propiedad
       // t.string :estado_propiedad

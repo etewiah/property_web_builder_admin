@@ -2,6 +2,33 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+
+  portalesInputFields: [
+    //this comment tricks prettify ;) 
+    {
+      labelTextTKey: "fieldLabels.yaencontre",
+      tooltipTextTKey: "toolTips.yaencontre",
+      fieldName: "yaencontre",
+      fieldType: "simpleSelect",
+      fieldDbType: "boolean",
+    },
+        {
+      labelTextTKey: "fieldLabels.pisoscom",
+      tooltipTextTKey: "toolTips.pisoscom",
+      fieldName: "pisoscom",
+      fieldType: "simpleSelect",
+      fieldDbType: "boolean",
+    },
+        {
+      labelTextTKey: "fieldLabels.idealista",
+      tooltipTextTKey: "toolTips.idealista",
+      fieldName: "idealista",
+      fieldType: "simpleSelect",
+      fieldDbType: "boolean",
+    }
+
+
+  ],
   characteristicasInputFields: [
     //this comment tricks prettify ;) 
     {
@@ -127,13 +154,6 @@ export default Ember.Component.extend({
       fieldName: "temporadas",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
-      // options: [{
-      //   value: 1,
-      //   titleKey: "Si"
-      // }, {
-      //   value: 0,
-      //   titleKey: "No"
-      // }]
     }, {
       labelTextTKey: "fieldLabels.precioTa",
       tooltipTextTKey: false,
