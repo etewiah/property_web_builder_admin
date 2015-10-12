@@ -174,6 +174,7 @@ export default {
   },
 
   propertyTypes: {
+    null: "Unknown",
     apartamento: "Apartamento",
     chaletIndependiente: "Chalet independiente",
     bungalow: "Bungalow",
