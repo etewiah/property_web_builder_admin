@@ -40,7 +40,7 @@ export default Ember.Component.extend({
     }).val(currentOptionTitle).on('change', function(evt) {
       var selected = evt.target.value;
       // $(this).find("option:selected").val();
-
+debugger;
       var fieldOptions = this.get("fieldOptions");
       var selectValue = fieldOptions.findBy("titleKey", selected).value;
       this.set("propertyResource." + this.fieldDetails.fieldName, selectValue);

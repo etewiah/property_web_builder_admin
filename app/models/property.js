@@ -28,6 +28,26 @@ export default DS.Model.extend({
   anoConstr: DS.attr(),
   mapaLat: DS.attr(),
   mapaLng: DS.attr(),
+
+  estadoPropiedad: DS.attr(),
+  tipoPropiedad: DS.attr(),
+  localidad: DS.attr(),
+  precioVenta: DS.attr(),
+  destacado: DS.attr(),
+  archivado: DS.attr(),
+  visible: DS.attr(),
+  codigoPostal: DS.attr(),
+
+      // t.string :origen_propiedad
+      // t.string :estado_propiedad
+      // t.string :tipo_propiedad
+      // t.string :localidad
+      // t.float :precio_venta
+      // t.boolean :destacado
+      // t.boolean :archivado
+      // t.boolean :visible
+
+
   //   mapa-lat: 39.5160831,
   // mapa-lng: -0.416378,
   // direccion-fisica: "",

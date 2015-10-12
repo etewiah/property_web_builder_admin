@@ -3,7 +3,8 @@
     <div class="card-header sep25">
         <h2>Listado de propiedades</h2>
         <div role="group" class="boton_anadir_propiedad">
-            <a href="editar_propiedad" data-toggle="tooltip" title="Añadir propiedad" class="btn bgm-cyan btn-circulo btn-float waves-effect"><i class="md md-add"></i></a>
+            <a href="editar_propiedad" data-toggle="tooltip" title="Añadir propiedad" class="btn bgm-cyan btn-circulo btn-float waves-effect">
+            <i class="fa fa-info"></i><i class="md md-add"></i></a>
         </div>
     </div>
     
@@ -26,15 +27,23 @@
             <tbody>
 
           {{#each model as |item|}} 
-            <tr {{action "editProperty" item }}>
+            <tr >
               <td>{{ item.titleEn }}</td>
-              <td>No</td>
+              <td>{{ item.destacado }}</td>
+              <td>{{ item.localidad }}</td>
               <td>{{ item.zonaDireccion }}</td>
-              <td></td>
-              <td>Apartamento</td>
+              <td>{{t item.tipoPropiedad }}</td>
               <td>Precio</td>
               <td>2/1</td>
               <td>Visible</td>
+              <td>
+              <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" item }} data-id_propiedad="1">
+              <i class="md md-edit"><i class="fa fa-pencil"></i></i>
+              </button>
+              <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" item }} data-id_propiedad="1">
+              <i class="md md-edit"><i class="fa fa-trash"></i></i>
+              </button>
+              </td>
             </tr>
           {{/each}} 
 

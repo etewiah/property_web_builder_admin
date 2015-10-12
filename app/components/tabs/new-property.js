@@ -10,7 +10,6 @@ export default Ember.Component.extend({
       var self = this;
 
       function transitionToPost(propertyResource) {
-        debugger;
         self.get('router').transitionTo('admin.propiedades.editar', propertyResource.id);
         // self.transitionToRoute('admin.propiedades.editar', propertyResource.id);
       }

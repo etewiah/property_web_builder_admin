@@ -10,13 +10,13 @@ export default Ember.Component.extend({
       fieldName: "eficienciaEnergia",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
-      options: [{
-        value: 1,
-        titleKey: "Si"
-      }, {
-        value: 0,
-        titleKey: "No"
-      }]
+      // options: [{
+      //   value: 1,
+      //   titleKey: "Si"
+      // }, {
+      //   value: 0,
+      //   titleKey: "No"
+      // }]
     }, {
       labelTextTKey: "fieldLabels.anoConstr",
       tooltipTextTKey: false,
@@ -109,13 +109,13 @@ export default Ember.Component.extend({
       fieldName: "numGarajes",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
-      options: [{
-        value: 1,
-        titleKey: "Si"
-      }, {
-        value: 0,
-        titleKey: "No"
-      }]
+      // options: [{
+      //   value: 1,
+      //   titleKey: "Si"
+      // }, {
+      //   value: 0,
+      //   titleKey: "No"
+      // }]
     },
   ],
 
@@ -127,13 +127,13 @@ export default Ember.Component.extend({
       fieldName: "temporadas",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
-      options: [{
-        value: 1,
-        titleKey: "Si"
-      }, {
-        value: 0,
-        titleKey: "No"
-      }]
+      // options: [{
+      //   value: 1,
+      //   titleKey: "Si"
+      // }, {
+      //   value: 0,
+      //   titleKey: "No"
+      // }]
     }, {
       labelTextTKey: "fieldLabels.precioTa",
       tooltipTextTKey: false,
@@ -238,13 +238,13 @@ export default Ember.Component.extend({
   }, {
     labelTextTKey: "fieldLabels.tipo",
     tooltipTextTKey: "",
-    fieldName: "....",
+    fieldName: "tipoPropiedad",
     fieldType: "simpleSelect",
     optionsKey: "propertyTypesSelectValues",
   }, {
     labelTextTKey: "fieldLabels.estado",
     tooltipTextTKey: "",
-    fieldName: "...",
+    fieldName: "estadoPropiedad",
     fieldType: "simpleSelect",
     options: [{
       value: 0,
@@ -256,7 +256,7 @@ export default Ember.Component.extend({
   }, {
     labelTextTKey: "fieldLabels.origen",
     tooltipTextTKey: "",
-    fieldName: "idOrigenPropiedad",
+    fieldName: "origenPropiedad",
     fieldType: "simpleSelect",
     options: [{
       value: 0,
