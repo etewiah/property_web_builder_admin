@@ -2,16 +2,20 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+  i18n: Ember.inject.service(),
   fieldOptions: function() {
     if (this.get("fieldDetails.optionsKey")) {
       return this.get("fieldKeys")[this.get("fieldDetails.optionsKey")];
     } else if (this.get("fieldDetails.fieldDbType") === "boolean") {
+      // below would return a safestring if I didn't call ".string"...
+      var trueText = this.get("i18n").t("true").string;
+      var falseText = this.get("i18n").t("false").string;
       return [{
         value: 1,
-        titleKey: "Si"
+        titleKey: trueText
       }, {
         value: 0,
-        titleKey: "No"
+        titleKey: falseText
       }];
     } else {
       return this.get("fieldDetails.options");
