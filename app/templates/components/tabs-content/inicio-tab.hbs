@@ -1,12 +1,14 @@
 {{#if isActive}}
 <div role="tabpanel" class="tab-pane" id="descripcion">
   <div class="row">
+  {{#each contentResources as |contentItem|}}
   {{#each languages as |languageSettings|}}
     <div class="col-sm-12" style="padding-bottom: 3%;">
       <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right" 
-      {{action "saveContentItem"}}>Save</button>
+      {{action "saveContentItem" contentItem }}>Save</button>
       {{forms/content-item languageSettings=languageSettings contentItem=contentItem}}
     </div>
+  {{/each}}    
   {{/each}}
   </div>
 

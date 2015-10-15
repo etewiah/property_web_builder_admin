@@ -9,8 +9,8 @@ export default Ember.Route.extend({
   },
   model() {
     // TODO - filter search to content relevant to tab
-    // return this.store.findAll('content'); 
-    return this.store.findRecord('webContent', "test");
+    return this.store.findAll('webContent'); 
+    // return this.store.findRecord('webContent', "test");
 
   },
   setupController(controller, model) {

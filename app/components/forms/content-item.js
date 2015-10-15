@@ -2,23 +2,23 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-  descriptionValue: Ember.computed('propertyResource', {
+  contentValue: Ember.computed('contentItem', {
     get(key) {
-        debugger;
-        return this.get("contentItem.rawEn");
-        // return this.get("propertyResource." + this.languageSettings.descriptionFieldName);
+        // return this.get("contentItem.rawEn");
+        return this.get("contentItem." + this.languageSettings.contentFieldName);
       },
       set(key, value) {
-        this.set("propertyResource." + this.languageSettings.descriptionFieldName, value);
+        // this.set("contentItem.rawEn", value);
+        this.set("contentItem." + this.languageSettings.contentFieldName, value);
         return value;
       }
   }),
-  // titleValue: Ember.computed('propertyResource', {
+  // titleValue: Ember.computed('contentItem', {
   //   get(key) {
-  //       return this.get("propertyResource." + this.languageSettings.titleFieldName);
+  //       return this.get("contentItem." + this.languageSettings.titleFieldName);
   //     },
   //     set(key, value) {
-  //       this.set("propertyResource." + this.languageSettings.titleFieldName, value);
+  //       this.set("contentItem." + this.languageSettings.titleFieldName, value);
   //       return value;
   //     }
   // })

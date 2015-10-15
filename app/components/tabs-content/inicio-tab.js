@@ -3,25 +3,19 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   languages: [{
-    titleLabelKey: "fieldLabels.tituloIngles",
-    descriptionLabelKey: "fieldLabels.descripcionIngles",
-    descriptionFieldName: "rawEn",
+    contentLabelKey: "fieldLabels.descripcionIngles",
+    contentFieldName: "rawEn",
   }, {
-    titleLabelKey: "fieldLabels.tituloEspanol",
-    descriptionLabelKey: "fieldLabels.descripcionEspanol",
-    descriptionFieldName: "rawEs",
+    contentLabelKey: "fieldLabels.descripcionEspanol",
+    contentFieldName: "rawEs",
   }],
-  contentItem: function(){
-    return this.get("contentResources");
-    // return this.contentResources.findBy("id", "test");
-  }.property("contentResources"),
+  // contentItem: function(){
+  //   return this.contentResources.findBy("id", "test");
+  // }.property("contentResources"),
 
   actions: {
-    saveContentItem: function() {
-      var contentItem = this.get("contentItem");
-
-      debugger;
-
+    saveContentItem: function(contentItem) {
+      // var contentItem = this.get("contentItem");
       function transitionToPost(contentItem) {
         // self.transitionToRoute('posts.show', post);
       }
