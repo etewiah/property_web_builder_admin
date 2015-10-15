@@ -5,6 +5,9 @@ export default Ember.Route.extend({
     setActiveLeftNav: function() {
       var applicationController = this.controllerFor("application");
       var currentRouteName = applicationController.currentRouteName;
+      if (currentRouteName === "index") {
+        return;
+      }
       var activeTabRoute = "admin.inicio";
       // TODO - improve this logic a bit...
       if (currentRouteName.indexOf("propiedades") > 0) {
