@@ -3,7 +3,11 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   // i18n: Ember.inject.service(),
-
+  labelKey: Ember.computed('key', {
+    get() {
+        return "webContentLabels." + this.get("key");
+      }
+  }),
   // tTipoPropiedad: Ember.computed('i18n.locale', 'tipoPropiedad', function() {
   //   return this.get("i18n").t("propertyTypes." + this.get("tipoPropiedad"));
   // }),

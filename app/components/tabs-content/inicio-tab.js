@@ -2,13 +2,12 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
-  languages: [{
-    contentLabelKey: "fieldLabels.descripcionIngles",
-    contentFieldName: "rawEn",
-  }, {
-    contentLabelKey: "fieldLabels.descripcionEspanol",
-    contentFieldName: "rawEs",
-  }],
+  // languages: [{
+  //   contentFieldName: "En",
+  // }, {
+  //   contentFieldName: "Es",
+  // }],
+  languages: ["En","Es"],
   // contentItem: function(){
   //   return this.contentResources.findBy("id", "test");
   // }.property("contentResources"),

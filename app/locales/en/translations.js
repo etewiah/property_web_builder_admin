@@ -20,6 +20,13 @@ export default {
     "crear": "Crear",
   },
 
+  "webContentLabels": {
+    "suffixEn": "en Inglés",
+    "suffixEs": "en Español",
+    "landingPageHero": "Contenido para pagina principal",
+    // "landingPageHeroEs": "Contenido para pagina principal en Español"
+  },
+
   "toolTips": {
     "temporadas": "Si el inmueble se alquila por temporadas",
     "precioAntiguo": "El precio antes de la rebaja",
