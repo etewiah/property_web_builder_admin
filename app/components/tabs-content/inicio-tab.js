@@ -12,8 +12,7 @@ export default Ember.Component.extend({
     descriptionFieldName: "rawEs",
   }],
   contentItem: function(){
-    debugger;
-    return contentResources;
+    return this.get("contentResources");
     // return this.contentResources.findBy("id", "test");
   }.property("contentResources"),
 
