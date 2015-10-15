@@ -7,39 +7,31 @@ export default Ember.Route.extend({
     //   this.transitionTo("admin.propiedades.editar", property.get('idPropiedad'))
     // }
   },
-  // model(params) {
-  //   // debugger;
-  //   var extras = Extras.get(this.paramsFor('admin.propiedades.editar').idPropiedad);
-  //   return extras;
-  // },
+  model() {
+    // TODO - filter search to content relevant to tab
+    // return this.store.findAll('content'); 
+    return this.store.findRecord('content', "test");
+
+  },
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.content.tab').tabName || "";
     controller.set("activeTabName", activeTabName.toLowerCase());
-    controller.set("property", this.modelFor('admin.propiedades.editar'));
-    // TODO - get extras from model above and remove line below
-    controller.set("extrasObject", model);
-    var adminController = this.controllerFor("admin");
+    // controller.set("property",  this.modelFor('admin.content'));
     // debugger;
-    controller.set("fieldKeys", adminController.fieldKeys);
-    
+    controller.set("contentResources", model);
+
+
+    // controller.set("extrasObject", model);
+    // var adminController = this.controllerFor("admin");
+    // // debugger;
+    // controller.set("fieldKeys", adminController.fieldKeys);
+
     controller.set("tabsList", [{
-      tabValue: "general",
-      tabTitle: "General"
-    }, {
-      tabValue: "situacion",
-      tabTitle: "Situación"
+      tabValue: "inicio",
+      tabTitle: "inicio"
     }, {
       tabValue: "descripcion",
       tabTitle: "Descripción"
-    }, {
-      tabValue: "extras",
-      tabTitle: "Extras"
-    }, {
-      tabValue: "fotos",
-      tabTitle: "Fotos"
-    }, {
-      tabValue: "venta",
-      tabTitle: "Venta"
     }]);
   }
 });
