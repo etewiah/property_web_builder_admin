@@ -4,7 +4,7 @@
  --}}
 
     {{#each tabsList as |tab|}}
-        <li class={{if (eq tab.tabValue activeTabName) "active"}} >{{#link-to 'admin.content.tab' tab.tabValue}}{{tab.tabTitle}}{{/link-to}}</li>  
+        <li class={{if (eq tab.tabValue activeTabName) "active"}} >{{#link-to 'admin.content.tab' tab.tabValue}}{{t tab.tabTitleKey}}{{/link-to}}</li>  
     {{/each}}
 
   </ul>
@@ -12,8 +12,6 @@
 
 
     {{tabs-content/inicio-tab activeTabName=activeTabName contentResources=contentResources  }}
-
-    {{tabs/description-tab activeTabName=activeTabName propertyResource=property }}
 
 
 

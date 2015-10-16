@@ -15,4 +15,12 @@ export default DS.Model.extend({
   key: DS.attr(),
   rawEn: DS.attr(),
   rawEs: DS.attr(),
+  tag: DS.attr()
 });
+
+    // add_column :contents, :input_type, :string
+    // add_column :contents, :tag, :string
+    // add_column :contents, :last_updated_by_user_id, :integer
+    // add_column :contents, :status, :string
+    // add_column :contents, :order_position, :integer
+    // add_column :contents, :target_url, :string

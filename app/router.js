@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 
-Ember.Router.reopen( {
+Ember.Router.reopen({
   updateTitle: function() {
     // call action in application route
     this.send('setActiveLeftNav');
@@ -38,7 +38,9 @@ Router.map(function() {
       //   });
       // });
     });
-    this.route("propiedades", function() {
+    this.route("propiedades", {
+      path: '/properties'
+    }, function() {
       this.route("default", {
         path: "/"
       });

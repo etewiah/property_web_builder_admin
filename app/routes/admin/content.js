@@ -2,7 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   // model() {
-  //   return this.store.findAll('content'); // or any other user you like
+  //   return this.store.findAll('webContent'); 
+  //   // return this.store.findRecord('webContent', "test");
   // },
   actions: {
     // editProperty(property) {

@@ -9,7 +9,6 @@ export default Ember.Route.extend({
     // }
   },
   model(params) {
-    // debugger;
     var extras = Extras.get(this.paramsFor('admin.propiedades.editar').idPropiedad);
     return extras;
   },
@@ -20,7 +19,6 @@ export default Ember.Route.extend({
     // TODO - get extras from model above and remove line below
     controller.set("extrasObject", model);
     var adminController = this.controllerFor("admin");
-    // debugger;
     controller.set("fieldKeys", adminController.fieldKeys);
     
     controller.set("tabsList", [{
