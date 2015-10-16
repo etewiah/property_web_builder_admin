@@ -13,6 +13,9 @@ export default Ember.Route.extend({
       if (currentRouteName.indexOf("propiedades") > 0) {
         activeTabRoute = "admin.propiedades";
       }
+      if (currentRouteName.indexOf("content") > 0) {
+        activeTabRoute = "admin.content";
+      }
       var adminController = this.controllerFor("admin");
       adminController.set("activeTabRoute", activeTabRoute);
     }

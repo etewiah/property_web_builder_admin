@@ -3,8 +3,12 @@
     <div class="card-header sep25">
         <h2>{{t "listadoPropiedades" }}</h2>
         <div role="group" class="boton_anadir_propiedad">
-            <a href="editar_propiedad" data-toggle="tooltip" title="Añadir propiedad" class="btn bgm-cyan btn-circulo btn-float waves-effect">
-            <i class="fa fa-plus"></i><i class="md md-add"></i></a>
+        {{#link-to "admin.propiedades.nuevo" data-toggle="tooltip" title="Añadir propiedad" class="btn bgm-cyan btn-circulo btn-float waves-effect" }} 
+         <i class="fa fa-plus"></i><i class="md md-add"></i>
+        {{/link-to}}  
+
+{{!--             <a href="editar_propiedad" data-toggle="tooltip" title="Añadir propiedad" class="btn bgm-cyan btn-circulo btn-float waves-effect">
+            <i class="fa fa-plus"></i><i class="md md-add"></i></a> --}}
         </div>
     </div>
     

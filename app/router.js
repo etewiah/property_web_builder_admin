@@ -27,16 +27,6 @@ Router.map(function() {
       this.route("tab", {
         path: "/:tabName"
       });
-      // this.route("editar", {
-      //   path: '/:idPropiedad/editar'
-      // }, function() {
-      //   this.route("default", {
-      //     path: "/"
-      //   });
-      //   this.route("tab", {
-      //     path: "/:tabName"
-      //   });
-      // });
     });
     this.route("propiedades", {
       path: '/properties'
@@ -45,10 +35,10 @@ Router.map(function() {
         path: "/"
       });
       this.route("nuevo", {
-        path: "/nuevo"
+        path: "/new"
       });
       this.route("editar", {
-        path: '/:idPropiedad/editar'
+        path: '/:idPropiedad/edit'
       }, function() {
         this.route("default", {
           path: "/"
