@@ -24,7 +24,8 @@ export default {
     "suffixEn": "en Inglés",
     "suffixEs": "en Español",
     "landingPageHero": "Contenido para pagina principal",
-    "aboutUs": "Sobre Nosotros"
+    "aboutUs": "Sobre Nosotros",
+    // "tagLine": "Lema"
     // "landingPageHeroEs": "Contenido para pagina principal en Español"
   },
   "webContentSections": {
