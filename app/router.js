@@ -15,7 +15,9 @@ Ember.Router.reopen({
 
 
 Router.map(function() {
-  this.route('admin', function() {
+  this.route('admin', {
+    path: "/:locale/admin"
+  }, function() {
     this.route("default", {
       path: "/"
     });

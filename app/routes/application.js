@@ -1,12 +1,12 @@
 import Ember from 'ember';
-const { Route, inject } = Ember;
+// const { Route, inject } = Ember;
 
 export default Ember.Route.extend({
-  translationsFetcher: inject.service(),
+  // translationsFetcher: inject.service(),
 
-  beforeModel: function() {
-    return this.get('translationsFetcher').fetch();
-  },
+  // beforeModel: function() {
+  //   return this.get('translationsFetcher').fetch();
+  // },
   actions: {
     setActiveLeftNav: function() {
       var applicationController = this.controllerFor("application");

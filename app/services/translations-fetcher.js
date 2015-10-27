@@ -1,16 +1,20 @@
 // https://github.com/jamesarosen/ember-i18n/wiki/Example:-Fetching-Translations-Live
 // app/services/translations-fetcher.js
+// thie service gets used in beforeModel of admin route
 import Ember from "ember";
 import { request } from "ic-ajax";
 const { Service, inject } = Ember;
 
-const PATH = '/api/v1/client_translations.json';
+const BASE_PATH = '/api/v1/client_translations/';
 
 export default Service.extend({
   i18n: inject.service(),
 
-  fetch() {
-    return request(PATH).then(this._addTranslations.bind(this));
+  fetch(locale) {
+    // var i18n = this.get('i18n');
+    // locale is set in admin route and passed in here
+    var translationsPath = BASE_PATH + locale;
+    return request(translationsPath).then(this._addTranslations.bind(this));
   },
 
   _addTranslations(json) {
