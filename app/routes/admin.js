@@ -1,6 +1,8 @@
 import Ember from 'ember';
 import AdminMeta from '../models/admin_meta';
-const { Route, inject } = Ember;
+const {
+  Route, inject
+} = Ember;
 
 export default Ember.Route.extend({
 
@@ -13,7 +15,7 @@ export default Ember.Route.extend({
     if (i18n.get("locales").contains(localeToUse)) {
       // if the locale param passed in is valid, lets set and use that
       i18n.set("locale", localeToUse);
-    } else{
+    } else {
       // else lets just use the default
       // TODO - set url to reflect default locale
       localeToUse = i18n.get("locale");
@@ -23,25 +25,30 @@ export default Ember.Route.extend({
 
 
   model(params) {
-      var adminMeta = AdminMeta.get(this.paramsFor('admin.propiedades.editar').idPropiedad);
-      // TODO - stop passing in dummy param above
-      // adminMeta is from http://localhost:3000/api/v1/lang/field_keys/
-      // and just returns a list of selectValues for provinces and propertyTypes..
+    var adminMeta = AdminMeta.get(this.paramsFor('admin.propiedades.editar').idPropiedad);
+    // TODO - stop passing in dummy param above
+    // adminMeta is from http://localhost:3000/api/v1/lang/field_keys/
+    // and just returns a list of selectValues for provinces and propertyTypes..
 
-      return adminMeta;
-    },
+    return adminMeta;
+  },
 
-    setupController(controller, model) {
-      controller.set("fieldKeys", model.selectValues);
-      controller.set("leftNavItems", [{
+  setupController(controller, model) {
+    controller.set("fieldKeys", model.selectValues);
+    controller.set("leftNavItems", [{
         tabIconClass: "fa fa-home",
         tabTitle: "Inicio",
         tabRoute: "admin.inicio"
       }, {
         tabIconClass: "fa fa-desktop",
-        tabTitle: "Web",
+        tabTitle: "Content",
         tabRoute: "admin.content"
       }, {
+        tabIconClass: "fa fa-language",
+        tabTitle: "Translations",
+        tabRoute: "admin.translations"
+      },
+      {
         tabIconClass: "fa fa-building-o",
         tabTitle: "Propiedades",
         tabRoute: "admin.propiedades"
@@ -50,7 +57,7 @@ export default Ember.Route.extend({
         tabTitle: "Clientes",
         tabRoute: "admin.default"
 
-      }, 
+      },
 
       // {
       //   tabIconClass: "fa fa-calendar",
@@ -79,12 +86,13 @@ export default Ember.Route.extend({
       //   tabIconClass: "fa fa-support",
       //   tabTitle: "Soporte",
       //   tabRoute: "admin.default"
-      // }, {
+      // }, 
+      // {
       //   tabIconClass: "fa fa-sign-out",
       //   tabTitle: "Salir",
       //   tabRoute: "admin.default"
       // }
 
-      ]);
-    }
+    ]);
+  }
 });

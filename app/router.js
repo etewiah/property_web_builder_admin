@@ -30,6 +30,14 @@ Router.map(function() {
         path: "/:tabName"
       });
     });
+    this.route("translations", function() {
+      this.route("default", {
+        path: "/"
+      });
+      this.route("tab", {
+        path: "/:tabName"
+      });
+    });
     this.route("propiedades", {
       path: '/properties'
     }, function() {
