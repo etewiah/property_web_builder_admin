@@ -25,18 +25,6 @@ var AdminMeta = Ember.Object.extend({
 });
 
 AdminMeta.reopenClass({
-  getAdminTranslations: function(batchKey) {
-    var apiUrl = "/api/v1/lang/admin_translations/" + batchKey;
-    return $.ajax(apiUrl, {
-      type: 'GET',
-      dataType: 'json'
-    }).then(function(result) {
-      // return AdminMeta.create(result);
-      return result;
-    }.bind(this), function(error) {
-      return error;
-    });
-  },
   get: function(id) {
     var apiUrl = "/api/v1/lang/field_keys/" ;
     return $.ajax(apiUrl, {

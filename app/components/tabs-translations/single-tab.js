@@ -9,17 +9,24 @@ export default Ember.Component.extend({
   // }],
   languages: ["En", "Es"],
   groupedTranslations1: function() {
-    var adminTranslations = this.get("adminTranslations");
+    // sortorder below will be a bit random is there are significant differences between languages
+    // TODO - fix sortorder
+    var adminTranslations = this.get("adminTranslations").sortBy("i18n_value");
     var groupedTranslations1 = [];
     var parsedTranslations = [];
     adminTranslations.forEach(function(translateItem) {
       if (parsedTranslations.contains(translateItem.i18n_key)) {
-        // do nothing;
+        // a groupedTranslations array item is also an array - and that second array contains
+        // translations for each locale
+        // parsedTranslations containing a key indicates that U have already added that batch of
+        // translations so do nothing;
       } else {
-        groupedTranslations1.push(adminTranslations.filterBy("i18n_key", translateItem.i18n_key));
+        groupedTranslations1.push(adminTranslations.filterBy("i18n_key", translateItem.i18n_key).sortBy("locale"));
         parsedTranslations.push(translateItem.i18n_key);
       }
     });
+    // groupedTranslations1 = groupedTranslations1.sortBy("i18n_key");
+    // debugger;
     var groupedTranslations2 = [];
     if (groupedTranslations1.length > 7) {
       var half_length = Math.ceil(groupedTranslations1.length / 2);

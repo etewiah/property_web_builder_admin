@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import AdminMeta from '../../../models/admin_meta';
+import AdminTranslations from '../../../models/admin_translations';
 
 export default Ember.Route.extend({
   // tabsList: [{}],
@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     // }
   },
   model(params) {
-    var adminTranslations = AdminMeta.getAdminTranslations(params.tabName);
+    var adminTranslations = AdminTranslations.get(params.tabName);
     return adminTranslations;
   },
 
