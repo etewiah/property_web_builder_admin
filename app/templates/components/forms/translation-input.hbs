@@ -1,0 +1,13 @@
+<div class="col-sm-3" style="padding-bottom: 3%;">
+  <a class="ayuda" data-toggle="tooltip" title="" data-original-title=>
+  ref<i class="fa fa-info"></i></a>
+</div>
+<div class="col-sm-9" style="padding-bottom: 3%;">
+{{#each translationBatch as |translation|}}
+<div class="fg-line {{if errors 'has-error'}} ">
+  <label class="fg-label arriba_label">{{translation.locale}}:</label>
+
+  {{input value=translation.i18n_value type="text"  class="input-sm form-control fg-input"  }}
+</div>
+{{/each}}
+</div>

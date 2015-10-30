@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import AdminMeta from '../../../models/admin_meta';
 
 export default Ember.Route.extend({
   // tabsList: [{}],
@@ -8,25 +9,10 @@ export default Ember.Route.extend({
     // }
   },
   model(params) {
-    // GET to /persons?filter[name]=Peter
-    // this.store.query('person', {
-    //   filter: {
-    //     name: 'Peter'
-    //   }
-    // }).then(function(peters) {
-    //   // Do something with `peters`
-    // });
-    return this.store.query("webContent", {
-      filter: {
-        tag: params.tabName
-      }
-    });
-    // return this.store.findAll('webContent'); 
-    // return params.tabName;
-    // return this.store.findRecord('webContent', "test");
+    var propertyTypes = AdminMeta.getPropertyTypes();
+    return propertyTypes;
   },
-  // setupController will not get called if model does not change
-  // eg if I returned a query that was not dependant on params....
+
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.content.tab').tabName || "";
     controller.set("activeTabName", activeTabName.toLowerCase());

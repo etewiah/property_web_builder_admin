@@ -1,0 +1,11 @@
+<div role="tabpanel" class="tab-pane" id="descripcion">
+  {{#each groupedTranslations as |translationBatch|}}
+  <div class="row">
+{{!--   <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right" 
+      {{action "savetranslationBatch" translationBatch }}>Save</button>
+ --}}
+  {{forms/translation-input  translationBatch=translationBatch}}
+  </div>
+  {{/each}}
+
+</div>
