@@ -21,6 +21,7 @@ export default Ember.Component.extend({
         // parsedTranslations containing a key indicates that U have already added that batch of
         // translations so do nothing;
       } else {
+        // have to sort batches by locale
         groupedTranslations1.push(adminTranslations.filterBy("i18n_key", translateItem.i18n_key).sortBy("locale"));
         parsedTranslations.push(translateItem.i18n_key);
       }

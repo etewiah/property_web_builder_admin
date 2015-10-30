@@ -1,9 +1,90 @@
 import Ember from 'ember';
+var inject = Ember.inject;
 
 export default Ember.Component.extend({
+  configFetcher: inject.service(),
+  // http://www.programwitherik.com/ember-services-tutorial
+  // could also use:
+  // othername: Ember.inject.service('configFetcher'),  
+
+  // actions: {
+  //     pressMe: function() {
+  //         var testText = this.get('start').thisistest();
+  //         this.set('message',testText);
+  //         console.log(this.get('start').isAuthenticated);
+  //     }
+  // }
+
+
   infoWindows: [],
   doubleClicked: false,
   clickEvent: null,
+
+
+  renderMapWithoutMarkers: function() {
+    this.mapOptions.mapTypeId = google.maps.MapTypeId.ROADMAP;
+    this.$("#interactive-map-canvas").css("min-height", "400px");
+    this.map = new google.maps.Map(document.getElementById(
+      'interactive-map-canvas'), this.mapOptions);
+    var geoDetails = this.get('geo');
+    if (geoDetails && geoDetails.latitude) {
+      var mapCenter = new google.maps.LatLng(geoDetails.latitude, geoDetails.longitude);
+      // this.mapOptions.center = mapCenter;
+      this.map.setCenter(mapCenter);
+
+    } else {
+      var defaultBounds = this.get("configFetcher").getConfigForKey("defaultBounds");
+      var swArray = defaultBounds.sw.split(',');
+      var neArray = defaultBounds.ne.split(',');
+      var southWest = new google.maps.LatLng(parseFloat(swArray[0]), parseFloat(swArray[1]));
+      var northEast = new google.maps.LatLng(parseFloat(neArray[0]),parseFloat(neArray[1]));
+
+      // var southWest = new google.maps.LatLng(36.56293033928735, -11.776123046875);
+      // var northEast = new google.maps.LatLng(43.293499628577926, 4.857177734375);
+      var bounds = new google.maps.LatLngBounds(southWest, northEast);
+      this.map.fitBounds(bounds);
+    }
+
+
+    // below makes the map available outside this component
+    this.set('geo.map', this.map);
+
+    var that = this;
+    google.maps.event.addListener(this.map, 'click', function(event) {
+      that.mapClicked(event.latLng.lat(), event.latLng.lng());
+    });
+    // if (geoDetails && geoDetails.bounds_value) {
+    //   var bounds = new google.maps.LatLngBounds();
+    //   try {
+    //     var boundsJSON = JSON.parse(geoDetails.bounds_value);
+    //     // sometimes bounds_value is not valid - just swallow the error in that case
+    //     var neLatlng = new google.maps.LatLng(boundsJSON[0][0], boundsJSON[0][1]);
+    //     var swLatlng = new google.maps.LatLng(boundsJSON[1][0], boundsJSON[1][1]);
+    //     bounds.extend(neLatlng);
+    //     bounds.extend(swLatlng);
+    //     this.map.fitBounds(bounds);
+    //     google.maps.event.addListenerOnce(this.map, 'bounds_changed', function(event) {
+    //       // 
+    //       var newZoom = this.getZoom() + 1;
+    //       this.setZoom(newZoom);
+    //     });
+
+    //   } catch (e) {
+    //     // TODO - throw to discourse
+    //   }
+    //   // var currentZoom = this.map.getZoom();
+    //   // this.map.setOptions({maxZoom: currentZoom});
+    //   // this.map.setZoom(this.map.getZoom() + 1);
+    // }
+    // this.displaySearchBox();
+    google.maps.event.addListener(this.map, 'bounds_changed', function(event) {
+      // useful for when I want to figure out bounds for a country..
+      // debugger;
+      // var newZoom = this.getZoom() + 1;
+      // this.setZoom(newZoom);
+    });
+  },
+
 
   markers: function() {
     var can_edit = true;
@@ -270,186 +351,118 @@ export default Ember.Component.extend({
     }]
   },
 
-  renderMapWithoutMarkers: function() {
-    var geoDetails = this.get('geo');
-    var mapCenter = new google.maps.LatLng(geoDetails.latitude, geoDetails.longitude);
-
-    this.mapOptions.center = mapCenter;
-    this.mapOptions.mapTypeId = google.maps.MapTypeId.ROADMAP;
-
-    this.$("#interactive-map-canvas").css("min-height", "400px");
-    this.map = new google.maps.Map(document.getElementById(
-        'interactive-map-canvas'),
-      this.mapOptions);
-
-    // below makes the map available outside this component
-    this.set('geo.map', this.map);
-
-    var that = this;
-    google.maps.event.addListener(this.map, 'click', function(event) {
-      that.mapClicked(event.latLng.lat(), event.latLng.lng());
-    });
-    if (geoDetails && geoDetails.bounds_value) {
-      var bounds = new google.maps.LatLngBounds();
-      try {
-        var boundsJSON = JSON.parse(geoDetails.bounds_value);
-        // sometimes bounds_value is not valid - just swallow the error in that case
-        var neLatlng = new google.maps.LatLng(boundsJSON[0][0], boundsJSON[0][1]);
-        var swLatlng = new google.maps.LatLng(boundsJSON[1][0], boundsJSON[1][1]);
-        bounds.extend(neLatlng);
-        bounds.extend(swLatlng);
-        this.map.fitBounds(bounds);
-        google.maps.event.addListenerOnce(this.map, 'bounds_changed', function(event) {
-          // 
-          var newZoom = this.getZoom() + 1;
-          this.setZoom(newZoom);
-        });
-
-      } catch (e) {
-        // TODO - throw to discourse
-      }
-      // var currentZoom = this.map.getZoom();
-      // this.map.setOptions({maxZoom: currentZoom});
-      // this.map.setZoom(this.map.getZoom() + 1);
-    }
-    this.displaySearchBox();
-  },
-
-  renderMapWithMarkers: function() {
-    var displayContext = this.get('displayContext');
-    var currentMarkerValues = this.get('markers');
-    // var mapCenter = new google.maps.LatLng(currentMarkerValues[0].latitude,
-    //   currentMarkerValues[0].longitude);
-    var geoDetails = this.get('geo');
-
-    var mapCenter = new google.maps.LatLng(geoDetails.latitude, geoDetails.longitude);
-    this.mapOptions.center = mapCenter;
-    this.mapOptions.mapTypeId = google.maps.MapTypeId.ROADMAP;
-    this.map = new google.maps.Map(document.getElementById(
-        'interactive-map-canvas'),
-      this.mapOptions);
-
-    // below makes the map available outside this component
-    // this is useful when I need to do google place searches - 
-    // eg in place-research modal (passed through in showPlaceResearchModal method)
-    // perhaps will get rid of this.map and always use geo.map...
-    this.set('geo.map', this.map);
-
-    // aug 2015 - now seting map on the meetdown model directly - more versitile
-    //  1st real life use is for ..../places/details  route
-    this.set('mapHolder.map', this.map);
 
 
-    var bounds = new google.maps.LatLngBounds();
-    // TODO - ensure I have unique markers where location is same
-    this.infoWindows = [];
-    this.markers = [];
-    var that = this;
-    $.each(currentMarkerValues, function(index, detailsForMarker) {
-      var addressString = "";
-      var icon = that.topic_icon;
-      addressString = detailsForMarker.location.address;
-      var title = detailsForMarker.location.title;
+  // renderMapWithMarkers: function() {
+  //   var displayContext = this.get('displayContext');
+  //   var currentMarkerValues = this.get('markers');
+  //   // var mapCenter = new google.maps.LatLng(currentMarkerValues[0].latitude,
+  //   //   currentMarkerValues[0].longitude);
+  //   var geoDetails = this.get('geo');
+
+  //   var mapCenter = new google.maps.LatLng(geoDetails.latitude, geoDetails.longitude);
+  //   this.mapOptions.center = mapCenter;
+  //   this.mapOptions.mapTypeId = google.maps.MapTypeId.ROADMAP;
+  //   this.map = new google.maps.Map(document.getElementById(
+  //       'interactive-map-canvas'),
+  //     this.mapOptions);
+
+  //   // below makes the map available outside this component
+  //   // this is useful when I need to do google place searches - 
+  //   // eg in place-research modal (passed through in showPlaceResearchModal method)
+  //   // perhaps will get rid of this.map and always use geo.map...
+  //   this.set('geo.map', this.map);
+
+  //   // aug 2015 - now seting map on the meetdown model directly - more versitile
+  //   //  1st real life use is for ..../places/details  route
+  //   this.set('mapHolder.map', this.map);
 
 
-      var myLatlng = new google.maps.LatLng(detailsForMarker.location.latitude, detailsForMarker.location.longitude);
-      // (52.519171, 13.4060912);
-      // latlngbounds.extend(latLng);
-      bounds.extend(myLatlng);
-      var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: that.map,
-        title: title,
-        icon: icon,
-        showingInfoWindow: false,
-        location_id: detailsForMarker.location_id
-          // address: detailsForMarker.title
-      });
-      that.markers.pushObject(marker);
-
-      var contentString = '<div id="tmap-infowindow-content" class="pointer" >' +
-        '<h4 id="firstHeading">' + title +
-        '</h4>' + '<a>' +
-        '<div id="bodyContent">' +
-        addressString +
-        '</div></a>' +
-        '</div>';
-
-      //Need location_id on markers on infowindows to be able to pick them out for highlighting
-      var infowindowInstance = new google.maps.InfoWindow({
-        content: contentString,
-        location_id: detailsForMarker.location_id
-          // dataObject: dataObject, 
-          // dataObjectType: dataObjectType
-
-      });
-
-      if (detailsForMarker.location_id === that.get('activeLocationId')) {
-        infowindowInstance.open(that.map, marker);
-      }
-      // only reason I'm pusing into this array is so that I can get to infowindowInstance
-      // in 'showOffInfo' method.
-      // dec 2014 update - now using the infowindows array as a way to get at it
-      // to highlight when activeMarker changes
-      that.infoWindows.pushObject(infowindowInstance);
+  //   var bounds = new google.maps.LatLngBounds();
+  //   // TODO - ensure I have unique markers where location is same
+  //   this.infoWindows = [];
+  //   this.markers = [];
+  //   var that = this;
+  //   $.each(currentMarkerValues, function(index, detailsForMarker) {
+  //     var addressString = "";
+  //     var icon = that.topic_icon;
+  //     addressString = detailsForMarker.location.address;
+  //     var title = detailsForMarker.location.title;
 
 
-      // google.maps.event.addListener(marker, 'mouseover', function() {
-      //   that.showNewInfowindow(infowindowInstance, marker);
-      // });
+  //     var myLatlng = new google.maps.LatLng(detailsForMarker.location.latitude, detailsForMarker.location.longitude);
+  //     // (52.519171, 13.4060912);
+  //     // latlngbounds.extend(latLng);
+  //     bounds.extend(myLatlng);
+  //     var marker = new google.maps.Marker({
+  //       position: myLatlng,
+  //       map: that.map,
+  //       title: title,
+  //       icon: icon,
+  //       showingInfoWindow: false,
+  //       location_id: detailsForMarker.location_id
+  //         // address: detailsForMarker.title
+  //     });
+  //     that.markers.pushObject(marker);
+
+  //     var contentString = '<div id="tmap-infowindow-content" class="pointer" >' +
+  //       '<h4 id="firstHeading">' + title +
+  //       '</h4>' + '<a>' +
+  //       '<div id="bodyContent">' +
+  //       addressString +
+  //       '</div></a>' +
+  //       '</div>';
+
+  //     //Need location_id on markers on infowindows to be able to pick them out for highlighting
+  //     var infowindowInstance = new google.maps.InfoWindow({
+  //       content: contentString,
+  //       location_id: detailsForMarker.location_id
+  //         // dataObject: dataObject, 
+  //         // dataObjectType: dataObjectType
+
+  //     });
+
+  //     if (detailsForMarker.location_id === that.get('activeLocationId')) {
+  //       infowindowInstance.open(that.map, marker);
+  //     }
+  //     // only reason I'm pusing into this array is so that I can get to infowindowInstance
+  //     // in 'showOffInfo' method.
+  //     // dec 2014 update - now using the infowindows array as a way to get at it
+  //     // to highlight when activeMarker changes
+  //     that.infoWindows.pushObject(infowindowInstance);
+  //   });
+
+  //   // for indexView, I will not fitBounds in case
+  //   // if (displayContext === 'topicView') {
+  //   if (this.get('markers.length') > 1) {
+  //     this.map.fitBounds(bounds);
+  //   } else {
+  //     // if there is only one marker, set center to be that one
+  //     // this.map.setZoom(zoom);
+  //     // this.map.setCenter(mapCenter);
+  //     // http://stackoverflow.com/questions/4523023/using-setzoom-after-using-fitbounds-with-google-maps-api-v3
+  //     this.map.fitBounds(bounds);
+  //     // seems silly but I really have to do all this to get the zoom looking half decent
+  //     google.maps.event.addListenerOnce(this.map, 'bounds_changed', function(event) {
+  //       if (this.getZoom() > 15) {
+  //         this.setZoom(15);
+  //       }
+  //     });
+
+  //   }
+  //   // };
+  //   google.maps.event.addListener(this.map, 'click', function(event) {
+  //     that.mapClicked(event.latLng.lat(), event.latLng.lng());
+  //   });
+  //   this.displaySearchBox();
+  //   // google.maps.event.addListenerOnce(this.map, 'idle', function() {
+  //   //   // below highlights a random infowindow:
+  //   //   window.setTimeout(that.showOffInfo.bind(that), 3000);
+  //   // });
+  // },
 
 
-      // google.maps.event.addListener(marker, 'click', function(event) {
-      //   // need to show infoWindow for 1st click as tablets do not trigger mouseover
-      //   if (marker.showingInfoWindow) {
-      //     that.placeSelected(event, detailsForMarker);
-      //   } else {
-      //     that.showNewInfowindow(infowindowInstance, marker);
-      //   }
-      // });
 
-      // google.maps.event.addListener(infowindowInstance, 'domready', function() {
-      //   // ensure document.getElementById("tmap-infowindow-content") exists....
-      //   var infWin = document.getElementById("tmap-infowindow-content");
-      //   if (infWin) {
-      //     infWin.addEventListener("click", function(event) {
-      //       event.stopPropagation();
-      //       that.placeSelected(event, detailsForMarker);
-      //     });
-      //   } else {}
-
-      // });
-
-    });
-
-    // for indexView, I will not fitBounds in case
-    // if (displayContext === 'topicView') {
-    if (this.get('markers.length') > 1) {
-      this.map.fitBounds(bounds);
-    } else {
-      // if there is only one marker, set center to be that one
-      // this.map.setZoom(zoom);
-      // this.map.setCenter(mapCenter);
-      // http://stackoverflow.com/questions/4523023/using-setzoom-after-using-fitbounds-with-google-maps-api-v3
-      this.map.fitBounds(bounds);
-      // seems silly but I really have to do all this to get the zoom looking half decent
-      google.maps.event.addListenerOnce(this.map, 'bounds_changed', function(event) {
-        if (this.getZoom() > 15) {
-          this.setZoom(15);
-        }
-      });
-
-    }
-    // };
-    google.maps.event.addListener(this.map, 'click', function(event) {
-      that.mapClicked(event.latLng.lat(), event.latLng.lng());
-    });
-    this.displaySearchBox();
-    // google.maps.event.addListenerOnce(this.map, 'idle', function() {
-    //   // below highlights a random infowindow:
-    //   window.setTimeout(that.showOffInfo.bind(that), 3000);
-    // });
-  },
   // showOffInfo: function() {
   //   if (this.infoWindows.length > 0) {
 
