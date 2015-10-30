@@ -9,33 +9,28 @@ export default Ember.Route.extend({
     // }
   },
   model(params) {
-    var propertyTypes = AdminMeta.getPropertyTypes();
-    return propertyTypes;
+    var adminTranslations = AdminMeta.getAdminTranslations(params.tabName);
+    return adminTranslations;
   },
 
   setupController(controller, model) {
-    var activeTabName = this.paramsFor('admin.content.tab').tabName || "";
+    var activeTabName = this.paramsFor('admin.translations.tab').tabName || "";
     controller.set("activeTabName", activeTabName.toLowerCase());
-    // controller.set("contentResources", this.modelFor('admin.content'));
-    controller.set("contentResources", model);
 
-
-    // controller.set("extrasObject", model);
-    // var adminController = this.controllerFor("admin");
-    // controller.set("fieldKeys", adminController.fieldKeys);
+    controller.set("adminTranslations", model);
 
     controller.set("tabsList", [{
-      tabValue: "home",
-      tabTitleKey: "webContentSections.home"
+      tabValue: "extras",
+      tabTitleKey: "translationsSections.extras"
     }, {
-      tabValue: "tag-line",
-      tabTitleKey: "webContentSections.tagLine"
+      tabValue: "property-types",
+      tabTitleKey: "translationsSections.propertyTypes"
     }, {
       tabValue: "sell",
-      tabTitleKey: "webContentSections.sell"
+      tabTitleKey: "translationsSections.extras"
     }, {
       tabValue: "about-us",
-      tabTitleKey: "webContentSections.aboutUs"
+      tabTitleKey: "translationsSections.extras"
     }]);
   }
 });

@@ -9,8 +9,13 @@ export default {
 
   // "key.with.interpolation": "Text with {{anInterpolation}}"
 
+  en: "English",
+  es: "Español",
 
-
+  "translationsSections": {
+    "extras": "Extras",
+    "propertyTypes": "Property Types"
+  },
 
   // "true": "Yes",
   // "false": "No",

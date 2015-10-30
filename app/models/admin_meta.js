@@ -25,8 +25,8 @@ var AdminMeta = Ember.Object.extend({
 });
 
 AdminMeta.reopenClass({
-  getPropertyTypes: function() {
-    var apiUrl = "/api/v1/lang/property_types" ;
+  getAdminTranslations: function(batchKey) {
+    var apiUrl = "/api/v1/lang/admin_translations/" + batchKey;
     return $.ajax(apiUrl, {
       type: 'GET',
       dataType: 'json'
