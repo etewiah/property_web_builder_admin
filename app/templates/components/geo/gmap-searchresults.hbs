@@ -29,10 +29,10 @@
                 <i class="fa fa-map-marker" label="show place"></i>
               </button>
               {{#if place.added}}
-                <span style="padding:10px;color: green">ADDED</span>
+                <span style="padding:10px;color: green">Selected</span>
                 {{else}}
-                <button class='btn btn-sm btn-primary' {{action "searchResultSelected" place}} title="Add this place to Poll">
-                <i class="fa fa-plus" label="add place"></i> Add this
+                <button class='btn btn-sm btn-primary' {{action "searchResultSelected" place}} title="Use this address">
+                <i class="fa fa-plus" label="add place"></i>Select
               </button>
               {{/if}}
             </div>

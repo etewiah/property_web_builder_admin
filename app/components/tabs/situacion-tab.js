@@ -4,10 +4,45 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     mapClicked: function(locationInfo) {
-      this.set("newAddress",locationInfo.clickedLocation.formatted_address);
+      var newAddress = {};
+// TODO - parse locationInfo.clickedLocation.address_components..
+      newAddress.direccionFisica = locationInfo.clickedLocation.formatted_address;
+      newAddress.direccionPropiedad = locationInfo.clickedLocation.formatted_address;
+      newAddress.mapaLat = locationInfo.clickedLocation.geometry.location.lat();
+      newAddress.mapaLng = locationInfo.clickedLocation.geometry.location.lng();
+      this.set("newAddress", newAddress);
+    },
+    updateFromSearch: function(searchResultObject) {
+      var propertyResource = this.get("propertyResource");
+      propertyResource.mapaLat = searchResultObject.geometry.location.lat();
+      propertyResource.mapaLng = searchResultObject.geometry.location.lng();
+      propertyResource.direccionPropiedad = searchResultObject.vicinity;
+      propertyResource.save().catch(function(error) {
+        debugger;
+        var errorMessage = "Sorry, there has been an error.";
+        if (error.responseJSON && error.responseJSON.errors) {
+          errorMessage = error.responseJSON.errors[0];
+        }
+        // this.set('serverError', errorMessage);
+      }.bind(this));
+      // .then(transitionToPost).catch(failure);
       debugger;
     },
-    updateLocationFromMap: function(newAddressDetails){
+    updateConfirmedAddress: function(newAddressDetails) {
+      var propertyResource = this.get("propertyResource");
+      propertyResource.mapaLat = newAddressDetails.mapaLat;
+      propertyResource.mapaLng = newAddressDetails.mapaLng;
+      propertyResource.direccionPropiedad = newAddressDetails.direccionPropiedad;
+      propertyResource.direccionFisica = newAddressDetails.direccionFisica;
+      propertyResource.save().catch(function(error) {
+        debugger;
+        var errorMessage = "Sorry, there has been an error.";
+        if (error.responseJSON && error.responseJSON.errors) {
+          errorMessage = error.responseJSON.errors[0];
+        }
+        // this.set('serverError', errorMessage);
+      }.bind(this));
+      // .then(transitionToPost).catch(failure);
       debugger;
     }
   },
@@ -76,7 +111,7 @@ export default Ember.Component.extend({
     }, {
       labelTextTKey: "fieldLabels.direccionReal",
       tooltipTextTKey: false,
-      fieldName: "direccionReal",
+      fieldName: "direccionFisica",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {
@@ -90,7 +125,7 @@ export default Ember.Component.extend({
     }, {
       labelTextTKey: "fieldLabels.direccionMapa",
       tooltipTextTKey: false,
-      fieldName: "direccionMapa",
+      fieldName: "direccionPropiedad",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {

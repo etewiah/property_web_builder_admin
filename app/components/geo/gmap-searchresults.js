@@ -56,24 +56,9 @@ export default Ember.Component.extend({
 
     },
     searchResultSelected: function(searchResultObject) {
-      searchResultObject.set("added", true);
-      var locationObject = Location.locationFromPlaceSearch(searchResultObject, "");
-      var plan = this.get('plan');
-      plan.addPollPlace(locationObject, function(result) {
-          searchResultObject.set("added", true);
-          // this.set('validate', false);
-          // this.set('placeName', "");
-          // this.transitionToRoute('home.plan.default.places', result.new_location_id);
-        }.bind(this),
-        function(error) {
-          var errorMessage = "Sorry, there has been an error.";
-          if (error.responseJSON && error.responseJSON.errors) {
-            errorMessage = error.responseJSON.errors[0];
-          }
-          this.set('serverError', errorMessage);
-
-        }.bind(this)
-      );
+      this.sendAction("searchResultSelectedAction", searchResultObject);
+      // searchResultObject.set("added", true);
+      // // var locationObject = Location.locationFromPlaceSearch(searchResultObject, "");
     },
   },
   onSearchResultsChange: function() {

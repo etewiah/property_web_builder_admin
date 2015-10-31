@@ -11,6 +11,7 @@ export default DS.Model.extend({
   }),
   // idPropiedad: DS.attr(),
   direccionPropiedad: DS.attr(),
+  direccionFisica: DS.attr(),
   zonaDireccion: DS.attr(),
   titleEn: DS.attr(),
   titleEs: DS.attr(),
