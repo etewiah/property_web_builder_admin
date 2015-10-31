@@ -14,6 +14,8 @@
       {{input value=newAddress.postcode class="input-sm form-control fg-input" }}
     </div>
     <div class="fg-line">
+        <button type="submit" class="pull-right btn btn-sm m-b-10 waves-effect"
+        style="margin:2%;" {{action "cancel"}} >Cancel</button>
         <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect"
         style="margin:2%;" {{action "saveNewAddress"}} >Save</button>
     </div>

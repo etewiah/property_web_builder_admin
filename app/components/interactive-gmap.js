@@ -37,7 +37,7 @@ export default Ember.Component.extend({
       var swArray = defaultBounds.sw.split(',');
       var neArray = defaultBounds.ne.split(',');
       var southWest = new google.maps.LatLng(parseFloat(swArray[0]), parseFloat(swArray[1]));
-      var northEast = new google.maps.LatLng(parseFloat(neArray[0]),parseFloat(neArray[1]));
+      var northEast = new google.maps.LatLng(parseFloat(neArray[0]), parseFloat(neArray[1]));
 
       // var southWest = new google.maps.LatLng(36.56293033928735, -11.776123046875);
       // var northEast = new google.maps.LatLng(43.293499628577926, 4.857177734375);
@@ -53,30 +53,7 @@ export default Ember.Component.extend({
     google.maps.event.addListener(this.map, 'click', function(event) {
       that.mapClicked(event.latLng.lat(), event.latLng.lng());
     });
-    // if (geoDetails && geoDetails.bounds_value) {
-    //   var bounds = new google.maps.LatLngBounds();
-    //   try {
-    //     var boundsJSON = JSON.parse(geoDetails.bounds_value);
-    //     // sometimes bounds_value is not valid - just swallow the error in that case
-    //     var neLatlng = new google.maps.LatLng(boundsJSON[0][0], boundsJSON[0][1]);
-    //     var swLatlng = new google.maps.LatLng(boundsJSON[1][0], boundsJSON[1][1]);
-    //     bounds.extend(neLatlng);
-    //     bounds.extend(swLatlng);
-    //     this.map.fitBounds(bounds);
-    //     google.maps.event.addListenerOnce(this.map, 'bounds_changed', function(event) {
-    //       // 
-    //       var newZoom = this.getZoom() + 1;
-    //       this.setZoom(newZoom);
-    //     });
 
-    //   } catch (e) {
-    //     // TODO - throw to discourse
-    //   }
-    //   // var currentZoom = this.map.getZoom();
-    //   // this.map.setOptions({maxZoom: currentZoom});
-    //   // this.map.setZoom(this.map.getZoom() + 1);
-    // }
-    // this.displaySearchBox();
     google.maps.event.addListener(this.map, 'bounds_changed', function(event) {
       // useful for when I want to figure out bounds for a country..
       // debugger;
@@ -88,7 +65,6 @@ export default Ember.Component.extend({
 
   markers: function() {
     var can_edit = true;
-    // Discourse.User.current() && Discourse.User.current().admin;
     var currentMarkerValues = [];
     var places = this.get('geo.places');
     if (places && places.sorted_ids) {
@@ -114,82 +90,44 @@ export default Ember.Component.extend({
   }.property('geo', 'geo.places'),
 
 
-  // below will trigger when a place box is slected outside of the map
-  onActiveLocationIdChange: function() {
-    var location_id = this.get('activeLocationId');
-    // this.get('activeMarker.location_id');
 
-    for (var i = 0; i < this.infoWindows.length; i++) {
-      this.infoWindows[i].close();
-    }
+  // onActiveSearchResultChange: function() {
+  //   debugger;
+  //   var activeSearchResult = this.get('geo.activeSearchResult');
+  //   if (!activeSearchResult || !activeSearchResult.geometry) {
+  //     return;
+  //   }
+  //   if (this.newLocationMarker) {
+  //     this.newLocationMarker.setMap(null);
+  //   }
+  //   this.newLocationMarker = new google.maps.Marker({
+  //     position: activeSearchResult.geometry.location,
+  //     map: this.map,
+  //     title: activeSearchResult.name
+  //   });
 
+  //   var contentString = '<div id="tmap-infowindow-content" style="padding: 5px;" >' +
+  //     '<h4 id="firstHeading" class="firstHeading">' + activeSearchResult.name +
+  //     '</h4>' +
+  //     '<small>' + activeSearchResult.vicinity + '</small>' +
+  //     '</div>';
 
-    var newActiveInfowindow = this.infoWindows.findBy('location_id', location_id);
-    // var markers = this.get('markers');
-    // var newActiveMarker = markers.findBy('location_id', location_id);
-    // not quite sure but above results in an error 
+  //   var infowindowInstance = new google.maps.InfoWindow({
+  //     content: contentString,
+  //     // searchResult: activeSearchResult
+  //   });
+  //   infowindowInstance.open(this.map, this.newLocationMarker);
 
-    // below results in an error too but only when map is offline which I don't care about
-    var markers = this.markers || [];
-    var newActiveMarker = markers.findBy('location_id', location_id);
+  //   this.map.setCenter(activeSearchResult.geometry.location);
 
-    if (newActiveMarker && newActiveInfowindow) {
-      newActiveInfowindow.open(this.map, newActiveMarker);
-    }
+  // }.observes('geo.activeSearchResult'),
 
-    // could be interesting to use panby here to move selected item to the bottom
-    // http://stackoverflow.com/questions/10656743/how-to-offset-the-center-point-in-google-maps-api-v3
-
-  }.observes('activeLocationId'),
-
-
-  onActiveSearchResultChange: function() {
-    var activeSearchResult = this.get('geo.activeSearchResult');
-    if (!activeSearchResult || !activeSearchResult.geometry) {
-      return;
-    }
-    if (this.newLocationMarker) {
-      this.newLocationMarker.setMap(null);
-    }
-    this.newLocationMarker = new google.maps.Marker({
-      position: activeSearchResult.geometry.location,
-      map: this.map,
-      title: activeSearchResult.name
-    });
-
-    var contentString = '<div id="tmap-infowindow-content" style="padding: 5px;" >' +
-      '<h4 id="firstHeading" class="firstHeading">' + activeSearchResult.name +
-      '</h4>' +
-      '<small>' + activeSearchResult.vicinity + '</small>' +
-      '</div>';
-
-    var infowindowInstance = new google.maps.InfoWindow({
-      content: contentString,
-      // searchResult: activeSearchResult
-    });
-    infowindowInstance.open(this.map, this.newLocationMarker);
-
-    this.map.setCenter(activeSearchResult.geometry.location);
-
-    // var newActiveInfowindow = this.infoWindows.findBy('location_id', location_id);
-    // var newActiveMarker = this.markers.findBy('location_id', location_id);
-    // for (var i = 0; i < this.infoWindows.length; i++) {
-    //   this.infoWindows[i].close();
-    // }
-    // // this.infoWindows = [];
-    // // this.infoWindows.push(infowindowInstance);
-    // if (newActiveMarker && newActiveInfowindow) {
-    //   newActiveInfowindow.open(this.map, newActiveMarker);
-    // }
-
-  }.observes('geo.activeSearchResult'),
-
-  markerValuesChanged: function() {
-    // I probably should do a check along the lines of:
-    // this.get('geo.places.sorted_ids.length') !== this.markers.length
-    // for re-rendering as I browse
-    this.triggerMapAsNeeded();
-  }.observes('geo.places'),
+  // markerValuesChanged: function() {
+  //   // I probably should do a check along the lines of:
+  //   // this.get('geo.places.sorted_ids.length') !== this.markers.length
+  //   // for re-rendering as I browse
+  //   this.triggerMapAsNeeded();
+  // }.observes('geo.places'),
 
   didInsertElement: function() {
     this._super();
@@ -236,87 +174,12 @@ export default Ember.Component.extend({
   topic_icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
   post_icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
 
-  onShowSearchBoxChange: function() {
-    if (window.google && this.get('showSearchBox')) {
-      this.displaySearchBox();
-    }
-  }.observes('showSearchBox'),
-
-  displaySearchBox: function() {
-    var input = (document.getElementById('tmap-pac-input'));
-    if (input && this.get('showSearchBox')) {
-
-      var autocomplete = new google.maps.places.Autocomplete(input);
-      autocomplete.bindTo('bounds', this.map);
-      // input.focus();
-
-      var that = this;
-      google.maps.event.addListener(autocomplete, 'place_changed', function() {
-
-        if (!that.$("#interactive-map-canvas").is(":visible")) {
-          // 
-          that.$("#interactive-map-canvas").show();
-          google.maps.event.trigger(that.map, 'resize');
-        }
-
-        // infowindow.close();
-        // marker.setVisible(false);
-        var place = autocomplete.getPlace();
-        if (!place.geometry) {
-          return;
-        }
-        if (that.newLocationMarker) {
-          that.newLocationMarker.setMap(null);
-        }
-
-
-        that.newLocationMarker = new google.maps.Marker({
-          position: place.geometry.location,
-          map: that.map,
-          title: place.name
-            // icon: icon
-            // address: place.title
-        });
-
-        var contentString = '<div id="tmap-infowindow-content" style="padding: 5px;" >' +
-          '<h4 id="firstHeading" class="firstHeading">' + place.name +
-          '</h4>' +
-          '<small>' + place.vicinity + '</small>' +
-
-          '</div>';
-
-        var infowindowInstance = new google.maps.InfoWindow({
-          content: contentString,
-          searchResult: place
-        });
-        infowindowInstance.open(that.map, that.newLocationMarker);
-
-        that.map.setCenter(place.geometry.location);
-        google.maps.event.addListenerOnce(that.map, 'bounds_changed', function(event) {
-          if (this.getZoom() > 15) {
-            this.setZoom(15);
-          }
-        });
-
-        var geo = that.get('geo');
-        var wrappedSearchResult = {
-          'searchResult': infowindowInstance.searchResult,
-          map: that.map,
-          geo: geo
-        };
-
-
-        // placeChosen in topic_route
-        that.sendAction('searchClickedAction', wrappedSearchResult)
-
-      });
-    }
-  },
 
   // below ensures that after infoWindow is shown, showingInfoWindow is set
   // so a second click knows to do something else - like redirect to topic...
   // - needed because on a tablet, the first click event is .....
   showNewInfowindow: function(infowindowInstance, marker) {
+    debugger;
     if (this.newLocationMarker) {
       this.newLocationMarker.setMap(null);
     }
@@ -352,117 +215,6 @@ export default Ember.Component.extend({
   },
 
 
-
-  // renderMapWithMarkers: function() {
-  //   var displayContext = this.get('displayContext');
-  //   var currentMarkerValues = this.get('markers');
-  //   // var mapCenter = new google.maps.LatLng(currentMarkerValues[0].latitude,
-  //   //   currentMarkerValues[0].longitude);
-  //   var geoDetails = this.get('geo');
-
-  //   var mapCenter = new google.maps.LatLng(geoDetails.latitude, geoDetails.longitude);
-  //   this.mapOptions.center = mapCenter;
-  //   this.mapOptions.mapTypeId = google.maps.MapTypeId.ROADMAP;
-  //   this.map = new google.maps.Map(document.getElementById(
-  //       'interactive-map-canvas'),
-  //     this.mapOptions);
-
-  //   // below makes the map available outside this component
-  //   // this is useful when I need to do google place searches - 
-  //   // eg in place-research modal (passed through in showPlaceResearchModal method)
-  //   // perhaps will get rid of this.map and always use geo.map...
-  //   this.set('geo.map', this.map);
-
-  //   // aug 2015 - now seting map on the meetdown model directly - more versitile
-  //   //  1st real life use is for ..../places/details  route
-  //   this.set('mapHolder.map', this.map);
-
-
-  //   var bounds = new google.maps.LatLngBounds();
-  //   // TODO - ensure I have unique markers where location is same
-  //   this.infoWindows = [];
-  //   this.markers = [];
-  //   var that = this;
-  //   $.each(currentMarkerValues, function(index, detailsForMarker) {
-  //     var addressString = "";
-  //     var icon = that.topic_icon;
-  //     addressString = detailsForMarker.location.address;
-  //     var title = detailsForMarker.location.title;
-
-
-  //     var myLatlng = new google.maps.LatLng(detailsForMarker.location.latitude, detailsForMarker.location.longitude);
-  //     // (52.519171, 13.4060912);
-  //     // latlngbounds.extend(latLng);
-  //     bounds.extend(myLatlng);
-  //     var marker = new google.maps.Marker({
-  //       position: myLatlng,
-  //       map: that.map,
-  //       title: title,
-  //       icon: icon,
-  //       showingInfoWindow: false,
-  //       location_id: detailsForMarker.location_id
-  //         // address: detailsForMarker.title
-  //     });
-  //     that.markers.pushObject(marker);
-
-  //     var contentString = '<div id="tmap-infowindow-content" class="pointer" >' +
-  //       '<h4 id="firstHeading">' + title +
-  //       '</h4>' + '<a>' +
-  //       '<div id="bodyContent">' +
-  //       addressString +
-  //       '</div></a>' +
-  //       '</div>';
-
-  //     //Need location_id on markers on infowindows to be able to pick them out for highlighting
-  //     var infowindowInstance = new google.maps.InfoWindow({
-  //       content: contentString,
-  //       location_id: detailsForMarker.location_id
-  //         // dataObject: dataObject, 
-  //         // dataObjectType: dataObjectType
-
-  //     });
-
-  //     if (detailsForMarker.location_id === that.get('activeLocationId')) {
-  //       infowindowInstance.open(that.map, marker);
-  //     }
-  //     // only reason I'm pusing into this array is so that I can get to infowindowInstance
-  //     // in 'showOffInfo' method.
-  //     // dec 2014 update - now using the infowindows array as a way to get at it
-  //     // to highlight when activeMarker changes
-  //     that.infoWindows.pushObject(infowindowInstance);
-  //   });
-
-  //   // for indexView, I will not fitBounds in case
-  //   // if (displayContext === 'topicView') {
-  //   if (this.get('markers.length') > 1) {
-  //     this.map.fitBounds(bounds);
-  //   } else {
-  //     // if there is only one marker, set center to be that one
-  //     // this.map.setZoom(zoom);
-  //     // this.map.setCenter(mapCenter);
-  //     // http://stackoverflow.com/questions/4523023/using-setzoom-after-using-fitbounds-with-google-maps-api-v3
-  //     this.map.fitBounds(bounds);
-  //     // seems silly but I really have to do all this to get the zoom looking half decent
-  //     google.maps.event.addListenerOnce(this.map, 'bounds_changed', function(event) {
-  //       if (this.getZoom() > 15) {
-  //         this.setZoom(15);
-  //       }
-  //     });
-
-  //   }
-  //   // };
-  //   google.maps.event.addListener(this.map, 'click', function(event) {
-  //     that.mapClicked(event.latLng.lat(), event.latLng.lng());
-  //   });
-  //   this.displaySearchBox();
-  //   // google.maps.event.addListenerOnce(this.map, 'idle', function() {
-  //   //   // below highlights a random infowindow:
-  //   //   window.setTimeout(that.showOffInfo.bind(that), 3000);
-  //   // });
-  // },
-
-
-
   // showOffInfo: function() {
   //   if (this.infoWindows.length > 0) {
 
@@ -474,54 +226,32 @@ export default Ember.Component.extend({
     var geocoder = new google.maps.Geocoder();
     var that = this;
 
+
+    var allMapMarkers = this.get('geo.allMapMarkers') || [];
+
+    // Clear out the old markers.
+    allMapMarkers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    allMapMarkers = [];
+
     geocoder.geocode({
       'latLng': latlng
     }, function(results, status) {
       if (status === google.maps.GeocoderStatus.OK) {
         if (results[0]) {
-          if (that.newLocationMarker) {
-            that.newLocationMarker.setMap(null);
-          }
-          that.newLocationMarker = new google.maps.Marker({
-            position: latlng,
-            map: that.map
-          });
-
-          // var talkPrompt = "Select";
-
-          var contentString = '<div id="map-clickedlocation-content" >' +
-            '<h4>' +
-            results[0].formatted_address +
-            '</h4>';
-          // '<div id="clickedlocation-div">' +
-          // '<button class="btn btn-infowindow btn-primary btn-small" style="margin-bottom:5px" >' +
-          // 'Select</button></div>' +
-          // '</div>';
-
-          var infowindowForClickedLocation = new google.maps.InfoWindow({
-            content: contentString
-          });
-          // infowindowForClickedLocation.setContent(results[0].formatted_address);
-          infowindowForClickedLocation.open(that.map, that.newLocationMarker);
-
-          // if (that.infoWindows) {
-          for (var i = 0; i < that.infoWindows.length; i++) {
-            that.infoWindows[i].close();
-          }
+          // if (that.newLocationMarker) {
+          //   debugger;
+          //   that.newLocationMarker.setMap(null);
           // }
+          that.addMarker(latlng, results[0], allMapMarkers);
+          // allMapMarkers now contains just the one marker
+          that.set("geo.allMapMarkers", allMapMarkers);
 
-          // dec 2014 - don't see a good reason to clear infowindows array...
-          // that.infoWindows = [];
-
-          that.infoWindows.push(infowindowForClickedLocation);
-
-          // var geo = that.get('geo');
           var locationInfo = {
             'clickedLocation': results[0],
             map: that.map,
-            // geo: geo
           };
-
           // for map in topic, below is interestShownInPlace in topic controller
           that.sendAction('mapClickedAction', locationInfo);
 
@@ -534,11 +264,42 @@ export default Ember.Component.extend({
     });
 
   },
-  // placeSelected: function(event, placeDetails) {
-  //   // will call showPlaceDetails in topic_controller
-  //   placeDetails.map = this.map;
-  //   this.sendAction('markerSelectedAction', placeDetails);
-  // },
 
+  addMarker: function(latlng, gmapObject, markers) {
+    var newMarker = new google.maps.Marker({
+      position: latlng,
+      map: this.map
+    });
+
+    markers.pushObject(newMarker);
+    // var talkPrompt = "Select";
+
+    var contentString = '<div id="map-clickedlocation-content" >' +
+      '<h4>' +
+      gmapObject.formatted_address +
+      '</h4>';
+    // '<div id="clickedlocation-div">' +
+    // '<button class="btn btn-infowindow btn-primary btn-small" style="margin-bottom:5px" >' +
+    // 'Select</button></div>' +
+    // '</div>';
+
+    var infowindowForClickedLocation = new google.maps.InfoWindow({
+      content: contentString
+    });
+    // infowindowForClickedLocation.setContent(gmapObject.formatted_address);
+    infowindowForClickedLocation.open(this.map, newMarker);
+
+    // if (this.infoWindows) {
+    for (var i = 0; i < this.infoWindows.length; i++) {
+      this.infoWindows[i].close();
+    }
+    // }
+
+    // dec 2014 - don't see a good reason to clear infowindows array...
+    // this.infoWindows = [];
+
+    this.infoWindows.push(infowindowForClickedLocation);
+
+  },
 
 });

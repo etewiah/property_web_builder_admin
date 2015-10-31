@@ -6,16 +6,17 @@ export default Ember.Component.extend({
   validate: false,
   // isSearching: true,
   markers: [],
-  processSearchObject: function(searchBoundaryObject) {
+  // we have a 
+  findClosebyPlaces: function(typeAheadObject) {
     var map = this.get("mapHolder.map");
     // var mapCenter = map.getCenter();
-    var latitude = searchBoundaryObject.geometry.location.lat();
-    var longitude = searchBoundaryObject.geometry.location.lng();
+    var latitude = typeAheadObject.geometry.location.lat();
+    var longitude = typeAheadObject.geometry.location.lng();
 
     // search for closeby places
     var latlng = new google.maps.LatLng(latitude, longitude);
     // debugger;
-    var searchTerm = searchBoundaryObject.address_components[0].short_name;
+    var searchTerm = typeAheadObject.address_components[0].short_name;
     console.log(searchTerm);
     var request = {
       keyword: searchTerm,
@@ -33,15 +34,20 @@ export default Ember.Component.extend({
       } else {
         // that.set('displaySearchResults', false);
         // clear out any previous results I may have
+        debugger;
         that.set('searchResults', []);
       }
     });
   },
-  boundaryPlaceValidation: function() {
-    if (Ember.isEmpty(this.get("searchBoundaryObject.geometry"))) {
-      var place = this.get("searchBoundaryObject");
+  processTypeAheadObject: function(typeAheadObject) {
+    var searchResults = [];
+    searchResults.push(typeAheadObject);
+    this.set('searchResults',searchResults);
+  },
+  figureoutTypeAheadObject: function() {
+    if (Ember.isEmpty(this.get("typeAheadObject.geometry"))) {
+      var place = this.get("typeAheadObject");
       var that = this;
-      // that.set("boundaryPlaceDisplay", "");
       // The user pressed enter in the input 
       // without selecting a result from the list
       // Let's get the list from the Google API so that
@@ -52,20 +58,21 @@ export default Ember.Component.extend({
       autocompleteService.getPlacePredictions({
           'input': place.name,
           'offset': place.name.length
-          // I repeat the options for my AutoComplete here to get
-          // the same results from this query as I got in the 
-          // AutoComplete widget
-          // 'componentRestrictions': {
-          //   'country': 'es'
-          // },
-          // 'types': ['(regions)']
+            // I repeat the options for my AutoComplete here to get
+            // the same results from this query as I got in the 
+            // AutoComplete widget
+            // 'componentRestrictions': {
+            //   'country': 'es'
+            // },
+            // 'types': ['(regions)']
         },
 
         function listentoresult(list, status) {
           if (list == null || list.length == 0) {
             // There are no suggestions available.
             // The user saw an empty list and hit enter.
-            console.log("No results");
+            that.set('searchResults', []);
+            // console.log("No results");
           } else {
             // Here's the first result that the user saw
             // in the list. We can use it and it'll be just
@@ -80,32 +87,28 @@ export default Ember.Component.extend({
               function detailsresult(detailsResult, placesServiceStatus) {
                 // Here's the first result in the AutoComplete with the exact
                 // same data format as you get from the AutoComplete.
-                that.set('searchBoundaryObject', detailsResult);
-                that.processSearchObject(detailsResult);
+                that.set('typeAheadObject', detailsResult);
+                that.processTypeAheadObject(detailsResult);
               }
             );
           }
         }
-      ); 
+      );
 
     }
   },
-  // }.property('validate', 'searchBoundaryObject'),
+  // }.property('validate', 'typeAheadObject'),
   actions: {
     startSearch: function() {
-      var searchBoundaryObject = this.get("searchBoundaryObject");
-      var searchBoundaryGeo = this.get("searchBoundaryObject.geometry");
+      var typeAheadObject = this.get("typeAheadObject");
+      var searchBoundaryGeo = this.get("typeAheadObject.geometry");
 
       if (!searchBoundaryGeo) {
         // probably user hit enter without selecting from dropdown..
-        this.boundaryPlaceValidation();
+        this.figureoutTypeAheadObject();
         return;
       }
-      // if (!searchKeywords) {
-      //   debugger;
-      //   return;
-      // }
-      this.processSearchObject(searchBoundaryObject);
+      this.processTypeAheadObject(typeAheadObject);
     },
   },
 
@@ -127,7 +130,7 @@ export default Ember.Component.extend({
         }
       } else if (event.target.id === "boundary-place-input") {
         if (event.keyCode === 9) {
-          this.set("searchBoundaryObject", {
+          this.set("typeAheadObject", {
             name: event.target.value
           })
           this.send("startSearch");
@@ -160,7 +163,7 @@ export default Ember.Component.extend({
       google.maps.event.addListener(autocomplete, 'place_changed', function() {
 
         var place = autocomplete.getPlace();
-        that.set('searchBoundaryObject', place);
+        that.set('typeAheadObject', place);
         that.send("startSearch");
 
       });

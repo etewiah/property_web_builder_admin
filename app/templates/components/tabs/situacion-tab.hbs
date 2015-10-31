@@ -2,43 +2,24 @@
 <div role="tabpanel" class="tab-pane" id="situacion">
   <div class="row">
     <div class="col-sm-12">
-        <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveExtrasObject"}} >Save</button>
-    </div>
-
-    <div class="col-sm-6">
-
-
-
-{{#each situacionLeftInputFields as |inputField|}} 
-  <div class="form-group fg-float">
-    {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
-    {{/if}}
-    {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource}}
-    {{/if}}
-  </div>
-{{/each}}
-
-
-
-
+      <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveExtrasObject"}}>Save</button>
     </div>
     <div class="col-sm-6">
-
-
-{{#each situacionRightInputFields as |inputField|}} 
-  <div class="form-group fg-float">
-    {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
-    {{/if}}
-    {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource}}
-    {{/if}}
-  </div>
-{{/each}}
-
-
+      {{#each situacionLeftInputFields as |inputField|}}
+      <div class="form-group fg-float">
+        {{#if (eq inputField.fieldType "simpleInput")}} {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}} {{/if}} {{#if (eq inputField.fieldType "simpleSelect")}} {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource}} {{/if}}
+      </div>
+      {{/each}}
+    </div>
+    <div class="col-sm-6">
+      {{#each situacionRightInputFields as |inputField|}}
+      <div class="form-group fg-float">
+        {{#if (eq inputField.fieldType "simpleInput")}} {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}} 
+        {{/if}} 
+        {{#if (eq inputField.fieldType "simpleSelect")}} {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource}} 
+        {{/if}}
+      </div>
+      {{/each}}
     </div>
   </div>
   <div class="row" style="display:none;">
@@ -55,20 +36,21 @@
       </div>
     </div>
     <div class="col-sm-6">
-
-      <div >
-      {{forms/update-location newAddress=newAddress updateLocationAction="updateConfirmedAddress"}}
-      </div>
-
-      <div>
-        {{geo/gmap-searchbox  mapHolder=geo searchResults=geo.searchResults}}
-      </div>
-      <div>
-        {{geo/gmap-searchresults searchResults=geo.searchResults mapHolder=geo
-        searchResultSelectedAction="updateFromSearch" }}
-      </div>
-{{!--       <div id="pano">Aquí la vista panorámica</div>
- --}}    
+      {{#if isConfirming}}
+        <div >
+        {{forms/update-location newAddress=newAddress updateLocationAction="updateConfirmedAddress" cancelAction="stopConfirming"}}
+        </div>
+      {{else}}
+        <div>
+          {{geo/gmap-searchbox mapHolder=geo searchResults=geo.searchResults}}
+        </div>
+        <div>
+          {{geo/gmap-searchresults geo=geo searchResults=geo.searchResults  searchResultSelectedAction="updateFromSearch" }}
+        </div>      
+      {{/if}}
+      {{!--
+      <div id="pano">Aquí la vista panorámica</div>
+      --}}
     </div>
   </div>
 </div>

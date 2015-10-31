@@ -2,7 +2,7 @@ import Ember from 'ember';
 // import Location from "../models/location";
 
 export default Ember.Component.extend({
-  markers: [],
+  // allMapMarkers: [],
   infoWindows: [],
   activeInfoWindow: null,
   searchResultObjects: [],
@@ -63,9 +63,6 @@ export default Ember.Component.extend({
   },
   onSearchResultsChange: function() {
     var results = this.get("searchResults");
-    if (results.length === 0) {
-      debugger;
-    }
 
     // var mapElementId = "#" + this.get("mapId");
     // if (results.length > 0) {
@@ -77,102 +74,91 @@ export default Ember.Component.extend({
     //   this.set("noResultsFound", true);
     //   $(mapElementId).height(1);
     // }
-    var markers = this.get('markers');
-
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
+    var allMapMarkers = this.get('geo.allMapMarkers') || [];
+    // Clear out the old allMapMarkers.
+    allMapMarkers.forEach(function(marker) {
       marker.setMap(null);
     });
-    markers = [];
+    allMapMarkers = [];
     var bounds = new google.maps.LatLngBounds();
     var that = this;
     var searchResultIcon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
 
     var searchResultObjects = [];
     results.forEach(function(place) {
-      var searchResultObject = Ember.Object.create(place);
-      searchResultObjects.pushObject(searchResultObject);
-      // place.added = true;
-      // var icon = {
-      //   url: place.icon,
-      //   size: new google.maps.Size(71, 71),
-      //   origin: new google.maps.Point(0, 0),
-      //   anchor: new google.maps.Point(10, 10),
-      //   scaledSize: new google.maps.Size(25, 25)
-      // };
-
-      // Create a marker for each place.
-      // markers.push(new google.maps.Marker({
-      //   map: that.get("map"),
-      //   icon: icon,
-      //   title: place.name,
-      //   position: place.geometry.location
-      // }));
-
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-
-      var marker = new google.maps.Marker({
-        position: place.geometry.location,
-        map: that.get("map"),
-        title: place.name,
-        icon: searchResultIcon,
-        // showingInfoWindow: false,
-        // location_id: detailsForMarker.location_id
-      });
-      markers.pushObject(marker);
-
-      // had clases bodyContent and pointer below..
-      var contentString = '<div id="tmap-infowindow-content" class="" >' +
-        '<h4 class="firstHeading">' + place.name +
-        '</h4>' + '<span>' +
-        '<div id="">' +
-        place.vicinity +
-        '</div></span>' +
-        '</div>';
-
-      //Need location_id on markers on infowindows to be able to pick them out for highlighting
-      var infowindowInstance = new google.maps.InfoWindow({
-        content: contentString,
-        position: place.geometry.location,
-        pixelOffset: new google.maps.Size(0, 5),
-        // location_id: detailsForMarker.location_id
-      });
-
-      // if (detailsForMarker.location_id === that.get('activeLocationId')) {
-      //   infowindowInstance.open(that.map, marker);
-      // }
-      // only reason I'm pusing into this array is so that I can get to infowindowInstance
-      // in 'showOffInfo' method.
-      // dec 2014 update - now using the infowindows array as a way to get at it
-      // to highlight when activeMarker changes
-      that.infoWindows.pushObject(infowindowInstance);
-
-
-      google.maps.event.addListener(marker, 'mouseover', function() {
-        that.showNewInfowindow(infowindowInstance, marker);
-      });
-
-
-      google.maps.event.addListener(marker, 'click', function(event) {
-        // need to show infoWindow for 1st click as tablets do not trigger mouseover
-        if (marker.showingInfoWindow) {
-          // that.placeSelected(event, detailsForMarker);
-        } else {
-          that.showNewInfowindow(infowindowInstance, marker);
-        }
-      });
-
+      that.addMarker(place, searchResultObjects, bounds, searchResultIcon, allMapMarkers);
     });
-    this.set("searchResultObjects", searchResultObjects);
 
-    this.set("markers", markers);
-    that.get("map").fitBounds(bounds);
+    this.set("searchResultObjects", searchResultObjects);
+    this.set("geo.allMapMarkers", allMapMarkers);
+    
+    if (results.length > 0) {
+      that.get("map").fitBounds(bounds);
+    } else {
+      // do nothing
+      // debugger;
+    }
   }.observes('searchResults'),
+
+
+  addMarker: function(place, searchResultObjects, bounds, searchResultIcon, allMapMarkers) {
+    var searchResultObject = Ember.Object.create(place);
+    searchResultObjects.pushObject(searchResultObject);
+
+
+    if (place.geometry.viewport) {
+      // Only geocodes have viewport.
+      bounds.union(place.geometry.viewport);
+    } else {
+      bounds.extend(place.geometry.location);
+    }
+
+    var marker = new google.maps.Marker({
+      position: place.geometry.location,
+      map: this.get("map"),
+      title: place.name,
+      icon: searchResultIcon,
+      // showingInfoWindow: false,
+      // location_id: detailsForMarker.location_id
+    });
+    allMapMarkers.pushObject(marker);
+
+    // had clases bodyContent and pointer below..
+    var contentString = '<div id="tmap-infowindow-content" class="" >' +
+      '<h4 class="firstHeading">' + place.name +
+      '</h4>' + '<span>' +
+      '<div id="">' +
+      place.vicinity +
+      '</div></span>' +
+      '</div>';
+
+    var infowindowInstance = new google.maps.InfoWindow({
+      content: contentString,
+      position: place.geometry.location,
+      pixelOffset: new google.maps.Size(0, 5),
+    });
+
+    // only reason I'm pusing into this array is so that I can get to infowindowInstance
+    // in 'showOffInfo' method.
+    // dec 2014 update - now using the infowindows array as a way to get at it
+    // to highlight when activeMarker changes
+    this.infoWindows.pushObject(infowindowInstance);
+
+
+    google.maps.event.addListener(marker, 'mouseover', function() {
+      this.showNewInfowindow(infowindowInstance, marker);
+    }.bind(this));
+
+
+    // google.maps.event.addListener(marker, 'click', function(event) {
+    //   // need to show infoWindow for 1st click as tablets do not trigger mouseover
+    //   if (marker.showingInfoWindow) {
+    //     // this.placeSelected(event, detailsForMarker);
+    //   } else {
+    //     this.showNewInfowindow(infowindowInstance, marker);
+    //   }
+    // }.bind(this));
+  },
 
   // below ensures that after infoWindow is shown, showingInfoWindow is set
   // so a second click knows to do something else - like redirect to topic...
@@ -180,9 +166,9 @@ export default Ember.Component.extend({
 
 
   onMapHolderChange: function() {
-    if (this.get("mapHolder.map")) {
-      this.set("map", this.get("mapHolder.map"));
+    if (this.get("geo.map")) {
+      this.set("map", this.get("geo.map"));
       // this.displaySearchBox();
     }
-  }.observes('mapHolder', 'mapHolder.map').on("init"),
+  }.observes('geo', 'geo.map').on("init"),
 });
