@@ -58,7 +58,14 @@
       </div>
     </div>
     <div class="col-sm-6">
-      <div id="pano">Aquí la vista panorámica</div>
+      <div>
+        {{geo/gmap-searchbox plan=model returnToPlanAction="returnToPlan" mapHolder=geo searchResults=geo.searchResults}}
+      </div>
+      <div>
+        {{geo/gmap-searchresults searchResults=geo.searchResults mapHolder=geo }}
+      </div>
+{{!--       <div id="pano">Aquí la vista panorámica</div>
+ --}}    
     </div>
   </div>
 </div>

@@ -1,0 +1,37 @@
+<div class="">
+  <div>
+    <label>Click on map to select address</label>
+  </div>
+  <div class="form-inline" style="margin:1%;">
+    <div class="form-group" style="width:20%;">
+      <label for="boundary-place-input" class="bold-label">Or type here: </label>
+    </div>
+    <div class="form-group" style="width: 40%;">
+      {{input placeholder="address" value=boundaryPlaceDisplay id="boundary-place-input" autofocus="autofocus" class="form-control" tabindex="0"}} {{!-- {{input-tip validation=boundaryPlaceValidation}} --}}
+    </div>
+    <div class="form-group">
+      <button {{ action "startSearch" }} class="ok no-text btn btn-success"> Search </button>
+    </div>
+  </div>
+  {{!--
+  <div class="form-inline">
+    <div class="form-group" style="width:20%;">
+      <label for="place-keyword-input" class="bold-label">with keywords </label>
+    </div>
+    <div class="form-group" style="width: 40%;">
+      {{input placeholder="eg bars, hotels" value=searchKeywords id="place-keyword-input" autofocus="autofocus" class="form-control" tabindex="0"}}
+    </div>
+  </div> --}}
+  <div class="form-inline">
+    <div class="form-group" style="width:20%;">
+    </div>
+    <div class="form-group" style="width: 40%;">
+      <div class="" style="text-align: center;font-size: smaller;">
+        {{#if isSearching}}
+        <i class="fa fa-spinner fa-spin fa-2x" style=""></i> {{/if}}
+      </div>
+    </div>
+    <div class="form-group">
+    </div>
+  </div>
+</div>

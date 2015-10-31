@@ -105,10 +105,13 @@ export default Ember.Component.extend({
   ],
 
   geo: function() {
-    var geo = {
+    var geo = Ember.Object.create({
       longitude: this.get("propertyResource.mapaLng"),
       latitude: this.get("propertyResource.mapaLat"),
-    }
+      searchResults: "",
+      map: ""
+    });
+
     return geo;
   }.property(),
   isActive: function() {

@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-sm-12">
+    {{#if noResultsFound}}
+    <div>
+      <label class="bold-label">Sorry, no results found
+      </label>
+    </div>
+    {{else}}
+    <div>
+      <label class="bold-label">The following places were found:
+      </label>
+    </div>
+    
+    {{/if}}
+    <div>
+      <ul class="nav list-stacked" style="padding: 5px 0px 5px 0px;">
+        {{#each searchResultObjects as |place| }}
+        <li class="place-to-add-row">
+          <div class="row">
+            <div class="col-xs-9">
+              <div style="">
+                <span>{{ place.name }},</span>
+                <span>{{ place.vicinity }}</span>
+              </div>
+
+            </div>
+            <div class="col-xs-3" style="padding:0px;">
+              <button class='btn btn-sm btn-primary' {{action "showOnMap" place}} title="Show this place on the map">
+                <i class="fa fa-map-marker" label="show place"></i>
+              </button>
+              {{#if place.added}}
+                <span style="padding:10px;color: green">ADDED</span>
+                {{else}}
+                <button class='btn btn-sm btn-primary' {{action "searchResultSelected" place}} title="Add this place to Poll">
+                <i class="fa fa-plus" label="add place"></i> Add this
+              </button>
+              {{/if}}
+            </div>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
