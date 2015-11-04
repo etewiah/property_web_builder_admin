@@ -154,9 +154,10 @@ export default Ember.Component.extend({
     var geo = Ember.Object.create({
       longitude: this.get("propertyResource.mapaLng"),
       latitude: this.get("propertyResource.mapaLat"),
+      streetAddress: this.get("propertyResource.direccionPropiedad"),
       searchResults: "",
       map: "",
-      allMapMarkers: null
+      allMapMarkers: null,
     });
 
     return geo;

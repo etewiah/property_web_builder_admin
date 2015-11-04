@@ -7,30 +7,24 @@ export default Ember.Component.extend({
   // could also use:
   // othername: Ember.inject.service('configFetcher'),  
 
-  // actions: {
-  //     pressMe: function() {
-  //         var testText = this.get('start').thisistest();
-  //         this.set('message',testText);
-  //         console.log(this.get('start').isAuthenticated);
-  //     }
-  // }
-
-
   infoWindows: [],
   doubleClicked: false,
   clickEvent: null,
 
+  renderMap: function() {
+    this.$("#interactive-map-canvas").show();
 
-  renderMapWithoutMarkers: function() {
     this.mapOptions.mapTypeId = google.maps.MapTypeId.ROADMAP;
     this.$("#interactive-map-canvas").css("min-height", "400px");
     this.map = new google.maps.Map(document.getElementById(
       'interactive-map-canvas'), this.mapOptions);
     var geoDetails = this.get('geo');
     if (geoDetails && geoDetails.latitude) {
-      var mapCenter = new google.maps.LatLng(geoDetails.latitude, geoDetails.longitude);
-      // this.mapOptions.center = mapCenter;
-      this.map.setCenter(mapCenter);
+      var propertyLatLng = new google.maps.LatLng(geoDetails.latitude, geoDetails.longitude);
+      var allMapMarkers = this.get('geo.allMapMarkers') || [];
+
+      this.addMarker(propertyLatLng, geoDetails.streetAddress, allMapMarkers);
+      this.map.setCenter(propertyLatLng);
 
     } else {
       var defaultBounds = this.get("configFetcher").getConfigForKey("defaultBounds");
@@ -63,71 +57,33 @@ export default Ember.Component.extend({
   },
 
 
-  markers: function() {
-    var can_edit = true;
-    var currentMarkerValues = [];
-    var places = this.get('geo.places');
-    if (places && places.sorted_ids) {
-      places.sorted_ids.forEach(function(id) {
-        if (!places[id].deleted) {
-          var markerInfo = {
-            context: 'topic_view',
-            location: places[id],
-            location_id: String(id),
-            can_edit: can_edit
-          };
-          // currently have some errors in db where duplicates have been saved
-          // shouldn't need below once that is fixed
-          // if(!currentMarkerValues.findBy('location_id', String(id))){
-          currentMarkerValues.push(markerInfo);
-          // }
-        }
-      });
-    }
-    return currentMarkerValues;
-    // locationCount below is not accurate, just a value that increments each time
-    // a new reply with a location is added (done in extension to composer model)
-  }.property('geo', 'geo.places'),
-
-
-
-  // onActiveSearchResultChange: function() {
-  //   debugger;
-  //   var activeSearchResult = this.get('geo.activeSearchResult');
-  //   if (!activeSearchResult || !activeSearchResult.geometry) {
-  //     return;
+  // markers: function() {
+  //   var can_edit = true;
+  //   var currentMarkerValues = [];
+  //   var places = this.get('geo.places');
+  //   if (places && places.sorted_ids) {
+  //     places.sorted_ids.forEach(function(id) {
+  //       if (!places[id].deleted) {
+  //         var markerInfo = {
+  //           context: 'topic_view',
+  //           location: places[id],
+  //           location_id: String(id),
+  //           can_edit: can_edit
+  //         };
+  //         // currently have some errors in db where duplicates have been saved
+  //         // shouldn't need below once that is fixed
+  //         // if(!currentMarkerValues.findBy('location_id', String(id))){
+  //         currentMarkerValues.push(markerInfo);
+  //         // }
+  //       }
+  //     });
   //   }
-  //   if (this.newLocationMarker) {
-  //     this.newLocationMarker.setMap(null);
-  //   }
-  //   this.newLocationMarker = new google.maps.Marker({
-  //     position: activeSearchResult.geometry.location,
-  //     map: this.map,
-  //     title: activeSearchResult.name
-  //   });
+  //   return currentMarkerValues;
+  //   // locationCount below is not accurate, just a value that increments each time
+  //   // a new reply with a location is added (done in extension to composer model)
+  // }.property('geo', 'geo.places'),
 
-  //   var contentString = '<div id="tmap-infowindow-content" style="padding: 5px;" >' +
-  //     '<h4 id="firstHeading" class="firstHeading">' + activeSearchResult.name +
-  //     '</h4>' +
-  //     '<small>' + activeSearchResult.vicinity + '</small>' +
-  //     '</div>';
 
-  //   var infowindowInstance = new google.maps.InfoWindow({
-  //     content: contentString,
-  //     // searchResult: activeSearchResult
-  //   });
-  //   infowindowInstance.open(this.map, this.newLocationMarker);
-
-  //   this.map.setCenter(activeSearchResult.geometry.location);
-
-  // }.observes('geo.activeSearchResult'),
-
-  // markerValuesChanged: function() {
-  //   // I probably should do a check along the lines of:
-  //   // this.get('geo.places.sorted_ids.length') !== this.markers.length
-  //   // for re-rendering as I browse
-  //   this.triggerMapAsNeeded();
-  // }.observes('geo.places'),
 
   didInsertElement: function() {
     this._super();
@@ -148,27 +104,10 @@ export default Ember.Component.extend({
   },
 
 
-  renderMap: function() {
-    this.$("#interactive-map-canvas").show();
-    this.renderMapWithoutMarkers();
-    // if (this.get('geo')) {
-    //   var currentMarkerValues = this.get('markers');
-    //   var markersFound = currentMarkerValues && currentMarkerValues.length > 0;
-    //   // if (markersFound && !_mobile_device_) {
-    //   // might need to reintroduce logic of detecting _mobile_device_
-    //   // this.renderMap(currentMarkerValues);
-
-    //   if (markersFound) {
-
-    //     this.$("#interactive-map-canvas").show();
-    //     this.renderMapWithMarkers();
-    //   } else {
-    //     this.$("#interactive-map-canvas").hide();
-    //     this.renderMapWithoutMarkers();
-    //   }
-    // }
-
-  },
+  // renderMap: function() {
+  //   this.$("#interactive-map-canvas").show();
+  //   this.renderMapWithoutMarkers();
+  // },
 
   // highlighted_icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
   topic_icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
@@ -244,7 +183,7 @@ export default Ember.Component.extend({
           //   debugger;
           //   that.newLocationMarker.setMap(null);
           // }
-          that.addMarker(latlng, results[0], allMapMarkers);
+          that.addMarker(latlng, results[0].formatted_address, allMapMarkers);
           // allMapMarkers now contains just the one marker
           that.set("geo.allMapMarkers", allMapMarkers);
 
@@ -265,7 +204,7 @@ export default Ember.Component.extend({
 
   },
 
-  addMarker: function(latlng, gmapObject, markers) {
+  addMarker: function(latlng, formatted_address, markers) {
     var newMarker = new google.maps.Marker({
       position: latlng,
       map: this.map
@@ -276,7 +215,7 @@ export default Ember.Component.extend({
 
     var contentString = '<div id="map-clickedlocation-content" >' +
       '<h4>' +
-      gmapObject.formatted_address +
+      formatted_address +
       '</h4>';
     // '<div id="clickedlocation-div">' +
     // '<button class="btn btn-infowindow btn-primary btn-small" style="margin-bottom:5px" >' +
