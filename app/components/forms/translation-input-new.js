@@ -1,12 +1,12 @@
 // used in components/tabs-translations/single-tab.hbs
 import Ember from 'ember';
-
+import AdminTranslations from "../../models/admin_translations";
 export default Ember.Component.extend({
   actions: {
     startAdding: function() {
       this.set("isAdding", true);
     },
-    saveTranslation: function() {
+    createTranslationBatch: function() {
       var newTranslationBatch = this.get("newTranslationBatch");
       this.set("hasErrors", false);
       newTranslationBatch.forEach(function(translation) {
@@ -14,26 +14,21 @@ export default Ember.Component.extend({
         if (Ember.isEmpty(translation.i18n_value)) {
           translation.set("errors", ["Please enter a value"]);
           this.set("hasErrors", true);
-        } else {
-        }
+        } else {}
       }.bind(this));
       if (this.get("hasErrors")) {
         return;
       }
-
+      var i18nKeyPrefix = "propertyOrigin.";
+      var i18nKey = i18nKeyPrefix + newTranslationBatch[0].i18n_value.toLowerCase();
       // TODO - save whole batch in one go
-      // this.get("translationBatch").forEach(function(translation) {
-      //   if (originalValues[translation.locale] !== translation.i18n_value) {
-      //     translation.save(function(result){
-      //       // if (result.success) {
-      //       // }
-      //       // debugger;
-      //       originalValues[translation.locale] = translation.i18n_value
-      //     }.bind(this));
-      //   }
-      //   this.set("originalValues", originalValues);
-      //   this.set("valuesHaveChanged", false);
-      // }.bind(this));
+      newTranslationBatch.forEach(function(translation) {
+        translation.set("i18n_key", i18nKey);
+        translation.create(function(result) {
+          // if (result.success) {
+          // }
+        }.bind(this));
+      }.bind(this));
     }
   },
   // setOriginalValues: function() {
@@ -50,7 +45,7 @@ export default Ember.Component.extend({
     var locales = this.get("locales") || [];
     var newTranslationBatch = [];
     locales.forEach(function(locale) {
-      var translation = Ember.Object.create({
+      var translation = AdminTranslations.create({
         locale: locale,
         i18n_value: ""
       });

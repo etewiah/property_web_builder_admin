@@ -20,6 +20,27 @@ var AdminTranslations = Ember.Object.extend({
       }
     });
   },
+  create: function(complete, error) {
+    var data = {};
+    data = this.getProperties( Object.keys(this) );
+    var self = this;
+    var apiUrl = '/api/v1/lang/admin_translations';
+    return $.ajax(apiUrl, {
+      type: 'POST',
+      dataType: 'json',
+      data: data
+    }).then(function(result) {
+      // self.set("geo", result);
+      if (complete) {
+        // self.set('posts', result.posts);
+        complete(result);
+      }
+    }, function(result) {
+      if (error) {
+        error(result);
+      }
+    });
+  },
 
 });
 
