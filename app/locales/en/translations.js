@@ -17,6 +17,7 @@ export default {
     "propertyTypes": "Property Types",
     "propertyOrigins": "Property Origins",
     "propertyStates": "Property States",
+    "provinces": "Provinces"
   },
 
   // "true": "Yes",

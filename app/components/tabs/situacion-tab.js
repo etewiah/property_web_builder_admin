@@ -5,12 +5,24 @@ export default Ember.Component.extend({
   // shared list of markers to all different map actors to share
   // allMapMarkers: [],
   actions: {
-    stopConfirming: function(){
+    savePropertyResource: function() {
+      var propertyResource = this.get("propertyResource");
+      propertyResource.save();
+      function transitionToPost(propertyResource) {
+        // self.transitionToRoute('posts.show', post);
+      }
+      function failure(reason) {
+        // debugger;
+        // handle the error
+      }
+      // propertyResource.save().then(transitionToPost).catch(failure);
+    },
+    stopConfirming: function() {
       this.set("isConfirming", false);
     },
     mapClicked: function(locationInfo) {
       var newAddress = {};
-// TODO - parse locationInfo.clickedLocation.address_components..
+      // TODO - parse locationInfo.clickedLocation.address_components..
       newAddress.direccionFisica = locationInfo.clickedLocation.formatted_address;
       newAddress.direccionPropiedad = locationInfo.clickedLocation.formatted_address;
       newAddress.mapaLat = locationInfo.clickedLocation.geometry.location.lat();
@@ -20,7 +32,7 @@ export default Ember.Component.extend({
     },
     updateFromSearch: function(searchResultObject) {
       var newAddress = {};
-// TODO - parse searchResultObject.address_components..
+      // TODO - parse searchResultObject.address_components..
       newAddress.direccionFisica = searchResultObject.formatted_address;
       newAddress.direccionPropiedad = searchResultObject.formatted_address;
       newAddress.mapaLat = searchResultObject.geometry.location.lat();
@@ -57,23 +69,9 @@ export default Ember.Component.extend({
       // .then(transitionToPost).catch(failure);
     }
   },
-  situacionLeftInputFields: [
+  situacionRightInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.localidad",
-      tooltipTextTKey: false,
-      fieldName: "localidad",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
       labelTextTKey: "fieldLabels.zona",
       tooltipTextTKey: false,
       fieldName: "zona",
@@ -101,9 +99,15 @@ export default Ember.Component.extend({
           }
         }
       }
-    },
+    }, {
+      labelTextTKey: "fieldLabels.localidad",
+      tooltipTextTKey: "",
+      fieldName: "localidad",
+      fieldType: "dynamicSelect",
+      optionsKey: "provinces",
+    }
   ],
-  situacionRightInputFields: [
+  situacionLeftInputFields: [
     //this comment tricks prettify ;) 
     {
       labelTextTKey: "fieldLabels.direccion",
