@@ -14,7 +14,9 @@ export default {
 
   "translationsSections": {
     "extras": "Extras",
-    "propertyTypes": "Property Types"
+    "propertyTypes": "Property Types",
+    "propertyOrigins": "Property Origins",
+    "propertyStates": "Property States",
   },
 
   // "true": "Yes",

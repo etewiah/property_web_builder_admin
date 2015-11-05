@@ -19,11 +19,15 @@ export default Ember.Component.extend({
       if (this.get("hasErrors")) {
         return;
       }
-      var i18nKeyPrefix = "propertyOrigin.";
-      var i18nKey = i18nKeyPrefix + newTranslationBatch[0].i18n_value.toLowerCase();
+      var i18nKeyPrefix = this.get("i18nKeyPrefix");
+
+      // just picking the first value provided and basing key off of that
+      var i18nKey = i18nKeyPrefix + "." + newTranslationBatch[0].i18n_value.camelize();
       // TODO - save whole batch in one go
       newTranslationBatch.forEach(function(translation) {
         translation.set("i18n_key", i18nKey);
+
+        translation.set("batch_key", this.get("batchKey"));
         translation.create(function(result) {
           // if (result.success) {
           // }

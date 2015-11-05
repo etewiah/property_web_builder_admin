@@ -260,25 +260,26 @@ export default Ember.Component.extend({
     tooltipTextTKey: "",
     fieldName: "tipoPropiedad",
     fieldType: "dynamicSelect",
-    optionsKey: "propertyTypes",
+    optionsKey: "property-types",
   }, {
     labelTextTKey: "fieldLabels.estado",
     tooltipTextTKey: "",
     fieldName: "estadoPropiedad",
-    fieldType: "simpleSelect",
-    options: [{
-      value: 0,
-      titleKey: "Nuevo"
-    }, {
-      value: 1,
-      titleKey: "En construcción"
-    }]
+    fieldType: "dynamicSelect",
+    optionsKey: "property-states",
+    // options: [{
+    //   value: 0,
+    //   titleKey: "Nuevo"
+    // }, {
+    //   value: 1,
+    //   titleKey: "En construcción"
+    // }]
   }, {
     labelTextTKey: "fieldLabels.origen",
     tooltipTextTKey: "",
     fieldName: "origenPropiedad",
     fieldType: "dynamicSelect",
-    optionsKey: "propertyOrigins"
+    optionsKey: "property-origins"
     // options: [{
     //   value: 0,
     //   titleKey: "Private"

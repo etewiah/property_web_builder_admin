@@ -12,7 +12,7 @@ export default Ember.Component.extend({
   groupedTranslations1: function() {
     // sortorder below will be a bit random if there are significant differences between languages
     // TODO - fix sortorder
-    var adminTranslations = this.get("adminTranslations").sortBy("i18n_value");
+    var adminTranslations = this.get("adminTranslations.translations").sortBy("i18n_value");
     var groupedTranslations1 = [];
     var parsedTranslations = [];
     adminTranslations.forEach(function(translateItem) {
@@ -34,7 +34,7 @@ export default Ember.Component.extend({
       var half_length = Math.ceil(groupedTranslations1.length / 2);
       groupedTranslations2 = groupedTranslations1.splice(half_length, groupedTranslations1.length);
     }
-    this.set("groupedTranslations2", groupedTranslations2)
+    this.set("groupedTranslations2", groupedTranslations2);
 
     return groupedTranslations1;
 

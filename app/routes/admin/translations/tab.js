@@ -26,11 +26,11 @@ export default Ember.Route.extend({
       tabValue: "property-types",
       tabTitleKey: "translationsSections.propertyTypes"
     }, {
-      tabValue: "sell",
-      tabTitleKey: "translationsSections.extras"
+      tabValue: "property-origins",
+      tabTitleKey: "translationsSections.propertyOrigins"
     }, {
-      tabValue: "about-us",
-      tabTitleKey: "translationsSections.extras"
+      tabValue: "property-states",
+      tabTitleKey: "translationsSections.propertyStates"
     }]);
   }
 });

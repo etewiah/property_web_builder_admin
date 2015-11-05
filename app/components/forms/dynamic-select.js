@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   i18n: Ember.inject.service(),
   fieldOptions: function() {
-    var fieldOptionKeys = this.get("fieldKeys")[this.get("fieldDetails.optionsKey")];
+    var fieldOptionKeys = this.get("fieldKeys")[this.get("fieldDetails.optionsKey")] || [];
 
     // the fieldOptionKeys are an array of i18n keys which are obtained from here:
     // /api/v1/lang/field_keys

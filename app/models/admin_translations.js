@@ -50,11 +50,13 @@ AdminTranslations.reopenClass({
     return $.ajax(apiUrl, {
       type: 'GET',
       dataType: 'json'
-    }).then(function(results) {
-      var adminTranslations = [];
-      results.forEach(function(result){
-        adminTranslations.push(AdminTranslations.create(result));
-      })
+    }).then(function(result) {
+      var adminTranslations = { translations: [] };
+      result.translations.forEach(function(translation){
+        adminTranslations.translations.push(AdminTranslations.create(translation));
+      });
+      adminTranslations.i18nKeyPrefix = result.prefix;
+      adminTranslations.batchKey = result.batch_key;
       return adminTranslations;
       // return result;
     }.bind(this), function(error) {
