@@ -1,0 +1,12 @@
+{{#if fieldDetails.tooltipTextTKey}}
+  <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a>
+{{/if}}
+<div class="fg-line has-">
+  <select class="selectpicker" style="display: none;">
+{{#each fieldOptions as |selectValue|}} 
+  <option>{{ selectValue.label }}</option>
+{{/each}}
+  </select>
+
+</div>
+<label class="fg-label arriba_label">{{t fieldDetails.labelTextTKey }}</label>

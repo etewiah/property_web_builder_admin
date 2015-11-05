@@ -259,8 +259,8 @@ export default Ember.Component.extend({
     labelTextTKey: "fieldLabels.tipo",
     tooltipTextTKey: "",
     fieldName: "tipoPropiedad",
-    fieldType: "simpleSelect",
-    optionsKey: "propertyTypesSelectValues",
+    fieldType: "dynamicSelect",
+    optionsKey: "propertyTypes",
   }, {
     labelTextTKey: "fieldLabels.estado",
     tooltipTextTKey: "",
@@ -277,17 +277,18 @@ export default Ember.Component.extend({
     labelTextTKey: "fieldLabels.origen",
     tooltipTextTKey: "",
     fieldName: "origenPropiedad",
-    fieldType: "simpleSelect",
-    options: [{
-      value: 0,
-      titleKey: "Private"
-    }, {
-      value: 1,
-      titleKey: "Builder"
-    }, {
-      value: 2,
-      titleKey: "Bank"
-    }]
+    fieldType: "dynamicSelect",
+    optionsKey: "propertyOrigins"
+    // options: [{
+    //   value: 0,
+    //   titleKey: "Private"
+    // }, {
+    //   value: 1,
+    //   titleKey: "Builder"
+    // }, {
+    //   value: 2,
+    //   titleKey: "Bank"
+    // }]
   }],
   actions: {
     savePropertyResource: function() {

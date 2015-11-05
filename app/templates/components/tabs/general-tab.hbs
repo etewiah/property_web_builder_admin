@@ -33,6 +33,9 @@
     {{#if (eq inputField.fieldType "simpleSelect")}}
         {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource fieldKeys=fieldKeys}}
     {{/if}}
+    {{#if (eq inputField.fieldType "dynamicSelect")}}
+        {{forms/dynamic-select fieldDetails=inputField propertyResource=propertyResource fieldKeys=fieldKeys}}
+    {{/if}}
   </div>
 {{/each}}
 
