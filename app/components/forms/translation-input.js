@@ -1,17 +1,17 @@
+// used in components/tabs-translations/single-tab.hbs
 import Ember from 'ember';
-
 
 export default Ember.Component.extend({
   actions: {
     saveTranslation: function() {
       var originalValues = this.get("originalValues");
+      // TODO - save whole batch in one go
       this.get("translationBatch").forEach(function(translation) {
         if (originalValues[translation.locale] !== translation.i18n_value) {
           translation.save(function(result){
-            if (result.success) {
-
-            }
-            debugger;
+            // if (result.success) {
+            // }
+            // debugger;
             originalValues[translation.locale] = translation.i18n_value
           }.bind(this));
         }
