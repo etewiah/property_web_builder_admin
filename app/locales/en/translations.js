@@ -10,7 +10,7 @@ export default {
   // "key.with.interpolation": "Text with {{anInterpolation}}"
 
   en: "English",
-  es: "Español",
+  es: "Spanish",
 
   "translationsSections": {
     "extras": "Extras",

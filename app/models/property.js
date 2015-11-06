@@ -2,6 +2,28 @@ import DS from 'ember-data';
 // import { translationMacro as t } from "ember-i18n";
 
 export default DS.Model.extend({
+  updateExtras: function(complete, error) {
+    var data = {};
+    data = this.getProperties("extras","id");
+     // this.getProperties( Object.keys(this) );
+    var self = this;
+    var apiUrl = '/api/v1/properties/update_extras';
+    return $.ajax(apiUrl, {
+      type: 'POST',
+      dataType: 'json',
+      data: data
+    }).then(function(result) {
+      // self.set("geo", result);
+      if (complete) {
+        // self.set('posts', result.posts);
+        complete(result);
+      }
+    }, function(result) {
+      if (error) {
+        error(result);
+      }
+    });
+  },
   i18n: Ember.inject.service(),
   // name: DS.attr('string'),
   // tTipoPropiedad: t("propertyTypes." + this.get("tipoPropiedad")),
@@ -10,6 +32,7 @@ export default DS.Model.extend({
     return this.get("i18n").t("propertyTypes." + this.get("tipoPropiedad"));
   }),
   // idPropiedad: DS.attr(),
+  extras: DS.attr(),
   direccionPropiedad: DS.attr(),
   direccionFisica: DS.attr(),
   zonaDireccion: DS.attr(),

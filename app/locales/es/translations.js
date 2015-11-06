@@ -7,6 +7,17 @@ export default {
   //   }
   // },
 
+  en: "Ingles",
+  es: "Español",
+
+  "translationsSections": {
+    "extras": "Extras",
+    "propertyTypes": "Property Tipos",
+    "propertyOrigins": "Property Origen",
+    "propertyStates": "Property Estado",
+    "provinces": "Provincias"
+  },
+
   // "key.with.interpolation": "Text with {{anInterpolation}}"
   "fieldLabels": {
     "precioAntiguo": "Original Price",

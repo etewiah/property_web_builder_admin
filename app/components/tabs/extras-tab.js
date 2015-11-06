@@ -115,11 +115,11 @@ export default Ember.Component.extend({
 
   actions: {
     saveExtrasObject: function() {
-      var extrasObject = this.get("extrasObject");
+      var propertyResource = this.get("propertyResource");
 
       var self = this;
 
-      function transitionToPost(extrasObject) {
+      function transitionToPost(propertyResource) {
         // debugger;
         // self.transitionToRoute('posts.show', post);
       }
@@ -129,7 +129,7 @@ export default Ember.Component.extend({
         // handle the error
       }
 
-      extrasObject.save();
+      propertyResource.updateExtras();
       // .then(transitionToPost).catch(failure);
 
     }
