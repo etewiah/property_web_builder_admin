@@ -17,7 +17,7 @@ export default Ember.Component.extend({
       });
     }.bind(this));
 
-    var currentValue = this.get("propertyResource." + this.fieldDetails.fieldName) || "";
+    var currentValue = this.get("resourceObject." + this.fieldDetails.fieldName) || "";
     // this is the only way I can figure out of setting an empty value for selectpicker
     // var currentOption = fieldOptions.findBy("value", currentValue);
     // var currentOptionTitle = currentOption ? currentOption.label : "";
@@ -34,9 +34,9 @@ export default Ember.Component.extend({
   }.property(),
   setupComponent: function() {
     this.$(".ayuda").tooltip();
-    // propertyResource obect contains the fields and current value of each field
+    // resourceObject obect contains the fields and current value of each field
     // find current value of the field we need to render
-    var currentValue = this.get("propertyResource." + this.fieldDetails.fieldName) || "";
+    var currentValue = this.get("resourceObject." + this.fieldDetails.fieldName) || "";
     var fieldOptions = this.get("fieldOptions");
     var currentOption = fieldOptions.findBy("value", currentValue);
     var currentOptionTitle = currentOption ? currentOption.label : "";
@@ -54,12 +54,12 @@ export default Ember.Component.extend({
       // $(this).find("option:selected").val();
       var fieldOptions = this.get("fieldOptions");
       var selectValue = fieldOptions.findBy("label", selected).value;
-      this.set("propertyResource." + this.fieldDetails.fieldName, selectValue);
+      this.set("resourceObject." + this.fieldDetails.fieldName, selectValue);
 
     }.bind(this));
 
     this.$('.selectpicker').selectpicker('refresh');
-    // this.set("inputValue", this.get("propertyResource." + this.fieldDetails.fieldName));
+    // this.set("inputValue", this.get("resourceObject." + this.fieldDetails.fieldName));
   }.on('didInsertElement'),
 
 });

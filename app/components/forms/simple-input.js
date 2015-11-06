@@ -6,18 +6,18 @@ export default Ember.Component.extend({
 
   activateTooltip: function() {
     this.$(".ayuda").tooltip();
-    // this.set("inputValue", this.get("propertyResource." + this.fieldDetails.fieldName));
+    // this.set("inputValue", this.get("resourceObject." + this.fieldDetails.fieldName));
   }.on('didInsertElement'),
   // inputValue: null,
 
   inputValue: function() {
     // debugger;
-    return this.get("propertyResource." + this.fieldDetails.fieldName);
-  }.property("propertyResource"),
+    return this.get("resourceObject." + this.fieldDetails.fieldName);
+  }.property("resourceObject"),
   //  http://blog.abuiles.com/blog/2015/03/30/removing-prototype-extensions-with-ember-watson/
   updateValue: Ember.observer('inputValue', function() {
     var inputValue = this.get("inputValue");
-    this.set("propertyResource." + this.fieldDetails.fieldName, inputValue);
+    this.set("resourceObject." + this.fieldDetails.fieldName, inputValue);
 
 
     var constraints = this.get("fieldDetails.constraints");
@@ -36,11 +36,11 @@ export default Ember.Component.extend({
 
   }),
 
-  // propertyResourceSetup: function() {
+  // resourceObjectSetup: function() {
   //   debugger;
   //   // do something
   // }.observes('fieldDetails.fieldName').on('init')
-  // propertyResourceSetup: function() {
+  // resourceObjectSetup: function() {
   //   // debugger;
   //   // do something
   // }.observes('inputValue'),
@@ -55,7 +55,7 @@ export default Ember.Component.extend({
 
   // doUpdate: function() {
   //   var inputValue = this.get("inputValue");
-  //   this.set("propertyResource." + this.fieldDetails.fieldName, inputValue);
+  //   this.set("resourceObject." + this.fieldDetails.fieldName, inputValue);
   //   // var content = this.$('.note-editable').html();
   //   // this.set('content', content);
   // }

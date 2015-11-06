@@ -22,9 +22,9 @@ export default Ember.Component.extend({
   }.property(),
   setupComponent: function() {
     this.$(".ayuda").tooltip();
-    // propertyResource obect contains the fields and current value of each field
+    // resourceObject obect contains the fields and current value of each field
     // find the index of the current value of the field we need to render
-    var currentValueIndex = this.get("propertyResource." + this.fieldDetails.fieldName) || 0;
+    var currentValueIndex = this.get("resourceObject." + this.fieldDetails.fieldName) || 0;
     if (this.get("fieldDetails.fieldDbType") === "boolean") {
       // in the case of a boolean, retrieving currentValueIndex above could return true, 
       // in which case we want to convert that to integer 1
@@ -43,11 +43,11 @@ export default Ember.Component.extend({
       // $(this).find("option:selected").val();
       var fieldOptions = this.get("fieldOptions");
       var selectValue = fieldOptions.findBy("titleKey", selected).value;
-      this.set("propertyResource." + this.fieldDetails.fieldName, selectValue);
+      this.set("resourceObject." + this.fieldDetails.fieldName, selectValue);
 
     }.bind(this));
     this.$('.selectpicker').selectpicker('refresh');
-    // this.set("inputValue", this.get("propertyResource." + this.fieldDetails.fieldName));
+    // this.set("inputValue", this.get("resourceObject." + this.fieldDetails.fieldName));
   }.on('didInsertElement'),
 
 });

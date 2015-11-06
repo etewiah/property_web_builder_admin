@@ -8,7 +8,7 @@
       {{#each situacionLeftInputFields as |inputField|}}
       <div class="form-group fg-float">
         {{#if (eq inputField.fieldType "simpleInput")}} 
-          {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}} 
+          {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}} 
         {{/if}} 
       </div>
       {{/each}}
@@ -17,10 +17,10 @@
       {{#each situacionRightInputFields as |inputField|}}
       <div class="form-group fg-float">
         {{#if (eq inputField.fieldType "simpleInput")}} 
-          {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}} 
+          {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}} 
         {{/if}} 
         {{#if (eq inputField.fieldType "dynamicSelect")}}
-            {{forms/dynamic-select fieldDetails=inputField propertyResource=propertyResource fieldKeys=fieldKeys}}
+            {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
         {{/if}}
       </div>
       {{/each}}
