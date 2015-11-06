@@ -32,7 +32,7 @@ export default DS.Model.extend({
     return this.get("i18n").t("propertyTypes." + this.get("tipoPropiedad"));
   }),
   // idPropiedad: DS.attr(),
-  extras: DS.attr(),
+  extras: DS.attr({dontSerialize: true}),
   direccionPropiedad: DS.attr(),
   direccionFisica: DS.attr(),
   zonaDireccion: DS.attr(),
