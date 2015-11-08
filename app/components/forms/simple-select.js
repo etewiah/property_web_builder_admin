@@ -1,9 +1,13 @@
+// This is
 import Ember from 'ember';
 
 export default Ember.Component.extend({
   i18n: Ember.inject.service(),
   fieldOptions: function() {
     if (this.get("fieldDetails.optionsKey")) {
+                debugger;
+          // should never get here
+
       return this.get("fieldKeys")[this.get("fieldDetails.optionsKey")];
     } else if (this.get("fieldDetails.fieldDbType") === "boolean") {
       // below would return a safestring if I didn't call ".string"...
@@ -17,6 +21,8 @@ export default Ember.Component.extend({
         titleKey: falseText
       }];
     } else {
+          debugger;
+          // should never get here
       return this.get("fieldDetails.options");
     }
   }.property(),

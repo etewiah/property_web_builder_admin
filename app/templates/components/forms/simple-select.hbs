@@ -9,4 +9,8 @@
   </select>
 
 </div>
+{{#if fieldDetails.labelText}}
+<label class="fg-label arriba_label">{{fieldDetails.labelText }}</label>  
+  {{else}}
 <label class="fg-label arriba_label">{{t fieldDetails.labelTextTKey }}</label>
+{{/if}}

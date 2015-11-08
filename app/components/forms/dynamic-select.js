@@ -27,8 +27,6 @@ export default Ember.Component.extend({
         label: ""
       });
     }
-
-
     // debugger;
     return fieldOptions.sortBy("label");
   }.property(),
