@@ -4,22 +4,9 @@ import Ember from "ember";
 import { request } from "ic-ajax";
 const { Service, inject } = Ember;
 
-const BASE_PATH = '/api/v1/config';
+// const BASE_PATH = '/api/v1/config';
 
 export default Service.extend({
-  // i18n: inject.service(),
-
-  // fetch(locale) {
-  //   // var i18n = this.get('i18n');
-  //   // locale is set in admin route and passed in here
-  //   var translationsPath = BASE_PATH;
-  //   return {
-  //     defaultBounds: 66
-  //   };
-  //   // return request(translationsPath)
-
-  //   // .then(this._addTranslations.bind(this));
-  // },
 
   getConfigForKey(configKey) {
     var config = {
@@ -29,5 +16,20 @@ export default Service.extend({
       }
     };
     return config[configKey];
-  }
+  },
+
+  // getFieldKeys: function(id) {
+  //   var apiUrl = "/api/v1/lang/field_keys/" ;
+  //   return $.ajax(apiUrl, {
+  //     type: 'GET',
+  //     dataType: 'json'
+  //   });
+    
+  //   // .then(function(result) {
+  //   //   return Ember.Object.create(result);
+  //   //   // return result;
+  //   // }.bind(this), function(error) {
+  //   //   return error;
+  //   // });
+  // }
 });

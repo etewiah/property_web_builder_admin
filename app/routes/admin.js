@@ -24,17 +24,16 @@ export default Ember.Route.extend({
   },
 
 
-  model(params) {
-    var adminMeta = AdminMeta.get(this.paramsFor('admin.propiedades.editar').idPropiedad);
-    // TODO - stop passing in dummy param above
-    // adminMeta is from http://localhost:3000/api/v1/lang/field_keys/
-    // and just returns a list of selectValues for provinces and propertyTypes..
+  // model(params) {
+  //   var adminMeta = AdminMeta.get(this.paramsFor('admin.propiedades.editar').idPropiedad);
+  //   // adminMeta is from http://localhost:3000/api/v1/lang/field_keys/
+  //   // and just returns a list of selectValues for provinces and propertyTypes..
 
-    return adminMeta;
-  },
+  //   return adminMeta;
+  // },
 
   setupController(controller, model) {
-    controller.set("fieldKeys", model.selectValues);
+    // controller.set("fieldKeys", model.selectValues);
     controller.set("leftNavItems", [{
         tabIconClass: "fa fa-home",
         tabTitle: "Inicio",

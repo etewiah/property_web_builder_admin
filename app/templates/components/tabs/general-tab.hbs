@@ -28,13 +28,13 @@
 {{#each inputFields as |inputField|}} 
   <div class="form-group fg-float">
     {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
+        {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
     {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource fieldKeys=fieldKeys}}
+        {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
     {{/if}}
     {{#if (eq inputField.fieldType "dynamicSelect")}}
-        {{forms/dynamic-select fieldDetails=inputField propertyResource=propertyResource fieldKeys=fieldKeys}}
+        {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
     {{/if}}
   </div>
 {{/each}}
@@ -48,10 +48,10 @@
 {{#each alquilerDeTemporadaInputFields as |inputField|}} 
   <div class="form-group fg-float">
     {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
+        {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
     {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource}}
+        {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
   </div>
 {{/each}}
@@ -68,10 +68,10 @@
 {{#each characteristicasInputFields as |inputField|}} 
   <div class="form-group fg-float">
     {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
+        {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
     {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource}}
+        {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
   </div>
 {{/each}}
@@ -148,10 +148,10 @@
 {{#each portalesInputFields as |inputField|}} 
   <div class="form-group fg-float">
     {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField propertyResource=propertyResource}}
+        {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
     {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField propertyResource=propertyResource fieldKeys=fieldKeys}}
+        {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
     {{/if}}
   </div>
 {{/each}}
