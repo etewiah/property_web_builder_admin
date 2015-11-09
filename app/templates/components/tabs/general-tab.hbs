@@ -13,19 +13,39 @@
           <p>Apartamento San Miguel de Salinas.</p>
           <p class="iconos_grande">
             <i class="fa fa-bed"></i> <span>2</span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <i class="fa fa-male"></i><i class="fa fa-female"></i> <span>1<span>&nbsp;&nbsp;&nbsp;
-                                        <i class="fa fa-arrows"></i> <span>25m<sup>2</sup></span>
+            <i class="fa fa-male"></i><i class="fa fa-female"></i> 
+            <span>1<span>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-arrows"></i> <span>25m<sup>2</sup></span>
             </span>
             </span>
           </p>
         </div>
       </div>
+      <div>
+        <h4>{{t "editPropertySections.visibility" }}</h4>
+
+
+        {{#each visibilityInputFields as |inputField|}} 
+          <div class="form-group fg-float">
+            {{#if (eq inputField.fieldType "simpleInput")}}
+                {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
+            {{/if}}
+            {{#if (eq inputField.fieldType "simpleSelect")}}
+                {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
+            {{/if}}
+            {{#if (eq inputField.fieldType "dynamicSelect")}}
+                {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+
     </div>
     <div class="col-sm-4">
       <h4>Datos Generales</h4>
 
 
-{{#each inputFields as |inputField|}} 
+{{#each mainInputFields as |inputField|}} 
   <div class="form-group fg-float">
     {{#if (eq inputField.fieldType "simpleInput")}}
         {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
@@ -79,28 +99,10 @@
 
       <br>
       <h4 class="sep50">Visibilidad</h4>
+
       <div class="form-group fg-float">
         <div class="fg-line has-">
-          <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Sí para publicar el inmueble en su web"><i class="fa fa-info"></i></a>
-          <select class="selectpicker" style="display: none;">
-            <option value="0">No</option>
-            <option value="1" selected="">Sí</option>
-          </select>
-          <div class="btn-group bootstrap-select">
-            <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="Sí"><span class="filter-option pull-left">Sí</span>&nbsp;<span class="caret"></span></button>
-            <div class="dropdown-menu open">
-              <ul class="dropdown-menu inner selectpicker" role="menu">
-                <li data-original-index="0"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>No</span>"><span class="text">No</span><span class="md md-done check-mark"></span></a></li>
-                <li data-original-index="1" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Si</span>"><span class="text">Sí</span><span class="md md-done check-mark"></span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <label class="fg-label arriba_label">Visible: </label>
-      </div>
-      <div class="form-group fg-float">
-        <div class="fg-line has-">
-          <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Sí para poner el inmueble en la sección "><i class="fa fa-info"></i></a>
+          <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title=" "><i class="fa fa-info"></i></a>
           <select class="selectpicker" style="display: none;">
             <option value="0">No</option>
             <option value="1" selected="">Sí</option>

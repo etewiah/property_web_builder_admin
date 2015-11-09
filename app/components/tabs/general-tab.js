@@ -3,6 +3,28 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
+  visibilityInputFields: [
+    //this comment tricks prettify ;) 
+    {
+      labelTextTKey: "fieldLabels.visibility",
+      tooltipTextTKey: "toolTips.visibility",
+      fieldName: "visible",
+      fieldType: "simpleSelect",
+      fieldDbType: "boolean",
+    }, {
+      labelTextTKey: "fieldLabels.highlighted",
+      tooltipTextTKey: "toolTips.highlighted",
+      fieldName: "destacado",
+      fieldType: "simpleSelect",
+      fieldDbType: "boolean",
+    }, {
+      labelTextTKey: "fieldLabels.label",
+      tooltipTextTKey: "toolTips.label",
+      fieldName: "observacionesVenta",
+      fieldType: "dynamicSelect",
+      optionsKey: "property-labels",
+    }
+  ],
   portalesInputFields: [
     //this comment tricks prettify ;) 
     {
@@ -11,15 +33,13 @@ export default Ember.Component.extend({
       fieldName: "yaencontre",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
-    },
-        {
+    }, {
       labelTextTKey: "fieldLabels.pisoscom",
       tooltipTextTKey: "toolTips.pisoscom",
       fieldName: "pisoscom",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
-    },
-        {
+    }, {
       labelTextTKey: "fieldLabels.idealista",
       tooltipTextTKey: "toolTips.idealista",
       fieldName: "idealista",
@@ -199,7 +219,7 @@ export default Ember.Component.extend({
     }
   ],
 
-  inputFields: [{
+  mainInputFields: [{
     labelTextTKey: "fieldLabels.ref",
     tooltipTextTKey: "toolTips.ref",
     fieldName: "ref",
@@ -273,25 +293,27 @@ export default Ember.Component.extend({
     fieldName: "origenPropiedad",
     fieldType: "dynamicSelect",
     optionsKey: "property-origins"
-    // options: [{
-    //   value: 0,
-    //   titleKey: "Private"
-    // }, {
-    //   value: 1,
-    //   titleKey: "Builder"
-    // }, {
-    //   value: 2,
-    //   titleKey: "Bank"
-    // }]
+      // options: [{
+      //   value: 0,
+      //   titleKey: "Private"
+      // }, {
+      //   value: 1,
+      //   titleKey: "Builder"
+      // }, {
+      //   value: 2,
+      //   titleKey: "Bank"
+      // }]
   }],
   actions: {
     savePropertyResource: function() {
       var propertyResource = this.get("propertyResource");
       var self = this;
+debugger;
       function transitionToPost(propertyResource) {
         // debugger;
         // self.transitionToRoute('posts.show', post);
       }
+
       function failure(reason) {
         // debugger;
         // handle the error

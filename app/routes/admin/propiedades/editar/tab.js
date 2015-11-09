@@ -13,7 +13,7 @@ export default Ember.Route.extend({
   model(params) {
     var fieldNames = "";
     if (params.tabName === "general") {
-      fieldNames = "property-origins, property-types, property-states";
+      fieldNames = "property-origins, property-types, property-states, property-labels";
     }
     if (params.tabName === "situacion") {
       fieldNames = "provinces";

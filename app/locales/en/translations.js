@@ -12,6 +12,23 @@ export default {
   en: "English",
   es: "Spanish",
 
+  "editPropertySections": {
+    "visibility": "Visibility"
+  },
+
+
+  "fieldLabels": {
+    "visibility": "Visibility",
+    "highlighted": "Highlighted",
+    "label": "Label",
+  },
+
+  "toolTips": {
+    "visibility": "Sí para publicar el inmueble en su web",
+    "highlighted": "Sí para poner el inmueble en la sección",
+    "label": "Label",
+  },
+
   "translationsSections": {
     "extras": "Extras",
     "propertyTypes": "Property Types",
