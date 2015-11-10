@@ -31,7 +31,10 @@ export default Ember.Route.extend({
     }, {
       tabValue: "property-states",
       tabTitleKey: "translationsSections.propertyStates"
-    }, {
+    },{
+      tabValue: "property-labels",
+      tabTitleKey: "translationsSections.propertyLabels"
+    },{
       tabValue: "provinces",
       tabTitleKey: "translationsSections.provinces"
     }]);

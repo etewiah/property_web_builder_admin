@@ -27,7 +27,7 @@ export default Ember.Component.extend({
     });
     this.set("originalValues", originalValues);
     // this.$(".ayuda").tooltip();
-  }.on('didInsertElement'),
+  }.on('init'),
 
   translationLabel: function() {
     return this.translationBatch[0].i18n_value;

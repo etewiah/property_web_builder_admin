@@ -85,10 +85,10 @@ export default Ember.Component.extend({
 
 
 
-  didInsertElement: function() {
-    this._super();
-    this.triggerMapAsNeeded();
-  },
+  // didInsertElement: function() {
+  //   this._super();
+  //   this.triggerMapAsNeeded();
+  // }.on('didInsertElement'),
 
   triggerMapAsNeeded: function() {
     if (typeof google === "undefined") {
@@ -100,40 +100,35 @@ export default Ember.Component.extend({
     } else {
       this.renderMap();
     }
+  }.on('didInsertElement'),
 
-  },
-
-
-  // renderMap: function() {
-  //   this.$("#interactive-map-canvas").show();
-  //   this.renderMapWithoutMarkers();
-  // },
 
   // highlighted_icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-  topic_icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-  post_icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+  // topic_icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+  // post_icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
 
 
   // below ensures that after infoWindow is shown, showingInfoWindow is set
   // so a second click knows to do something else - like redirect to topic...
   // - needed because on a tablet, the first click event is .....
-  showNewInfowindow: function(infowindowInstance, marker) {
-    debugger;
-    if (this.newLocationMarker) {
-      this.newLocationMarker.setMap(null);
-    }
-    for (var i = 0; i < this.infoWindows.length; i++) {
-      this.infoWindows[i].close();
-    }
-    // doesn't make sense to clear out infowindows as I won't be able to pick one out to highlight
-    // later
-    // this.infoWindows = [];
-    // this.infoWindows.push(infowindowInstance);
-    infowindowInstance.open(this.map, marker);
-    window.setTimeout(function() {
-      marker.showingInfoWindow = true;
-    }, 1000);
-  },
+  
+  // showNewInfowindow: function(infowindowInstance, marker) {
+  //   debugger;
+  //   if (this.newLocationMarker) {
+  //     this.newLocationMarker.setMap(null);
+  //   }
+  //   for (var i = 0; i < this.infoWindows.length; i++) {
+  //     this.infoWindows[i].close();
+  //   }
+  //   // doesn't make sense to clear out infowindows as I won't be able to pick one out to highlight
+  //   // later
+  //   // this.infoWindows = [];
+  //   // this.infoWindows.push(infowindowInstance);
+  //   infowindowInstance.open(this.map, marker);
+  //   window.setTimeout(function() {
+  //     marker.showingInfoWindow = true;
+  //   }, 1000);
+  // },
 
   // having min and maxZoom can lead to a shitty experience if someone really wants to add something outside a city
   // in 2 minds about it..

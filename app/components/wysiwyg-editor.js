@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     this.$('textarea').destroy();
   },
 
-  didInsertElement: function() {
+  setupEditor: function() {
     var _this = this;
     var btnSize = this.get('btnSize');
     var height = this.get('height');
@@ -31,7 +31,7 @@ export default Ember.Component.extend({
     var content = this.get('content');
     this.$('textarea').code(content);
     this.$('.btn').addClass(btnSize);
-  },
+  }.on('didInsertElement'),
   
   keyUp: function() {
     this.doUpdate();

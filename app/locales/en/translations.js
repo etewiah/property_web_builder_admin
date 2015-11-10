@@ -18,15 +18,14 @@ export default {
 
 
   "fieldLabels": {
-    "visibility": "Visibility",
+    "visible": "Visible",
     "highlighted": "Highlighted",
     "label": "Label",
   },
 
   "toolTips": {
-    "visibility": "Sí para publicar el inmueble en su web",
-    "highlighted": "Sí para poner el inmueble en la sección",
-    "label": "Label",
+    "visible": "Sí para publicar el inmueble en su web",
+    "highlighted": "Sí para poner el inmueble en la sección"
   },
 
   "translationsSections": {
@@ -34,6 +33,7 @@ export default {
     "propertyTypes": "Property Types",
     "propertyOrigins": "Property Origins",
     "propertyStates": "Property States",
+    "propertyLabels": "Property Labels",
     "provinces": "Provinces"
   },
 

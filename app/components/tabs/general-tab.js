@@ -6,8 +6,8 @@ export default Ember.Component.extend({
   visibilityInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.visibility",
-      tooltipTextTKey: "toolTips.visibility",
+      labelTextTKey: "fieldLabels.visible",
+      tooltipTextTKey: "toolTips.visible",
       fieldName: "visible",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
@@ -19,7 +19,6 @@ export default Ember.Component.extend({
       fieldDbType: "boolean",
     }, {
       labelTextTKey: "fieldLabels.label",
-      tooltipTextTKey: "toolTips.label",
       fieldName: "observacionesVenta",
       fieldType: "dynamicSelect",
       optionsKey: "property-labels",
