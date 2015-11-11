@@ -37,7 +37,8 @@ export default Ember.Route.extend({
     controller.set("leftNavItems", [{
         tabIconClass: "fa fa-home",
         tabTitle: "Inicio",
-        tabRoute: "admin.inicio"
+        tabRoute: "admin.setup"
+        // tabRoute: "admin.inicio"
       }, {
         tabIconClass: "fa fa-desktop",
         tabTitle: "Content",

@@ -15,6 +15,10 @@ Ember.Router.reopen({
 
 
 Router.map(function() {
+  // this.route("rootadmin", {
+  //   path: "/admin"
+  // });
+  // correct routing of above will happen rails side
   this.route('admin', {
     path: "/:locale/admin"
   }, function() {
@@ -22,6 +26,14 @@ Router.map(function() {
       path: "/"
     });
     this.route('inicio');
+    this.route("setup", function() {
+      this.route("default", {
+        path: "/"
+      });
+      this.route("step", {
+        path: "/:stepName"
+      });
+    });
     this.route("content", function() {
       this.route("default", {
         path: "/"

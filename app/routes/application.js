@@ -14,7 +14,8 @@ export default Ember.Route.extend({
       if (currentRouteName === "index") {
         return;
       }
-      var activeTabRoute = "admin.inicio";
+      // var activeTabRoute = "admin.inicio";
+      var activeTabRoute = "admin.setup";
       // TODO - improve this logic a bit...
       if (currentRouteName.indexOf("propiedades") > 0) {
         activeTabRoute = "admin.propiedades";
