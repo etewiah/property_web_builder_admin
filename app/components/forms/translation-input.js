@@ -12,7 +12,7 @@ export default Ember.Component.extend({
             // if (result.success) {
             // }
             // debugger;
-            originalValues[translation.locale] = translation.i18n_value
+            originalValues[translation.locale] = translation.i18n_value;
           }.bind(this));
         }
         this.set("originalValues", originalValues);

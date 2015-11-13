@@ -26,7 +26,9 @@ Router.map(function() {
       path: "/"
     });
     this.route('inicio');
-    this.route("setup", function() {
+    this.route("setup",  {
+        path: "/dashboard"
+      },function() {
       this.route("default", {
         path: "/"
       });

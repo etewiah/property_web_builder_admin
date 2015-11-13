@@ -42,7 +42,7 @@ export default Ember.Component.extend({
     var sp = this.$(".selectpicker").selectpicker({
       iconBase: 'fa',
       tickIcon: 'fa-check'
-    }).val(currentOptionTitle)
+    }).val(currentOptionTitle);
     sp.on('change', function(evt) {
 
 // TODO - currently using the label of the select option 

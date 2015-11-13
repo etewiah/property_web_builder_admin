@@ -11,4 +11,4 @@ function iValidate(date, format) {
 
 export default {
   iValidate
-}
+};

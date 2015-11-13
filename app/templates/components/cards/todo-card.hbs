@@ -1,0 +1,61 @@
+    <div id="todo-lists">
+      <div class="tl-header">
+        <h2>Todo</h2>
+        <small>Please complete the following tasks to make your site live</small>
+        <ul class="actions actions-alt" style="display:none;">
+          <li class="dropdown">
+            <a href="" data-toggle="dropdown">
+              <i class="zmdi zmdi-more-vert"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li>
+                <a href="">Refresh</a>
+              </li>
+              <li>
+                <a href="">Manage Widgets</a>
+              </li>
+              <li>
+                <a href="">Widgets Settings</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+      <div class="tl-body">
+        <div id="add-tl-item" class="" style="display:none;">
+          <i class="add-new-item zmdi zmdi-plus"></i>
+          <div class="add-tl-body">
+            <textarea placeholder="What you want to do..."></textarea>
+            <div class="add-tl-actions">
+              <a href="" data-tl-action="dismiss"><i class="zmdi zmdi-close"></i></a>
+              <a href="" data-tl-action="save"><i class="zmdi zmdi-check"></i></a>
+            </div>
+          </div>
+        </div>
+        {{#each todos as |task|}}
+        <div class="checkbox media">
+          <div class="pull-right" style="display:none;">
+            <ul class="actions actions-alt">
+              <li class="dropdown">
+                <a href="" data-toggle="dropdown">
+                  <i class="zmdi zmdi-more-vert"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li><a href="">Delete</a></li>
+                  <li><a href="">Archive</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div {{action "goToTask" task.id }} class="media-body">
+            <label>
+              <input type="checkbox">
+              <i class="input-helper"></i>
+              <span> {{ task.title }} </span>
+            </label>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>

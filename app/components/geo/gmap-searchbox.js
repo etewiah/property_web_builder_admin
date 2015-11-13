@@ -29,12 +29,12 @@ export default Ember.Component.extend({
     this.set("isSearching", true);
     service.nearbySearch(request, function(results, status) {
       that.set("isSearching", false);
-      if (status == google.maps.places.PlacesServiceStatus.OK) { // that.set('displaySearchResults', true);
+      if (status === google.maps.places.PlacesServiceStatus.OK) { // that.set('displaySearchResults', true);
         that.set('searchResults', results.slice(0, 20));
       } else {
         // that.set('displaySearchResults', false);
         // clear out any previous results I may have
-        debugger;
+        // debugger;
         that.set('searchResults', []);
       }
     });
@@ -68,7 +68,7 @@ export default Ember.Component.extend({
         },
 
         function listentoresult(list, status) {
-          if (list == null || list.length == 0) {
+          if (list === null || list.length === 0) {
             // There are no suggestions available.
             // The user saw an empty list and hit enter.
             that.set('searchResults', []);
@@ -132,7 +132,7 @@ export default Ember.Component.extend({
         if (event.keyCode === 9) {
           this.set("typeAheadObject", {
             name: event.target.value
-          })
+          });
           this.send("startSearch");
         }
 
