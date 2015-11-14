@@ -36,6 +36,14 @@ Router.map(function() {
         path: "/:stepName"
       });
     });
+    this.route("agency", function() {
+      this.route("default", {
+        path: "/"
+      });
+      this.route("tab", {
+        path: "/:tabName"
+      });
+    });
     this.route("content", function() {
       this.route("default", {
         path: "/"

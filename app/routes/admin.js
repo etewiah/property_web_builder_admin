@@ -36,25 +36,29 @@ export default Ember.Route.extend({
     // controller.set("fieldKeys", model.selectValues);
     controller.set("leftNavItems", [{
         tabIconClass: "fa fa-home",
-        tabTitle: "Inicio",
+        tabTitleKey: "adminSections.start",
         tabRoute: "admin.setup"
         // tabRoute: "admin.inicio"
       }, {
+        tabIconClass: "fa fa-user",
+        tabTitleKey: "adminSections.agencyDetails",
+        tabRoute: "admin.agency"
+      },{
         tabIconClass: "fa fa-desktop",
-        tabTitle: "Content",
+        tabTitleKey: "adminSections.content",
         tabRoute: "admin.content"
       }, {
         tabIconClass: "fa fa-language",
-        tabTitle: "Translations",
+        tabTitleKey: "adminSections.translations",
         tabRoute: "admin.translations"
       },
       {
         tabIconClass: "fa fa-building-o",
-        tabTitle: "Propiedades",
+        tabTitleKey: "adminSections.properties",
         tabRoute: "admin.propiedades"
       }, {
         tabIconClass: "fa fa-users",
-        tabTitle: "Clientes",
+        tabTitleKey: "adminSections.clientes",
         tabRoute: "admin.default"
 
       },
@@ -78,11 +82,7 @@ export default Ember.Route.extend({
       //   tabTitle: "Actividades",
       //   tabRoute: "admin.default"
 
-      // }, {
-      //   tabIconClass: "fa fa-user",
-      //   tabTitle: "Mi perfil",
-      //   tabRoute: "admin.default"
-      // }, {
+      // },  {
       //   tabIconClass: "fa fa-support",
       //   tabTitle: "Soporte",
       //   tabRoute: "admin.default"

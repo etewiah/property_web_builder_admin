@@ -6,7 +6,7 @@ var Agency = Ember.Object.extend({
 });
 
 Agency.reopenClass({
-  get: function(fieldNames) {
+  get: function() {
     var apiUrl = "/api/v1/agencies/1";
     return $.ajax(apiUrl, {
       type: 'GET',
@@ -15,7 +15,6 @@ Agency.reopenClass({
       //   field_names: fieldNames
       // }
     }).then(function(result) {
-      debugger;
       return Agency.create(result);
       // return result;
     }.bind(this), function(error) {

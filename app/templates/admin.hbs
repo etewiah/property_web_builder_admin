@@ -15,7 +15,7 @@
 
       {{#each leftNavItems as |tab|}}
         <li class={{if (eq tab.tabRoute activeTabRoute) "active"}} >{{#link-to tab.tabRoute }} <i class={{tab.tabIconClass}}></i> 
-          {{tab.tabTitle}}{{/link-to}}
+          {{t tab.tabTitleKey }}{{/link-to}}
         </li>  
       {{/each}}
 

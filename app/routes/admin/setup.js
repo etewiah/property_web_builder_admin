@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Agency from '../../models/agency'
 
 export default Ember.Route.extend({
   actions: {
@@ -6,11 +7,14 @@ export default Ember.Route.extend({
       debugger;
     }
   },
-
+  model() {
+    var agencyDetails = Agency.get();
+    return agencyDetails; 
+  },
   setupController(controller, model) {
-    model = [
+    var defaultTodoList = [
       {title: "Create some content"}
     ];
-    controller.set("content", model);
+    controller.set("content", defaultTodoList);
   }
 });

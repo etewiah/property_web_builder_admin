@@ -28,6 +28,15 @@ export default {
     "highlighted": "Sí para poner el inmueble en la sección"
   },
 
+  "adminSections": {
+    "start": "Inicio",
+    "agencyDetails": "Mis Datos",
+    "content": "Contenido",
+    "translations": "Traduciones",
+    "properties": "Propiedades",
+    "clientes": "Clientes"
+  },
+
   "translationsSections": {
     "extras": "Extras",
     "propertyTypes": "Property Types",
