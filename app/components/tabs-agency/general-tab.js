@@ -4,9 +4,9 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 
   mainInputFields: [{
-    labelTextTKey: "fieldLabels.ref",
-    tooltipTextTKey: "toolTips.ref",
-    fieldName: "ref",
+    labelTextTKey: "fieldLabels.companyName",
+    // tooltipTextTKey: "toolTips.company_name",
+    fieldName: "company_name",
     fieldType: "simpleInput",
     inputType: "text",
     constraints: {
@@ -59,50 +59,15 @@ export default Ember.Component.extend({
         }
       }
     }
-  }, {
-    labelTextTKey: "fieldLabels.tipo",
-    tooltipTextTKey: "",
-    fieldName: "tipoPropiedad",
-    fieldType: "dynamicSelect",
-    optionsKey: "property-types",
-  }, {
-    labelTextTKey: "fieldLabels.estado",
-    tooltipTextTKey: "",
-    fieldName: "estadoPropiedad",
-    fieldType: "dynamicSelect",
-    optionsKey: "property-states",
-  }, {
-    labelTextTKey: "fieldLabels.origen",
-    tooltipTextTKey: "",
-    fieldName: "origenPropiedad",
-    fieldType: "dynamicSelect",
-    optionsKey: "property-origins"
-      // options: [{
-      //   value: 0,
-      //   titleKey: "Private"
-      // }, {
-      //   value: 1,
-      //   titleKey: "Builder"
-      // }, {
-      //   value: 2,
-      //   titleKey: "Bank"
-      // }]
   }],
   actions: {
     saveAgencyDetails: function() {
-      var propertyResource = this.get("propertyResource");
-      var self = this;
-debugger;
-      function transitionToPost(propertyResource) {
-        // debugger;
-        // self.transitionToRoute('posts.show', post);
-      }
-
-      function failure(reason) {
-        // debugger;
-        // handle the error
-      }
-      propertyResource.save().then(transitionToPost).catch(failure);
+      var agencyDetails = this.get("agencyDetails");
+      // var self = this;
+      // function failure(reason) {
+      // }
+      agencyDetails.save();
+      // .then().catch(failure);
     }
   },
   isActive: function() {

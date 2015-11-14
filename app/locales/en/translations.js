@@ -21,6 +21,9 @@ export default {
     "visible": "Visible",
     "highlighted": "Highlighted",
     "label": "Label",
+    "companyName": "Company Name",
+    "highlighted": "Highlighted",
+    "label": "Label",
   },
 
   "toolTips": {
