@@ -8,14 +8,6 @@ export default Ember.Route.extend({
     // }
   },
   model(params) {
-    // GET to /persons?filter[name]=Peter
-    // this.store.query('person', {
-    //   filter: {
-    //     name: 'Peter'
-    //   }
-    // }).then(function(peters) {
-    //   // Do something with `peters`
-    // });
     return this.store.query("webContent", {
       filter: {
         tag: params.tabName
@@ -28,28 +20,18 @@ export default Ember.Route.extend({
   // setupController will not get called if model does not change
   // eg if I returned a query that was not dependant on params....
   setupController(controller, model) {
-    var activeTabName = this.paramsFor('admin.content.tab').tabName || "";
+    var activeTabName = this.paramsFor('admin.agency.tab').tabName || "";
     controller.set("activeTabName", activeTabName.toLowerCase());
     // controller.set("contentResources", this.modelFor('admin.content'));
     controller.set("contentResources", model);
 
 
-    // controller.set("extrasObject", model);
-    // var adminController = this.controllerFor("admin");
-    // controller.set("fieldKeys", adminController.fieldKeys);
-
     controller.set("tabsList", [{
-      tabValue: "home",
-      tabTitleKey: "webContentSections.home"
+      tabValue: "general",
+      tabTitleKey: "agencySections.general"
     }, {
-      tabValue: "tag-line",
-      tabTitleKey: "webContentSections.tagLine"
-    }, {
-      tabValue: "sell",
-      tabTitleKey: "webContentSections.sell"
-    }, {
-      tabValue: "about-us",
-      tabTitleKey: "webContentSections.aboutUs"
+      tabValue: "location",
+      tabTitleKey: "agencySections.location"
     }]);
   }
 });

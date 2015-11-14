@@ -36,6 +36,10 @@ export default {
     "properties": "Propiedades",
     "clientes": "Clientes"
   },
+  "agencySections": {
+    "general": "General Details",
+    "location": "Location"
+  },
 
   "translationsSections": {
     "extras": "Extras",
