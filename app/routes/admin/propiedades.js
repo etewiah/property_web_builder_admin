@@ -7,7 +7,7 @@ export default Ember.Route.extend({
     }
   },
   model() {
-    return this.store.findAll('property'); // or any other user you like
+    return this.store.findAll('property'); 
   },
   // setupController(controller, model) {
   //   debugger;
