@@ -7,10 +7,10 @@ export default Ember.Route.extend({
       debugger;
     }
   },
-  model() {
-    var agencyDetails = Agency.get();
-    return agencyDetails; 
-  },
+  // model() {
+  //   var agencyDetails = Agency.get();
+  //   return agencyDetails; 
+  // },
   setupController(controller, model) {
     var defaultTodoList = [
       {title: "Create some content"}

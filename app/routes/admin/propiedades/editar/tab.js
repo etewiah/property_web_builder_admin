@@ -31,8 +31,6 @@ export default Ember.Route.extend({
       return adminMeta;
     }
 
-    // var extras = Extras.get(this.paramsFor('admin.propiedades.editar').idPropiedad);
-    // return extras;
   },
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.propiedades.editar.tab').tabName || "";

@@ -1,0 +1,21 @@
+{{#if isActive}}
+<div role="tabpanel" class="tab-pane active" id="general">
+  <div class="row">
+    <div class="col-sm-12">
+    </div>
+    <div class="col-sm-6">
+      <div>
+        <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveAgencyDetails"}}>Save</button>
+      </div>
+      {{#each mainInputFields as |inputField|}}
+      <div class="form-group fg-float">
+        {{#if (eq inputField.fieldType "simpleInput")}} {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}} {{/if}} {{#if (eq inputField.fieldType "simpleSelect")}} {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}} {{/if}} {{#if (eq inputField.fieldType "dynamicSelect")}} {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}} {{/if}}
+      </div>
+      {{/each}}
+      <br>
+    </div>
+    <div class="col-sm-6">
+    </div>
+  </div>
+</div>
+{{/if}}

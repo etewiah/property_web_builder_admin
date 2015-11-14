@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import AdminMeta from '../../../models/admin_meta';
 
 export default Ember.Route.extend({
   // tabsList: [{}],
@@ -8,14 +9,23 @@ export default Ember.Route.extend({
     // }
   },
   model(params) {
-    return this.store.query("webContent", {
-      filter: {
-        tag: params.tabName
-      }
-    });
-    // return this.store.findAll('webContent'); 
-    // return params.tabName;
-    // return this.store.findRecord('webContent', "test");
+    var fieldNames = "";
+    if (params.tabName === "general") {
+      fieldNames = "property-origins, property-types, property-states, property-labels";
+    }
+    if (params.tabName === "location") {
+      fieldNames = "provinces";
+    }
+
+    if (Ember.isEmpty(fieldNames)) {
+      return {};
+    } else {
+      var adminMeta = AdminMeta.get(fieldNames);
+      // adminMeta is from http://localhost:3000/api/v1/lang/field_keys/
+      // and just returns a list of selectValues for provinces and propertyTypes..
+      return adminMeta;
+    }
+
   },
   // setupController will not get called if model does not change
   // eg if I returned a query that was not dependant on params....
@@ -23,8 +33,9 @@ export default Ember.Route.extend({
     var activeTabName = this.paramsFor('admin.agency.tab').tabName || "";
     controller.set("activeTabName", activeTabName.toLowerCase());
     // controller.set("contentResources", this.modelFor('admin.content'));
-    controller.set("contentResources", model);
-
+    controller.set("fieldKeys", model);
+    controller.set("agencyDetails", this.modelFor("admin"));
+// debugger;
 
     controller.set("tabsList", [{
       tabValue: "general",
