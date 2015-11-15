@@ -31,7 +31,7 @@ export default Ember.Route.extend({
 
 
   setupController(controller, model) {
-    controller.set("agencyDetails", model);
+    // controller.set("agencyDetails", model.agency);
     controller.set("leftNavItems", [{
         tabIconClass: "fa fa-home",
         tabTitleKey: "adminSections.start",

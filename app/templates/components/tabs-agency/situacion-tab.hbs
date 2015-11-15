@@ -2,13 +2,13 @@
 <div role="tabpanel" class="tab-pane" id="situacion">
   <div class="row">
     <div class="col-sm-12">
-      <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "savePropertyResource"}}>Save</button>
+      <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveAddressDetails"}}>Save</button>
     </div>
     <div class="col-sm-6">
       {{#each situacionLeftInputFields as |inputField|}}
       <div class="form-group fg-float">
         {{#if (eq inputField.fieldType "simpleInput")}} 
-          {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}} 
+          {{forms/simple-input fieldDetails=inputField resourceObject=addressDetails}} 
         {{/if}} 
       </div>
       {{/each}}
@@ -17,10 +17,10 @@
       {{#each situacionRightInputFields as |inputField|}}
       <div class="form-group fg-float">
         {{#if (eq inputField.fieldType "simpleInput")}} 
-          {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}} 
+          {{forms/simple-input fieldDetails=inputField resourceObject=addressDetails}} 
         {{/if}} 
         {{#if (eq inputField.fieldType "dynamicSelect")}}
-            {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
+            {{forms/dynamic-select fieldDetails=inputField resourceObject=addressDetails fieldKeys=fieldKeys}}
         {{/if}}
       </div>
       {{/each}}

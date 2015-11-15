@@ -34,8 +34,8 @@ export default Ember.Route.extend({
     controller.set("activeTabName", activeTabName.toLowerCase());
     // controller.set("contentResources", this.modelFor('admin.content'));
     controller.set("fieldKeys", model);
-    controller.set("agencyDetails", this.modelFor("admin"));
-// debugger;
+    controller.set("agencyDetails", this.modelFor("admin").agencyDetails);
+    controller.set("primaryAddress", this.modelFor("admin").primaryAddress);
 
     controller.set("tabsList", [{
       tabValue: "general",

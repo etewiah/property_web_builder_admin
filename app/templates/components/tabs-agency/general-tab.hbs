@@ -12,7 +12,9 @@
         {{#if (eq inputField.fieldType "simpleInput")}} 
           {{forms/simple-input fieldDetails=inputField resourceObject=agencyDetails}} 
         {{/if}} 
-        {{#if (eq inputField.fieldType "simpleSelect")}} {{forms/simple-select fieldDetails=inputField resourceObject=agencyDetails fieldKeys=fieldKeys}} {{/if}} 
+        {{#if (eq inputField.fieldType "simpleSelect")}} 
+          {{forms/simple-select fieldDetails=inputField resourceObject=agencyDetails fieldKeys=fieldKeys}} 
+        {{/if}} 
         {{#if (eq inputField.fieldType "dynamicSelect")}} {{forms/dynamic-select fieldDetails=inputField resourceObject=agencyDetails fieldKeys=fieldKeys}} {{/if}}
       </div>
       {{/each}}

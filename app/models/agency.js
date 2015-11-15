@@ -1,4 +1,5 @@
 // import DS from 'ember-data';
+import MasterAddress from "../models/master_address";
 
 var Agency = Ember.Object.extend({
   save: function(complete, error) {
@@ -38,8 +39,12 @@ Agency.reopenClass({
       //   field_names: fieldNames
       // }
     }).then(function(result) {
-      return Agency.create(result);
-      // return result;
+      var agency = Agency.create(result.agency);
+      var primaryAddress = MasterAddress.create(result.primary_address);
+      return {
+        agencyDetails: agency,
+        primaryAddress: primaryAddress
+      };
     }.bind(this), function(error) {
       return error;
     });
