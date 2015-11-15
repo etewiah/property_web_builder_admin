@@ -3,21 +3,43 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   // shared list of markers to all different map actors to share
-  // allMapMarkers: [],
+  changedFields: [],
+  fieldsWithErrors: [],
   actions: {
+    checkDirtyState: function(changedFieldInfo){
+      var changedFields = this.get("changedFields");
+      var fieldsWithErrors = this.get("fieldsWithErrors");
+      
+      if (changedFieldInfo.hasErrors) {
+        fieldsWithErrors.pushObject(changedFieldInfo.fieldName);
+      } else{
+        fieldsWithErrors.removeObject(changedFieldInfo.fieldName);
+      }
+      var hasErrors = (fieldsWithErrors.length > 0);
+      this.set("hasErrors",hasErrors);
+
+      if (changedFieldInfo.hasChanged) {
+        changedFields.pushObject(changedFieldInfo.fieldName);
+      } else{
+        changedFields.removeObject(changedFieldInfo.fieldName);
+      }
+      // if we have more than one field that has changed
+      // consider this component as "hasChanged"
+      var hasChanged = (changedFields.length > 0);
+      this.set("hasChanged",hasChanged);
+      debugger;
+    },
     saveAddressDetails: function() {
       var addressDetails = this.get("addressDetails");
-      debugger;
       addressDetails.save();
 
-      function transitionToPost(addressDetails) {
-        // self.transitionToRoute('posts.show', post);
-      }
+      // function transitionToPost(addressDetails) {
+      //   // self.transitionToRoute('posts.show', post);
+      // }
 
-      function failure(reason) {
-        // debugger;
-        // handle the error
-      }
+      // function failure(reason) {
+      //   // handle the error
+      // }
       // addressDetails.save().then(transitionToPost).catch(failure);
     },
     stopConfirming: function() {

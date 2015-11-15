@@ -22,6 +22,10 @@ export default {
   region: "Region",
   country: "Country",
 
+  "prompts": {
+    "fixErrors": "Please correct the errors below"
+  },
+
   "editPropertySections": {
     "visibility": "Visibility"
   },

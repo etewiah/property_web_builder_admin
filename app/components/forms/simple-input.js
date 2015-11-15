@@ -17,7 +17,8 @@ export default Ember.Component.extend({
   //  http://blog.abuiles.com/blog/2015/03/30/removing-prototype-extensions-with-ember-watson/
   updateValue: Ember.observer('inputValue', function() {
     var inputValue = this.get("inputValue");
-    this.set("resourceObject." + this.fieldDetails.fieldName, inputValue);
+    var fieldName = this.get("fieldDetails.fieldName")
+    this.set("resourceObject." + fieldName, inputValue);
 
 
     var constraints = this.get("fieldDetails.constraints");
@@ -28,36 +29,22 @@ export default Ember.Component.extend({
       fullMessages: false
     });
     // debugger;
+    var hasErrors = false;
     if (validateErrors) {
       this.set("errors", validateErrors.inputValue);
+      hasErrors = true;
     } else {
       this.set("errors", []);
     }
+    var hasChanged = ( this.get("originalValue") !== this.get("inputValue") );
+    this.sendAction("valueChangedAction", {hasErrors: hasErrors, hasChanged: hasChanged, fieldName: fieldName});
 
   }),
 
-  // resourceObjectSetup: function() {
-  //   debugger;
-  //   // do something
-  // }.observes('fieldDetails.fieldName').on('init')
-  // resourceObjectSetup: function() {
-  //   // debugger;
-  //   // do something
-  // }.observes('inputValue'),
+  setOriginalValue: function() {
+    var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
+    this.set("originalValue", inputValue);
+  }.on('init'),
 
-  // keyUp: function() {
-  //   this.doUpdate();
-  // },
-
-  // click: function() {
-  //   this.doUpdate();
-  // },
-
-  // doUpdate: function() {
-  //   var inputValue = this.get("inputValue");
-  //   this.set("resourceObject." + this.fieldDetails.fieldName, inputValue);
-  //   // var content = this.$('.note-editable').html();
-  //   // this.set('content', content);
-  // }
 
 });
