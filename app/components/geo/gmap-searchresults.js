@@ -57,23 +57,13 @@ export default Ember.Component.extend({
     },
     searchResultSelected: function(searchResultObject) {
       this.sendAction("searchResultSelectedAction", searchResultObject);
-      // searchResultObject.set("added", true);
-      // // var locationObject = Location.locationFromPlaceSearch(searchResultObject, "");
     },
   },
   onSearchResultsChange: function() {
     var results = this.get("searchResults");
-
-    // var mapElementId = "#" + this.get("mapId");
-    // if (results.length > 0) {
-    //   this.set("noResultsFound", false);
-    //   var mapHeight = $(window).height(); //dividing by 1.5 would be 2/3s so this is just a bit less
-    //   $(mapElementId).height(mapHeight);
-    //   google.maps.event.trigger(this.get("map"), 'resize');
-    // } else {
-    //   this.set("noResultsFound", true);
-    //   $(mapElementId).height(1);
-    // }
+    if (results.length === 1) {
+      this.sendAction("searchResultSelectedAction", results[0]);
+    }
     var allMapMarkers = this.get('geo.allMapMarkers') || [];
     // Clear out the old allMapMarkers.
     allMapMarkers.forEach(function(marker) {
@@ -96,7 +86,6 @@ export default Ember.Component.extend({
       that.get("map").fitBounds(bounds);
     } else {
       // do nothing
-      // debugger;
     }
   }.observes('searchResults'),
 

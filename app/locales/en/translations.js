@@ -12,10 +12,23 @@ export default {
   en: "English",
   es: "Spanish",
 
+  save: "Save",
+  cancel: "Cancel",
+  
+  street: "Street",
+  street_number: "Street Number",
+  city: "City",
+  postCode: "Post Code",
+  region: "Region",
+  country: "Country",
+
   "editPropertySections": {
     "visibility": "Visibility"
   },
 
+  "locationTab": {
+    "confirmAddress": "Confirm new location"
+  },
 
   "fieldLabels": {
     "visible": "Visible",

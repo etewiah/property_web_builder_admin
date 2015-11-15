@@ -1,5 +1,6 @@
 {{#if isActive}}
 <div role="tabpanel" class="tab-pane" id="situacion">
+{{#unless isConfirming}}
   <div class="row">
     <div class="col-sm-12">
       <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveAddressDetails"}}>Save</button>
@@ -26,6 +27,7 @@
       {{/each}}
     </div>
   </div>
+{{/unless}}
   <div class="row" style="display:none;">
     <div class="col-sm-12">
       <div class="alert alert-info alert-dismissible" role="alert">
@@ -42,7 +44,7 @@
     <div class="col-sm-6">
       {{#if isConfirming}}
         <div >
-        {{forms/update-location newAddress=newAddress updateLocationAction="updateConfirmedAddress" cancelAction="stopConfirming"}}
+        {{forms/update-location gmapLocationObject=gmapLocationObject updateLocationAction="updateConfirmedAddress" cancelAction="stopConfirming"}}
         </div>
       {{else}}
         <div>

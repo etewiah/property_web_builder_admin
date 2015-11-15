@@ -24,35 +24,41 @@ export default Ember.Component.extend({
       this.set("isConfirming", false);
     },
     mapClicked: function(locationInfo) {
-      var newAddress = {};
-      // TODO - parse locationInfo.clickedLocation.address_components..
-      newAddress.street_address = locationInfo.clickedLocation.formatted_address;
-      // newAddress.direccionPropiedad = locationInfo.clickedLocation.formatted_address;
-      newAddress.latitude = locationInfo.clickedLocation.geometry.location.lat();
-      newAddress.longitude = locationInfo.clickedLocation.geometry.location.lng();
-      this.set("newAddress", newAddress);
-      this.set("isConfirming", true);
-    },
-    updateFromSearch: function(searchResultObject) {
-      var newAddress = {};
-      // TODO - parse searchResultObject.address_components..
-      newAddress.street_address = searchResultObject.formatted_address;
-      // newAddress.direccionPropiedad = searchResultObject.formatted_address;
-      newAddress.latitude = searchResultObject.geometry.location.lat();
-      newAddress.longitude = searchResultObject.geometry.location.lng();
-      this.set("newAddress", newAddress);
+      this.set("gmapLocationObject", locationInfo.clickedLocation);
       this.set("isConfirming", true);
     },
 
-    // result of clicking on map and confirming address derails from there
+    // will set new address from typing in search box
+    // - this new address will have to be confirmed
+    updateFromSearch: function(searchResultObject) {
+      // var newAddress = {};
+      // TODO - parse searchResultObject.address_components..
+      // newAddress.street_address = searchResultObject.formatted_address;
+      // // newAddress.direccionPropiedad = searchResultObject.formatted_address;
+      // newAddress.latitude = searchResultObject.geometry.location.lat();
+      // newAddress.longitude = searchResultObject.geometry.location.lng();
+      // this.set("newAddress", newAddress);
+      this.set("gmapLocationObject", searchResultObject);
+      this.set("isConfirming", true);
+    },
+
+    // confirming address details 
+    // after clicking on map or typing in searchbox 
     updateConfirmedAddress: function(newAddressDetails) {
       var addressDetails = this.get("addressDetails");
-      addressDetails.latitude = newAddressDetails.latitude;
-      addressDetails.longitude = newAddressDetails.longitude;
+      // addressDetails.latitude = newAddressDetails.latitude;
+      // addressDetails.longitude = newAddressDetails.longitude;
       // addressDetails.direccionPropiedad = newAddressDetails.direccionPropiedad;
-      addressDetails.street_address = newAddressDetails.street_address;
+      addressDetails.set("street_address", newAddressDetails.street_address);
+      addressDetails.set("city", newAddressDetails.city);
+      addressDetails.set("postal_code", newAddressDetails.postal_code);
+      addressDetails.set("country", newAddressDetails.country);
+      addressDetails.set("region", newAddressDetails.region);
+      addressDetails.set("longitude", newAddressDetails.longitude);
+      addressDetails.set("latitude", newAddressDetails.latitude);
+
       addressDetails.save(function(success) {
-        debugger;
+        this.set("isConfirming", false);
       }.bind(this), function(error) {
         debugger;
         var errorMessage = "Sorry, there has been an error.";
@@ -69,21 +75,7 @@ export default Ember.Component.extend({
     {
       labelTextTKey: "fieldLabels.zona",
       tooltipTextTKey: false,
-      fieldName: "zona",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.codigoPostal",
-      tooltipTextTKey: false,
-      fieldName: "codigoPostal",
+      fieldName: "region",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {
@@ -97,9 +89,23 @@ export default Ember.Component.extend({
     }, {
       labelTextTKey: "fieldLabels.localidad",
       tooltipTextTKey: "",
-      fieldName: "localidad",
+      fieldName: "region",
       fieldType: "dynamicSelect",
       optionsKey: "provinces",
+    }, {
+      labelTextTKey: "country",
+      tooltipTextTKey: false,
+      fieldName: "country",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
     }
   ],
   situacionLeftInputFields: [
@@ -133,7 +139,35 @@ export default Ember.Component.extend({
           }
         }
       }
-    }, 
+    }, {
+      labelTextTKey: "city",
+      tooltipTextTKey: false,
+      fieldName: "city",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.codigoPostal",
+      tooltipTextTKey: false,
+      fieldName: "postal_code",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    },
     // {
     //   labelTextTKey: "fieldLabels.direccionMapa",
     //   tooltipTextTKey: false,

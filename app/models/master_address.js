@@ -1,5 +1,5 @@
 // import DS from 'ember-data';
-
+// this is for cross-tenant addresses
 var MasterAddress = Ember.Object.extend({
   save: function(complete, error) {
     var MasterAddressProperties = this.getProperties( Object.keys(this) );

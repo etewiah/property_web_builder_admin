@@ -1,23 +1,50 @@
 {{#if newAddress}}
-  <h5>{{t languageSettings.titleLabelKey }} Confirm new location:</h5>
+  <h5 class="text-center">{{t "locationTab.confirmAddress" }}:</h5>
   <div >
-    <label class="fg-label arriba_label">Street:</label>
+    <label class="fg-label arriba_label">{{t "street"}}:</label>
     <div class="fg-line">
-      {{input value=newAddress.direccionPropiedad class="input-sm form-control fg-input" }}
+      {{input value=newAddress.street_address class="input-sm form-control fg-input" }}
     </div>
-    <label class="fg-label arriba_label">City:</label>
+    <label class="fg-label arriba_label">{{t "street_number"}}:</label>
+    <div class="fg-line">
+      {{input value=newAddress.street_number class="input-sm form-control fg-input" }}
+    </div>
+    <label class="fg-label arriba_label">{{t "city"}}:</label>
     <div class="fg-line">
       {{input value=newAddress.city class="input-sm form-control fg-input" }}
     </div>
-    <label class="fg-label arriba_label">Post Code:</label>
+    <label class="fg-label arriba_label">{{t "region"}}:</label>
     <div class="fg-line">
-      {{input value=newAddress.postcode class="input-sm form-control fg-input" }}
+      {{input value=newAddress.region class="input-sm form-control fg-input" }}
     </div>
+    <label class="fg-label arriba_label">{{t "country"}}:</label>
+    <div class="fg-line">
+      {{input value=newAddress.country class="input-sm form-control fg-input" }}
+    </div>
+    <label class="fg-label arriba_label">{{t "postCode"}}:</label>
+    <div class="fg-line">
+      {{input value=newAddress.postal_code class="input-sm form-control fg-input" }}
+    </div>
+
+{{!--     <label class="fg-label arriba_label">Ad area lev 2:</label>
+    <div class="fg-line">
+      {{input value=newAddress.aal2 class="input-sm form-control fg-input" }}
+    </div>
+    <label class="fg-label arriba_label">Ad area lev 3:</label>
+    <div class="fg-line">
+      {{input value=newAddress.aal3 class="input-sm form-control fg-input" }}
+    </div>
+    <label class="fg-label arriba_label">Ad area lev 4:</label>
+    <div class="fg-line">
+      {{input value=newAddress.aal4 class="input-sm form-control fg-input" }}
+    </div> --}}
+
+
     <div class="fg-line">
         <button type="submit" class="pull-right btn btn-sm m-b-10 waves-effect"
-        style="margin:2%;" {{action "cancel"}} >Cancel</button>
+        style="margin:2%;" {{action "cancel"}} >{{t "cancel"}}</button>
         <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect"
-        style="margin:2%;" {{action "saveNewAddress"}} >Save</button>
+        style="margin:2%;" {{action "saveNewAddress"}} >{{t "save"}}</button>
     </div>
   </div>
 {{/if}}
