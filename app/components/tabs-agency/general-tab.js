@@ -1,8 +1,25 @@
 import Ember from 'ember';
+import TabWithForm from "../base/tab-with-form";
 
+export default TabWithForm.extend({
 
-export default Ember.Component.extend({
+  actions: {
+    saveAgencyDetails: function() {
+      var agencyDetails = this.get("agencyDetails");
+      agencyDetails.save(function(success) {
+        // triggerReset is an action in TabWithForm
+        this.send("triggerReset");
+      }.bind(this), function(error) {
+        // debugger;
+        // var errorMessage = "Sorry, there has been an error.";
+        // if (error.responseJSON && error.responseJSON.errors) {
+        //   errorMessage = error.responseJSON.errors[0];
+        // }
+        // this.set('serverError', errorMessage);
+      }.bind(this));
+    }
 
+  },
   mainInputFields: [{
     labelTextTKey: "fieldLabels.companyName",
     // tooltipTextTKey: "toolTips.company_name",
@@ -11,9 +28,9 @@ export default Ember.Component.extend({
     inputType: "text",
     constraints: {
       inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
+        length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
         }
       }
     }
@@ -60,16 +77,6 @@ export default Ember.Component.extend({
       }
     }
   }],
-  actions: {
-    saveAgencyDetails: function() {
-      var agencyDetails = this.get("agencyDetails");
-      // var self = this;
-      // function failure(reason) {
-      // }
-      agencyDetails.save();
-      // .then().catch(failure);
-    }
-  },
   isActive: function() {
     return this.activeTabName.toLowerCase() === "general";
   }.property("activeTabName"),

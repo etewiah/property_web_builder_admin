@@ -7,7 +7,9 @@
         {{#if hasErrors}}
           {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
           {{else}}
-          <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveAddressDetails"}}>Save</button>
+          <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveAddressDetails"}}>
+            {{t "save"}}
+          </button>
         {{/if}}
       {{/if}}
     </div>

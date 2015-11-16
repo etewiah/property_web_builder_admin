@@ -1,53 +1,21 @@
 import Ember from 'ember';
+import TabWithForm from "../base/tab-with-form";
 
+export default TabWithForm.extend({
 
-export default Ember.Component.extend({
-  // shared list of markers to all different map actors to share
-  changedFields: [],
-  fieldsWithErrors: [],
-
-  // can't think of a simpler way of doing this
-  // but will watch below in each child input field and reset
-  // as not edited when resetTrigger goes up
-  resetTrigger: 0,
   actions: {
-    checkDirtyState: function(changedFieldInfo){
-      var changedFields = this.get("changedFields");
-      var fieldsWithErrors = this.get("fieldsWithErrors");
 
-      if (changedFieldInfo.hasErrors) {
-        fieldsWithErrors.pushObject(changedFieldInfo.fieldName);
-      } else{
-        fieldsWithErrors.removeObject(changedFieldInfo.fieldName);
-      }
-      var hasErrors = (fieldsWithErrors.length > 0);
-      this.set("hasErrors",hasErrors);
-
-      if (changedFieldInfo.hasChanged) {
-        changedFields.pushObject(changedFieldInfo.fieldName);
-      } else{
-        changedFields.removeObject(changedFieldInfo.fieldName);
-      }
-      // if we have more than one field that has changed
-      // consider this component as "hasChanged"
-      var hasChanged = (changedFields.length > 0);
-      this.set("hasChanged",hasChanged);
-    },
     saveAddressDetails: function() {
       var addressDetails = this.get("addressDetails");
       addressDetails.save(function(success) {
-        this.set("changedFields", []);
-        this.set("hasChanged", false);
-        this.set("fieldsWithErrors", []);
-        this.set("hasErrors", false);
-        this.set("resetTrigger", this.get("resetTrigger") + 1);
-        debugger;
+        // triggerReset is an action in TabWithForm
+        this.send("triggerReset");
       }.bind(this), function(error) {
-        debugger;
-        var errorMessage = "Sorry, there has been an error.";
-        if (error.responseJSON && error.responseJSON.errors) {
-          errorMessage = error.responseJSON.errors[0];
-        }
+        // debugger;
+        // var errorMessage = "Sorry, there has been an error.";
+        // if (error.responseJSON && error.responseJSON.errors) {
+        //   errorMessage = error.responseJSON.errors[0];
+        // }
         // this.set('serverError', errorMessage);
       }.bind(this));
     },
@@ -118,12 +86,15 @@ export default Ember.Component.extend({
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.localidad",
-      tooltipTextTKey: "",
-      fieldName: "region",
-      fieldType: "dynamicSelect",
-      optionsKey: "provinces",
-    }, {
+
+
+      //TODO will have to come back to provinces later
+      //   labelTextTKey: "fieldLabels.localidad",
+      //   tooltipTextTKey: "",
+      //   fieldName: "region",
+      //   fieldType: "dynamicSelect",
+      //   optionsKey: "provinces",
+      // }, {
       labelTextTKey: "country",
       tooltipTextTKey: false,
       fieldName: "country",
@@ -139,24 +110,7 @@ export default Ember.Component.extend({
       }
     }
   ],
-  situacionLeftInputFields: [
-    //this comment tricks prettify ;) 
-    // {
-    //   labelTextTKey: "fieldLabels.direccion",
-    //   tooltipTextTKey: false,
-    //   fieldName: "direccion",
-    //   fieldType: "simpleInput",
-    //   inputType: "text",
-    //   constraints: {
-    //     inputValue: {
-    //       length: {
-    //         minimum: 2,
-    //         tooShort: "needs to have %{count} characters or more"
-    //       }
-    //     }
-    //   }
-    // }, 
-    {
+  situacionLeftInputFields: [{
       labelTextTKey: "fieldLabels.direccionReal",
       tooltipTextTKey: false,
       fieldName: "street_address",
