@@ -5,11 +5,16 @@ export default Ember.Component.extend({
   // shared list of markers to all different map actors to share
   changedFields: [],
   fieldsWithErrors: [],
+
+  // can't think of a simpler way of doing this
+  // but will watch below in each child input field and reset
+  // as not edited when resetTrigger goes up
+  resetTrigger: 0,
   actions: {
     checkDirtyState: function(changedFieldInfo){
       var changedFields = this.get("changedFields");
       var fieldsWithErrors = this.get("fieldsWithErrors");
-      
+
       if (changedFieldInfo.hasErrors) {
         fieldsWithErrors.pushObject(changedFieldInfo.fieldName);
       } else{
@@ -27,20 +32,24 @@ export default Ember.Component.extend({
       // consider this component as "hasChanged"
       var hasChanged = (changedFields.length > 0);
       this.set("hasChanged",hasChanged);
-      debugger;
     },
     saveAddressDetails: function() {
       var addressDetails = this.get("addressDetails");
-      addressDetails.save();
-
-      // function transitionToPost(addressDetails) {
-      //   // self.transitionToRoute('posts.show', post);
-      // }
-
-      // function failure(reason) {
-      //   // handle the error
-      // }
-      // addressDetails.save().then(transitionToPost).catch(failure);
+      addressDetails.save(function(success) {
+        this.set("changedFields", []);
+        this.set("hasChanged", false);
+        this.set("fieldsWithErrors", []);
+        this.set("hasErrors", false);
+        this.set("resetTrigger", this.get("resetTrigger") + 1);
+        debugger;
+      }.bind(this), function(error) {
+        debugger;
+        var errorMessage = "Sorry, there has been an error.";
+        if (error.responseJSON && error.responseJSON.errors) {
+          errorMessage = error.responseJSON.errors[0];
+        }
+        // this.set('serverError', errorMessage);
+      }.bind(this));
     },
     stopConfirming: function() {
       this.set("isConfirming", false);

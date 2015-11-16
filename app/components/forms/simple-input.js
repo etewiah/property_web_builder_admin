@@ -14,6 +14,14 @@ export default Ember.Component.extend({
     // debugger;
     return this.get("resourceObject." + this.fieldDetails.fieldName);
   }.property("resourceObject"),
+
+
+  // each time I save to the server, I increment resetTrigger value
+  resetOriginalValue: Ember.observer('resetTrigger', function() {
+    var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
+    this.set("originalValue", inputValue);
+  }),
+
   //  http://blog.abuiles.com/blog/2015/03/30/removing-prototype-extensions-with-ember-watson/
   updateValue: Ember.observer('inputValue', function() {
     var inputValue = this.get("inputValue");
@@ -36,8 +44,12 @@ export default Ember.Component.extend({
     } else {
       this.set("errors", []);
     }
-    var hasChanged = ( this.get("originalValue") !== this.get("inputValue") );
-    this.sendAction("valueChangedAction", {hasErrors: hasErrors, hasChanged: hasChanged, fieldName: fieldName});
+    var hasChanged = (this.get("originalValue") !== this.get("inputValue"));
+    this.sendAction("valueChangedAction", {
+      hasErrors: hasErrors,
+      hasChanged: hasChanged,
+      fieldName: fieldName
+    });
 
   }),
 
