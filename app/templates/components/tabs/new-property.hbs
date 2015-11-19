@@ -5,35 +5,24 @@
     </div>
 
     <div class="col-sm-6">
-      <h4>Datos Generales</h4>
+      <h4>{{t "propertySections.generalData"}}</h4>
 
 
 {{#each inputFields as |inputField|}} 
   <div class="form-group fg-float">
-    {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
-    {{/if}}
+    {{partial "components/tabs/input-field-resolver" }}
   </div>
 {{/each}}
 
       <br>
 
 
-      <h4 class="sep50">Alquiler de temporada</h4>
+      <h4 class="sep50">{{t "propertySections.seasonalRental"}}</h4>
       <div id="toggle_temporadas">
 
 {{#each alquilerDeTemporadaInputFields as |inputField|}} 
   <div class="form-group fg-float">
-    {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
-    {{/if}}
-    {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
-    {{/if}}
-    {{#if (eq inputField.fieldType "dynamicSelect")}}
-        {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
-    {{/if}}
-
+    {{partial "components/tabs/input-field-resolver" }}
   </div>
 {{/each}}
 
@@ -42,22 +31,13 @@
       </div>
     </div>
     <div class="col-sm-6">
-      <h4>Características</h4>
-
-
+      <h4>{{t "propertySections.characteristics" }}</h4>
 
 {{#each characteristicasInputFields as |inputField|}} 
   <div class="form-group fg-float">
-    {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
-    {{/if}}
-    {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource}}
-    {{/if}}
+    {{partial "components/tabs/input-field-resolver" }}
   </div>
 {{/each}}
-
-
 
     </div>
   </div>

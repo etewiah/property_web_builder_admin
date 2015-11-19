@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
+import TabWithForm from "../base/tab-with-form";
 
-export default Ember.Component.extend({
+export default TabWithForm.extend({
+
   // propertyResource: {},
   actions: {
     createPropertyResource: function() {

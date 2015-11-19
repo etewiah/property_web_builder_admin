@@ -14,7 +14,7 @@ export default {
 
   save: "Save",
   cancel: "Cancel",
-  
+
   street: "Street",
   street_number: "Street Number",
   city: "City",
@@ -31,8 +31,12 @@ export default {
     "fixErrors": "Please correct the errors below"
   },
 
-  "editPropertySections": {
-    "visibility": "Visibility"
+  "propertySections": {
+    "visibility": "Visibility",
+    "generalData": "Datos Generales",
+    "seasonalRental": "Alquiler de temporada",
+    "characteristics": "Características",
+    "portals": "Portales",
   },
 
   "locationTab": {
@@ -48,7 +52,7 @@ export default {
     "otherPhone": "Other phone number",
   },
 
-// for header row in property listing
+  // for header row in property listing
   "propertyLabels": {
     "highlighted": "Destacado",
     "locality": "Localidad",
