@@ -24,6 +24,9 @@ export default {
 
   "null": "",
 
+  "newProperty": "Nuevo Propiedad",
+  "newClient": "Nuevo Cliente",
+
   "prompts": {
     "fixErrors": "Please correct the errors below"
   },

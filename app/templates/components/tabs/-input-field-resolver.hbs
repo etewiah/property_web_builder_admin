@@ -1,0 +1,9 @@
+{{#if (eq inputField.fieldType "simpleInput")}}
+    {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
+{{/if}}
+{{#if (eq inputField.fieldType "simpleSelect")}}
+    {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
+{{/if}}
+{{#if (eq inputField.fieldType "dynamicSelect")}}
+    {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
+{{/if}}

@@ -1,10 +1,10 @@
 <div role="tabpanel" class="tab-pane active" id="general">
   <div class="row">
     <div class="col-sm-12">
-        <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "createPropertyResource"}} >{{t "buttonLabels.crear" }}</button>
+        <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" {{action "createPropertyResource"}} >{{t "buttonLabels.crear" }}</button>
     </div>
 
-    <div class="col-sm-4">
+    <div class="col-sm-6">
       <h4>Datos Generales</h4>
 
 
@@ -25,11 +25,15 @@
 {{#each alquilerDeTemporadaInputFields as |inputField|}} 
   <div class="form-group fg-float">
     {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
+        {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
     {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource}}
+        {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
     {{/if}}
+    {{#if (eq inputField.fieldType "dynamicSelect")}}
+        {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
+    {{/if}}
+
   </div>
 {{/each}}
 
@@ -37,7 +41,7 @@
 
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
       <h4>Características</h4>
 
 
@@ -52,32 +56,6 @@
     {{/if}}
   </div>
 {{/each}}
-
-
-      <br>
-      <h4 class="sep50">Visibilidad</h4>
-      <div class="form-group fg-float">
-        <div class="fg-line has-">
-          <a href="#" class="ayuda" data-toggle="tooltip" title="" data-original-title="Sí para publicar el inmueble en su web"><i class="fa fa-info"></i></a>
-          <select class="selectpicker" style="display: none;">
-            <option value="0">No</option>
-            <option value="1" selected="">Sí</option>
-          </select>
-          <div class="btn-group bootstrap-select">
-            <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="Sí"><span class="filter-option pull-left">Sí</span>&nbsp;<span class="caret"></span></button>
-            <div class="dropdown-menu open">
-              <ul class="dropdown-menu inner selectpicker" role="menu">
-                <li data-original-index="0"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>No</span>"><span class="text">No</span><span class="md md-done check-mark"></span></a></li>
-                <li data-original-index="1" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Si</span>"><span class="text">Sí</span><span class="md md-done check-mark"></span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <label class="fg-label arriba_label">Visible: </label>
-      </div>
-
-
-
 
 
 
