@@ -76,7 +76,6 @@ export default Ember.Component.extend({
   // each time I save to the server, I increment resetTrigger value
   resetOriginalValue: Ember.observer('resetTrigger', function() {
     var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
-    debugger;
     this.set("originalValue", inputValue);
   }),
 

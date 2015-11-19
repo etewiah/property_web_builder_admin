@@ -11,7 +11,6 @@ export default Ember.Component.extend({
   resetTrigger: 0,
   actions: {
     checkDirtyState: function(changedFieldInfo) {
-      debugger;
       var changedFields = this.get("changedFields");
       var fieldsWithErrors = this.get("fieldsWithErrors");
 

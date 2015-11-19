@@ -51,19 +51,15 @@ export default TabWithForm.extend({
   characteristicasInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.eficienciaEnergia",
-      tooltipTextTKey: "toolTips.eficienciaEnergia",
-      fieldName: "eficienciaEnergia",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-      // options: [{
-      //   value: 1,
-      //   titleKey: "Si"
-      // }, {
-      //   value: 0,
-      //   titleKey: "No"
-      // }]
-    }, {
+
+     // eficienciaEnergia is saved on server as string
+     // commenting out till I decide on server side solution
+    //   labelTextTKey: "fieldLabels.eficienciaEnergia",
+    //   tooltipTextTKey: "toolTips.eficienciaEnergia",
+    //   fieldName: "eficienciaEnergia",
+    //   fieldType: "simpleSelect",
+    //   fieldDbType: "boolean",
+    // }, {
       labelTextTKey: "fieldLabels.anoConstr",
       tooltipTextTKey: false,
       fieldName: "anoConstr",
