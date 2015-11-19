@@ -43,8 +43,19 @@ export default {
     "companyName": "Company Name",
     "primaryPhone": "Main phone number",
     "otherPhone": "Other phone number",
-    "highlighted": "Highlighted",
-    "label": "Label",
+  },
+
+// for header row in property listing
+  "propertyLabels": {
+    "highlighted": "Destacado",
+    "locality": "Localidad",
+    "actions": "Acciones",
+    "zone": "Zona",
+    "price": "Precio",
+    "rooms": "Hab.",
+    "visible": "Visible",
+    "reference": "Ref",
+    "type": "Tipo"
   },
 
   "toolTips": {

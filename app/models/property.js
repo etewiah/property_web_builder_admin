@@ -25,6 +25,12 @@ export default DS.Model.extend({
     });
   },
   i18n: Ember.inject.service(),
+
+// might be better to do translation of title on the server
+  tTitle: Ember.computed('i18n.locale', function() {
+    var titleLocalisedProp = "title" + this.get("i18n.locale").capitalize();
+    return this.get(titleLocalisedProp);
+  }),
   // name: DS.attr('string'),
   // tTipoPropiedad: t("propertyTypes." + this.get("tipoPropiedad")),
 

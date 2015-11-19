@@ -18,33 +18,33 @@
             <thead>
                 <tr>
                     <th data-column-id="id" data-type="text" data-order="desc">Ref</th>
-                    <th data-column-id="destacado">Destacado</th>
-                    <th data-column-id="localidad">Localidad</th>
-                    <th data-column-id="zona">Zona</th>
-                    <th data-column-id="tipo">Tipo</th>
-                    <th data-column-id="precio">Precio</th>
-                    <th data-column-id="hab">Hab</th>
-                    <th data-column-id="visible">Visible</th>
-                    <th data-column-id="commands" data-formatter="commands" data-sortable="false">Acciones</th>
+                    <th data-column-id="destacado">{{t "propertyLabels.highlighted" }}</th>
+                    <th data-column-id="localidad">{{t "propertyLabels.locality"}}</th>
+                    <th data-column-id="zona">{{t "propertyLabels.zone"}}</th>
+                    <th data-column-id="tipo">{{t "propertyLabels.type"}}</th>
+                    <th data-column-id="precio">{{t "propertyLabels.price"}}</th>
+                    <th data-column-id="hab">{{t "propertyLabels.rooms"}}</th>
+                    <th data-column-id="visible">{{t "propertyLabels.visible"}}</th>
+                    <th data-column-id="commands" data-formatter="commands" data-sortable="false">{{t "propertyLabels.actions"}}</th>
                 </tr>
             </thead>
             <tbody>
 
-          {{#each model as |item|}} 
+          {{#each model as |property|}} 
             <tr >
-              <td>{{ item.titleEn }}</td>
-              <td>{{t item.destacado }}</td>
-              <td>{{t item.localidad }}</td>
-              <td>{{ item.zonaDireccion }}</td>
-              <td>{{ item.tTipoPropiedad }}</td>
-              <td>{{ item.precioVenta }}</td>
-              <td>{{ item.numHabitaciones }}</td>
-              <td>{{t item.visible }}</td>
+              <td>{{ property.tTitle }}</td>
+              <td>{{t property.destacado }}</td>
+              <td>{{t property.localidad }}</td>
+              <td>{{ property.zonaDireccion }}</td>
+              <td>{{ property.tTipoPropiedad }}</td>
+              <td>{{ property.precioVenta }}</td>
+              <td>{{ property.numHabitaciones }}</td>
+              <td>{{t property.visible }}</td>
               <td>
-              <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" item }} data-id_propiedad="1">
+              <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" property }} data-id_propiedad="1">
               <i class="md md-edit"><i class="fa fa-pencil"></i></i>
               </button>
-              <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" item }} data-id_propiedad="1">
+              <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" property }} data-id_propiedad="1">
               <i class="md md-edit"><i class="fa fa-trash"></i></i>
               </button>
               </td>
