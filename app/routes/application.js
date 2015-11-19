@@ -1,7 +1,13 @@
 import Ember from 'ember';
 // const { Route, inject } = Ember;
+const {
+  Route, inject
+} = Ember;
 
 export default Ember.Route.extend({
+
+  configFetcher: inject.service(),
+  // i18n: inject.service(),
 
 
   activate: function() {

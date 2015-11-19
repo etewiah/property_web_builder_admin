@@ -1,4 +1,11 @@
-export default {
+// https://github.com/jamesarosen/ember-i18n/issues/256
+// a hack to allow en to be used as a fallback..
+import Ember from "ember";
+import en from "../en/translations";
+
+export default Ember.merge(Ember.copy(en), {
+
+// export default {
   // "some.translation.key": "Text for some.translation.key",
 
   // "a": {
@@ -228,4 +235,4 @@ export default {
     odd: "must be odd",
     even: "must be even"
   }
-};
+});
