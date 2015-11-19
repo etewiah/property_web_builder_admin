@@ -39,6 +39,8 @@ export default {
     "highlighted": "Highlighted",
     "label": "Label",
     "companyName": "Company Name",
+    "primaryPhone": "Main phone number",
+    "otherPhone": "Other phone number",
     "highlighted": "Highlighted",
     "label": "Label",
   },

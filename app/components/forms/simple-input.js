@@ -44,7 +44,7 @@ export default Ember.Component.extend({
     } else {
       this.set("errors", []);
     }
-    var hasChanged = (this.get("originalValue") !== this.get("inputValue"));
+    var hasChanged = (this.get("originalValue").toString() !== this.get("inputValue").toString());
     this.sendAction("valueChangedAction", {
       hasErrors: hasErrors,
       hasChanged: hasChanged,

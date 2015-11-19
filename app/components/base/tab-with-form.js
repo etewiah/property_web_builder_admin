@@ -33,7 +33,6 @@ export default Ember.Component.extend({
       this.set("hasChanged", hasChanged);
     },
     triggerReset: function() {
-      debugger;
       this.set("changedFields", []);
       this.set("hasChanged", false);
       this.set("fieldsWithErrors", []);

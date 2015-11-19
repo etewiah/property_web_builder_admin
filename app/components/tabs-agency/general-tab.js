@@ -21,62 +21,49 @@ export default TabWithForm.extend({
 
   },
   mainInputFields: [{
-    labelTextTKey: "fieldLabels.companyName",
-    // tooltipTextTKey: "toolTips.company_name",
-    fieldName: "company_name",
-    fieldType: "simpleInput",
-    inputType: "text",
-    constraints: {
-      inputValue: {
-        length: {
-          minimum: 2,
-          tooShort: "needs to have %{count} characters or more"
+      labelTextTKey: "fieldLabels.companyName",
+      // tooltipTextTKey: "toolTips.company_name",
+      fieldName: "company_name",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.primaryPhone",
+      // tooltipTextTKey: "toolTips.company_name",
+      fieldName: "phone_number_primary",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.otherPhone",
+      fieldName: "phone_number_other",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
         }
       }
     }
-  }, {
-    labelTextTKey: "fieldLabels.precioVenta",
-    tooltipTextTKey: "toolTips.precioVenta",
-    fieldName: "precioVenta",
-    fieldType: "simpleInput",
-    inputType: "number",
-    constraints: {
-      inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
-        }
-      }
-    }
-  }, {
-    labelTextTKey: "fieldLabels.precioAntiguo",
-    tooltipTextTKey: "toolTips.precioAntiguo",
-    fieldName: "precioAntiguo",
-    fieldType: "simpleInput",
-    inputType: "number",
-    constraints: {
-      inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
-        }
-      }
-    }
-  }, {
-    labelTextTKey: "fieldLabels.precioAlquiler",
-    tooltipTextTKey: "toolTips.precioAlquiler",
-    fieldName: "precioAlquiler",
-    fieldType: "simpleInput",
-    inputType: "number",
-    constraints: {
-      inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
-        }
-      }
-    }
-  }],
+
+  ],
   isActive: function() {
     return this.activeTabName.toLowerCase() === "general";
   }.property("activeTabName"),

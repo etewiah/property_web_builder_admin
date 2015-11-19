@@ -2,7 +2,15 @@
 <div role="tabpanel" class="tab-pane active" id="general">
   <div class="row">
     <div class="col-sm-12">
-        <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "savePropertyResource"}} >Save</button>
+      {{#if hasChanged}}
+        {{#if hasErrors}}
+          {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
+          {{else}}
+          <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "savePropertyResource"}}>
+            {{t "save"}}
+          </button>
+        {{/if}}
+      {{/if}}
     </div>
     <div class="col-sm-4">
       
@@ -28,10 +36,10 @@
         {{#each visibilityInputFields as |inputField|}} 
           <div class="form-group fg-float">
             {{#if (eq inputField.fieldType "simpleInput")}}
-                {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
+                {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
             {{/if}}
             {{#if (eq inputField.fieldType "simpleSelect")}}
-                {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
+                {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
             {{/if}}
             {{#if (eq inputField.fieldType "dynamicSelect")}}
                 {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
@@ -48,10 +56,10 @@
 {{#each mainInputFields as |inputField|}} 
   <div class="form-group fg-float">
     {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
+        {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
     {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
+        {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
     {{/if}}
     {{#if (eq inputField.fieldType "dynamicSelect")}}
         {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
@@ -68,10 +76,10 @@
 {{#each alquilerDeTemporadaInputFields as |inputField|}} 
   <div class="form-group fg-float">
     {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
+        {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
     {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource}}
+        {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
   </div>
 {{/each}}
@@ -88,10 +96,10 @@
 {{#each characteristicasInputFields as |inputField|}} 
   <div class="form-group fg-float">
     {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
+        {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
     {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource}}
+        {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
   </div>
 {{/each}}
@@ -104,10 +112,10 @@
 {{#each portalesInputFields as |inputField|}} 
   <div class="form-group fg-float">
     {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}}
+        {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
     {{/if}}
     {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
+        {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
     {{/if}}
   </div>
 {{/each}}

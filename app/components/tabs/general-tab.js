@@ -1,7 +1,7 @@
 import Ember from 'ember';
+import TabWithForm from "../base/tab-with-form";
 
-
-export default Ember.Component.extend({
+export default TabWithForm.extend({
 
   visibilityInputFields: [
     //this comment tricks prettify ;) 
@@ -307,17 +307,16 @@ export default Ember.Component.extend({
     savePropertyResource: function() {
       var propertyResource = this.get("propertyResource");
       var self = this;
-debugger;
-      function transitionToPost(propertyResource) {
-        // debugger;
-        // self.transitionToRoute('posts.show', post);
+      function success(result) {
+        // triggerReset is an action in TabWithForm
+        self.send("triggerReset");
       }
 
       function failure(reason) {
         // debugger;
         // handle the error
       }
-      propertyResource.save().then(transitionToPost).catch(failure);
+      propertyResource.save().then(success).catch(failure);
     }
   },
   isActive: function() {
