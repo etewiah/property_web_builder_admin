@@ -8,6 +8,7 @@ const { Service, inject } = Ember;
 
 export default Service.extend({
 
+// for now it seems this is only used by interactive-gmap component
   getConfigForKey(configKey) {
     var config = {
       defaultBounds: {

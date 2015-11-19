@@ -19,7 +19,6 @@ export default Ember.Route.extend({
         // localStorage.setItem('ma-layout-status', 0);
       }
     });
-
   },
   // deactivate: function() {
   //   debugger;
@@ -32,6 +31,7 @@ export default Ember.Route.extend({
   //   return this.get('translationsFetcher').fetch();
   // },
   actions: {
+    // action below gets called from router.js on each didTransition
     setActiveLeftNav: function() {
       var applicationController = this.controllerFor("application");
       var currentRouteName = applicationController.currentRouteName;
