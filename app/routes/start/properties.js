@@ -1,15 +1,5 @@
 import Ember from 'ember';
-
+// TODO - delete
 export default Ember.Route.extend({
-  actions: {
-    goToProperty(id) {
-      this.transitionTo("start.properties.property", id);
-    }
-  },
-  model() {
-    return this.store.findAll('property'); // or any other user you like
-  },
-  // setupController(controller, model) {
-  //   debugger;
-  // }
+
 });

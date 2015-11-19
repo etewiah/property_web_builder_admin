@@ -57,7 +57,7 @@ export default Ember.Route.extend({
       }, {
         tabIconClass: "fa fa-users",
         tabTitleKey: "adminSections.clientes",
-        tabRoute: "admin.default"
+        tabRoute: "admin.clients"
 
       },
 

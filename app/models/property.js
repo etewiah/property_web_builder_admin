@@ -28,8 +28,9 @@ export default DS.Model.extend({
   // name: DS.attr('string'),
   // tTipoPropiedad: t("propertyTypes." + this.get("tipoPropiedad")),
 
+  // 19 nov 2015 - not entirely sure I want to carry on with this:
   tTipoPropiedad: Ember.computed('i18n.locale', 'tipoPropiedad', function() {
-    return this.get("i18n").t("propertyTypes." + this.get("tipoPropiedad"));
+    return this.get("i18n").t(this.get("tipoPropiedad"));
   }),
   // idPropiedad: DS.attr(),
   extras: DS.attr({dontSerialize: true}),

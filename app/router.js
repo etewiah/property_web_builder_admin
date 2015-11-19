@@ -60,6 +60,26 @@ Router.map(function() {
         path: "/:tabName"
       });
     });
+    this.route("clients", {
+      path: '/clients'
+    }, function() {
+      this.route("default", {
+        path: "/"
+      });
+      this.route("new", {
+        path: "/new"
+      });
+      this.route("editar", {
+        path: '/:idPropiedad/edit'
+      }, function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tabName"
+        });
+      });
+    });
     this.route("propiedades", {
       path: '/properties'
     }, function() {
@@ -91,25 +111,6 @@ Router.map(function() {
   // this.route('start', function() {
   //   this.route("default", {
   //     path: "/"
-  //   });
-  //   this.route('inicio');
-  //   this.route("properties", function() {
-  //     this.route("default", {
-  //       path: "/"
-  //     });
-  //     // this.route("property", {
-  //     //   path: "/:ref"
-  //     // });
-  //     this.route("property", {
-  //       path: '/:ref'
-  //     }, function() {
-  //       this.route("default", {
-  //         path: "/"
-  //       });
-  //       this.route("tab", {
-  //         path: "/:tab"
-  //       });
-  //     });
   //   });
   // });
 });

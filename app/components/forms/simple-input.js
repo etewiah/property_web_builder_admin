@@ -55,6 +55,7 @@ export default Ember.Component.extend({
 
   setOriginalValue: function() {
     var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
+    inputValue = inputValue || "";
     this.set("originalValue", inputValue);
   }.on('init'),
 
