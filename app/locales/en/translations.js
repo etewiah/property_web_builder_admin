@@ -24,6 +24,8 @@ export default {
 
   "null": "",
 
+  "addProperty": "Añadir propiedad",
+  "addClient": "Añadir cliente",
   "newProperty": "Nuevo Propiedad",
   "newClient": "Nuevo Cliente",
   "propertiesList": "Listado de propiedades",
@@ -47,6 +49,8 @@ export default {
   },
 
   "fieldLabels": {
+    "firstNames": "First Name",
+    "lastNames": "Last Names",
     "visible": "Visible",
     "highlighted": "Highlighted",
     "label": "Label",

@@ -3,7 +3,8 @@
     <div class="card-header sep25">
         <h2>{{t "propertiesList" }}</h2>
         <div role="group" class="boton_anadir_propiedad">
-        {{#link-to "admin.propiedades.nuevo" data-toggle="tooltip" title="Añadir propiedad" class="btn bgm-cyan btn-circulo btn-float waves-effect" }} 
+        {{#link-to "admin.propiedades.nuevo" data-toggle="tooltip" 
+        titleBinding=(t "addClient") class="btn bgm-cyan btn-circulo btn-float waves-effect" }} 
          <i class="fa fa-plus"></i><i class="md md-add"></i>
         {{/link-to}}  
 
