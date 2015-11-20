@@ -22,16 +22,15 @@
         <li class="dropdown">
           <a data-toggle="dropdown" class="tm-settings" href=""></a>
           <ul class="dropdown-menu dm-icon pull-right">
+
+            {{#each configObject.locales as |localeConfig|}}
             <li>
-              {{#link-to currentRouteName class="" }} 
-                Spanish
+              {{#link-to currentRouteName localeConfig class="" }} 
+                {{t localeConfig.locale }}
               {{/link-to}} 
             </li>
-            <li>
-              {{#link-to currentRouteName "en" class="" }} 
-                English
-              {{/link-to}} 
-            </li>
+            {{/each}}
+
           </ul>
         </li>
 
