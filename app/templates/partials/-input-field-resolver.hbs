@@ -6,5 +6,5 @@
     {{forms/simple-boolean resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
 {{/if}}
 {{#if (eq inputField.fieldType "dynamicSelect")}}
-    {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
+    {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
 {{/if}}

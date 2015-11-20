@@ -4,7 +4,7 @@
 <div class="fg-line has-">
   <select class="selectpicker" style="display: none;">
 {{#each fieldOptions as |selectValue|}} 
-  <option>{{ selectValue.label }}</option>
+  <option value={{ selectValue.value }} >{{ selectValue.label }}</option>
 {{/each}}
   </select>
 
