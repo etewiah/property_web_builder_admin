@@ -63,7 +63,7 @@ export default Ember.Route.extend({
 
       // below to ensure that I have correct localised params
       // available for language switcher
-      // doesn't work though :()
+      // doesn't work though :(
       // var currentParams = this.paramsFor(currentRouteName);
       // var localesRouteParams = this.get("configObject.locales") || [];
       // var newLocalesRouteParams = [];

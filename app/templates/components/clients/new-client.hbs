@@ -1,85 +1,28 @@
 <div role="tabpanel" class="tab-pane active" id="general">
   <div class="row">
     <div class="col-sm-12">
-      {{#if hasChanged}}
-        {{#if hasErrors}}
-          {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
-          {{else}}
-          <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "savePropertyResource"}}>
-            {{t "save"}}
-          </button>
-        {{/if}}
-      {{/if}}
+        <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" {{action "createPropertyResource"}} >{{t "buttonLabels.crear" }}</button>
     </div>
-    <div class="col-sm-4">
-      
-      <div class="thumbnail">
-        <img src="img/300x200.gif" alt="">
-        <div class="caption">
-          <h4>REK-1040 - <span class="precio">325.000€</span> </h4>
-          <p>Apartamento San Miguel de Salinas.</p>
-          <p class="iconos_grande">
-            <i class="fa fa-bed"></i> <span>2</span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <i class="fa fa-male"></i><i class="fa fa-female"></i> 
-            <span>1<span>&nbsp;&nbsp;&nbsp;
-            <i class="fa fa-arrows"></i> <span>25m<sup>2</sup></span>
-            </span>
-            </span>
-          </p>
-        </div>
-      </div>
-      <div>
-        <h4>{{t "editPropertySections.visibility" }}</h4>
+
+    <div class="col-sm-6">
+      <h4>{{t "propertySections.generalData"}}</h4>
 
 
-        {{#each visibilityInputFields as |inputField|}} 
-          <div class="form-group fg-float">
-            {{#if (eq inputField.fieldType "simpleInput")}}
-                {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
-            {{/if}}
-            {{#if (eq inputField.fieldType "simpleSelect")}}
-                {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
-            {{/if}}
-            {{#if (eq inputField.fieldType "dynamicSelect")}}
-                {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
-            {{/if}}
-          </div>
-        {{/each}}
-      </div>
-
-    </div>
-    <div class="col-sm-4">
-      <h4>Datos Generales</h4>
-
-
-{{#each mainInputFields as |inputField|}} 
+{{#each inputFields as |inputField|}} 
   <div class="form-group fg-float">
-    {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
-    {{/if}}
-    {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
-    {{/if}}
-    {{#if (eq inputField.fieldType "dynamicSelect")}}
-        {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
-    {{/if}}
+    {{partial "partials/input-field-resolver" }}
   </div>
 {{/each}}
 
       <br>
 
 
-      <h4 class="sep50">Alquiler de temporada</h4>
+      <h4 class="sep50">{{t "propertySections.seasonalRental"}}</h4>
       <div id="toggle_temporadas">
 
 {{#each alquilerDeTemporadaInputFields as |inputField|}} 
   <div class="form-group fg-float">
-    {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
-    {{/if}}
-    {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource}}
-    {{/if}}
+    {{partial "partials/input-field-resolver" }}
   </div>
 {{/each}}
 
@@ -87,39 +30,14 @@
 
       </div>
     </div>
-    <div class="col-sm-4">
-      <h4>Características</h4>
-
-
+    <div class="col-sm-6">
+      <h4>{{t "propertySections.characteristics" }}</h4>
 
 {{#each characteristicasInputFields as |inputField|}} 
   <div class="form-group fg-float">
-    {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
-    {{/if}}
-    {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource}}
-    {{/if}}
+    {{partial "partials/input-field-resolver" }}
   </div>
 {{/each}}
-
-
-      <br>
-      <h4 class="sep50">Portales</h4>
-
-
-{{#each portalesInputFields as |inputField|}} 
-  <div class="form-group fg-float">
-    {{#if (eq inputField.fieldType "simpleInput")}}
-        {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=propertyResource}}
-    {{/if}}
-    {{#if (eq inputField.fieldType "simpleSelect")}}
-        {{forms/simple-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
-    {{/if}}
-  </div>
-{{/each}}
-
-
 
     </div>
   </div>
