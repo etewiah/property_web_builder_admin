@@ -54,8 +54,25 @@ export default Ember.Route.extend({
       if (currentRouteName.indexOf("clients") > 0) {
         activeTabRoute = "admin.clients";
       }
+      if (currentRouteName.indexOf("clients") > 0) {
+        activeTabRoute = "admin.clients";
+      }
       var adminController = this.controllerFor("admin");
       adminController.set("activeTabRoute", activeTabRoute);
+
+
+      // below to ensure that I have correct localised params
+      // available for language switcher
+      // doesn't work though :()
+      // var currentParams = this.paramsFor(currentRouteName);
+      // var localesRouteParams = this.get("configObject.locales") || [];
+      // var newLocalesRouteParams = [];
+      // localesRouteParams.forEach(function(routeParams){
+      //   var paramsWithLocale = Ember.copy(currentParams, true);
+      //   paramsWithLocale.locale = "ch";
+      //   newLocalesRouteParams.push(paramsWithLocale);
+      // }.bind(this));
+      // this.set("configObject.locales", newLocalesRouteParams);
     }
   }
 });
