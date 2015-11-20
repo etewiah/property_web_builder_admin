@@ -1,7 +1,7 @@
 <div class="card">
     
     <div class="card-header sep25">
-        <h2>{{t "listadoPropiedades" }}</h2>
+        <h2>{{t "clientsList" }}</h2>
         <div role="group" class="boton_anadir_propiedad">
         {{#link-to "admin.clients.new" data-toggle="tooltip" title="Añadir propiedad" class="btn bgm-cyan btn-circulo btn-float waves-effect" }} 
          <i class="fa fa-plus"></i><i class="md md-add"></i>
@@ -18,33 +18,20 @@
             <thead>
                 <tr>
                     <th data-column-id="id" data-type="text" data-order="desc">Ref</th>
-                    <th data-column-id="destacado">{{t "propertyLabels.highlighted" }}</th>
-                    <th data-column-id="localidad">{{t "propertyLabels.locality"}}</th>
-                    <th data-column-id="zona">{{t "propertyLabels.zone"}}</th>
-                    <th data-column-id="tipo">{{t "propertyLabels.type"}}</th>
-                    <th data-column-id="precio">{{t "propertyLabels.price"}}</th>
-                    <th data-column-id="hab">{{t "propertyLabels.rooms"}}</th>
-                    <th data-column-id="visible">{{t "propertyLabels.visible"}}</th>
+ 
                     <th data-column-id="commands" data-formatter="commands" data-sortable="false">{{t "propertyLabels.actions"}}</th>
                 </tr>
             </thead>
             <tbody>
 
-          {{#each model as |item|}} 
+          {{#each model as |client|}} 
             <tr >
-              <td>{{ item.titleEn }}</td>
-              <td>{{t item.destacado }}</td>
-              <td>{{ item.localidad }}</td>
-              <td>{{ item.zonaDireccion }}</td>
-              <td>{{ item.tTipoPropiedad }}</td>
-              <td>{{ item.precioVenta }}</td>
-              <td>{{ item.numHabitaciones }}</td>
-              <td>{{t item.visible }}</td>
+              <td>{{ client.titleEn }}</td>
               <td>
-              <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" item }} data-id_propiedad="1">
+              <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editClient" client }} data-id_propiedad="1">
               <i class="md md-edit"><i class="fa fa-pencil"></i></i>
               </button>
-              <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" item }} data-id_propiedad="1">
+              <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editClient" client }} data-id_propiedad="1">
               <i class="md md-edit"><i class="fa fa-trash"></i></i>
               </button>
               </td>

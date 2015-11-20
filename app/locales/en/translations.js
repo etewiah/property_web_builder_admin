@@ -26,6 +26,9 @@ export default {
 
   "newProperty": "Nuevo Propiedad",
   "newClient": "Nuevo Cliente",
+  "propertiesList": "Listado de propiedades",
+  "clientsList": "Listado de clientes",
+
 
   "prompts": {
     "fixErrors": "Please correct the errors below"

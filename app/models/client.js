@@ -5,7 +5,8 @@ export default DS.Model.extend({
 
   // i18n: Ember.inject.service(),
 
-  // idPropiedad: DS.attr(),
+  firstNames: DS.attr(),
+  lastNames: DS.attr(),
   // extras: DS.attr({dontSerialize: true}),
 
 

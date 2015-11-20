@@ -69,8 +69,8 @@ Router.map(function() {
       this.route("new", {
         path: "/new"
       });
-      this.route("editar", {
-        path: '/:idPropiedad/edit'
+      this.route("edit", {
+        path: '/:id/edit'
       }, function() {
         this.route("default", {
           path: "/"
