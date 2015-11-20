@@ -22,10 +22,52 @@ export default TabWithForm.extend({
     }
 
   },
-  mainInputFields: [{
-      labelTextTKey: "fieldLabels.companyName",
-      // tooltipTextTKey: "toolTips.company_name",
+  leftSideInputFields: [{
+      labelTextTKey: "fieldLabels.firstNames",
       fieldName: "firstNames",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.primaryPhone",
+      // tooltipTextTKey: "toolTips.company_name",
+      fieldName: "lastNames",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.otherPhone",
+      fieldName: "phone_number_other",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }
+
+  ],
+  rightSideInputFields: [{
+      labelTextTKey: "fieldLabels.lastNames",
+      fieldName: "lastNames",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {

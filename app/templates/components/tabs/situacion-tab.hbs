@@ -7,21 +7,14 @@
     <div class="col-sm-6">
       {{#each situacionLeftInputFields as |inputField|}}
       <div class="form-group fg-float">
-        {{#if (eq inputField.fieldType "simpleInput")}} 
-          {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}} 
-        {{/if}} 
+        {{partial "partials/input-field-resolver" }}
       </div>
       {{/each}}
     </div>
     <div class="col-sm-6">
       {{#each situacionRightInputFields as |inputField|}}
       <div class="form-group fg-float">
-        {{#if (eq inputField.fieldType "simpleInput")}} 
-          {{forms/simple-input fieldDetails=inputField resourceObject=propertyResource}} 
-        {{/if}} 
-        {{#if (eq inputField.fieldType "dynamicSelect")}}
-            {{forms/dynamic-select fieldDetails=inputField resourceObject=propertyResource fieldKeys=fieldKeys}}
-        {{/if}}
+        {{partial "partials/input-field-resolver" }}
       </div>
       {{/each}}
     </div>

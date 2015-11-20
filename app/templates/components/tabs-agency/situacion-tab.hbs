@@ -16,21 +16,14 @@
     <div class="col-sm-6">
       {{#each situacionLeftInputFields as |inputField|}}
       <div class="form-group fg-float">
-        {{#if (eq inputField.fieldType "simpleInput")}} 
-          {{forms/simple-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=addressDetails}} 
-        {{/if}} 
+        {{partial "partials/input-field-resolver" }}
       </div>
       {{/each}}
     </div>
     <div class="col-sm-6">
       {{#each situacionRightInputFields as |inputField|}}
       <div class="form-group fg-float">
-        {{#if (eq inputField.fieldType "simpleInput")}} 
-          {{forms/simple-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=addressDetails}} 
-        {{/if}} 
-        {{#if (eq inputField.fieldType "dynamicSelect")}}
-            {{forms/dynamic-select resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=addressDetails fieldKeys=fieldKeys}}
-        {{/if}}
+        {{partial "partials/input-field-resolver" }}
       </div>
       {{/each}}
     </div>

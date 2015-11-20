@@ -2,9 +2,6 @@
 <div role="tabpanel" class="tab-pane active" id="general">
   <div class="row">
     <div class="col-sm-12">
-    </div>
-    <div class="col-sm-6">
-      <div>
       {{#if hasChanged}}
         {{#if hasErrors}}
           {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
@@ -14,21 +11,21 @@
           </button>
         {{/if}}
       {{/if}}
-      </div>
-      {{#each mainInputFields as |inputField|}}
+    </div>
+    <div class="col-sm-6">
+      {{#each leftSideInputFields as |inputField|}}
       <div class="form-group fg-float">
-        {{#if (eq inputField.fieldType "simpleInput")}} 
-          {{forms/simple-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=clientResource}} 
-        {{/if}} 
-        {{#if (eq inputField.fieldType "simpleSelect")}} 
-          {{forms/simple-select fieldDetails=inputField resourceObject=clientResource fieldKeys=fieldKeys}} 
-        {{/if}} 
-        {{#if (eq inputField.fieldType "dynamicSelect")}} {{forms/dynamic-select fieldDetails=inputField resourceObject=clientResource fieldKeys=fieldKeys}} {{/if}}
+          {{partial "partials/input-field-resolver" }}
       </div>
       {{/each}}
       <br>
     </div>
     <div class="col-sm-6">
+      {{#each rightSideInputFields as |inputField|}}
+      <div class="form-group fg-float">
+          {{partial "partials/input-field-resolver" }}
+      </div>
+      {{/each}}
     </div>
   </div>
 </div>
