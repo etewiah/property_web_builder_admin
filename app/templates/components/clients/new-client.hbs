@@ -1,44 +1,23 @@
 <div role="tabpanel" class="tab-pane active" id="general">
   <div class="row">
     <div class="col-sm-12">
-        <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" {{action "createPropertyResource"}} >{{t "buttonLabels.crear" }}</button>
+        <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" {{action "createClientResource"}} >{{t "buttonLabels.crear" }}</button>
     </div>
 
     <div class="col-sm-6">
-      <h4>{{t "propertySections.generalData"}}</h4>
-
-
-{{#each inputFields as |inputField|}} 
-  <div class="form-group fg-float">
-    {{partial "partials/input-field-resolver" }}
-  </div>
-{{/each}}
-
-      <br>
-
-
-      <h4 class="sep50">{{t "propertySections.seasonalRental"}}</h4>
-      <div id="toggle_temporadas">
-
-{{#each alquilerDeTemporadaInputFields as |inputField|}} 
-  <div class="form-group fg-float">
-    {{partial "partials/input-field-resolver" }}
-  </div>
-{{/each}}
-
-
-
+      {{#each leftSideInputFields as |inputField|}}
+      <div class="form-group fg-float">
+          {{partial "partials/input-field-resolver" }}
       </div>
+      {{/each}}
+      <br>
     </div>
     <div class="col-sm-6">
-      <h4>{{t "propertySections.characteristics" }}</h4>
-
-{{#each characteristicasInputFields as |inputField|}} 
-  <div class="form-group fg-float">
-    {{partial "partials/input-field-resolver" }}
-  </div>
-{{/each}}
-
+      {{#each rightSideInputFields as |inputField|}}
+      <div class="form-group fg-float">
+          {{partial "partials/input-field-resolver" }}
+      </div>
+      {{/each}}
     </div>
   </div>
 </div>

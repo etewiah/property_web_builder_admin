@@ -155,7 +155,6 @@ export default TabWithForm.extend({
         }
       }
     }
-
   ],
   isActive: function() {
     return this.activeTabName.toLowerCase() === "general";
