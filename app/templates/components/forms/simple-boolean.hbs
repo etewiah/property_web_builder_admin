@@ -1,16 +1,25 @@
 {{#if fieldDetails.tooltipTextTKey}}
-  <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a>
+<a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a> 
 {{/if}}
 <div class="fg-line has-">
   <select class="selectpicker" style="display: none;">
-{{#each fieldOptions as |selectValue|}} 
-  <option>{{ selectValue.titleKey }}</option>
-{{/each}}
+    {{#each fieldOptions as |selectValue|}}
+    <option>{{ selectValue.titleKey }}</option>
+    {{/each}}
   </select>
-
+</div>
+<div style="display:none;">
+  <label class="radio radio-inline m-r-20">
+    <input type="radio" name="inlineRadioOptions" value="option1">
+    <i class="input-helper"></i> 1
+  </label>
+  <label class="radio radio-inline m-r-20">
+    <input type="radio" name="inlineRadioOptions" value="option1">
+    <i class="input-helper"></i> No
+  </label>
 </div>
 {{#if fieldDetails.labelText}}
-<label class="fg-label arriba_label">{{fieldDetails.labelText }}</label>  
-  {{else}}
+<label class="fg-label arriba_label">{{fieldDetails.labelText }}</label>
+{{else}}
 <label class="fg-label arriba_label">{{t fieldDetails.labelTextTKey }}</label>
 {{/if}}

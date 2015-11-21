@@ -9,6 +9,7 @@ export default TabWithForm.extend({
 
 
       var self = this;
+
       function success(result) {
         // triggerReset is an action in TabWithForm
         self.send("triggerReset");
@@ -23,65 +24,74 @@ export default TabWithForm.extend({
 
   },
   leftSideInputFields: [{
-      labelTextTKey: "fieldLabels.firstNames",
-      fieldName: "firstNames",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.primaryPhone",
-      // tooltipTextTKey: "toolTips.company_name",
-      fieldName: "lastNames",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.otherPhone",
-      fieldName: "phone_number_other",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
+    labelTextTKey: "fieldLabels.firstNames",
+    fieldName: "firstNames",
+    fieldType: "simpleInput",
+    inputType: "text",
+    constraints: {
+      inputValue: {
+        length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
         }
       }
     }
-
-  ],
-  rightSideInputFields: [{
-      labelTextTKey: "fieldLabels.lastNames",
-      fieldName: "lastNames",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
+  }, {
+    labelTextTKey: "fieldLabels.lastNames",
+    fieldName: "lastNames",
+    fieldType: "simpleInput",
+    inputType: "text",
+    constraints: {
+      inputValue: {
+        length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
         }
       }
-    }, {
+    }
+  }, {
+    labelTextTKey: "fieldLabels.nationality",
+    fieldName: "nationality",
+    fieldType: "simpleInput",
+    inputType: "text",
+    constraints: {
+      inputValue: {
+        length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
+        }
+      }
+    }
+  }, {
+    labelTextTKey: "fieldLabels.documentationType",
+    fieldName: "documentationType",
+    fieldType: "simpleInput",
+    inputType: "text",
+    constraints: {
+      inputValue: {
+        length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
+        }
+      }
+    }
+  }, {
+    labelTextTKey: "fieldLabels.documentationId",
+    fieldName: "documentationId",
+    fieldType: "simpleInput",
+    inputType: "text",
+    constraints: {
+      inputValue: {
+        length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
+        }
+      }
+    }
+  }],
+  rightSideInputFields: [{
       labelTextTKey: "fieldLabels.primaryPhone",
-      // tooltipTextTKey: "toolTips.company_name",
-      fieldName: "lastNames",
+      fieldName: "phoneNumberPrimary",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {
@@ -94,7 +104,46 @@ export default TabWithForm.extend({
       }
     }, {
       labelTextTKey: "fieldLabels.otherPhone",
-      fieldName: "phone_number_other",
+      fieldName: "phoneNumberOther",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.email",
+      fieldName: "email",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.fax",
+      fieldName: "fax",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.skype",
+      fieldName: "skype",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {

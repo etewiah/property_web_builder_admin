@@ -57,6 +57,12 @@ export default {
     "companyName": "Company Name",
     "primaryPhone": "Main phone number",
     "otherPhone": "Other phone number",
+    "nationality": "Nationality",
+    "documentationType": "Documentation Type",
+    "documentationId": "Documentation Id",
+    "email": "Email",
+    "fax": "Fax",
+    "skype": "Skype",
   },
 
   // for header row in property listing
