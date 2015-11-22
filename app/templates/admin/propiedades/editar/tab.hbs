@@ -4,7 +4,7 @@
  --}}
 
     {{#each tabsList as |tab|}}
-        <li class={{if (eq tab.tabValue activeTabName) "active"}} >{{#link-to 'admin.propiedades.editar.tab' tab.tabValue}}{{tab.tabTitle}}{{/link-to}}</li>  
+        <li class={{if (eq tab.tabValue activeTabName) "active"}} >{{#link-to 'admin.propiedades.editar.tab' tab.tabValue}}{{t tab.tabTitleKey}}{{/link-to}}</li>  
     {{/each}}
 
   </ul>

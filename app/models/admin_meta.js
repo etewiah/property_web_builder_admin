@@ -1,9 +1,11 @@
-var AdminMeta = Ember.Object.extend({
+// TODO - rename file to select_values
+
+var SelectValues = Ember.Object.extend({
 
 
 });
 
-AdminMeta.reopenClass({
+SelectValues.reopenClass({
   get: function(fieldNames) {
     var apiUrl = "/api/v1/lang/field_keys/" ;
     return $.ajax(apiUrl, {
@@ -13,7 +15,7 @@ AdminMeta.reopenClass({
         field_names: fieldNames
       }
     }).then(function(result) {
-      return AdminMeta.create(result);
+      return SelectValues.create(result);
       // return result;
     }.bind(this), function(error) {
       return error;
@@ -22,4 +24,4 @@ AdminMeta.reopenClass({
 });
 
 
-export default AdminMeta;
+export default SelectValues;

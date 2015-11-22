@@ -31,18 +31,10 @@ export default {
   "propertiesList": "Listado de propiedades",
   "clientsList": "Listado de clientes",
 
-
   "prompts": {
     "fixErrors": "Please correct the errors below"
   },
 
-  "propertySections": {
-    "visibility": "Visibility",
-    "generalData": "Datos Generales",
-    "seasonalRental": "Alquiler de temporada",
-    "characteristics": "Características",
-    "portals": "Portales",
-  },
 
   "locationTab": {
     "confirmAddress": "Confirm new location"
@@ -96,6 +88,27 @@ export default {
     "general": "General Details",
     "location": "Location"
   },
+
+
+  "propertySections": {
+    "general": "General",
+    "location": "Situación",
+    "description": "descripción",
+    "extras" : "Extras",
+    "photos" : "Fotos",
+    "sale": "Venta",
+    "owner": "Proprietario"
+  },
+
+  "propertyGeneralSections": {
+    "visibility": "Visibility",
+    "generalData": "Datos Generales",
+    "seasonalRental": "Alquiler de temporada",
+    "characteristics": "Características",
+    "portals": "Portales",
+    "extras" : "Extras",
+  },
+
 
   "translationsSections": {
     "extras": "Extras",
