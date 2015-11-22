@@ -34,9 +34,14 @@ export default Ember.Component.extend({
     // var currentOption = fieldOptions.findBy("value", currentValueIndex);
     // var currentOptionTitle = currentOption ? currentOption.titleKey : "";
 
-    // by default I set the field to false
-    var currentOptionTitle = this.get("i18n").t("false").string;
+    // var currentOptionTitle = this.get("i18n").t("false").string;
     var currentValue = this.get("resourceObject." + this.fieldDetails.fieldName) || false;
+
+    if (currentValue === "false") {
+      // sometimes false is returned as a string
+      currentValue = false;
+    }
+
     if (currentValue) {
       this.$(':radio[value=true]').prop('checked', true);
       // currentOptionTitle = this.get("i18n").t("true").string;
@@ -45,6 +50,7 @@ export default Ember.Component.extend({
     }
 
     this.$(":radio").change(function(evt) {
+      // debugger;
       if (event.target.value === "true") {
         var selected = true;
       } else {
@@ -56,7 +62,7 @@ export default Ember.Component.extend({
       // var selectValue = fieldOptions.findBy("value", selected).value;
 
       this.set("resourceObject." + fieldName, selected);
-      var hasChanged = (this.get("originalValue") !== selected);
+      var hasChanged = (this.get("originalValue").toString() !== selected.toString());
 
       this.sendAction("valueChangedAction", {
         hasErrors: false,

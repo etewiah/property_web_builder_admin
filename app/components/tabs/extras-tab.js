@@ -1,7 +1,10 @@
 import Ember from 'ember';
+import TabWithForm from "../base/tab-with-form";
+
+export default TabWithForm.extend({
 
 
-export default Ember.Component.extend({
+// export default Ember.Component.extend({
   i18n: Ember.inject.service(),
   extrasInputFields1: function() {
     var extrasFields = {};
@@ -122,23 +125,15 @@ export default Ember.Component.extend({
 
   actions: {
     saveExtrasObject: function() {
-      var propertyResource = this.get("propertyResource");
 
+      var propertyResource = this.get("propertyResource");
       var self = this;
 
-      function transitionToPost(propertyResource) {
-        // debugger;
-        // self.transitionToRoute('posts.show', post);
-      }
-
-      function failure(reason) {
-        // debugger;
-        // handle the error
-      }
-
-      propertyResource.updateExtras();
+      propertyResource.updateExtras(function(success){
+        // triggerReset is an action in TabWithForm
+        self.send("triggerReset");
+      });
       // .then(transitionToPost).catch(failure);
-
     }
   },
   isActive: function() {

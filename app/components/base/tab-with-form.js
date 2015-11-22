@@ -1,3 +1,9 @@
+// components like extras-tab etc inherit from this to have the functionality
+// to have save button only appear when changes have been made
+
+// save button will need to be wrapped in "if hasChanged"
+// and save action will have to call "self.send("triggerReset")" on success
+
 import Ember from 'ember';
 
 

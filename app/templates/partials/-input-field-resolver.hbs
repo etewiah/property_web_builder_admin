@@ -3,7 +3,7 @@
 {{/if}}
 {{!-- TODO - rename below simpleBoolean in fieldTypes --}}
 {{#if (eq inputField.fieldType "simpleSelect")}}
-    {{forms/simple-boolean resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=resourceObject fieldKeys=fieldKeys}}
+    {{forms/simple-boolean resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=resourceObject }}
 {{/if}}
 {{#if (eq inputField.fieldType "dynamicSelect")}}
     {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=inputField resourceObject=resourceObject fieldKeys=fieldKeys}}

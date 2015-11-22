@@ -2,14 +2,18 @@
 <div role="tabpanel" class="tab-pane active" id="general">
   <div class="row">
     <div class="col-sm-12">
-        <button type="submit" class="pull-right btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveExtrasObject"}} >Save</button>
+      {{#if hasChanged}}
+        <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveExtrasObject"}} >
+          {{t "save"}}
+        </button>
+      {{/if}}
     </div>
     <div class="col-sm-4">
       <h4></h4>
 
       {{#each extrasInputFields1.chunk1 as |extrasField|}} 
         <div class="form-group fg-float">
-          {{forms/simple-select fieldDetails=extrasField resourceObject=propertyResource.extras}}
+          {{forms/simple-boolean  resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=extrasField resourceObject=propertyResource.extras}}
 
         </div>
       {{/each}}
@@ -19,7 +23,7 @@
 
       {{#each extrasInputFields1.chunk2 as |extrasField|}} 
         <div class="form-group fg-float">
-          {{forms/simple-select fieldDetails=extrasField resourceObject=propertyResource.extras}}
+          {{forms/simple-boolean  resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=extrasField resourceObject=propertyResource.extras}}
 
         </div>
       {{/each}}
@@ -30,7 +34,7 @@
 
         {{#each extrasInputFields1.chunk3 as |extrasField|}} 
           <div class="form-group fg-float">
-            {{forms/simple-select fieldDetails=extrasField resourceObject=propertyResource.extras}}
+            {{forms/simple-boolean  resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=extrasField resourceObject=propertyResource.extras}}
 
           </div>
         {{/each}}
