@@ -7,7 +7,7 @@ export default TabWithForm.extend({
   // clientResource: {},
   actions: {
     createClientResource: function() {
-      var clientResource = this.get("clientResource");
+      var clientResource = this.get("resourceObject");
       var self = this;
 
       function transitionToClient(clientResource) {

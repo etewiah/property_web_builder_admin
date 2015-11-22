@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   // allMapMarkers: [],
   actions: {
     savePropertyResource: function() {
-      var propertyResource = this.get("propertyResource");
+      var propertyResource = this.get("resourceObject");
       propertyResource.save();
       function transitionToPost(propertyResource) {
         // self.transitionToRoute('posts.show', post);
@@ -39,7 +39,7 @@ export default Ember.Component.extend({
       newAddress.mapaLng = searchResultObject.geometry.location.lng();
       this.set("newAddress", newAddress);
       this.set("isConfirming", true);
-      // var propertyResource = this.get("propertyResource");
+      // var propertyResource = this.get("resourceObject");
       // propertyResource.mapaLat = searchResultObject.geometry.location.lat();
       // propertyResource.mapaLng = searchResultObject.geometry.location.lng();
       // propertyResource.direccionPropiedad = searchResultObject.vicinity;
@@ -53,7 +53,7 @@ export default Ember.Component.extend({
       // }.bind(this));
     },
     updateConfirmedAddress: function(newAddressDetails) {
-      var propertyResource = this.get("propertyResource");
+      var propertyResource = this.get("resourceObject");
       propertyResource.mapaLat = newAddressDetails.mapaLat;
       propertyResource.mapaLng = newAddressDetails.mapaLng;
       propertyResource.direccionPropiedad = newAddressDetails.direccionPropiedad;
@@ -156,9 +156,9 @@ export default Ember.Component.extend({
 
   geo: function() {
     var geo = Ember.Object.create({
-      longitude: this.get("propertyResource.mapaLng"),
-      latitude: this.get("propertyResource.mapaLat"),
-      streetAddress: this.get("propertyResource.direccionPropiedad"),
+      longitude: this.get("resourceObject.mapaLng"),
+      latitude: this.get("resourceObject.mapaLat"),
+      streetAddress: this.get("resourceObject.direccionPropiedad"),
       searchResults: "",
       map: "",
       allMapMarkers: null,

@@ -5,7 +5,7 @@ export default TabWithForm.extend({
 
   actions: {
     saveClientDetails: function() {
-      var clientResource = this.get("clientResource");
+      var clientResource = this.get("resourceObject");
 
 
       var self = this;

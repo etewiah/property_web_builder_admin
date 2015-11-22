@@ -7,7 +7,7 @@ export default TabWithForm.extend({
   // propertyResource: {},
   actions: {
     createPropertyResource: function() {
-      var propertyResource = this.get("propertyResource");
+      var propertyResource = this.get("resourceObject");
 
       var self = this;
 

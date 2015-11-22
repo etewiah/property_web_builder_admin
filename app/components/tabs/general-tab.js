@@ -301,7 +301,7 @@ export default TabWithForm.extend({
   }],
   actions: {
     savePropertyResource: function() {
-      var propertyResource = this.get("propertyResource");
+      var propertyResource = this.get("resourceObject");
       var self = this;
       function success(result) {
         // triggerReset is an action in TabWithForm
