@@ -11,15 +11,17 @@
   <div class="tab-content">
 
 
-    {{tabs/general-tab activeTabName=activeTabName resourceObject=property fieldKeys=fieldKeys }}
+    {{tabs-property/general-tab activeTabName=activeTabName resourceObject=property fieldKeys=fieldKeys }}
 
-    {{tabs/description-tab activeTabName=activeTabName propertyResource=property }}
+    {{tabs-property/description-tab activeTabName=activeTabName propertyResource=property }}
 
-    {{tabs/situacion-tab activeTabName=activeTabName resourceObject=property fieldKeys=fieldKeys }}
+    {{tabs-property/situacion-tab activeTabName=activeTabName resourceObject=property fieldKeys=fieldKeys }}
 
-    {{tabs/extras-tab activeTabName=activeTabName propertyResource=property  fieldKeys=fieldKeys }}
+    {{tabs-property/extras-tab activeTabName=activeTabName propertyResource=property  fieldKeys=fieldKeys }}
 
-    {{tabs/venta-tab activeTabName=activeTabName resourceObject=property }}
+    {{tabs-property/venta-tab activeTabName=activeTabName resourceObject=property }}
+
+    {{tabs-property/owner-tab activeTabName=activeTabName resourceObject=property }}
 
 
   </div>
