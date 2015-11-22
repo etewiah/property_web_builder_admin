@@ -35,6 +35,13 @@ export default {
     "fixErrors": "Please correct the errors below"
   },
 
+  "buttonLabels": {
+    "configureAvailableExtras": "Configure available extras",
+    //   "editar": "Editar",
+    //   "nuevo": "Nuevo",
+    //   "guardar": "Guardar",
+    //   "crear": "Crear",
+  },
 
   "locationTab": {
     "confirmAddress": "Confirm new location"
@@ -94,8 +101,8 @@ export default {
     "general": "General",
     "location": "Situación",
     "description": "descripción",
-    "extras" : "Extras",
-    "photos" : "Fotos",
+    "extras": "Extras",
+    "photos": "Fotos",
     "sale": "Venta",
     "owner": "Proprietario"
   },
@@ -106,7 +113,7 @@ export default {
     "seasonalRental": "Alquiler de temporada",
     "characteristics": "Características",
     "portals": "Portales",
-    "extras" : "Extras",
+    "extras": "Extras",
   },
 
 
@@ -124,12 +131,6 @@ export default {
   // "editarPropiedad": "Editar una propiedad",
   // "nuevoPropiedad": "Nuevo propiedad",
   // "listadoPropiedades": "Listado de propiedades",
-  // 'buttonLabels': {
-  //   "editar": "Editar",
-  //   "nuevo": "Nuevo",
-  //   "guardar": "Guardar",
-  //   "crear": "Crear",
-  // },
 
   // "webContentLabels": {
   //   "suffixEn": "en Inglés",
