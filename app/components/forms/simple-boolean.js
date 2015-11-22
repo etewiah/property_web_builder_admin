@@ -38,21 +38,25 @@ export default Ember.Component.extend({
     var currentOptionTitle = this.get("i18n").t("false").string;
     var currentValue = this.get("resourceObject." + this.fieldDetails.fieldName) || false;
     if (currentValue) {
-      currentOptionTitle = this.get("i18n").t("true").string;
+      this.$(':radio[value=true]').prop('checked', true);
+      // currentOptionTitle = this.get("i18n").t("true").string;
+    } else {
+      this.$(':radio[value=false]').prop('checked', true);
     }
 
-    this.$(".selectpicker").selectpicker({
-      iconBase: 'fa',
-      tickIcon: 'fa-check'
-    }).val(currentOptionTitle).on('change', function(evt) {
-      var selected = evt.target.value;
+    this.$(":radio").change(function(evt) {
+      if (event.target.value === "true") {
+        var selected = true;
+      } else {
+        var selected = false;
+      }
       // $(this).find("option:selected").val();
       var fieldName = this.get("fieldDetails.fieldName");
-      var fieldOptions = this.get("fieldOptions");
-      var selectValue = fieldOptions.findBy("titleKey", selected).value;
-      this.set("resourceObject." + fieldName, selectValue);
+      // var fieldOptions = this.get("fieldOptions");
+      // var selectValue = fieldOptions.findBy("value", selected).value;
 
-      var hasChanged = (this.get("originalValue") !== selectValue);
+      this.set("resourceObject." + fieldName, selected);
+      var hasChanged = (this.get("originalValue") !== selected);
 
       this.sendAction("valueChangedAction", {
         hasErrors: false,
@@ -63,7 +67,31 @@ export default Ember.Component.extend({
 
 
     }.bind(this));
-    this.$('.selectpicker').selectpicker('refresh');
+
+
+    // this.$(".selectpicker").selectpicker({
+    //   iconBase: 'fa',
+    //   tickIcon: 'fa-check'
+    // }).val(currentOptionTitle).on('change', function(evt) {
+    //   var selected = evt.target.value;
+    //   // $(this).find("option:selected").val();
+    //   var fieldName = this.get("fieldDetails.fieldName");
+    //   var fieldOptions = this.get("fieldOptions");
+    //   var selectValue = fieldOptions.findBy("titleKey", selected).value;
+    //   this.set("resourceObject." + fieldName, selectValue);
+
+    //   var hasChanged = (this.get("originalValue") !== selectValue);
+
+    //   this.sendAction("valueChangedAction", {
+    //     hasErrors: false,
+    //     hasChanged: hasChanged,
+    //     fieldName: fieldName
+    //   });
+
+
+
+    // }.bind(this));
+    // this.$('.selectpicker').selectpicker('refresh');
     // this.set("inputValue", this.get("resourceObject." + this.fieldDetails.fieldName));
   }.on('didInsertElement'),
 
