@@ -11,6 +11,8 @@ export default Ember.Route.extend({
     // }
   },
   model(params) {
+    // Model returned here is a set of localised key value pairs
+    // that can be used to populate "dynamic-select" input fields
     var fieldNames = "";
     if (params.tabName === "general") {
       fieldNames = "property-origins, property-types, property-states, property-labels";
@@ -30,7 +32,6 @@ export default Ember.Route.extend({
       // and just returns a list of selectValues for provinces and propertyTypes..
       return adminMeta;
     }
-
   },
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.propiedades.editar.tab').tabName || "";

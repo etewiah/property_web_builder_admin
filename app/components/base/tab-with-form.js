@@ -38,7 +38,6 @@ export default Ember.Component.extend({
       this.set("fieldsWithErrors", []);
       this.set("hasErrors", false);
       this.set("resetTrigger", this.get("resetTrigger") + 1);
-      debugger;
     }
   },
 

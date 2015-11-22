@@ -63,6 +63,7 @@ export default {
     "email": "Email",
     "fax": "Fax",
     "skype": "Skype",
+    "personTitle": "Title"
   },
 
   // for header row in property listing

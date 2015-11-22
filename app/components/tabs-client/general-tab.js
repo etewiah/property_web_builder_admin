@@ -24,6 +24,11 @@ export default TabWithForm.extend({
 
   },
   leftSideInputFields: [{
+    labelTextTKey: "fieldLabels.personTitle",
+    fieldName: "clientTitle",
+    fieldType: "dynamicSelect",
+    optionsKey: "person-titles",
+  }, {
     labelTextTKey: "fieldLabels.firstNames",
     fieldName: "firstNames",
     fieldType: "simpleInput",
@@ -90,72 +95,71 @@ export default TabWithForm.extend({
     }
   }],
   rightSideInputFields: [{
-      labelTextTKey: "fieldLabels.primaryPhone",
-      fieldName: "phoneNumberPrimary",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.otherPhone",
-      fieldName: "phoneNumberOther",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.email",
-      fieldName: "email",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.fax",
-      fieldName: "fax",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.skype",
-      fieldName: "skype",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
+    labelTextTKey: "fieldLabels.primaryPhone",
+    fieldName: "phoneNumberPrimary",
+    fieldType: "simpleInput",
+    inputType: "text",
+    constraints: {
+      inputValue: {
+        length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
         }
       }
     }
-  ],
+  }, {
+    labelTextTKey: "fieldLabels.otherPhone",
+    fieldName: "phoneNumberOther",
+    fieldType: "simpleInput",
+    inputType: "text",
+    constraints: {
+      inputValue: {
+        length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
+        }
+      }
+    }
+  }, {
+    labelTextTKey: "fieldLabels.email",
+    fieldName: "email",
+    fieldType: "simpleInput",
+    inputType: "text",
+    constraints: {
+      inputValue: {
+        length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
+        }
+      }
+    }
+  }, {
+    labelTextTKey: "fieldLabels.fax",
+    fieldName: "fax",
+    fieldType: "simpleInput",
+    inputType: "text",
+    constraints: {
+      inputValue: {
+        length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
+        }
+      }
+    }
+  }, {
+    labelTextTKey: "fieldLabels.skype",
+    fieldName: "skype",
+    fieldType: "simpleInput",
+    inputType: "text",
+    constraints: {
+      inputValue: {
+        length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
+        }
+      }
+    }
+  }],
   isActive: function() {
     return this.activeTabName.toLowerCase() === "general";
   }.property("activeTabName"),

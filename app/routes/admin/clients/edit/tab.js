@@ -8,24 +8,28 @@ export default Ember.Route.extend({
   actions: {
   },
   model(params) {
-    // var fieldNames = "";
+    // Model returned here is a set of localised key value pairs
+    // that can be used to populate "dynamic-select" input fields
+    var fieldNames = "";
+    if (params.tabName === "general") {
+      fieldNames = "person-titles";
+    }
 
-    // if (Ember.isEmpty(fieldNames)) {
-    //   return {};
-    // } else {
-    //   var adminMeta = AdminMeta.get(fieldNames);
-    //   // adminMeta is from http://localhost:3000/api/v1/lang/field_keys/
-    //   // and just returns a list of selectValues for provinces and clientResourceTypes..
-    //   return adminMeta;
-    // }
-
+    if (Ember.isEmpty(fieldNames)) {
+      return {};
+    } else {
+      var adminMeta = AdminMeta.get(fieldNames);
+      // adminMeta is from http://localhost:3000/api/v1/lang/field_keys/
+      // and just returns a list of selectValues for provinces and propertyTypes..
+      return adminMeta;
+    }
   },
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.clients.edit.tab').tabName || "";
     controller.set("activeTabName", activeTabName.toLowerCase());
     controller.set("clientResource", this.modelFor('admin.clients.edit'));
 
-    // controller.set("fieldKeys", model);
+    controller.set("fieldKeys", model);
 
 
     // below doesn't quite work - not sure how to ensure promise is resolved before assigning it

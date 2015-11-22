@@ -17,11 +17,13 @@ export default Ember.merge(Ember.copy(en), {
   en: "Ingles",
   es: "Español",
 
+
   "translationsSections": {
     "extras": "Extras",
     "propertyTypes": "Property Tipos",
     "propertyOrigins": "Property Origen",
     "propertyStates": "Property Estado",
+    "propertyLabels": "Property Labels",
     "provinces": "Provincias"
   },
 

@@ -15,6 +15,7 @@ export default DS.Model.extend({
   skype: DS.attr(),
   documentationId: DS.attr(),
   documentationType: DS.attr(),
+  documentationTypes: DS.attr(),
   nationality: DS.attr(),
   // lastNames: DS.attr(),
 // extras: DS.attr({dontSerialize: true}),
