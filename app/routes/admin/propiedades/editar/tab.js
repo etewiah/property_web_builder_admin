@@ -23,6 +23,10 @@ export default Ember.Route.extend({
     if (params.tabName === "extras") {
       fieldNames = "extras";
     }
+    if (params.tabName === "owner") {
+      fieldNames = "clients";
+    }
+
 
     if (Ember.isEmpty(fieldNames)) {
       return {};

@@ -7,7 +7,7 @@ var SelectValues = Ember.Object.extend({
 
 SelectValues.reopenClass({
   get: function(fieldNames) {
-    var apiUrl = "/api/v1/lang/field_keys/" ;
+    var apiUrl = "/api/v1/select_values/" ;
     return $.ajax(apiUrl, {
       type: 'GET',
       dataType: 'json',

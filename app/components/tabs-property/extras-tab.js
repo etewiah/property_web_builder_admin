@@ -4,7 +4,6 @@ import TabWithForm from "../base/tab-with-form";
 export default TabWithForm.extend({
   i18n: Ember.inject.service(),
   manageExtrasUrl: function(){
-    debugger;
     return "/" + this.get("i18n.locale") + "/admin/translations/extras";
   }.property(),
 // export default Ember.Component.extend({
@@ -16,11 +15,9 @@ export default TabWithForm.extend({
     var inputFields = this.parseInputFields(fieldNames);
     inputFields =  inputFields.sortBy("labelText");
     var chunkLength = fieldNames.length / 3;
-    // debugger;
     // extrasFields.chunk1 = this.parseInputFields(fieldNames.splice(0, Math.ceil(chunkLength)));
     // extrasFields.chunk2 = this.parseInputFields(fieldNames.splice(0, Math.ceil(chunkLength)));
     // extrasFields.chunk3 = this.parseInputFields(fieldNames);
-    // debugger;
     extrasFields.chunk1 = inputFields.splice(0, Math.ceil(chunkLength));
     extrasFields.chunk2 = inputFields.splice(0, Math.ceil(chunkLength));
     extrasFields.chunk3 = inputFields.splice(0, Math.ceil(chunkLength));
@@ -34,13 +31,6 @@ export default TabWithForm.extend({
     fieldNames.forEach(function(fieldName) {
       var inputField = {
         fieldDbType: "boolean"
-        // options: [{
-        //   value: 1,
-        //   titleKey: "Si"
-        // }, {
-        //   value: 0,
-        //   titleKey: "No"
-        // }]
       };
 
       var fieldNameArray = fieldName.split(".");
