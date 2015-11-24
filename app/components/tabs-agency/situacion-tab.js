@@ -6,7 +6,9 @@ export default TabWithForm.extend({
   actions: {
 
     saveAddressDetails: function() {
-      var addressDetails = this.get("addressDetails");
+      // handy to have object passed in referred to simply as resourceObject
+      // so that "input-field-resolver" works accross the board
+      var addressDetails = this.get("resourceObject");
       addressDetails.save(function(success) {
         // triggerReset is an action in TabWithForm
         this.send("triggerReset");
@@ -44,7 +46,7 @@ export default TabWithForm.extend({
     // confirming address details 
     // after clicking on map or typing in searchbox 
     updateConfirmedAddress: function(newAddressDetails) {
-      var addressDetails = this.get("addressDetails");
+      var addressDetails = this.get("resourceObject");
       // addressDetails.latitude = newAddressDetails.latitude;
       // addressDetails.longitude = newAddressDetails.longitude;
       // addressDetails.direccionPropiedad = newAddressDetails.direccionPropiedad;
@@ -172,9 +174,9 @@ export default TabWithForm.extend({
 
   geo: function() {
     var geo = Ember.Object.create({
-      longitude: this.get("addressDetails.longitude"),
-      latitude: this.get("addressDetails.latitude"),
-      streetAddress: this.get("addressDetails.street_address"),
+      longitude: this.get("resourceObject.longitude"),
+      latitude: this.get("resourceObject.latitude"),
+      streetAddress: this.get("resourceObject.street_address"),
       searchResults: "",
       map: "",
       allMapMarkers: null,

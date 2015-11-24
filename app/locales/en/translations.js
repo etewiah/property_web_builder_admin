@@ -83,6 +83,8 @@ export default {
     "highlighted": "Sí para poner el inmueble en la sección"
   },
 
+
+// left nav
   "adminSections": {
     "start": "Inicio",
     "agencyDetails": "Mis Datos",
@@ -91,6 +93,8 @@ export default {
     "properties": "Propiedades",
     "clientes": "Clientes"
   },
+
+  // the header tabs within each left nav item:
   "agencySections": {
     "general": "General Details",
     "location": "Location"

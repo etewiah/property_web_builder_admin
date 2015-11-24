@@ -5,7 +5,7 @@ export default TabWithForm.extend({
 
   actions: {
     saveAgencyDetails: function() {
-      var agencyDetails = this.get("agencyDetails");
+      var agencyDetails = this.get("resourceObject");
       agencyDetails.save(function(success) {
         // triggerReset is an action in TabWithForm
         this.send("triggerReset");

@@ -10,9 +10,9 @@ export default Ember.Route.extend({
   },
   model(params) {
     var fieldNames = "";
-    if (params.tabName === "general") {
-      fieldNames = "property-origins, property-types, property-states, property-labels";
-    }
+    // if (params.tabName === "general") {
+    //   fieldNames = "property-origins, property-types, property-states, property-labels";
+    // }
     if (params.tabName === "location") {
       fieldNames = "provinces";
     }
@@ -39,10 +39,10 @@ export default Ember.Route.extend({
 
     controller.set("tabsList", [{
       tabValue: "general",
-      tabTitleKey: "tabs.general"
+      tabTitleKey: "agencySections.general"
     }, {
       tabValue: "location",
-      tabTitleKey: "tabs.location"
+      tabTitleKey: "agencySections.location"
     }]);
   }
 });
