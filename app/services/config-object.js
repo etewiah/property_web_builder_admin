@@ -1,8 +1,15 @@
 import Ember from 'ember';
-// import Section from '../models/section';
-// import User from '../models/user';
 
-export default Ember.Object.extend({
+// currently use this object to display language choices in application.hbs
+// {{#each configObject.locales as |localeConfig|}}
+
+
+export default Ember.Service.extend({
+  // If I switch above to Ember.Object I get a console warning about a deprecation
+  // that can be fixed by setting isServiceFactory to true but below does not work:
+  // isServiceFactory: true,
+  
+
   // below allows starting and stopping ember shepherd across site
   // showHelp: false,
   // endHelp: false,
