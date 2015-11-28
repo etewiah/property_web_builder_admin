@@ -36,6 +36,7 @@ export default Ember.Route.extend({
     controller.set("fieldKeys", model);
     controller.set("agencyDetails", this.modelFor("admin").agencyDetails);
     controller.set("primaryAddress", this.modelFor("admin").primaryAddress);
+    controller.set("currentUser", this.modelFor("admin").currentUser);
 
     controller.set("tabsList", [{
       tabValue: "general",

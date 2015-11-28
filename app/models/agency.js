@@ -1,5 +1,6 @@
 // import DS from 'ember-data';
 import MasterAddress from "../models/master_address";
+import User from "../models/user";
 
 var Agency = Ember.Object.extend({
   save: function(complete, error) {
@@ -41,9 +42,11 @@ Agency.reopenClass({
     }).then(function(result) {
       var agency = Agency.create(result.agency);
       var primaryAddress = MasterAddress.create(result.primary_address);
+      var currentUser = User.create(result.current_user);
       return {
         agencyDetails: agency,
-        primaryAddress: primaryAddress
+        primaryAddress: primaryAddress,
+        currentUser: currentUser
       };
     }.bind(this), function(error) {
       return error;

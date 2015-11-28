@@ -38,7 +38,7 @@ export default TabWithForm.extend({
     }, {
       labelTextTKey: "fieldLabels.primaryPhone",
       // tooltipTextTKey: "toolTips.company_name",
-      fieldName: "phone_number_primary",
+      fieldName: "email",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {
