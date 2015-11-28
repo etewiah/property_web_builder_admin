@@ -96,8 +96,9 @@ export default {
 
   // the header tabs within each left nav item:
   "agencySections": {
-    "general": "General Details",
-    "location": "Location"
+    "general": "Agency Details",
+    "location": "Location",
+    "user": "User Details"
   },
 
 
