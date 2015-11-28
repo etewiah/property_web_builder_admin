@@ -8,6 +8,8 @@ module.exports = function(defaults) {
     storeConfigInMeta: false
   });
 
+  // Import ember droplet into global namespace
+  app.import('bower_components/ember-droplet/dist/ember-droplet.min.js');
 
   app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');
 
