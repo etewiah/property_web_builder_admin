@@ -15,6 +15,17 @@
         {{/if}}
       {{/if}}
       </div>
+
+
+      <div>
+        {{#upload/x-droplet url="/api/v1/agency/avatar"}}
+
+
+        {{/upload/x-droplet}}
+      </div>
+
+
+
       {{#each mainInputFields as |inputField|}}
       <div class="form-group fg-float">
           {{partial "partials/input-field-resolver" }}
