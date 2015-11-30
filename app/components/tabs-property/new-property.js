@@ -33,13 +33,6 @@ export default TabWithForm.extend({
       fieldName: "eficienciaEnergia",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
-      options: [{
-        value: 1,
-        titleKey: "Si"
-      }, {
-        value: 0,
-        titleKey: "No"
-      }]
     }, {
       labelTextTKey: "fieldLabels.anoConstr",
       tooltipTextTKey: false,
@@ -132,74 +125,7 @@ export default TabWithForm.extend({
       fieldName: "numGarajes",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
-      options: [{
-        value: 1,
-        titleKey: "Si"
-      }, {
-        value: 0,
-        titleKey: "No"
-      }]
     },
-  ],
-
-  alquilerDeTemporadaInputFields: [
-    //this comment tricks prettify ;) 
-    {
-      labelTextTKey: "fieldLabels.temporadas",
-      tooltipTextTKey: "toolTips.temporadas",
-      fieldName: "temporadas",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-      options: [{
-        value: 1,
-        titleKey: "Si"
-      }, {
-        value: 0,
-        titleKey: "No"
-      }]
-    }, {
-      labelTextTKey: "fieldLabels.precioTa",
-      tooltipTextTKey: false,
-      fieldName: "precioTa",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.precioTm",
-      tooltipTextTKey: false,
-      fieldName: "precioTm",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.precioTb",
-      tooltipTextTKey: false,
-      fieldName: "precioTb",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }
   ],
 
   inputFields: [{
@@ -210,10 +136,6 @@ export default TabWithForm.extend({
     inputType: "text",
     constraints: {
       inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
-        }
       }
     }
   }, {
@@ -261,36 +183,31 @@ export default TabWithForm.extend({
   }, {
     labelTextTKey: "fieldLabels.tipo",
     tooltipTextTKey: "",
-    fieldName: "....",
-    fieldType: "simpleSelect",
-    optionsKey: "propertyTypesSelectValues",
+    fieldName: "tipoPropiedad",
+    fieldType: "dynamicSelect",
+    optionsKey: "property-types",
   }, {
     labelTextTKey: "fieldLabels.estado",
     tooltipTextTKey: "",
-    fieldName: "...",
-    fieldType: "simpleSelect",
-    options: [{
-      value: 0,
-      titleKey: "Nuevo"
-    }, {
-      value: 1,
-      titleKey: "En construcción"
-    }]
+    fieldName: "estadoPropiedad",
+    fieldType: "dynamicSelect",
+    optionsKey: "property-states",
   }, {
     labelTextTKey: "fieldLabels.origen",
     tooltipTextTKey: "",
-    fieldName: "idOrigenPropiedad",
-    fieldType: "simpleSelect",
-    options: [{
-      value: 0,
-      titleKey: "Private"
-    }, {
-      value: 1,
-      titleKey: "Builder"
-    }, {
-      value: 2,
-      titleKey: "Bank"
-    }]
+    fieldName: "origenPropiedad",
+    fieldType: "dynamicSelect",
+    optionsKey: "property-origins"
+      // options: [{
+      //   value: 0,
+      //   titleKey: "Private"
+      // }, {
+      //   value: 1,
+      //   titleKey: "Builder"
+      // }, {
+      //   value: 2,
+      //   titleKey: "Bank"
+      // }]
   }],
 
 

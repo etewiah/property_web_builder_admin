@@ -1,35 +1,27 @@
 <div role="tabpanel" class="tab-pane active" id="general">
   <div class="row">
     <div class="col-sm-12">
-        <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" {{action "createPropertyResource"}} >{{t "buttonLabels.crear" }}</button>
+      {{#if hasChanged}}
+        {{#if hasErrors}}
+          {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
+          {{else}}
+          <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "createPropertyResource"}}>
+            {{t "save"}}
+          </button>
+        {{/if}}
+      {{/if}}
     </div>
 
     <div class="col-sm-6">
       <h4>{{t "propertyGeneralSections.generalData"}}</h4>
-
-
-{{#each inputFields as |inputField|}} 
-  <div class="form-group fg-float">
-    {{partial "partials/input-field-resolver" }}
-  </div>
-{{/each}}
-
+        {{#each inputFields as |inputField|}} 
+          <div class="form-group fg-float">
+            {{partial "partials/input-field-resolver" }}
+          </div>
+        {{/each}}
       <br>
-
-
-      <h4 class="sep50">{{t "propertyGeneralSections.seasonalRental"}}</h4>
-      <div id="toggle_temporadas">
-
-{{#each alquilerDeTemporadaInputFields as |inputField|}} 
-  <div class="form-group fg-float">
-    {{partial "partials/input-field-resolver" }}
-  </div>
-{{/each}}
-
-
-
-      </div>
     </div>
+
     <div class="col-sm-6">
       <h4>{{t "propertyGeneralSections.characteristics" }}</h4>
 
