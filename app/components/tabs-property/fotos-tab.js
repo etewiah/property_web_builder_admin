@@ -2,98 +2,7 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
-  situacionLeftInputFields: [
-    //this comment tricks prettify ;) 
-    {
-      labelTextTKey: "fieldLabels.localidad",
-      tooltipTextTKey: false,
-      fieldName: "localidad",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.zona",
-      tooltipTextTKey: false,
-      fieldName: "zona",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.codigoPostal",
-      tooltipTextTKey: false,
-      fieldName: "codigoPostal",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    },
-  ],
-  situacionRightInputFields: [
-    //this comment tricks prettify ;) 
-    {
-      labelTextTKey: "fieldLabels.direccion",
-      tooltipTextTKey: false,
-      fieldName: "direccion",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.direccionReal",
-      tooltipTextTKey: false,
-      fieldName: "direccionReal",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.direccionMapa",
-      tooltipTextTKey: false,
-      fieldName: "direccionMapa",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    },
-  ],
+  situacionLeftInputFields: [  ],
   // actions: {
   //   savePropertyResource: function() {
   //     var propertyResource = this.get("propertyResource");
@@ -114,6 +23,11 @@ export default Ember.Component.extend({
   //   }
   // },
 
+  propertyPhotos: function() {
+    // return this.get("resourceObject.propertyPhotos");
+    // can't get above to work
+    return this.get("resourceObject.photos");
+  }.property(),
 
   isActive: function() {
     return this.activeTabName.toLowerCase() === "fotos";

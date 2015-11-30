@@ -38,7 +38,12 @@ export default DS.Model.extend({
   tTipoPropiedad: Ember.computed('i18n.locale', 'tipoPropiedad', function() {
     return this.get("i18n").t(this.get("tipoPropiedad"));
   }),
+
+
+  propertyPhotos: DS.hasMany('property-photo', {async: false}),
+
   // idPropiedad: DS.attr(),
+  photos: DS.attr({dontSerialize: true}),
   extras: DS.attr({dontSerialize: true}),
   direccionPropiedad: DS.attr(),
   direccionFisica: DS.attr(),
