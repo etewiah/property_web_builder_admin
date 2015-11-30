@@ -9,12 +9,6 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li>
-                <a href="">Refresh</a>
-              </li>
-              <li>
-                <a href="">Manage Widgets</a>
-              </li>
-              <li>
                 <a href="">Widgets Settings</a>
               </li>
             </ul>
@@ -48,11 +42,11 @@
               </li>
             </ul>
           </div>
-          <div {{action "goToTask" task.id }} class="media-body">
+          <div {{action "goToTask" task.route }} class="media-body">
             <label>
               <input type="checkbox">
               <i class="input-helper"></i>
-              <span> {{ task.title }} </span>
+              <span> {{t task.titleKey }} </span>
             </label>
           </div>
         </div>

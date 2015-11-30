@@ -35,6 +35,15 @@ export default {
     "fixErrors": "Please correct the errors below"
   },
 
+  "todos": {
+    "createContent": "Create some content",
+    "companyDetails": "Set up your company details"
+  },
+ 
+  "prompts": {
+    "fixErrors": "Please correct the errors below"
+  },
+
   "buttonLabels": {
     "configureAvailableExtras": "Configure available extras",
     //   "editar": "Editar",
@@ -84,7 +93,7 @@ export default {
   },
 
 
-// left nav
+  // left nav
   "adminSections": {
     "start": "Inicio",
     "agencyDetails": "Mis Datos",

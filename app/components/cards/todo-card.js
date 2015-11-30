@@ -2,39 +2,31 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
-  todos: [{
-    title: "Create some content"
+  todos: function() {
+    var agencyDetails = this.get("agency.details");
+    if (agencyDetails && agencyDetails.todos) {
+      return agencyDetails.todos;
+    }
+    debugger;
+    return this.get("defaultTodos");
+  }.property(),
+
+  defaultTodos: [{
+    titleKey: "todos.createContent",
+    route: "admin.content",
+    completed: false
+  }, {
+    titleKey: "todos.companyDetails",
+    route: "admin.agency",
+    completed: true
   }],
-  // languages: [{
-  //   titleLabelKey: "fieldLabels.tituloIngles",
-  //   descriptionLabelKey: "fieldLabels.descripcionIngles",
-  //   titleFieldName: "titleEn",
-  //   descriptionFieldName: "descriptionEn",
-  // }, {
-  //   titleLabelKey: "fieldLabels.tituloEspanol",
-  //   descriptionLabelKey: "fieldLabels.descripcionEspanol",
-  //   titleFieldName: "titleEs",
-  //   descriptionFieldName: "descriptionEs",
-  // }],
 
   actions: {
-    savePropertyResource: function() {
-      var propertyResource = this.get("propertyResource");
-
-      function transitionToPost(propertyResource) {
-        // self.transitionToRoute('posts.show', post);
-      }
-
-      function failure(reason) {
-        // handle the error
-      }
-      propertyResource.save().then(transitionToPost).catch(failure);
+    goToTask: function(route) {
+      // debugger;
+      // router is injected here through an initializer
+      this.get('router').transitionTo(route);
     }
   },
-
-
-  // isActive: function() {
-  //   return this.activeTabName.toLowerCase() === "descripcion";
-  // }.property("activeTabName"),
 
 });

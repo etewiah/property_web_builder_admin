@@ -41,9 +41,10 @@ export default DS.Model.extend({
 
 
   propertyPhotos: DS.hasMany('property-photo', {async: false}),
-
-  // idPropiedad: DS.attr(),
+  // can't quite figure out how to use the relationship above so using 
+  // below which is just a raw array
   photos: DS.attr({dontSerialize: true}),
+
   extras: DS.attr({dontSerialize: true}),
   direccionPropiedad: DS.attr(),
   direccionFisica: DS.attr(),
