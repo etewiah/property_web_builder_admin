@@ -19,7 +19,11 @@
         </li>  
       {{/each}}
 
-        <li><a  href="/"> <i class="fa fa-sign-out"></i> Salir</a>
+      {{!-- might want to change below to an actual sign-out action --}}
+
+        <li><a  href="/"> <i class="fa fa-sign-out"></i>
+          {{t "adminSections.quit"}}
+          </a>
         </li>
 {{!--         <li class="selected"><a href="index.php"><i class="fa fa-home"></i> Inicio</a></li>
         <li><a href="/admin/propiedades"><i class="fa fa-building-o"></i> Propiedades</a></li>

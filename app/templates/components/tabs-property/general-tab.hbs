@@ -14,7 +14,7 @@
     </div>
     <div class="col-sm-4">
       
-      <div class="thumbnail">
+      <div class="thumbnail" style="display:none;" >
         <img src="img/300x200.gif" alt="">
         <div class="caption">
           <h4>REK-1040 - <span class="precio">325.000€</span> </h4>
@@ -31,61 +31,49 @@
       </div>
       <div>
         <h4>{{t "propertyGeneralSections.visibility" }}</h4>
-
-
         {{#each visibilityInputFields as |inputField|}} 
           <div class="form-group fg-float">
             {{partial "partials/input-field-resolver" }}
           </div>
         {{/each}}
-      </div>
 
+        <br>
+        <h4>{{t "propertyGeneralSections.portals" }}</h4>
+        {{#each portalesInputFields as |inputField|}} 
+          <div class="form-group fg-float">
+            {{partial "partials/input-field-resolver" }}
+          </div>
+        {{/each}}
+      </div>
     </div>
+
     <div class="col-sm-4">
       <h4>{{t "propertyGeneralSections.generalData" }}</h4>
-
 
       {{#each mainInputFields as |inputField|}} 
         <div class="form-group fg-float">
           {{partial "partials/input-field-resolver" }}
         </div>
       {{/each}}
-
       <br>
-
 
       <h4>{{t "propertyGeneralSections.seasonalRental" }}</h4>
       <div id="toggle_temporadas">
-
       {{#each alquilerDeTemporadaInputFields as |inputField|}} 
         <div class="form-group fg-float">
           {{partial "partials/input-field-resolver" }}
         </div>
       {{/each}}
-
-
-
       </div>
     </div>
     <div class="col-sm-4">
       <h4>{{t "propertyGeneralSections.characteristics" }}</h4>
-
 
         {{#each characteristicasInputFields as |inputField|}} 
           <div class="form-group fg-float">
             {{partial "partials/input-field-resolver" }}
           </div>
         {{/each}}
-
-
-      <br>
-      <h4>{{t "propertyGeneralSections.portals" }}</h4>
-
-      {{#each portalesInputFields as |inputField|}} 
-        <div class="form-group fg-float">
-          {{partial "partials/input-field-resolver" }}
-        </div>
-      {{/each}}
 
     </div>
   </div>
