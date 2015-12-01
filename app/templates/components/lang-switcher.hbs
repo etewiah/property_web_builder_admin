@@ -1,0 +1,14 @@
+{{!-- {{#each configObject.locales as |localeConfig|}}
+<li>
+  {{#link-to currentRouteName localeConfig class="" }} 
+    {{t localeConfig.locale }}
+  {{/link-to}} 
+</li>
+{{/each}} --}}
+{{#each configObject.locales as |localeConfig|}}
+<li>
+  <a href="#" {{action "changeLanguage" localeConfig.locale }}>
+    {{t localeConfig.locale }}
+  </a>
+</li>
+{{/each}}
