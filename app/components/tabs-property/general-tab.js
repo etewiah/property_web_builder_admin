@@ -222,10 +222,6 @@ export default TabWithForm.extend({
     inputType: "text",
     constraints: {
       inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
-        }
       }
     }
   }, {

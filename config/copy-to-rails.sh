@@ -1,5 +1,9 @@
 # chmod 755 copy-to-rails.sh
 
+# rake inmo:read_in_ember_moodleboard
+# after running above, navigate to 
+# http://mgmt.tee.dev:3000/mgmt/deploys/moodleboard
+
 
 TARGET_ASSETS_DIR=../../inmo1/public/fe/client/$(date +%Y-%m-%d)/assets
 mkdir -p $TARGET_ASSETS_DIR
