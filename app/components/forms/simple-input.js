@@ -25,6 +25,7 @@ export default Ember.Component.extend({
   //  http://blog.abuiles.com/blog/2015/03/30/removing-prototype-extensions-with-ember-watson/
   updateValue: Ember.observer('inputValue', function() {
     var inputValue = this.get("inputValue");
+    inputValue = inputValue || "";
     var fieldName = this.get("fieldDetails.fieldName")
     this.set("resourceObject." + fieldName, inputValue);
 
@@ -44,7 +45,7 @@ export default Ember.Component.extend({
     } else {
       this.set("errors", []);
     }
-    var hasChanged = (this.get("originalValue").toString() !== this.get("inputValue").toString());
+    var hasChanged = (this.get("originalValue").toString() !== inputValue.toString());
     this.sendAction("valueChangedAction", {
       hasErrors: hasErrors,
       hasChanged: hasChanged,

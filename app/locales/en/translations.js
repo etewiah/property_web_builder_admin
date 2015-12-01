@@ -87,20 +87,15 @@ export default {
     "type": "Tipo"
   },
 
-  "toolTips": {
-    "visible": "Sí para publicar el inmueble en su web",
-    "highlighted": "Sí para poner el inmueble en la sección"
-  },
-
 
   // left nav
   "adminSections": {
-    "start": "Inicio",
-    "agencyDetails": "Mis Datos",
-    "content": "Contenido",
-    "translations": "Traduciones",
-    "properties": "Propiedades",
-    "clientes": "Clientes"
+    "start": "Home",
+    "agencyDetails": "My Data",
+    "content": "Content",
+    "translations": "Translations",
+    "properties": "Properties",
+    "clientes": "Clients"
   },
 
   // the header tabs within each left nav item:
@@ -139,45 +134,26 @@ export default {
     "propertyLabels": "Property Labels",
     "provinces": "Provinces"
   },
+  "toolTips": {
+    "visible": "Sí para publicar el inmueble en su web",
+    "highlighted": "Sí para poner el inmueble en la sección",
+    // above 2 for individual property page...
+    "temporadas": "Si el inmueble se alquila por temporadas",
+    "precioAntiguo": "El precio antes de la rebaja",
+    "precioAlquiler": "0 si el inmueble sólo es para venta",
+    "precioVenta": "Precio de venta",
+    "eficienciaEnergia": "Elija la eficiencia energética del inmueble",
+    "garaje": "Si el inmueble dispone de plaza de garaje o no",
+    "ref": "Referencia del inmueble",
+    "yaencontre": "Sí para publicar en Yaencontre, previo contrato con ellos.",
+    "pisoscom": "Sí para publicar en Pisoscom, previo contrato con ellos.",
+    "idealista": "Sí para publicar en Idealista, previo contrato con ellos."
+  },
 
-  // "true": "Yes",
-  // "false": "No",
-  // "editarPropiedad": "Editar una propiedad",
-  // "nuevoPropiedad": "Nuevo propiedad",
-  // "listadoPropiedades": "Listado de propiedades",
-
-  // "webContentLabels": {
-  //   "suffixEn": "en Inglés",
-  //   "suffixEs": "en Español",
-  //   "landingPageHero": "Contenido para pagina principal",
-  //   "aboutUs": "Sobre Nosotros",
-  //   // "tagLine": "Lema"
-  //   // "landingPageHeroEs": "Contenido para pagina principal en Español"
-  // },
-  // "webContentSections": {
-  //   "home": "Inicio",
-  //   "aboutUs": "Sobre Nosotros",
-  //   "sell": "Vender",
-  //   "tagLine": "Lema"
-  // },
-
-  // "toolTips": {
-  //   "temporadas": "Si el inmueble se alquila por temporadas",
-  //   "precioAntiguo": "El precio antes de la rebaja",
-  //   "precioAlquiler": "0 si el inmueble sólo es para venta",
-  //   "precioVenta": "Precio de venta",
-  //   "eficienciaEnergia": "Elija la eficiencia energética del inmueble",
-  //   "garaje": "Si el inmueble dispone de plaza de garaje o no",
-  //   "ref": "Referencia del inmueble",
-  //   "yaencontre": "Sí para publicar en Yaencontre, previo contrato con ellos.",
-  //   "pisoscom": "Sí para publicar en Pisoscom, previo contrato con ellos.",
-  //   "idealista": "Sí para publicar en Idealista, previo contrato con ellos."
-  // },
 
 
 
   "some.translation.key": "Text for some.translation.key",
-
   "a": {
     "nested": {
       "key": "Text for a.nested.key"
@@ -210,3 +186,27 @@ export default {
     even: "must be even"
   }
 };
+
+
+  // "true": "Yes",
+  // "false": "No",
+  // "editarPropiedad": "Editar una propiedad",
+  // "nuevoPropiedad": "Nuevo propiedad",
+  // "listadoPropiedades": "Listado de propiedades",
+
+  // "webContentLabels": {
+  //   "suffixEn": "en Inglés",
+  //   "suffixEs": "en Español",
+  //   "landingPageHero": "Contenido para pagina principal",
+  //   "aboutUs": "Sobre Nosotros",
+  //   // "tagLine": "Lema"
+  //   // "landingPageHeroEs": "Contenido para pagina principal en Español"
+  // },
+  // "webContentSections": {
+  //   "home": "Inicio",
+  //   "aboutUs": "Sobre Nosotros",
+  //   "sell": "Vender",
+  //   "tagLine": "Lema"
+  // },
+
+
