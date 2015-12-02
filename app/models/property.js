@@ -4,8 +4,8 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   updateExtras: function(complete, error) {
     var data = {};
-    data = this.getProperties("extras","id");
-     // this.getProperties( Object.keys(this) );
+    data = this.getProperties("extras", "id");
+    // this.getProperties( Object.keys(this) );
     var self = this;
     var apiUrl = '/api/v1/properties/update_extras';
     return $.ajax(apiUrl, {
@@ -24,9 +24,33 @@ export default DS.Model.extend({
       }
     });
   },
+  setOwner: function(clientId, complete, error) {
+    var propertyId = this.get("id");
+    var data = {
+      client_id: clientId,
+      property_id: propertyId
+    };
+    var self = this;
+    var apiUrl = '/api/v1/properties/set_owner';
+    return $.ajax(apiUrl, {
+      type: 'POST',
+      dataType: 'json',
+      data: data
+    }).then(function(result) {
+      // self.set("geo", result);
+      if (complete) {
+        // self.set('posts', result.posts);
+        complete(result);
+      }
+    }, function(result) {
+      if (error) {
+        error(result);
+      }
+    });
+  },
   i18n: Ember.inject.service(),
 
-// might be better to do translation of title on the server
+  // might be better to do translation of title on the server
   tTitle: Ember.computed('i18n.locale', function() {
     var titleLocalisedProp = "title" + this.get("i18n.locale").capitalize();
     return this.get(titleLocalisedProp);
@@ -40,12 +64,18 @@ export default DS.Model.extend({
   }),
 
 
-  propertyPhotos: DS.hasMany('property-photo', {async: false}),
+  propertyPhotos: DS.hasMany('property-photo', {
+    async: false
+  }),
   // can't quite figure out how to use the relationship above so using 
   // below which is just a raw array
-  photos: DS.attr({dontSerialize: true}),
+  photos: DS.attr({
+    dontSerialize: true
+  }),
 
-  extras: DS.attr({dontSerialize: true}),
+  extras: DS.attr({
+    dontSerialize: true
+  }),
   direccionPropiedad: DS.attr(),
   direccionFisica: DS.attr(),
   zonaDireccion: DS.attr(),
@@ -86,14 +116,14 @@ export default DS.Model.extend({
   yaencontre: DS.attr(),
   pisoscom: DS.attr(),
 
-      // t.string :origen_propiedad
-      // t.string :estado_propiedad
-      // t.string :tipo_propiedad
-      // t.string :localidad
-      // t.float :precio_venta
-      // t.boolean :destacado
-      // t.boolean :archivado
-      // t.boolean :visible
+  // t.string :origen_propiedad
+  // t.string :estado_propiedad
+  // t.string :tipo_propiedad
+  // t.string :localidad
+  // t.float :precio_venta
+  // t.boolean :destacado
+  // t.boolean :archivado
+  // t.boolean :visible
 
 
   //   mapa-lat: 39.5160831,
