@@ -1,10 +1,8 @@
 <div role="tabpanel">
   <ul data-tab-color="green" class="tab-nav" role="tablist" tabindex="1" style="overflow: hidden; outline: none;">
-{{!--     <li class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a></li>
- --}}
 
     {{#each tabsList as |tab|}}
-        <li class={{if (eq tab.tabValue activeTabName) "active"}} >{{#link-to 'admin.propiedades.editar.tab' tab.tabValue}}{{tab.tabTitle}}{{/link-to}}</li>  
+        <li class={{if (eq tab.tabValue activeTabName) "active"}} >{{#link-to 'admin.clients.edit.tab' tab.tabValue}}{{t tab.tabTitleKey }}{{/link-to}}</li>  
     {{/each}}
 
   </ul>
@@ -12,6 +10,9 @@
 
 
     {{tabs-client/general-tab activeTabName=activeTabName resourceObject=clientResource fieldKeys=fieldKeys }}
+
+    {{tabs-client/properties-tab activeTabName=activeTabName resourceObject=clientResource fieldKeys=fieldKeys }}
+
 
   </div>
 

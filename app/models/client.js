@@ -3,6 +3,30 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
 
+  removeProperty: function(propertyId, complete, error) {
+    var clientId = this.get("id");
+    var data = {
+      client_id: clientId,
+      property_id: propertyId
+    };
+    var self = this;
+    var apiUrl = '/api/v1/properties/unset_owner';
+    return $.ajax(apiUrl, {
+      type: 'POST',
+      dataType: 'json',
+      data: data
+    }).then(function(result) {
+      // self.set("geo", result);
+      if (complete) {
+        // self.set('posts', result.posts);
+        complete(result);
+      }
+    }, function(result) {
+      if (error) {
+        error(result);
+      }
+    });
+  },
   // i18n: Ember.inject.service(),
 
   firstNames: DS.attr(),
@@ -17,6 +41,9 @@ export default DS.Model.extend({
   documentationType: DS.attr(),
   documentationTypes: DS.attr(),
   nationality: DS.attr(),
+  properties: DS.attr({
+    dontSerialize: true
+  }),
   // lastNames: DS.attr(),
 // extras: DS.attr({dontSerialize: true}),
 

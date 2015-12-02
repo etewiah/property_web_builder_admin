@@ -22,6 +22,8 @@ export default {
   region: "Region",
   country: "Country",
 
+  "properties": "Properties",
+
   "null": "",
 
   "addProperty": "Añadir propiedad",
