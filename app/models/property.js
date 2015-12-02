@@ -73,6 +73,9 @@ export default DS.Model.extend({
     dontSerialize: true
   }),
 
+  owner: DS.attr({
+    dontSerialize: true
+  }),
   extras: DS.attr({
     dontSerialize: true
   }),

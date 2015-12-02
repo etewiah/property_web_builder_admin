@@ -18,11 +18,27 @@ export default Ember.Component.extend({
     return this.activeTabName.toLowerCase() === "owner";
   }.property("activeTabName"),
 
-  setupComponent: function() {
-    // var currentValue = this.get("resourceObject." + this.fieldDetails.fieldName) || "";
-    // var fieldOptions = this.get("fieldOptions");
-    // var currentOption = fieldOptions.findBy("value", currentValue);
-    // var currentOptionValue = currentOption ? currentOption.value : "";
+  // owner: function() {
+  //   var owner = this.get("resourceObject.owner");
+  //   // if (owner) {
+  //   //   return owner.get("firstObject");
+  //   // }
+  //   return owner;
+  // }.property("resourceObject.owner"),
+
+
+  setupComponent: Ember.observer('activeTabName', function() {
+    if (this.get("isActive")) {
+      // need to call 
+      debugger;
+      if (!this.get("resourceObject.owner")) {
+        this.setupOwnerSelector();
+      }
+    }
+  // }),
+  }).on('didInsertElement'),
+
+  setupOwnerSelector: function() {
     var sp = this.$(".selectpicker").selectpicker({
       iconBase: 'fa',
       tickIcon: 'fa-check'
@@ -32,23 +48,13 @@ export default Ember.Component.extend({
       var selected = evt.target.value;
       // above is a string representing the id of the client selected
 
-      // var fieldOptions = this.get("fieldKeys.clients");
-      // var selectValue = fieldOptions.findBy("value", selected).value;
-
       var propertyResource = this.get("resourceObject");
-
       propertyResource.setOwner(selected);
-
 
     }.bind(this));
 
     this.$('.selectpicker').selectpicker('refresh');
     // this.set("inputValue", this.get("resourceObject." + this.fieldDetails.fieldName));
-  }.on('didInsertElement'),
-
-  activate: function(){
-    debugger;
   }
-
 
 });

@@ -4,19 +4,26 @@
 
     <div class="col-sm-12">
       <h4></h4>
-        <div class="form-group fg-float">
-<div class="fg-line has-">
-  <select class="selectpicker" style="">
-{{#each clientSelectValues as |selectValue|}} 
-  <option value={{ selectValue.value }} >{{ selectValue.label }}</option>
-{{/each}}
-  </select>
-
-</div>
-<label class="fg-label arriba_label">{{t fieldDetails.labelTextTKey }}</label>
-
-
+      {{#if resourceObject.owner}}
+        <div>
+          Owner is: {{#link-to 'admin.clients.edit' resourceObject.owner.id }}
+            {{ resourceObject.owner.first_names }}
+          {{/link-to}}
         </div>
+      {{else}}
+        <div class="form-group fg-float">
+          <div class="fg-line has-">
+            <select class="selectpicker" style="">
+          {{#each clientSelectValues as |selectValue|}} 
+            <option value={{ selectValue.value }} >{{ selectValue.label }}</option>
+          {{/each}}
+            </select>
+
+          </div>
+          <label class="fg-label arriba_label">{{t fieldDetails.labelTextTKey }}</label>
+        </div>
+      {{/if}}
+
     </div>
 
   </div>
