@@ -1,0 +1,11 @@
+<div class="form-group fg-float">
+  <div class="fg-line has-">
+    <select class="selectpicker" style="">
+  {{#each clientSelectValues as |selectValue|}} 
+    <option value={{ selectValue.value }} >{{ selectValue.label }}</option>
+  {{/each}}
+    </select>
+
+  </div>
+  <label class="fg-label arriba_label">{{t fieldDetails.labelTextTKey }}</label>
+</div>
