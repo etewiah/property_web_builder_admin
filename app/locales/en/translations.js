@@ -140,6 +140,7 @@ export default {
     "provinces": "Provinces"
   },
   "toolTips": {
+    "addNew": "Add New",
     "visible": "Sí para publicar el inmueble en su web",
     "highlighted": "Sí para poner el inmueble en la sección",
     // above 2 for individual property page...

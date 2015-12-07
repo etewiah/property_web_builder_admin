@@ -134,6 +134,7 @@ export default Ember.merge(Ember.copy(en), {
   
 
   "toolTips": {
+    "addNew": "Añadir nuevo",
     "visible": "Sí para publicar el inmueble en su web",
     "highlighted": "Sí para poner el inmueble en la sección",
     // above 2 for individual property page...

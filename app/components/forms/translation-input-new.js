@@ -3,6 +3,9 @@ import Ember from 'ember';
 import AdminTranslations from "../../models/admin_translations";
 export default Ember.Component.extend({
   actions: {
+    cancelAdding: function() {
+      this.set("isAdding", false);
+    },
     startAdding: function() {
       this.set("isAdding", true);
     },

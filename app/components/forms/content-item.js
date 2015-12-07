@@ -11,6 +11,9 @@ export default Ember.Component.extend({
     },
     cancelEditing: function(){
       this.set("isEditing", false);
+    },
+    previewContent: function(){
+      debugger;
     }
   },
 
