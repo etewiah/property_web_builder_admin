@@ -2,13 +2,29 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  visible: false,
   actions: {
+    cancelEditing: function() {
+      this.set("isEditing", false);
+      this.set("valuesHaveChanged", false);
+      var originalValues = this.get("originalValues");
+      this.get("translationBatch").forEach(function(translation) {
+        translation.set("i18n_value", originalValues[translation.locale]);
+      });
+    },
+    removeTranslationItem: function() {
+      var firstTranslationInBatch = this.get("translationBatch.firstObject");
+      firstTranslationInBatch.delete(function(result) {
+        if (result.success) {}
+        debugger;
+      }.bind(this));
+    },
     saveTranslation: function() {
       var originalValues = this.get("originalValues");
       // TODO - save whole batch in one go
       this.get("translationBatch").forEach(function(translation) {
         if (originalValues[translation.locale] !== translation.i18n_value) {
-          translation.save(function(result){
+          translation.save(function(result) {
             // if (result.success) {
             // }
             // debugger;
@@ -44,6 +60,7 @@ export default Ember.Component.extend({
       }
     });
     this.set("valuesHaveChanged", valuesHaveChanged);
+    this.set("isEditing", valuesHaveChanged);
   }),
 
 });

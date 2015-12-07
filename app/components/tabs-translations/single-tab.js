@@ -2,11 +2,23 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
-  // languages: [{
-  //   contentFieldName: "En",
-  // }, {
-  //   contentFieldName: "Es",
+  actions: {
+    updateTranslationsArray: function(translations, operation) {
+      debugger;
+      // var contentItem = this.get("contentItem");
+      function transitionToPost(contentItem) {
+        // self.transitionToRoute('posts.show', post);
+      }
 
+      function failure(reason) {
+        // handle the error
+      }
+
+      contentItem.save().then(transitionToPost).catch(failure);
+
+
+    }
+  },
   // TODO - get locales from server
   locales: ["en", "es"],
   groupedTranslations1: function() {
@@ -40,22 +52,7 @@ export default Ember.Component.extend({
 
   }.property("adminTranslations"),
 
-  // actions: {
-  //   saveContentItem: function(contentItem) {
-  //     // var contentItem = this.get("contentItem");
-  //     function transitionToPost(contentItem) {
-  //       // self.transitionToRoute('posts.show', post);
-  //     }
 
-  //     function failure(reason) {
-  //       // handle the error
-  //     }
-
-  //     contentItem.save().then(transitionToPost).catch(failure);
-
-
-  //   }
-  // },
 
 
   // isActive: function() {

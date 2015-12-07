@@ -1,20 +1,36 @@
 <div class="col-sm-2" style="padding-bottom: 3%;">
-{{ translationLabel }}
-{{!--   <a class="ayuda" data-toggle="tooltip" title="" data-original-title=>
-  <i class="fa fa-info"></i></a>
- --}}
- {{#if valuesHaveChanged}}
-  <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right btn-save-translation" 
-      {{action "saveTranslation" contentItem }}><i class="fa fa-check"></i></button>
- {{/if}}
+
+  <div>
+    {{ translationLabel }}:
+  </div>
+  {{#unless isEditing}}
+    <button type="submit" style="margin-top: 65%;" 
+     class="btn btn-sm m-b-10 waves-effect" 
+    data-toggle="tooltip" title="{{t "delete"}}"
+        {{action "removeTranslationItem" }}><i class="fa fa-trash"></i>
+    </button>
+  {{/unless}}
+
 </div>
 <div class="col-sm-10" style="padding-top: 3%;padding-bottom:3%;">
-{{#each translationBatch as |translation|}}
-<div class="fg-line {{if errors 'has-error'}} ">
-  <label class="fg-label arriba_label">{{t translation.locale}}:</label>
+  {{#each translationBatch as |translation|}}
+  <div class="fg-line {{if errors 'has-error'}} ">
+    <label class="fg-label arriba_label">{{t translation.locale}}:</label>
 
 
-  {{input value=translation.i18n_value type="text"  class="input-sm form-control fg-input translation-input"  }}
-</div>
-{{/each}}
+    {{input value=translation.i18n_value type="text"  class="input-sm form-control fg-input translation-input"  }}
+  </div>
+  {{/each}}
+  <div class="pull-right">
+   {{#if valuesHaveChanged}}
+      <button type="submit" class="btn btn-sm m-b-10 waves-effect pull-right btn-save-translation" 
+        data-toggle="tooltip" title="{{t "cancel"}}"
+        {{action "cancelEditing" }}><i class="fa fa-times"></i>
+      </button>
+      <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right btn-save-translation" 
+        data-toggle="tooltip" title="{{t "save"}}"
+        {{action "saveTranslation" contentItem }}><i class="fa fa-check"></i>
+      </button>
+   {{/if}}
+  </div>
 </div>
