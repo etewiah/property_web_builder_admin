@@ -10,7 +10,7 @@ export default Ember.Route.extend({
   beforeModel: function(transition) {
     // var localeToUse = transition.params.admin.locale;
     var i18n = this.get('i18n');
-    this.transitionTo("admin.propiedades", i18n.locale);
+    this.transitionTo("admin.setup", i18n.locale);
 
     // if (i18n.get("locales").contains(localeToUse)) {
     //   // if the locale param passed in is valid, lets set and use that
