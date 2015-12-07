@@ -14,6 +14,8 @@ export default {
 
   save: "Save",
   cancel: "Cancel",
+  edit: "Edit",
+  preview: "Preview",
 
   street: "Street",
   street_number: "Street Number",

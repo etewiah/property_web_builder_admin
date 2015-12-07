@@ -8,14 +8,6 @@ export default Ember.Route.extend({
     // }
   },
   model(params) {
-    // GET to /persons?filter[name]=Peter
-    // this.store.query('person', {
-    //   filter: {
-    //     name: 'Peter'
-    //   }
-    // }).then(function(peters) {
-    //   // Do something with `peters`
-    // });
     return this.store.query("webContent", {
       filter: {
         tag: params.tabName

@@ -14,6 +14,7 @@ export default Ember.Component.extend({
 
   actions: {
     saveContentItem: function(contentItem) {
+      debugger;
       // var contentItem = this.get("contentItem");
       function transitionToPost(contentItem) {
         // self.transitionToRoute('posts.show', post);

@@ -1,4 +1,31 @@
-<h5>{{t contentItem.labelKey }} {{t labelSuffixKey }}</h5>
-<div class='wysiwyg-container'>
-  {{wysiwyg-editor content=contentValue header="Example"}}
+<div class="col-sm-12" style="padding-bottom: 3%;">
+  <h5 class="text-center">{{t contentItem.labelKey }} {{t labelSuffixKey }}</h5>
+  {{#if isEditing}}
+    <div class='wysiwyg-container'>
+      {{wysiwyg-editor content=contentValue header="Example"}}
+    </div>
+    {{else}}
+    <div>
+      {{{ contentValue }}}
+    </div>
+  {{/if}}
+</div>
+<div class="col-sm-12" style="">
+      <div>
+        {{#if isEditing}}
+          <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveContentItem" contentItem }}>
+            {{t "save"}}
+          </button>
+          <button type="submit" class="pull-left btn btn-sm m-b-10 waves-effect" {{action "cancelEditing" }}>
+            {{t "cancel"}}
+          </button>
+          {{else}}
+          <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "startEditing" }}>
+            {{t "edit"}}
+          </button>
+          <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "previewContent" }}>
+            {{t "preview"}}
+          </button>
+        {{/if}}
+      </div>
 </div>
