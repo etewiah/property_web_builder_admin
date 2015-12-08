@@ -36,19 +36,18 @@ export default Ember.Component.extend({
           // }
         }.bind(this));
       }.bind(this));
+      // TODO - wait till success of creation before adding to Array below:
+      this.sendAction("updateTranslationsArrayAction", newTranslationBatch, "add");
+      // clean out new translations input:
+      this.setNewTranslationBatch();
     }
   },
-  // setOriginalValues: function() {
-  //   var originalValues = {};
-  //   this.locales.forEach(function(locale) {
-  //     originalValues[locale] = "";
-  //   });
-  //   this.set("originalValues", originalValues);
-  //   debugger;
-  //   // this.$(".ayuda").tooltip();
-  // }.on('didInsertElement'),
+  onInitAct: function() {
+    // debugger;
+    this.setNewTranslationBatch();
+  }.on('init'),
 
-  newTranslationBatch: function() {
+  setNewTranslationBatch: function() {
     var locales = this.get("locales") || [];
     var newTranslationBatch = [];
     locales.forEach(function(locale) {
@@ -58,8 +57,8 @@ export default Ember.Component.extend({
       });
       newTranslationBatch.push(translation);
     });
-    return newTranslationBatch;
-  }.property("locales"),
+    this.set("newTranslationBatch", newTranslationBatch);
+  },
 
 
   // //  http://blog.abuiles.com/blog/2015/03/30/removing-prototype-extensions-with-ember-watson/

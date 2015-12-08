@@ -4,19 +4,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     updateTranslationsArray: function(translations, operation) {
-      debugger;
-      // var contentItem = this.get("contentItem");
-      function transitionToPost(contentItem) {
-        // self.transitionToRoute('posts.show', post);
-      }
-
-      function failure(reason) {
-        // handle the error
-      }
-
-      contentItem.save().then(transitionToPost).catch(failure);
-
-
+      this.get("groupedTranslations1").unshiftObject(translations);
     }
   },
   // TODO - get locales from server
@@ -40,7 +28,6 @@ export default Ember.Component.extend({
       }
     });
     // groupedTranslations1 = groupedTranslations1.sortBy("i18n_key");
-    // debugger;
     var groupedTranslations2 = [];
     if (groupedTranslations1.length > 7) {
       var half_length = Math.ceil(groupedTranslations1.length / 2);

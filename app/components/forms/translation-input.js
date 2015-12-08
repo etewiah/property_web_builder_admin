@@ -2,7 +2,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  visible: false,
+  // seems like isVisible controls visibility of component out of the box
+  // instead of actually removing an item from translations array when it
+  // is deleted, I will cheat and set isVisible to false
+  isVisible: true,
   actions: {
     cancelEditing: function() {
       this.set("isEditing", false);
@@ -15,8 +18,9 @@ export default Ember.Component.extend({
     removeTranslationItem: function() {
       var firstTranslationInBatch = this.get("translationBatch.firstObject");
       firstTranslationInBatch.delete(function(result) {
-        if (result.success) {}
-        debugger;
+        if (result.success) {
+          this.set("isVisible", false);
+        }
       }.bind(this));
     },
     saveTranslation: function() {
