@@ -8,7 +8,7 @@ module.exports = function(defaults) {
     storeConfigInMeta: false
   });
 
-  // Import ember droplet into global namespace
+  // Import ember droplet into global namespace (for file updload)
   app.import('bower_components/ember-droplet/dist/ember-droplet.min.js');
 
   app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');
@@ -67,6 +67,16 @@ module.exports = function(defaults) {
   });
 
 
+
+
+  app.import('bower_components/bootstrap-sweetalert/lib/sweet-alert.js');
+  app.import('bower_components/bootstrap-sweetalert/lib/sweet-alert.css');
+
+
+  app.import('bower_components/summernote/dist/summernote.js');
+  app.import('bower_components/summernote/dist/summernote-bs3.css');
+  app.import('bower_components/summernote/dist/summernote.css');
+
   app.import('vendor/material-admin-functions.js');
   app.import('vendor/cesar.css');
 
@@ -88,9 +98,9 @@ module.exports = function(defaults) {
   // app.import('vendor/lazyYT/lazyYT.css');
 
 
-  app.import('bower_components/summernote/dist/summernote.js');
-  app.import('bower_components/summernote/dist/summernote-bs3.css');
-  app.import('bower_components/summernote/dist/summernote.css');
+  // app.import('bower_components/summernote/dist/summernote.js');
+  // app.import('bower_components/summernote/dist/summernote-bs3.css');
+  // app.import('bower_components/summernote/dist/summernote.css');
 
 
 

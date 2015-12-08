@@ -2,6 +2,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+   i18n: Ember.inject.service(),
+
   // seems like isVisible controls visibility of component out of the box
   // instead of actually removing an item from translations array when it
   // is deleted, I will cheat and set isVisible to false
@@ -16,12 +18,26 @@ export default Ember.Component.extend({
       });
     },
     removeTranslationItem: function() {
-      var firstTranslationInBatch = this.get("translationBatch.firstObject");
-      firstTranslationInBatch.delete(function(result) {
-        if (result.success) {
-          this.set("isVisible", false);
-        }
+
+      swal({
+        title: this.get('i18n').t('alert.deleteItem'),
+        // text: "You will not be able to recover this imaginary file!",
+        // type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: this.get('i18n').t('alert.deleteButton'),
+        closeOnConfirm: true
+      }, function() {
+        var firstTranslationInBatch = this.get("translationBatch.firstObject");
+        firstTranslationInBatch.delete(function(result) {
+          if (result.success) {
+            this.set("isVisible", false);
+          }
+        }.bind(this));
       }.bind(this));
+
+
+
     },
     saveTranslation: function() {
       var originalValues = this.get("originalValues");

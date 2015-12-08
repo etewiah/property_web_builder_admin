@@ -1,4 +1,7 @@
 var AdminTranslations = Ember.Object.extend({
+  // Though I only pass the id for one translation, on the server side
+  // all translations with the i18n key will be deleted
+  // not a great implementation - will need to revisit
   delete: function(complete, error) {
     var data = {};
     data = this.getProperties( Object.keys(this) );

@@ -17,6 +17,11 @@ export default {
   edit: "Edit",
   preview: "Preview",
 
+  alert: {
+    deleteItem: "Are you sure you want to delete this item?",
+    deleteButton: "Yes, delete it!"
+  },
+
   street: "Street",
   street_number: "Street Number",
   city: "City",
