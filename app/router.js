@@ -103,16 +103,7 @@ Router.map(function() {
 
   });
   this.route('user');
-  // this.route("property", {
-  //   path: "/property/:id"
-  // });
-  // this.route('properties');
-
-  // this.route('start', function() {
-  //   this.route("default", {
-  //     path: "/"
-  //   });
-  // });
+  this.route('not-found', { path: '/*path' });
 });
 
 export default Router;
