@@ -29,9 +29,14 @@ export default Ember.Component.extend({
         closeOnConfirm: true
       }, function() {
         var firstTranslationInBatch = this.get("translationBatch.firstObject");
+        // batch_key is needed server side to be able to remove values from FieldConfig
+        firstTranslationInBatch.set("batch_key", this.get("batchKey"));
         firstTranslationInBatch.delete(function(result) {
           if (result.success) {
             this.set("isVisible", false);
+          }
+          else{
+            // TODO - handle failure
           }
         }.bind(this));
       }.bind(this));
@@ -47,7 +52,6 @@ export default Ember.Component.extend({
           translation.save(function(result) {
             // if (result.success) {
             // }
-            // debugger;
             originalValues[translation.locale] = translation.i18n_value;
           }.bind(this));
         }

@@ -8,14 +8,15 @@
   <div class="col-md-6">
   {{#each groupedTranslations1 as |translationBatch|}}
   <div class="row">
-  {{forms/translation-input  translationBatch=translationBatch updateTranslationsArrayAction="updateTranslationsArray"}}
+  {{!-- currently not using updateTranslationsArrayAction (just hiding translation when it is removed) --}}
+  {{forms/translation-input  translationBatch=translationBatch updateTranslationsArrayAction="updateTranslationsArray" batchKey=adminTranslations.batchKey}}
   </div>
   {{/each}}    
   </div>
   <div class="col-md-6">
   {{#each groupedTranslations2 as |translationBatch|}}
   <div class="row">
-  {{forms/translation-input  translationBatch=translationBatch updateTranslationsArrayAction="updateTranslationsArray"}}
+  {{forms/translation-input  translationBatch=translationBatch updateTranslationsArrayAction="updateTranslationsArray" batchKey=adminTranslations.batchKey}}
   </div>
   {{/each}}
 

@@ -3,8 +3,8 @@ var AdminTranslations = Ember.Object.extend({
   // all translations with the i18n key will be deleted
   // not a great implementation - will need to revisit
   delete: function(complete, error) {
-    var data = {};
-    data = this.getProperties( Object.keys(this) );
+    var data = this.getProperties(["locale", "i18n_value", "i18n_key", "batch_key"]);
+    // data = this.getProperties( Object.keys(this) );
     var self = this;
     var apiUrl = '/api/v1/lang/admin_translations/' + data.id;
     return $.ajax(apiUrl, {
