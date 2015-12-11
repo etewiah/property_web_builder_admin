@@ -1,5 +1,6 @@
 import DS from 'ember-data';
 // import { translationMacro as t } from "ember-i18n";
+import PropertyPhoto from "../models/property-photo";
 
 export default DS.Model.extend({
   updateExtras: function(complete, error) {
@@ -71,6 +72,15 @@ export default DS.Model.extend({
   // below which is just a raw array
   photos: DS.attr({
     dontSerialize: true
+  }),
+  photoModels: Ember.computed('photos', function(){
+    var photos = this.get("photos");
+    var photoModels = [];
+    photos.forEach(function(photo){
+      // console.log(photoModels);
+      photoModels.push(PropertyPhoto.create(photo));
+    }.bind(this));
+    return photoModels;
   }),
 
   owner: DS.attr({

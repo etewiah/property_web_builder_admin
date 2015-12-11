@@ -1,27 +1,44 @@
 {{#if isActive}}
 <div role="tabpanel" class="tab-pane" id="descripcion">
   <div class="row">
+
+    {{#upload/x-droplet url="/api/v1/properties/1/photo" didUploadAction="refreshPhotos"}} {{/upload/x-droplet}}
     <div class="col-sm-12">
-      <div>
-        {{#if hasChanged}} {{#if hasErrors}} {{!--
-        <div class="pull-left">{{t "prompts.fixErrors" }}</div> --}} {{else}}
-        <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveAgencyDetails"}}>
-          {{t "save"}}
-        </button>
-        {{/if}} {{/if}}
-      </div>
-      <div>
-        {{#upload/x-droplet url="/api/v1/properties/1/photo"}} {{/upload/x-droplet}}
-      </div>
     </div>
   </div>
-    <div class="row">
-      {{#each propertyPhotos as |photo|}}
-      <div class="col-sm-4">
-        <h2>..</h2>
-        <img src={{ photo.image.url }}>
-      </div>
-      {{/each}}
-    </div>
+  <div class="row">
+    <table id="tabla_fotos" cellspacing="0">
+    {{#each resourceObject.photoModels as |photo| }}
+      <tr data-id_foto="1" id="1" class="foto_principal">
+        <td>
+          <div class="thumbnail">
+            <img src={{ photo.image.url }} alt="">
+          </div>
+        </td>
+        <td class="hidden-xs">Nombre Archivo</td>
+        <td class="hidden-xs">{{ photo.image.url }}</td>
+        <td class="text-left">
+          <button type="button" class="btn btn-icon command-delete" {{action "deletePhoto" photo }}>
+            <span class="md md-delete"></span>
+          </button>
+        </td>
+      </tr>
+    {{/each}}
+      <tr data-id_foto="1" id="1" class="foto_principal">
+        <td>
+          <div class="thumbnail">
+            <img src="img/300x200.gif" alt="">
+          </div>
+        </td>
+        <td class="hidden-xs">Nombre Archivo</td>
+        <td class="hidden-xs">Url</td>
+        <td class="text-left">
+          <button type="button" class="btn btn-icon command-delete" data-row-id="REK-1040">
+            <span class="md md-delete"></span>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
 {{/if}}

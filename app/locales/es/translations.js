@@ -41,13 +41,6 @@ export default Ember.merge(Ember.copy(en), {
     "fixErrors": "Please correct the errors below"
   },
 
-  "buttonLabels": {
-    "configureAvailableExtras": "Configure available extras",
-    //   "editar": "Editar",
-    //   "nuevo": "Nuevo",
-    //   "guardar": "Guardar",
-    //   "crear": "Crear",
-  },
 
   "locationTab": {
     "confirmAddress": "Confirm new location"

@@ -9,25 +9,34 @@ export default {
 
   // "key.with.interpolation": "Text with {{anInterpolation}}"
 
-  en: "English",
-  es: "Spanish",
+  "en": "English",
+  "es": "Spanish",
 
-  save: "Save",
-  cancel: "Cancel",
-  edit: "Edit",
-  preview: "Preview",
+  "save": "Save",
+  "cancel": "Cancel",
+  "edit": "Edit",
+  "preview": "Preview",
 
-  alert: {
-    deleteItem: "Are you sure you want to delete this item?",
-    deleteButton: "Yes, delete it!"
+  "buttonLabels": {
+    "configureAvailableExtras": "Configure available extras",
+    "selectImagesToAdd": "Select images to add"
+    //   "editar": "Editar",
+    //   "nuevo": "Nuevo",
+    //   "guardar": "Guardar",
+    //   "crear": "Crear",
   },
 
-  street: "Street",
-  street_number: "Street Number",
-  city: "City",
-  postCode: "Post Code",
-  region: "Region",
-  country: "Country",
+  "alert": {
+    "deleteItem": "Are you sure you want to delete this item?",
+    "deleteButton": "Yes, delete it!"
+  },
+
+  "street": "Street",
+  "street_number": "Street Number",
+  "city": "City",
+  "postCode": "Post Code",
+  "region": "Region",
+  "country": "Country",
 
   "properties": "Properties",
 
@@ -53,13 +62,6 @@ export default {
     "fixErrors": "Please correct the errors below"
   },
 
-  "buttonLabels": {
-    "configureAvailableExtras": "Configure available extras",
-    //   "editar": "Editar",
-    //   "nuevo": "Nuevo",
-    //   "guardar": "Guardar",
-    //   "crear": "Crear",
-  },
 
   "locationTab": {
     "confirmAddress": "Confirm new location"
