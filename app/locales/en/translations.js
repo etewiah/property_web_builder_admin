@@ -19,7 +19,8 @@ export default {
 
   "buttonLabels": {
     "configureAvailableExtras": "Configure available extras",
-    "selectImagesToAdd": "Select images to add"
+    "selectImagesToAdd": "Select images to add",
+    "selectRemoteImages": "Add images from urls"
     //   "editar": "Editar",
     //   "nuevo": "Nuevo",
     //   "guardar": "Guardar",

@@ -3,6 +3,12 @@ import Ember from 'ember';
 export default Ember.Component.extend(Droplet, {
   // url: location.origin + '/upload',
   actions: {
+    selectRemoteImages: function(){
+      this.set("showRemoteImagesInput", true);      
+    },
+    addRemoteImages: function(){
+      debugger;
+    }
     // uploadFiles: function() {
     //   debugger;
     // }
@@ -11,10 +17,10 @@ export default Ember.Component.extend(Droplet, {
   hooks: {
     didUpload: function(photos) {
       debugger;
-      this.sendAction("didUploadAction", "");
+      this.sendAction("didUploadAction", photos);
 
       console.log("did an upload");
-    }.bind(this)
+    }
   },
   options: {
     useArray: true

@@ -9,16 +9,18 @@ export default Ember.Component.extend({
     },
     deletePhoto: function(photo){
       photo.remove(function(success){
-        debugger;
+        var photoModels = this.get("resourceObject.photoModels");
+        // console.log(photo);
+        photoModels.removeObject(photo);
       }.bind(this),
       function(error){
-        debugger;
+        // TODO - handle error
       }.bind(this));
     }
   },
 
-  // propertyPhotos: function() {
-  //   // return this.get("resourceObject.propertyPhotos");
+  // photoModels: function() {
+  //   // return this.get("resourceObject.photoModels");
   //   // above is a hasMany r/n obj can't get above to work
   //   return this.get("resourceObject.photoModels");
   // }.property(),
