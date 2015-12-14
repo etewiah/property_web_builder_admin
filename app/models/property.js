@@ -3,6 +3,26 @@ import DS from 'ember-data';
 import PropertyPhoto from "../models/property-photo";
 
 export default DS.Model.extend({
+  addPhotosFromUrls: function(remoteUrls, complete, error) {
+    var data = { remote_urls: remoteUrls };
+    var self = this;
+    var apiUrl = "/api/v1/properties/" + this.get("id") + "/photo_from_url";
+    return $.ajax(apiUrl, {
+      type: 'POST',
+      dataType: 'json',
+      data: data
+    }).then(function(result) {
+      // self.set("geo", result);
+      if (complete) {
+        // self.set('posts', result.posts);
+        complete(result);
+      }
+    }, function(result) {
+      if (error) {
+        error(result);
+      }
+    });
+  },
   updateExtras: function(complete, error) {
     var data = {};
     data = this.getProperties("extras", "id");

@@ -2,7 +2,7 @@
 <div role="tabpanel" class="tab-pane" id="descripcion">
   <div class="row">
 
-    {{#upload/x-droplet url="/api/v1/properties/1/photo" didUploadAction="refreshPhotos"}} {{/upload/x-droplet}}
+    {{#upload/x-droplet url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} {{/upload/x-droplet}}
     <div class="col-sm-12">
     </div>
   </div>

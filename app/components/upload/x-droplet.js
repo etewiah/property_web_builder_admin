@@ -7,7 +7,9 @@ export default Ember.Component.extend(Droplet, {
       this.set("showRemoteImagesInput", true);      
     },
     addRemoteImages: function(){
-      debugger;
+      var remoteUrls = this.get("remoteUrls");
+      // TODO - parse and validate for list of urls
+      this.sendAction("addPhotosFromUrlsAction", remoteUrls);
     }
     // uploadFiles: function() {
     //   debugger;
@@ -15,11 +17,12 @@ export default Ember.Component.extend(Droplet, {
   },
 
   hooks: {
-    didUpload: function(photos) {
-      debugger;
-      this.sendAction("didUploadAction", photos);
-
-      console.log("did an upload");
+    didUpload: function(response) {
+      // var uploadedFiles = this.get("validFiles");
+      // this.get("uploadedFiles") returns an empty array :(
+      // below will add photos to array
+      this.sendAction("didUploadAction", response);
+      // console.log("did an upload");
     }
   },
   options: {
