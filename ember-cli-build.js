@@ -46,25 +46,40 @@ module.exports = function(defaults) {
   //   destDir: "fonts"
   // });
 
-  app.import("bower_components/font-awesome/css/font-awesome.css");
-  app.import("bower_components/font-awesome/fonts/fontawesome-webfont.eot", {
+  app.import("vendor/icons/Material-Design-Iconic-Font.eot", {
     destDir: "fonts"
   });
-  app.import("bower_components/font-awesome/fonts/fontawesome-webfont.svg", {
+  app.import("vendor/icons/Material-Design-Iconic-Font.svg", {
     destDir: "fonts"
   });
-  app.import("bower_components/font-awesome/fonts/fontawesome-webfont.ttf", {
+  app.import("vendor/icons/Material-Design-Iconic-Font.ttf", {
     destDir: "fonts"
   });
-  app.import("bower_components/font-awesome/fonts/fontawesome-webfont.woff", {
+  app.import("vendor/icons/Material-Design-Iconic-Font.woff", {
     destDir: "fonts"
   });
-  app.import("bower_components/font-awesome/fonts/fontawesome-webfont.woff2", {
-    destDir: "fonts"
-  });
-  app.import("bower_components/font-awesome/fonts/FontAwesome.otf", {
-    destDir: "fonts"
-  });
+
+
+
+  // app.import("bower_components/font-awesome/css/font-awesome.css");
+  // app.import("bower_components/font-awesome/fonts/fontawesome-webfont.eot", {
+  //   destDir: "fonts"
+  // });
+  // app.import("bower_components/font-awesome/fonts/fontawesome-webfont.svg", {
+  //   destDir: "fonts"
+  // });
+  // app.import("bower_components/font-awesome/fonts/fontawesome-webfont.ttf", {
+  //   destDir: "fonts"
+  // });
+  // app.import("bower_components/font-awesome/fonts/fontawesome-webfont.woff", {
+  //   destDir: "fonts"
+  // });
+  // app.import("bower_components/font-awesome/fonts/fontawesome-webfont.woff2", {
+  //   destDir: "fonts"
+  // });
+  // app.import("bower_components/font-awesome/fonts/FontAwesome.otf", {
+  //   destDir: "fonts"
+  // });
 
 
 
@@ -78,7 +93,8 @@ module.exports = function(defaults) {
   app.import('bower_components/summernote/dist/summernote.css');
 
   app.import('vendor/material-admin-functions.js');
-  app.import('vendor/cesar.css');
+  // app.import('vendor/cesar.css');
+  app.import('vendor/cesar-2.css');
 
   app.import('vendor/bootstrap-select.css');
   app.import('vendor/bootstrap-select.js');
