@@ -16,6 +16,7 @@ export default {
   "cancel": "Cancel",
   "edit": "Edit",
   "preview": "Preview",
+  "close": "Close",
 
   "visible": "Visible",
   "hidden": "Hidden",
@@ -28,6 +29,11 @@ export default {
       //   "nuevo": "Nuevo",
       //   "guardar": "Guardar",
       //   "crear": "Crear",
+  },
+
+  "alerts": {
+    "visibleProperties": "These properties are visible on your website",
+    "hiddenProperties": "These properties will not be shown on your website"
   },
 
   "datatables": {

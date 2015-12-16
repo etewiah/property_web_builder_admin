@@ -12,6 +12,7 @@ export default Ember.merge(Ember.copy(en), {
   "cancel": "Cancelar",
   "edit": "Editar",
   "preview": "Preview",
+  "close": "Cerrar",
 
   "visible": "Visible",
   "hidden": "Hidden",
@@ -24,6 +25,11 @@ export default Ember.merge(Ember.copy(en), {
       //   "nuevo": "Nuevo",
       //   "guardar": "Guardar",
       //   "crear": "Crear",
+  },
+
+  "alerts": {
+    "visibleProperties": "Estas son las propiedades que están visibles en tu web",
+    "hiddenProperties": "Estas propiedades NO están visibles en tu web"
   },
 
   "datatables": {

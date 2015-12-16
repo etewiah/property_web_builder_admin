@@ -32,6 +32,15 @@
         <div role="tabpanel" class="tab-pane active" id="visibles">
           <div class="row">
             <div class="col-sm-12">
+              {{#if (eq propertiesStatus "visible")}}
+                <div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label={{t "close"}}><span aria-hidden="true">×</span></button><i class="fa fa-lg fa-check"></i>{{t "alerts.visibleProperties"}}
+                </div>
+                {{else}}
+                <div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label={{t "close"}}><span aria-hidden="true">×</span></button><i class="fa fa-lg fa-exclamation"></i>{{t "alerts.hiddenProperties"}}
+                </div>
+              {{/if}}
+            </div>
+            <div class="col-sm-12">
 
               {{tabs-property/data-table-properties properties=properties }}
             </div>
