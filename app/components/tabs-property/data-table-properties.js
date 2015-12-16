@@ -1,16 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // classNames: ['wysiwyg-editor'],
-  // btnSize: 'btn-xs',
-  // height: 120,
+  i18n: Ember.inject.service(),
 
-  // willDestroyElement: function() {
-  //   this.$('textarea').destroy();
-  // },
-  // properties: function(){
-  //   debugger;
-  // }.property(),
+  actions: {
+    hideProperty: function(property){
+      debugger;
+    }
+  },
 
   setupEditor: function() {
     $('.datatables').dataTable({
@@ -19,14 +16,14 @@ export default Ember.Component.extend({
         "sLengthMenu": "Mostrar _MENU_ registros",
         "sZeroRecords": "No se encontraron resultados",
         "sEmptyTable": "Ningún dato disponible en esta tabla",
-        "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+        "sInfo": this.get("i18n").t("datatables.sInfo").string,
         "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
         "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
         "sInfoPostFix": "",
-        "sSearch": "Buscar:",
+        "sSearch": this.get("i18n").t("datatables.sSearch").string + ":",
         "sUrl": "",
         "sInfoThousands": ",",
-        "sLoadingRecords": "Cargando...",
+        "sLoadingRecords": this.get("i18n").t("datatables.sLoadingRecords").string,
         "oPaginate": {
           "sFirst": "<<",
           "sLast": ">>",

@@ -24,10 +24,35 @@ export default {
     "configureAvailableExtras": "Configure available extras",
     "selectImagesToAdd": "Select images to add",
     "selectRemoteImages": "Add images from urls"
-    //   "editar": "Editar",
-    //   "nuevo": "Nuevo",
-    //   "guardar": "Guardar",
-    //   "crear": "Crear",
+      //   "editar": "Editar",
+      //   "nuevo": "Nuevo",
+      //   "guardar": "Guardar",
+      //   "crear": "Crear",
+  },
+
+  "datatables": {
+    "sProcessing": "Procesando...",
+    "sLengthMenu": "Mostrar _MENU_ properties",
+    "sZeroRecords": "No se encontraron resultados",
+    "sEmptyTable": "Ningún dato disponible en esta tabla",
+    "sInfo": "Showing items from _START_ al _END_ from a total of _TOTAL_ properties",
+    "sInfoEmpty": "Showing items from 0 al 0 from a total of 0 properties",
+    "sInfoFiltered": "(filtrado de un total de _MAX_ properties)",
+    "sInfoPostFix": "",
+    "sSearch": "Search",
+    "sUrl": "",
+    "sInfoThousands": ",",
+    "sLoadingRecords": "Cargando...",
+    "oPaginate": {
+      "sFirst": "<<",
+      "sLast": ">>",
+      "sNext": ">",
+      "sPrevious": "<"
+    },
+    "oAria": {
+      "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+      "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+    }
   },
 
   "alert": {
@@ -61,11 +86,6 @@ export default {
     "createContent": "Create some content",
     "companyDetails": "Set up your company details"
   },
- 
-  "prompts": {
-    "fixErrors": "Please correct the errors below"
-  },
-
 
   "locationTab": {
     "confirmAddress": "Confirm new location"
@@ -205,25 +225,23 @@ export default {
 };
 
 
-  // "true": "Yes",
-  // "false": "No",
-  // "editarPropiedad": "Editar una propiedad",
-  // "nuevoPropiedad": "Nuevo propiedad",
-  // "listadoPropiedades": "Listado de propiedades",
+// "true": "Yes",
+// "false": "No",
+// "editarPropiedad": "Editar una propiedad",
+// "nuevoPropiedad": "Nuevo propiedad",
+// "listadoPropiedades": "Listado de propiedades",
 
-  // "webContentLabels": {
-  //   "suffixEn": "en Inglés",
-  //   "suffixEs": "en Español",
-  //   "landingPageHero": "Contenido para pagina principal",
-  //   "aboutUs": "Sobre Nosotros",
-  //   // "tagLine": "Lema"
-  //   // "landingPageHeroEs": "Contenido para pagina principal en Español"
-  // },
-  // "webContentSections": {
-  //   "home": "Inicio",
-  //   "aboutUs": "Sobre Nosotros",
-  //   "sell": "Vender",
-  //   "tagLine": "Lema"
-  // },
-
-
+// "webContentLabels": {
+//   "suffixEn": "en Inglés",
+//   "suffixEs": "en Español",
+//   "landingPageHero": "Contenido para pagina principal",
+//   "aboutUs": "Sobre Nosotros",
+//   // "tagLine": "Lema"
+//   // "landingPageHeroEs": "Contenido para pagina principal en Español"
+// },
+// "webContentSections": {
+//   "home": "Inicio",
+//   "aboutUs": "Sobre Nosotros",
+//   "sell": "Vender",
+//   "tagLine": "Lema"
+// },

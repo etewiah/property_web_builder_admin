@@ -5,19 +5,65 @@ import en from "../en/translations";
 
 export default Ember.merge(Ember.copy(en), {
 
-  en: "Ingles",
-  es: "Español",
+  "en": "Ingles",
+  "es": "Español",
 
+  "save": "Guardar",
+  "cancel": "Cancelar",
+  "edit": "Editar",
+  "preview": "Preview",
 
-  save: "Save",
-  cancel: "Cancel",
+  "visible": "Visible",
+  "hidden": "Hidden",
 
-  street: "Street",
-  street_number: "Street Number",
-  city: "City",
-  postCode: "Post Code",
-  region: "Region",
-  country: "Country",
+  "buttonLabels": {
+    "configureAvailableExtras": "Configure available extras",
+    "selectImagesToAdd": "Select images to add",
+    "selectRemoteImages": "Add images from urls"
+      //   "editar": "Editar",
+      //   "nuevo": "Nuevo",
+      //   "guardar": "Guardar",
+      //   "crear": "Crear",
+  },
+
+  "datatables": {
+    "sProcessing": "Procesando...",
+    "sLengthMenu": "Mostrar _MENU_ registros",
+    "sZeroRecords": "No se encontraron resultados",
+    "sEmptyTable": "Ningún dato disponible en esta tabla",
+    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+    "sInfoPostFix": "",
+    "sSearch": "Buscar",
+    "sUrl": "",
+    "sInfoThousands": ",",
+    "sLoadingRecords": "Cargando...",
+    "oPaginate": {
+      "sFirst": "<<",
+      "sLast": ">>",
+      "sNext": ">",
+      "sPrevious": "<"
+    },
+    "oAria": {
+      "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+      "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+    }
+  },
+
+  "alert": {
+    "deleteItem": "Are you sure you want to delete this item?",
+    "deleteButton": "Yes, delete it!"
+  },
+
+  "street": "Calle",
+  "street_number": "Street Number",
+  "city": "City",
+  "postCode": "Post Code",
+  "region": "Region",
+  "country": "Pais",
+
+  "properties": "Properties",
 
   "null": "",
 
@@ -36,11 +82,6 @@ export default Ember.merge(Ember.copy(en), {
     "createContent": "Create some content",
     "companyDetails": "Set up your company details"
   },
- 
-  "prompts": {
-    "fixErrors": "Please correct the errors below"
-  },
-
 
   "locationTab": {
     "confirmAddress": "Confirm new location"

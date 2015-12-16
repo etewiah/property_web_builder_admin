@@ -22,10 +22,10 @@
     <div role="tabpanel">
       <ul class="tab-nav" role="tablist">
         <li class={{if (eq propertiesStatus "visible") "active"}}>
-          {{#link-to 'admin.propiedades.list.visible' aria-controls="visibles" role="tab" data-toggle="tab"}} {{t "visible"}}{{/link-to}}
+          {{#link-to 'admin.propiedades.list.visible' aria-controls="visibles" role="tab" }} {{t "visible"}}{{/link-to}}
         </li>
         <li class={{if (eq propertiesStatus "hidden") "active"}}>
-          {{#link-to 'admin.propiedades.list.hidden' aria-controls="visibles" role="tab" data-toggle="tab"}} {{t "hidden"}}{{/link-to}}
+          {{#link-to 'admin.propiedades.list.hidden' aria-controls="visibles" role="tab" }} {{t "hidden"}}{{/link-to}}
         </li>
       </ul>
       <div class="tab-content">

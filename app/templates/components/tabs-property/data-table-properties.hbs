@@ -24,15 +24,19 @@
       <td>{{ property.numHabitaciones }}</td>
       <td>{{t property.visible }}</td>
       <td>
-                                            <a href="editar_propiedad" ><i class="fa fa-pencil"></i> Editar</a>&nbsp;
-                                            <a href="#" ><i class="fa fa-eye-slash"></i> Ocultar</a>
+        {{#link-to 'admin.propiedades.editar' property.id}}
+          <i class="fa fa-pencil"></i>{{t "edit"}}
+        {{/link-to}}&nbsp;
 
-        <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" property }} data-id_propiedad="1">
+        <a href="" {{action "hideProperty" property }} ><i class="fa fa-eye-slash"></i> Ocultar</a>
+
+
+{{!--         <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" property }} data-id_propiedad="1">
           <i class="fa fa-pencil">Edit</i>
         </button>
         <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" property }} data-id_propiedad="1">
           <i class="fa fa-eye-slash">Hide</i>
-        </button>
+        </button> --}}
       </td>
     </tr>
     {{/each}}
