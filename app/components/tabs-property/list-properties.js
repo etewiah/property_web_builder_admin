@@ -10,6 +10,9 @@ export default Ember.Component.extend(OnReadyMixin, {
   // willDestroyElement: function() {
   //   this.$('textarea').destroy();
   // },
+  properties: function(){
+    debugger;
+  }.property(),
 
   // setupEditor: function() {
   //   // not entirely sure if I need this:

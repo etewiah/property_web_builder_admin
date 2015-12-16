@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Agency from '../../models/agency'
+import Agency from '../../models/agency';
 
 export default Ember.Route.extend({
   // model() {

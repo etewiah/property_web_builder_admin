@@ -1,11 +1,6 @@
 <div class="card">
-    
-    <div class="card-header sep25">
-        <h2>{{t "propertiesList" }}</h2>
-        <div role="group" class="boton_anadir_propiedad" style="display:none;">
-            <a href="propiedades_settings" data-toggle="tooltip" title="Configuración de propiedades" class="btn_settings btn btn-circulo btn-float waves-effect pull-right"><i class="fa fa-gears"></i></a>
-            <a href="editar_propiedad" data-toggle="tooltip" title="Añadir propiedad" class="btn_editar_propiedad btn bgm-cyan btn-circulo btn-float waves-effect"><i class="md md-add"></i></a>
-        </div>
+  <div class="card-header sep25">
+    <h2>{{t "propertiesList" }}</h2>
 
         <div role="group" class="boton_anadir_propiedad">
           {{#link-to "admin.propiedades.settings" data-toggle="tooltip" 
@@ -21,76 +16,31 @@
 {{!--             <a href="editar_propiedad" data-toggle="tooltip" title="Añadir propiedad" class="btn bgm-cyan btn-circulo btn-float waves-effect">
             <i class="fa fa-plus"></i><i class="md md-add"></i></a> --}}
         </div>
-    </div>
-    
-    <div class="card-body card-padding">
-        <div role="tabpanel">
-        
-            <ul class="tab-nav" role="tablist">
 
-                <li class={{if (eq propertiesStatus "visible") "active"}} >
-                {{#link-to 'admin.propiedades.list.visible' aria-controls="visibles" role="tab" data-toggle="tab"}}
-                {{t "visible"}}{{/link-to}}
-                </li>  
-                <li class={{if (eq propertiesStatus "hidden") "active"}} >
-                {{#link-to 'admin.propiedades.list.hidden' aria-controls="visibles" role="tab" data-toggle="tab"}}
-                {{t "hidden"}}{{/link-to}}
-                </li>  
+  </div>
+  <div class="card-body card-padding">
+    <div role="tabpanel">
+      <ul class="tab-nav" role="tablist">
+        <li class={{if (eq propertiesStatus "visible") "active"}}>
+          {{#link-to 'admin.propiedades.list.visible' aria-controls="visibles" role="tab" data-toggle="tab"}} {{t "visible"}}{{/link-to}}
+        </li>
+        <li class={{if (eq propertiesStatus "hidden") "active"}}>
+          {{#link-to 'admin.propiedades.list.hidden' aria-controls="visibles" role="tab" data-toggle="tab"}} {{t "hidden"}}{{/link-to}}
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="visibles">
+          <div class="row">
+            <div class="col-sm-12">
 
-            </ul>
-
-            <div class="tab-content">
-                
-                <div role="tabpanel" class="tab-pane active" id="visibles">
-                    
-                    <div class="row">
-                        <div class="col-sm-12">  
-                                      <table id="data-table-command" class="tabla_propiedades table table-striped table-vmiddle">
-                                          <thead>
-                                              <tr>
-                                                  <th data-column-id="id" data-type="text" data-order="desc">Ref</th>
-                                                  <th data-column-id="destacado">{{t "propertyLabels.highlighted" }}</th>
-                                                  <th data-column-id="localidad">{{t "propertyLabels.locality"}}</th>
-                                                  <th data-column-id="zona">{{t "propertyLabels.zone"}}</th>
-                                                  <th data-column-id="tipo">{{t "propertyLabels.type"}}</th>
-                                                  <th data-column-id="precio">{{t "propertyLabels.price"}}</th>
-                                                  <th data-column-id="hab">{{t "propertyLabels.rooms"}}</th>
-                                                  <th data-column-id="visible">{{t "propertyLabels.visible"}}</th>
-                                                  <th data-column-id="commands" data-formatter="commands" data-sortable="false">{{t "propertyLabels.actions"}}</th>
-                                              </tr>
-                                          </thead>
-                                          <tbody>
-
-                                        {{#each model as |property|}} 
-                                          <tr >
-                                            <td>{{ property.tTitle }}</td>
-                                            <td>{{t property.destacado }}</td>
-                                            <td>{{t property.localidad }}</td>
-                                            <td>{{ property.zonaDireccion }}</td>
-                                            <td>{{ property.tTipoPropiedad }}</td>
-                                            <td>{{ property.precioVenta }}</td>
-                                            <td>{{ property.numHabitaciones }}</td>
-                                            <td>{{t property.visible }}</td>
-                                            <td>
-                                            <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" property }} data-id_propiedad="1">
-                                            <i class="md md-edit"><i class="fa fa-pencil"></i></i>
-                                            </button>
-                                            <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" property }} data-id_propiedad="1">
-                                            <i class="md md-edit"><i class="fa fa-trash"></i></i>
-                                            </button>
-                                            </td>
-                                          </tr>
-                                        {{/each}} 
-
-                                          </tbody>
-                                      </table>
-                </div>
-              </div>
-              {{!-- above is col-sm-12 end --}}
+              {{tabs-property/data-table-properties properties=properties }}
             </div>
           </div>
-              {{!-- above is tab-content end --}}
+          {{!-- above is col-sm-12 end --}}
         </div>
+      </div>
+      {{!-- above is tab-content end --}}
     </div>
-    {{!-- above is card-body end --}}
+  </div>
+  {{!-- above is card-body end --}}
 </div>
