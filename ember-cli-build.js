@@ -60,7 +60,7 @@ module.exports = function(defaults) {
   });
 
 
-
+// material design icons don't have a gears/settings icon :(
   app.import("bower_components/font-awesome/css/font-awesome.css");
   app.import("bower_components/font-awesome/fonts/fontawesome-webfont.eot", {
     destDir: "fonts"

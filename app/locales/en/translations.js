@@ -17,6 +17,9 @@ export default {
   "edit": "Edit",
   "preview": "Preview",
 
+  "visible": "Visible",
+  "hidden": "Hidden",
+
   "buttonLabels": {
     "configureAvailableExtras": "Configure available extras",
     "selectImagesToAdd": "Select images to add",

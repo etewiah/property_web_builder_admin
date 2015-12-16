@@ -86,6 +86,16 @@ Router.map(function() {
       this.route("default", {
         path: "/"
       });
+      this.route("list", {
+        path: '/list'
+      }, function() {
+        this.route("visible", {
+          path: "/visible"
+        });
+        this.route("hidden", {
+          path: "/hidden"
+        });
+      });
       this.route("settings", {
         path: "/settings"
       });
