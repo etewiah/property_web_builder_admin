@@ -59,8 +59,24 @@ module.exports = function(defaults) {
     destDir: "fonts"
   });
 
+  // datatables uses these fonts:
+  app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot", {
+    destDir: "fonts/bootstrap"
+  });
+  app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg", {
+    destDir: "fonts/bootstrap"
+  });
+  app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf", {
+    destDir: "fonts/bootstrap"
+  });
+  app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff", {
+    destDir: "fonts/bootstrap"
+  });
+  app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2", {
+    destDir: "fonts/bootstrap"
+  });
 
-// material design icons don't have a gears/settings icon :(
+  // material design icons don't have a gears/settings icon :(
   app.import("bower_components/font-awesome/css/font-awesome.css");
   app.import("bower_components/font-awesome/fonts/fontawesome-webfont.eot", {
     destDir: "fonts"
@@ -82,6 +98,21 @@ module.exports = function(defaults) {
   });
 
 
+
+  app.import('bower_components/datatables/media/js/jquery.dataTables.js');
+  app.import('bower_components/datatables/media/js/dataTables.bootstrap.js');
+  app.import('bower_components/datatables/media/css/dataTables.bootstrap.css');
+  // app.import('bower_components/datatables/media/css/jquery.dataTables.css');
+  // turned out I don't need images below anyway as they are only used by the non-bootstrap datatables css
+
+  // can't figure out how to pass directory as it results in this error:
+  // You must pass a file to `app.import`. For directories specify them to the constructor under the `trees` option
+  // var dtImages = ['sort_asc.png', 'sort_asc_disabled.png', 'sort_desc.png', 'sort_desc_disabled.png', 'sort_both.png'];
+  // for (var index in dtImages) {
+  //   app.import('bower_components/datatables/media/images/' + dtImages[index], {
+  //     destDir: "images"
+  //   });
+  // }
 
 
   app.import('bower_components/bootstrap-sweetalert/lib/sweet-alert.js');

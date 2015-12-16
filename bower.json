@@ -22,6 +22,7 @@
     "bootstrap-sass": "~3.3.5",
     "summernote": "~0.6.16",
     "validate": "~0.8.0",
-    "bootstrap-sweetalert": "~0.4.5"
+    "bootstrap-sweetalert": "~0.4.5",
+    "datatables": "~1.10.10"
   }
 }
