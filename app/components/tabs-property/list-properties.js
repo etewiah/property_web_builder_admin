@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 import OnReadyMixin from "../../mixins/on-ready";
-
+// all this just so the bs popover works..
 export default Ember.Component.extend(OnReadyMixin, {
   // classNames: ['wysiwyg-editor'],
   // btnSize: 'btn-xs',

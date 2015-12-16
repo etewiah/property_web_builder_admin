@@ -2,21 +2,21 @@
     
     <div class="card-header sep25">
         <h2>{{t "propertiesList" }}</h2>
-        <div role="group" class="boton_anadir_propiedad">
+        <div role="group" class="boton_anadir_propiedad" style="display:none;">
             <a href="propiedades_settings" data-toggle="tooltip" title="Configuración de propiedades" class="btn_settings btn btn-circulo btn-float waves-effect pull-right"><i class="fa fa-gears"></i></a>
             <a href="editar_propiedad" data-toggle="tooltip" title="Añadir propiedad" class="btn_editar_propiedad btn bgm-cyan btn-circulo btn-float waves-effect"><i class="md md-add"></i></a>
         </div>
 
         <div role="group" class="boton_anadir_propiedad">
-        {{#link-to "admin.propiedades.nuevo" data-toggle="tooltip" 
-        title=(t "addProperty") class="btn bgm-cyan btn-circulo btn-float waves-effect" }} 
-         <i class="fa fa-plus"></i><i class="md md-add"></i>
-        {{/link-to}}  
+          {{#link-to "admin.propiedades.settings" data-toggle="tooltip" 
+          title=(t "addProperty") class="btn_settings btn btn-circulo btn-float waves-effect pull-right" }} 
+           <i class="fa fa-gears"></i>
+          {{/link-to}}  
 
-        {{#link-to "admin.propiedades.nuevo" data-toggle="tooltip" 
-        title=(t "addProperty") class="btn bgm-cyan btn-circulo btn-float waves-effect" }} 
-         <i class="fa fa-plus"></i><i class="md md-add"></i>
-        {{/link-to}}  
+          {{#link-to "admin.propiedades.nuevo" data-toggle="tooltip" 
+          title=(t "addProperty") class="btn_editar_propiedad btn bgm-cyan btn-circulo btn-float waves-effect" }} 
+           <i class="md md-add"></i>
+          {{/link-to}}  
 
 {{!--             <a href="editar_propiedad" data-toggle="tooltip" title="Añadir propiedad" class="btn bgm-cyan btn-circulo btn-float waves-effect">
             <i class="fa fa-plus"></i><i class="md md-add"></i></a> --}}
