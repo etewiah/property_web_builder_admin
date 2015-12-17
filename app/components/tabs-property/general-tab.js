@@ -161,59 +161,6 @@ export default TabWithForm.extend({
     },
   ],
 
-  alquilerDeTemporadaInputFields: [
-    //this comment tricks prettify ;) 
-    {
-      labelTextTKey: "fieldLabels.temporadas",
-      tooltipTextTKey: "toolTips.temporadas",
-      fieldName: "temporadas",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-    }, {
-      labelTextTKey: "fieldLabels.precioTa",
-      tooltipTextTKey: false,
-      fieldName: "precioTa",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.precioTm",
-      tooltipTextTKey: false,
-      fieldName: "precioTm",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.precioTb",
-      tooltipTextTKey: false,
-      fieldName: "precioTb",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }
-  ],
-
   mainInputFields: [{
     labelTextTKey: "fieldLabels.ref",
     tooltipTextTKey: "toolTips.ref",

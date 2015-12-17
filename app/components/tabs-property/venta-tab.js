@@ -2,117 +2,102 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
-  situacionLeftInputFields: [
+  longTermRentalInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.localidad",
+      labelTextTKey: "fieldLabels.longTermRental",
+      tooltipTextTKey: "toolTips.longTermRental",
+      fieldName: "longTermRental",
+      fieldType: "simpleSelect",
+      fieldDbType: "boolean",
+    }, {
+      labelTextTKey: "fieldLabels.priceRentalMonthlyCurrent",
       tooltipTextTKey: false,
-      fieldName: "localidad",
+      fieldName: "priceRentalMonthlyCurrent",
       fieldType: "simpleInput",
-      inputType: "text",
+      inputType: "number",
       constraints: {
         inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
           }
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.zona",
-      tooltipTextTKey: false,
-      fieldName: "zona",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
+      labelTextTKey: "fieldLabels.longTermRentalDiscount",
+      tooltipTextTKey: "toolTips.longTermRentalDiscount",
+      fieldName: "longTermRentalDiscount",
+      fieldType: "simpleSelect",
+      fieldDbType: "boolean",
     }, {
-      labelTextTKey: "fieldLabels.codigoPostal",
+      labelTextTKey: "fieldLabels.priceRentalMonthlyOriginal",
       tooltipTextTKey: false,
-      fieldName: "codigoPostal",
+      fieldName: "priceRentalMonthlyOriginal",
       fieldType: "simpleInput",
-      inputType: "text",
+      inputType: "number",
       constraints: {
         inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
           }
         }
       }
     },
   ],
-  situacionRightInputFields: [
+  shortTermRentalInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.direccion",
+      labelTextTKey: "fieldLabels.temporadas",
+      tooltipTextTKey: "toolTips.temporadas",
+      fieldName: "temporadas",
+      fieldType: "simpleSelect",
+      fieldDbType: "boolean",
+    }, {
+      labelTextTKey: "fieldLabels.precioTa",
       tooltipTextTKey: false,
-      fieldName: "direccion",
+      fieldName: "precioTa",
       fieldType: "simpleInput",
-      inputType: "text",
+      inputType: "number",
       constraints: {
         inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
           }
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.direccionReal",
+      labelTextTKey: "fieldLabels.precioTm",
       tooltipTextTKey: false,
-      fieldName: "direccionReal",
+      fieldName: "precioTm",
       fieldType: "simpleInput",
-      inputType: "text",
+      inputType: "number",
       constraints: {
         inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
           }
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.direccionMapa",
+      labelTextTKey: "fieldLabels.precioTb",
       tooltipTextTKey: false,
-      fieldName: "direccionMapa",
+      fieldName: "precioTb",
       fieldType: "simpleInput",
-      inputType: "text",
+      inputType: "number",
       constraints: {
         inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 3000,
           }
         }
       }
-    },
+    }
   ],
-  // actions: {
-  //   savePropertyResource: function() {
-  //     var propertyResource = this.get("propertyResource");
-
-  //     // var self = this;
-
-  //     function transitionToPost(propertyResource) {
-  //       // self.transitionToRoute('posts.show', post);
-  //     }
-
-  //     function failure(reason) {
-  //       // handle the error
-  //     }
-
-  //     propertyResource.save().then(transitionToPost).catch(failure);
-
-
-  //   }
-  // },
 
 
   isActive: function() {

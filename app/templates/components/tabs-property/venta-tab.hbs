@@ -1,31 +1,40 @@
 {{#if isActive}}
 <div role="tabpanel" class="tab-pane" id="situacion">
   <div class="row">
-    <div class="col-sm-6">
 
-
-
-{{#each situacionLeftInputFields as |inputField|}} 
-  <div class="form-group fg-float">
-    {{partial "partials/input-field-resolver" }}
-  </div>
-{{/each}}
-
-
-
-
+     <div class="col-sm-4">
+      <h4>{{t "propertyGeneralSections.sale" }}</h4>
+      <div id="toggle_temporadas">
+      {{#each longTermRentalInputFields as |inputField|}} 
+        <div class="form-group fg-float">
+          {{partial "partials/input-field-resolver" }}
+        </div>
+      {{/each}}        
+      </div>
     </div>
-    <div class="col-sm-6">
 
-
-{{#each situacionRightInputFields as |inputField|}} 
-  <div class="form-group fg-float">
-    {{partial "partials/input-field-resolver" }}
-  </div>
-{{/each}}
-
-
+    <div class="col-sm-4">
+      <h4>{{t "propertyGeneralSections.longtermRental" }}</h4>
+      <div id="toggle_temporadas">
+      {{#each longTermRentalInputFields as |inputField|}} 
+        <div class="form-group fg-float">
+          {{partial "partials/input-field-resolver" }}
+        </div>
+      {{/each}}
+      </div>
     </div>
+
+    <div class="col-sm-4">
+      <h4>{{t "propertyGeneralSections.seasonalRental" }}</h4>
+      <div id="toggle_temporadas">
+      {{#each shortTermRentalInputFields as |inputField|}} 
+        <div class="form-group fg-float">
+          {{partial "partials/input-field-resolver" }}
+        </div>
+      {{/each}}
+      </div>
+    </div>
+
   </div>
 </div>
 {{/if}}

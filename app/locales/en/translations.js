@@ -179,14 +179,16 @@ export default {
     "description": "descripción",
     "extras": "Extras",
     "photos": "Fotos",
-    "sale": "Venta",
+    "sale": "Sale / Rental",
     "owner": "Proprietario"
   },
 
   "propertyGeneralSections": {
+    "sale": "Venta",
+    "longtermRental": "Alquiler de larga duración",
+    "seasonalRental": "Alquiler de temporada",
     "visibility": "Visibility",
     "generalData": "Datos Generales",
-    "seasonalRental": "Alquiler de temporada",
     "characteristics": "Características",
     "portals": "Portales",
     "extras": "Extras",
