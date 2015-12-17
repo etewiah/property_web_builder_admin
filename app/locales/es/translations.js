@@ -135,8 +135,8 @@ export default Ember.merge(Ember.copy(en), {
   // left nav
   "adminSections": {
     "start": "Inicio",
-    "agencyDetails": "Mis Datos",
-    "content": "Contenido",
+    "agencyDetails": "Agencia",
+    "content": "Página Web",
     "translations": "Traduciones",
     "properties": "Propiedades",
     "clientes": "Clientes"

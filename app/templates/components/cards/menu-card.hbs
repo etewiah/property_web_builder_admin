@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header ch-alt m-b-20">
+    <h2>{{t details.titleKey }}<small>{{t details.promptKey }}</small></h2>
+  </div>
+  <div class="card-body">
+    <div class="listview">
+
+      {{#each details.tasks as |task|}}
+        {{#link-to task.link class="lv-item" }} 
+        <div class="media">
+          <div class="pull-left">
+            <i class={{task.icon}} style=""></i>
+          </div>
+          <div class="media-body">
+            <div class="lv-title">{{t task.titleKey }}</div>
+            <small class="lv-small">  </small>
+          </div>
+        </div>
+        {{/link-to}}  
+      {{/each}}
+
+        {{#link-to details.link class="lv-footer" }} 
+          {{t details.linkKey}}
+        {{/link-to}} 
+
+      <a class="lv-footer" href="web">Ir al panel de control de la web</a>
+    </div>
+  </div>
+</div>

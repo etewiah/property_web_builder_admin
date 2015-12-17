@@ -26,7 +26,7 @@ export default Ember.Route.extend({
 
   model() {
     var agencyDetails = Agency.get();
-    return agencyDetails; 
+    return agencyDetails;
   },
 
 
@@ -36,21 +36,8 @@ export default Ember.Route.extend({
         tabIconClass: "fa fa-home",
         tabTitleKey: "adminSections.start",
         tabRoute: "admin.setup"
-        // tabRoute: "admin.inicio"
+          // tabRoute: "admin.inicio"
       }, {
-        tabIconClass: "fa fa-user",
-        tabTitleKey: "adminSections.agencyDetails",
-        tabRoute: "admin.agency"
-      },{
-        tabIconClass: "fa fa-desktop",
-        tabTitleKey: "adminSections.content",
-        tabRoute: "admin.content"
-      }, {
-        tabIconClass: "fa fa-language",
-        tabTitleKey: "adminSections.translations",
-        tabRoute: "admin.translations"
-      },
-      {
         tabIconClass: "fa fa-building-o",
         tabTitleKey: "adminSections.properties",
         tabRoute: "admin.propiedades"
@@ -58,8 +45,20 @@ export default Ember.Route.extend({
         tabIconClass: "fa fa-users",
         tabTitleKey: "adminSections.clientes",
         tabRoute: "admin.clients"
-
+      }, {
+        tabIconClass: "fa fa-desktop",
+        tabTitleKey: "adminSections.content",
+        tabRoute: "admin.content"
+      }, {
+        tabIconClass: "fa fa-user",
+        tabTitleKey: "adminSections.agencyDetails",
+        tabRoute: "admin.agency"
+      }, {
+        tabIconClass: "fa fa-language",
+        tabTitleKey: "adminSections.translations",
+        tabRoute: "admin.translations"
       },
+
 
       // {
       //   tabIconClass: "fa fa-calendar",

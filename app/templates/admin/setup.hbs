@@ -4,9 +4,13 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-6">
-
-    {{cards/todo-card agency=agency  }}
-
+  <div class="col-sm-12">
+    {{cards/todo-card agency=agency }}
   </div>
+  {{#each menuCards as |menucard|}}
+  <div class="col-sm-6">
+    {{cards/menu-card details=menucard }}
+  </div>
+  {{/each}}
 </div>
+{{ outlet }}

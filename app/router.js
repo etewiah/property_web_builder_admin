@@ -44,7 +44,9 @@ Router.map(function() {
         path: "/:tabName"
       });
     });
-    this.route("content", function() {
+    this.route("content", {
+      path: "/website"
+    }, function() {
       this.route("default", {
         path: "/"
       });

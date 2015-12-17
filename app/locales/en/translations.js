@@ -21,6 +21,26 @@ export default {
   "visible": "Visible",
   "hidden": "Hidden",
 
+  "cards": {
+    "website": "Página web",
+    "websitePrompt": "Acciones sobre la página web",
+    "websiteLink": "Ir al panel de control de la web",
+    "properties": "Propiedades",
+    "propertiesPrompt": "Acciones sobre propiedades.",
+    "propertiesLink": "Ir a propiedades",
+  },
+  "tasks": {
+    "addProperty": "Añadir una propiedad",
+    "addPropertyPrompt": "Propiedades / Añadir propiedad",
+    "editProperty": "Editar una propiedad",
+    "editPropertyPrompt": "Propiedades / Editar propiedad",
+    "changeLogo": "Añadir o cambiar mi logotipo",
+    "changeLogoPrompt": "Web / Configuración de la web",
+    "changeLang": "Cambiar los idiomas de mi web",
+    "changeLangPrompt": "Web / Configuración de la web",
+  },
+
+
   "buttonLabels": {
     "configureAvailableExtras": "Configure available extras",
     "selectImagesToAdd": "Select images to add",
@@ -137,8 +157,8 @@ export default {
   // left nav
   "adminSections": {
     "start": "Home",
-    "agencyDetails": "My Data",
-    "content": "Content",
+    "agencyDetails": "Agency",
+    "content": "Website",
     "translations": "Translations",
     "properties": "Properties",
     "clientes": "Clients",
