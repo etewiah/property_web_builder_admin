@@ -77,12 +77,17 @@ export default {
 
   "null": "",
 
-  "addProperty": "Añadir propiedad",
-  "addClient": "Añadir cliente",
-  "newProperty": "Nuevo Propiedad",
-  "newClient": "Nuevo Cliente",
-  "propertiesList": "Listado de propiedades",
-  "clientsList": "Listado de clientes",
+  "editWebsite": "Edit Website",
+  "settingsForWebsite": "Settings for Website",
+  "returnToWebsite": "Return to web",
+  "settingsForProperties": "Settings for properties",
+  "returnToProperties": "Return to properties",
+  "addProperty": "Add property",
+  "addClient": "Add cliente",
+  "newProperty": "New Property",
+  "newClient": "New Client",
+  "propertiesList": "Properties list",
+  "clientsList": "Clients list",
 
   "prompts": {
     "fixErrors": "Please correct the errors below"

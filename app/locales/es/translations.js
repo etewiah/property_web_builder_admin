@@ -73,12 +73,19 @@ export default Ember.merge(Ember.copy(en), {
 
   "null": "",
 
+
+  "editWebsite": "Editar la Web",
+  "settingsForWebsite": "Configuración de la web",
+  "returnToWebsite": "Volver a web",
+  "settingsForProperties": "Configuración de propiedades",
+  "returnToProperties": "Volver a propiedades",
   "addProperty": "Añadir propiedad",
   "addClient": "Añadir cliente",
   "newProperty": "Nuevo Propiedad",
   "newClient": "Nuevo Cliente",
   "propertiesList": "Listado de propiedades",
   "clientsList": "Listado de clientes",
+
 
   "prompts": {
     "fixErrors": "Please correct the errors below"

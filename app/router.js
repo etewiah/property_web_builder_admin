@@ -26,9 +26,9 @@ Router.map(function() {
       path: "/"
     });
     this.route('inicio');
-    this.route("setup",  {
-        path: "/dashboard"
-      },function() {
+    this.route("setup", {
+      path: "/dashboard"
+    }, function() {
       this.route("default", {
         path: "/"
       });
@@ -47,6 +47,14 @@ Router.map(function() {
     this.route("content", function() {
       this.route("default", {
         path: "/"
+      });
+      this.route("settings", function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tabName"
+        });
       });
       this.route("tab", {
         path: "/:tabName"
@@ -96,8 +104,13 @@ Router.map(function() {
           path: "/hidden"
         });
       });
-      this.route("settings", {
-        path: "/settings"
+      this.route("settings", function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tabName"
+        });
       });
       this.route("nuevo", {
         path: "/new"
@@ -116,7 +129,9 @@ Router.map(function() {
 
   });
   this.route('user');
-  this.route('not-found', { path: '/*path' });
+  this.route('not-found', {
+    path: '/*path'
+  });
 });
 
 export default Router;
