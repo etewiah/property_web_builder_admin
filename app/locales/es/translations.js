@@ -120,6 +120,15 @@ export default Ember.merge(Ember.copy(en), {
   },
 
   "fieldLabels": {
+    "forSale": "forSale",
+    "priceSaleCurrent": "priceSaleCurrent",
+    "saleDiscount": "saleDiscount",
+    "priceSaleOriginal": "priceSaleOriginal",
+    "longTermRental": "longTermRental",
+    "priceRentalMonthlyCurrent": "priceRentalMonthlyCurrent",
+    "longTermRentalDiscount": "longTermRentalDiscount",
+    "priceRentalMonthlyOriginal": "priceRentalMonthlyOriginal",
+
     "firstNames": "First Name",
     "lastNames": "Last Names",
     "visible": "Visible",
@@ -204,6 +213,16 @@ export default Ember.merge(Ember.copy(en), {
   
 
   "toolTips": {
+    "forSale": "forSale",
+    "priceSaleCurrent": "priceSaleCurrent",
+    "saleDiscount": "saleDiscount",
+    "priceSaleOriginal": "priceSaleOriginal",
+    "longTermRental": "longTermRental",
+    "priceRentalMonthlyCurrent": "priceRentalMonthlyCurrent",
+    "longTermRentalDiscount": "longTermRentalDiscount",
+    "priceRentalMonthlyOriginal": "priceRentalMonthlyOriginal",
+
+
     "addNew": "Añadir nuevo",
     "visible": "Sí para publicar el inmueble en su web",
     "highlighted": "Sí para poner el inmueble en la sección",

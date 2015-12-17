@@ -1,7 +1,51 @@
 import Ember from 'ember';
+import TabWithForm from "../base/tab-with-form";
 
-
-export default Ember.Component.extend({
+export default TabWithForm.extend({
+  saleInputFields: [
+    //this comment tricks prettify ;) 
+    {
+      labelTextTKey: "fieldLabels.forSale",
+      tooltipTextTKey: "toolTips.forSale",
+      fieldName: "forSale",
+      fieldType: "simpleSelect",
+      fieldDbType: "boolean",
+    }, {
+      labelTextTKey: "fieldLabels.priceSaleCurrent",
+      tooltipTextTKey: "toolTips.priceSaleCurrent",
+      fieldName: "priceSaleCurrent",
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 999999999,
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.saleDiscount",
+      tooltipTextTKey: "toolTips.saleDiscount",
+      fieldName: "saleDiscount",
+      fieldType: "simpleSelect",
+      fieldDbType: "boolean",
+    }, {
+      labelTextTKey: "fieldLabels.priceSaleOriginal",
+      tooltipTextTKey: "toolTips.priceSaleOriginal",
+      fieldName: "priceSaleOriginal",
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 999999999,
+          }
+        }
+      }
+    },
+  ],
   longTermRentalInputFields: [
     //this comment tricks prettify ;) 
     {
@@ -12,7 +56,7 @@ export default Ember.Component.extend({
       fieldDbType: "boolean",
     }, {
       labelTextTKey: "fieldLabels.priceRentalMonthlyCurrent",
-      tooltipTextTKey: false,
+      tooltipTextTKey: "toolTips.priceRentalMonthlyCurrent",
       fieldName: "priceRentalMonthlyCurrent",
       fieldType: "simpleInput",
       inputType: "number",
@@ -20,7 +64,7 @@ export default Ember.Component.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+            lessThanOrEqualTo: 999999999,
           }
         }
       }
@@ -32,7 +76,7 @@ export default Ember.Component.extend({
       fieldDbType: "boolean",
     }, {
       labelTextTKey: "fieldLabels.priceRentalMonthlyOriginal",
-      tooltipTextTKey: false,
+      tooltipTextTKey: "toolTips.priceRentalMonthlyOriginal",
       fieldName: "priceRentalMonthlyOriginal",
       fieldType: "simpleInput",
       inputType: "number",
@@ -40,7 +84,7 @@ export default Ember.Component.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+            lessThanOrEqualTo: 999999999,
           }
         }
       }
@@ -64,7 +108,7 @@ export default Ember.Component.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+            lessThanOrEqualTo: 999999999,
           }
         }
       }
@@ -78,7 +122,7 @@ export default Ember.Component.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+            lessThanOrEqualTo: 999999999,
           }
         }
       }
@@ -92,7 +136,7 @@ export default Ember.Component.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+            lessThanOrEqualTo: 999999999,
           }
         }
       }

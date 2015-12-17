@@ -44,6 +44,24 @@ export default Ember.Component.extend({
       this.set("fieldsWithErrors", []);
       this.set("hasErrors", false);
       this.set("resetTrigger", this.get("resetTrigger") + 1);
+    },
+    savePropertyResource: function() {
+      var propertyResource = this.get("resourceObject");
+      var self = this;
+      function success(result) {
+        // triggerReset is an action in TabWithForm
+        self.send("triggerReset");
+      }
+
+      function failure(reason) {
+        // debugger;
+        // handle the error
+      }
+      debugger;
+      propertyResource.save().then(success).catch(failure);
+    },
+    cancelChanges: function(){
+      this.send("triggerReset")
     }
   },
 

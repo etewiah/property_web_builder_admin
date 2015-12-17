@@ -1,11 +1,31 @@
 {{#if isActive}}
 <div role="tabpanel" class="tab-pane" id="situacion">
   <div class="row">
+      {{#if hasChanged}}
+        {{#if hasErrors}}
+          {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
+          {{else}}
+          <div class="col-sm-10">
+            <div class="alert alert-info " role="alert"><i class="fa fa-lg fa-info"></i> Se han detectado cambios. 
+              <button type="submit"  style="" class="btn btn-primary waves-effect" {{action "savePropertyResource"}}>
+                {{t "save"}}
+              </button>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="alert alert-warning text-center" role="alert">
+              <button type="submit"  style="" class="btn btn-default m-b-10 waves-effect" {{action "cancelChanges"}}>
+                {{t "cancel"}}
+              </button> 
+            </div>
+          </div>
+        {{/if}}
+      {{/if}}
 
      <div class="col-sm-4">
       <h4>{{t "propertyGeneralSections.sale" }}</h4>
       <div id="toggle_temporadas">
-      {{#each longTermRentalInputFields as |inputField|}} 
+      {{#each saleInputFields as |inputField|}} 
         <div class="form-group fg-float">
           {{partial "partials/input-field-resolver" }}
         </div>
