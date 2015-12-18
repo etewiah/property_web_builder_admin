@@ -15,7 +15,10 @@ export default DS.Model.extend({
   key: DS.attr(),
   rawEn: DS.attr(),
   rawEs: DS.attr(),
-  tag: DS.attr()
+  tag: DS.attr(),
+  contentPhotos: DS.attr({
+    dontSerialize: true
+  }),
 });
 
     // add_column :contents, :input_type, :string
