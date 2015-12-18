@@ -3,12 +3,7 @@ import ContentPhoto from "../../models/content-photo";
 
 
 export default Ember.Component.extend({
-  // languages: [{
-  //   contentFieldName: "En",
-  // }, {
-  //   contentFieldName: "Es",
-  // }],
-  languages: ["En", "Es"],
+  // languages: ["En", "Es"],
 
   actions: {
     addPhotosFromUrls: function(remoteUrls) {
@@ -50,20 +45,17 @@ export default Ember.Component.extend({
       function success(contentItem) {
         // self.transitionToRoute('posts.show', post);
       }
-
       function failure(reason) {
         // handle the error
       }
-
       contentItem.save().then(success).catch(failure);
-
-
     }
   },
 
   contentForForm: function() {
-    // All this does is add a property saying if item is not rawHtml
-    // 
+    // All this does is add a property saying if item is plainText 
+    // Should probably have that as a property saved on the model..
+    // there is an "input_type" field on the model I could use
     var contentResources = this.get("contentResources");
     // var contentForForm = [];
     contentResources.forEach(function(content) {

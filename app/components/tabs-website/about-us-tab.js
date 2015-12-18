@@ -2,31 +2,17 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
-  // languages: [{
-  //   contentFieldName: "En",
-  // }, {
-  //   contentFieldName: "Es",
-  // }],
-  languages: ["En","Es"],
-  // contentItem: function(){
-  //   return this.contentResources.findBy("id", "test");
-  // }.property("contentResources"),
+  // languages: ["En","Es"],
 
   actions: {
     saveContentItem: function(contentItem) {
-      debugger;
-      // var contentItem = this.get("contentItem");
-      function transitionToPost(contentItem) {
+      function success(contentItem) {
         // self.transitionToRoute('posts.show', post);
       }
-
       function failure(reason) {
         // handle the error
       }
-
-      contentItem.save().then(transitionToPost).catch(failure);
-
-
+      contentItem.save().then(success).catch(failure);
     }
   },
 

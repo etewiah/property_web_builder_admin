@@ -1,0 +1,14 @@
+<div role="tabpanel" class="tab-pane" >
+  <div class="row">
+  {{#each contentResources as |contentItem|}}
+  <div class="col-sm-6">
+    {{#each languages as |languageSettings|}}
+
+        {{forms/content-item languageSettings=languageSettings contentItem=contentItem saveContentItemAction="saveContentItem"}}
+    {{/each}}    
+  </div>
+  {{/each}}
+  
+  </div>
+
+</div>

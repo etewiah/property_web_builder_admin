@@ -27,9 +27,9 @@ export default Ember.Route.extend({
     var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
 
     controller.set("tabs-website-component", tabsWebsiteComponent);
-    // controller.set("extrasObject", model);
-    // var adminController = this.controllerFor("admin");
-    // controller.set("fieldKeys", adminController.fieldKeys);
+
+    // TODO - get below from server:
+    controller.set("languages", ["En","Es"]);
 
     controller.set("tabsList", [{
         tabValue: "home",

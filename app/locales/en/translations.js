@@ -275,6 +275,21 @@ export default {
     otherThan: "must be other than {{count}}",
     odd: "must be odd",
     even: "must be even"
+  },
+// some of these are in server side translations that come from seed file for each tenant
+  "webContentLabels": {
+    "suffixEn": "en Inglés",
+    "suffixEs": "en Español",
+    "privacyPolicy": "Privacy Policy",
+    "legalAdvice": "Legal Advice",
+    // "tagLine": "Lema"
+    // "landingPageHeroEs": "Contenido para pagina principal en Español"
+  },
+  "webContentSections": {
+    "legal": "Legal",
+    "aboutUs": "Sobre Nosotros",
+    "sell": "Vender",
+    "tagLine": "Lema"
   }
 };
 
