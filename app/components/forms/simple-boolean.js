@@ -37,25 +37,14 @@ export default Ember.Component.extend({
     // var currentOptionTitle = this.get("i18n").t("false").string;
     var currentValue = this.get("resourceObject." + this.fieldDetails.fieldName) || false;
 
-    if (currentValue === "false") {
-      // sometimes false is returned as a string
-      currentValue = false;
-    }
+    this.setValueForFormField(currentValue);
 
-    if (currentValue) {
-      this.$(':radio[value=true]').prop('checked', true);
-      // currentOptionTitle = this.get("i18n").t("true").string;
-    } else {
-      this.$(':radio[value=false]').prop('checked', true);
-    }
 
     this.$(":radio").change(function(evt) {
-      // debugger;
+      var selected = false;
       if (event.target.value === "true") {
-        var selected = true;
-      } else {
-        var selected = false;
-      }
+        selected = true;
+      } 
       // $(this).find("option:selected").val();
       var fieldName = this.get("fieldDetails.fieldName");
       // var fieldOptions = this.get("fieldOptions");
@@ -101,16 +90,38 @@ export default Ember.Component.extend({
     // this.set("inputValue", this.get("resourceObject." + this.fieldDetails.fieldName));
   }.on('didInsertElement'),
 
+  // breaking this out to a separate function so I can call it to
+  // reset values when user decides to cancel changes
+  setValueForFormField: function(currentValue){
+    if (currentValue === "false") {
+      // sometimes false is returned as a string
+      currentValue = false;
+    }
+
+    if (currentValue) {
+      this.$(':radio[value=true]').prop('checked', true);
+      // currentOptionTitle = this.get("i18n").t("true").string;
+    } else {
+      this.$(':radio[value=false]').prop('checked', true);
+    }
+  },
+
 
   setOriginalValue: function() {
     var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName) || false;
-    // inputValue = inputValue || "";
     this.set("originalValue", inputValue);
   }.on('init'),
   // each time I save to the server, I increment resetTrigger value
+  // this will also trigger when user cancels an edit...
+  // TODO - test this!
   resetOriginalValue: Ember.observer('resetTrigger', function() {
-    var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
+    var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName) || false;
     this.set("originalValue", inputValue);
+    this.setValueForFormField(inputValue);
+    // instead of resetting the value as above when user cancels an edit, I had tried 
+    // to be lazy by calling below:
+    // this.rerender();
+    // does not work :()
   }),
 
 });

@@ -149,6 +149,17 @@ export default DS.Model.extend({
   yaencontre: DS.attr(),
   pisoscom: DS.attr(),
 
+
+  forSale: DS.attr(),
+  priceSaleCurrent: DS.attr(),
+  saleDiscount: DS.attr(),
+  priceSaleOriginal: DS.attr(),
+  longTermRental: DS.attr(),
+  priceRentalMonthlyCurrent: DS.attr(),
+  longTermRentalDiscount: DS.attr(),
+  priceRentalMonthlyOriginal: DS.attr(),
+
+
   // t.string :origen_propiedad
   // t.string :estado_propiedad
   // t.string :tipo_propiedad

@@ -16,6 +16,8 @@ export default Ember.Component.extend({
   // as not edited when resetTrigger goes up
   resetTrigger: 0,
   actions: {
+    // I pass this action to form fields to be called as the 
+    // valueChangedAction - for when value changes..
     checkDirtyState: function(changedFieldInfo) {
       var changedFields = this.get("changedFields");
       var fieldsWithErrors = this.get("fieldsWithErrors");
@@ -61,7 +63,11 @@ export default Ember.Component.extend({
       propertyResource.save().then(success).catch(failure);
     },
     cancelChanges: function(){
-      this.send("triggerReset")
+      var propertyResource = this.get("resourceObject");
+      propertyResource.rollbackAttributes();
+      this.send("triggerReset");
+      // this.rerender();
+      // this.sendAction("refetchDataAction");
     }
   },
 

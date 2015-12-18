@@ -11,22 +11,16 @@ export default Ember.Component.extend({
   // inputValue: null,
 
   inputValue: function() {
-    // debugger;
     return this.get("resourceObject." + this.fieldDetails.fieldName);
   }.property("resourceObject"),
 
 
-  // each time I save to the server, I increment resetTrigger value
-  resetOriginalValue: Ember.observer('resetTrigger', function() {
-    var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
-    this.set("originalValue", inputValue);
-  }),
 
   //  http://blog.abuiles.com/blog/2015/03/30/removing-prototype-extensions-with-ember-watson/
   updateValue: Ember.observer('inputValue', function() {
     var inputValue = this.get("inputValue");
     inputValue = inputValue || "";
-    var fieldName = this.get("fieldDetails.fieldName")
+    var fieldName = this.get("fieldDetails.fieldName");
     this.set("resourceObject." + fieldName, inputValue);
 
 
@@ -37,7 +31,6 @@ export default Ember.Component.extend({
     }, constraints, {
       fullMessages: false
     });
-    // debugger;
     var hasErrors = false;
     if (validateErrors) {
       this.set("errors", validateErrors.inputValue);
@@ -54,11 +47,27 @@ export default Ember.Component.extend({
 
   }),
 
+
+
   setOriginalValue: function() {
     var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
     inputValue = inputValue || "";
     this.set("originalValue", inputValue);
   }.on('init'),
+  // each time I save to the server, I increment resetTrigger value
+  // this will also trigger when user cancels an edit...
+  // TODO - test this!
+  resetOriginalValue: Ember.observer('resetTrigger', function() {
+    var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
+    inputValue = inputValue || "";
+    this.set("originalValue", inputValue);
 
+    // tried adding resetTrigger as dependency on inputValue computed property but that did not work..
+    this.set("inputValue", inputValue);
+    // instead of resetting the value as above when user cancels an edit, I had tried 
+    // to be lazy by calling below:
+    // this.rerender();
+    // does not work :()
+  }),
 
 });

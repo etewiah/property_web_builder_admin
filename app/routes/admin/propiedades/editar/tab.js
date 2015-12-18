@@ -4,10 +4,19 @@ import AdminMeta from '../../../../models/admin_meta';
 
 export default Ember.Route.extend({
   // configFetcher: inject.service(),
-
   actions: {
-    // editProperty(property) {
-    //   this.transitionTo("admin.propiedades.editar", property.get('idPropiedad'))
+    // had been hoping to be able to refresh data when user decides to cancel edit
+    // did not work but rollbackAttributes on model does the trick
+    // refetchData() {
+    //   var refreshedData = this.store.findRecord('property', 1, { reload: true });
+    //   refreshedData.then(function(res){
+    //     debugger;
+    //     this.controller.set("property", res);
+    //   }.bind(this),function(err){
+    //     // todo 
+    //   });
+    //   // debugger;
+    //   // this.controller.set("property", refreshedData);
     // }
   },
   model(params) {
