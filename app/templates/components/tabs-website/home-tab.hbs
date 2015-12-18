@@ -1,66 +1,41 @@
 <div role="tabpanel" class="tab-pane">
   <div class="row">
     <div class="col-sm-6">
-      <h4>Fotos</h4>
-
-
-          {{#upload/x-droplet url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} {{/upload/x-droplet}}
-
-
+      <h4>Fotos</h4> 
+      {{#upload/x-droplet url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} 
+      {{/upload/x-droplet}}
       <table id="tabla_fotos" cellspacing="0">
-
-    {{#each landingPagePhotos as |photo| }}
-      <tr data-id_foto="1" id="1" class="foto_principal">
-        <td>
-          <div class="thumbnail">
-            <img src={{ photo.image.url }} alt="">
-          </div>
-          <div class="hidden-xs">{{ photo.image.url }}</div>
-        </td>
-        <td class="text-left">
-          <button type="button" class="btn btn-icon command-delete" {{action "deletePhoto" photo }}>
-            <span class="md md-delete"></span>
-          </button>
-        </td>
-      </tr>
-    {{/each}}
-
+        {{#each landingPagePhotos as |photo| }}
         <tr data-id_foto="1" id="1" class="foto_principal">
           <td>
             <div class="thumbnail">
-              <img src="img/300x200.gif" alt="">
+              <img src={{ photo.image.url }} alt="">
             </div>
+            <div class="hidden-xs">{{ photo.image.url }}</div>
           </td>
-          <td class="hidden-xs">Nombre Archivo</td>
-          <td class="hidden-xs">Url</td>
           <td class="text-left">
-            <button type="button" class="btn btn-icon command-delete" data-row-id="REK-1040">
+            <button type="button" class="btn btn-icon command-delete" {{action "deletePhoto" photo }}>
               <span class="md md-delete"></span>
             </button>
           </td>
         </tr>
-
+        {{/each}}
       </table>
       <p><a href="#"><i class="fa fa-plus"></i> Añadir foto</a></p>
     </div>
-
     <div class="col-sm-6">
       <h4>Lema <span class="sele-idioma">Español</span></h4>
       <h4>Lema <span class="sele-idioma">Inglés</span></h4>
       <h4>Texto de inicio <span class="sele-idioma">Español</span></h4>
-      <h4 class="sep20">Texto de inicio <span class="sele-idioma">Inglés</span></h4>
-
-          {{#each contentResources as |contentItem|}}
-
-            <h3 class="text-center">{{t contentItem.labelKey }} </h3>
-            <button style="display:none;" type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right" {{action "saveContentItem" contentItem }}>
-              Save
-            </button>
-            {{#each languages as |languageSettings|}} {{forms/content-item languageSettings=languageSettings contentItem=contentItem saveContentItemAction="saveContentItem"}} {{/each}}
-
-
-          {{/each}}
+      <h4 class="sep20">Texto de inicio <span class="sele-idioma">Inglés</span></h4> 
+      {{#each contentResources as |contentItem|}}
+      <h3 class="text-center">{{t contentItem.labelKey }} </h3>
+      <button style="display:none;" type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right" {{action "saveContentItem" contentItem }}>
+        Save
+      </button>
+        {{#each languages as |languageSettings|}} {{forms/content-item languageSettings=languageSettings contentItem=contentItem saveContentItemAction="saveContentItem"}} 
+        {{/each}} 
+      {{/each}}
     </div>
-
   </div>
 </div>

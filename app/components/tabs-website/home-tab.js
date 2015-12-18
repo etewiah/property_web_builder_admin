@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ContentPhoto from "../../models/content-photo";
 
 
 export default Ember.Component.extend({
@@ -7,14 +8,15 @@ export default Ember.Component.extend({
   // }, {
   //   contentFieldName: "Es",
   // }],
-  languages: ["En","Es"],
+  languages: ["En", "Es"],
 
   actions: {
     addPhotosFromUrls: function(remoteUrls) {
       // TODO - validate remote urls..
       // console.log();
-      var property = this.get("resourceObject");
-      property.addPhotosFromUrls(remoteUrls, function(successResponse){
+      var contentResources = this.get("contentResources");
+      var contentWithPhotos = contentResources.findBy("key", "landingPageHero");
+      contentWithPhotos.addPhotosFromUrls(remoteUrls, function(successResponse) {
         // this.actions.refreshPhotos(successResponse);
         // note, below is send and not sendAction
         this.send("refreshPhotos", successResponse);
@@ -28,7 +30,7 @@ export default Ember.Component.extend({
       response.forEach(function(photo) {
         // console.log(uploadedPhotos);
         debugger;
-        uploadedPhotos.push(PropertyPhoto.create(photo));
+        uploadedPhotos.push(ContentPhoto.create(photo));
       }.bind(this));
 
       photoModels.pushObjects(uploadedPhotos);
@@ -63,13 +65,13 @@ export default Ember.Component.extend({
 
   landingPagePhotos: function() {
     var contentResources = this.get("contentResources");
-    var landingPagePhotos = contentResources.findBy("key","landingPageHero").get("contentPhotos");
+    var landingPagePhotos = contentResources.findBy("key", "landingPageHero").get("photoModels");
     return landingPagePhotos;
   }.property("contentResources"),
 
   addPhotoEndpoint: function() {
     var contentResources = this.get("contentResources");
-    var landingPageContent = contentResources.findBy("key","landingPageHero");
+    var landingPageContent = contentResources.findBy("key", "landingPageHero");
     var addPhotoEndpoint = "/api/v1/web_contents/" + landingPageContent.id + "/photo";
     return addPhotoEndpoint;
   }.property("resourceObject.id"),
