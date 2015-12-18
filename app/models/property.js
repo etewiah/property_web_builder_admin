@@ -108,6 +108,8 @@ export default DS.Model.extend({
   }),
   extras: DS.attr({
     dontSerialize: true
+    // above works to prevent sending this attr to server
+    // cos of serializeAttribute override in serializer 
   }),
   direccionPropiedad: DS.attr(),
   direccionFisica: DS.attr(),

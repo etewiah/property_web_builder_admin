@@ -5,7 +5,6 @@ export default Ember.Object.extend({
     var data = this.getProperties(["id", "content_id"]);
     var self = this;
     var apiUrl = '/api/v1/web_contents/photos/' + data.id ;
-    debugger;
     return $.ajax(apiUrl, {
       type: 'DELETE',
       dataType: 'json',

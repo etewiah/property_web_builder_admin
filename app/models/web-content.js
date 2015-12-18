@@ -40,6 +40,8 @@ export default DS.Model.extend({
   tag: DS.attr(),
   contentPhotos: DS.attr({
     dontSerialize: true
+    // above works to prevent sending this attr to server
+    // cos of serializeAttribute override in serializer 
   }),
   // I need to have above DS.attr to be able to use this below: 
   photoModels: Ember.computed('contentPhotos', function() {

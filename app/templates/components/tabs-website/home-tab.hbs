@@ -33,7 +33,8 @@
       <button style="display:none;" type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right" {{action "saveContentItem" contentItem }}>
         Save
       </button>
-        {{#each languages as |languageSettings|}} {{forms/content-item languageSettings=languageSettings contentItem=contentItem saveContentItemAction="saveContentItem"}} 
+        {{#each languages as |languageSettings|}} 
+          {{forms/content-item languageSettings=languageSettings contentItem=contentItem saveContentItemAction="saveContentItem" isEditing=true }} 
         {{/each}} 
       {{/each}}
     </div>
