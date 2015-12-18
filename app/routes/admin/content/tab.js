@@ -31,17 +31,25 @@ export default Ember.Route.extend({
     // controller.set("fieldKeys", adminController.fieldKeys);
 
     controller.set("tabsList", [{
-      tabValue: "home",
-      tabTitleKey: "webContentSections.home"
-    }, {
-      tabValue: "tag-line",
-      tabTitleKey: "webContentSections.tagLine"
-    }, {
-      tabValue: "sell",
-      tabTitleKey: "webContentSections.sell"
-    }, {
-      tabValue: "about-us",
-      tabTitleKey: "webContentSections.aboutUs"
-    }]);
+        tabValue: "home",
+        tabTitleKey: "webContentSections.home"
+      }, {
+        tabValue: "about-us",
+        tabTitleKey: "webContentSections.aboutUs"
+      }, {
+        tabValue: "legal",
+        tabTitleKey: "webContentSections.legal"
+      }
+
+      // {
+      //       tabValue: "tag-line",
+      //       tabTitleKey: "webContentSections.tagLine"
+      //     }, {
+      //       tabValue: "sell",
+      //       tabTitleKey: "webContentSections.sell"
+      //     },
+
+
+    ]);
   }
 });

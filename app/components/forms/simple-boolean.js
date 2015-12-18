@@ -59,8 +59,6 @@ export default Ember.Component.extend({
         fieldName: fieldName
       });
 
-
-
     }.bind(this));
 
 
