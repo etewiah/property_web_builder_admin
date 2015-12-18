@@ -24,8 +24,9 @@ export default Ember.Route.extend({
     controller.set("activeTabName", activeTabName.toLowerCase());
     // controller.set("contentResources", this.modelFor('admin.content'));
     controller.set("contentResources", model);
+    var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
 
-
+    controller.set("tabs-website-component", tabsWebsiteComponent);
     // controller.set("extrasObject", model);
     // var adminController = this.controllerFor("admin");
     // controller.set("fieldKeys", adminController.fieldKeys);

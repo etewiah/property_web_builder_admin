@@ -24,17 +24,13 @@
       <p><a href="#"><i class="fa fa-plus"></i> Añadir foto</a></p>
     </div>
     <div class="col-sm-6">
-      <h4>Lema <span class="sele-idioma">Español</span></h4>
-      <h4>Lema <span class="sele-idioma">Inglés</span></h4>
-      <h4>Texto de inicio <span class="sele-idioma">Español</span></h4>
-      <h4 class="sep20">Texto de inicio <span class="sele-idioma">Inglés</span></h4> 
-      {{#each contentResources as |contentItem|}}
-      <h3 class="text-center">{{t contentItem.labelKey }} </h3>
+
+      {{#each contentForForm as |contentItem|}}
       <button style="display:none;" type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right" {{action "saveContentItem" contentItem }}>
         Save
       </button>
         {{#each languages as |languageSettings|}} 
-          {{forms/content-item languageSettings=languageSettings contentItem=contentItem saveContentItemAction="saveContentItem" isEditing=true }} 
+          {{forms/content-item languageSettings=languageSettings contentItem=contentItem saveContentItemAction="saveContentItem"}} 
         {{/each}} 
       {{/each}}
     </div>

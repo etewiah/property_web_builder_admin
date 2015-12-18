@@ -1,10 +1,17 @@
 <div class="col-sm-12" style="padding-bottom: 3%;">
-  <h5 class="text-center">{{t contentItem.labelKey }} {{t labelSuffixKey }}</h5>
+  <h4>{{t contentItem.labelKey }}  <span class="sele-idioma">{{t labelSuffixKey }}</span></h4>
+
   {{#if isEditing}}
-    <div class='wysiwyg-container'>
-      {{wysiwyg-editor content=contentValue header="Example"}}
-    </div>
-    {{else}}
+    {{#if contentItem.isPlainText}}
+      <div>
+        {{input value=contentValue type="text"  class="input-sm form-control fg-input"  }}
+      </div>
+      {{else}}
+      <div class='wysiwyg-container'>
+        {{wysiwyg-editor content=contentValue header="Example"}}
+      </div>
+    {{/if}}
+  {{else}}
     <div>
       {{{ contentValue }}}
     </div>
@@ -20,16 +27,17 @@
         {{t "cancel"}}
       </button>
       {{else}}
-      <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "startEditing" }}>
+      <p {{action "startEditing" }}><a href=""><i class="fa fa-pencil"></i> {{t "edit"}}</a></p>
+      <button style="display:none;" type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "startEditing" }}>
         {{t "edit"}}
       </button>
-      <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "previewContent" }}>
+      <button style="display:none;" type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "previewContent" }}>
         {{t "preview"}}
       </button>
     {{/if}}
   </div>
 
-  
+
   <div>
 {{!--     <iframe src="http://tenant1.tee.dev:3000/">
       an irf

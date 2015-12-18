@@ -5,6 +5,8 @@ export default Ember.Component.extend({
   actions: {
     saveContentItem: function(contentItem) {
       this.sendAction("saveContentItemAction", contentItem);
+      // TODO - ensure above is successfull before calling below
+      this.set("isEditing", false);
     },
     startEditing: function(){
       this.set("isEditing", true);

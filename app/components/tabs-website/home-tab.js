@@ -47,9 +47,7 @@ export default Ember.Component.extend({
         }.bind(this));
     },
     saveContentItem: function(contentItem) {
-      debugger;
-      // var contentItem = this.get("contentItem");
-      function transitionToPost(contentItem) {
+      function success(contentItem) {
         // self.transitionToRoute('posts.show', post);
       }
 
@@ -57,11 +55,25 @@ export default Ember.Component.extend({
         // handle the error
       }
 
-      contentItem.save().then(transitionToPost).catch(failure);
+      contentItem.save().then(success).catch(failure);
 
 
     }
   },
+
+  contentForForm: function() {
+    // All this does is add a property saying if item is not rawHtml
+    // 
+    var contentResources = this.get("contentResources");
+    // var contentForForm = [];
+    contentResources.forEach(function(content) {
+      if (content.get("key") === "tagLine") {
+        content.set("isPlainText", true);
+      }
+    });
+    return contentResources;
+  }.property("contentResources"),
+
 
   landingPagePhotos: function() {
     var contentResources = this.get("contentResources");
