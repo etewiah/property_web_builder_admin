@@ -12,6 +12,10 @@ export default Ember.Component.extend({
       this.set("isEditing", true);
     },
     cancelEditing: function(){
+      var contentItem = this.get("contentItem");
+      contentItem.rollbackAttributes();
+      // debugger;
+      this.set("contentValue", this.get("contentItem.raw" + this.languageSettings));
       this.set("isEditing", false);
     },
     previewContent: function(){

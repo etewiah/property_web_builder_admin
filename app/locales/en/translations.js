@@ -287,9 +287,6 @@ export default {
   },
   "webContentSections": {
     "legal": "Legal",
-    "aboutUs": "Sobre Nosotros",
-    "sell": "Vender",
-    "tagLine": "Lema"
   }
 };
 

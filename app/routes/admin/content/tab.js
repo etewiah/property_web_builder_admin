@@ -3,7 +3,24 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   // tabsList: [{}],
   actions: {
-    // editProperty(property) {
+    willTransition: function(transition) {
+      var contentResources = this.controller.get("contentResources");
+      var hasDirtyRecords = false;
+      contentResources.forEach(function(resource){
+        if (resource.get("hasDirtyAttributes")) {
+          hasDirtyRecords = true;
+        }
+      });
+      if (hasDirtyRecords &&
+          !confirm("Are you sure you want to abandon progress?")) {
+        transition.abort();
+      } else {
+        // Bubble the `willTransition` action so that
+        // parent routes can decide whether or not to abort.
+        return true;
+      }
+    }
+        // editProperty(property) {
     //   this.transitionTo("admin.propiedades.editar", property.get('idPropiedad'))
     // }
   },
