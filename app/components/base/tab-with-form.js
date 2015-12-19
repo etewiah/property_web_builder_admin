@@ -8,7 +8,9 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
-  changedFields: [],
+  // turns out setting changedFields here causes it to be shared by all that 
+  // inherit from this which was causing problems
+  // changedFields: [],
   fieldsWithErrors: [],
 
   // can't think of a simpler way of doing this
@@ -40,7 +42,6 @@ export default Ember.Component.extend({
       // consider this component as "hasChanged"
       var hasChanged = (changedFields.length > 0);
       this.set("hasChanged", hasChanged);
-      debugger;
     },
     triggerReset: function() {
       this.set("changedFields", []);
@@ -48,10 +49,10 @@ export default Ember.Component.extend({
       this.set("fieldsWithErrors", []);
       this.set("hasErrors", false);
       this.set("resetTrigger", this.get("resetTrigger") + 1);
-      debugger;
     },
-    savePropertyResource: function() {
-      var propertyResource = this.get("resourceObject");
+    // TODO - ensure below is being used correctly
+    saveResourceObject: function() {
+      var resourceObject = this.get("resourceObject");
       var self = this;
 
       function success(result) {
@@ -60,13 +61,21 @@ export default Ember.Component.extend({
       }
 
       function failure(reason) {
-        // debugger;
         // handle the error
+        // var errorMessage = "Sorry, there has been an error.";
+        // if (error.responseJSON && error.responseJSON.errors) {
+        //   errorMessage = error.responseJSON.errors[0];
+        // }
+        // this.set('serverError', errorMessage);
       }
-      debugger;
-      propertyResource.save().then(success).catch(failure);
+      if (typeof resourceObject.store === "object") {
+        // for propertyResource which uses ember data:
+        resourceObject.save().then(success).catch(failure);
+      } else {
+        resourceObject.save(success, failure);
+      }
     },
-    cancelExtrasChanges: function(resourceToRollback, originalExtras) {
+    cancelExtrasChanges: function(resourceToRollback) {
       // var ca = resourceToRollback.changedAttributes();
       resourceToRollback.rollbackAttributes();
       var changedFields = this.get("changedFields");
@@ -76,9 +85,17 @@ export default Ember.Component.extend({
 
       this.send("triggerReset");
     },
-    cancelChanges: function(resourceToRollback) {
-      // var propertyResource = this.get("resourceObject");
-      resourceToRollback.rollbackAttributes();
+    cancelChanges: function() {
+      var resourceObject = this.get("resourceObject");
+      if (typeof resourceObject.rollbackAttributes === "function") {
+        // for propertyResource which uses ember data:
+        resourceObject.rollbackAttributes();
+      } else {
+        var changedFields = this.get("changedFields");
+        changedFields.forEach(function(field) {
+          this.set("resourceObject." + field.fieldName, field.originalValue);
+        }.bind(this));
+      }
       this.send("triggerReset");
       // this.rerender();
       // this.sendAction("refetchDataAction");

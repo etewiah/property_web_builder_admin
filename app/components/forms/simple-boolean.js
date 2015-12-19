@@ -58,7 +58,8 @@ export default Ember.Component.extend({
         hasErrors: false,
         hasChanged: hasChanged,
         fieldName: fieldName,
-        // below is specially for extras which in case of cancelacion have to be unset individually
+        // below was add for extras which in case of cancelacion have to be unset individually
+        // but has turned out useful for agency which is not an ember-data model
         originalValue: originalValue
       });
 

@@ -2,7 +2,7 @@ import Ember from 'ember';
 import TabWithForm from "../base/tab-with-form";
 
 export default TabWithForm.extend({
-
+  changedFields: [],
   visibilityInputFields: [
     //this comment tricks prettify ;) 
     {

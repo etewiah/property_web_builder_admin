@@ -38,11 +38,15 @@ export default Ember.Component.extend({
     } else {
       this.set("errors", []);
     }
-    var hasChanged = (this.get("originalValue").toString() !== inputValue.toString());
+
+    var originalValue = this.get("originalValue").toString();
+
+    var hasChanged = (originalValue !== inputValue.toString());
     this.sendAction("valueChangedAction", {
       hasErrors: hasErrors,
       hasChanged: hasChanged,
-      fieldName: fieldName
+      fieldName: fieldName,
+      originalValue: originalValue
     });
 
   }),

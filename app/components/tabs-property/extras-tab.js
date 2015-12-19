@@ -2,6 +2,7 @@ import Ember from 'ember';
 import TabWithForm from "../base/tab-with-form";
 
 export default TabWithForm.extend({
+  changedFields: [],
   i18n: Ember.inject.service(),
   manageExtrasUrl: function(){
     return "/" + this.get("i18n.locale") + "/admin/translations/extras";

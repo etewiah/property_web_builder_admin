@@ -1,20 +1,8 @@
 {{#if isActive}}
 <div role="tabpanel" class="tab-pane active" id="general">
   <div class="row">
-    <div class="col-sm-12">
-    </div>
+    {{partial "partials/manage-changes-buttons" }}
     <div class="col-sm-6">
-      <div>
-      {{#if hasChanged}}
-        {{#if hasErrors}}
-          {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
-          {{else}}
-          <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveAgencyDetails"}}>
-            {{t "save"}}
-          </button>
-        {{/if}}
-      {{/if}}
-      </div>
       {{#each mainInputFields as |inputField|}}
       <div class="form-group fg-float">
           {{partial "partials/input-field-resolver" }}
