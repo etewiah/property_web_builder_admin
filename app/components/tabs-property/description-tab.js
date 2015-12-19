@@ -3,13 +3,18 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   languages: [{
-    titleLabelKey: "fieldLabels.tituloIngles",
-    descriptionLabelKey: "fieldLabels.descripcionIngles",
+    languageKey: "en",
+    // titleLabelKey: "fieldLabels.tituloIngles",
+    // descriptionLabelKey: "fieldLabels.descripcionIngles",
+// labelKeys like above no longer used but still on server side translations (19 dec 2015)
+    titleLabelKey: "fieldLabels.title",
+    descriptionLabelKey: "fieldLabels.description",
     titleFieldName: "titleEn",
     descriptionFieldName: "descriptionEn",
   }, {
-    titleLabelKey: "fieldLabels.tituloEspanol",
-    descriptionLabelKey: "fieldLabels.descripcionEspanol",
+    languageKey: "es",
+    titleLabelKey: "fieldLabels.title",
+    descriptionLabelKey: "fieldLabels.description",
     titleFieldName: "titleEs",
     descriptionFieldName: "descriptionEs",
   }],
@@ -17,9 +22,11 @@ export default Ember.Component.extend({
   actions: {
     savePropertyResource: function() {
       var propertyResource = this.get("propertyResource");
+
       function transitionToPost(propertyResource) {
         // self.transitionToRoute('posts.show', post);
       }
+
       function failure(reason) {
         // handle the error
       }
@@ -27,6 +34,18 @@ export default Ember.Component.extend({
     }
   },
 
+//   contentForForm: function() {
+//     var contentForForm = [];
+// debugger;
+//     var propertyResource = this.get("propertyResource");
+//     // var contentForForm = [];
+//     propertyResource.forEach(function(content) {
+//       if (content.get("key") === "tagLine") {
+//         content.set("isPlainText", true);
+//       }
+//     });
+//     return propertyResource;
+//   }.property("propertyResource"),
 
   isActive: function() {
     return this.activeTabName.toLowerCase() === "descripcion";

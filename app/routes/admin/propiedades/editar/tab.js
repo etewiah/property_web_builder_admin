@@ -4,20 +4,43 @@ import AdminMeta from '../../../../models/admin_meta';
 
 export default Ember.Route.extend({
   // configFetcher: inject.service(),
+  i18n: Ember.inject.service(),
   actions: {
-    // had been hoping to be able to refresh data when user decides to cancel edit
-    // did not work but rollbackAttributes on model does the trick
-    // refetchData() {
-    //   var refreshedData = this.store.findRecord('property', 1, { reload: true });
-    //   refreshedData.then(function(res){
-    //     debugger;
-    //     this.controller.set("property", res);
-    //   }.bind(this),function(err){
-    //     // todo 
-    //   });
-    //   // debugger;
-    //   // this.controller.set("property", refreshedData);
-    // }
+    // https://guides.emberjs.com/v1.10.0/routing/preventing-and-retrying-transitions/
+    willTransition: function(transition) {
+        var property = this.controller.get("property");
+        // var hasDirtyRecords = false;
+        // property.forEach(function(resource) {
+        //   if (resource.get("hasDirtyAttributes")) {
+        //     hasDirtyRecords = true;
+        //   }
+        // });
+        var i18n = this.get('i18n');
+        // TODO - enable for extras
+  debugger;
+        if (property.get("hasDirtyAttributes")) {
+          var message = i18n.t("alerts.navigatingFromChanges").toString();
+          sweetAlert(message);
+          transition.abort();
+        } else {
+          // Bubble the `willTransition` action so that
+          // parent routes can decide whether or not to abort.
+          return true;
+        }
+      }
+       // had been hoping to be able to refresh data when user decides to cancel edit
+      // did not work but rollbackAttributes on model does the trick
+      // refetchData() {
+      //   var refreshedData = this.store.findRecord('property', 1, { reload: true });
+      //   refreshedData.then(function(res){
+      //     debugger;
+      //     this.controller.set("property", res);
+      //   }.bind(this),function(err){
+      //     // todo 
+      //   });
+      //   // debugger;
+      //   // this.controller.set("property", refreshedData);
+      // }
   },
   model(params) {
     // Model returned here is a set of localised key value pairs
@@ -65,10 +88,10 @@ export default Ember.Route.extend({
     controller.set("tabsList", [{
       tabValue: "general",
       tabTitleKey: "propertySections.general"
-    },  {
+    }, {
       tabValue: "venta",
       tabTitleKey: "propertySections.sale"
-    },{
+    }, {
       tabValue: "situacion",
       tabTitleKey: "propertySections.location"
     }, {
@@ -80,7 +103,7 @@ export default Ember.Route.extend({
     }, {
       tabValue: "fotos",
       tabTitleKey: "propertySections.photos"
-    },{
+    }, {
       tabValue: "owner",
       tabTitleKey: "propertySections.owner"
     }]);

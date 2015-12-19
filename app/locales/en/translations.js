@@ -52,6 +52,7 @@ export default {
   },
 
   "alerts": {
+    "navigatingFromChanges": "You have unsaved changes. Please save or cancel your changes.",
     "visibleProperties": "These properties are visible on your website",
     "hiddenProperties": "These properties will not be shown on your website"
   },
@@ -147,7 +148,9 @@ export default {
     "email": "Email",
     "fax": "Fax",
     "skype": "Skype",
-    "personTitle": "Title"
+    "personTitle": "Title",
+    "description": "Descripción",
+    "title": "Titulo",
   },
 
   // for header row in property listing
@@ -276,7 +279,8 @@ export default {
     odd: "must be odd",
     even: "must be even"
   },
-// some of these are in server side translations that come from seed file for each tenant
+  //fieldLabels.tituloIngles etc are on server side translations but no longer in use 
+  // some of these are in server side translations that come from seed file for each tenant
   "webContentLabels": {
     "suffixEn": "en Inglés",
     "suffixEs": "en Español",

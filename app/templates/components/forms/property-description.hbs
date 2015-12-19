@@ -1,3 +1,49 @@
+<div class="col-sm-12" style="padding-bottom: 3%;">
+
+  <h4>{{t languageSettings.titleLabelKey }}  <span class="sele-idioma">{{t languageSettings.languageKey }}</span></h4>
+  {{#if isEditing}}
+    <div>
+      {{input value=titleValue type="text"  class="input-sm form-control fg-input"  }}
+    </div>
+  {{else}}
+    <div style="">
+      {{input value=titleValue type="text" readonly=true  class="input-sm form-control fg-input"  }}
+    </div>
+  {{/if}}
+
+  <h4>{{t languageSettings.descriptionLabelKey }}  <span class="sele-idioma">{{t languageSettings.languageKey }}</span></h4>
+  {{#if isEditing}}
+    <div>
+     {{wysiwyg-editor content=descriptionValue header="Example"}}
+    </div>
+  {{else}}
+    <div>
+      {{{ descriptionValue }}}
+    </div>
+  {{/if}}
+</div>
+<div class="col-sm-12" style="">
+  <div>
+    {{#if isEditing}}
+      <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveContentItem" contentItem }}>
+        {{t "save"}}
+      </button>
+      <button type="submit" class="pull-left btn btn-sm m-b-10 waves-effect" {{action "cancelEditing" }}>
+        {{t "cancel"}}
+      </button>
+      {{else}}
+      <p {{action "startEditing" }}><a href=""><i class="fa fa-pencil"></i> {{t "edit"}}</a></p>
+      <button style="display:none;" type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "startEditing" }}>
+        {{t "edit"}}
+      </button>
+      <button style="display:none;" type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "previewContent" }}>
+        {{t "preview"}}
+      </button>
+    {{/if}}
+  </div>
+</div>
+
+{{!-- 
 <h5>{{t languageSettings.titleLabelKey }}</h5>
 <div class=''>
   <div class="form-group">
@@ -8,3 +54,4 @@
 <div class='wysiwyg-container'>
   {{wysiwyg-editor content=descriptionValue header="Example"}}
 </div>
+ --}}
