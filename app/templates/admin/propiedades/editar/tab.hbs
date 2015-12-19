@@ -9,8 +9,8 @@
 
   </ul>
   <div class="tab-content">
-
-
+{{!-- might use dynamic component thing like I do with admin/content/tab.hbs --}}
+{{!-- referring to property as resourceObject is usefull as it allows me to use generic ref in base/tab-with-form --}}
     {{tabs-property/general-tab activeTabName=activeTabName resourceObject=property fieldKeys=fieldKeys }}
 
     {{tabs-property/description-tab activeTabName=activeTabName propertyResource=property }}

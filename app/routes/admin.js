@@ -41,11 +41,13 @@ export default Ember.Route.extend({
         tabIconClass: "fa fa-building-o",
         tabTitleKey: "adminSections.properties",
         tabRoute: "admin.propiedades"
-      }, {
-        tabIconClass: "fa fa-users",
-        tabTitleKey: "adminSections.clientes",
-        tabRoute: "admin.clients"
-      }, {
+      },
+      //  {
+      //   tabIconClass: "fa fa-users",
+      //   tabTitleKey: "adminSections.clientes",
+      //   tabRoute: "admin.clients"
+      // },
+      {
         tabIconClass: "fa fa-desktop",
         tabTitleKey: "adminSections.content",
         tabRoute: "admin.content"
@@ -53,11 +55,13 @@ export default Ember.Route.extend({
         tabIconClass: "fa fa-user",
         tabTitleKey: "adminSections.agencyDetails",
         tabRoute: "admin.agency"
-      }, {
-        tabIconClass: "fa fa-language",
-        tabTitleKey: "adminSections.translations",
-        tabRoute: "admin.translations"
       },
+
+      // {
+      //   tabIconClass: "fa fa-language",
+      //   tabTitleKey: "adminSections.translations",
+      //   tabRoute: "admin.translations"
+      // },
 
 
       // {

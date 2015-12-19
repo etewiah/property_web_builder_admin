@@ -2,25 +2,26 @@ import Ember from 'ember';
 import TabWithForm from "../base/tab-with-form";
 
 export default TabWithForm.extend({
+  changedFields: [],
 
   actions: {
-    saveClientDetails: function() {
-      var clientResource = this.get("resourceObject");
+    // saveClientDetails: function() {
+    //   var clientResource = this.get("resourceObject");
 
 
-      var self = this;
+    //   var self = this;
 
-      function success(result) {
-        // triggerReset is an action in TabWithForm
-        self.send("triggerReset");
-      }
+    //   function success(result) {
+    //     // triggerReset is an action in TabWithForm
+    //     self.send("triggerReset");
+    //   }
 
-      function failure(reason) {
-        // debugger;
-        // handle the error
-      }
-      clientResource.save().then(success).catch(failure);
-    }
+    //   function failure(reason) {
+    //     // debugger;
+    //     // handle the error
+    //   }
+    //   clientResource.save().then(success).catch(failure);
+    // }
 
   },
   leftSideInputFields: [{
