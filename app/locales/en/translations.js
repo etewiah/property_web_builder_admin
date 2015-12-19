@@ -52,6 +52,7 @@ export default {
   },
 
   "alerts": {
+    "changesDetected": "You have unsaved changes.",
     "navigatingFromChanges": "You have unsaved changes. Please save or cancel your changes.",
     "visibleProperties": "These properties are visible on your website",
     "hiddenProperties": "These properties will not be shown on your website"
@@ -149,8 +150,8 @@ export default {
     "fax": "Fax",
     "skype": "Skype",
     "personTitle": "Title",
-    "description": "Descripción",
-    "title": "Titulo",
+    "description": "Description",
+    "title": "Title",
   },
 
   // for header row in property listing

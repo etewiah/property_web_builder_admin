@@ -31,14 +31,16 @@ export default Ember.Component.extend({
       this.set("hasErrors", hasErrors);
 
       if (changedFieldInfo.hasChanged) {
-        changedFields.pushObject(changedFieldInfo.fieldName);
+        changedFields.pushObject(changedFieldInfo);
       } else {
-        changedFields.removeObject(changedFieldInfo.fieldName);
+        var objectToRemove = changedFields.findBy("fieldName", changedFieldInfo.fieldName);
+        changedFields.removeObject(objectToRemove);
       }
       // if we have more than one field that has changed
       // consider this component as "hasChanged"
       var hasChanged = (changedFields.length > 0);
       this.set("hasChanged", hasChanged);
+      debugger;
     },
     triggerReset: function() {
       this.set("changedFields", []);
@@ -46,10 +48,12 @@ export default Ember.Component.extend({
       this.set("fieldsWithErrors", []);
       this.set("hasErrors", false);
       this.set("resetTrigger", this.get("resetTrigger") + 1);
+      debugger;
     },
     savePropertyResource: function() {
       var propertyResource = this.get("resourceObject");
       var self = this;
+
       function success(result) {
         // triggerReset is an action in TabWithForm
         self.send("triggerReset");
@@ -62,9 +66,19 @@ export default Ember.Component.extend({
       debugger;
       propertyResource.save().then(success).catch(failure);
     },
-    cancelChanges: function(){
-      var propertyResource = this.get("resourceObject");
-      propertyResource.rollbackAttributes();
+    cancelExtrasChanges: function(resourceToRollback, originalExtras) {
+      // var ca = resourceToRollback.changedAttributes();
+      resourceToRollback.rollbackAttributes();
+      var changedFields = this.get("changedFields");
+      changedFields.forEach(function(field) {
+        this.set("propertyResource.extras." + field.fieldName, field.originalValue);
+      }.bind(this));
+
+      this.send("triggerReset");
+    },
+    cancelChanges: function(resourceToRollback) {
+      // var propertyResource = this.get("resourceObject");
+      resourceToRollback.rollbackAttributes();
       this.send("triggerReset");
       // this.rerender();
       // this.sendAction("refetchDataAction");

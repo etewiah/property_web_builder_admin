@@ -17,7 +17,7 @@ export default Ember.Route.extend({
         // });
         var i18n = this.get('i18n');
         // TODO - enable for extras
-  debugger;
+  // debugger;
         if (property.get("hasDirtyAttributes")) {
           var message = i18n.t("alerts.navigatingFromChanges").toString();
           sweetAlert(message);

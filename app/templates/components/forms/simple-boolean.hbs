@@ -1,13 +1,6 @@
 {{#if fieldDetails.tooltipTextTKey}}
 <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a> 
 {{/if}}
-<div class="fg-line has-" style="display:none;">
-  <select class="selectpicker" style="display: none;">
-    {{#each fieldOptions as |selectValue|}}
-    <option>{{ selectValue.titleKey }}</option>
-    {{/each}}
-  </select>
-</div>
 <div class="fg-line">
   <label class="radio radio-inline m-r-20">
     <input type="radio" name={{ fieldDetails.fieldName }} value=true>

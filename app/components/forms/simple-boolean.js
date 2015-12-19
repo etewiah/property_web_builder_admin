@@ -47,16 +47,19 @@ export default Ember.Component.extend({
       } 
       // $(this).find("option:selected").val();
       var fieldName = this.get("fieldDetails.fieldName");
+      var originalValue = this.get("originalValue").toString();
       // var fieldOptions = this.get("fieldOptions");
       // var selectValue = fieldOptions.findBy("value", selected).value;
 
       this.set("resourceObject." + fieldName, selected);
-      var hasChanged = (this.get("originalValue").toString() !== selected.toString());
+      var hasChanged = (originalValue !== selected.toString());
 
       this.sendAction("valueChangedAction", {
         hasErrors: false,
         hasChanged: hasChanged,
-        fieldName: fieldName
+        fieldName: fieldName,
+        // below is specially for extras which in case of cancelacion have to be unset individually
+        originalValue: originalValue
       });
 
     }.bind(this));

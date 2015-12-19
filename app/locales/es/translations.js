@@ -47,6 +47,8 @@ export default Ember.merge(Ember.copy(en), {
   },
 
   "alerts": {
+    "changesDetected": "Se han detectado cambios.",
+    "navigatingFromChanges": "You have unsaved changes. Please save or cancel your changes.",
     "visibleProperties": "Estas son las propiedades que están visibles en tu web",
     "hiddenProperties": "Estas propiedades NO están visibles en tu web"
   },
