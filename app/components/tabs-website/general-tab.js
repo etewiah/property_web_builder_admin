@@ -8,12 +8,11 @@ export default Ember.Component.extend({
   actions: {
     addPhotosFromUrls: function(remoteUrls) {
       // TODO - validate remote urls..
-      // console.log();
       var contentResources = this.get("contentResources");
       // This isn't the most robust implementation - above relies on content with tag 
       // corresponding to current route being available on server
       // Below relies on that content containing an item with correct key
-      var contentWithPhotos = contentResources.findBy("key", "landingPageHero");
+      var contentWithPhotos = contentResources.findBy("key", "logo");
       contentWithPhotos.addPhotosFromUrls(remoteUrls, function(successResponse) {
         // this.actions.refreshPhotos(successResponse);
         // note, below is send and not sendAction
@@ -23,7 +22,7 @@ export default Ember.Component.extend({
     },
     refreshPhotos: function(response) {
       // console.log();
-      var photoModels = this.get("landingPagePhotos");
+      var photoModels = this.get("logoPhoto");
       var uploadedPhotos = [];
       response.forEach(function(photo) {
         // console.log(uploadedPhotos);
@@ -32,11 +31,11 @@ export default Ember.Component.extend({
       }.bind(this));
 
       photoModels.pushObjects(uploadedPhotos);
-      this.set("landingPagePhotos", photoModels);
+      this.set("logoPhoto", photoModels);
     },
     deletePhoto: function(photo) {
       photo.remove(function(success) {
-          var photoModels = this.get("landingPagePhotos");
+          var photoModels = this.get("logoPhoto");
           // console.log(photo);
           photoModels.removeObject(photo);
         }.bind(this),
@@ -70,22 +69,22 @@ export default Ember.Component.extend({
   }.property("contentResources"),
 
 
-  landingPagePhotos: function() {
+  logoPhoto: function() {
     var contentResources = this.get("contentResources");
-    var landingPagePhotos = contentResources.findBy("key", "landingPageHero").get("photoModels");
-    return landingPagePhotos;
+    var logoPhoto = contentResources.findBy("key", "logo").get("photoModels");
+    return logoPhoto;
   }.property("contentResources"),
 
   addPhotoEndpoint: function() {
     var contentResources = this.get("contentResources");
-    var landingPageContent = contentResources.findBy("key", "landingPageHero");
+    var landingPageContent = contentResources.findBy("key", "logo");
     var addPhotoEndpoint = "/api/v1/web_contents/" + landingPageContent.id + "/photo";
     return addPhotoEndpoint;
   }.property("resourceObject.id"),
 
-
-  isVisible: function() {
-    return this.get("activeTabName").toLowerCase() === "home";
-  }.property("activeTabName"),
+  // -using dynamic components so no longer needed
+  // isVisible: function() {
+  //   return this.get("activeTabName").toLowerCase() === "general";
+  // }.property("activeTabName"),
 
 });

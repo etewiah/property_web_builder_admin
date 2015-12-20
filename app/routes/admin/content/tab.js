@@ -45,8 +45,14 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.content.tab').tabName || "";
     controller.set("activeTabName", activeTabName.toLowerCase());
-    // controller.set("contentResources", this.modelFor('admin.content'));
+
     controller.set("contentResources", model);
+
+    controller.set("agencyDetails", this.modelFor("admin").agencyDetails);
+    // controller.set("primaryAddress", this.modelFor("admin").primaryAddress);
+    // controller.set("currentUser", this.modelFor("admin").currentUser);
+
+
     var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
 
     controller.set("tabs-website-component", tabsWebsiteComponent);
@@ -55,6 +61,9 @@ export default Ember.Route.extend({
     controller.set("languages", ["En", "Es"]);
 
     controller.set("tabsList", [{
+        tabValue: "general",
+        tabTitleKey: "webContentSections.general"
+      }, {
         tabValue: "home",
         tabTitleKey: "webContentSections.home"
       }, {
