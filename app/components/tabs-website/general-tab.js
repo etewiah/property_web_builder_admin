@@ -1,10 +1,14 @@
 import Ember from 'ember';
 import ContentPhoto from "../../models/content-photo";
+import OnReadyMixin from "../../mixins/on-ready";
+// above  so social inputs fade out and in
+
+import TabWithForm from "../base/tab-with-form";
 
 
-export default Ember.Component.extend({
+export default TabWithForm.extend(OnReadyMixin, {
   // languages: ["En", "Es"],
-
+  changedFields: [],
   actions: {
     addPhotosFromUrls: function(remoteUrls) {
       // TODO - validate remote urls..
@@ -47,12 +51,57 @@ export default Ember.Component.extend({
       function success(contentItem) {
         // self.transitionToRoute('posts.show', post);
       }
+
       function failure(reason) {
         // handle the error
       }
       contentItem.save().then(success).catch(failure);
     }
   },
+
+  resourceObject: {
+    facebook: "ddd"
+  },
+
+  socialNetworkFields: [{
+    fieldName: "facebook",
+    title: "Facebook",
+    class: "fa fa-facebook fa-2x",
+    tooltipTextTKey: false,
+    constraints: {
+      inputValue: {
+        // url: true,
+       length: {
+          minimum: 2,
+          tooShort: "needs to have %{count} characters or more"
+        }
+      }
+    }
+  }, {
+    fieldName: "twitter",
+    title: "Twitter",
+    class: "fa fa-twitter fa-2x"
+  }, {
+    fieldName: "youtube",
+    title: "Youtube",
+    class: "fa fa-youtube fa-2x"
+  }, {
+    fieldName: "linkedin",
+    title: "LinkedIn",
+    class: "fa fa-linkedin fa-2x"
+  }, {
+    fieldName: "googleplus",
+    title: "Google Plus",
+    class: "fa fa-google-plus fa-2x"
+  }, {
+    fieldName: "pinterest",
+    title: "Pinterest",
+    class: "fa fa-pinterest fa-2x"
+  }, {
+    fieldName: "instagram",
+    title: "Instagram",
+    class: "fa fa-instagram fa-2x"
+  }],
 
   contentForForm: function() {
     // All this does is add a property saying if item is plainText 
@@ -84,7 +133,7 @@ export default Ember.Component.extend({
 
   // -using dynamic components so no longer needed
   // isVisible: function() {
-  //   return this.get("activeTabName").toLowerCase() === "general";
+  //   return this.get("activeTabfieldName").toLowerCase() === "general";
   // }.property("activeTabName"),
 
 });

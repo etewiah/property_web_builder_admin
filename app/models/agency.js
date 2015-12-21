@@ -28,6 +28,10 @@ var Agency = Ember.Object.extend({
     });
   },
 
+  // social_media: {
+  //   links: []
+  // }
+
 });
 
 Agency.reopenClass({

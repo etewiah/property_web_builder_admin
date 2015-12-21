@@ -1,9 +1,9 @@
 <div role="tabpanel" class="tab-pane">
   <div class="row">
-    <div class="col-sm-4">
-      <h4>Fotos</h4> 
-      {{#upload/x-droplet url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} 
-      {{/upload/x-droplet}}
+    {{partial "partials/manage-changes-buttons" }}
+
+    <div class="col-sm-6">
+      <h4>Logo</h4> {{#upload/x-droplet url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} {{/upload/x-droplet}}
       <table id="tabla_fotos" cellspacing="0">
         {{#each landingPagePhotos as |photo| }}
         <tr data-id_foto="1" id="1" class="foto_principal">
@@ -23,26 +23,10 @@
       </table>
       <p><a href="#"><i class="fa fa-plus"></i> Añadir foto</a></p>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
+      {{#each socialNetworkFields as |fieldDetails|}} 
 
-      {{#each contentForForm as |contentItem|}}
-      <button style="display:none;" type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right" {{action "saveContentItem" contentItem }}>
-        Save
-      </button>
-        {{#each languages as |languageSettings|}} 
-          {{forms/content-item languageSettings=languageSettings contentItem=contentItem saveContentItemAction="saveContentItem"}} 
-        {{/each}} 
-      {{/each}}
-    </div>
-    <div class="col-sm-4">
-
-      {{#each contentForForm as |contentItem|}}
-      <button style="display:none;" type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right" {{action "saveContentItem" contentItem }}>
-        Save
-      </button>
-        {{#each languages as |languageSettings|}} 
-          {{forms/content-item languageSettings=languageSettings contentItem=contentItem saveContentItemAction="saveContentItem"}} 
-        {{/each}} 
+        {{forms/social-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=fieldDetails resourceObject=resourceObject}}
       {{/each}}
     </div>
   </div>
