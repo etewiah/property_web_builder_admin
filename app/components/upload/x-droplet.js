@@ -26,7 +26,8 @@ export default Ember.Component.extend(Droplet, {
     }
   },
   options: {
-    useArray: true
+    useArray: true,
+    uploadImmediately: true
     // requestMethod: Droplet.METHOD.PATCH
     // ...
     //   requestMethod – Changed the request verb from default POST;

@@ -2,8 +2,12 @@
   <div class="row">
     <div class="col-sm-6">
       <h4>Fotos</h4> 
-      {{#upload/x-droplet url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} 
-      {{/upload/x-droplet}}
+
+        <p><a class="btn btn-edfile">{{t "addPhotos"}}
+            {{#upload/x-droplet url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} 
+            {{/upload/x-droplet}}
+        </a></p>
+
       <table id="tabla_fotos" cellspacing="0">
         {{#each landingPagePhotos as |photo| }}
         <tr data-id_foto="1" id="1" class="foto_principal">
@@ -11,7 +15,7 @@
             <div class="thumbnail">
               <img src={{ photo.image.url }} alt="">
             </div>
-            <div class="hidden-xs">{{ photo.image.url }}</div>
+            <div class="hidden-xs" style="display:none;">{{ photo.image.url }}</div>
           </td>
           <td class="text-left">
             <button type="button" class="btn btn-icon command-delete" {{action "deletePhoto" photo }}>
@@ -21,7 +25,7 @@
         </tr>
         {{/each}}
       </table>
-      <p><a href="#"><i class="fa fa-plus"></i> Añadir foto</a></p>
+      <p style="display:none;"><a href="#"><i class="fa fa-plus"></i> Añadir foto</a></p>
     </div>
     <div class="col-sm-6">
 

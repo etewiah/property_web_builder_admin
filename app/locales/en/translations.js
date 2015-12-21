@@ -1,13 +1,4 @@
 export default {
-  // "some.translation.key": "Text for some.translation.key",
-
-  // "a": {
-  //   "nested": {
-  //     "key": "Text for a.nested.key"
-  //   }
-  // },
-
-  // "key.with.interpolation": "Text with {{anInterpolation}}"
 
   "en": "English",
   "es": "Spanish",
@@ -18,27 +9,28 @@ export default {
   "preview": "Preview",
   "close": "Close",
   "addLogo": "Add Logo",
+  "addPhotos": "Add Photos",
 
   "visible": "Visible",
   "hidden": "Hidden",
 
   "cards": {
-    "website": "Página web",
-    "websitePrompt": "Acciones sobre la página web",
+    "website": "Website",
+    "websitePrompt": "Acciones sobre website",
     "websiteLink": "Ir al panel de control de la web",
-    "properties": "Propiedades",
-    "propertiesPrompt": "Acciones sobre propiedades.",
-    "propertiesLink": "Ir a propiedades",
+    "properties": "Properties",
+    "propertiesPrompt": "Acciones sobre properties.",
+    "propertiesLink": "Ir a properties",
   },
   "tasks": {
-    "addProperty": "Añadir una propiedad",
-    "addPropertyPrompt": "Propiedades / Añadir propiedad",
-    "editProperty": "Editar una propiedad",
-    "editPropertyPrompt": "Propiedades / Editar propiedad",
-    "changeLogo": "Añadir o cambiar mi logotipo",
-    "changeLogoPrompt": "Web / Configuración de la web",
-    "changeLang": "Cambiar los idiomas de mi web",
-    "changeLangPrompt": "Web / Configuración de la web",
+    "addProperty": "Add a property",
+    "addPropertyPrompt": "properties / Add property",
+    "editProperty": "Edit a property",
+    "editPropertyPrompt": "Properties / Edit property",
+    "changeLogo": "Add or change logo",
+    "changeLogoPrompt": "Web Configuration",
+    "changeLang": "Change web language",
+    "changeLangPrompt": "Web Configuration",
   },
 
 
@@ -46,7 +38,7 @@ export default {
     "configureAvailableExtras": "Configure available extras",
     "selectImagesToAdd": "Select images to add",
     "selectRemoteImages": "Add images from urls"
-      //   "editar": "Editar",
+      //   "edit": "Edit",
       //   "nuevo": "Nuevo",
       //   "guardar": "Guardar",
       //   "crear": "Crear",
@@ -247,8 +239,6 @@ export default {
   },
 
 
-
-
   "some.translation.key": "Text for some.translation.key",
   "a": {
     "nested": {
@@ -297,15 +287,16 @@ export default {
   },
   "webContentSections": {
     "legal": "Legal",
+    "general": "General",
   }
 };
 
 
 // "true": "Yes",
 // "false": "No",
-// "editarPropiedad": "Editar una propiedad",
-// "nuevoPropiedad": "Nuevo propiedad",
-// "listadoPropiedades": "Listado de propiedades",
+// "editproperty": "Edit a property",
+// "nuevoproperty": "Nuevo property",
+// "listadoproperties": "Listado de properties",
 
 // "webContentLabels": {
 //   "suffixEn": "en Inglés",

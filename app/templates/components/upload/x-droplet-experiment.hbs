@@ -1,0 +1,62 @@
+{{!-- not in use --}}
+<div class="col-sm-6">
+  <span class="btn btn-default btn-file">
+      {{t "buttonLabels.selectImagesToAdd"}} {{upload/x-droplet-multiple-input}}
+  </span>
+</div>
+<div class="col-sm-6">
+{{!--   <span class="btn btn-default btn-file" {{action "selectRemoteImages"}}>
+      {{t "buttonLabels.selectRemoteImages"}} 
+  </span> --}}
+{{#if true}}
+  {{textarea class="form-control" value=remoteUrls}}
+
+  <span class="btn btn-default btn-file" {{action "addRemoteImages"}}>
+    {{t "buttonLabels.selectRemoteImages"}} 
+  </span>
+{{/if}}
+</div>
+<div class="col-sm-12">
+  {{#upload/x-droplet-area}}
+
+      {{#if uploadStatus.error}}
+          <div class="error">An error occurred during the upload process. Please try again later.</div>
+      {{/if}}
+
+      {{#each validFiles as |file|}}
+
+      <div class="col-sm-4">
+          {{name}}
+          <a class="remove" {{action "deleteFiles" file}}>Discard.</a>
+          {{upload/x-droplet-preview image=file}}
+      </div>
+
+      <div class="file">
+      </div>
+
+      {{/each}}
+
+  {{/upload/x-droplet-area}}
+
+
+  {{#if validFiles}}
+  <ul class="counts" style="display:none;">
+      <li class="valid">Valid: {{validFiles.length}}</li>
+      <li class="invalid">Invalid: {{invalidFiles.length}}</li>
+      <li class="uploaded">Uploaded: {{uploadedFiles.length}}</li>
+      <li class="deleted">Deleted: {{deletedFiles.length}}</li>
+  </ul>
+
+  <div class="buttons">
+      <button class="btn" {{action "uploadFiles"}}>Upload All</button>
+      <button class="btn" {{action "clearFiles"}}>Clear</button>
+      <button class="btn" {{action "abortUpload"}}>Abort</button>
+  </div>
+  {{/if}}
+
+  {{#if uploadStatus.uploading}}
+      <h3 class="uploading-percentage">Uploaded Percentage: {{uploadStatus.percentComplete}}%</h3>
+  {{/if}}
+</div>
+
+

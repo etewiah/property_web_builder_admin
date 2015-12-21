@@ -1,18 +1,11 @@
-<div role="tabpanel" class="tab-pane" >
+<div role="tabpanel" class="tab-pane">
   {{#each contentResources as |contentItem|}}
   <div class="row">
-    <h3 class="text-center">{{t contentItem.labelKey }} </h3>
-    <button
-    style="display:none;"
-     type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right" 
-        {{action "saveContentItem" contentItem }}>
-        Save
-    </button>
-    {{#each languages as |languageSettings|}}
-
-        {{forms/content-item languageSettings=languageSettings contentItem=contentItem saveContentItemAction="saveContentItem"}}
-    {{/each}}    
+    <div class="col-sm-6">
+      <h3 class="text-center">{{t contentItem.labelKey }} </h3> 
+      {{#each languages as |languageSettings|}} {{forms/content-item languageSettings=languageSettings contentItem=contentItem saveContentItemAction="saveContentItem"}} 
+      {{/each}}
+    </div>
   </div>
   {{/each}}
-
 </div>

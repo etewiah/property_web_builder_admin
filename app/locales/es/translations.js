@@ -13,6 +13,8 @@ export default Ember.merge(Ember.copy(en), {
   "edit": "Editar",
   "preview": "Preview",
   "close": "Cerrar",
+  "addLogo": "Añadir Logo",
+  "addPhotos": "Añadir Photos",
 
   "visible": "Visible",
   "hidden": "Hidden",
@@ -291,6 +293,7 @@ export default Ember.merge(Ember.copy(en), {
   },
   "webContentSections": {
     "legal": "Legal",
+    "general": "General",
   }
 });
 
