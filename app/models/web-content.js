@@ -8,7 +8,7 @@ export default DS.Model.extend({
   addPhotosFromUrls: function(remoteUrls, complete, error) {
     var data = { remote_urls: remoteUrls };
     var self = this;
-    var apiUrl = "/api/v1/web_contents/" + this.get("id") + "/photo_from_url";
+    var apiUrl = "/api/v1/web_contents/" + this.get("id") + "/photos_from_url";
     return $.ajax(apiUrl, {
       type: 'POST',
       dataType: 'json',

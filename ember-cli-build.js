@@ -127,7 +127,8 @@ module.exports = function(defaults) {
   // app.import('vendor/cesar.css');
   app.import('vendor/cesar-2.css');
 
-  app.import('vendor/bootstrap-select.css');
+  // app.import('vendor/bootstrap-select.css');
+  // noticed bootstrap-select is included in _material_design_selected.scss so commented it out here
   app.import('vendor/bootstrap-select.js');
 
   app.import('bower_components/validate/validate.js');

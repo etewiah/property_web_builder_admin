@@ -26,8 +26,6 @@ export default Ember.Component.extend({
       var photoModels = this.get("landingPagePhotos");
       var uploadedPhotos = [];
       response.forEach(function(photo) {
-        // console.log(uploadedPhotos);
-        debugger;
         uploadedPhotos.push(ContentPhoto.create(photo));
       }.bind(this));
 
@@ -79,7 +77,7 @@ export default Ember.Component.extend({
   addPhotoEndpoint: function() {
     var contentResources = this.get("contentResources");
     var landingPageContent = contentResources.findBy("key", "landingPageHero");
-    var addPhotoEndpoint = "/api/v1/web_contents/" + landingPageContent.id + "/photo";
+    var addPhotoEndpoint = "/api/v1/web_contents/" + landingPageContent.id + "/photos";
     return addPhotoEndpoint;
   }.property("resourceObject.id"),
 
