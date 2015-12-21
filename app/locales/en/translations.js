@@ -17,6 +17,7 @@ export default {
   "edit": "Edit",
   "preview": "Preview",
   "close": "Close",
+  "addLogo": "Add Logo",
 
   "visible": "Visible",
   "hidden": "Hidden",

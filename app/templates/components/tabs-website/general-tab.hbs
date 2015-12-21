@@ -27,10 +27,9 @@
         </tr>
       </table>
       {{else}}
-        <p><a href="#"><i class="fa fa-plus"></i> Añadir foto</a></p>
 
-        <p><a href="#"><i class="fa fa-plus"></i>
-           {{#upload/x-droplet url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} {{/upload/x-droplet}}
+        <p><a class="btn btn-edfile">{{t "addLogo"}}
+           {{#upload/x-droplet-upload-single url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} {{/upload/x-droplet-upload-single}}
         </a></p>
        
 
