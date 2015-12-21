@@ -26,27 +26,25 @@ export default TabWithForm.extend(OnReadyMixin, {
     },
     refreshPhotos: function(response) {
       // console.log();
-      var photoModels = this.get("logoPhoto");
-      var uploadedPhotos = [];
-      response.forEach(function(photo) {
-        // console.log(uploadedPhotos);
-        debugger;
-        uploadedPhotos.push(ContentPhoto.create(photo));
-      }.bind(this));
+      // var photoModels = this.get("logoPhoto");
+      var uploadedPhoto;
+      debugger;
+      // response.forEach(function(photo) {
+      //   uploadedPhoto = ContentPhoto.create(photo);
+      // }.bind(this));
 
-      photoModels.pushObjects(uploadedPhotos);
-      this.set("logoPhoto", photoModels);
+      this.set("logoPhoto",  ContentPhoto.create(response));
     },
-    deletePhoto: function(photo) {
-      photo.remove(function(success) {
-          var photoModels = this.get("logoPhoto");
-          // console.log(photo);
-          photoModels.removeObject(photo);
-        }.bind(this),
-        function(error) {
-          // TODO - handle error
-        }.bind(this));
-    },
+    // deletePhoto: function(photo) {
+    //   photo.remove(function(success) {
+    //       var photoModels = this.get("logoPhoto");
+    //       // console.log(photo);
+    //       photoModels.removeObject(photo);
+    //     }.bind(this),
+    //     function(error) {
+    //       // TODO - handle error
+    //     }.bind(this));
+    // },
     saveContentItem: function(contentItem) {
       function success(contentItem) {
         // self.transitionToRoute('posts.show', post);
@@ -104,31 +102,39 @@ export default TabWithForm.extend(OnReadyMixin, {
     class: "fa fa-instagram fa-2x"
   }],
 
-  contentForForm: function() {
-    // All this does is add a property saying if item is plainText 
-    // Should probably have that as a property saved on the model..
-    // there is an "input_type" field on the model I could use
-    var contentResources = this.get("contentResources");
-    // var contentForForm = [];
-    contentResources.forEach(function(content) {
-      if (content.get("key") === "tagLine") {
-        content.set("isPlainText", true);
-      }
-    });
-    return contentResources;
-  }.property("contentResources"),
+  // contentForForm: function() {
+  //   // All this does is add a property saying if item is plainText 
+  //   // Should probably have that as a property saved on the model..
+  //   // there is an "input_type" field on the model I could use
+  //   var contentResources = this.get("contentResources");
+  //   // var contentForForm = [];
+  //   contentResources.forEach(function(content) {
+  //     if (content.get("key") === "tagLine") {
+  //       content.set("isPlainText", true);
+  //     }
+  //   });
+  //   return contentResources;
+  // }.property("contentResources"),
 
 
   logoPhoto: function() {
     var contentResources = this.get("contentResources");
-    var logoPhoto = contentResources.findBy("key", "logo").get("photoModels");
+    var logoPhoto = contentResources.findBy("key", "logo").get("photoModels.firstObject");
     return logoPhoto;
   }.property("contentResources"),
 
+  editPhotoEndpoint: function() {
+    // var photoId = 0;
+    var contentResources = this.get("contentResources");
+    var logoPhoto = contentResources.findBy("key", "logo").get("photoModels.firstObject") || {id: 0};
+    var editPhotoEndpoint = "/api/v1/web_contents/photos/" + logoPhoto.id ;
+    return editPhotoEndpoint;
+  }.property("resourceObject.id"),
+
   addPhotoEndpoint: function() {
     var contentResources = this.get("contentResources");
-    var landingPageContent = contentResources.findBy("key", "logo");
-    var addPhotoEndpoint = "/api/v1/web_contents/" + landingPageContent.id + "/photo";
+    var logoContent = contentResources.findBy("key", "logo") || {id: 0};
+    var addPhotoEndpoint = "/api/v1/web_contents/" + logoContent.id + "/photo";
     return addPhotoEndpoint;
   }.property("resourceObject.id"),
 
