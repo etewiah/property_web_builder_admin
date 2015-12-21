@@ -60,12 +60,14 @@ export default TabWithForm.extend(OnReadyMixin, {
   },
 
   // socialNetworkValues now
-  resourceObject: {
-    facebook: "ddd"
-  },
+  // resourceObject: {
+  //   social_media: {
+  //     facebook: "ddd"
+  //   }
+  // },
 
   socialNetworkFields: [{
-    fieldName: "facebook",
+    fieldName: "social_media.facebook",
     title: "Facebook",
     class: "fa fa-facebook fa-2x"
     // tooltipTextTKey: false,
@@ -77,27 +79,27 @@ export default TabWithForm.extend(OnReadyMixin, {
     //   }
     // }
   }, {
-    fieldName: "twitter",
+    fieldName: "social_media.twitter",
     title: "Twitter",
     class: "fa fa-twitter fa-2x"
   }, {
-    fieldName: "youtube",
+    fieldName: "social_media.youtube",
     title: "Youtube",
     class: "fa fa-youtube fa-2x"
   }, {
-    fieldName: "linkedin",
+    fieldName: "social_media.linkedin",
     title: "LinkedIn",
     class: "fa fa-linkedin fa-2x"
   }, {
-    fieldName: "googleplus",
+    fieldName: "social_media.googleplus",
     title: "Google Plus",
     class: "fa fa-google-plus fa-2x"
   }, {
-    fieldName: "pinterest",
+    fieldName: "social_media.pinterest",
     title: "Pinterest",
     class: "fa fa-pinterest fa-2x"
   }, {
-    fieldName: "instagram",
+    fieldName: "social_media.instagram",
     title: "Instagram",
     class: "fa fa-instagram fa-2x"
   }],

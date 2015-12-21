@@ -2,10 +2,11 @@
   <h2>
       {{t "editWebsite"}}
     </h2>
-  <div role="group" class="botones_web">
+{{!--   <div role="group" class="botones_web">
     {{#link-to "admin.content.settings" data-toggle="tooltip" title=(t "settingsForWebsite") class="btn_settings btn btn-circulo btn-float waves-effect pull-right" }}
     <i class="fa fa-gears"></i> {{/link-to}}
   </div>
+ --}}
 </div>
 <div class="card-body card-padding">
   <div role="tabpanel">
@@ -17,7 +18,9 @@
       {{/each}}
     </ul>
     <div class="tab-content">
-      {{component tabs-website-component activeTabName=activeTabName contentResources=contentResources languages=languages agencyDetails=agencyDetails }}
+        {{!-- resourceObject is used byt  --}}
+
+      {{component tabs-website-component activeTabName=activeTabName contentResources=contentResources languages=languages resourceObject=agencyDetails }}
     </div>
   </div>
 </div>
