@@ -1,12 +1,14 @@
-<div class="form-group fg-float">
+<div class="form-group fg-float  {{if errors 'has-error'}}">
 {{#if fieldDetails.tooltipTextTKey}}
   <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey }}><i class="fa fa-info"></i></a>
 {{/if}}
 
-  <div class="fg-line {{if errors 'has-error'}}">
+  <div class="fg-line">
     {{input value=inputValue type="text" class="input-sm form-control fg-input" }}
   </div>
-  {{#if errors}} {{#each errors as |error|}}
-  <small class="help-block">{{ error }}</small> {{/each}} {{/if}}
   <label class="fg-label"><i class={{ fieldDetails.class }}></i>{{ fieldDetails.title }}</label>
+  {{#if errors}} {{#each errors as |error|}}
+  <small class="help-block">{{t error }}</small> {{/each}} 
+  {{/if}}
+
 </div>

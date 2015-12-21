@@ -278,7 +278,11 @@ export default {
     lessThanOrEqualTo: "must be less than or equal to {{count}}",
     otherThan: "must be other than {{count}}",
     odd: "must be odd",
-    even: "must be even"
+    even: "must be even",
+    // below for validatejs - will need to figure out a way to do interpolation:
+    tooShortVjs: "is too short",
+    notAUrlVjs: "is not a valid URL",
+
   },
   //fieldLabels.tituloIngles etc are on server side translations but no longer in use 
   // some of these are in server side translations that come from seed file for each tenant

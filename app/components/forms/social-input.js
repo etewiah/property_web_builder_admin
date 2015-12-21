@@ -23,8 +23,14 @@ export default Ember.Component.extend({
     var fieldName = this.get("fieldDetails.fieldName");
     this.set("resourceObject." + fieldName, inputValue);
 
-
-    var constraints = this.get("fieldDetails.constraints");
+    // var constraints = this.get("fieldDetails.constraints");
+    var constraints = {
+      inputValue: {
+        url: {
+          message: "errors.notAUrlVjs"
+        }
+      }
+    };
 
     var validateErrors = validate({
       inputValue: inputValue

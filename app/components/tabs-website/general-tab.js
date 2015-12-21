@@ -59,6 +59,7 @@ export default TabWithForm.extend(OnReadyMixin, {
     }
   },
 
+  // socialNetworkValues now
   resourceObject: {
     facebook: "ddd"
   },
@@ -66,17 +67,15 @@ export default TabWithForm.extend(OnReadyMixin, {
   socialNetworkFields: [{
     fieldName: "facebook",
     title: "Facebook",
-    class: "fa fa-facebook fa-2x",
-    tooltipTextTKey: false,
-    constraints: {
-      inputValue: {
-        // url: true,
-       length: {
-          minimum: 2,
-          tooShort: "needs to have %{count} characters or more"
-        }
-      }
-    }
+    class: "fa fa-facebook fa-2x"
+    // tooltipTextTKey: false,
+    // constraints: {
+    //   inputValue: {
+    //     url: {
+    //       message: "errors.notAUrlVjs"
+    //     }
+    //   }
+    // }
   }, {
     fieldName: "twitter",
     title: "Twitter",
