@@ -103,9 +103,11 @@ export default Ember.Route.extend({
     }, {
       tabValue: "fotos",
       tabTitleKey: "propertySections.photos"
-    }, {
-      tabValue: "owner",
-      tabTitleKey: "propertySections.owner"
-    }]);
+    }, 
+    // {
+    //   tabValue: "owner",
+    //   tabTitleKey: "propertySections.owner"
+    // }
+    ]);
   }
 });

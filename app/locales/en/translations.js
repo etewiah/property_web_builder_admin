@@ -10,6 +10,7 @@ export default {
   "close": "Close",
   "addLogo": "Add Logo",
   "addPhotos": "Add Photos",
+  "create": "Create",
 
   "visible": "Visible",
   "hidden": "Hidden",

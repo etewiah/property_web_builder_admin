@@ -172,48 +172,6 @@ export default TabWithForm.extend({
       }
     }
   }, {
-    labelTextTKey: "fieldLabels.precioVenta",
-    tooltipTextTKey: "toolTips.precioVenta",
-    fieldName: "precioVenta",
-    fieldType: "simpleInput",
-    inputType: "number",
-    constraints: {
-      inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
-        }
-      }
-    }
-  }, {
-    labelTextTKey: "fieldLabels.precioAntiguo",
-    tooltipTextTKey: "toolTips.precioAntiguo",
-    fieldName: "precioAntiguo",
-    fieldType: "simpleInput",
-    inputType: "number",
-    constraints: {
-      inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
-        }
-      }
-    }
-  }, {
-    labelTextTKey: "fieldLabels.precioAlquiler",
-    tooltipTextTKey: "toolTips.precioAlquiler",
-    fieldName: "precioAlquiler",
-    fieldType: "simpleInput",
-    inputType: "number",
-    constraints: {
-      inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
-        }
-      }
-    }
-  }, {
     labelTextTKey: "fieldLabels.tipo",
     tooltipTextTKey: "",
     fieldName: "tipoPropiedad",
