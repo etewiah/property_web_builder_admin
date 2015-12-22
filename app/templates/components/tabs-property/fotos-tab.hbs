@@ -2,6 +2,11 @@
 <div role="tabpanel" class="tab-pane" id="descripcion">
   <div class="row">
 
+        <p><a class="btn btn-edfile">{{t "addPhotos"}}
+            {{#upload/x-droplet url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} 
+            {{/upload/x-droplet}}
+        </a></p>
+
     {{#upload/x-droplet url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} {{/upload/x-droplet}}
     <div class="col-sm-12">
     </div>
@@ -15,8 +20,7 @@
             <img src={{ photo.image.url }} alt="">
           </div>
         </td>
-        <td class="hidden-xs">Nombre Archivo</td>
-        <td class="hidden-xs">{{ photo.image.url }}</td>
+        <td class="" style="display:none;">{{ photo.image.url }}</td>
         <td class="text-left">
           <button type="button" class="btn btn-icon command-delete" {{action "deletePhoto" photo }}>
             <span class="md md-delete"></span>
@@ -24,20 +28,7 @@
         </td>
       </tr>
     {{/each}}
-      <tr data-id_foto="1" id="1" class="foto_principal">
-        <td>
-          <div class="thumbnail">
-            <img src="img/300x200.gif" alt="">
-          </div>
-        </td>
-        <td class="hidden-xs">Nombre Archivo</td>
-        <td class="hidden-xs">Url</td>
-        <td class="text-left">
-          <button type="button" class="btn btn-icon command-delete" data-row-id="REK-1040">
-            <span class="md md-delete"></span>
-          </button>
-        </td>
-      </tr>
+
     </table>
   </div>
 </div>

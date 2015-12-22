@@ -3,6 +3,7 @@ import Ember from 'ember';
 import TabWithForm from "../base/tab-with-form";
 
 export default TabWithForm.extend({
+  changedFields: [],
 
   // propertyResource: {},
   actions: {
@@ -28,12 +29,6 @@ export default TabWithForm.extend({
   characteristicasInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.eficienciaEnergia",
-      tooltipTextTKey: "toolTips.eficienciaEnergia",
-      fieldName: "eficienciaEnergia",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-    }, {
       labelTextTKey: "fieldLabels.anoConstr",
       tooltipTextTKey: false,
       fieldName: "anoConstr",
@@ -119,13 +114,7 @@ export default TabWithForm.extend({
           }
         }
       }
-    }, {
-      labelTextTKey: "fieldLabels.garaje",
-      tooltipTextTKey: "toolTips.garaje",
-      fieldName: "numGarajes",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-    },
+    }, 
   ],
 
   inputFields: [{
@@ -138,49 +127,51 @@ export default TabWithForm.extend({
       inputValue: {
       }
     }
-  }, {
-    labelTextTKey: "fieldLabels.precioVenta",
-    tooltipTextTKey: "toolTips.precioVenta",
-    fieldName: "precioVenta",
-    fieldType: "simpleInput",
-    inputType: "number",
-    constraints: {
-      inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
-        }
-      }
-    }
-  }, {
-    labelTextTKey: "fieldLabels.precioAntiguo",
-    tooltipTextTKey: "toolTips.precioAntiguo",
-    fieldName: "precioAntiguo",
-    fieldType: "simpleInput",
-    inputType: "number",
-    constraints: {
-      inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
-        }
-      }
-    }
-  }, {
-    labelTextTKey: "fieldLabels.precioAlquiler",
-    tooltipTextTKey: "toolTips.precioAlquiler",
-    fieldName: "precioAlquiler",
-    fieldType: "simpleInput",
-    inputType: "number",
-    constraints: {
-      inputValue: {
-        numericality: {
-          onlyInteger: true,
-          lessThanOrEqualTo: 3000,
-        }
-      }
-    }
-  }, {
+  }, 
+  // {
+  //   labelTextTKey: "fieldLabels.precioVenta",
+  //   tooltipTextTKey: "toolTips.precioVenta",
+  //   fieldName: "precioVenta",
+  //   fieldType: "simpleInput",
+  //   inputType: "number",
+  //   constraints: {
+  //     inputValue: {
+  //       numericality: {
+  //         onlyInteger: true,
+  //         lessThanOrEqualTo: 3000,
+  //       }
+  //     }
+  //   }
+  // }, {
+  //   labelTextTKey: "fieldLabels.precioAntiguo",
+  //   tooltipTextTKey: "toolTips.precioAntiguo",
+  //   fieldName: "precioAntiguo",
+  //   fieldType: "simpleInput",
+  //   inputType: "number",
+  //   constraints: {
+  //     inputValue: {
+  //       numericality: {
+  //         onlyInteger: true,
+  //         lessThanOrEqualTo: 3000,
+  //       }
+  //     }
+  //   }
+  // }, {
+  //   labelTextTKey: "fieldLabels.precioAlquiler",
+  //   tooltipTextTKey: "toolTips.precioAlquiler",
+  //   fieldName: "precioAlquiler",
+  //   fieldType: "simpleInput",
+  //   inputType: "number",
+  //   constraints: {
+  //     inputValue: {
+  //       numericality: {
+  //         onlyInteger: true,
+  //         lessThanOrEqualTo: 3000,
+  //       }
+  //     }
+  //   }
+  // }, 
+  {
     labelTextTKey: "fieldLabels.tipo",
     tooltipTextTKey: "",
     fieldName: "tipoPropiedad",

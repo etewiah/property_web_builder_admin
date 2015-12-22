@@ -2,15 +2,11 @@
   {{#if hasErrors}}
     {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
     {{else}}
-    <div class="col-sm-10">
+    <div class="col-sm-12">
       <div class="alert alert-info " role="alert"><i class="fa fa-lg fa-info"></i> {{t "alerts.changesDetected"}} 
         <button type="submit"  style="" class="btn btn-primary waves-effect" {{action "saveResourceObject"}}>
           {{t "save"}}
         </button>
-      </div>
-    </div>
-    <div class="col-sm-2">
-      <div class="alert alert-warning text-center" role="alert">
         <button type="submit"  style="" class="btn btn-default waves-effect" 
         {{action "cancelChanges" }}>
           {{t "cancel"}}
