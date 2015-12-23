@@ -2,13 +2,22 @@ import Ember from 'ember';
 import Agency from '../../models/agency';
 
 export default Ember.Route.extend({
-  // model() {
-  //   var agencyDetails = Agency.get();
-  //   return agencyDetails; 
-  // },
-  setupController(controller, model) {
-    controller.set("agency", this.modelFor("admin").agencyDetails);
-    var menuCards = [{
+  model(params) {
+      return this.store.query("webContent", {
+        filter: {
+          tag: "home",
+          key: "dd"
+        }
+      });
+      // return this.store.findAll('webContent'); 
+      // return params.tabName;
+      // return this.store.findRecord('webContent', "test");
+    },
+
+
+    setupController(controller, model) {
+      controller.set("agency", this.modelFor("admin").agencyDetails);
+      var menuCards = [{
         titleKey: "cards.website",
         promptKey: "cards.websitePrompt",
         link: "admin.content",
@@ -40,13 +49,13 @@ export default Ember.Route.extend({
           link: "admin.propiedades.settings",
           icon: "fa fa-building-o fa-2x"
         }]
-      }
-    ];
-    controller.set("menuCards", menuCards);
-
-    // var defaultTodoList = [
-    //   {title: "Create some content..."}
-    // ];
-    // controller.set("content", defaultTodoList);
-  }
+      }];
+      controller.set("menuCards", menuCards);
+      controller.set("info", model);
+      debugger;
+      // var defaultTodoList = [
+      //   {title: "Create some content..."}
+      // ];
+      // controller.set("content", defaultTodoList);
+    }
 });
