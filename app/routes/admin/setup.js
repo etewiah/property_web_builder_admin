@@ -3,10 +3,10 @@ import Agency from '../../models/agency';
 
 export default Ember.Route.extend({
   model(params) {
-      return this.store.query("webContent", {
+      return this.store.query("info", {
         filter: {
-          tag: "home",
-          key: "dd"
+          key: "welcome",
+          lang_code: "en"
         }
       });
       // return this.store.findAll('webContent'); 
@@ -52,7 +52,6 @@ export default Ember.Route.extend({
       }];
       controller.set("menuCards", menuCards);
       controller.set("info", model);
-      debugger;
       // var defaultTodoList = [
       //   {title: "Create some content..."}
       // ];

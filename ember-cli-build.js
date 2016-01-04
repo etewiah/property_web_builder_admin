@@ -117,6 +117,10 @@ module.exports = function(defaults) {
 
   app.import('bower_components/bootstrap-sweetalert/lib/sweet-alert.js');
   app.import('bower_components/bootstrap-sweetalert/lib/sweet-alert.css');
+  // should probably change above as 
+  // above is behind below and does not have input prompt... 
+  // app.import('bower_components/sweetalert/dist/sweetalert.min.js');
+  // app.import('bower_components/sweetalert/dist/sweetalert.css');
 
 
   app.import('bower_components/summernote/dist/summernote.js');
