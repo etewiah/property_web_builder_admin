@@ -14,7 +14,7 @@
   </thead>
   <tbody>
     {{#each properties as |property|}}
-    <tr>
+    <tr id={{property.id }}>
       <td>{{ property.tTitle }}</td>
       <td>{{t property.destacado }}</td>
       <td>{{t property.localidad }}</td>
@@ -28,15 +28,12 @@
           <i class="fa fa-pencil"></i>{{t "edit"}}
         {{/link-to}}&nbsp;
 
-        <a href="" {{action "hideProperty" property }} ><i class="fa fa-eye-slash"></i> Ocultar</a>
+        {{#if showingVisibleProperties}}
+            <a href="" {{action "hideProperty" property }} ><i class="fa fa-eye-slash"></i>{{t "hide"}}</a>
+        {{else}}
+          <a href="" {{action "unHideProperty" property }} ><i class="fa fa-eye"></i>{{t "show"}}</a>  
+        {{/if}}
 
-
-{{!--         <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" property }} data-id_propiedad="1">
-          <i class="fa fa-pencil">Edit</i>
-        </button>
-        <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "editProperty" property }} data-id_propiedad="1">
-          <i class="fa fa-eye-slash">Hide</i>
-        </button> --}}
       </td>
     </tr>
     {{/each}}

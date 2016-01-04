@@ -12,6 +12,13 @@ export default {
   "addPhotos": "Add Photos",
   "create": "Create",
 
+
+
+
+
+  "show": "Show",
+  "hide": "Hide",
+
   "visible": "Visible",
   "hidden": "Hidden",
 
@@ -61,7 +68,7 @@ export default {
     "sInfoEmpty": "Showing items from 0 al 0 from a total of 0 properties",
     "sInfoFiltered": "(filtrado de un total de _MAX_ properties)",
     "sInfoPostFix": "",
-    "sSearch": "Search",
+    "sSearch": "Searchxxx",
     "sUrl": "",
     "sInfoThousands": ",",
     "sLoadingRecords": "Cargando...",

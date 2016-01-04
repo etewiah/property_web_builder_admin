@@ -6,9 +6,9 @@ export default Ember.Route.extend({
       this.transitionTo("admin.propiedades.editar", property.get('id') );
     }
   },
-  model() {
-    return this.store.findAll('property'); 
-  },
+  // model() {
+  //   return this.store.findAll('property'); 
+  // },
   // setupController(controller, model) {
   //   debugger;
   // }
