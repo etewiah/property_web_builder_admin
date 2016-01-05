@@ -49,7 +49,6 @@ export default Ember.Component.extend({
     }
     // var esTranslations = es;
     // var datatablesLang = this.get("i18n").t("datatables");
-    debugger;
     $('.datatables').dataTable({
       "language": translations.datatables
     });

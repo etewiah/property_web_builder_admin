@@ -61,19 +61,19 @@ module.exports = function(defaults) {
 
   // datatables uses these fonts:
   app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot", {
-    destDir: "fonts/bootstrap"
+    destDir: "fonts"
   });
   app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg", {
-    destDir: "fonts/bootstrap"
+    destDir: "fonts"
   });
   app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf", {
-    destDir: "fonts/bootstrap"
+    destDir: "fonts"
   });
   app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff", {
-    destDir: "fonts/bootstrap"
+    destDir: "fonts"
   });
   app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2", {
-    destDir: "fonts/bootstrap"
+    destDir: "fonts"
   });
 
   // material design icons don't have a gears/settings icon :(
