@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import es from "../../locales/es/translations";
+import en from "../../locales/en/translations";
 
 export default Ember.Component.extend({
   i18n: Ember.inject.service(),
@@ -38,31 +40,18 @@ export default Ember.Component.extend({
   },
 
   setupEditor: function() {
+    // console.log(es);
+    var translations;
+    if (this.get("i18n.locale") == "es") {
+      translations = es;
+    } else{
+      translations = en;
+    }
+    // var esTranslations = es;
+    // var datatablesLang = this.get("i18n").t("datatables");
+    debugger;
     $('.datatables').dataTable({
-      "language": {
-        "sProcessing": "Procesando...",
-        "sLengthMenu": "Mostrar _MENU_ registros",
-        "sZeroRecords": "No se encontraron resultados",
-        "sEmptyTable": "Ningún dato disponible en esta tabla",
-        "sInfo": this.get("i18n").t("datatables.sInfo").string,
-        "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-        "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-        "sInfoPostFix": "",
-        "sSearch": this.get("i18n").t("datatables.sSearch").string + ":",
-        "sUrl": "",
-        "sInfoThousands": ",",
-        "sLoadingRecords": this.get("i18n").t("datatables.sLoadingRecords").string,
-        "oPaginate": {
-          "sFirst": "<<",
-          "sLast": ">>",
-          "sNext": ">",
-          "sPrevious": "<"
-        },
-        "oAria": {
-          "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-          "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-        }
-      }
+      "language": translations.datatables
     });
     // not entirely sure if I need this:
     // this._super();

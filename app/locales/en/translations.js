@@ -60,18 +60,18 @@ export default {
   },
 
   "datatables": {
-    "sProcessing": "Procesando...",
-    "sLengthMenu": "Mostrar _MENU_ properties",
-    "sZeroRecords": "No se encontraron resultados",
-    "sEmptyTable": "Ningún dato disponible en esta tabla",
+    // "sProcessing": "Procesando...",
+    // "sLengthMenu": "Mostrar _MENU_ properties",
+    // "sZeroRecords": "No se encontraron resultados",
+    // "sEmptyTable": "Ningún dato disponible en esta tabla",
     "sInfo": "Showing items from _START_ al _END_ from a total of _TOTAL_ properties",
     "sInfoEmpty": "Showing items from 0 al 0 from a total of 0 properties",
-    "sInfoFiltered": "(filtrado de un total de _MAX_ properties)",
+    // "sInfoFiltered": "(filtrado de un total de _MAX_ properties)",
     "sInfoPostFix": "",
-    "sSearch": "Searchxxx",
+    "sSearch": "Search",
     "sUrl": "",
     "sInfoThousands": ",",
-    "sLoadingRecords": "Cargando...",
+    // "sLoadingRecords": "Cargando...",
     "oPaginate": {
       "sFirst": "<<",
       "sLast": ">>",
@@ -79,8 +79,8 @@ export default {
       "sPrevious": "<"
     },
     "oAria": {
-      "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-      "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+      // "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+      // "sSortDescending": ": Activar para ordenar la columna de manera descendente"
     }
   },
 
@@ -157,15 +157,15 @@ export default {
 
   // for header row in property listing
   "propertyLabels": {
-    "highlighted": "Destacado",
-    "locality": "Localidad",
-    "actions": "Acciones",
-    "zone": "Zona",
-    "price": "Precio",
-    "rooms": "Hab.",
+    "highlighted": "Highlighted",
+    "locality": "Locality",
+    "actions": "Actions",
+    "zone": "Zone",
+    "price": "Price",
+    "rooms": "Rooms",
     "visible": "Visible",
     "reference": "Ref",
-    "type": "Tipo"
+    "type": "Type"
   },
 
 
