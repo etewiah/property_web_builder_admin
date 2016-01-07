@@ -38,10 +38,9 @@ export default Ember.Component.extend({
     } else {
       this.set("errors", []);
     }
-
-    var originalValue = this.get("originalValue").toString();
-
-    var hasChanged = (originalValue !== inputValue.toString());
+    var originalValue = this.get("originalValue") || "";
+    // .toString();
+    var hasChanged = (originalValue.toString() !== inputValue.toString());
     this.sendAction("valueChangedAction", {
       hasErrors: hasErrors,
       hasChanged: hasChanged,
@@ -55,7 +54,7 @@ export default Ember.Component.extend({
 
   setOriginalValue: function() {
     var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
-    inputValue = inputValue || "";
+    // inputValue = inputValue || "";
     this.set("originalValue", inputValue);
   }.on('init'),
   // each time I save to the server, I increment resetTrigger value
@@ -63,7 +62,7 @@ export default Ember.Component.extend({
   // TODO - test this!
   resetOriginalValue: Ember.observer('resetTrigger', function() {
     var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
-    inputValue = inputValue || "";
+    // inputValue = inputValue || "";
     this.set("originalValue", inputValue);
 
     // tried adding resetTrigger as dependency on inputValue computed property but that did not work..

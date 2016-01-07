@@ -8,17 +8,13 @@ export default Ember.Route.extend({
   actions: {
     // https://guides.emberjs.com/v1.10.0/routing/preventing-and-retrying-transitions/
     willTransition: function(transition) {
-        var property = this.controller.get("property");
-        // var hasDirtyRecords = false;
-        // property.forEach(function(resource) {
-        //   if (resource.get("hasDirtyAttributes")) {
-        //     hasDirtyRecords = true;
-        //   }
-        // });
+        // var property = this.controller.get("property");
+        var changedFields = this.controller.get("changedFields");
         var i18n = this.get('i18n');
-        // TODO - enable for extras
-  // debugger;
-        if (property.get("hasDirtyAttributes")) {
+
+        // if (property.get("hasDirtyAttributes")) {
+        // using above was too flakey - sometimes a null input field would change to "" when you type and delete..
+        if(changedFields.length > 0){
           var message = i18n.t("alerts.navigatingFromChanges").toString();
           sweetAlert(message);
           transition.abort();
@@ -28,17 +24,15 @@ export default Ember.Route.extend({
           return true;
         }
       }
-       // had been hoping to be able to refresh data when user decides to cancel edit
+      // had been hoping to be able to refresh data when user decides to cancel edit
       // did not work but rollbackAttributes on model does the trick
       // refetchData() {
       //   var refreshedData = this.store.findRecord('property', 1, { reload: true });
       //   refreshedData.then(function(res){
-      //     debugger;
       //     this.controller.set("property", res);
       //   }.bind(this),function(err){
       //     // todo 
       //   });
-      //   // debugger;
       //   // this.controller.set("property", refreshedData);
       // }
   },
@@ -78,7 +72,7 @@ export default Ember.Route.extend({
     // var adminController = this.controllerFor("admin");
     controller.set("fieldKeys", model);
 
-
+    controller.set("changedFields", []);
     // below doesn't quite work - not sure how to ensure promise is resolved before assigning it
     // var fieldKeys = this.get("configFetcher").getFieldKeys("").then(function(result){
     //   controller.set("fieldKeys", result);
@@ -86,28 +80,28 @@ export default Ember.Route.extend({
 
 
     controller.set("tabsList", [{
-      tabValue: "general",
-      tabTitleKey: "propertySections.general"
-    }, {
-      tabValue: "venta",
-      tabTitleKey: "propertySections.sale"
-    }, {
-      tabValue: "situacion",
-      tabTitleKey: "propertySections.location"
-    }, {
-      tabValue: "descripcion",
-      tabTitleKey: "propertySections.description"
-    }, {
-      tabValue: "extras",
-      tabTitleKey: "propertySections.extras"
-    }, {
-      tabValue: "fotos",
-      tabTitleKey: "propertySections.photos"
-    }, 
-    // {
-    //   tabValue: "owner",
-    //   tabTitleKey: "propertySections.owner"
-    // }
+        tabValue: "general",
+        tabTitleKey: "propertySections.general"
+      }, {
+        tabValue: "venta",
+        tabTitleKey: "propertySections.sale"
+      }, {
+        tabValue: "situacion",
+        tabTitleKey: "propertySections.location"
+      }, {
+        tabValue: "descripcion",
+        tabTitleKey: "propertySections.description"
+      }, {
+        tabValue: "extras",
+        tabTitleKey: "propertySections.extras"
+      }, {
+        tabValue: "fotos",
+        tabTitleKey: "propertySections.photos"
+      },
+      // {
+      //   tabValue: "owner",
+      //   tabTitleKey: "propertySections.owner"
+      // }
     ]);
   }
 });

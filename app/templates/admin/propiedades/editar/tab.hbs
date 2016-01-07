@@ -11,19 +11,19 @@
   <div class="tab-content">
 {{!-- might use dynamic component thing like I do with admin/content/tab.hbs --}}
 {{!-- referring to property as resourceObject is usefull as it allows me to use generic ref in base/tab-with-form --}}
-    {{tabs-property/general-tab activeTabName=activeTabName resourceObject=property fieldKeys=fieldKeys }}
+    {{tabs-property/general-tab activeTabName=activeTabName changedFields=changedFields resourceObject=property fieldKeys=fieldKeys }}
 
-    {{tabs-property/description-tab activeTabName=activeTabName propertyResource=property }}
+    {{tabs-property/description-tab activeTabName=activeTabName changedFields=changedFields propertyResource=property }}
 
-    {{tabs-shared/location-tab activeTabName=activeTabName resourceObject=property fieldKeys=fieldKeys }}
+    {{tabs-shared/location-tab activeTabName=activeTabName changedFields=changedFields resourceObject=property fieldKeys=fieldKeys }}
 
-    {{tabs-property/extras-tab activeTabName=activeTabName propertyResource=property  fieldKeys=fieldKeys }}
+    {{tabs-property/extras-tab activeTabName=activeTabName changedFields=changedFields propertyResource=property  fieldKeys=fieldKeys }}
 
-    {{tabs-property/venta-tab activeTabName=activeTabName resourceObject=property }}
+    {{tabs-property/venta-tab activeTabName=activeTabName changedFields=changedFields resourceObject=property }}
 
-    {{tabs-property/owner-tab activeTabName=activeTabName resourceObject=property fieldKeys=fieldKeys}}
+    {{tabs-property/owner-tab activeTabName=activeTabName changedFields=changedFields resourceObject=property fieldKeys=fieldKeys}}
 
-    {{tabs-property/fotos-tab activeTabName=activeTabName resourceObject=property }}
+    {{tabs-property/fotos-tab activeTabName=activeTabName changedFields=changedFields resourceObject=property }}
 
 
   </div>

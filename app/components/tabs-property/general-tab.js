@@ -2,7 +2,7 @@ import Ember from 'ember';
 import TabWithForm from "../base/tab-with-form";
 
 export default TabWithForm.extend({
-  changedFields: [],
+  // changedFields: [],
   visibilityInputFields: [
     //this comment tricks prettify ;) 
     {
@@ -213,6 +213,7 @@ export default TabWithForm.extend({
         // debugger;
         // handle the error
       }
+      debugger;
       propertyResource.save().then(success).catch(failure);
     }
   },

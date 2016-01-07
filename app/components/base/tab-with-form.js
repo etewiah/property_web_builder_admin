@@ -34,11 +34,17 @@ export default Ember.Component.extend({
 
       if (changedFieldInfo.hasChanged) {
         // changedFields needs to be declared on form that inherits from this
-        changedFields.pushObject(changedFieldInfo);
+        var existingObjectInArray = changedFields.findBy("fieldName", changedFieldInfo.fieldName);
+        if (!existingObjectInArray) {
+          changedFields.addObject(changedFieldInfo);
+        }
+        // unlike pushObject, above addObject should only add object if it does not already exist
+        // but it does not recognise the same object a second time...
       } else {
         var objectToRemove = changedFields.findBy("fieldName", changedFieldInfo.fieldName);
         changedFields.removeObject(objectToRemove);
       }
+
       // if we have more than one field that has changed
       // consider this component as "hasChanged"
       var hasChanged = (changedFields.length > 0);
