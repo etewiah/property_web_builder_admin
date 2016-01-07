@@ -10,6 +10,7 @@ export default TabWithForm.extend({
       // handy to have object passed in referred to simply as resourceObject
       // so that "input-field-resolver" works accross the board
       var addressDetails = this.get("resourceObject");
+      debugger;
       addressDetails.save(function(success) {
         // triggerReset is an action in TabWithForm
         this.send("triggerReset");
@@ -35,7 +36,7 @@ export default TabWithForm.extend({
     updateFromSearch: function(searchResultObject) {
       // var newAddress = {};
       // TODO - parse searchResultObject.address_components..
-      // newAddress.street_address = searchResultObject.formatted_address;
+      // newAddress.streetAddress = searchResultObject.formatted_address;
       // // newAddress.direccionPropiedad = searchResultObject.formatted_address;
       // newAddress.latitude = searchResultObject.geometry.location.lat();
       // newAddress.longitude = searchResultObject.geometry.location.lng();
@@ -46,20 +47,20 @@ export default TabWithForm.extend({
 
     // confirming address details 
     // after clicking on map or typing in searchbox 
-    updateConfirmedAddress: function(newAddressDetails) {
-      var addressDetails = this.get("resourceObject");
-      // addressDetails.latitude = newAddressDetails.latitude;
-      // addressDetails.longitude = newAddressDetails.longitude;
-      // addressDetails.direccionPropiedad = newAddressDetails.direccionPropiedad;
-      addressDetails.set("street_address", newAddressDetails.street_address);
-      addressDetails.set("city", newAddressDetails.city);
-      addressDetails.set("postal_code", newAddressDetails.postal_code);
-      addressDetails.set("country", newAddressDetails.country);
-      addressDetails.set("region", newAddressDetails.region);
-      addressDetails.set("longitude", newAddressDetails.longitude);
-      addressDetails.set("latitude", newAddressDetails.latitude);
+    updateConfirmedAddress: function(newAddress) {
+      var resourceWithAddress = this.get("resourceObject");
+      // resourceWithAddress.latitude = newAddress.latitude;
+      // resourceWithAddress.longitude = newAddress.longitude;
+      // resourceWithAddress.direccionPropiedad = newAddress.direccionPropiedad;
+      resourceWithAddress.set("streetAddress", newAddress.streetAddress);
+      resourceWithAddress.set("city", newAddress.city);
+      resourceWithAddress.set("postalCode", newAddress.postalCode);
+      resourceWithAddress.set("country", newAddress.country);
+      resourceWithAddress.set("region", newAddress.region);
+      resourceWithAddress.set("longitude", newAddress.longitude);
+      resourceWithAddress.set("latitude", newAddress.latitude);
 
-      addressDetails.save(function(success) {
+      resourceWithAddress.save(function(success) {
         this.set("isConfirming", false);
       }.bind(this), function(error) {
         debugger;
@@ -67,7 +68,6 @@ export default TabWithForm.extend({
         if (error.responseJSON && error.responseJSON.errors) {
           errorMessage = error.responseJSON.errors[0];
         }
-        // this.set('serverError', errorMessage);
       }.bind(this));
       // .then(transitionToPost).catch(failure);
     }
@@ -116,7 +116,7 @@ export default TabWithForm.extend({
   situacionLeftInputFields: [{
       labelTextTKey: "fieldLabels.direccionReal",
       tooltipTextTKey: false,
-      fieldName: "street_address",
+      fieldName: "streetAddress",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {
@@ -144,7 +144,7 @@ export default TabWithForm.extend({
     }, {
       labelTextTKey: "fieldLabels.codigoPostal",
       tooltipTextTKey: false,
-      fieldName: "postal_code",
+      fieldName: "postalCode",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {
@@ -177,7 +177,7 @@ export default TabWithForm.extend({
     var geo = Ember.Object.create({
       longitude: this.get("resourceObject.longitude"),
       latitude: this.get("resourceObject.latitude"),
-      streetAddress: this.get("resourceObject.street_address"),
+      streetAddress: this.get("resourceObject.streetAddress"),
       searchResults: "",
       map: "",
       allMapMarkers: null,
@@ -186,7 +186,7 @@ export default TabWithForm.extend({
     return geo;
   }.property(),
   isActive: function() {
-    return this.activeTabName.toLowerCase() === "location";
+    return this.activeTabName.toLowerCase() === "location" || this.activeTabName.toLowerCase() === "situacion";
   }.property("activeTabName"),
 
 });

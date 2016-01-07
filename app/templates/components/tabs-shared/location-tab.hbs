@@ -1,0 +1,64 @@
+{{#if isActive}}
+<div role="tabpanel" class="tab-pane" id="situacion">
+{{#unless isConfirming}}
+  <div class="row">
+    <div class="col-sm-12">
+      {{#if hasChanged}}
+        {{#if hasErrors}}
+          {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
+          {{else}}
+          <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveAddressDetails"}}>
+            {{t "save"}}
+          </button>
+        {{/if}}
+      {{/if}}
+    </div>
+    <div class="col-sm-6">
+      {{#each situacionLeftInputFields as |inputField|}}
+      <div class="form-group fg-float">
+        {{partial "partials/input-field-resolver" }}
+      </div>
+      {{/each}}
+    </div>
+    <div class="col-sm-6">
+      {{#each situacionRightInputFields as |inputField|}}
+      <div class="form-group fg-float">
+        {{partial "partials/input-field-resolver" }}
+      </div>
+      {{/each}}
+    </div>
+  </div>
+{{/unless}}
+  <div class="row" style="display:none;">
+    <div class="col-sm-12">
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">×</span></button><i class="fa fa-lg fa-info"></i> Pinche en el mapa para actualizar la posición de la propiedad.
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div>
+        {{interactive-gmap geo=geo mapClickedAction="mapClicked" }}
+      </div>
+    </div>
+    <div class="col-sm-6">
+      {{#if isConfirming}}
+        <div >
+        {{forms/update-location gmapLocationObject=gmapLocationObject updateLocationAction="updateConfirmedAddress" cancelAction="stopConfirming"}}
+        </div>
+      {{else}}
+        <div>
+          {{geo/gmap-searchbox mapHolder=geo searchResults=geo.searchResults}}
+        </div>
+        <div>
+          {{geo/gmap-searchresults geo=geo searchResults=geo.searchResults  searchResultSelectedAction="updateFromSearch" }}
+        </div>      
+      {{/if}}
+      {{!--
+      <div id="pano">Aquí la vista panorámica</div>
+      --}}
+    </div>
+  </div>
+</div>
+{{/if}}

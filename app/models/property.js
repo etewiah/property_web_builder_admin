@@ -111,6 +111,22 @@ export default DS.Model.extend({
     // above works to prevent sending this attr to server
     // cos of serializeAttribute override in serializer 
   }),
+
+
+
+  streetAddress: DS.attr(),
+  streetNumber: DS.attr(),
+  postalCode: DS.attr(),
+  locality: DS.attr(),
+  zone: DS.attr(),
+  city: DS.attr(),
+  region: DS.attr(),
+  country: DS.attr(),
+  longitude: DS.attr(),
+  latitude: DS.attr(),
+  showExactAddress: DS.attr(),
+
+// todo - replace 3 below with above
   direccionPropiedad: DS.attr(),
   direccionFisica: DS.attr(),
   zonaDireccion: DS.attr(),

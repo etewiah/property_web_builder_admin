@@ -33,6 +33,7 @@ export default Ember.Component.extend({
       this.set("hasErrors", hasErrors);
 
       if (changedFieldInfo.hasChanged) {
+        // changedFields needs to be declared on form that inherits from this
         changedFields.pushObject(changedFieldInfo);
       } else {
         var objectToRemove = changedFields.findBy("fieldName", changedFieldInfo.fieldName);
