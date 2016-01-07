@@ -53,12 +53,17 @@ export default TabWithForm.extend({
       // resourceWithAddress.longitude = newAddress.longitude;
       // resourceWithAddress.direccionPropiedad = newAddress.direccionPropiedad;
       resourceWithAddress.set("streetAddress", newAddress.streetAddress);
+      resourceWithAddress.set("streetNumber", newAddress.streetNumber);
       resourceWithAddress.set("city", newAddress.city);
       resourceWithAddress.set("postalCode", newAddress.postalCode);
       resourceWithAddress.set("country", newAddress.country);
-      resourceWithAddress.set("region", newAddress.region);
       resourceWithAddress.set("longitude", newAddress.longitude);
       resourceWithAddress.set("latitude", newAddress.latitude);
+
+      // TODO - figure out which of these 3 is correct
+      resourceWithAddress.set("region", newAddress.region);
+      resourceWithAddress.set("locality", newAddress.region);
+      resourceWithAddress.set("zone", newAddress.region);
 
       resourceWithAddress.save(function(success) {
         this.set("isConfirming", false);
@@ -75,8 +80,9 @@ export default TabWithForm.extend({
   situacionRightInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.zona",
+      labelTextTKey: "zone",
       tooltipTextTKey: false,
+      // TODO - decide on zone vrs region
       fieldName: "region",
       fieldType: "simpleInput",
       inputType: "text",
@@ -92,7 +98,7 @@ export default TabWithForm.extend({
 
 
       //TODO will have to come back to provinces later
-      //   labelTextTKey: "fieldLabels.localidad",
+      //   labelTextTKey: "localidad",
       //   tooltipTextTKey: "",
       //   fieldName: "region",
       //   fieldType: "dynamicSelect",
@@ -111,12 +117,40 @@ export default TabWithForm.extend({
           }
         }
       }
-    }
+    }, {
+      labelTextTKey: "postCode",
+      tooltipTextTKey: false,
+      fieldName: "postalCode",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    },
   ],
   situacionLeftInputFields: [{
-      labelTextTKey: "fieldLabels.direccionReal",
+      labelTextTKey: "streetAddress",
       tooltipTextTKey: false,
       fieldName: "streetAddress",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    },{
+      labelTextTKey: "streetNumber",
+      tooltipTextTKey: false,
+      fieldName: "streetNumber",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {
@@ -141,21 +175,7 @@ export default TabWithForm.extend({
           }
         }
       }
-    }, {
-      labelTextTKey: "fieldLabels.codigoPostal",
-      tooltipTextTKey: false,
-      fieldName: "postalCode",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    },
+    }, 
     // {
     //   labelTextTKey: "fieldLabels.direccionMapa",
     //   tooltipTextTKey: false,

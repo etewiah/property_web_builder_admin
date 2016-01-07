@@ -55,7 +55,8 @@ export default Ember.merge(Ember.copy(en), {
     "changesDetected": "Se han detectado cambios.",
     "navigatingFromChanges": "You have unsaved changes. Please save or cancel your changes.",
     "visibleProperties": "Estas son las propiedades que están visibles en tu web",
-    "hiddenProperties": "Estas propiedades NO están visibles en tu web"
+    "hiddenProperties": "Estas propiedades NO están visibles en tu web",
+    "clickMapToUpdate": "Pinche en el mapa para actualizar la posición de la propiedad."
   },
 
   "datatables": {
@@ -89,10 +90,12 @@ export default Ember.merge(Ember.copy(en), {
   },
 
   "street": "Calle",
-  "street_number": "Street Number",
+  "streetAddress": "Direccion",
+  "streetNumber": "Street Number",
   "city": "City",
-  "postCode": "Post Code",
+  "postCode": "Codigo Postal",
   "region": "Region",
+  "zone": "Zona", 
   "country": "Pais",
 
   "properties": "Properties",

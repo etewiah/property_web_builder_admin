@@ -14,7 +14,7 @@ export default Ember.Component.extend({
     // var itemSnumber = '';
 
     var newAddress = {};
-    newAddress.street_address = gmapLocationObject.formatted_address;
+    newAddress.streetAddress = gmapLocationObject.formatted_address;
     // newAddress.direccionPropiedad = gmapLocationObject.formatted_address;
     newAddress.latitude = gmapLocationObject.geometry.location.lat();
     newAddress.longitude = gmapLocationObject.geometry.location.lng();
@@ -26,7 +26,7 @@ export default Ember.Component.extend({
 
       if (address_component.types[0] == "route") {
         // console.log(i + ": route:" + address_component.long_name);
-        newAddress.street_address = address_component.long_name;
+        newAddress.streetAddress = address_component.long_name;
       }
 
       if (address_component.types[0] == "locality") {
@@ -42,15 +42,15 @@ export default Ember.Component.extend({
       if (address_component.types[0] == "postal_code_prefix") {
         debugger;
         // console.log("pc:" + address_component.long_name);
-        newAddress.postal_code = address_component.long_name;
+        newAddress.postalCode = address_component.long_name;
       }
       if (address_component.types[0] == "postal_code") {
         // console.log("pc:" + address_component.long_name);
-        newAddress.postal_code = address_component.long_name;
+        newAddress.postalCode = address_component.long_name;
       }
       if (address_component.types[0] == "street_number") {
         // console.log("street_number:" + address_component.long_name);
-        newAddress.street_number = address_component.long_name;
+        newAddress.streetNumber = address_component.long_name;
       }
       if (address_component.types[0] == "administrative_area_level_1") {
         // console.log("administrative_area_level_1:" + address_component.long_name);

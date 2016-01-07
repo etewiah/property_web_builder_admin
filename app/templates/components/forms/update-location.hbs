@@ -1,13 +1,13 @@
 {{#if newAddress}}
   <h5 class="text-center">{{t "locationTab.confirmAddress" }}:</h5>
   <div >
-    <label class="fg-label arriba_label">{{t "street"}}:</label>
+    <label class="fg-label arriba_label">{{t "streetAddress"}}:</label>
     <div class="fg-line">
-      {{input value=newAddress.street_address class="input-sm form-control fg-input" }}
+      {{input value=newAddress.streetAddress class="input-sm form-control fg-input" }}
     </div>
-    <label class="fg-label arriba_label">{{t "street_number"}}:</label>
+    <label class="fg-label arriba_label">{{t "streetNumber"}}:</label>
     <div class="fg-line">
-      {{input value=newAddress.street_number class="input-sm form-control fg-input" }}
+      {{input value=newAddress.streetNumber class="input-sm form-control fg-input" }}
     </div>
     <label class="fg-label arriba_label">{{t "city"}}:</label>
     <div class="fg-line">
@@ -23,7 +23,7 @@
     </div>
     <label class="fg-label arriba_label">{{t "postCode"}}:</label>
     <div class="fg-line">
-      {{input value=newAddress.postal_code class="input-sm form-control fg-input" }}
+      {{input value=newAddress.postalCode class="input-sm form-control fg-input" }}
     </div>
 
 {{!--     <label class="fg-label arriba_label">Ad area lev 2:</label>

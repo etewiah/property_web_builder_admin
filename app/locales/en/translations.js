@@ -56,7 +56,8 @@ export default {
     "changesDetected": "You have unsaved changes.",
     "navigatingFromChanges": "You have unsaved changes. Please save or cancel your changes.",
     "visibleProperties": "These properties are visible on your website",
-    "hiddenProperties": "These properties will not be shown on your website"
+    "hiddenProperties": "These properties will not be shown on your website",
+    "clickMapToUpdate": "Click on map to select address or type directly below."
   },
 
   "datatables": {
@@ -90,10 +91,12 @@ export default {
   },
 
   "street": "Street",
-  "street_number": "Street Number",
+  "streetAddress": "Street Address",
+  "streetNumber": "Street Number",
   "city": "City",
   "postCode": "Post Code",
   "region": "Region",
+  "zone": "Zone", 
   "country": "Country",
 
   "properties": "Properties",
