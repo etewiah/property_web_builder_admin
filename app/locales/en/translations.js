@@ -193,12 +193,12 @@ export default {
 
   "propertySections": {
     "general": "General",
-    "location": "Situación",
-    "description": "descripción",
+    "location": "Location",
+    "description": "Description",
     "extras": "Extras",
     "photos": "Fotos",
     "sale": "Sale / Rental",
-    "owner": "Proprietario"
+    "owner": "Owner"
   },
 
   "propertyGeneralSections": {

@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import TabWithForm from "../base/tab-with-form";
 
+// TODO - replace this with shared/location-tab.js
 export default TabWithForm.extend({
   changedFields: [],
 
@@ -51,9 +52,9 @@ export default TabWithForm.extend({
       // addressDetails.latitude = newAddressDetails.latitude;
       // addressDetails.longitude = newAddressDetails.longitude;
       // addressDetails.direccionPropiedad = newAddressDetails.direccionPropiedad;
-      addressDetails.set("street_address", newAddressDetails.street_address);
+      addressDetails.set("street_address", newAddressDetails.streetAddress);
       addressDetails.set("city", newAddressDetails.city);
-      addressDetails.set("postal_code", newAddressDetails.postal_code);
+      addressDetails.set("postal_code", newAddressDetails.postalCode);
       addressDetails.set("country", newAddressDetails.country);
       addressDetails.set("region", newAddressDetails.region);
       addressDetails.set("longitude", newAddressDetails.longitude);
@@ -62,7 +63,7 @@ export default TabWithForm.extend({
       addressDetails.save(function(success) {
         this.set("isConfirming", false);
       }.bind(this), function(error) {
-        debugger;
+        // debugger;
         var errorMessage = "Sorry, there has been an error.";
         if (error.responseJSON && error.responseJSON.errors) {
           errorMessage = error.responseJSON.errors[0];
@@ -75,7 +76,7 @@ export default TabWithForm.extend({
   situacionRightInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.zona",
+      labelTextTKey: "zone",
       tooltipTextTKey: false,
       fieldName: "region",
       fieldType: "simpleInput",
@@ -111,12 +112,40 @@ export default TabWithForm.extend({
           }
         }
       }
+    }, {
+      labelTextTKey: "postCode",
+      tooltipTextTKey: false,
+      fieldName: "postal_code",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
     }
   ],
   situacionLeftInputFields: [{
-      labelTextTKey: "fieldLabels.direccionReal",
+      labelTextTKey: "streetAddress",
       tooltipTextTKey: false,
       fieldName: "street_address",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    },{
+      labelTextTKey: "streetNumber",
+      tooltipTextTKey: false,
+      fieldName: "street_number",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {
@@ -141,21 +170,7 @@ export default TabWithForm.extend({
           }
         }
       }
-    }, {
-      labelTextTKey: "fieldLabels.codigoPostal",
-      tooltipTextTKey: false,
-      fieldName: "postal_code",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
-    },
+    }
     // {
     //   labelTextTKey: "fieldLabels.direccionMapa",
     //   tooltipTextTKey: false,
