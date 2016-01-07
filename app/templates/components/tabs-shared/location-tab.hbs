@@ -2,17 +2,27 @@
 <div role="tabpanel" class="tab-pane" id="situacion">
 {{#unless isConfirming}}
   <div class="row">
+
+
+{{#if hasChanged}}
+  {{#if hasErrors}}
+    {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
+    {{else}}
     <div class="col-sm-12">
-      {{#if hasChanged}}
-        {{#if hasErrors}}
-          {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
-          {{else}}
-          <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveAddressDetails"}}>
-            {{t "save"}}
-          </button>
-        {{/if}}
-      {{/if}}
+      <div class="alert alert-info " role="alert"><i class="fa fa-lg fa-info"></i> {{t "alerts.changesDetected"}} 
+        <button type="submit"  style="" class="btn btn-primary waves-effect" {{action "saveResourceObject"}}>
+          {{t "save"}}
+        </button>
+        <button type="submit"  style="" class="btn btn-default waves-effect" 
+        {{action "cancelChanges" }}>
+          {{t "cancel"}}
+        </button> 
+      </div>
     </div>
+  {{/if}}
+{{/if}}
+
+
     <div class="col-sm-6">
       {{#each situacionLeftInputFields as |inputField|}}
       <div class="form-group fg-float">

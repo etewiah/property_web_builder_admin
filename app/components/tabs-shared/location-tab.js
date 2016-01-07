@@ -6,23 +6,21 @@ export default TabWithForm.extend({
 
   actions: {
 
-    saveAddressDetails: function() {
-      // handy to have object passed in referred to simply as resourceObject
-      // so that "input-field-resolver" works accross the board
-      var addressDetails = this.get("resourceObject");
-      debugger;
-      addressDetails.save(function(success) {
-        // triggerReset is an action in TabWithForm
-        this.send("triggerReset");
-      }.bind(this), function(error) {
-        // debugger;
-        // var errorMessage = "Sorry, there has been an error.";
-        // if (error.responseJSON && error.responseJSON.errors) {
-        //   errorMessage = error.responseJSON.errors[0];
-        // }
-        // this.set('serverError', errorMessage);
-      }.bind(this));
-    },
+    // for properties, saving is generic enough that the method in tab-with-form will work..
+    // saveAddressDetails: function() {
+    //   // handy to have object passed in referred to simply as resourceObject
+    //   // so that "input-field-resolver" works accross the board
+    //   var addressDetails = this.get("resourceObject");
+    //   debugger;
+    //   addressDetails.save(function(success) {
+    //     // triggerReset is an action in TabWithForm
+    //     this.send("triggerReset");
+    //   }.bind(this), function(error) {
+    //     // debugger;
+    //   }.bind(this));
+    // },
+
+
     stopConfirming: function() {
       this.set("isConfirming", false);
     },

@@ -63,6 +63,7 @@ export default Ember.Component.extend({
   resetOriginalValue: Ember.observer('resetTrigger', function() {
     var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
     // inputValue = inputValue || "";
+    // doing above was causing problems with null values getting reset to ""
     this.set("originalValue", inputValue);
 
     // tried adding resetTrigger as dependency on inputValue computed property but that did not work..
