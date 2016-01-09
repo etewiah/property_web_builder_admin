@@ -129,14 +129,20 @@ export default {
   },
 
   "fieldLabels": {
-    "forSale": "forSale",
-    "priceSaleCurrent": "priceSaleCurrent",
+    "forSale": "For Sale?",
+    "priceSaleCurrent": "Current Price",
     "saleDiscount": "saleDiscount",
-    "priceSaleOriginal": "priceSaleOriginal",
-    "longTermRental": "longTermRental",
-    "priceRentalMonthlyCurrent": "priceRentalMonthlyCurrent",
+    "priceSaleOriginal": "Original Price",
+    "longTermRental": "Available for long term rental?",
+
+    "seasonalRental": "Available for seasonal rental?",
+    "priceRentalMonthlyHighSeason": "Price for high season rental",
+    "priceRentalMonthlyLowSeason": "Price for low season rental",
+    "priceRentalMonthlyStandardSeason": "Price for normal season rental",
+
+    "priceRentalMonthlyCurrent": "Current rental price (per month)",
     "longTermRentalDiscount": "longTermRentalDiscount",
-    "priceRentalMonthlyOriginal": "priceRentalMonthlyOriginal",
+    "priceRentalMonthlyOriginal": "Original rental price (per month)",
 
 
     "firstNames": "First Name",
@@ -202,13 +208,13 @@ export default {
   },
 
   "propertyGeneralSections": {
-    "sale": "Venta",
-    "longtermRental": "Alquiler de larga duración",
-    "seasonalRental": "Alquiler de temporada",
+    "sale": "Sale",
+    "longtermRental": "Long term rental",
+    "seasonalRental": "Seasonal rental",
     "visibility": "Visibility",
-    "generalData": "Datos Generales",
-    "characteristics": "Características",
-    "portals": "Portales",
+    "generalData": "General Data",
+    "characteristics": "Characteristics",
+    "portals": "Web Portals",
     "extras": "Extras",
   },
 

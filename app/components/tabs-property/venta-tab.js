@@ -14,7 +14,7 @@ export default TabWithForm.extend({
     }, {
       labelTextTKey: "fieldLabels.priceSaleCurrent",
       tooltipTextTKey: "toolTips.priceSaleCurrent",
-      fieldName: "priceSaleCurrent",
+      fieldName: "priceSaleCurrentCents",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -26,15 +26,15 @@ export default TabWithForm.extend({
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.saleDiscount",
-      tooltipTextTKey: "toolTips.saleDiscount",
-      fieldName: "saleDiscount",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-    }, {
+    //   labelTextTKey: "fieldLabels.saleDiscount",
+    //   tooltipTextTKey: "toolTips.saleDiscount",
+    //   fieldName: "saleDiscount",
+    //   fieldType: "simpleSelect",
+    //   fieldDbType: "boolean",
+    // }, {
       labelTextTKey: "fieldLabels.priceSaleOriginal",
       tooltipTextTKey: "toolTips.priceSaleOriginal",
-      fieldName: "priceSaleOriginal",
+      fieldName: "priceSaleOriginalCents",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -52,13 +52,13 @@ export default TabWithForm.extend({
     {
       labelTextTKey: "fieldLabels.longTermRental",
       tooltipTextTKey: "toolTips.longTermRental",
-      fieldName: "longTermRental",
+      fieldName: "forRentLongTerm",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
     }, {
       labelTextTKey: "fieldLabels.priceRentalMonthlyCurrent",
       tooltipTextTKey: "toolTips.priceRentalMonthlyCurrent",
-      fieldName: "priceRentalMonthlyCurrent",
+      fieldName: "priceRentalMonthlyCurrentCents",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -70,15 +70,15 @@ export default TabWithForm.extend({
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.longTermRentalDiscount",
-      tooltipTextTKey: "toolTips.longTermRentalDiscount",
-      fieldName: "longTermRentalDiscount",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-    }, {
+    //   labelTextTKey: "fieldLabels.longTermRentalDiscount",
+    //   tooltipTextTKey: "toolTips.longTermRentalDiscount",
+    //   fieldName: "longTermRentalDiscount",
+    //   fieldType: "simpleSelect",
+    //   fieldDbType: "boolean",
+    // }, {
       labelTextTKey: "fieldLabels.priceRentalMonthlyOriginal",
       tooltipTextTKey: "toolTips.priceRentalMonthlyOriginal",
-      fieldName: "priceRentalMonthlyOriginal",
+      fieldName: "priceRentalMonthlyOriginalCents",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -94,15 +94,15 @@ export default TabWithForm.extend({
   shortTermRentalInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.temporadas",
-      tooltipTextTKey: "toolTips.temporadas",
-      fieldName: "temporadas",
+      labelTextTKey: "fieldLabels.seasonalRental",
+      tooltipTextTKey: "toolTips.seasonalRental",
+      fieldName: "forRentShortTerm",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
     }, {
-      labelTextTKey: "fieldLabels.precioTa",
+      labelTextTKey: "fieldLabels.priceRentalMonthlyLowSeason",
       tooltipTextTKey: false,
-      fieldName: "precioTa",
+      fieldName: "priceRentalMonthlyLowSeasonCents",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -114,9 +114,9 @@ export default TabWithForm.extend({
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.precioTm",
+      labelTextTKey: "fieldLabels.priceRentalMonthlyStandardSeason",
       tooltipTextTKey: false,
-      fieldName: "precioTm",
+      fieldName: "priceRentalMonthlyStandardSeasonCents",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -128,9 +128,9 @@ export default TabWithForm.extend({
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.precioTb",
+      labelTextTKey: "fieldLabels.priceRentalMonthlyHighSeason",
       tooltipTextTKey: false,
-      fieldName: "precioTb",
+      fieldName: "priceRentalMonthlyHighSeasonCents",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {

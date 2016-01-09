@@ -5,7 +5,7 @@
     <div class="col-sm-6">
 
 
-      {{#each mainInputFields as |inputField|}}
+      {{#each leftInputFields as |inputField|}}
       <div class="form-group fg-float">
           {{partial "partials/input-field-resolver" }}
       </div>
@@ -13,6 +13,14 @@
       <br>
     </div>
     <div class="col-sm-6">
+
+
+      {{#each rightInputFields as |inputField|}}
+      <div class="form-group fg-float">
+          {{partial "partials/input-field-resolver" }}
+      </div>
+      {{/each}}
+      <br>
     </div>
   </div>
 </div>

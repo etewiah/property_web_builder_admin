@@ -4,7 +4,9 @@ import PropertyPhoto from "../models/property-photo";
 
 export default DS.Model.extend({
   addPhotosFromUrls: function(remoteUrls, complete, error) {
-    var data = { remote_urls: remoteUrls };
+    var data = {
+      remote_urls: remoteUrls
+    };
     var self = this;
     var apiUrl = "/api/v1/properties/" + this.get("id") + "/photo_from_url";
     return $.ajax(apiUrl, {
@@ -93,10 +95,10 @@ export default DS.Model.extend({
   photos: DS.attr({
     dontSerialize: true
   }),
-  photoModels: Ember.computed('photos', function(){
+  photoModels: Ember.computed('photos', function() {
     var photos = this.get("photos");
     var photoModels = [];
-    photos.forEach(function(photo){
+    photos.forEach(function(photo) {
       // console.log(photoModels);
       photoModels.push(PropertyPhoto.create(photo));
     }.bind(this));
@@ -108,11 +110,15 @@ export default DS.Model.extend({
   }),
   extras: DS.attr({
     dontSerialize: true
-    // above works to prevent sending this attr to server
-    // cos of serializeAttribute override in serializer 
+      // above works to prevent sending this attr to server
+      // cos of serializeAttribute override in serializer 
   }),
 
 
+  titleEn: DS.attr(),
+  titleEs: DS.attr(),
+  descriptionEn: DS.attr(),
+  descriptionEs: DS.attr(),
 
   streetAddress: DS.attr(),
   streetNumber: DS.attr(),
@@ -126,14 +132,30 @@ export default DS.Model.extend({
   latitude: DS.attr(),
   showExactAddress: DS.attr(),
 
-// todo - replace 3 below with above
-  direccionPropiedad: DS.attr(),
-  direccionFisica: DS.attr(),
-  zonaDireccion: DS.attr(),
-  titleEn: DS.attr(),
-  titleEs: DS.attr(),
-  descriptionEn: DS.attr(),
-  descriptionEs: DS.attr(),
+  // direccionPropiedad: DS.attr(),
+  // direccionFisica: DS.attr(),
+  // zonaDireccion: DS.attr(),
+
+
+
+  forSale: DS.attr(),
+  forRentShortTerm: DS.attr(),
+  forRentLongTerm: DS.attr(),
+
+
+  saleDiscount: DS.attr(),
+  longTermRental: DS.attr(),
+  longTermRentalDiscount: DS.attr(),
+
+  priceSaleCurrentCents: DS.attr(),
+  priceSaleOriginalCents: DS.attr(),
+  priceRentalMonthlyCurrentCents: DS.attr(),
+  priceRentalMonthlyOriginalCents: DS.attr(),
+  priceRentalMonthlyLowSeasonCents: DS.attr(),
+  priceRentalMonthlyHighSeasonCents: DS.attr(),
+  priceRentalMonthlyStandardSeasonCents: DS.attr(),
+
+
   precioAntiguo: DS.attr(),
   precioAlquiler: DS.attr(),
   // idOrigenPropiedad: DS.attr(),
@@ -166,16 +188,6 @@ export default DS.Model.extend({
   idealista: DS.attr(),
   yaencontre: DS.attr(),
   pisoscom: DS.attr(),
-
-
-  forSale: DS.attr(),
-  priceSaleCurrent: DS.attr(),
-  saleDiscount: DS.attr(),
-  priceSaleOriginal: DS.attr(),
-  longTermRental: DS.attr(),
-  priceRentalMonthlyCurrent: DS.attr(),
-  longTermRentalDiscount: DS.attr(),
-  priceRentalMonthlyOriginal: DS.attr(),
 
 
   // t.string :origen_propiedad

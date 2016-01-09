@@ -7,10 +7,10 @@ export default TabWithForm.extend({
   actions: {
 
   },
-  mainInputFields: [{
-      labelTextTKey: "fieldLabels.userName",
+  leftInputFields: [{
+      labelTextTKey: "fieldLabels.firstNames",
       // tooltipTextTKey: "toolTips.user_name",
-      fieldName: "user_name",
+      fieldName: "first_names",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {
@@ -22,7 +22,26 @@ export default TabWithForm.extend({
         }
       }
     }, {
+      labelTextTKey: "fieldLabels.lastNames",
+      // e
+      // tooltipTextTKey: "toolTips.user_name",
+      fieldName: "last_names",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }
+
+  ],
+  rightInputFields: [{
       labelTextTKey: "fieldLabels.email",
+      // e
       // tooltipTextTKey: "toolTips.user_name",
       fieldName: "email",
       fieldType: "simpleInput",
