@@ -130,7 +130,9 @@ export default DS.Model.extend({
   country: DS.attr(),
   longitude: DS.attr(),
   latitude: DS.attr(),
-  showExactAddress: DS.attr(),
+  // showExactAddress: DS.attr(),
+  obscureMap: DS.attr(),
+  hideMap: DS.attr(),
 
   // direccionPropiedad: DS.attr(),
   // direccionFisica: DS.attr(),
@@ -141,7 +143,7 @@ export default DS.Model.extend({
   forSale: DS.attr(),
   forRentShortTerm: DS.attr(),
   forRentLongTerm: DS.attr(),
-
+  
 
   saleDiscount: DS.attr(),
   longTermRental: DS.attr(),
