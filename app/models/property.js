@@ -149,13 +149,13 @@ export default DS.Model.extend({
   longTermRental: DS.attr(),
   longTermRentalDiscount: DS.attr(),
 
-  priceSaleCurrentCents: DS.attr("currency"),
-  priceSaleOriginalCents: DS.attr("currency"),
-  priceRentalMonthlyCurrentCents: DS.attr("currency"),
-  priceRentalMonthlyOriginalCents: DS.attr("currency"),
-  priceRentalMonthlyLowSeasonCents: DS.attr("currency"),
-  priceRentalMonthlyHighSeasonCents: DS.attr("currency"),
-  priceRentalMonthlyStandardSeasonCents: DS.attr("currency"),
+  priceSaleCurrentCents: DS.attr("currency", { defaultValue: 0 }),
+  priceSaleOriginalCents: DS.attr("currency", { defaultValue: 0 }),
+  priceRentalMonthlyCurrentCents: DS.attr("currency", { defaultValue: 0 }),
+  priceRentalMonthlyOriginalCents: DS.attr("currency", { defaultValue: 0 }),
+  priceRentalMonthlyLowSeasonCents: DS.attr("currency", { defaultValue: 0 }),
+  priceRentalMonthlyHighSeasonCents: DS.attr("currency", { defaultValue: 0 }),
+  priceRentalMonthlyStandardSeasonCents: DS.attr("currency", { defaultValue: 0 }),
 
 
   // precioAntiguo: DS.attr(),
@@ -177,7 +177,7 @@ export default DS.Model.extend({
   mConstruidos: DS.attr(),
   eficienciaEnergia: DS.attr(),
   anoConstr: DS.attr(),
-  
+
   // mapaLat: DS.attr(),
   // mapaLng: DS.attr(),
   // codigoPostal: DS.attr(),
