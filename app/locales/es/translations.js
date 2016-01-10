@@ -130,17 +130,17 @@ export default Ember.merge(Ember.copy(en), {
   },
 
   "fieldLabels": {
+    "obscureMap": "Do not show exact address on website?",
+    "hideMap": "Do not show map on website?",
     "forSale": "For Sale?",
     "priceSaleCurrent": "Current Price",
     "saleDiscount": "saleDiscount",
     "priceSaleOriginal": "Original Price",
     "longTermRental": "Available for long term rental?",
-
     "seasonalRental": "Available for seasonal rental?",
     "priceRentalMonthlyHighSeason": "Price for high season rental",
     "priceRentalMonthlyLowSeason": "Price for low season rental",
     "priceRentalMonthlyStandardSeason": "Price for normal season rental",
-
     "priceRentalMonthlyCurrent": "Current rental price (per month)",
     "longTermRentalDiscount": "longTermRentalDiscount",
     "priceRentalMonthlyOriginal": "Original rental price (per month)",

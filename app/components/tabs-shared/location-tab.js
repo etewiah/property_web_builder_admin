@@ -6,21 +6,6 @@ export default TabWithForm.extend({
 
   actions: {
 
-    // for properties, saving is generic enough that the method in tab-with-form will work..
-    // saveAddressDetails: function() {
-    //   // handy to have object passed in referred to simply as resourceObject
-    //   // so that "input-field-resolver" works accross the board
-    //   var addressDetails = this.get("resourceObject");
-    //   debugger;
-    //   addressDetails.save(function(success) {
-    //     // triggerReset is an action in TabWithForm
-    //     this.send("triggerReset");
-    //   }.bind(this), function(error) {
-    //     // debugger;
-    //   }.bind(this));
-    // },
-
-
     stopConfirming: function() {
       this.set("isConfirming", false);
     },
@@ -63,10 +48,9 @@ export default TabWithForm.extend({
       resourceWithAddress.set("locality", newAddress.region);
       resourceWithAddress.set("zone", newAddress.region);
 
-      resourceWithAddress.save(function(success) {
+      resourceWithAddress.save().then(function(success) {
         this.set("isConfirming", false);
-      }.bind(this), function(error) {
-        debugger;
+      }.bind(this)).catch(function(error) {
         var errorMessage = "Sorry, there has been an error.";
         if (error.responseJSON && error.responseJSON.errors) {
           errorMessage = error.responseJSON.errors[0];
@@ -75,6 +59,13 @@ export default TabWithForm.extend({
       // .then(transitionToPost).catch(failure);
     }
   },
+
+  hideInputFields: function() {
+    // should probably do more to verify that property does not have an address than check lat lng.
+    var hasNoLatLng = (Em.isEmpty(this.get("resourceObject.latitude")) && Em.isEmpty(this.get("resourceObject.longitude")));
+    return hasNoLatLng || this.get("isConfirming");
+  }.property("isConfirming"),
+
   situacionRightInputFields: [
     //this comment tricks prettify ;) 
     {

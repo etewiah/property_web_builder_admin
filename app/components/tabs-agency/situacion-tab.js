@@ -73,6 +73,14 @@ export default TabWithForm.extend({
       // .then(transitionToPost).catch(failure);
     }
   },
+
+
+  hideInputFields: function() {
+    // should probably do more to verify that property does not have an address than check lat lng.
+    var hasNoLatLng = (Em.isEmpty(this.get("resourceObject.latitude")) && Em.isEmpty(this.get("resourceObject.longitude")));
+    return hasNoLatLng || this.get("isConfirming");
+  }.property("isConfirming"),
+  
   situacionRightInputFields: [
     //this comment tricks prettify ;) 
     {

@@ -1,6 +1,14 @@
 <div class="card">
   <div class="card-header" style="">
-    <h2>{{t "editarPropiedad" }}<small></small></h2>
+    <h2>{{t "editarPropiedad" }}<small>REF: {{model.reference}}</small></h2>
+
+    <div role="group" class="botones_web">
+      {{#link-to "admin.propiedades" data-toggle="tooltip" 
+          title=(t "returnToProperties") class="btn_settings btn btn-circulo btn-float waves-effect pull-right" }} 
+        <i class="fa fa-arrow-left"></i>
+      {{/link-to}}  
+    </div>
+
   </div>
   <div class="card-body card-padding">
   {{outlet}}

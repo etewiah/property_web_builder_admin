@@ -120,7 +120,7 @@ export default TabWithForm.extend({
   inputFields: [{
     labelTextTKey: "fieldLabels.ref",
     tooltipTextTKey: "toolTips.ref",
-    fieldName: "ref",
+    fieldName: "reference",
     fieldType: "simpleInput",
     inputType: "text",
     constraints: {

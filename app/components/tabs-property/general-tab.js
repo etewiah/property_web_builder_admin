@@ -14,7 +14,7 @@ export default TabWithForm.extend({
     }, {
       labelTextTKey: "fieldLabels.highlighted",
       tooltipTextTKey: "toolTips.highlighted",
-      fieldName: "destacado",
+      fieldName: "highlighted",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
     }, {
@@ -164,7 +164,7 @@ export default TabWithForm.extend({
   mainInputFields: [{
     labelTextTKey: "fieldLabels.ref",
     tooltipTextTKey: "toolTips.ref",
-    fieldName: "ref",
+    fieldName: "reference",
     fieldType: "simpleInput",
     inputType: "text",
     constraints: {

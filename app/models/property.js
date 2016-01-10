@@ -115,6 +115,7 @@ export default DS.Model.extend({
   }),
 
 
+  reference: DS.attr(),
   titleEn: DS.attr(),
   titleEs: DS.attr(),
   descriptionEn: DS.attr(),
@@ -186,7 +187,7 @@ export default DS.Model.extend({
   tipoPropiedad: DS.attr(),
   localidad: DS.attr(),
   precioVenta: DS.attr(),
-  destacado: DS.attr(),
+  highlighted: DS.attr(),
   observacionesVenta: DS.attr(),
   // archivado: DS.attr(),
   visible: DS.attr(),
@@ -201,7 +202,7 @@ export default DS.Model.extend({
   // t.string :tipo_propiedad
   // t.string :localidad
   // t.float :precio_venta
-  // t.boolean :destacado
+  // t.boolean :highlighted
   // t.boolean :archivado
   // t.boolean :visible
 

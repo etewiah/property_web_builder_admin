@@ -24,11 +24,11 @@ export default {
 
   "cards": {
     "website": "Website",
-    "websitePrompt": "Acciones sobre website",
-    "websiteLink": "Ir al panel de control de la web",
+    "websitePrompt": "Website actions",
+    "websiteLink": "Go to web control panel",
     "properties": "Properties",
-    "propertiesPrompt": "Acciones sobre properties.",
-    "propertiesLink": "Ir a properties",
+    "propertiesPrompt": "Property actions",
+    "propertiesLink": "Go to properties",
   },
   "tasks": {
     "addProperty": "Add a property",
@@ -129,17 +129,17 @@ export default {
   },
 
   "fieldLabels": {
+    "obscureMap": "Hide exact address on website?",
+    "hideMap": "Hide map on website?",
     "forSale": "For Sale?",
     "priceSaleCurrent": "Current Price",
     "saleDiscount": "saleDiscount",
     "priceSaleOriginal": "Original Price",
     "longTermRental": "Available for long term rental?",
-
     "seasonalRental": "Available for seasonal rental?",
     "priceRentalMonthlyHighSeason": "Price for high season rental",
     "priceRentalMonthlyLowSeason": "Price for low season rental",
     "priceRentalMonthlyStandardSeason": "Price for normal season rental",
-
     "priceRentalMonthlyCurrent": "Current rental price (per month)",
     "longTermRentalDiscount": "longTermRentalDiscount",
     "priceRentalMonthlyOriginal": "Original rental price (per month)",

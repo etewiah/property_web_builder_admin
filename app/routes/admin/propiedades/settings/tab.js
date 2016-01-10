@@ -34,9 +34,11 @@ export default Ember.Route.extend({
     },{
       tabValue: "property-labels",
       tabTitleKey: "translationsSections.propertyLabels"
-    },{
-      tabValue: "provinces",
-      tabTitleKey: "translationsSections.provinces"
-    }]);
+    }
+    // ,{
+    //   tabValue: "provinces",
+    //   tabTitleKey: "translationsSections.provinces"
+    // }
+    ]);
   }
 });
