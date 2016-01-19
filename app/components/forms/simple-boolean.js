@@ -42,7 +42,7 @@ export default Ember.Component.extend({
 
     this.$(":radio").change(function(evt) {
       var selected = false;
-      if (event.target.value === "true") {
+      if (evt.target.value === "true") {
         selected = true;
       } 
       // $(this).find("option:selected").val();
