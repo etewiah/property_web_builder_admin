@@ -18,6 +18,9 @@ export default Ember.merge(Ember.copy(en), {
   "create": "Crear",
   "show": "Enseñar",
   "hide": "Ocultar",
+  "logo": "Logo",
+  "aboutUsPhoto": "About Us photo",
+  "addAboutUsPhoto": "Add About Us photo",
 
   "visible": "Visible",
   "hidden": "Hidden",
@@ -102,7 +105,6 @@ export default Ember.merge(Ember.copy(en), {
 
   "null": "",
 
-
   "editWebsite": "Editar la Web",
   "settingsForWebsite": "Configuración de la web",
   "returnToWebsite": "Volver a web",
@@ -114,7 +116,6 @@ export default Ember.merge(Ember.copy(en), {
   "newClient": "Nuevo Cliente",
   "propertiesList": "Listado de propiedades",
   "clientsList": "Listado de clientes",
-
 
   "prompts": {
     "fixErrors": "Please correct the errors below"
@@ -198,7 +199,6 @@ export default Ember.merge(Ember.copy(en), {
   },
 
 
-
   "propertySections": {
     "general": "General",
     "location": "Situación",
@@ -220,7 +220,6 @@ export default Ember.merge(Ember.copy(en), {
     "extras": "Extras",
   },
 
-
   "translationsSections": {
     "extras": "Extras",
     "propertyTypes": "Property Tipos",
@@ -229,7 +228,6 @@ export default Ember.merge(Ember.copy(en), {
     "propertyLabels": "Property Labels",
     "provinces": "Provincias"
   },
-
 
   "toolTips": {
     "forSale": "forSale",
@@ -295,6 +293,7 @@ export default Ember.merge(Ember.copy(en), {
     tooShortVjs: "is too short",
     notAUrlVjs: "is not a valid URL",
   },
+  
   // some of these are in server side translations that come from seed file for each tenant
   "webContentLabels": {
     "suffixEn": "en Inglés",

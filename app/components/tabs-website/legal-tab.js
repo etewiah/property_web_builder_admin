@@ -17,21 +17,9 @@ export default Ember.Component.extend({
   },
 
 
-  // leftContent: function() {
-  //   var contentResources = this.get("contentResources");
-  //   var leftContent = contentResources.findBy("key", "privacyPolicy");
-  //   return leftContent;
-  // }.property("contentResources"),
 
-  // rightContent: function() {
-  //   var contentResources = this.get("contentResources");
-  //   var rightContent = contentResources.findBy("key", "legalAdvice");
-  //   return rightContent;
-  // }.property("contentResources"),
-
-
-  isVisible: function() {
-    return this.get("activeTabName").toLowerCase() === "legal";
-  }.property("activeTabName"),
+  // isVisible: function() {
+  //   return this.get("activeTabName").toLowerCase() === "legal";
+  // }.property("activeTabName"),
 
 });

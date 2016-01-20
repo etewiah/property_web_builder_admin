@@ -1,3 +1,8 @@
+// 
+// keep line count same as es.
+// 
+// 
+//
 export default {
 
   "en": "English",
@@ -11,13 +16,11 @@ export default {
   "addLogo": "Add Logo",
   "addPhotos": "Add Photos",
   "create": "Create",
-
-
-
-
-
   "show": "Show",
   "hide": "Hide",
+  "logo": "Logo",
+  "aboutUsPhoto": "About Us photo",
+  "addAboutUsPhoto": "Add About Us photo",
 
   "visible": "Visible",
   "hidden": "Hidden",
@@ -40,7 +43,6 @@ export default {
     "changeLang": "Change web language",
     "changeLangPrompt": "Web Configuration",
   },
-
 
   "buttonLabels": {
     "configureAvailableExtras": "Configure available extras",
@@ -218,7 +220,6 @@ export default {
     "extras": "Extras",
   },
 
-
   "translationsSections": {
     "extras": "Extras",
     "propertyTypes": "Property Types",
@@ -227,6 +228,7 @@ export default {
     "propertyLabels": "Property Labels",
     "provinces": "Provinces"
   },
+
   "toolTips": {
     "forSale": "forSale",
     "priceSaleCurrent": "priceSaleCurrent",
@@ -290,7 +292,6 @@ export default {
     // below for validatejs - will need to figure out a way to do interpolation:
     tooShortVjs: "is too short",
     notAUrlVjs: "is not a valid URL",
-
   },
   //fieldLabels.tituloIngles etc are on server side translations but no longer in use 
   // some of these are in server side translations that come from seed file for each tenant

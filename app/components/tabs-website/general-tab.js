@@ -11,6 +11,7 @@ export default TabWithForm.extend(OnReadyMixin, {
   changedFields: [],
   actions: {
     addPhotosFromUrls: function(remoteUrls) {
+      // not yet in use.....
       // TODO - validate remote urls..
       var contentResources = this.get("contentResources");
       // This isn't the most robust implementation - above relies on content with tag 
@@ -25,14 +26,10 @@ export default TabWithForm.extend(OnReadyMixin, {
 
     },
     refreshPhotos: function(response) {
-      // console.log();
-      // var photoModels = this.get("logoPhoto");
-      var uploadedPhoto;
-      debugger;
-      // response.forEach(function(photo) {
-      //   uploadedPhoto = ContentPhoto.create(photo);
-      // }.bind(this));
-
+      // currently get the ff error the first time a photo is added
+      // Uncaught Error: Assertion Failed: calling set on destroyed object
+      // TODO - try fixing - perhaps with a refresh count property which
+      // aboutUsPhot can observe.....
       this.set("logoPhoto",  ContentPhoto.create(response));
     },
     // deletePhoto: function(photo) {
@@ -102,19 +99,6 @@ export default TabWithForm.extend(OnReadyMixin, {
     class: "fa fa-instagram fa-2x"
   }],
 
-  // contentForForm: function() {
-  //   // All this does is add a property saying if item is plainText 
-  //   // Should probably have that as a property saved on the model..
-  //   // there is an "input_type" field on the model I could use
-  //   var contentResources = this.get("contentResources");
-  //   // var contentForForm = [];
-  //   contentResources.forEach(function(content) {
-  //     if (content.get("key") === "tagLine") {
-  //       content.set("isPlainText", true);
-  //     }
-  //   });
-  //   return contentResources;
-  // }.property("contentResources"),
 
 
   logoPhoto: function() {
