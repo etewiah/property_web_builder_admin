@@ -20,33 +20,38 @@ export default Ember.Route.extend({
       var menuCards = [{
         titleKey: "cards.website",
         promptKey: "cards.websitePrompt",
+        linkParams: "",
         link: "admin.content",
         linkKey: "cards.websiteLink",
         tasks: [{
           titleKey: "tasks.changeLogo",
           promptKey: "tasks.changeLogoPrompt",
-          link: "admin.content.settings",
+          linkParams: {"tabName": "general"},
+          link: "admin.content.tab",
           icon: "fa fa-desktop fa-2x"
         }, {
-          titleKey: "tasks.changeLang",
-          promptKey: "tasks.changeLangPrompt",
-          link: "admin.content.settings",
+          titleKey: "tasks.changeLegalText",
+          // promptKey: "tasks.changeLangPrompt",
+          linkParams: "legal",
+          link: "admin.content.tab",
           icon: "fa fa-desktop fa-2x"
         }]
       }, {
         titleKey: "cards.properties",
         promptKey: "cards.propertiesPrompt",
+        linkParams: "",
         link: "admin.propiedades",
         linkKey: "cards.propertiesLink",
         tasks: [{
           titleKey: "tasks.addProperty",
-          promptKey: "tasks.addPropertyPrompt",
-          link: "admin.propiedades.settings",
+          // promptKey: "tasks.addPropertyPrompt",
+          link: "admin.propiedades.nuevo",
           icon: "fa fa-building-o fa-2x"
         }, {
-          titleKey: "tasks.editProperty",
-          promptKey: "tasks.editPropertyPrompt",
-          link: "admin.propiedades.settings",
+          titleKey: "tasks.manageProperties",
+          // promptKey: "tasks.managePropertiesPrompt",
+          linkParams: null,
+          link: "admin.propiedades.default",
           icon: "fa fa-building-o fa-2x"
         }]
       }];

@@ -50,14 +50,15 @@ Router.map(function() {
       this.route("default", {
         path: "/"
       });
-      this.route("settings", function() {
-        this.route("default", {
-          path: "/"
-        });
-        this.route("tab", {
-          path: "/:tabName"
-        });
-      });
+      // not yet in use
+      // this.route("settings", function() {
+      //   this.route("default", {
+      //     path: "/"
+      //   });
+      //   this.route("tab", {
+      //     path: "/:tabName"
+      //   });
+      // });
       this.route("tab", {
         path: "/:tabName"
       });

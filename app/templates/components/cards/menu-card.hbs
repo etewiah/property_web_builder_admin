@@ -4,25 +4,32 @@
   </div>
   <div class="card-body">
     <div class="listview">
-
-      {{#each details.tasks as |task|}}
-        {{#link-to task.link class="lv-item" }} 
-        <div class="media">
-          <div class="pull-left">
-            <i class={{task.icon}} style=""></i>
-          </div>
-          <div class="media-body">
-            <div class="lv-title">{{t task.titleKey }}</div>
-            <small class="lv-small">  </small>
-          </div>
+      {{#each details.tasks as |task|}} {{#if task.linkParams }} 
+      {{#link-to task.link task.linkParams class="lv-item" }}
+      <div class="media">
+        <div class="pull-left">
+          <i class={{task.icon}} style=""></i>
         </div>
-        {{/link-to}}  
-      {{/each}}
-
-        {{#link-to details.link class="lv-footer" }} 
-          {{t details.linkKey}}
-        {{/link-to}} 
-
+        <div class="media-body">
+          <div class="lv-title">{{t task.titleKey }}</div>
+          <small class="lv-small">  </small>
+        </div>
+      </div>
+      {{/link-to}} 
+      {{else}} 
+      {{#link-to task.link class="lv-item" }}
+      <div class="media">
+        <div class="pull-left">
+          <i class={{task.icon}} style=""></i>
+        </div>
+        <div class="media-body">
+          <div class="lv-title">{{t task.titleKey }}</div>
+          <small class="lv-small">  </small>
+        </div>
+      </div>
+      {{/link-to}} 
+      {{/if}} 
+      {{/each}} {{!-- {{#link-to details.link class="lv-footer" }} {{t details.linkKey}} {{/link-to}} --}}
     </div>
   </div>
 </div>

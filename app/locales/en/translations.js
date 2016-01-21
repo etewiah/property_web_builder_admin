@@ -36,12 +36,13 @@ export default {
   "tasks": {
     "addProperty": "Add a property",
     "addPropertyPrompt": "properties / Add property",
-    "editProperty": "Edit a property",
-    "editPropertyPrompt": "Properties / Edit property",
+    "manageProperties": "Edit a property",
+    "managePropertiesPrompt": "Properties / Edit property",
     "changeLogo": "Add or change logo",
     "changeLogoPrompt": "Web Configuration",
     "changeLang": "Change web language",
     "changeLangPrompt": "Web Configuration",
+    "changeLegalText": "Change legalText",
   },
 
   "buttonLabels": {

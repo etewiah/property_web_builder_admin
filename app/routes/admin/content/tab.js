@@ -30,6 +30,12 @@ export default Ember.Route.extend({
       //   this.transitionTo("admin.propiedades.editar", property.get('idPropiedad'))
       // }
   },
+
+  // serialize: function (model) {
+  //   debugger;
+  //   return { claim_id: model.get('cla_seq'), claim_sub: model.get('cla_sub') };
+  // },
+
   model(params) {
     return this.store.query("webContent", {
       filter: {

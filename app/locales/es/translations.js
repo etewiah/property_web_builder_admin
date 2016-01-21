@@ -36,12 +36,13 @@ export default Ember.merge(Ember.copy(en), {
   "tasks": {
     "addProperty": "Añadir una propiedad",
     "addPropertyPrompt": "Propiedades / Añadir propiedad",
-    "editProperty": "Editar una propiedad",
-    "editPropertyPrompt": "Propiedades / Editar propiedad",
+    "manageProperties": "Manejar propiedades",
+    "managePropertiesPrompt": "Propiedades / Manejar propiedades",
     "changeLogo": "Añadir o cambiar mi logotipo",
     "changeLogoPrompt": "Web / Configuración de la web",
     "changeLang": "Cambiar los idiomas de mi web",
     "changeLangPrompt": "Web / Configuración de la web",
+    "changeLegalText": "Añadir o cambiar textos legal",
   },
 
   "buttonLabels": {
