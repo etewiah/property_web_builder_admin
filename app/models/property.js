@@ -82,9 +82,9 @@ export default DS.Model.extend({
   // tTipoPropiedad: t("propertyTypes." + this.get("tipoPropiedad")),
 
   // 19 nov 2015 - not entirely sure I want to carry on with this:
-  tTipoPropiedad: Ember.computed('i18n.locale', 'tipoPropiedad', function() {
-    return this.get("i18n").t(this.get("tipoPropiedad"));
-  }),
+  // tTipoPropiedad: Ember.computed('i18n.locale', 'tipoPropiedad', function() {
+  //   return this.get("i18n").t(this.get("tipoPropiedad"));
+  // }),
 
 
   propertyPhotos: DS.hasMany('property-photo', {
@@ -198,8 +198,8 @@ export default DS.Model.extend({
   // mapaLng: DS.attr(),
   // codigoPostal: DS.attr(),
 
-  estadoPropiedad: DS.attr(),
-  tipoPropiedad: DS.attr(),
+  propertyStateKey: DS.attr(),
+  propertyTypeKey: DS.attr(),
   localidad: DS.attr(),
   precioVenta: DS.attr(),
   highlighted: DS.attr(),

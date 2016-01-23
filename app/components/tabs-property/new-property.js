@@ -174,13 +174,13 @@ export default TabWithForm.extend({
   {
     labelTextTKey: "fieldLabels.tipo",
     tooltipTextTKey: "",
-    fieldName: "tipoPropiedad",
+    fieldName: "propertyTypeKey",
     fieldType: "dynamicSelect",
     optionsKey: "property-types",
   }, {
     labelTextTKey: "fieldLabels.estado",
     tooltipTextTKey: "",
-    fieldName: "estadoPropiedad",
+    fieldName: "propertyStateKey",
     fieldType: "dynamicSelect",
     optionsKey: "property-states",
   }, {
