@@ -36,7 +36,7 @@ export default {
   "tasks": {
     "addProperty": "Add a property",
     "addPropertyPrompt": "properties / Add property",
-    "manageProperties": "Edit a property",
+    "manageProperties": "Manage properties",
     "managePropertiesPrompt": "Properties / Edit property",
     "changeLogo": "Add or change logo",
     "changeLogoPrompt": "Web Configuration",

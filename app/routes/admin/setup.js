@@ -26,7 +26,9 @@ export default Ember.Route.extend({
         tasks: [{
           titleKey: "tasks.changeLogo",
           promptKey: "tasks.changeLogoPrompt",
-          linkParams: {"tabName": "general"},
+          // linkParams: {"tabName": "general"},
+          // above will result in route model not getting called
+          linkParams: "general",
           link: "admin.content.tab",
           icon: "fa fa-desktop fa-2x"
         }, {
@@ -50,7 +52,7 @@ export default Ember.Route.extend({
         }, {
           titleKey: "tasks.manageProperties",
           // promptKey: "tasks.managePropertiesPrompt",
-          linkParams: null,
+          // linkParams: null,
           link: "admin.propiedades.default",
           icon: "fa fa-building-o fa-2x"
         }]
