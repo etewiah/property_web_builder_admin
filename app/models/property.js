@@ -144,19 +144,34 @@ export default DS.Model.extend({
   forSale: DS.attr(),
   forRentShortTerm: DS.attr(),
   forRentLongTerm: DS.attr(),
-  
+
 
   saleDiscount: DS.attr(),
   longTermRental: DS.attr(),
   longTermRentalDiscount: DS.attr(),
 
-  priceSaleCurrentCents: DS.attr("currency", { defaultValue: 0 }),
-  priceSaleOriginalCents: DS.attr("currency", { defaultValue: 0 }),
-  priceRentalMonthlyCurrentCents: DS.attr("currency", { defaultValue: 0 }),
-  priceRentalMonthlyOriginalCents: DS.attr("currency", { defaultValue: 0 }),
-  priceRentalMonthlyLowSeasonCents: DS.attr("currency", { defaultValue: 0 }),
-  priceRentalMonthlyHighSeasonCents: DS.attr("currency", { defaultValue: 0 }),
-  priceRentalMonthlyStandardSeasonCents: DS.attr("currency", { defaultValue: 0 }),
+  // contextualPriceCents: DS.attr("currency", { defaultValue: 0 }),
+  priceSaleCurrentCents: DS.attr("currency", {
+    defaultValue: 0
+  }),
+  priceSaleOriginalCents: DS.attr("currency", {
+    defaultValue: 0
+  }),
+  priceRentalMonthlyCurrentCents: DS.attr("currency", {
+    defaultValue: 0
+  }),
+  priceRentalMonthlyOriginalCents: DS.attr("currency", {
+    defaultValue: 0
+  }),
+  priceRentalMonthlyLowSeasonCents: DS.attr("currency", {
+    defaultValue: 0
+  }),
+  priceRentalMonthlyHighSeasonCents: DS.attr("currency", {
+    defaultValue: 0
+  }),
+  priceRentalMonthlyStandardSeasonCents: DS.attr("currency", {
+    defaultValue: 0
+  }),
 
 
   // precioAntiguo: DS.attr(),
@@ -195,6 +210,14 @@ export default DS.Model.extend({
   idealista: DS.attr(),
   yaencontre: DS.attr(),
   pisoscom: DS.attr(),
+
+  localityTitle: DS.attr({
+    dontSerialize: true
+  }),
+  zoneTitle: DS.attr({
+    dontSerialize: true
+// TODO - fix above
+  }),
 
 
   // t.string :origen_propiedad
