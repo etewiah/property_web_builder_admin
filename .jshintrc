@@ -15,7 +15,8 @@
     "-Promise",
     "moment",
     "Discourse",
-    "Logster"
+    "Logster",
+    "Droplet"
   ],
   "browser": true,
   "boss": true,

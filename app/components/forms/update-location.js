@@ -24,49 +24,49 @@ export default Ember.Component.extend({
     $.each(gmapLocationObject.address_components, function(i, address_component) {
       console.log('address_component:' + i);
 
-      if (address_component.types[0] == "route") {
+      if (address_component.types[0] === "route") {
         // console.log(i + ": route:" + address_component.long_name);
         newAddress.streetAddress = address_component.long_name;
       }
 
-      if (address_component.types[0] == "locality") {
+      if (address_component.types[0] === "locality") {
         // console.log("town:" + address_component.long_name);
         newAddress.city = address_component.long_name;
       }
 
-      if (address_component.types[0] == "country") {
+      if (address_component.types[0] === "country") {
         // console.log("country:" + address_component.long_name);
         newAddress.country = address_component.long_name;
       }
 
-      if (address_component.types[0] == "postal_code_prefix") {
+      if (address_component.types[0] === "postal_code_prefix") {
         debugger;
         // console.log("pc:" + address_component.long_name);
         newAddress.postalCode = address_component.long_name;
       }
-      if (address_component.types[0] == "postal_code") {
+      if (address_component.types[0] === "postal_code") {
         // console.log("pc:" + address_component.long_name);
         newAddress.postalCode = address_component.long_name;
       }
-      if (address_component.types[0] == "street_number") {
+      if (address_component.types[0] === "street_number") {
         // console.log("street_number:" + address_component.long_name);
         newAddress.streetNumber = address_component.long_name;
       }
-      if (address_component.types[0] == "administrative_area_level_1") {
+      if (address_component.types[0] === "administrative_area_level_1") {
         // console.log("administrative_area_level_1:" + address_component.long_name);
         // newAddress.province = address_component.long_name;
         newAddress.region = address_component.long_name;
 
       }
-      if (address_component.types[0] == "administrative_area_level_2") {
+      if (address_component.types[0] === "administrative_area_level_2") {
         // console.log("administrative_area_level_1:" + address_component.long_name);
         newAddress.aal2 = address_component.long_name;
       }
-      if (address_component.types[0] == "administrative_area_level_3") {
+      if (address_component.types[0] === "administrative_area_level_3") {
         // console.log("administrative_area_level_1:" + address_component.long_name);
         newAddress.aal3 = address_component.long_name;
       }
-      if (address_component.types[0] == "administrative_area_level_4") {
+      if (address_component.types[0] === "administrative_area_level_4") {
         // console.log("administrative_area_level_1:" + address_component.long_name);
         newAddress.aal4 = address_component.long_name;
       }
