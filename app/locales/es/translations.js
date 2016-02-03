@@ -11,19 +11,19 @@ export default Ember.merge(Ember.copy(en), {
   "save": "Guardar",
   "cancel": "Cancelar",
   "edit": "Editar",
-  "preview": "Preview",
+  "preview": "Vista previa",
   "close": "Cerrar",
   "addLogo": "Añadir Logo",
   "addPhotos": "Añadir Photos",
   "create": "Crear",
-  "show": "Enseñar",
+  "show": "Mostrar",
   "hide": "Ocultar",
   "logo": "Logo",
-  "aboutUsPhoto": "About Us photo",
-  "addAboutUsPhoto": "Add About Us photo",
+  "aboutUsPhoto": "Foto sección Sobre Nosotros",
+  "addAboutUsPhoto": "Añadif foto sección Sobre Nosotros",
 
   "visible": "Visible",
-  "hidden": "Hidden",
+  "hidden": "Oculto",
 
   "cards": {
     "website": "Página web",
@@ -36,19 +36,19 @@ export default Ember.merge(Ember.copy(en), {
   "tasks": {
     "addProperty": "Añadir una propiedad",
     "addPropertyPrompt": "Propiedades / Añadir propiedad",
-    "manageProperties": "Manejar propiedades",
-    "managePropertiesPrompt": "Propiedades / Manejar propiedades",
+    "manageProperties": "Gestionar propiedades",
+    "managePropertiesPrompt": "Propiedades / Gestionar propiedades",
     "changeLogo": "Añadir o cambiar mi logotipo",
     "changeLogoPrompt": "Web / Configuración de la web",
     "changeLang": "Cambiar los idiomas de mi web",
     "changeLangPrompt": "Web / Configuración de la web",
-    "changeLegalText": "Añadir o cambiar textos legal",
+    "changeLegalText": "Añadir o cambiar textos legales",
   },
 
   "buttonLabels": {
-    "configureAvailableExtras": "Configure available extras",
-    "selectImagesToAdd": "Select images to add",
-    "selectRemoteImages": "Add images from urls"
+    "configureAvailableExtras": "Configurar extras",
+    "selectImagesToAdd": "Seleccionar imágenes para subir",
+    "selectRemoteImages": "Añadir imágenes desde url"
       //   "editar": "Editar",
       //   "nuevo": "Nuevo",
       //   "guardar": "Guardar",
@@ -57,10 +57,10 @@ export default Ember.merge(Ember.copy(en), {
 
   "alerts": {
     "changesDetected": "Se han detectado cambios.",
-    "navigatingFromChanges": "You have unsaved changes. Please save or cancel your changes.",
+    "navigatingFromChanges": "Tienes cambios sin guardar. Por favor, pulsa guardar o cancelar.",
     "visibleProperties": "Estas son las propiedades que están visibles en tu web",
     "hiddenProperties": "Estas propiedades NO están visibles en tu web",
-    "clickMapToUpdate": "Pinche en el mapa para actualizar la posición de la propiedad."
+    "clickMapToUpdate": "Pincha en el mapa para actualizar la ubicación de la propiedad."
   },
 
   "datatables": {
@@ -83,88 +83,88 @@ export default Ember.merge(Ember.copy(en), {
       "sPrevious": "<"
     },
     "oAria": {
-      "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-      "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+      "sSortAscending": ": Orden ascendente",
+      "sSortDescending": ": Orden descendente"
     }
   },
 
   "alert": {
-    "deleteItem": "Are you sure you want to delete this item?",
-    "deleteButton": "Yes, delete it!"
+    "deleteItem": "Estás seguro de que quieres eliminar este elemento?",
+    "deleteButton": "Sí, eliminar!"
   },
 
   "street": "Calle",
   "streetAddress": "Direccion",
-  "streetNumber": "Street Number",
-  "city": "City",
-  "postCode": "Codigo Postal",
+  "streetNumber": "Número",
+  "city": "Ciudad",
+  "postCode": "Código Postal",
   "region": "Region",
   "zone": "Zona", 
-  "country": "Pais",
+  "country": "País",
 
-  "properties": "Properties",
+  "properties": "Propiedades",
 
   "null": "",
 
   "editWebsite": "Editar la Web",
   "settingsForWebsite": "Configuración de la web",
-  "returnToWebsite": "Volver a web",
+  "returnToWebsite": "Volver a la web",
   "settingsForProperties": "Configuración de propiedades",
   "returnToProperties": "Volver a propiedades",
   "addProperty": "Añadir propiedad",
   "addClient": "Añadir cliente",
-  "newProperty": "Nuevo Propiedad",
+  "newProperty": "Nueva Propiedad",
   "newClient": "Nuevo Cliente",
   "propertiesList": "Listado de propiedades",
   "clientsList": "Listado de clientes",
 
   "prompts": {
-    "fixErrors": "Please correct the errors below"
+    "fixErrors": "Por favor, corrija los errores siguientes"
   },
 
   "todos": {
-    "createContent": "Create some content",
-    "companyDetails": "Set up your company details"
+    "createContent": "Crear contenidos",
+    "companyDetails": "Editar los detalles de la empresa"
   },
 
   "locationTab": {
-    "confirmAddress": "Confirm new location"
+    "confirmAddress": "Confirmar nueva ubicación"
   },
 
   "fieldLabels": {
-    "obscureMap": "Do not show exact address on website?",
-    "hideMap": "Do not show map on website?",
-    "forSale": "For Sale?",
-    "priceSaleCurrent": "Current Price",
-    "saleDiscount": "saleDiscount",
-    "priceSaleOriginal": "Original Price",
-    "longTermRental": "Available for long term rental?",
-    "seasonalRental": "Available for seasonal rental?",
-    "priceRentalMonthlyHighSeason": "Price for high season rental",
-    "priceRentalMonthlyLowSeason": "Price for low season rental",
-    "priceRentalMonthlyStandardSeason": "Price for normal season rental",
-    "priceRentalMonthlyCurrent": "Current rental price (per month)",
-    "longTermRentalDiscount": "longTermRentalDiscount",
-    "priceRentalMonthlyOriginal": "Original rental price (per month)",
+    "obscureMap": "No mostrar dirección exacta en la web?",
+    "hideMap": "No mostrar mapa en la web",
+    "forSale": "Para venta?",
+    "priceSaleCurrent": "Precio",
+    "saleDiscount": "Descuento",
+    "priceSaleOriginal": "Precio original",
+    "longTermRental": "Disponible para alquiler a largo plazo?",
+    "seasonalRental": "Disponible para alquiler vacacional?",
+    "priceRentalMonthlyHighSeason": "Precio de temporada alta",
+    "priceRentalMonthlyLowSeason": "Precio de temporada baja",
+    "priceRentalMonthlyStandardSeason": "Precio de temporada media",
+    "priceRentalMonthlyCurrent": "Precio de alquiler (mensual)",
+    "longTermRentalDiscount": "Descuento en el alquiler",
+    "priceRentalMonthlyOriginal": "Precio original del alquiler (mensual)",
 
 
-    "firstNames": "First Name",
-    "lastNames": "Last Names",
+    "firstNames": "Nombre",
+    "lastNames": "Apellidos",
     "visible": "Visible",
-    "highlighted": "Highlighted",
-    "label": "Label",
-    "companyName": "Company Name",
-    "primaryPhone": "Main phone number",
-    "otherPhone": "Other phone number",
-    "nationality": "Nationality",
-    "documentationType": "Documentation Type",
-    "documentationId": "Documentation Id",
+    "highlighted": "Destacados",
+    "label": "Etiqueta",
+    "companyName": "Nombre de la empresa",
+    "primaryPhone": "Teléfono principal",
+    "otherPhone": "Teléfono 2",
+    "nationality": "Nacionalidad",
+    "documentationType": "Tipo de documento",
+    "documentationId": "Número de documento",
     "email": "Email",
     "fax": "Fax",
     "skype": "Skype",
-    "personTitle": "Title",
+    "personTitle": "Sr, Sra. o similar",
     "description": "Descripción",
-    "title": "Titulo",
+    "title": "Título",
   },
 
   // for header row in property listing
@@ -189,14 +189,14 @@ export default Ember.merge(Ember.copy(en), {
     "translations": "Traduciones",
     "properties": "Propiedades",
     "clientes": "Clientes",
-    "quit": "Go to site"
+    "quit": "Ir a la web"
   },
 
   // the header tabs within each left nav item:
   "agencySections": {
-    "general": "Agency Details",
-    "location": "Location",
-    "user": "User Details"
+    "general": "Detalles de la agencia",
+    "location": "Ubiación",
+    "user": "Usuario"
   },
 
 
@@ -206,7 +206,7 @@ export default Ember.merge(Ember.copy(en), {
     "description": "descripción",
     "extras": "Extras",
     "photos": "Fotos",
-    "sale": "Sale / Rental",
+    "sale": "Venta / Alquiler",
     "owner": "Proprietario"
   },
 
@@ -214,7 +214,7 @@ export default Ember.merge(Ember.copy(en), {
     "sale": "Venta",
     "longtermRental": "Alquiler de larga duración",
     "seasonalRental": "Alquiler de temporada",
-    "visibility": "Visibility",
+    "visibility": "Visibilidad",
     "generalData": "Datos Generales",
     "characteristics": "Características",
     "portals": "Portales",
@@ -223,22 +223,22 @@ export default Ember.merge(Ember.copy(en), {
 
   "translationsSections": {
     "extras": "Extras",
-    "propertyTypes": "Property Tipos",
-    "propertyOrigins": "Property Origen",
-    "propertyStates": "Property Estado",
-    "propertyLabels": "Property Labels",
+    "propertyTypes": "Tipos de propiedades",
+    "propertyOrigins": "Orígenes de propiedades",
+    "propertyStates": "Estados de propiedades",
+    "propertyLabels": "Etiquetas",
     "provinces": "Provincias"
   },
 
   "toolTips": {
-    "forSale": "forSale",
-    "priceSaleCurrent": "priceSaleCurrent",
-    "saleDiscount": "saleDiscount",
-    "priceSaleOriginal": "priceSaleOriginal",
-    "longTermRental": "longTermRental",
-    "priceRentalMonthlyCurrent": "priceRentalMonthlyCurrent",
-    "longTermRentalDiscount": "longTermRentalDiscount",
-    "priceRentalMonthlyOriginal": "priceRentalMonthlyOriginal",
+    "forSale": "venta",
+    "priceSaleCurrent": "Precio de venta",
+    "saleDiscount": "Descuento",
+    "priceSaleOriginal": "Precio original",
+    "longTermRental": "Alquiler a largo plazo",
+    "priceRentalMonthlyCurrent": "Precio (mensual)",
+    "longTermRentalDiscount": "Descuento precio alquiler",
+    "priceRentalMonthlyOriginal": "Precio de alquiler original",
 
 
     "addNew": "Añadir nuevo",
@@ -259,40 +259,40 @@ export default Ember.merge(Ember.copy(en), {
 
 
 
-  "some.translation.key": "Text for some.translation.key",
+  "some.translation.key": "Texto para some.translation.key",
   "a": {
     "nested": {
-      "key": "Text for a.nested.key"
+      "key": "Texto para a.nested.key"
     }
   },
 
-  "key.with.interpolation": "Text with {{anInterpolation}}",
+  "key.with.interpolation": "Texto con {{anInterpolation}}",
 
   errors: {
-    inclusion: "is not included in the list",
-    exclusion: "is reserved",
-    invalid: "is invalid",
-    confirmation: "doesn't match {{attribute}}",
-    accepted: "must be accepted",
-    empty: "can't be empty",
-    blank: "can't be blank",
-    present: "must be blank",
-    tooLong: "is too long (maximum is {{count}} characters)",
-    tooShort: "is too short (minimum is {{count}} characters)",
-    wrongLength: "is the wrong length (should be {{count}} characters)",
-    notANumber: "is not a number",
-    notAnInteger: "must be an integer",
-    greaterThan: "must be greater than {{count}}",
-    greaterThanOrEqualTo: "must be greater than or equal to {{count}}",
-    equalTo: "must be equal to {{count}}",
-    lessThan: "must be less than {{count}}",
-    lessThanOrEqualTo: "must be less than or equal to {{count}}",
-    otherThan: "must be other than {{count}}",
-    odd: "must be odd",
-    even: "must be even",
+    inclusion: "no está en la lista",
+    exclusion: "está reservado",
+    invalid: "no es válido",
+    confirmation: "no concuerda con {{attribute}}",
+    accepted: "debe ser aceptado",
+    empty: "no puede estar vacío",
+    blank: "no puede estar en blanco",
+    present: "debe estar en blanco",
+    tooLong: "es demasiado largo (maximo {{count}} caracteres)",
+    tooShort: "is too short (mínimo {{count}} caracteres)",
+    wrongLength: "longitud del texto incorrecta (deben ser {{count}} caracteres)",
+    notANumber: "no es un número",
+    notAnInteger: "debe ser un número entero",
+    greaterThan: "debe ser mayor que {{count}}",
+    greaterThanOrEqualTo: "debe ser mayor o igual que {{count}}",
+    equalTo: "debe ser igual a {{count}}",
+    lessThan: "debe ser menor que {{count}}",
+    lessThanOrEqualTo: "debe ser menor o igual que {{count}}",
+    otherThan: "debe ser diferente a {{count}}",
+    odd: "must be par",
+    even: "must be impar",
     // below for validatejs - will need to figure out a way to do interpolation:
-    tooShortVjs: "is too short",
-    notAUrlVjs: "is not a valid URL",
+    tooShortVjs: "es demasiado corto",
+    notAUrlVjs: "no es una URL válida",
   },
   
   // some of these are in server side translations that come from seed file for each tenant
@@ -305,7 +305,7 @@ export default Ember.merge(Ember.copy(en), {
     // "landingPageHeroEs": "Contenido para pagina principal en Español"
   },
   "webContentSections": {
-    "legal": "Legal",
+    "legal": "Aviso Legal",
     "general": "General",
   }
 });
