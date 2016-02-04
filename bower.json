@@ -24,6 +24,7 @@
     "summernote": "~0.6.16",
     "validate": "~0.9.0",
     "bootstrap-sweetalert": "~0.4.5",
-    "datatables": "~1.10.10"
+    "datatables": "~1.10.10",
+    "Sortable": "~1.4.2"
   }
 }

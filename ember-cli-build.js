@@ -137,6 +137,8 @@ module.exports = function(defaults) {
 
   app.import('bower_components/validate/validate.js');
 
+  app.import('bower_components/sortable/Sortable.js');
+
   // // app.import('vendor/preloadstore.js');
   // app.import('vendor/i18n.js');
   // app.import('vendor/translations.js');

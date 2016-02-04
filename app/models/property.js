@@ -3,6 +3,28 @@ import DS from 'ember-data';
 import PropertyPhoto from "../models/property-photo";
 
 export default DS.Model.extend({
+  orderPropertyPhotos: function(orderedPhotoIds, complete, error) {
+    var data = {
+      ordered_photo_ids: orderedPhotoIds
+    };
+    var self = this;
+    var apiUrl = "/api/v1/properties/" + this.get("id") + "/order_photos";
+    return $.ajax(apiUrl, {
+      type: 'PUT',
+      dataType: 'json',
+      data: data
+    }).then(function(result) {
+      // self.set("geo", result);
+      if (complete) {
+        // self.set('posts', result.posts);
+        complete(result);
+      }
+    }, function(result) {
+      if (error) {
+        error(result);
+      }
+    });
+  },
   addPhotosFromUrls: function(remoteUrls, complete, error) {
     var data = {
       remote_urls: remoteUrls
@@ -95,14 +117,15 @@ export default DS.Model.extend({
   photos: DS.attr({
     dontSerialize: true
   }),
-  photoModels: Ember.computed('photos', function() {
+
+  orderedPropertyPhotos: Ember.computed('photos', function() {
     var photos = this.get("photos");
     var photoModels = [];
     photos.forEach(function(photo) {
       // console.log(photoModels);
       photoModels.push(PropertyPhoto.create(photo));
     }.bind(this));
-    return photoModels;
+    return photoModels.sortBy("number");
   }),
 
   owner: DS.attr({

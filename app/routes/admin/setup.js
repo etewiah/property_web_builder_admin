@@ -2,11 +2,15 @@ import Ember from 'ember';
 import Agency from '../../models/agency';
 
 export default Ember.Route.extend({
+  // i18n: Ember.inject.service(),
+
   model(params) {
+      // var i18n = this.get('i18n');
+      var lang_code = this.paramsFor("admin").locale || "es";
       return this.store.query("info", {
         filter: {
           key: "welcome",
-          lang_code: "en"
+          lang_code: lang_code
         }
       });
       // return this.store.findAll('webContent'); 
