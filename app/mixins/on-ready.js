@@ -31,7 +31,7 @@ export default Ember.Mixin.create({
       $('.fg-float .form-control').each(function() {
         var i = $(this).val();
 
-        if (!(i.length === 0)) {
+        if (i.length !== 0) {
           $(this).closest('.fg-line').addClass('fg-toggled');
         }
 

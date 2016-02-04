@@ -60,7 +60,9 @@ export default Ember.merge(Ember.copy(en), {
     "navigatingFromChanges": "Tienes cambios sin guardar. Por favor, pulsa guardar o cancelar.",
     "visibleProperties": "Estas son las propiedades que están visibles en tu web",
     "hiddenProperties": "Estas propiedades NO están visibles en tu web",
-    "clickMapToUpdate": "Pincha en el mapa para actualizar la ubicación de la propiedad."
+    "clickMapToUpdate": "Pincha en el mapa para actualizar la ubicación de la propiedad.",
+    "mainPhoto": "La primera foto es la foto principal.",
+    "orderByDragging": "Pinche y arrastre sobre la fila para ordenar."
   },
 
   "datatables": {

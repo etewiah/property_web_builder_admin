@@ -60,7 +60,9 @@ export default {
     "navigatingFromChanges": "You have unsaved changes. Please save or cancel your changes.",
     "visibleProperties": "These properties are visible on your website",
     "hiddenProperties": "These properties will not be shown on your website",
-    "clickMapToUpdate": "Click on map to select address or type directly below."
+    "clickMapToUpdate": "Click on map to select address or type directly below.",
+    "mainPhoto": "The first photo will be the main photo.",
+    "orderByDragging": "Drag and drop to order photos."
   },
 
   "datatables": {

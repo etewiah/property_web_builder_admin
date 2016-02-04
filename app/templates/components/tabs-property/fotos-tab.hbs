@@ -1,91 +1,42 @@
 {{#if isActive}}
 <div role="tabpanel" class="tab-pane" id="descripcion">
   <div class="row">
+    <div class="col-sm-2">
     <p><a class="btn btn-edfile">{{t "addPhotos"}}
             {{#upload/x-droplet url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} 
             {{/upload/x-droplet}}
         </a></p>
-    <div class="col-sm-12">
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-10">
       <div class="alert alert-info alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">×</span></button><i class="fa fa-lg fa-info"></i> Pinche y arrastre sobre la fila para ordenar.
-        <br>La primera foto es la foto principal.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">×</span></button><i class="fa fa-lg fa-info"></i> {{t "alerts.orderByDragging" }}  &nbsp;&nbsp;&nbsp;
+        {{t "alerts.mainPhoto" }}
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <section id="sortable" class="ui-sortable">
-        <div id="id_2" data-id_foto_archivo="" class="ui-state-default ui-sortable-handle" style="position: relative;">
-          <p class="numero_foto">2</p>
-          <div class="thumbnail">
-            <img src="img/300x200.gif" alt="">
-          </div>
-          <button type="button" class="boton_eliminar_foto btn btn-icon command-delete" data-row-id="REK-1040">
-            <span class="md md-delete"></span>
-          </button>
-        </div>
-        <div id="id_1" data-id_foto_archivo="" class="ui-state-default ui-sortable-handle">
-          <p class="numero_foto">1</p>
-          <div class="thumbnail">
-            <img src="img/300x200.gif" alt="">
-          </div>
-          <button type="button" class="boton_eliminar_foto btn btn-icon command-delete" data-row-id="REK-1040">
-            <span class="md md-delete"></span>
-          </button>
-        </div>
-        <div id="id_3" data-id_foto_archivo="" class="ui-state-default ui-sortable-handle">
-          <p class="numero_foto">3</p>
-          <div class="thumbnail">
-            <img src="img/300x200.gif" alt="">
-          </div>
-          <button type="button" class="boton_eliminar_foto btn btn-icon command-delete" data-row-id="REK-1040">
-            <span class="md md-delete"></span>
-          </button>
-        </div>
-      </section>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12" id="sortable-pics">
       {{#each resourceObject.orderedPropertyPhotos as |photo| }}
       <div class="foto_principal" style="height:400px;float:left;" data-id={{ photo.id }}>
-        <div style="max-width: 200px;">
+        <div style="max-width: 270px;">
           <div class="thumbnail">
+
+              <div class="text-center" style="margin-bottom: -40px;">
+                <button type="button" class="btn btn-icon command-delete" {{action "deletePhoto" photo }}>
+                  <span class="md md-delete"></span>
+                </button>
+              </div>
+
+
             <img src={{ photo.image.url }} alt="">
           </div>
         </div>
-        <div class="" style="display:block;">{{ photo.id }}</div>
-        <div class="text-left">
-          <button type="button" class="btn btn-icon command-delete" {{action "deletePhoto" photo }}>
-            <span class="md md-delete"></span>
-          </button>
-        </div>
+        <div class="" style="display:none;">{{ photo.id }}</div>
       </div>
       {{/each}}
     </div>
   </div>
   <div class="row" style="display:none;">
-    <table id="tabla_fotos" cellspacing="0">
-      {{#each resourceObject.orderedPropertyPhotos as |photo| }}
-      <tr data-id_foto="1" id="1" class="foto_principal">
-        <td>
-          <div class="thumbnail">
-            <img src={{ photo.image.url }} alt="">
-          </div>
-        </td>
-        <td class="" style="display:none;">{{ photo.image.url }}</td>
-        <td class="text-left">
-          <button type="button" class="btn btn-icon command-delete" {{action "deletePhoto" photo }}>
-            <span class="md md-delete"></span>
-          </button>
-        </td>
-      </tr>
-      {{/each}}
-    </table>
   </div>
 </div>
 {{/if}}

@@ -17,7 +17,9 @@
     "Discourse",
     "Logster",
     "Droplet",
-    "sweetAlert"
+    "sweetAlert",
+    "swal",
+    "Sortable"
   ],
   "browser": true,
   "boss": true,
