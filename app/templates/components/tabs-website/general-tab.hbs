@@ -27,13 +27,27 @@
         </tr>
       </table>
       {{else}}
-
         <p><a class="btn btn-edfile">{{t "addLogo"}}
            {{#upload/x-droplet-upload-single url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} {{/upload/x-droplet-upload-single}}
         </a></p>
-       
-
       {{/if}}
+
+      <br>
+
+      <h4>Colores</h4>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          <input type="color" class="input-sm form-control fg-input" value="#ff6166">
+        </div>
+        <label class="fg-label">Color principal</label>
+      </div>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          <input type="color" class="input-sm form-control fg-input" value="#f29910">
+        </div>
+        <label class="fg-label">Color secundario</label>
+      </div>
+
     </div>
     <div class="col-sm-6">
       {{#each socialNetworkFields as |fieldDetails|}} 

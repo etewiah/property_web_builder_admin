@@ -82,15 +82,10 @@ export default Ember.Route.extend({
         tabValue: "legal",
         tabTitleKey: "webContentSections.legal"
       }
-
-      // {
-      //       tabValue: "tag-line",
-      //       tabTitleKey: "webContentSections.tagLine"
-      //     }, {
-      //       tabValue: "sell",
-      //       tabTitleKey: "webContentSections.sell"
-      //     },
-
+      // , {
+      //   tabValue: "appearance",
+      //   tabTitleKey: "webContentSections.appearance"
+      // }
 
     ]);
   }

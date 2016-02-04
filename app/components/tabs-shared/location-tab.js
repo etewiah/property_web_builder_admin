@@ -124,19 +124,19 @@ export default TabWithForm.extend({
 
     {
       labelTextTKey: "fieldLabels.hideMap",
-      tooltipTextTKey: "toolTips.hideMap",
+      // tooltipTextTKey: "toolTips.hideMap",
       fieldName: "hideMap",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
     },
 
-    {
-      labelTextTKey: "fieldLabels.obscureMap",
-      tooltipTextTKey: "toolTips.obscureMap",
-      fieldName: "obscureMap",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-    },
+    // {
+    //   labelTextTKey: "fieldLabels.obscureMap",
+    //   tooltipTextTKey: "toolTips.obscureMap",
+    //   fieldName: "obscureMap",
+    //   fieldType: "simpleSelect",
+    //   fieldDbType: "boolean",
+    // },
   ],
   situacionLeftInputFields: [{
       labelTextTKey: "streetAddress",
