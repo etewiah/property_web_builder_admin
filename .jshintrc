@@ -16,7 +16,8 @@
     "moment",
     "Discourse",
     "Logster",
-    "Droplet"
+    "Droplet",
+    "sweetAlert"
   ],
   "browser": true,
   "boss": true,

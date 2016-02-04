@@ -65,7 +65,8 @@ export default Ember.Route.extend({
   },
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.propiedades.editar.tab').tabName || "";
-    controller.set("activeTabName", activeTabName.toLowerCase());
+    activeTabName = activeTabName.toLowerCase();
+    controller.set("activeTabName", activeTabName);
     controller.set("property", this.modelFor('admin.propiedades.editar'));
 
     // controller.set("extrasObject", model);
@@ -78,6 +79,15 @@ export default Ember.Route.extend({
     //   controller.set("fieldKeys", result);
     // }.bind(this));
 
+    // before I would render all the components for the different tabs
+    // and hide or show them depending on which was active
+    // This meant initialization hooks which needed a dom element would fail
+    // var tabsPropertyComponent = "tabs-property/" + activeTabName + "-tab";
+    var tabsPropertyComponent = "tabs-property/general-tab";
+    if (activeTabName === "fotos") {
+      tabsPropertyComponent = "tabs-property/fotos-tab";
+    }
+    controller.set("tabs-property-component", tabsPropertyComponent);
 
     controller.set("tabsList", [{
         tabValue: "general",

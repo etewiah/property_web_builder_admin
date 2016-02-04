@@ -50,7 +50,8 @@ export default Ember.Route.extend({
   // eg if I returned a query that was not dependant on params....
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.content.tab').tabName || "";
-    controller.set("activeTabName", activeTabName.toLowerCase());
+    activeTabName = activeTabName.toLowerCase();
+    controller.set("activeTabName", activeTabName);
 
     controller.set("contentResources", model);
 
@@ -59,8 +60,10 @@ export default Ember.Route.extend({
     // controller.set("currentUser", this.modelFor("admin").currentUser);
 
 
+    // before I would render all the components for the different tabs
+    // and hide or show them depending on which was active
+    // This meant initialization hooks which needed a dom element would fail
     var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
-
     controller.set("tabs-website-component", tabsWebsiteComponent);
 
     // TODO - get below from server:

@@ -41,6 +41,6 @@ export default Ember.Service.extend({
     // } else {
     //   return Site.create({});
     // }
-    return siteJson;
+    return defaultSiteJson;
   }.property()
 });

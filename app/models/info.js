@@ -36,6 +36,7 @@ var Info = DS.Model.extend({
 
 Info.reopenClass({
   get: function() {
+    // todo - set correct locale
     var apiUrl = "/api/v1/es/info";
     return $.ajax(apiUrl, {
       type: 'GET',
@@ -47,6 +48,7 @@ Info.reopenClass({
       var Info = Info.create(result.Info);
       var primaryAddress = MasterAddress.create(result.primary_address);
       var currentUser = User.create(result.current_user);
+      debugger;
       return {
         InfoDetails: Info,
         primaryAddress: primaryAddress,

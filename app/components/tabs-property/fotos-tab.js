@@ -11,18 +11,15 @@ export default Ember.Component.extend({
     }.bind(this));
   },
   setupSortable: function() {
-    debugger;
-    var el = document.getElementById('sortable-pics');
-    this.sortable = new Sortable(el, {
-      // Changed sorting within list
-      onUpdate: this.reactToSortable.bind(this)
-        // function( /**Event*/ evt) {
-        //   debugger;
-        //   var itemEl = evt.item; // dragged HTMLElement
-        //   // + indexes from onEnd
-        // },
-    });
 
+    var el = document.getElementById('sortable-pics');
+    if (el) {
+      this.sortable = new Sortable(el, {
+        // Changed sorting within list
+        onUpdate: this.reactToSortable.bind(this)
+      });
+
+    }
     // not entirely sure if I need this:
     // this._super();
   }.on('didInsertElement'),
