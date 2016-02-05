@@ -37,10 +37,55 @@
       <h4>Colores</h4>
       <div class="form-group fg-float">
         <div class="fg-line has- fg-toggled">
-          <input type="color" class="input-sm form-control fg-input" value="#ff6166">
+          {{spectrum-color-picker
+              color=tenantDetails.style_variables.primary_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+          }}
         </div>
         <label class="fg-label">Color principal</label>
       </div>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          {{spectrum-color-picker
+              color=tenantDetails.style_variables.secondary_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+          }}
+        </div>
+        <label class="fg-label">Color secundario</label>
+      </div>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          {{spectrum-color-picker
+              color=tenantDetails.style_variables.action_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+          }}
+        </div>
+        <label class="fg-label">Color acc</label>
+      </div>
+
+
+      <h4>lll</h4>
+      <div class="form-group fg-float">
+        <div class="fg-line">
+          <label class="radio radio-inline m-r-20">
+            <input type="radio" name=wide value=true>
+            <i class="input-helper"></i>{{t "true"}}
+          </label>
+          <label class="radio radio-inline m-r-20">
+            <input type="radio" name=narrow value=false>
+            <i class="input-helper"></i>{{t "false"}}
+          </label>
+        </div>
+      </div>
+
+
+
       <div class="form-group fg-float">
         <div class="fg-line has- fg-toggled">
           <input type="color" class="input-sm form-control fg-input" value="#f29910">
@@ -50,6 +95,8 @@
 
     </div>
     <div class="col-sm-6">
+      <h4>{{t "logo"}}</h4> 
+
       {{#each socialNetworkFields as |fieldDetails|}} 
 
         {{forms/social-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=fieldDetails resourceObject=resourceObject}}

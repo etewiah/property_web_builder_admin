@@ -10,6 +10,12 @@ export default TabWithForm.extend(OnReadyMixin, {
   // languages: ["En", "Es"],
   changedFields: [],
   actions: {
+    updateAppearance: function(){
+      var tenantDetails = this.get("tenantDetails");
+      tenantDetails.save(function(successResponse) {
+        debugger;
+      }.bind(this));
+    },
     addPhotosFromUrls: function(remoteUrls) {
       // not yet in use.....
       // TODO - validate remote urls..

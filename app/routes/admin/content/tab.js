@@ -56,6 +56,7 @@ export default Ember.Route.extend({
     controller.set("contentResources", model);
 
     controller.set("agencyDetails", this.modelFor("admin").agencyDetails);
+    controller.set("tenantDetails", this.modelFor("admin").tenantDetails);
     // controller.set("primaryAddress", this.modelFor("admin").primaryAddress);
     // controller.set("currentUser", this.modelFor("admin").currentUser);
 
