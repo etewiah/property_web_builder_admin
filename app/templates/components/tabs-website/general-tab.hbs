@@ -38,10 +38,12 @@
       <div class="form-group fg-float">
         <div class="fg-line has- fg-toggled">
           {{spectrum-color-picker
+              showPalette=true
               color=tenantDetails.style_variables.primary_color
               onChange=(action "updateAppearance")
               showInput=true
               preferredFormat="hex3"
+              palette='[["#e91b23","#563d7c"],["#3498db","#8ec449"],["#f1c40f","#d35400"]]'
           }}
         </div>
         <label class="fg-label">{{t "inTabLabels.colorPrimary"}}</label>
@@ -49,10 +51,12 @@
       <div class="form-group fg-float">
         <div class="fg-line has- fg-toggled">
           {{spectrum-color-picker
+              showPalette=true
               color=tenantDetails.style_variables.secondary_color
               onChange=(action "updateAppearance")
               showInput=true
               preferredFormat="hex3"
+              palette='[["#e91b23","#563d7c"],["#3498db","#8ec449"],["#f1c40f","#d35400"]]'
           }}
         </div>
         <label class="fg-label">{{t "inTabLabels.colorSecondary"}}</label>
@@ -60,10 +64,12 @@
       <div class="form-group fg-float">
         <div class="fg-line has- fg-toggled">
           {{spectrum-color-picker
+              showPalette=true
               color=tenantDetails.style_variables.action_color
               onChange=(action "updateAppearance")
               showInput=true
               preferredFormat="hex3"
+              palette='[["#e91b23","#563d7c"],["#3498db","#8ec449"],["#f1c40f","#d35400"]]'
           }}
         </div>
         <label class="fg-label">{{t "inTabLabels.colorActions"}}</label>

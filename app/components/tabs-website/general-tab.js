@@ -13,7 +13,6 @@ export default TabWithForm.extend(OnReadyMixin, {
     updateAppearance: function(){
       var tenantDetails = this.get("tenantDetails");
       tenantDetails.save(function(successResponse) {
-        debugger;
       }.bind(this));
     },
     addPhotosFromUrls: function(remoteUrls) {

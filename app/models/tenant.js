@@ -6,7 +6,6 @@ var Tenant = Ember.Object.extend({
     // var data = {
     //   address: TenantProperties
     // };
-    debugger;
     var self = this;
     var apiUrl = '/api/v1/tenant';
     return $.ajax(apiUrl, {
