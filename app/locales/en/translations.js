@@ -5,6 +5,7 @@
 //
 export default {
 
+  "": "",
   "en": "English",
   "es": "Spanish",
 
@@ -209,6 +210,11 @@ export default {
     "colorPrimary": "Primary Color",
     "colorSecondary": "Secondary Color",
     "colorActions": "Actions Color",
+  },
+
+  "siteLayout": {
+    "wide": "Wide",
+    "boxed": "Boxed"
   },
 
   "propertySections": {

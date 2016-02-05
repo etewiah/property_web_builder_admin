@@ -11,7 +11,7 @@
             <div class="thumbnail">
               <img src={{ logoPhoto.image.url }} alt="">
             </div>
-            <div class="hidden-xs">{{ logoPhoto.image.url }}</div>
+            <div class="" style="display:none;">{{ logoPhoto.image.url }}</div>
           </td>
           <td class="text-left">
 
@@ -77,19 +77,7 @@
 
 
       <h4>{{t "inTabLabels.siteLayout"}}</h4>
-      <div class="form-group fg-float">
-        <div class="fg-line">
-          <label class="radio radio-inline m-r-20">
-            <input type="radio" name=wide value=true>
-            <i class="input-helper"></i>{{t "true"}}
-          </label>
-          <label class="radio radio-inline m-r-20">
-            <input type="radio" name=narrow value=false>
-            <i class="input-helper"></i>{{t "false"}}
-          </label>
-        </div>
-      </div>
-
+    {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=siteLayoutField resourceObject=tenantDetails.style_variables fieldKeys=siteLayoutFieldKeys }}
 
     </div>
     <div class="col-sm-6">

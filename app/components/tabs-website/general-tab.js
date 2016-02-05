@@ -9,11 +9,22 @@ import TabWithForm from "../base/tab-with-form";
 export default TabWithForm.extend(OnReadyMixin, {
   // languages: ["En", "Es"],
   changedFields: [],
+  siteLayoutField: {
+    labelTextTKey: "",
+    fieldName: "body_style",
+    fieldType: "dynamicSelect",
+    optionsKey: "layoutLabels",
+  },
+  siteLayoutFieldKeys: {
+    layoutLabels: [
+      "siteLayout.wide",
+      "siteLayout.boxed"
+    ]
+  },
   actions: {
-    updateAppearance: function(){
+    updateAppearance: function() {
       var tenantDetails = this.get("tenantDetails");
-      tenantDetails.save(function(successResponse) {
-      }.bind(this));
+      tenantDetails.save(function(successResponse) {}.bind(this));
     },
     addPhotosFromUrls: function(remoteUrls) {
       // not yet in use.....
@@ -35,7 +46,7 @@ export default TabWithForm.extend(OnReadyMixin, {
       // Uncaught Error: Assertion Failed: calling set on destroyed object
       // TODO - try fixing - perhaps with a refresh count property which
       // aboutUsPhot can observe.....
-      this.set("logoPhoto",  ContentPhoto.create(response));
+      this.set("logoPhoto", ContentPhoto.create(response));
     },
     // deletePhoto: function(photo) {
     //   photo.remove(function(success) {
@@ -70,14 +81,14 @@ export default TabWithForm.extend(OnReadyMixin, {
     fieldName: "social_media.facebook",
     title: "Facebook",
     class: "fa fa-facebook fa-2x"
-    // tooltipTextTKey: false,
-    // constraints: {
-    //   inputValue: {
-    //     url: {
-    //       message: "errors.notAUrlVjs"
-    //     }
-    //   }
-    // }
+      // tooltipTextTKey: false,
+      // constraints: {
+      //   inputValue: {
+      //     url: {
+      //       message: "errors.notAUrlVjs"
+      //     }
+      //   }
+      // }
   }, {
     fieldName: "social_media.twitter",
     title: "Twitter",
@@ -115,14 +126,18 @@ export default TabWithForm.extend(OnReadyMixin, {
   editPhotoEndpoint: function() {
     // var photoId = 0;
     var contentResources = this.get("contentResources");
-    var logoPhoto = contentResources.findBy("key", "logo").get("photoModels.firstObject") || {id: 0};
-    var editPhotoEndpoint = "/api/v1/web_contents/photos/" + logoPhoto.id ;
+    var logoPhoto = contentResources.findBy("key", "logo").get("photoModels.firstObject") || {
+      id: 0
+    };
+    var editPhotoEndpoint = "/api/v1/web_contents/photos/" + logoPhoto.id;
     return editPhotoEndpoint;
   }.property("resourceObject.id"),
 
   addPhotoEndpoint: function() {
     var contentResources = this.get("contentResources");
-    var logoContent = contentResources.findBy("key", "logo") || {id: 0};
+    var logoContent = contentResources.findBy("key", "logo") || {
+      id: 0
+    };
     var addPhotoEndpoint = "/api/v1/web_contents/" + logoContent.id + "/photo";
     return addPhotoEndpoint;
   }.property("resourceObject.id"),

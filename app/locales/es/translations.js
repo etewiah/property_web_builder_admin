@@ -5,6 +5,7 @@ import en from "../en/translations";
 
 export default Ember.merge(Ember.copy(en), {
 
+  "": "",
   "en": "Ingles",
   "es": "Español",
 
@@ -209,6 +210,11 @@ export default Ember.merge(Ember.copy(en), {
     "colorPrimary": "Color principal",
     "colorSecondary": "Color secundario",
     "colorActions": "Color acciones",
+  },
+
+  "siteLayout": {
+    "wide": "Panorámico",
+    "boxed": "Encajada"
   },
 
   "propertySections": {

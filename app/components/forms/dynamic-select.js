@@ -31,6 +31,7 @@ export default Ember.Component.extend({
     return fieldOptions.sortBy("label");
   }.property(),
   setupComponent: function() {
+    debugger;
     this.$(".ayuda").tooltip();
     // resourceObject obect contains the fields and current value of each field
     // find current value of the field we need to render
