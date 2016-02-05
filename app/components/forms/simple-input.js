@@ -4,6 +4,37 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   // classNames: ['form-group', 'fg-float'],
 
+  lostFocus: function() {
+    // fixes bug where unable to leave page with error in field
+    // but unable to cancel changes either
+    var errors = this.get("errors");
+    if (errors && errors.length > 0) {
+      var originalValue = this.get("originalValue") || "";
+      var fieldName = this.get("fieldDetails.fieldName");
+
+      this.sendAction("valueChangedAction", {
+        hasErrors: false,
+        hasChanged: false,
+        fieldName: fieldName,
+        originalValue: originalValue
+      });
+    }
+    // http://stackoverflow.com/questions/27894296/detect-focusout-of-entire-component
+
+    // if (this.get('isOpen')) {
+    //   Em.run.later(this, function() {
+    //     var focussedElement = document.activeElement;
+    //     var isFocussedOut = this.$().has(focussedElement).length === 0 && !this.$().is(focussedElement);
+
+    //     if (isFocussedOut) {
+    //       this.closeOptions({
+    //         focus: false
+    //       });
+    //     }
+    //   }, 0);
+    // }
+  }.on('focusOut'),
+
   activateTooltip: function() {
     this.$(".ayuda").tooltip();
     // this.set("inputValue", this.get("resourceObject." + this.fieldDetails.fieldName));
