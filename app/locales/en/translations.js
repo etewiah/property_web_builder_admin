@@ -201,6 +201,15 @@ export default {
     "user": "User Details"
   },
 
+  // labels with a tab:
+  "inTabLabels": {
+    "colors": "Colours",
+    "socialLinks": "Social Links",
+    "siteLayout": "Site Layout",
+    "colorPrimary": "Primary Color",
+    "colorSecondary": "Secondary Color",
+    "colorActions": "Actions Color",
+  },
 
   "propertySections": {
     "general": "General",

@@ -1,17 +1,17 @@
-<div class="col-sm-12" style="padding-bottom: 3%;">
+<div class="col-sm-12" style="">
 
-  <h4>{{t languageSettings.titleLabelKey }}  <span class="sele-idioma">{{t languageSettings.languageKey }}</span></h4>
+  <h4>{{t languageSettings.titleLabelKey }}  <span class="in-lang">({{t languageSettings.languageKey }})</span></h4>
   {{#if isEditing}}
     <div>
-      {{input value=titleValue type="text"  class="input-sm form-control fg-input"  }}
+      {{input value=titleValue type="text"  class="input input-md form-control fg-input"  }}
     </div>
   {{else}}
-    <div style="">
-      {{input value=titleValue type="text" readonly=true  class="input-sm form-control fg-input"  }}
+    <div style="font-size:larger;">
+      {{ titleValue }}
     </div>
   {{/if}}
 
-  <h4>{{t languageSettings.descriptionLabelKey }}  <span class="sele-idioma">{{t languageSettings.languageKey }}</span></h4>
+  <h4>{{t languageSettings.descriptionLabelKey }}  <span class="in-lang">({{t languageSettings.languageKey }})</span></h4>
   {{#if isEditing}}
     <div>
      {{wysiwyg-editor content=descriptionValue header="Example"}}
@@ -22,7 +22,7 @@
     </div>
   {{/if}}
 </div>
-<div class="col-sm-12" style="">
+<div class="col-sm-12" style="padding-bottom: 3%;">
   <div>
     {{#if isEditing}}
       <button type="submit" class="pull-left btn btn-primary btn-sm m-b-10 waves-effect" {{action "saveContentItem" contentItem }}>

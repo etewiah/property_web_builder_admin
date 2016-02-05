@@ -18,7 +18,7 @@ export default Ember.merge(Ember.copy(en), {
   "create": "Crear",
   "show": "Mostrar",
   "hide": "Ocultar",
-  "logo": "Logo",
+  "logo": "Logotipo",
   "aboutUsPhoto": "Foto sección Sobre Nosotros",
   "addAboutUsPhoto": "Añadif foto sección Sobre Nosotros",
 
@@ -201,6 +201,15 @@ export default Ember.merge(Ember.copy(en), {
     "user": "Usuario"
   },
 
+  // labels with a tab:
+  "inTabLabels": {
+    "colors": "Colores",
+    "socialLinks": "Redes sociales",
+    "siteLayout": "Modo de visualización",
+    "colorPrimary": "Color principal",
+    "colorSecondary": "Color secundario",
+    "colorActions": "Color acciones",
+  },
 
   "propertySections": {
     "general": "General",

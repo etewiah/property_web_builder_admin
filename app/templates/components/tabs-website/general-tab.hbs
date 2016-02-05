@@ -34,7 +34,7 @@
 
       <br>
 
-      <h4>Colores</h4>
+      <h4>{{t "inTabLabels.colors"}}</h4>
       <div class="form-group fg-float">
         <div class="fg-line has- fg-toggled">
           {{spectrum-color-picker
@@ -44,7 +44,7 @@
               preferredFormat="hex3"
           }}
         </div>
-        <label class="fg-label">Color principal</label>
+        <label class="fg-label">{{t "inTabLabels.colorPrimary"}}</label>
       </div>
       <div class="form-group fg-float">
         <div class="fg-line has- fg-toggled">
@@ -55,7 +55,7 @@
               preferredFormat="hex3"
           }}
         </div>
-        <label class="fg-label">Color secundario</label>
+        <label class="fg-label">{{t "inTabLabels.colorSecondary"}}</label>
       </div>
       <div class="form-group fg-float">
         <div class="fg-line has- fg-toggled">
@@ -66,11 +66,11 @@
               preferredFormat="hex3"
           }}
         </div>
-        <label class="fg-label">Color acc</label>
+        <label class="fg-label">{{t "inTabLabels.colorActions"}}</label>
       </div>
 
 
-      <h4>lll</h4>
+      <h4>{{t "inTabLabels.siteLayout"}}</h4>
       <div class="form-group fg-float">
         <div class="fg-line">
           <label class="radio radio-inline m-r-20">
@@ -85,17 +85,9 @@
       </div>
 
 
-
-      <div class="form-group fg-float">
-        <div class="fg-line has- fg-toggled">
-          <input type="color" class="input-sm form-control fg-input" value="#f29910">
-        </div>
-        <label class="fg-label">Color secundario</label>
-      </div>
-
     </div>
     <div class="col-sm-6">
-      <h4>{{t "logo"}}</h4> 
+      <h4>{{t "inTabLabels.socialLinks"}}</h4>
 
       {{#each socialNetworkFields as |fieldDetails|}} 
 
