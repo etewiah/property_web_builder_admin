@@ -1,0 +1,36 @@
+<div role="tabpanel" class="tab-pane">
+  <div class="row" id="sortable-carousel">
+      {{#each contentResources as |landingCarouselContent| }}
+    <div class="col-sm-12" id="sortable-pics">
+      <div class="foto_principal" style="height:400px;float:left;width: 49%;" data-id={{ landingCarouselContent.id }}>
+        <div style="">
+          <div class="thumbnail">
+
+              <div class="text-center" style="margin-bottom: -40px;">
+                <button type="button" class="btn btn-icon command-delete" {{action "deleteCarouselItem" landingCarouselContent }}>
+                  <span class="md md-delete"></span>
+                </button>
+              </div>
+
+
+            <img src={{ landingCarouselContent.primaryPhotoModel.image.url }} alt="">
+          </div>
+        </div>
+        <div class="" style="display:block;">{{ landingCarouselContent.id }}</div>
+      </div>
+        <div class="" style="float:left;">
+          {{#each languages as |languageSettings|}} 
+            {{forms/content-item languageSettings=languageSettings contentItem=landingCarouselContent saveContentItemAction="saveContentItem"}} 
+          {{/each}} 
+        </div>
+    </div>
+      {{/each}}
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+        <p><a class="btn btn-edfile">{{t "addPhotos"}}
+           {{#upload/x-droplet-upload-single url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshCarouselItems"}} {{/upload/x-droplet-upload-single}}
+        </a></p>
+    </div>
+  </div>
+</div>

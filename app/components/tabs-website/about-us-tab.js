@@ -61,8 +61,5 @@ export default Ember.Component.extend({
     return addPhotoEndpoint;
   }.property("contentResources"),
 
-  // isVisible: function() {
-  //   return this.get("activeTabName").toLowerCase() === "about-us";
-  // }.property("activeTabName"),
 
 });

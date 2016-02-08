@@ -82,8 +82,8 @@ export default Ember.Component.extend({
   }.property("resourceObject.id"),
 
 
-  isVisible: function() {
-    return this.get("activeTabName").toLowerCase() === "home";
-  }.property("activeTabName"),
+  // isVisible: function() {
+  //   return this.get("activeTabName").toLowerCase() === "home";
+  // }.property("activeTabName"),
 
 });

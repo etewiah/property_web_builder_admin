@@ -17,9 +17,4 @@ export default Ember.Component.extend({
   },
 
 
-
-  // isVisible: function() {
-  //   return this.get("activeTabName").toLowerCase() === "legal";
-  // }.property("activeTabName"),
-
 });
