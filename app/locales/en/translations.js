@@ -318,12 +318,15 @@ export default {
     "suffixEs": "en Español",
     "privacyPolicy": "Privacy Policy",
     "legalAdvice": "Legal Advice",
+    "landingcarousel": "Text for carousel image"
     // "tagLine": "Lema"
     // "landingPageHeroEs": "Contenido para pagina principal en Español"
   },
   "webContentSections": {
     "legal": "Legal",
     "general": "General",
+    "landingCarousel": "Landing Page Carousel",
+    "home": "Home"
   }
 };
 

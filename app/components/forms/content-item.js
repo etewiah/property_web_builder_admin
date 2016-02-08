@@ -1,3 +1,5 @@
+// This component is designed to handle the data used by 
+// web-content model
 import Ember from 'ember';
 
 export default Ember.Component.extend({

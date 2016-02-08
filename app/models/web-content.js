@@ -27,7 +27,8 @@ export default DS.Model.extend({
   },
   labelKey: Ember.computed('key', {
     get() {
-      return "webContentLabels." + this.get("key");
+      var suffix = this.get("key") || this.get("tag").replace("-", "");
+      return "webContentLabels." + suffix;
     }
   }),
   // tTipoPropiedad: Ember.computed('i18n.locale', 'tipoPropiedad', function() {
