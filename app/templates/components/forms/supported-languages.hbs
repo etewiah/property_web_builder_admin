@@ -1,0 +1,12 @@
+{{#if errors}}
+{{#each errors as |error|}}
+<div class="fg-float has-error">
+  <div class="help-block has-error">{{t error }}</div>  
+</div>
+{{/each}}
+{{/if}}
+{{#each languageFields as |languageField|}} 
+<div class="form-group fg-float">
+  {{forms/simple-boolean  resetTrigger=resetTrigger valueChangedAction="changeSupportedLanguage"  fieldDetails=languageField resourceObject=languageOptions }}
+</div>
+{{/each}}

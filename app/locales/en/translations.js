@@ -8,6 +8,8 @@ export default {
   "": "",
   "en": "English",
   "es": "Spanish",
+  "ca": "Catalan",
+  "fr": "French",
 
   "save": "Save",
   "cancel": "Cancel",
@@ -212,6 +214,7 @@ export default {
     "colorPrimary": "Primary Color",
     "colorSecondary": "Secondary Color",
     "colorActions": "Actions Color",
+    "supportedLanguages": "Supported Languages"
   },
 
   "siteLayout": {
@@ -288,6 +291,7 @@ export default {
   "key.with.interpolation": "Text with {{anInterpolation}}",
 
   errors: {
+    languageRequired: "You must select at least one language",
     inclusion: "is not included in the list",
     exclusion: "is reserved",
     invalid: "is invalid",

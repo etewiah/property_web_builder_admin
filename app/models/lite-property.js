@@ -123,8 +123,8 @@ export default DS.Model.extend({
 
   propertyStateKey: DS.attr(),
   propertyTypeKey: DS.attr(),
-  localidad: DS.attr(),
-  precioVenta: DS.attr(),
+  // localidad: DS.attr(),
+  // precioVenta: DS.attr(),
   highlighted: DS.attr(),
   observacionesVenta: DS.attr(),
   // archivado: DS.attr(),
@@ -134,12 +134,7 @@ export default DS.Model.extend({
   yaencontre: DS.attr(),
   pisoscom: DS.attr(),
 
-  localityTitle: DS.attr({
-    dontSerialize: true
-  }),
-  zoneTitle: DS.attr({
-    dontSerialize: true
-// TODO - fix above
-  }),
+  localityTitle: DS.attr(),
+  zoneTitle: DS.attr(),
 
 });

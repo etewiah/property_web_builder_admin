@@ -8,6 +8,8 @@ export default Ember.merge(Ember.copy(en), {
   "": "",
   "en": "Ingles",
   "es": "Español",
+  "ca": "Catala",
+  "fr": "Frances",
 
   "save": "Guardar",
   "cancel": "Cancelar",
@@ -212,6 +214,7 @@ export default Ember.merge(Ember.copy(en), {
     "colorPrimary": "Color principal",
     "colorSecondary": "Color secundario",
     "colorActions": "Color acciones",
+    "supportedLanguages": "Idiomas"
   },
 
   "siteLayout": {
@@ -288,6 +291,7 @@ export default Ember.merge(Ember.copy(en), {
   "key.with.interpolation": "Texto con {{anInterpolation}}",
 
   errors: {
+    languageRequired: "Seleccionar a menos una idioma",
     inclusion: "no está en la lista",
     exclusion: "está reservado",
     invalid: "no es válido",
