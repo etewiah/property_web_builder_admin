@@ -28,12 +28,14 @@ export default Ember.Component.extend({
 
   contentValue: Ember.computed('contentItem', {
     get(key) {
+      var capitalizedLang = this.get("languageSettings").capitalize();
         // return this.get("contentItem.rawEn");
-        return this.get("contentItem.raw" + this.languageSettings);
+        return this.get("contentItem.raw" + capitalizedLang);
       },
     set(key, value) {
+      var capitalizedLang = this.get("languageSettings").capitalize();
       // this.set("contentItem.rawEn", value);
-      this.set("contentItem.raw" + this.languageSettings, value);
+      this.set("contentItem.raw" + capitalizedLang, value);
       return value;
     }
   }),
@@ -44,7 +46,8 @@ export default Ember.Component.extend({
   }),
   labelSuffixKey: Ember.computed('contentItem', {
     get(key) {
-      return "webContentLabels.suffix" + this.get("languageSettings");
+      var capitalizedLang = this.get("languageSettings").capitalize();
+      return "webContentLabels.suffix" + capitalizedLang;
     }
   })
 });

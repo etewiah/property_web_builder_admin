@@ -69,6 +69,9 @@ export default Ember.Route.extend({
     controller.set("activeTabName", activeTabName);
     controller.set("property", this.modelFor('admin.propiedades.editar'));
 
+
+    var supportedLanguages = this.modelFor("admin").tenantDetails.supported_languages || ["es"];
+    controller.set("supportedLanguages", supportedLanguages);
     // controller.set("extrasObject", model);
     // var adminController = this.controllerFor("admin");
     controller.set("fieldKeys", model);

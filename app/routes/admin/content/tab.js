@@ -67,8 +67,8 @@ export default Ember.Route.extend({
     var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
     controller.set("tabs-website-component", tabsWebsiteComponent);
 
-    // TODO - get below from server:
-    controller.set("languages", ["En", "Es"]);
+    var supportedLanguages = this.modelFor("admin").tenantDetails.supported_languages || ["es"];
+    controller.set("languages", supportedLanguages);
 
     controller.set("tabsList", [{
         tabValue: "general",
