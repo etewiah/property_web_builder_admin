@@ -103,6 +103,7 @@ export default {
   "postCode": "Post Code",
   "region": "Region",
   "zone": "Zone", 
+  "locality": "Locality", 
   "country": "Country",
 
   "properties": "Properties",
@@ -135,6 +136,7 @@ export default {
   },
 
   "fieldLabels": {
+    "forSearchWidget": "For search widget",
     "obscureMap": "Hide exact address on website?",
     "hideMap": "Hide map on website?",
     "forSale": "For Sale?",

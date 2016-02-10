@@ -87,6 +87,9 @@ export default Ember.Route.extend({
     if (activeTabName === "fotos") {
       tabsPropertyComponent = "tabs-property/fotos-tab";
     }
+    if (activeTabName === "situacion") {
+      tabsPropertyComponent = "tabs-property/location-tab";
+    }
     controller.set("tabs-property-component", tabsPropertyComponent);
 
     controller.set("tabsList", [{

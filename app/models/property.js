@@ -147,8 +147,6 @@ export default DS.Model.extend({
   streetAddress: DS.attr(),
   streetNumber: DS.attr(),
   postalCode: DS.attr(),
-  locality: DS.attr(),
-  zone: DS.attr(),
   city: DS.attr(),
   region: DS.attr(),
   country: DS.attr(),
@@ -234,13 +232,15 @@ export default DS.Model.extend({
   yaencontre: DS.attr(),
   pisoscom: DS.attr(),
 
-  localityTitle: DS.attr({
-    dontSerialize: true
-  }),
-  zoneTitle: DS.attr({
-    dontSerialize: true
-// TODO - fix above
-  }),
+  localityTitle: DS.attr(),
+  zoneTitle: DS.attr(),
+
+  // localityTitle: DS.attr({
+  //   dontSerialize: true
+  // }),
+  // zoneTitle: DS.attr({
+  //   dontSerialize: true
+  // }),
 
 
   // t.string :origen_propiedad
