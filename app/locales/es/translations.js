@@ -198,7 +198,7 @@ export default Ember.merge(Ember.copy(en), {
   // the header tabs within each left nav item:
   "agencySections": {
     "general": "Detalles de la agencia",
-    "location": "Ubiación",
+    "location": "Ubicación",
     "user": "Usuario"
   },
 
@@ -318,12 +318,15 @@ export default Ember.merge(Ember.copy(en), {
     "suffixEs": "en Español",
     "privacyPolicy": "Texto de la política de privacidad",
     "legalAdvice": "Texto del aviso legal",
+    "landingcarousel": "Texto del slider"
     // "tagLine": "Lema"
     // "landingPageHeroEs": "Contenido para pagina principal en Español"
   },
   "webContentSections": {
     "legal": "Aviso Legal",
     "general": "General",
+    "landingCarousel": "Slider",
+    "home": "Home"
   }
 });
 

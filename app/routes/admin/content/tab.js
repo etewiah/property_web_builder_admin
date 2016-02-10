@@ -77,9 +77,9 @@ export default Ember.Route.extend({
         tabValue: "landing-carousel",
         tabTitleKey: "webContentSections.landingCarousel"
       }, {
-        tabValue: "home",
-        tabTitleKey: "webContentSections.home"
-      }, {
+      //   tabValue: "home",
+      //   tabTitleKey: "webContentSections.home"
+      // }, {
         tabValue: "about-us",
         tabTitleKey: "webContentSections.aboutUs"
       }, {
