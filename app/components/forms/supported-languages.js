@@ -35,13 +35,12 @@ export default Ember.Component.extend({
     fieldName: "en",
     // fieldType: "simpleSelect",
     // fieldDbType: "boolean",
-  }, {
-    labelTextTKey: "ca",
-    // tooltipTextTKey: "toolTips.visible",
-    fieldName: "ca",
-    // fieldType: "simpleSelect",
-    // fieldDbType: "boolean",
-  }],
+  }, 
+  // {
+  //   labelTextTKey: "ca",
+  //   fieldName: "ca",
+  // }
+  ],
   languageOptions: function() {
       var supportedLanguages = this.get("supportedLanguages");
       var languageOptions = {};

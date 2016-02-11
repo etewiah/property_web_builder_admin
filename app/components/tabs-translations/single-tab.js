@@ -8,6 +8,7 @@ export default Ember.Component.extend({
     }
   },
   // TODO - get locales from server
+  // below for inputing new items
   locales: ["en", "es"],
   groupedTranslations1: function() {
     // sortorder below will be a bit random if there are significant differences between languages
