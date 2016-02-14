@@ -19,6 +19,7 @@ export default {
   "addLogo": "Add Logo",
   "addPhotos": "Add Photos",
   "create": "Create",
+  "delete": "Delete",
   "show": "Show",
   "hide": "Hide",
   "logo": "Logo",

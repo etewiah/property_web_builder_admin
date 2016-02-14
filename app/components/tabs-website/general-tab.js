@@ -102,7 +102,7 @@ export default TabWithForm.extend(OnReadyMixin, {
     title: "LinkedIn",
     class: "fa fa-linkedin fa-2x"
   }, {
-    fieldName: "social_media.googleplus",
+    fieldName: "social_media.gplus",
     title: "Google Plus",
     class: "fa fa-google-plus fa-2x"
   }, {

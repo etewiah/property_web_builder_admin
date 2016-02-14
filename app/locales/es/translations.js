@@ -19,6 +19,7 @@ export default Ember.merge(Ember.copy(en), {
   "addLogo": "Añadir Logo",
   "addPhotos": "Añadir Photos",
   "create": "Crear",
+  "delete": "Eliminar",
   "show": "Mostrar",
   "hide": "Ocultar",
   "logo": "Logotipo",
