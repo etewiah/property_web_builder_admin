@@ -321,11 +321,14 @@ export default {
   //fieldLabels.tituloIngles etc are on server side translations but no longer in use 
   // some of these are in server side translations that come from seed file for each tenant
   "webContentLabels": {
-    "suffixEn": "en Inglés",
-    "suffixEs": "en Español",
+    // "suffixEn": "en Inglés",
+    // "suffixEs": "en Español",
     "privacyPolicy": "Privacy Policy",
     "legalAdvice": "Legal Advice",
-    "landingcarousel": "Text for carousel image"
+    "landingcarousel": "Text for carousel image",
+    "cac1": "Column 1",
+    "cac2": "Column 2",
+    "cac3": "Column 3",
     // "tagLine": "Lema"
     // "landingPageHeroEs": "Contenido para pagina principal en Español"
   },
