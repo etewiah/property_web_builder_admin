@@ -47,6 +47,10 @@ export default Ember.merge(Ember.copy(en), {
     "changeLang": "Cambiar los idiomas de mi web",
     "changeLangPrompt": "Web / Configuración de la web",
     "changeLegalText": "Añadir o cambiar textos legales",
+    "manageLandingCarousel": "Gestionar carousel del pagina principal",
+    "changeAboutUsText": "Añadir o cambiar texto 'sobre nosotros'",
+    "managePropertyTypes": "Gestionar tipos de propiedades",
+    "managePropertyExtras": "Gestionar extras de propiedades"
   },
 
   "buttonLabels": {

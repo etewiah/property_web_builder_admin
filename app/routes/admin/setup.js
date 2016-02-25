@@ -36,8 +36,17 @@ export default Ember.Route.extend({
           link: "admin.content.tab",
           icon: "fa fa-desktop fa-2x"
         }, {
+          titleKey: "tasks.manageLandingCarousel",
+          linkParams: "landing-carousel",
+          link: "admin.content.tab",
+          icon: "fa fa-desktop fa-2x"
+        }, {
+          titleKey: "tasks.changeAboutUsText",
+          linkParams: "about-us",
+          link: "admin.content.tab",
+          icon: "fa fa-desktop fa-2x"
+        }, {
           titleKey: "tasks.changeLegalText",
-          // promptKey: "tasks.changeLangPrompt",
           linkParams: "legal",
           link: "admin.content.tab",
           icon: "fa fa-desktop fa-2x"
@@ -55,9 +64,18 @@ export default Ember.Route.extend({
           icon: "fa fa-building-o fa-2x"
         }, {
           titleKey: "tasks.manageProperties",
-          // promptKey: "tasks.managePropertiesPrompt",
           // linkParams: null,
           link: "admin.propiedades.default",
+          icon: "fa fa-building-o fa-2x"
+        }, {
+          titleKey: "tasks.managePropertyExtras",
+          linkParams: "extras",
+          link: "admin.propiedades.settings.tab",
+          icon: "fa fa-building-o fa-2x"
+        }, {
+          titleKey: "tasks.managePropertyTypes",
+          linkParams: "property-types",
+          link: "admin.propiedades.settings.tab",
           icon: "fa fa-building-o fa-2x"
         }]
       }];

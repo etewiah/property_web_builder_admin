@@ -42,11 +42,15 @@ export default {
     "addPropertyPrompt": "properties / Add property",
     "manageProperties": "Manage properties",
     "managePropertiesPrompt": "Properties / Edit property",
-    "changeLogo": "Add or change logo",
+    "changeLogo": "Manage logo, languages and appearance",
     "changeLogoPrompt": "Web Configuration",
     "changeLang": "Change web language",
     "changeLangPrompt": "Web Configuration",
-    "changeLegalText": "Change legalText",
+    "changeLegalText": "Change 'Legal' texts",
+    "manageLandingCarousel": "Manage landing page carousel",
+    "changeAboutUsText": "Change 'About Us' text",
+    "managePropertyTypes": "Manage property types",
+    "managePropertyExtras": "Manage property extras"
   },
 
   "buttonLabels": {
