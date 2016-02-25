@@ -14,9 +14,7 @@
       <ul class="main-menu">
 
       {{#each leftNavItems as |tab|}}
-        <li class={{if (eq tab.tabRoute activeTabRoute) "active"}} >{{#link-to tab.tabRoute }} <i class={{tab.tabIconClass}}></i> 
-          {{t tab.tabTitleKey }}{{/link-to}}
-        </li>  
+        {{left-nav tab=tab activeTabRoute=activeTabRoute}}
       {{/each}}
 
       {{!-- might want to change below to an actual sign-out action --}}

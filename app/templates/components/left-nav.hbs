@@ -1,0 +1,12 @@
+  {{#link-to tab.tabRoute }} <i class={{tab.tabIconClass}}></i> {{t tab.tabTitleKey }}{{/link-to}}
+  {{#if toggled}}
+    <ul class="prop-sub-menu" style="background:white;">
+      {{#each subMenuItems as |subMenuTab|}}
+        <li  >
+        {{#link-to subMenuTab.tabRoute }} <i class={{subMenuTab.tabIconClass}}></i> 
+          {{t subMenuTab.tabTitleKey }}
+        {{/link-to}}
+        </li>  
+      {{/each}}
+    </ul>
+  {{/if}}

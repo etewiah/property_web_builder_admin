@@ -197,7 +197,9 @@ export default {
     "translations": "Translations",
     "properties": "Properties",
     "clientes": "Clients",
-    "quit": "Go To Site"
+    "quit": "Go To Site",
+    "list": "List",
+    "settings": "Settings"
   },
 
   // the header tabs within each left nav item:

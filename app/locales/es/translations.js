@@ -197,7 +197,9 @@ export default Ember.merge(Ember.copy(en), {
     "translations": "Traduciones",
     "properties": "Propiedades",
     "clientes": "Clientes",
-    "quit": "Ir a la web"
+    "quit": "Ir a la web",
+    "list": "Lista",
+    "settings": "Configuración"
   },
 
   // the header tabs within each left nav item:
@@ -326,9 +328,9 @@ export default Ember.merge(Ember.copy(en), {
     "privacyPolicy": "Texto de la política de privacidad",
     "legalAdvice": "Texto del aviso legal",
     "landingcarousel": "Texto del slider",
-    "cac1": "Column 1",
-    "cac2": "Column 2",
-    "cac3": "Column 3",
+    "cac1": "Columna 1",
+    "cac2": "Columna 2",
+    "cac3": "Columna 3",
     // "tagLine": "Lema"
     // "landingPageHeroEs": "Contenido para pagina principal en Español"
   },
@@ -336,7 +338,12 @@ export default Ember.merge(Ember.copy(en), {
     "legal": "Aviso Legal",
     "general": "General",
     "landingCarousel": "Slider",
-    "home": "Home"
+    "home": "Home",
+    "contentAreaCols": "Columnas",
+    "info": {
+      "contentAreaCols": "Columnas del pagina principal"
+    }
+
   }
 });
 
