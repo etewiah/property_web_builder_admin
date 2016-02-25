@@ -17,7 +17,7 @@ export default Ember.Component.extend({
       var contentItem = this.get("contentItem");
       contentItem.rollbackAttributes();
       // debugger;
-      this.set("contentValue", this.get("contentItem.raw" + this.languageSettings));
+      this.set("contentValue", this.get("contentItem.raw" + this.get("languageSettings").capitalize()));
       this.set("isEditing", false);
     },
     previewContent: function(){

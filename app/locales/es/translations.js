@@ -325,7 +325,10 @@ export default Ember.merge(Ember.copy(en), {
     "suffixEs": "en Español",
     "privacyPolicy": "Texto de la política de privacidad",
     "legalAdvice": "Texto del aviso legal",
-    "landingcarousel": "Texto del slider"
+    "landingcarousel": "Texto del slider",
+    "cac1": "Column 1",
+    "cac2": "Column 2",
+    "cac3": "Column 3",
     // "tagLine": "Lema"
     // "landingPageHeroEs": "Contenido para pagina principal en Español"
   },
