@@ -336,7 +336,11 @@ export default {
     "legal": "Legal",
     "general": "General",
     "landingCarousel": "Landing Page Carousel",
-    "home": "Home"
+    "home": "Home",
+    "contentAreaCols": "Columns",
+    "info": {
+      "contentAreaCols": "Columns on the landing page giving an overview of the services you provide"
+    }
   }
 };
 

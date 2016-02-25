@@ -1,11 +1,18 @@
 <div role="tabpanel" class="tab-pane">
-  <div class="row" id="sortable-carousel">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5  style="padding:1%;">
+      {{t "webContentSections.info.contentAreaCols"}}     
+     </h5>
+    </div>
+  </div>
+  <div class="row" >
 
-      {{#each contentResources as |landingCarouselContent| }}
+      {{#each contentResources as |contentAreaItem| }}
     <div class="col-sm-4" >
         <div class="" style="">
           {{#each languages as |languageSettings|}} 
-            {{forms/content-area languageSettings=languageSettings contentItem=landingCarouselContent saveContentItemAction="saveContentItem"}} 
+            {{forms/content-area languageSettings=languageSettings contentItem=contentAreaItem saveContentItemAction="saveContentItem"}} 
           {{/each}} 
         </div>
     </div>

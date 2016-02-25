@@ -1,14 +1,12 @@
-{{!-- {{#each configObject.locales as |localeConfig|}}
-<li>
-  {{#link-to currentRouteName localeConfig class="" }} 
-    {{t localeConfig.locale }}
-  {{/link-to}} 
-</li>
-{{/each}} --}}
 {{#each configObject.locales as |localeConfig|}}
-<li>
+{{!-- <li>
   <a href="#" {{action "changeLanguage" localeConfig.locale }}>
     {{t localeConfig.locale }}
   </a>
 </li>
-{{/each}}
+ --}}
+
+  <li class={{if (eq i18n.locale localeConfig.locale ) "selected"}} >
+    <a class="{{ localeConfig.locale }}" href="#" {{action "changeLanguage" localeConfig.locale }}></a>
+  </li> 
+ {{/each}}
