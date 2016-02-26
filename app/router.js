@@ -63,6 +63,8 @@ Router.map(function() {
         path: "/:tabName"
       });
     });
+    // below route has been superceeded by 
+    // /admin/properties/settings  and can be removed
     this.route("translations", function() {
       this.route("default", {
         path: "/"

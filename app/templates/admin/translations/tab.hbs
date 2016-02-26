@@ -1,8 +1,10 @@
-<div role="tabpanel">
-  <ul data-tab-color="green" class="tab-nav" role="tablist" tabindex="1" style="overflow: hidden; outline: none;">
-{{!--     <li class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a></li>
+{{!-- 
+    // below route has been superceeded by 
+    // /admin/properties/settings  and can be removed
  --}}
 
+<div role="tabpanel">
+  <ul data-tab-color="green" class="tab-nav" role="tablist" tabindex="1" style="overflow: hidden; outline: none;">
     {{#each tabsList as |tab|}}
         <li class={{if (eq tab.tabValue activeTabName) "active"}} >{{#link-to 'admin.translations.tab' tab.tabValue}}{{t tab.tabTitleKey}}{{/link-to}}</li>  
     {{/each}}

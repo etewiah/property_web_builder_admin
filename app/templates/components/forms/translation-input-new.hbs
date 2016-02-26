@@ -1,13 +1,23 @@
-<div class="col-sm-2" style="padding-bottom: 3%;">
+<div class="col-sm-12" style="padding-bottom: 3%;">
 {{#unless isAdding}}
-  <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right" 
+  <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" 
   data-toggle="tooltip" title="{{t "toolTips.addNew"}}"
       {{action "startAdding" }}><i class="fa fa-plus"></i>
   </button>
 {{/unless}}
-</div>
-<div class="col-sm-10" style="padding-top: 3%;padding-bottom:3%;">
+
 {{#if isAdding}}
+  <div class="pull-left" style="">
+    <button type="submit" class="btn btn-sm m-b-10 waves-effect pull-right btn-save-translation" 
+      data-toggle="tooltip" title="{{t "cancel"}}"
+      {{action "cancelAdding" contentItem }}><i class="fa fa-times"></i>
+    </button>
+    <button type="submit" class="btn btn-primary btn-sm m-r-10 m-b-10 waves-effect pull-right btn-save-translation" 
+      data-toggle="tooltip" title="{{t "save"}}"
+      {{action "createTranslationBatch" contentItem }}><i class="fa fa-check"></i>
+    </button>
+  </div>
+
   {{#each newTranslationBatch as |translation|}}
     <div class="fg-line {{if translation.errors 'has-error'}} ">
       <label class="fg-label arriba_label">{{t translation.locale}}:</label>
@@ -20,15 +30,6 @@
       {{/each}}
     {{/if}}
   {{/each}}
-  <div class="pull-right" style="">
-    <button type="submit" class="btn btn-sm m-b-10 waves-effect pull-right btn-save-translation" 
-      data-toggle="tooltip" title="{{t "cancel"}}"
-      {{action "cancelAdding" contentItem }}><i class="fa fa-times"></i>
-    </button>
-    <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect pull-right btn-save-translation" 
-      data-toggle="tooltip" title="{{t "save"}}"
-      {{action "createTranslationBatch" contentItem }}><i class="fa fa-check"></i>
-    </button>
-  </div>
+
 {{/if}}
 </div>

@@ -1,3 +1,6 @@
+//  feb 2016:   // below route has been superceeded by 
+    // /admin/properties/settings  and can be removed
+
 import Ember from 'ember';
 import AdminTranslations from '../../../models/admin_translations';
 

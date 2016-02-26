@@ -10,6 +10,10 @@ export default Ember.merge(Ember.copy(en), {
   "es": "Español",
   "ca": "Catala",
   "fr": "Frances",
+  "ru": "Russo",
+  "nl": "Hollandes",
+  "it": "Italiano",
+  "de": "Alemán",
 
   "save": "Guardar",
   "cancel": "Cancelar",

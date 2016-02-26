@@ -70,9 +70,30 @@ export default Ember.Component.extend({
   }.on('init'),
 
   translationLabel: function() {
-    return this.translationBatch[0].i18n_value;
+    // return this.translationBatch[0].i18n_value;
+    return this.translationBatch.findBy("locale", this.get("i18n.locale")).i18n_value;
   }.property("translationBatch"),
 
+  currentLocaleTranslation: function() {
+    // return this.translationBatch[0].i18n_value;
+    return this.translationBatch.findBy("locale", this.get("i18n.locale"));
+  }.property("translationBatch"),
+
+  alternativeTranslations: function() {
+    // have to do below because when a new supported lang is added, results for it
+    // may not exist on server but I have to ensure there is an input for it..
+    var languages = this.get("languages");
+    var alternativeTranslations = [];
+    var currentLocale = this.get("i18n.locale");
+    languages.forEach(function(language){
+      if (language !== currentLocale) {
+        alternativeTranslations.push(this.translationBatch.findBy("locale",language));
+      }
+    }.bind(this));
+    debugger;
+    return alternativeTranslations;
+    // return this.translationBatch.rejectBy("locale", this.get("i18n.locale"));
+  }.property("translationBatch"),
 
   //  http://blog.abuiles.com/blog/2015/03/30/removing-prototype-extensions-with-ember-watson/
   valueChanged: Ember.observer('translationBatch.@each.i18n_value', 'originalValues.[]', function() {

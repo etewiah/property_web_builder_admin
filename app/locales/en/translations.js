@@ -10,6 +10,10 @@ export default {
   "es": "Spanish",
   "ca": "Catalan",
   "fr": "French",
+  "ru": "Russian",
+  "nl": "Dutch",
+  "it": "Italian",
+  "de": "German",
 
   "save": "Save",
   "cancel": "Cancel",
