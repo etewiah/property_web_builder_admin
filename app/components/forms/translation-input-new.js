@@ -60,6 +60,12 @@ export default Ember.Component.extend({
     this.set("newTranslationBatch", newTranslationBatch);
   },
 
+  // when tabs change, just discard pending new item
+  tabChanged: Ember.observer('batchKey', function() {
+    // debugger;
+    this.setNewTranslationBatch();
+    this.set("isAdding", false);
+  }),
 
   // //  http://blog.abuiles.com/blog/2015/03/30/removing-prototype-extensions-with-ember-watson/
   // valueChanged: Ember.observer('translationBatch.@each.i18n_value', 'originalValues.[]', function() {

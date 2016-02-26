@@ -14,6 +14,7 @@ export default {
   "nl": "Dutch",
   "it": "Italian",
   "de": "German",
+  "pt": "Portuguese",
 
   "save": "Save",
   "cancel": "Cancel",

@@ -1,8 +1,9 @@
 // used in components/tabs-translations/single-tab.hbs
 import Ember from 'ember';
+// import AdminTranslations from "../../models/admin_translations";
 
 export default Ember.Component.extend({
-   i18n: Ember.inject.service(),
+  i18n: Ember.inject.service(),
 
   // seems like isVisible controls visibility of component out of the box
   // instead of actually removing an item from translations array when it
@@ -11,14 +12,13 @@ export default Ember.Component.extend({
   actions: {
     cancelEditing: function() {
       this.set("isEditing", false);
-      this.set("valuesHaveChanged", false);
+      // this.set("valuesHaveChanged", false);
       var originalValues = this.get("originalValues");
       this.get("translationBatch").forEach(function(translation) {
         translation.set("i18n_value", originalValues[translation.locale]);
       });
     },
     removeTranslationItem: function() {
-
       swal({
         title: this.get('i18n').t('alert.deleteItem'),
         // text: "You will not be able to recover this imaginary file!",
@@ -34,29 +34,33 @@ export default Ember.Component.extend({
         firstTranslationInBatch.delete(function(result) {
           if (result.success) {
             this.set("isVisible", false);
-          }
-          else{
+          } else {
             // TODO - handle failure
           }
         }.bind(this));
       }.bind(this));
-
-
-
     },
     saveTranslation: function() {
       var originalValues = this.get("originalValues");
       // TODO - save whole batch in one go
       this.get("translationBatch").forEach(function(translation) {
         if (originalValues[translation.locale] !== translation.i18n_value) {
-          translation.save(function(result) {
-            // if (result.success) {
-            // }
-            originalValues[translation.locale] = translation.i18n_value;
-          }.bind(this));
+          if (translation.id) {
+            translation.save(function(result) {
+              // if (result.success) {
+              // }
+              originalValues[translation.locale] = translation.i18n_value;
+            }.bind(this));
+          } else {
+            translation.set("batch_key", this.get("batchKey"));
+            translation.create(function(result) {
+              originalValues[translation.locale] = translation.i18n_value;
+            }.bind(this));
+          }
         }
         this.set("originalValues", originalValues);
-        this.set("valuesHaveChanged", false);
+        // this.set("valuesHaveChanged", false);
+        this.set("isEditing", false);
       }.bind(this));
     }
   },
@@ -65,32 +69,53 @@ export default Ember.Component.extend({
     this.translationBatch.forEach(function(translation) {
       originalValues[translation.locale] = translation.i18n_value;
     });
+    // var supportedLanguages = this.get("languages");
+    // supportedLanguages.forEach(function(language) {
+    //   var translation = this.translationBatch.findBy("locale", language);
+    //   originalValues[language] = translation ? translation.i18n_value : "";
+    // }.bind(this));
+
     this.set("originalValues", originalValues);
-    // this.$(".ayuda").tooltip();
   }.on('init'),
 
   translationLabel: function() {
-    // return this.translationBatch[0].i18n_value;
-    return this.translationBatch.findBy("locale", this.get("i18n.locale")).i18n_value;
+    var translationLabelItem = this.translationBatch.findBy("locale", this.get("i18n.locale"));
+    if (translationLabelItem) {
+      return translationLabelItem.i18n_value;
+    } else{
+      // in unlikely event of no translation in current locale, use the first
+      return this.translationBatch[0].i18n_value;
+    }
   }.property("translationBatch"),
 
   currentLocaleTranslation: function() {
-    // return this.translationBatch[0].i18n_value;
-    return this.translationBatch.findBy("locale", this.get("i18n.locale"));
+    var supportedLanguages = this.get("languages");
+    // its possible the current locale (admin) is not among the list of 
+    // supportedLanguages for client user interface
+    // Below checks for this:
+    if (supportedLanguages.includes(this.get("i18n.locale"))) {
+      return this.translationBatch.findBy("locale", this.get("i18n.locale"));
+    } else {
+      return null;
+    }
   }.property("translationBatch"),
 
   alternativeTranslations: function() {
     // have to do below because when a new supported lang is added, results for it
     // may not exist on server but I have to ensure there is an input for it..
-    var languages = this.get("languages");
+    var supportedLanguages = this.get("languages");
     var alternativeTranslations = [];
     var currentLocale = this.get("i18n.locale");
-    languages.forEach(function(language){
+    supportedLanguages.forEach(function(language) {
       if (language !== currentLocale) {
-        alternativeTranslations.push(this.translationBatch.findBy("locale",language));
+        var translation = this.translationBatch.findBy("locale", language);
+        //  || AdminTranslations.create({
+        //   locale: language,
+        //   i18n_value: ""
+        // });
+        alternativeTranslations.push(translation);
       }
     }.bind(this));
-    debugger;
     return alternativeTranslations;
     // return this.translationBatch.rejectBy("locale", this.get("i18n.locale"));
   }.property("translationBatch"),
@@ -99,12 +124,14 @@ export default Ember.Component.extend({
   valueChanged: Ember.observer('translationBatch.@each.i18n_value', 'originalValues.[]', function() {
     var originalValues = this.get("originalValues");
     var valuesHaveChanged = false;
+    // debugger;
     this.get("translationBatch").forEach(function(translation) {
       if (originalValues[translation.locale] !== translation.i18n_value) {
+        // debugger;
         valuesHaveChanged = true;
       }
     });
-    this.set("valuesHaveChanged", valuesHaveChanged);
+    // this.set("valuesHaveChanged", valuesHaveChanged);
     this.set("isEditing", valuesHaveChanged);
   }),
 

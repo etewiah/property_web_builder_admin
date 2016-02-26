@@ -1,19 +1,24 @@
 <div class="card">
   <div class="">
     <div class="translation-input-header">
-      {{ currentLocaleTranslation.i18n_value }}
+      <a data-toggle="tooltip" title="{{t " delete "}}" href=""
+        class="pull-left text-danger " {{action "removeTranslationItem" }}><i class="fa fa-trash"></i>
+      </a>
+      {{ translationLabel }}
     </div>
   </div>
   <div class="card-header ch-alt" style="padding: 8px;">
     <div class="" style="margin-top: -25px;">
-      <div class="form-group">
-        <label class="col-sm-2 control-label" style="padding: 5px;">{{t currentLocaleTranslation.locale}}:</label>
-        <div class="col-sm-10">
-          <div class="fg-line {{if errors 'has-error'}} ">
-            {{input value=currentLocaleTranslation.i18n_value type="text" class="input-sm form-control fg-input translation-input" }}
+      {{#if currentLocaleTranslation}}
+        <div class="form-group">
+          <label class="col-sm-2 control-label" style="padding: 5px;">{{t currentLocaleTranslation.locale}}:</label>
+          <div class="col-sm-10">
+            <div class="fg-line {{if errors 'has-error'}} ">
+              {{input value=currentLocaleTranslation.i18n_value type="text" class="input-sm form-control fg-input translation-input" }}
+            </div>
           </div>
         </div>
-      </div>
+      {{/if}}
       {{#each alternativeTranslations as |translation|}}
       <div class="form-group">
         <label class="col-sm-2 control-label" style="padding: 5px;">{{t translation.locale}}:</label>
@@ -26,14 +31,15 @@
       {{/each}}
       <div class="form-group">
         <div class="pull-left">
-          {{#if valuesHaveChanged}}
+          {{#if isEditing}}
           <button type="submit" class="btn btn-sm m-b-10 waves-effect pull-right btn-save-translation" data-toggle="tooltip" title="{{t " cancel "}}" {{action "cancelEditing" }}><i class="fa fa-times"></i>
           </button>
           <button type="submit" class="btn btn-primary btn-sm m-r-10 m-b-10 waves-effect pull-right btn-save-translation" data-toggle="tooltip" title="{{t " save "}}" {{action "saveTranslation" contentItem }}><i class="fa fa-check"></i>
           </button>
-          {{/if}} {{#unless isEditing}}
-          <button type="submit" style="margin-top: 0%;" class="btn btn-sm m-b-10 waves-effect" data-toggle="tooltip" title="{{t " delete "}}" {{action "removeTranslationItem" }}><i class="fa fa-trash"></i>
-          </button>
+          {{/if}} 
+          {{#unless isEditing}}
+{{!--           <button type="submit" style="margin-top: 0%;" class="btn btn-sm m-b-10 waves-effect" data-toggle="tooltip" title="{{t " delete "}}" {{action "removeTranslationItem" }}><i class="fa fa-trash"></i>
+          </button> --}}
           {{/unless}}
         </div>
       </div>

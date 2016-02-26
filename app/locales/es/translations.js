@@ -6,14 +6,15 @@ import en from "../en/translations";
 export default Ember.merge(Ember.copy(en), {
 
   "": "",
-  "en": "Ingles",
+  "en": "Inglés",
   "es": "Español",
-  "ca": "Catala",
-  "fr": "Frances",
-  "ru": "Russo",
-  "nl": "Hollandes",
+  "ca": "Catalán",
+  "fr": "Francés",
+  "ru": "Ruso",
+  "nl": "Hollandés",
   "it": "Italiano",
   "de": "Alemán",
+  "pt": "Portugués",
 
   "save": "Guardar",
   "cancel": "Cancelar",

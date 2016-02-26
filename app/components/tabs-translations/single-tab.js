@@ -1,26 +1,54 @@
 import Ember from 'ember';
-
+import AdminTranslations from "../../models/admin_translations";
 
 export default Ember.Component.extend({
   actions: {
     updateTranslationsArray: function(translations, operation) {
-      debugger;
-      this.get("groupedTranslations1").unshiftObject(translations);
+      // below will add a newly created group of translations (at start of curr array)
+      this.get("groupedTranslations1").unshiftObject({
+        sortKey: "",
+        value: translations});
     }
   },
-  // locales: ["en", "es"],
   i18n: Ember.inject.service(),
 
   groupedTranslations1: function() {
     var currentLocale = this.get("i18n.locale");
-    var currentLocaleTranslations = this.get("adminTranslations.translations").filterBy("locale", currentLocale).sortBy("i18n_value");
+    // var currentLocaleTranslations = this.get("adminTranslations.translations").filterBy("locale", currentLocale).sortBy("i18n_value");
     // above is only needed to get a unique correctly sorted list of keys that I can use
-    // to create groupedTranslations
+    // to create groupedTranslations (means a translation for the current admin locale must exist on the server)
     // var languages = this.get("languages") || [];
+    // debugger;
+
+    var uniqueKeys = this.get("adminTranslations.translations").getEach("i18n_key").uniq();
     var groupedTranslations1 = [];
     var allAdminTranslations = this.get("adminTranslations.translations");
-    currentLocaleTranslations.forEach(function(translateItem){
-      groupedTranslations1.push(allAdminTranslations.filterBy("i18n_key", translateItem.i18n_key));
+    var supportedLanguages = this.get("languages");
+    uniqueKeys.forEach(function(translateItemKey) {
+      var translationsForKey = allAdminTranslations.filterBy("i18n_key", translateItemKey);
+      supportedLanguages.forEach(function(lang) {
+        // console.log(translationsForKey);
+        // below adds an empty new admintranslation in case a 
+        // supported lang does not have a translation on the server
+        if (!translationsForKey.findBy("locale", lang)) {
+          var newTranslation = AdminTranslations.create({
+            locale: lang,
+            i18n_value: "",
+            i18n_key: translateItemKey
+          });
+          translationsForKey.pushObject(newTranslation);
+        }
+      });
+      // for sorting:
+      var sortKey = "";
+      var currentLocaleTranslation = translationsForKey.findBy("locale", currentLocale);
+      if (currentLocaleTranslation) {
+        sortKey = currentLocaleTranslation.i18n_value;
+      }
+      groupedTranslations1.push({
+        sortKey: sortKey,
+        value: translationsForKey
+      });
     });
 
     // // sortorder below will be a bit random if there are significant differences between languages
@@ -42,14 +70,13 @@ export default Ember.Component.extend({
     //   }
     // });
 
-    var groupedTranslations2 = [];
-    if (groupedTranslations1.length > 7) {
-      var half_length = Math.ceil(groupedTranslations1.length / 2);
-      groupedTranslations2 = groupedTranslations1.splice(half_length, groupedTranslations1.length);
-    }
-    this.set("groupedTranslations2", groupedTranslations2);
-
-    return groupedTranslations1;
+    // var groupedTranslations2 = [];
+    // if (groupedTranslations1.length > 7) {
+    //   var half_length = Math.ceil(groupedTranslations1.length / 2);
+    //   groupedTranslations2 = groupedTranslations1.splice(half_length, groupedTranslations1.length);
+    // }
+    // this.set("groupedTranslations2", groupedTranslations2);
+    return groupedTranslations1.sortBy("sortKey");
 
   }.property("adminTranslations"),
 
