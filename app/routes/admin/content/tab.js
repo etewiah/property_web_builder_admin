@@ -37,11 +37,15 @@ export default Ember.Route.extend({
   // },
 
   model(params) {
-    return this.store.query("webContent", {
-      filter: {
-        tag: params.tabName
-      }
-    });
+    if (params.tabName === "sections") {
+      return this.store.findAll("section");
+    } else {
+      return this.store.query("webContent", {
+        filter: {
+          tag: params.tabName
+        }
+      });
+    }
     // return this.store.findAll('webContent'); 
     // return params.tabName;
     // return this.store.findRecord('webContent', "test");
@@ -81,9 +85,9 @@ export default Ember.Route.extend({
         tabTitleKey: "webContentSections.contentAreaCols",
         // tabInfoKey: "webContentSections.info.contentAreaCols",
       }, {
-      //   tabValue: "home",
-      //   tabTitleKey: "webContentSections.home"
-      // }, {
+        //   tabValue: "home",
+        //   tabTitleKey: "webContentSections.home"
+        // }, {
         tabValue: "about-us",
         tabTitleKey: "webContentSections.aboutUs"
       }, {
