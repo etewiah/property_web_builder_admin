@@ -226,7 +226,8 @@ export default Ember.merge(Ember.copy(en), {
     "colorPrimary": "Color principal",
     "colorSecondary": "Color secundario",
     "colorActions": "Color acciones",
-    "supportedLanguages": "Idiomas"
+    "supportedLanguages": "Idiomas",
+    "visibility": "Visibilidad"
   },
 
   "siteLayout": {
@@ -349,6 +350,7 @@ export default Ember.merge(Ember.copy(en), {
     "landingCarousel": "Slider",
     "home": "Home",
     "contentAreaCols": "Columnas",
+    "sections": "Secciónes",
     "info": {
       "contentAreaCols": "Columnas del pagina principal"
     }

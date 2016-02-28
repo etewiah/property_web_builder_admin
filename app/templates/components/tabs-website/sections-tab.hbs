@@ -4,9 +4,8 @@
 
     <div class="col-sm-6">
 
-      <h4>{{t "inTabLabels.supportedLanguages"}}</h4>
-      {{forms/site-sections sections=contentResources supportedLanguages=tenantDetails.supported_languages
-      valueChangedAction="updateAppearance" }}
+      <h4>{{t "inTabLabels.visibility"}}</h4>
+      {{forms/site-sections sections=contentResources valueChangedAction="saveSections" }}
 
     </div>
 

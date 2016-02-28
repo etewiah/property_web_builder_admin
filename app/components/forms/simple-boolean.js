@@ -36,7 +36,6 @@ export default Ember.Component.extend({
 
     // var currentOptionTitle = this.get("i18n").t("false").string;
     var currentValue = this.get("resourceObject." + this.fieldDetails.fieldName) || false;
-debugger;
     this.setValueForFormField(currentValue);
 
 

@@ -226,7 +226,8 @@ export default {
     "colorPrimary": "Primary Color",
     "colorSecondary": "Secondary Color",
     "colorActions": "Actions Color",
-    "supportedLanguages": "Supported Languages"
+    "supportedLanguages": "Supported Languages",
+    "visibility": "Visibility"
   },
 
   "siteLayout": {
@@ -349,6 +350,7 @@ export default {
     "landingCarousel": "Landing Page Carousel",
     "home": "Home",
     "contentAreaCols": "Columns",
+    "sections": "Sections",
     "info": {
       "contentAreaCols": "Columns on the landing page giving an overview of the services you provide"
     }
