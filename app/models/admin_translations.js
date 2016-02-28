@@ -80,7 +80,8 @@ AdminTranslations.reopenClass({
       result.translations.forEach(function(translation){
         adminTranslations.translations.push(AdminTranslations.create(translation));
       });
-      adminTranslations.i18nKeyPrefix = result.prefix;
+      // below no longer in use
+      // adminTranslations.i18nKeyPrefix = result.prefix;
       adminTranslations.batchKey = result.batch_key;
       return adminTranslations;
       // return result;

@@ -7,19 +7,6 @@ import TabWithForm from "../base/tab-with-form";
 
 
 export default TabWithForm.extend({
-  // changedFields: [],
-  // siteLayoutField: {
-  //   labelTextTKey: "",
-  //   fieldName: "body_style",
-  //   fieldType: "dynamicSelect",
-  //   optionsKey: "layoutLabels",
-  // },
-  // siteLayoutFieldKeys: {
-  //   layoutLabels: [
-  //     "siteLayout.wide",
-  //     "siteLayout.boxed"
-  //   ]
-  // },
   actions: {
 
     saveSections: function(changedSection) {

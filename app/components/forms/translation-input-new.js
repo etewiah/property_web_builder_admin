@@ -22,10 +22,15 @@ export default Ember.Component.extend({
       if (this.get("hasErrors")) {
         return;
       }
-      var i18nKeyPrefix = this.get("i18nKeyPrefix");
+
+      // var i18nKeyPrefix = this.get("i18nKeyPrefix");
+      // have decided to calculate any prefixes serverside
+      // plus new items will have custom tenant prefix anyway
+      // var i18nKey = i18nKeyPrefix + "." + newTranslationBatch[0].i18n_value.camelize();
 
       // just picking the first value provided and basing key off of that
-      var i18nKey = i18nKeyPrefix + "." + newTranslationBatch[0].i18n_value.camelize();
+      var i18nKey = newTranslationBatch[0].i18n_value.camelize();
+
       // TODO - save whole batch in one go
       newTranslationBatch.forEach(function(translation) {
         translation.set("i18n_key", i18nKey);

@@ -44,7 +44,9 @@ export default Ember.Component.extend({
       var originalValues = this.get("originalValues");
       // TODO - save whole batch in one go
       this.get("translationBatch").forEach(function(translation) {
+        debugger;
         if (originalValues[translation.locale] !== translation.i18n_value) {
+          translation.set("batch_key", this.get("batchKey"));
           if (translation.id) {
             translation.save(function(result) {
               // if (result.success) {
@@ -52,7 +54,7 @@ export default Ember.Component.extend({
               originalValues[translation.locale] = translation.i18n_value;
             }.bind(this));
           } else {
-            translation.set("batch_key", this.get("batchKey"));
+            // could be a bunch of existing translations with one locale that isn't translated
             translation.create(function(result) {
               originalValues[translation.locale] = translation.i18n_value;
             }.bind(this));
