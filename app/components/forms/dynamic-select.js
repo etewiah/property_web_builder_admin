@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNames: ['form-group', 'fg-float'],
   i18n: Ember.inject.service(),
   fieldOptions: function() {
     var fieldOptionKeys = this.get("fieldKeys")[this.get("fieldDetails.optionsKey")] || [];

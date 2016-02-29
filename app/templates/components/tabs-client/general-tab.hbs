@@ -18,17 +18,13 @@
     </div>
     <div class="col-sm-6">
       {{#each leftSideInputFields as |inputField|}}
-      <div class="form-group fg-float">
-          {{partial "partials/input-field-resolver" }}
-      </div>
+      {{partial "partials/input-field-resolver" }}
       {{/each}}
       <br>
     </div>
     <div class="col-sm-6">
       {{#each rightSideInputFields as |inputField|}}
-      <div class="form-group fg-float">
-          {{partial "partials/input-field-resolver" }}
-      </div>
+      {{partial "partials/input-field-resolver" }}
       {{/each}}
     </div>
   </div>

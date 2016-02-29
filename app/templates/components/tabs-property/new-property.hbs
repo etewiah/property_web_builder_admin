@@ -26,9 +26,7 @@
     <div class="col-sm-6">
       <h4>{{t "propertyGeneralSections.generalData"}}</h4>
         {{#each inputFields as |inputField|}} 
-          <div class="form-group fg-float">
             {{partial "partials/input-field-resolver" }}
-          </div>
         {{/each}}
       <br>
     </div>
@@ -36,11 +34,9 @@
     <div class="col-sm-6">
       <h4>{{t "propertyGeneralSections.characteristics" }}</h4>
 
-{{#each characteristicasInputFields as |inputField|}} 
-  <div class="form-group fg-float">
-    {{partial "partials/input-field-resolver" }}
-  </div>
-{{/each}}
+        {{#each characteristicasInputFields as |inputField|}} 
+            {{partial "partials/input-field-resolver" }}
+        {{/each}}
 
     </div>
   </div>

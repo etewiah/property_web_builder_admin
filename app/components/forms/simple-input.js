@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
-  // classNames: ['form-group', 'fg-float'],
+  classNames: ['form-group', 'fg-float'],
 
   lostFocus: function() {
     // fixes bug where unable to leave page with error in field
