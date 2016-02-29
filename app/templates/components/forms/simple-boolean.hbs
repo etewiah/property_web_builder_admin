@@ -1,3 +1,9 @@
+{{#if fieldDetails.labelText}}
+<label class="fg-label arriba_label">{{fieldDetails.labelText }}</label>
+{{else}}
+<label class="fg-label arriba_label">{{t fieldDetails.labelTextTKey }}</label>
+{{/if}}
+
 {{#if fieldDetails.tooltipTextTKey}}
 <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a> 
 {{/if}}
@@ -6,13 +12,9 @@
     <input type="radio" name={{ fieldDetails.fieldName }} value=true>
     <i class="input-helper"></i>{{t "true"}}
   </label>
-  <label class="radio radio-inline m-r-20">
+  <label class="radio radio-inline m-r-2">
     <input type="radio" name={{ fieldDetails.fieldName }} value=false>
     <i class="input-helper"></i>{{t "false"}}
   </label>
 </div>
-{{#if fieldDetails.labelText}}
-<label class="fg-label arriba_label">{{fieldDetails.labelText }}</label>
-{{else}}
-<label class="fg-label arriba_label">{{t fieldDetails.labelTextTKey }}</label>
-{{/if}}
+

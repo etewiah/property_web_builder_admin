@@ -19,11 +19,16 @@ export default TabWithForm.extend({
     // extrasFields.chunk1 = this.parseInputFields(fieldNames.splice(0, Math.ceil(chunkLength)));
     // extrasFields.chunk2 = this.parseInputFields(fieldNames.splice(0, Math.ceil(chunkLength)));
     // extrasFields.chunk3 = this.parseInputFields(fieldNames);
-    extrasFields.chunk1 = inputFields.splice(0, Math.ceil(chunkLength));
-    extrasFields.chunk2 = inputFields.splice(0, Math.ceil(chunkLength));
-    extrasFields.chunk3 = inputFields.splice(0, Math.ceil(chunkLength));
+    // extrasFields.chunk1 = inputFields.splice(0, Math.ceil(chunkLength));
+    // extrasFields.chunk2 = inputFields.splice(0, Math.ceil(chunkLength));
+    // extrasFields.chunk3 = inputFields.splice(0, Math.ceil(chunkLength));
+
+    extrasFields.chunk1 = [];
+    extrasFields.chunk2 = [];
+    extrasFields.chunk3 = [];
+
 // debugger;
-    return extrasFields;
+    return inputFields;
   }.property("extrasFieldsNames"),
 
 

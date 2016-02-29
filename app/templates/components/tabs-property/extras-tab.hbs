@@ -22,6 +22,17 @@
 
         {{/if}}
       {{/if}}
+
+      {{#each extrasInputFields1 as |extrasField|}} 
+      <div class="col-lg-3 col-md-4 m-t-20">
+        <div class="form-group fg-float">
+          {{forms/simple-boolean  resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=extrasField resourceObject=propertyResource.extras}}
+        </div>
+
+      </div>
+      {{/each}}
+
+
     <div class="col-sm-4">
       <h4></h4>
 
