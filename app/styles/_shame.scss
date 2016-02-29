@@ -1,77 +1,89 @@
+/*to stop info tip icon appearing over header as you scroll*/
+header#header {
+  z-index: 30
+}
+
+/*for translation inputs */
 .btn-save-translation {
-  /*margin-top: 20%;*/
+    /*margin-top: 20%;*/
 }
 
 .translation-input-header {
-  text-align: center;
-  padding-bottom: 2%;
-  color: black;
+    text-align: center;
+    padding-bottom: 2%;
+    color: black;
 }
+
 .translation-input {
-  margin-left: 5%;
-  margin-bottom: 2%;
-  width: 90%;
-  color: #555555;
-  /*font-size: larger;*/
+    margin-left: 5%;
+    margin-bottom: 2%;
+    width: 90%;
+    color: #555555;
+    /*font-size: larger;*/
 }
 
 
 /*http://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3/*/
 
 .btn-edfile {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-edfile input[type=file] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  min-width: 100%;
-  min-height: 100%;
-  font-size: 100px;
-  text-align: right;
-  filter: alpha(opacity=0);
-  opacity: 0;
-  outline: none;
-  background: white;
-  cursor: inherit;
-  display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }
 
 
 /* for language indicator */
+
 .in-lang {
-  font-size: 12px;
-}
-.group-of-languages-input {
-  /*TODO - set border 4 group of languages..*/
+    font-size: 12px;
 }
 
-/*for spectrum color picker */
-.sp-preview {
-  width: 300px;
+.group-of-languages-input {
+    /*TODO - set border 4 group of languages..*/
 }
+
+
+/*for spectrum color picker */
+
+.sp-preview {
+    width: 300px;
+}
+
 
 /*for sorting of photos: */
 
 #sortable {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 450px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 450px;
 }
 
 #sortable div {
-  margin: 3px 3px 3px 0;
-  padding: 1px;
-  float: left;
-  width: 100px;
-  height: 90px;
-  font-size: 4em;
-  text-align: center;
+    margin: 3px 3px 3px 0;
+    padding: 1px;
+    float: left;
+    width: 100px;
+    height: 90px;
+    font-size: 4em;
+    text-align: center;
 }
 
 #sortable div:hover {
-  cursor: grab;
+    cursor: grab;
 }
