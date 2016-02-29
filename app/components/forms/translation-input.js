@@ -44,7 +44,6 @@ export default Ember.Component.extend({
       var originalValues = this.get("originalValues");
       // TODO - save whole batch in one go
       this.get("translationBatch").forEach(function(translation) {
-        debugger;
         if (originalValues[translation.locale] !== translation.i18n_value) {
           translation.set("batch_key", this.get("batchKey"));
           if (translation.id) {
@@ -126,10 +125,8 @@ export default Ember.Component.extend({
   valueChanged: Ember.observer('translationBatch.@each.i18n_value', 'originalValues.[]', function() {
     var originalValues = this.get("originalValues");
     var valuesHaveChanged = false;
-    // debugger;
     this.get("translationBatch").forEach(function(translation) {
       if (originalValues[translation.locale] !== translation.i18n_value) {
-        // debugger;
         valuesHaveChanged = true;
       }
     });

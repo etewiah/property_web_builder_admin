@@ -48,11 +48,19 @@ export default DS.Model.extend({
     });
   },
   updateExtras: function(complete, error) {
-    var data = {};
-    data = this.getProperties("extras", "id");
+    var data = this.getProperties("id");
+    // data = this.getProperties("extras", "id");
+    var underscoredExtras = this.get("extras");
+
+    var dottedExtras = {};
+    Object.keys(underscoredExtras).forEach(function(underscoredKey){
+      dottedExtras[underscoredKey.replace(/_/g,".")] = underscoredExtras[underscoredKey];
+    });
+    data["extras"] = dottedExtras;
     // this.getProperties( Object.keys(this) );
     var self = this;
     var apiUrl = '/api/v1/properties/update_extras';
+    debugger;
     return $.ajax(apiUrl, {
       type: 'POST',
       dataType: 'json',
@@ -128,16 +136,6 @@ export default DS.Model.extend({
     return photoModels.sortBy("number");
   }),
 
-  owner: DS.attr({
-    dontSerialize: true
-  }),
-  extras: DS.attr({
-    dontSerialize: true
-      // above works to prevent sending this attr to server
-      // cos of serializeAttribute override in serializer 
-  }),
-
-
   reference: DS.attr(),
   titleEn: DS.attr(),
   titleEs: DS.attr(),
@@ -174,6 +172,16 @@ export default DS.Model.extend({
   saleDiscount: DS.attr(),
   longTermRental: DS.attr(),
   longTermRentalDiscount: DS.attr(),
+
+
+  owner: DS.attr({
+    dontSerialize: true
+  }),
+  extras: DS.attr("extra",{
+    dontSerialize: true
+      // above works to prevent sending this attr to server
+      // cos of serializeAttribute override in serializer 
+  }),
 
   // contextualPriceCents: DS.attr("currency", { defaultValue: 0 }),
   priceSaleCurrentCents: DS.attr("currency", {

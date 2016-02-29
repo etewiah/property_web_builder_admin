@@ -22,25 +22,27 @@ export default TabWithForm.extend({
     extrasFields.chunk1 = inputFields.splice(0, Math.ceil(chunkLength));
     extrasFields.chunk2 = inputFields.splice(0, Math.ceil(chunkLength));
     extrasFields.chunk3 = inputFields.splice(0, Math.ceil(chunkLength));
-
+// debugger;
     return extrasFields;
   }.property("extrasFieldsNames"),
 
 
   parseInputFields: function(fieldNames) {
     var inputFields = [];
-    fieldNames.forEach(function(fieldName) {
+    fieldNames.forEach(function(fieldNameKey) {
       var inputField = {
         fieldDbType: "boolean"
       };
 
-      var fieldNameArray = fieldName.split(".");
+      // var fnArray = fieldNameKey.split(".");
       // stripping out the "fieldLabels.extras." prefix - it gets in the way 
       // of ember set and get
-      inputField.fieldName = fieldNameArray[ fieldNameArray.length - 1 ];
+      // inputField.fieldName = fnArray[ fnArray.length - 1 ];
 
-      // inputField.labelTextTKey = fieldName;
-      inputField.labelText = this.get("i18n").t(fieldName).string || "Unknown";
+      // replacing dots with underscores as they get in the way of ember set and get
+      inputField.fieldName = fieldNameKey.replace(/\./g,"_");
+      // inputField.labelTextTKey = fieldNameKey;
+      inputField.labelText = this.get("i18n").t(fieldNameKey).string || "Unknown";
       inputFields.push(inputField);
     }.bind(this));
     return inputFields;
@@ -52,7 +54,6 @@ export default TabWithForm.extend({
 
       var propertyResource = this.get("propertyResource");
       var self = this;
-
       propertyResource.updateExtras(function(success){
         // triggerReset is an action in TabWithForm
         self.send("triggerReset");
