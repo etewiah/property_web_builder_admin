@@ -105,9 +105,9 @@ export default Ember.Route.extend({
         tabValue: "situacion",
         tabTitleKey: "propertySections.location"
       }, {
-        tabValue: "descripcion",
-        tabTitleKey: "propertySections.description"
-      }, {
+      //   tabValue: "descripcion",
+      //   tabTitleKey: "propertySections.description"
+      // }, {
         tabValue: "extras",
         tabTitleKey: "propertySections.extras"
       }, {

@@ -2,6 +2,22 @@ import Ember from 'ember';
 import TabWithForm from "../base/tab-with-form";
 
 export default TabWithForm.extend({
+  languages: function() {
+    var supportedLanguages = this.get("supportedLanguages");
+    var languages = [];
+    supportedLanguages.forEach(function(language) {
+      var titleFieldName = "title" + language.capitalize();
+      var descriptionFieldName = "description" + language.capitalize();
+      languages.push({
+        languageKey: language,
+        titleLabelKey: "fieldLabels.title",
+        descriptionLabelKey: "fieldLabels.description",
+        titleFieldName: titleFieldName,
+        descriptionFieldName: descriptionFieldName,
+      });
+    });
+    return languages;
+  }.property(),
   // changedFields: [],
   visibilityInputFields: [
     //this comment tricks prettify ;) 
@@ -208,12 +224,9 @@ export default TabWithForm.extend({
         // triggerReset is an action in TabWithForm
         self.send("triggerReset");
       }
-
       function failure(reason) {
-        // debugger;
         // handle the error
       }
-      debugger;
       propertyResource.save().then(success).catch(failure);
     }
   },

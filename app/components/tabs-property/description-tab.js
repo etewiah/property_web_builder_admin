@@ -18,16 +18,6 @@ export default Ember.Component.extend({
     });
     return languages;
   }.property(),
-  // languagessss: [{
-  //   languageKey: "en",
-  //   // titleLabelKey: "fieldLabels.tituloIngles",
-  //   // descriptionLabelKey: "fieldLabels.descripcionIngles",
-  //   // labelKeys like above no longer used but still on server side translations (19 dec 2015)
-  //   titleLabelKey: "fieldLabels.title",
-  //   descriptionLabelKey: "fieldLabels.description",
-  //   titleFieldName: "titleEn",
-  //   descriptionFieldName: "descriptionEn",
-  // }],
 
   actions: {
     savePropertyResource: function() {
@@ -44,18 +34,6 @@ export default Ember.Component.extend({
     }
   },
 
-  //   contentForForm: function() {
-  //     var contentForForm = [];
-  // debugger;
-  //     var propertyResource = this.get("propertyResource");
-  //     // var contentForForm = [];
-  //     propertyResource.forEach(function(content) {
-  //       if (content.get("key") === "tagLine") {
-  //         content.set("isPlainText", true);
-  //       }
-  //     });
-  //     return propertyResource;
-  //   }.property("propertyResource"),
 
   isActive: function() {
     return this.activeTabName.toLowerCase() === "descripcion";
