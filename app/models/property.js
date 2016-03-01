@@ -126,6 +126,12 @@ export default DS.Model.extend({
     dontSerialize: true
   }),
 
+  primaryPhotoUrl: Ember.computed('photos', function() {
+    var primaryPhotoUrl = this.get("orderedPropertyPhotos.firstObject.image.url") || "http://placehold.it/140x90?text=.";
+    return primaryPhotoUrl;
+  }),
+
+
   orderedPropertyPhotos: Ember.computed('photos', function() {
     var photos = this.get("photos");
     var photoModels = [];

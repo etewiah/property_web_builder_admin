@@ -1,13 +1,39 @@
 <div class="card">
-  <div class="card-header" style="">
-    <h2>{{t "editarPropiedad" }}<small>REF: {{model.reference}}</small></h2>
+  <div class="card-header" style="padding:0px;">
+    
+    <div class="row">
+      <div class="col-sm-1">
+      <div class="thumbnailxxx" style="" >
+        <img src="{{ model.primaryPhotoUrl }}" alt="" style="height: 90px;max-width: 140px;">
+      </div>    
+      </div>
 
-    <div role="group" class="botones_web">
-      {{#link-to "admin.propiedades" data-toggle="tooltip" 
-          title=(t "returnToProperties") class="btn_settings btn btn-circulo btn-float waves-effect pull-right" }} 
-        <i class="fa fa-arrow-left"></i>
-      {{/link-to}}  
+      <div class="col-sm-11" style="">
+        <div class="m-t-25 m-l-25">
+          <h2>{{t "editarPropiedad" }}
+            <span> (REF: {{model.reference}}) </span>
+            <p class="iconos_grande m-t-10 m-b-5">
+              <i class="fa fa-bed"></i> <span>{{model.numHabitaciones}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-tint"></i> 
+              <span>{{model.numBanos}}<span>&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-arrows"></i> <span>{{model.mConstruidos}}m<sup>2</sup></span>
+              </span>
+              </span>
+            </p>
+          </h2>
+        </div>
+
+          <div role="group" class="botones_web" style="display:none;">
+            {{#link-to "admin.propiedades" data-toggle="tooltip" 
+                title=(t "returnToProperties") class="btn_settings btn btn-circulo btn-float waves-effect pull-right" }} 
+              <i class="fa fa-arrow-left"></i>
+            {{/link-to}}  
+          </div>
+      </div>
     </div>
+
+
+
 
   </div>
   <div class="card-body card-padding">
