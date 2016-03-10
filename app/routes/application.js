@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import Agency from '../models/agency';
+
 // const { Route, inject } = Ember;
 
 export default Ember.Route.extend({
@@ -21,6 +23,14 @@ export default Ember.Route.extend({
       }
     });
   },
+
+  // model() {
+  //   // TODO - avoid duplication of model here and in Admin route...
+  //   // only retrieving it here so I'll have company name for header...
+  //   var agencyDetails = Agency.get();
+  //   return agencyDetails;
+  // },
+
   // deactivate: function() {
   //   debugger;
   //   Ember.$('body').toggleClass("admin");
