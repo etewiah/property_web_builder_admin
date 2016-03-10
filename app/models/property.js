@@ -7,6 +7,7 @@ export default DS.Model.extend({
     var data = {
       ordered_photo_ids: orderedPhotoIds
     };
+    data["property_id"] = this.get("id");
     var self = this;
     var apiUrl = "/api/v1/properties/" + this.get("id") + "/order_photos";
     return $.ajax(apiUrl, {
@@ -14,9 +15,10 @@ export default DS.Model.extend({
       dataType: 'json',
       data: data
     }).then(function(result) {
+      self.set("photos",result);
+      // debugger;
       // self.set("geo", result);
       if (complete) {
-        // self.set('posts', result.posts);
         complete(result);
       }
     }, function(result) {
@@ -126,13 +128,13 @@ export default DS.Model.extend({
     dontSerialize: true
   }),
 
-  primaryPhotoUrl: Ember.computed('photos', function() {
+  primaryPhotoUrl: Ember.computed('photos','orderedPropertyPhotos', function() {
     var primaryPhotoUrl = this.get("orderedPropertyPhotos.firstObject.image.url") || "http://placehold.it/140x90?text=.";
     return primaryPhotoUrl;
   }),
 
 
-  orderedPropertyPhotos: Ember.computed('photos', function() {
+  orderedPropertyPhotos: Ember.computed('photos','photos.[].number', function() {
     var photos = this.get("photos");
     var photoModels = [];
     photos.forEach(function(photo) {
