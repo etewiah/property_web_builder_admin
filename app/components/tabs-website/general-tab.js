@@ -119,16 +119,23 @@ export default TabWithForm.extend(OnReadyMixin, {
 
   logoPhoto: function() {
     var contentResources = this.get("contentResources");
-    var logoPhoto = contentResources.findBy("key", "logo").get("photoModels.firstObject");
+    var logoContent = contentResources.findBy("key", "logo");
+    var logoPhoto = {};
+    if (logoContent) {
+      logoPhoto = logoContent.get("photoModels.firstObject") || {};
+    }
     return logoPhoto;
   }.property("contentResources"),
 
   editPhotoEndpoint: function() {
-    // var photoId = 0;
     var contentResources = this.get("contentResources");
-    var logoPhoto = contentResources.findBy("key", "logo").get("photoModels.firstObject") || {
-      id: 0
-    };
+    var logoContent = contentResources.findBy("key", "logo");
+    var logoPhoto = { id: 0 };
+    if (logoContent) {
+      // June 2016 - scenario where rerenting did not have content resource
+      // for logo on server meant I had to add this check..
+      logoPhoto = logoContent.get("photoModels.firstObject") || { id: 0};
+    }
     var editPhotoEndpoint = "/api/v1/web_contents/photos/" + logoPhoto.id;
     return editPhotoEndpoint;
   }.property("resourceObject.id"),
