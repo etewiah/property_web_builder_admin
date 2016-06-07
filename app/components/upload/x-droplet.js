@@ -16,6 +16,44 @@ export default Ember.Component.extend(Droplet, {
     // }
   },
 
+  // TODO - avoid repeating in x-drp..sing..inp..
+  showProg: function() {
+    var uploadStatus = this.get("uploadStatus");
+    if (uploadStatus.uploading) {
+      var uploadingIcon = "<i class='fa fa-spinner fa-spin fa-3x fa-fw'></i><span class='sr-only'>Uploading Photo...</span>";
+      swal({
+        title: "Uploading Photo",
+        text: uploadingIcon,
+        html: true,
+        showConfirmButton: false,
+      });
+    } else {
+      if (uploadStatus.error) {
+        // error always seems to come back empty so doing this shoddy
+        // check for filesize in case that is the culprit
+        var fileBeingUploaded = this.files[0];
+        var fileSize = fileBeingUploaded ? fileBeingUploaded.getFileSize() : 0;
+        var errorMessage = "Please try again";
+        if (fileSize > 999999) {
+          errorMessage = "Please ensure photo is less than 1mb";
+        };
+        swal({
+          title: "Sorry, there has been an error.",
+          text: errorMessage,
+          showConfirmButton: true,
+        }, function() {
+          //       this.set("files", []);
+          // a bit drastic but it seems failed files queue up 
+          // and above does not fix it...
+          location.reload();
+        });
+        // 
+      } else {
+        swal.close();
+      }
+    }
+
+  }.observes("uploadStatus.uploading"),
   hooks: {
     didUpload: function(response) {
       // var uploadedFiles = this.get("validFiles");

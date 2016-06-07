@@ -5,7 +5,7 @@ export default TabWithForm.extend({
   changedFields: [],
   i18n: Ember.inject.service(),
   manageExtrasUrl: function(){
-    return "/" + this.get("i18n.locale") + "/admin/translations/extras";
+    return "/" + this.get("i18n.locale") + "/admin/properties/settings/extras";
   }.property(),
 // export default Ember.Component.extend({
   i18n: Ember.inject.service(),
