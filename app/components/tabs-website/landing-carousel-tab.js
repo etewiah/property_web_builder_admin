@@ -56,6 +56,7 @@ export default Ember.Component.extend({
       function failure(reason) {
         // handle the error
       }
+      debugger;
       contentItem.save().then(success).catch(failure);
     }
   },
