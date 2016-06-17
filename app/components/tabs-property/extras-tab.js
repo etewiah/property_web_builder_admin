@@ -48,6 +48,10 @@ export default TabWithForm.extend({
       inputField.fieldName = fieldNameKey.replace(/\./g,"_");
       // inputField.labelTextTKey = fieldNameKey;
       inputField.labelText = this.get("i18n").t(fieldNameKey).string || "Unknown";
+      // TODO - use something like below and logging to catch errors
+      // if (inputField.labelText === "Unknown") {
+      //   debugger;
+      // }
       inputFields.push(inputField);
     }.bind(this));
     return inputFields;

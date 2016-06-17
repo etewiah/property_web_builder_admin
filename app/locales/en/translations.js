@@ -1,8 +1,8 @@
 // 
 // keep line count same as es.
-// 
-// 
-//
+// These translations get merged with 
+// server side translations here:
+// /Users/etewiah/Ed/sites-2015-spt/inmo1-client/app/services/translations-fetcher.js
 export default {
 
   "": "",

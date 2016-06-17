@@ -148,7 +148,7 @@ export default Ember.merge(Ember.copy(en), {
   },
 
   "fieldLabels": {
-    "forSearchWidget": "Para la busceda",
+    "forSearchWidget": "Para la búsqueda",
     "obscureMap": "No mostrar dirección exacta en la web?",
     "hideMap": "No mostrar mapa en la web",
     "forSale": "Para venta?",

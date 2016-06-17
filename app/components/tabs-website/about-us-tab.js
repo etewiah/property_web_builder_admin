@@ -56,8 +56,8 @@ export default Ember.Component.extend({
 
   addPhotoEndpoint: function() {
     var contentResources = this.get("contentResources");
-    var logoContent = contentResources.findBy("key", "aboutUs") || {id: 0};
-    var addPhotoEndpoint = "/api/v1/web_contents/" + logoContent.id + "/photo";
+    var aboutUsContent = contentResources.findBy("key", "aboutUs") || {id: 0};
+    var addPhotoEndpoint = "/api/v1/web_contents/" + aboutUsContent.id + "/photo";
     return addPhotoEndpoint;
   }.property("contentResources"),
 
