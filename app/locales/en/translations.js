@@ -238,7 +238,8 @@ export default {
   "propertySections": {
     "general": "General",
     "location": "Location",
-    "description": "Description",
+    // "description": "Description",
+    "text": "Text",
     "extras": "Extras",
     "photos": "Fotos",
     "sale": "Sale / Rental",

@@ -2,16 +2,17 @@
   <div class="card-header" style="padding:0px;">
     
     <div class="row">
-      <div class="col-sm-1">
+      <div class="col-sm-2">
       <div class="thumbnailxxx" style="" >
         <img src="{{ model.primaryPhotoUrl }}" alt="" style="height: 90px;max-width: 140px;">
       </div>    
       </div>
 
-      <div class="col-sm-11" style="">
+      <div class="col-sm-10" style="">
         <div class="m-t-25 m-l-25">
-          <h2>{{t "editarPropiedad" }}
-            <span> (REF: {{model.reference}}) </span>
+          <h2>
+            {{!-- {{t "editarPropiedad" }} --}}
+            <span>REF: {{model.reference}} </span>
             <p class="iconos_grande m-t-10 m-b-5">
               <i class="fa fa-bed"></i> <span>{{model.numHabitaciones}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
               <i class="fa fa-tint"></i> 

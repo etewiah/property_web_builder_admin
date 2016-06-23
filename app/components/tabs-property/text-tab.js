@@ -36,7 +36,7 @@ export default Ember.Component.extend({
 
 
   isActive: function() {
-    return this.activeTabName.toLowerCase() === "descripcion";
+    return this.activeTabName.toLowerCase() === "text";
   }.property("activeTabName"),
 
 });

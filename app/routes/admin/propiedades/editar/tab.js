@@ -93,11 +93,17 @@ export default Ember.Route.extend({
     if (activeTabName === "situacion") {
       tabsPropertyComponent = "tabs-property/location-tab";
     }
+    if (activeTabName === "text") {
+      tabsPropertyComponent = "tabs-property/text-tab";
+    }
     controller.set("tabs-property-component", tabsPropertyComponent);
 
     controller.set("tabsList", [{
         tabValue: "general",
         tabTitleKey: "propertySections.general"
+      },{
+        tabValue: "text",
+        tabTitleKey: "propertySections.text"
       }, {
         tabValue: "venta",
         tabTitleKey: "propertySections.sale"

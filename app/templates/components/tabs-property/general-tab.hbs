@@ -7,7 +7,7 @@
     <div class="col-sm-4">
       
       <div class="thumbnail" style="display:none;" >
-        <img src="img/300x200.gif" alt="">
+        {{!-- <img src="img/300x200.gif" alt=""> --}}
         <div class="caption">
           <h4>REK-1040 - <span class="precio">325.000€</span> </h4>
           <p>Apartamento San Miguel de Salinas.</p>
@@ -34,23 +34,25 @@
         {{/each}}
         </div>
       </div>
+    </div>
 
+    <div class="col-sm-4">
       {{!-- <h4>{{t "propertyGeneralSections.generalData" }}</h4> --}}
       {{#each mainInputFields as |inputField|}} 
           {{partial "partials/input-field-resolver" }}
       {{/each}}
       <br>
+    </div>
 
+    <div class="col-sm-4">
       {{!-- <h4>{{t "propertyGeneralSections.characteristics" }}</h4> --}}
-
         {{#each characteristicasInputFields as |inputField|}} 
             {{partial "partials/input-field-resolver" }}
-        {{/each}}
+        {{/each}}      
     </div>
 
-    <div class="col-sm-2">
-    </div>
-
+{{!--   
+    moved text back to its own tab  
     <div class="col-sm-6">
       <div class="row">
         {{#each languages as |languageSettings|}}
@@ -60,7 +62,7 @@
         </div>
         {{/each}}
       </div>
-    </div>
+    </div> --}}
 
     {{partial "partials/manage-changes-buttons" }}
 

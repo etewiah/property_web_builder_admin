@@ -238,7 +238,8 @@ export default Ember.merge(Ember.copy(en), {
   "propertySections": {
     "general": "General",
     "location": "Situación",
-    "description": "descripción",
+    // "description": "descripción",
+    "text": "Texto",
     "extras": "Extras",
     "photos": "Fotos",
     "sale": "Venta / Alquiler",
