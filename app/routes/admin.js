@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import Agency from '../models/agency';
 const {
-  Route, inject
+  Route,
+  inject
 } = Ember;
 
 export default Ember.Route.extend({
@@ -40,7 +41,17 @@ export default Ember.Route.extend({
       }, {
         tabIconClass: "fa fa-building-o",
         tabTitleKey: "adminSections.properties",
-        tabRoute: "admin.propiedades"
+        tabRoute: "admin.propiedades",
+        subMenuItems: [{
+          tabIconClass: "fa fa-list",
+          tabTitleKey: "adminSections.list",
+          tabRoute: "admin.propiedades.list.visible"
+            // tabRoute: "admin.inicio"
+        }, {
+          tabIconClass: "fa fa-gears",
+          tabTitleKey: "adminSections.settings",
+          tabRoute: "admin.propiedades.settings"
+        }]
       },
       //  {
       //   tabIconClass: "fa fa-users",

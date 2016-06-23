@@ -1,7 +1,8 @@
 {{#link-to tab.tabRoute }} <i class={{tab.tabIconClass}}></i> {{t tab.tabTitleKey }}{{/link-to}}
 {{#if toggled}}
-  <ul class="prop-sub-menu" style="background:white;">
-    {{#each subMenuItems as |subMenuTab|}}
+{{/if}}
+  <ul class="prop-sub-menu" style="background:white;display:block;">
+    {{#each tab.subMenuItems as |subMenuTab|}}
       <li  >
       {{#link-to subMenuTab.tabRoute }} <i class={{subMenuTab.tabIconClass}}></i> 
         {{t subMenuTab.tabTitleKey }}
@@ -9,4 +10,3 @@
       </li>  
     {{/each}}
   </ul>
-{{/if}}
