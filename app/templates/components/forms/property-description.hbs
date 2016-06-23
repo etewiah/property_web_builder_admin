@@ -1,7 +1,7 @@
 <div class="col-sm-12" style="">
 
   <div class="card">
-    <div class="card-header ch-alt" style="padding: 8px;">
+    <div class="property-text-edit card-header ch-alt" style="padding: 8px;">
 
       <h4>{{t languageSettings.titleLabelKey }}  <span class="in-lang">({{t languageSettings.languageKey }})</span></h4>
       {{#if isEditing}}
@@ -9,7 +9,7 @@
           {{input value=titleValue type="text"  class="input input-md form-control fg-input"  }}
         </div>
       {{else}}
-        <div style="font-size:larger;">
+        <div class="title-preview" style="">
           {{ titleValue }}
         </div>
       {{/if}}
@@ -20,7 +20,7 @@
          {{wysiwyg-editor content=descriptionValue header="Example"}}
         </div>
       {{else}}
-        <div>
+        <div class="description-preview" >
           {{{ descriptionValue }}}
         </div>
       {{/if}}

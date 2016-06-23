@@ -1,0 +1,17 @@
+.property-text-edit {
+  h4 {
+    text-transform: uppercase;
+  }
+  .title-preview {
+    min-height: 20px;
+  }
+  .description-preview {
+    min-height: 60px;
+  }
+}
+
+/*below seems to be set to hidden in summernote which was 
+causing editing dropdowns to stay hidden behind container  */
+.note-editor {
+  overflow: visible;
+}
