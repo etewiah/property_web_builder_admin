@@ -1,0 +1,204 @@
+/* this styles the summernote editor*/
+.note-editor,
+.note-popover {
+  border-color: #e4e4e4;
+}
+.note-editor .note-toolbar,
+.note-popover .note-toolbar,
+.note-editor .popover-content,
+.note-popover .popover-content {
+  background: #fff;
+  border-color: #e4e4e4;
+  margin: 0;
+  padding: 10px 0 15px;
+  text-align: center;
+}
+.note-editor .note-toolbar > .btn-group,
+.note-popover .note-toolbar > .btn-group,
+.note-editor .popover-content > .btn-group,
+.note-popover .popover-content > .btn-group {
+  display: inline-block;
+  float: none;
+  box-shadow: none;
+}
+.note-editor .note-toolbar > .btn-group .btn,
+.note-popover .note-toolbar > .btn-group .btn,
+.note-editor .popover-content > .btn-group .btn,
+.note-popover .popover-content > .btn-group .btn {
+  margin: 0 1px;
+}
+.note-editor .note-toolbar > .btn-group > .active,
+.note-popover .note-toolbar > .btn-group > .active,
+.note-editor .popover-content > .btn-group > .active,
+.note-popover .popover-content > .btn-group > .active {
+  background: #00bcd4;
+  color: #fff;
+}
+.note-editor .note-toolbar .btn,
+.note-popover .note-toolbar .btn,
+.note-editor .popover-content .btn,
+.note-popover .popover-content .btn {
+  height: 40px;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+}
+.note-editor .note-toolbar .btn:active,
+.note-popover .note-toolbar .btn:active,
+.note-editor .popover-content .btn:active,
+.note-popover .popover-content .btn:active {
+  box-shadow: none;
+}
+.note-editor .note-toolbar .note-palette-title,
+.note-popover .note-toolbar .note-palette-title,
+.note-editor .popover-content .note-palette-title,
+.note-popover .popover-content .note-palette-title {
+  margin: 0 !important;
+  padding: 10px 0 !important;
+  font-size: 13px !important;
+  text-align: center !important;
+  border: 0 !important;
+}
+.note-editor .note-toolbar .note-color-reset,
+.note-popover .note-toolbar .note-color-reset,
+.note-editor .popover-content .note-color-reset,
+.note-popover .popover-content .note-color-reset {
+  padding: 0 0 10px !important;
+  margin: 0 !important;
+  background: none;
+  text-align: center;
+}
+.note-editor .note-toolbar .note-color .dropdown-menu,
+.note-popover .note-toolbar .note-color .dropdown-menu,
+.note-editor .popover-content .note-color .dropdown-menu,
+.note-popover .popover-content .note-color .dropdown-menu {
+  min-width: 335px;
+}
+.note-editor .note-statusbar .note-resizebar,
+.note-popover .note-statusbar .note-resizebar {
+  border-color: #E8E8E8;
+}
+.note-editor .note-statusbar .note-resizebar .note-icon-bar,
+.note-popover .note-statusbar .note-resizebar .note-icon-bar {
+  border-color: #BCBCBC;
+}
+.note-editor .fa,
+.note-popover .fa {
+  font-style: normal;
+  font-size: 20px;
+  vertical-align: middle;
+}
+.note-editor .fa:before,
+.note-popover .fa:before {
+  font-family: 'Material Design Iconic Font';
+}
+.note-editor .fa.fa-magic:before,
+.note-popover .fa.fa-magic:before {
+  content: "\f11b";
+}
+.note-editor .fa.fa-bold:before,
+.note-popover .fa.fa-bold:before {
+  content: "\f17a";
+}
+.note-editor .fa.fa-italic:before,
+.note-popover .fa.fa-italic:before {
+  content: "\f181";
+}
+.note-editor .fa.fa-underline:before,
+.note-popover .fa.fa-underline:before {
+  content: "\f18b";
+}
+.note-editor .fa.fa-font:before,
+.note-popover .fa.fa-font:before {
+  content: "\f17e";
+}
+.note-editor .fa.fa-list-ul:before,
+.note-popover .fa.fa-list-ul:before {
+  content: "\f183";
+}
+.note-editor .fa.fa-list-ol:before,
+.note-popover .fa.fa-list-ol:before {
+  content: "\f184";
+}
+.note-editor .fa.fa-align-left:before,
+.note-popover .fa.fa-align-left:before {
+  content: "\f178";
+}
+.note-editor .fa.fa-align-left:before,
+.note-popover .fa.fa-align-left:before {
+  content: "\f178";
+}
+.note-editor .fa.fa-align-right:before,
+.note-popover .fa.fa-align-right:before {
+  content: "\f179";
+}
+.note-editor .fa.fa-align-center:before,
+.note-popover .fa.fa-align-center:before {
+  content: "\f176";
+}
+.note-editor .fa.fa-align-justify:before,
+.note-popover .fa.fa-align-justify:before {
+  content: "\f177";
+}
+.note-editor .fa.fa-indent:before,
+.note-popover .fa.fa-indent:before {
+  content: "\f180";
+}
+.note-editor .fa.fa-outdent:before,
+.note-popover .fa.fa-outdent:before {
+  content: "\f17f";
+}
+.note-editor .fa.fa-text-height:before,
+.note-popover .fa.fa-text-height:before {
+  content: "\f182";
+}
+.note-editor .fa.fa-table:before,
+.note-popover .fa.fa-table:before {
+  content: "\f21e";
+}
+.note-editor .fa.fa-link:before,
+.note-popover .fa.fa-link:before {
+  content: "\f10d";
+}
+.note-editor .fa.fa-picture-o:before,
+.note-popover .fa.fa-picture-o:before {
+  content: "\f224";
+}
+.note-editor .fa.fa-minus:before,
+.note-popover .fa.fa-minus:before {
+  content: "\f16e";
+}
+.note-editor .fa.fa-arrows-alt:before,
+.note-popover .fa.fa-arrows-alt:before {
+  content: "\f29f";
+}
+.note-editor .fa.fa-code:before,
+.note-popover .fa.fa-code:before {
+  content: "\f066";
+}
+.note-editor .fa.fa-question:before,
+.note-popover .fa.fa-question:before {
+  content: "\f033";
+}
+.note-editor .fa.fa-eraser:before,
+.note-popover .fa.fa-eraser:before {
+  content: "\f17b";
+}
+.note-editor .fa.fa-square:before,
+.note-popover .fa.fa-square:before {
+  content: "\f1f4";
+}
+.note-editor .fa.fa-circle-o:before,
+.note-popover .fa.fa-circle-o:before {
+  content: "\f2e3";
+}
+.note-editor .fa.fa-times:before,
+.note-popover .fa.fa-times:before {
+  content: "\f29a";
+}
+.note-editor .note-air-popover .arrow,
+.note-popover .note-air-popover .arrow {
+  left: 20px;
+}
+.note-editor .note-editable {
+  padding: 20px 23px;
+}
