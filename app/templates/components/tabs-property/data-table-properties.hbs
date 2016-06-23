@@ -1,26 +1,20 @@
 <table  class="tabla_propiedades table table-striped table-vmiddle datatables">
   <thead>
     <tr>
+      <th style="visibility: hidden;" >{{!--t "propertyLabels.actions" --}}</th>
       <th  data-type="text" data-order="desc">Ref</th>
-      <th >{{t "propertyLabels.highlighted" }}</th>
+{{!--       <th >{{t "propertyLabels.highlighted" }}</th>
+ --}}      
       <th >{{t "propertyLabels.locality"}}</th>
       <th >{{t "propertyLabels.zone"}}</th>
       <th >{{t "propertyLabels.type"}}</th>
       {{!-- <th >{{t "propertyLabels.price"}}</th> --}}
       <th >{{t "propertyLabels.rooms"}}</th>
-      <th >{{t "propertyLabels.actions"}}</th>
     </tr>
   </thead>
   <tbody>
     {{#each properties as |property|}}
     <tr id={{property.id }}>
-      <td>{{ property.reference }}</td>
-      <td>{{t property.highlighted }}</td>
-      <td>{{ property.localityTitle }}</td>
-      <td>{{ property.zoneTitle }}</td>
-      <td>{{t property.propertyTypeKey }}</td>
-      {{!-- <td>{{ property.contextualPriceCents }}</td> --}}
-      <td>{{ property.numHabitaciones }}</td>
       <td>
         {{#link-to 'admin.propiedades.editar' property.id}}
           <i class="fa fa-pencil"></i>{{t "edit"}}
@@ -33,6 +27,13 @@
         {{/if}}
 
       </td>
+      <td>{{ property.reference }}</td>
+      {{!-- <td>{{t property.highlighted }}</td> --}}
+      <td>{{ property.localityTitle }}</td>
+      <td>{{ property.zoneTitle }}</td>
+      <td>{{t property.propertyTypeKey }}</td>
+      {{!-- <td>{{ property.contextualPriceCents }}</td> --}}
+      <td>{{ property.numHabitaciones }}</td>
     </tr>
     {{/each}}
   </tbody>
