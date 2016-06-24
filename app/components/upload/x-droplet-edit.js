@@ -28,6 +28,10 @@ export default Ember.Component.extend(Droplet, {
   // type: 'file',
 
     // url: location.origin + '/upload',
+  // no code for handling the upload in here
+  // x-droplet takes care of posting the photo or photos
+  // to whatever endpoint I pass in.
+  // Params need to be in that endpoint
   actions: {
     selectRemoteImages: function(){
       this.set("showRemoteImagesInput", true);      

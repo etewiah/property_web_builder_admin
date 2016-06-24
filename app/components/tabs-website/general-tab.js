@@ -136,7 +136,7 @@ export default TabWithForm.extend(OnReadyMixin, {
       // for logo on server meant I had to add this check..
       logoPhoto = logoContent.get("photoModels.firstObject") || { id: 0};
     }
-    var editPhotoEndpoint = "/api/v1/web_contents/photos/" + logoPhoto.id;
+    var editPhotoEndpoint = "/api/v1/web_contents/photos/" + logoPhoto.id + "/logo" ;
     return editPhotoEndpoint;
   }.property("resourceObject.id"),
 

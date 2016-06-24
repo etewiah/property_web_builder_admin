@@ -13,7 +13,7 @@ export default Ember.Component.extend({
       // This isn't the most robust implementation - above relies on content with tag 
       // corresponding to current route being available on server
       // Below relies on that content containing an item with correct key
-      var contentWithPhotos = contentResources.findBy("key", "logo");
+      var contentWithPhotos = contentResources.findBy("key", "aboutUs");
       contentWithPhotos.addPhotosFromUrls(remoteUrls, function(successResponse) {
         // this.actions.refreshPhotos(successResponse);
         // note, below is send and not sendAction
@@ -49,8 +49,15 @@ export default Ember.Component.extend({
   editPhotoEndpoint: function() {
     // var photoId = 0;
     var contentResources = this.get("contentResources");
-    var aboutUsPhoto = contentResources.findBy("key", "aboutUs").get("photoModels.firstObject") || {id: 0};
-    var editPhotoEndpoint = "/api/v1/web_contents/photos/" + aboutUsPhoto.id ;
+    var aboutUsContent = contentResources.findBy("key", "aboutUs");
+    var aboutUsPhoto = { id: 0 };
+    if (aboutUsContent) {
+      aboutUsPhoto = aboutUsContent.get("photoModels.firstObject") || { id: 0};
+    }
+    // important that "aboutUs" below is passed with the right casing as its used to lookup
+    // correct content for photo on server (but only if photo_id is somehow wrong)
+    // hope there aren't any browser clients that send it all lower case (test with chrome was okay)
+    var editPhotoEndpoint = "/api/v1/web_contents/photos/" + aboutUsPhoto.id + "/aboutUs" ;
     return editPhotoEndpoint;
   }.property("contentResources"),
 
