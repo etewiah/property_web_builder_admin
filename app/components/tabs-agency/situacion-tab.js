@@ -15,12 +15,12 @@ export default TabWithForm.extend({
         // triggerReset is an action in TabWithForm
         this.send("triggerReset");
       }.bind(this), function(error) {
-        // debugger;
-        // var errorMessage = "Sorry, there has been an error.";
-        // if (error.responseJSON && error.responseJSON.errors) {
-        //   errorMessage = error.responseJSON.errors[0];
-        // }
-        // this.set('serverError', errorMessage);
+        debugger;
+        var errorMessage = "Sorry, there has been an error.";
+        if (error.responseJSON && error.responseJSON.errors) {
+          errorMessage = error.responseJSON.errors[0];
+        }
+        this.set('serverError', errorMessage);
       }.bind(this));
     },
     stopConfirming: function() {
@@ -63,12 +63,12 @@ export default TabWithForm.extend({
       addressDetails.save(function(success) {
         this.set("isConfirming", false);
       }.bind(this), function(error) {
-        // debugger;
         var errorMessage = "Sorry, there has been an error.";
         if (error.responseJSON && error.responseJSON.errors) {
           errorMessage = error.responseJSON.errors[0];
         }
-        // this.set('serverError', errorMessage);
+        this.set('serverError', errorMessage);
+        // currently using generic error i18n instead of above
       }.bind(this));
       // .then(transitionToPost).catch(failure);
     }

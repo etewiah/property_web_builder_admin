@@ -96,7 +96,9 @@ export default Ember.Component.extend({
       window.map_callback = function() {
         self.renderMap();
       };
-      $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=map_callback&libraries=places');
+      // key=AIzaSyCPorm8YzIaUGhKfe5cvpgofZ_gdT8hdZw
+      // TODO - not hardcode api key
+      $.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCPorm8YzIaUGhKfe5cvpgofZ_gdT8hdZw&v=3.exp&sensor=false&callback=map_callback&libraries=places');
     } else {
       this.renderMap();
     }

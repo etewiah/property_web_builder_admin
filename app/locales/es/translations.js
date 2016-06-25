@@ -305,6 +305,7 @@ export default Ember.merge(Ember.copy(en), {
   "key.with.interpolation": "Texto con {{anInterpolation}}",
 
   errors: {
+    genericServerError: "Lo siento, se ha producido un error",
     languageRequired: "Seleccionar a menos una idioma",
     inclusion: "no está en la lista",
     exclusion: "está reservado",

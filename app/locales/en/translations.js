@@ -304,6 +304,7 @@ export default {
   "key.with.interpolation": "Text with {{anInterpolation}}",
 
   errors: {
+    genericServerError: "Sorry, there has been an error",
     languageRequired: "You must select at least one language",
     inclusion: "is not included in the list",
     exclusion: "is reserved",
