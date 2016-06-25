@@ -4,11 +4,12 @@
   <div class="row">
 
 
-
+{{!-- could use "partials/manage-changes-buttons" if action was saveResourceObject --}}
 {{#if hasChanged}}
   {{#if hasErrors}}
     {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
     {{else}}
+  {{/if}}
     <div class="col-sm-12">
       <div class="alert alert-info " role="alert"><i class="fa fa-lg fa-info"></i> {{t "alerts.changesDetected"}} 
         <button type="submit"  style="" class="btn btn-primary waves-effect" {{action "saveAddressDetails"}}>
@@ -18,9 +19,18 @@
         {{action "cancelChanges" }}>
           {{t "cancel"}}
         </button> 
+
+
+    {{#if serverError}}
+    <div class="error-info">
+      <div class="pull-left">{{t "errors.genericServerError" }}</div>  
+    </div>
+    {{/if}}
+
       </div>
     </div>
-  {{/if}}
+
+
 {{/if}}
 
 

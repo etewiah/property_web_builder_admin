@@ -15,7 +15,6 @@ export default TabWithForm.extend({
         // triggerReset is an action in TabWithForm
         this.send("triggerReset");
       }.bind(this), function(error) {
-        debugger;
         var errorMessage = "Sorry, there has been an error.";
         if (error.responseJSON && error.responseJSON.errors) {
           errorMessage = error.responseJSON.errors[0];

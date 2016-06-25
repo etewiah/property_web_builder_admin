@@ -1,5 +1,6 @@
 {{#if hasChanged}}
   {{#if hasErrors}}
+    {{!-- june 2016 - not making use of this yet --}}
     {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
     {{else}}
     <div class="col-sm-12">
@@ -11,7 +12,18 @@
         {{action "cancelChanges" }}>
           {{t "cancel"}}
         </button> 
+
+    {{#if serverError}}
+    <div class="error-info">
+      <div class="pull-left">{{t "errors.genericServerError" }}</div>  
+    </div>
+    {{/if}}
+
+
       </div>
     </div>
   {{/if}}
+
+
+
 {{/if}}
