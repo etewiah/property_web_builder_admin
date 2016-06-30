@@ -1,3 +1,5 @@
+June 2016 - this is the inmo admin client
+- auth is handled on the rails side
 
 needs to be run so:
 
