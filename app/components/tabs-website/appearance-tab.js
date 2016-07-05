@@ -23,14 +23,33 @@ export default TabWithForm.extend(OnReadyMixin, {
   },
   siteTemplateField: {
     labelTextTKey: "",
-    fieldName: "site_template",
-    fieldType: "dynamicSelect",
-    optionsKey: "layoutLabels",
+    fieldName: "site_template_id",
   },
   siteTemplateFieldKeys: function(){
-    var contentResources = this.get("contentResources");
-    // debugger;
-    return contentResources;
+    // var contentResources = this.get("contentResources");
+
+    var fieldOptions = [];
+    var currentValue = this.get("tenantDetails.site_template_id") || "";
+
+    // fieldOptionKeys
+    this.get("contentResources.data").forEach(function(option) {
+      var fieldOption = Ember.Object.create({
+        value: option.id,
+        label: option.attributes.title,
+        checked: false
+      });
+      if (option.id === currentValue.toString()) {
+        fieldOption.checked = true;
+      }
+      // this.get("i18n").t(option).string || "Unknown";
+      fieldOptions.push(fieldOption);
+    }.bind(this));
+
+
+    return fieldOptions.sortBy("label");
+
+
+    // return contentResources;
   }.property("contentResources"),
   // siteTemplateFieldKeys: {
   //   layoutLabels: [

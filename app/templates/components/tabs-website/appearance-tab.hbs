@@ -5,7 +5,8 @@
 
     <div class="col-sm-4">
       <h4>Site Templates:  {{t "inTabLabels.siteLayout"}}</h4>
-    {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateSiteTemplate"  fieldDetails=siteTemplateField resourceObject=tenantDetails.style_variables fieldKeys=siteTemplateFieldKeys }}
+    {{forms/radio-list  resetTrigger=resetTrigger 
+    valueChangedAction="updateAppearance"  fieldDetails=siteTemplateField resourceObject=tenantDetails fieldOptions=siteTemplateFieldKeys }}
 
     </div>
 

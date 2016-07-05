@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import SiteTemplate from '../../../models/site-template';
 
 export default Ember.Route.extend({
   // tabsList: [{}],
@@ -45,7 +46,14 @@ export default Ember.Route.extend({
       return this.store.findAll("section");
     }
     if (params.tabName === "appearance") {
-      return this.store.findAll("siteTemplate");
+      return SiteTemplate.getAll();
+      // july 2016: tried using ember store below but just too much
+      // work figuring out the promise object
+      // return this.store.findAll("siteTemplate").then(
+      //   function(res){
+      //     // debugger;
+      //     return res;
+      //   });
     }
     return this.store.query("webContent", {
       filter: {
