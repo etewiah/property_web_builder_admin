@@ -5,8 +5,12 @@ export default Ember.Route.extend({
   i18n: Ember.inject.service(),
   actions: {
     // https://guides.emberjs.com/v1.10.0/routing/preventing-and-retrying-transitions/
+    // below should stop users from navigating away from a page with outstanding changes
+    // - does not work for social_media links on admin/website/general route though
+    // because object being operated on there is not the model from this controller..
     willTransition: function(transition) {
-        var contentResources = this.controller.get("contentResources");
+        var contentResources = this.controller.get("model");
+        // debugger;
         var hasDirtyRecords = false;
         contentResources.forEach(function(resource) {
           if (resource.get("hasDirtyAttributes")) {
@@ -39,13 +43,15 @@ export default Ember.Route.extend({
   model(params) {
     if (params.tabName === "sections") {
       return this.store.findAll("section");
-    } else {
-      return this.store.query("webContent", {
-        filter: {
-          tag: params.tabName
-        }
-      });
     }
+    if (params.tabName === "appearance") {
+      return this.store.findAll("siteTemplate");
+    }
+    return this.store.query("webContent", {
+      filter: {
+        tag: params.tabName
+      }
+    });
     // return this.store.findAll('webContent'); 
     // return params.tabName;
     // return this.store.findRecord('webContent', "test");
@@ -57,7 +63,7 @@ export default Ember.Route.extend({
     activeTabName = activeTabName.toLowerCase();
     controller.set("activeTabName", activeTabName);
 
-    controller.set("contentResources", model);
+    controller.set("model", model);
 
     controller.set("agencyDetails", this.modelFor("admin").agencyDetails);
     controller.set("tenantDetails", this.modelFor("admin").tenantDetails);
@@ -81,9 +87,9 @@ export default Ember.Route.extend({
         tabValue: "landing-carousel",
         tabTitleKey: "webContentSections.landingCarousel"
       }, {
-      //   tabValue: "sections",
-      //   tabTitleKey: "webContentSections.sections"
-      // }, {
+        //   tabValue: "sections",
+        //   tabTitleKey: "webContentSections.sections"
+        // }, {
         tabValue: "content-area-cols",
         tabTitleKey: "webContentSections.contentAreaCols",
         // tabInfoKey: "webContentSections.info.contentAreaCols",

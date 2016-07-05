@@ -27,12 +27,17 @@ export default TabWithForm.extend(OnReadyMixin, {
     fieldType: "dynamicSelect",
     optionsKey: "layoutLabels",
   },
-  siteTemplateFieldKeys: {
-    layoutLabels: [
-      "siteLayout.wide",
-      "siteLayout.boxed"
-    ]
-  },
+  siteTemplateFieldKeys: function(){
+    var contentResources = this.get("contentResources");
+    // debugger;
+    return contentResources;
+  }.property("contentResources"),
+  // siteTemplateFieldKeys: {
+  //   layoutLabels: [
+  //     "siteLayout.wide",
+  //     "siteLayout.boxed"
+  //   ]
+  // },
   rawCssField: {
     labelTextTKey: "",
     fieldName: "raw_css",
