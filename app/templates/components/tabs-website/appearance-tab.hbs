@@ -1,5 +1,66 @@
 {{!-- TODO? - might implement if there are enough options to move out of general-tab --}}
 <div role="tabpanel" class="tab-pane active" id="apariencia">
+    <div class="row">
+      {{partial "partials/manage-changes-buttons" }}
+
+    <div class="col-sm-4">
+      <h4>Site Templates:  {{t "inTabLabels.siteLayout"}}</h4>
+    {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateSiteTemplate"  fieldDetails=siteTemplateField resourceObject=tenantDetails.style_variables fieldKeys=siteTemplateFieldKeys }}
+
+    </div>
+
+    <div class="col-sm-4">
+
+      <h4>{{t "inTabLabels.colors"}}</h4>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          {{spectrum-color-picker
+              showPalette=true
+              color=tenantDetails.style_variables.primary_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+              palette='[["#e91b23","#563d7c"],["#3498db","#8ec449"],["#f1c40f","#d35400"]]'
+          }}
+        </div>
+        <label class="fg-label">{{t "inTabLabels.colorPrimary"}}</label>
+      </div>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          {{spectrum-color-picker
+              showPalette=true
+              color=tenantDetails.style_variables.secondary_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+              palette='[["#e91b23","#563d7c"],["#3498db","#8ec449"],["#f1c40f","#d35400"]]'
+          }}
+        </div>
+        <label class="fg-label">{{t "inTabLabels.colorSecondary"}}</label>
+      </div>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          {{spectrum-color-picker
+              showPalette=true
+              color=tenantDetails.style_variables.action_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+              palette='[["#e91b23","#563d7c"],["#3498db","#8ec449"],["#f1c40f","#d35400"]]'
+          }}
+        </div>
+        <label class="fg-label">{{t "inTabLabels.colorActions"}}</label>
+      </div>
+
+
+      <h4>{{t "inTabLabels.siteLayout"}}</h4>
+    {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=siteLayoutField resourceObject=tenantDetails.style_variables fieldKeys=siteLayoutFieldKeys }}
+
+    </div>
+    <div class="col-sm-4">
+        {{forms/simple-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=rawCssField resourceObject=tenantDetails }} 
+    </div>
+</div>
   <div class="row">
     <div class="col-sm-4">
       <h4>Colores</h4>

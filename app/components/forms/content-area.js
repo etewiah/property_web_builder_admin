@@ -1,5 +1,8 @@
 // This component is designed to handle the data used by 
 // web-content model
+// - works with content that has multilingual sections in the 
+// form rawEs, rawEn etc
+// - interface is simple content area (no html editor)
 import Ember from 'ember';
 
 export default Ember.Component.extend({
