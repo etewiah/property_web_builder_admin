@@ -69,7 +69,6 @@ export default TabWithForm.extend(OnReadyMixin, {
       // tenantDetails are retrieved from the base route
       // http://re-renting.propertysquares.dev:3000/api/v1/agency
       var tenantDetails = this.get("tenantDetails");
-      debugger;
       tenantDetails.save(function(successResponse) {}.bind(this));
     },
 

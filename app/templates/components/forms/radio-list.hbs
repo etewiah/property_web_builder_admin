@@ -13,7 +13,7 @@
 
 {{#each fieldOptions as |selectValue|}} 
   <div class="radio m-b-15">
-    <label {{action "radioChanged" selectValue}}>
+    <label {{action "radioChanged" selectValue this}}>
       <input type="radio"  
        value={{ selectValue.value }} checked={{ selectValue.checked}}>
       <i class="input-helper"></i> {{ selectValue.label }}

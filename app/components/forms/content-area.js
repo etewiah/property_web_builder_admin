@@ -1,7 +1,7 @@
-// This component is designed to handle the data used by 
-// web-content model
-// - works with content that has multilingual sections in the 
-// form rawEs, rawEn etc
+// This component only works with specific content in the
+// landing page 3-column services section
+// - goes through hoops to ensure the content remains in 
+// correct h4 and p tags
 // - interface is simple content area (no html editor)
 import Ember from 'ember';
 
@@ -24,6 +24,11 @@ export default Ember.Component.extend({
       this.sendAction("saveContentItemAction", contentItem);
       // TODO - ensure above is successfull before calling below
       this.set("isEditing", false);
+      // below 2 calls ensure that if I return to edit
+      // and then cancel
+      // content will rollback to correct last value
+      this.set("originalTitleValue", titleValue);
+      this.set("originalContentValue", contentValue);
     },
     startEditing: function() {
       this.set("isEditing", true);
@@ -31,8 +36,9 @@ export default Ember.Component.extend({
     cancelEditing: function() {
       var contentItem = this.get("contentItem");
       contentItem.rollbackAttributes();
-      // debugger;
-      this.set("contentValue", this.get("contentItem.raw" + this.languageSettings));
+      this.set("titleValue",this.get("originalTitleValue"));
+      this.set("contentValue",this.get("originalContentValue"));
+      // this.set("contentValue", this.get("contentItem.raw" + this.get("languageSettings").capitalize() ));
       this.set("isEditing", false);
     },
     previewContent: function() {
@@ -61,6 +67,7 @@ export default Ember.Component.extend({
         var rawContent = this.get("contentItem.raw" + capitalizedLang);
         var $frag = $("<div>" + rawContent + "</div>");
         var titleValue = $frag.find("h4").text();
+        this.set("originalTitleValue", titleValue);
         return titleValue;
       },
       // set(key, value) {
@@ -80,6 +87,7 @@ export default Ember.Component.extend({
         // var $frag = $(rawContent);
         var mainText = $frag.find("p").text();
         // return this.get("contentItem.rawEn");
+        this.set("originalContentValue", mainText);
         return mainText;
       },
       // set(key, value) {
