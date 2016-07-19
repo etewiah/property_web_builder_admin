@@ -6,6 +6,7 @@ import en from "../en/translations";
 export default Ember.merge(Ember.copy(en), {
 
   "": "",
+  "ar": "Arabe",
   "en": "Inglés",
   "es": "Español",
   "ca": "Catalán",
@@ -335,6 +336,7 @@ export default Ember.merge(Ember.copy(en), {
   
   // some of these are in server side translations that come from seed file for each tenant
   "webContentLabels": {
+    "suffixAr": "en Arabe",
     "suffixEn": "en Inglés",
     "suffixEs": "en Español",
     "privacyPolicy": "Texto de la política de privacidad",

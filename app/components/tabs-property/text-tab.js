@@ -22,7 +22,6 @@ export default Ember.Component.extend({
   actions: {
     savePropertyResource: function() {
       var propertyResource = this.get("resourceObject");
-
       function transitionToPost(propertyResource) {
         // self.transitionToRoute('posts.show', post);
       }

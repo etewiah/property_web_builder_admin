@@ -147,6 +147,8 @@ export default DS.Model.extend({
   reference: DS.attr(),
   titleEn: DS.attr(),
   titleEs: DS.attr(),
+  titleAr: DS.attr(),
+  descriptionAr: DS.attr(),
   descriptionEn: DS.attr(),
   descriptionEs: DS.attr(),
   titleCa: DS.attr(),

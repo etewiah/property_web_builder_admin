@@ -6,6 +6,7 @@
 export default {
 
   "": "",
+  "ar": "Arabic",
   "en": "English",
   "es": "Spanish",
   "ca": "Catalan",
@@ -334,6 +335,7 @@ export default {
   //fieldLabels.tituloIngles etc are on server side translations but no longer in use 
   // some of these are in server side translations that come from seed file for each tenant
   "webContentLabels": {
+    "suffixAr": "in Arabic",
     // "suffixEn": "en Inglés",
     // "suffixEs": "en Español",
     "privacyPolicy": "Privacy Policy",
