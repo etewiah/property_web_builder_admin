@@ -103,7 +103,11 @@ div.card-header{
   background: #fafafa;
 }
 
+/*Ed july 2016 - below meant that dropdown for sitelayout would
+get hidden behind boundries of card-body:
+http://gooddeals.propertysquares.dev:8080/en/admin/website/general
 div.card-body{overflow: hidden;}
+*/
 
 
 input[disabled="disabled"], 

@@ -221,6 +221,7 @@ export default Ember.merge(Ember.copy(en), {
 
   // labels with a tab:
   "inTabLabels": {
+    "currency": "Currency",
     "colors": "Colores",
     "socialLinks": "Redes sociales",
     "siteLayout": "Modo de visualización",
@@ -236,6 +237,12 @@ export default Ember.merge(Ember.copy(en), {
     "boxed": "Encajada"
   },
 
+  // "currency": {
+  //   "eur": "Euros",
+  //   "usd": "US Dollars",
+  //   "egp": "Egyptian Pound"
+  // },
+  
   "propertySections": {
     "general": "General",
     "location": "Situación",

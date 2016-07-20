@@ -82,7 +82,12 @@
 
 
       <h4>{{t "inTabLabels.siteLayout"}}</h4>
-    {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=siteLayoutField resourceObject=tenantDetails.style_variables fieldKeys=siteLayoutFieldKeys }}
+      {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=siteLayoutField resourceObject=tenantDetails.style_variables fieldKeys=siteLayoutFieldKeys }}
+      
+      {{!-- 
+      <h4>{{t "inTabLabels.currency"}}</h4> --}}
+        {{!-- forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=currencyField resourceObject=tenantDetails.style_variables fieldKeys=currencyFieldKeys --}}
+
 
     </div>
     <div class="col-sm-6">

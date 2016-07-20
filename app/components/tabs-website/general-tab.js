@@ -9,6 +9,18 @@ import TabWithForm from "../base/tab-with-form";
 export default TabWithForm.extend(OnReadyMixin, {
   // languages: ["En", "Es"],
   changedFields: [],
+  // currencyField: {
+  //   labelTextTKey: "",
+  //   fieldName: "body_style",
+  //   fieldType: "dynamicSelect",
+  //   optionsKey: "layoutLabels",
+  // },
+  // currencyFieldKeys: {
+  //   layoutLabels: [
+  //     "currency.eur",
+  //     "currency.usd"
+  //   ]
+  // },
   siteLayoutField: {
     labelTextTKey: "",
     fieldName: "body_style",

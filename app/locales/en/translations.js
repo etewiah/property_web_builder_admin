@@ -221,6 +221,7 @@ export default {
 
   // labels with a tab:
   "inTabLabels": {
+    "currency": "Currency",
     "colors": "Colours",
     "socialLinks": "Social Links",
     "siteLayout": "Site Layout",
@@ -236,13 +237,19 @@ export default {
     "boxed": "Boxed"
   },
 
+  // "currency": {
+  //   "eur": "Euros",
+  //   "usd": "US Dollars",
+  //   "egp": "Egyptian Pound"
+  // },
+
   "propertySections": {
     "general": "General",
     "location": "Location",
     // "description": "Description",
     "text": "Text",
     "extras": "Extras",
-    "photos": "Fotos",
+    "photos": "Photos",
     "sale": "Sale / Rental",
     "owner": "Owner"
   },
