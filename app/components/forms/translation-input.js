@@ -53,8 +53,9 @@ export default Ember.Component.extend({
               originalValues[translation.locale] = translation.i18n_value;
             }.bind(this));
           } else {
-            // could be a bunch of existing translations with one locale that isn't translated
-            translation.create(function(result) {
+            // adding locale that isn't translated
+            // to a bunch of existing translations 
+            translation.addLocaleToExisting(function(result) {
               originalValues[translation.locale] = translation.i18n_value;
             }.bind(this));
           }

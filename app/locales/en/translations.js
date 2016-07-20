@@ -343,6 +343,10 @@ export default {
   // some of these are in server side translations that come from seed file for each tenant
   "webContentLabels": {
     "suffixAr": "in Arabic",
+    "suffixFr": "in French",
+    "suffixIt": "in Italian",
+    "suffixPt": "in Portuguese",
+    "suffixDe": "in German",
     // "suffixEn": "en Inglés",
     // "suffixEs": "en Español",
     "privacyPolicy": "Privacy Policy",

@@ -23,9 +23,9 @@ export default TabWithForm.extend({
     // extrasFields.chunk2 = inputFields.splice(0, Math.ceil(chunkLength));
     // extrasFields.chunk3 = inputFields.splice(0, Math.ceil(chunkLength));
 
-    extrasFields.chunk1 = [];
-    extrasFields.chunk2 = [];
-    extrasFields.chunk3 = [];
+    // extrasFields.chunk1 = [];
+    // extrasFields.chunk2 = [];
+    // extrasFields.chunk3 = [];
 
 // debugger;
     return inputFields;
@@ -35,6 +35,7 @@ export default TabWithForm.extend({
   parseInputFields: function(fieldNames) {
     var inputFields = [];
     fieldNames.forEach(function(fieldNameKey) {
+      // a fieldNameKey might be "extras.vistasALaSierra"
       var inputField = {
         fieldDbType: "boolean"
       };
