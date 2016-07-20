@@ -9,6 +9,35 @@ import TabWithForm from "../base/tab-with-form";
 export default TabWithForm.extend(OnReadyMixin, {
   // languages: ["En", "Es"],
   changedFields: [],
+  availableLocaleFields: function() {
+    var availableLocalesArray = this.get("tenantDetails.available_locales") || ["en","fr"];
+    // above looks like ["en","es"]
+    var availableLocaleFields = [];
+    availableLocalesArray.forEach(function(locale) {
+      availableLocaleFields.push({
+        labelTextTKey: locale,
+        fieldName: locale
+      });
+    });
+    // above returns items suitable for forms/simple-boolean like:
+    // {
+    //   labelTextTKey: "en",
+    //   fieldName: "en",
+    // }
+    return availableLocaleFields;
+  }.property(),
+  // languageFields: [{
+  //   labelTextTKey: "es",
+  //   // tooltipTextTKey: "toolTips.visible",
+  //   fieldName: "es",
+  //   // fieldType: "simpleSelect",
+  //   // fieldDbType: "boolean",
+  // }, {
+  //   labelTextTKey: "en",
+  //   fieldName: "en",
+  // }],
+
+
   // currencyField: {
   //   labelTextTKey: "",
   //   fieldName: "body_style",
@@ -146,9 +175,9 @@ export default TabWithForm.extend(OnReadyMixin, {
     if (logoContent) {
       // June 2016 - scenario where rerenting did not have content resource
       // for logo on server meant I had to add this check..
-      logoPhoto = logoContent.get("photoModels.firstObject") || { id: 0};
+      logoPhoto = logoContent.get("photoModels.firstObject") || { id: 0 };
     }
-    var editPhotoEndpoint = "/api/v1/web_contents/photos/" + logoPhoto.id + "/logo" ;
+    var editPhotoEndpoint = "/api/v1/web_contents/photos/" + logoPhoto.id + "/logo";
     return editPhotoEndpoint;
   }.property("resourceObject.id"),
 

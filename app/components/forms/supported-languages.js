@@ -7,7 +7,7 @@ export default Ember.Component.extend({
       var supportedLanguages = [];
       var languageOptions = this.get("languageOptions");
       Object.keys(languageOptions).forEach(
-        function(languageOption){
+        function(languageOption) {
           if (languageOptions[languageOption]) {
             supportedLanguages.push(languageOption);
           }
@@ -17,30 +17,11 @@ export default Ember.Component.extend({
         this.set("errors", []);
         this.set("supportedLanguages", supportedLanguages);
         this.sendAction("valueChangedAction", {});
-      }
-      else{
+      } else {
         this.set("errors", ["errors.languageRequired"]);
       }
     }
   },
-  languageFields: [{
-    labelTextTKey: "es",
-    // tooltipTextTKey: "toolTips.visible",
-    fieldName: "es",
-    // fieldType: "simpleSelect",
-    // fieldDbType: "boolean",
-  }, {
-    labelTextTKey: "en",
-    // tooltipTextTKey: "toolTips.visible",
-    fieldName: "en",
-    // fieldType: "simpleSelect",
-    // fieldDbType: "boolean",
-  }, 
-  // {
-  //   labelTextTKey: "ca",
-  //   fieldName: "ca",
-  // }
-  ],
   languageOptions: function() {
       var supportedLanguages = this.get("supportedLanguages");
       var languageOptions = {};

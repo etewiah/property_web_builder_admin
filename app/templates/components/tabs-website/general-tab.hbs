@@ -5,7 +5,7 @@
     <div class="col-sm-6">
 
       <h4>{{t "inTabLabels.supportedLanguages"}}</h4>
-      {{forms/supported-languages supportedLanguages=tenantDetails.supported_languages
+      {{forms/supported-languages languageFields=availableLocaleFields supportedLanguages=tenantDetails.supported_languages
       valueChangedAction="updateAppearance" }}
 
       <h4>{{t "logo"}}</h4> 

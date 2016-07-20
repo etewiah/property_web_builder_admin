@@ -5,8 +5,8 @@
 </div>
 {{/each}}
 {{/if}}
-{{#each languageFields as |languageField|}} 
 <div class="form-group fg-float">
+{{#each languageFields as |languageField|}} 
   {{forms/simple-boolean  resetTrigger=resetTrigger valueChangedAction="changeSupportedLanguage"  fieldDetails=languageField resourceObject=languageOptions }}
-</div>
 {{/each}}
+</div>
