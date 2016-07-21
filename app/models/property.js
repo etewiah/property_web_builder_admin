@@ -62,7 +62,6 @@ export default DS.Model.extend({
     // this.getProperties( Object.keys(this) );
     var self = this;
     var apiUrl = '/api/v1/properties/update_extras';
-    debugger;
     return $.ajax(apiUrl, {
       type: 'POST',
       dataType: 'json',

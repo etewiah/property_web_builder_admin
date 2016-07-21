@@ -2,10 +2,12 @@
 
 # - current as of june 2016
 
-
-# rake inmo:read_in_ember_moodleboard
-# after running above, navigate to 
-# http://mgmt.tee.dev:3000/mgmt/deploys/moodleboard
+# after running
+# ./copy-admin2-to-rails.sh
+# edit below 
+# /Users/etewiah/Ed/sites-2015-spt/inmo1/app/views/layouts/admin2_client.html.erb
+# to reflect new file like
+# /Users/etewiah/Ed/sites-2015-spt/inmo1/public/fe/admin2-client/2016-07-21/index.html
 
 
 TARGET_DIR=../../inmo1/public/fe/admin2-client/$(date +%Y-%m-%d)
