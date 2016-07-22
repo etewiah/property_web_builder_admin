@@ -22,12 +22,17 @@ export default Ember.Component.extend({
     // this is the only way I can figure out of setting an empty value for selectpicker
     // var currentOption = fieldOptions.findBy("value", currentValue);
     // var currentOptionValue = currentOption ? currentOption.label : "";
-    if (Ember.isEmpty(fieldOptions.findBy("value", currentValue))) {
-      fieldOptions.pushObject({
-        value: "",
-        label: ""
-      });
-    }
+    // if (Ember.isEmpty(fieldOptions.findBy("value", currentValue))) {
+    //   fieldOptions.pushObject({
+    //     value: "",
+    //     label: ""
+    //   });
+    // }
+    // july 2016 - decided to blanket allow setting of null values
+    fieldOptions.pushObject({
+      value: "",
+      label: ""
+    });
     return fieldOptions.sortBy("label");
   }.property(),
   setupComponent: function() {

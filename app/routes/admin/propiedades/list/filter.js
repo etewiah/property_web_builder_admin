@@ -18,7 +18,9 @@ export default Ember.Route.extend({
 
     return this.store.query("liteProperty", {
       filter: filter
-    }, { reload: true });
+    });
+    // below would force a call to backend each time
+    // }, { reload: true });
     // return this.store.findAll('property'); 
   },
 
@@ -26,6 +28,7 @@ export default Ember.Route.extend({
     controller.set("model", []);
     // debugger;
     // !!!!!july 2016 - can't for the life of me get properties to refresh when route changes
+    // Could actually be something with the data table view I’m using rather than ember or ember-data issue
     var filter = this.paramsFor("admin.propiedades.list.filter").filter;
     controller.set("filter", filter);
     var filteredModel = model;
