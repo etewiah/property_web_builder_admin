@@ -45,7 +45,7 @@ export default Ember.Route.extend({
         subMenuItems: [{
           tabIconClass: "fa fa-list",
           tabTitleKey: "adminSections.list",
-          tabRoute: "admin.propiedades.list.visible"
+          tabRoute: "admin.propiedades.list.default"
             // tabRoute: "admin.inicio"
         }, {
           tabIconClass: "fa fa-gears",

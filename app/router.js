@@ -102,12 +102,15 @@ Router.map(function() {
       this.route("list", {
         path: '/list'
       }, function() {
-        this.route("visible", {
-          path: "/visible"
+        this.route("default", {
+          path: "/"
         });
-        this.route("hidden", {
-          path: "/hidden"
+        this.route("filter", {
+          path: "/:filter"
         });
+        // this.route("hidden", {
+        //   path: "/hidden"
+        // });
       });
       this.route("settings", function() {
         this.route("default", {
