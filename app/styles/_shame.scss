@@ -1,3 +1,10 @@
+.btn-edfile {
+  .padded-pencil {
+    /*below needed to center editing pencil icon in firefox*/
+    padding: 6px;
+  }
+}
+
 .card-with-extra-header {
   /*
   below was previously applied to div.card-body here
