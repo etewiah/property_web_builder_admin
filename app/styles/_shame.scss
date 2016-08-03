@@ -48,6 +48,9 @@ header#header {
 .btn-edfile {
   position: relative;
   overflow: hidden;
+  /*bootstrappy blue*/
+  background: #4a90e2;
+  color: white;
 }
 
 .btn-edfile input[type=file] {

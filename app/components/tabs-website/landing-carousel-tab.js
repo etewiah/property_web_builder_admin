@@ -23,7 +23,7 @@ export default Ember.Component.extend({
 
     // },
     refreshCarouselItems: function(response) {
-      console.log(this.store);
+      // console.log(this.store);
       var carouselItems = this.get("contentResources");
       var store = this.get("store");
       // http://emberjs.com/api/data/classes/DS.Store.html#method_push
@@ -38,12 +38,18 @@ export default Ember.Component.extend({
       // https://github.com/emberjs/data/issues/3313
       // internalModel.getRecord is not a function
 
-      var refreshedContent = store.peekAll('webContent');
+      // peekAll is like findAll but will go back to the server
+      var refreshedContent = store.peekAll('webContent').filterBy("tag", "landing-carousel");
+      // before I added "filterBy" to above, logo would be added
+      // to above if user had previously browsed to that tab
+      // 
+      // below seems to generate error message in console about
+      // calling set on a destroyed object
       this.set("contentResources", refreshedContent);
     },
     deleteCarouselItem: function(carouselItem) {
-      function success(contentItem) {
-      }
+      function success(contentItem) {}
+
       function failure(reason) {
         // handle the error
       }
@@ -53,10 +59,10 @@ export default Ember.Component.extend({
       function success(contentItem) {
         // self.transitionToRoute('posts.show', post);
       }
+
       function failure(reason) {
         // handle the error
       }
-      // debugger;
       contentItem.save().then(success).catch(failure);
     }
   },
