@@ -289,7 +289,8 @@ export default Ember.merge(Ember.copy(en), {
     "visible": "Sí para publicar el inmueble en su web",
     "highlighted": "Sí para poner el inmueble en la sección",
     // above 2 for individual property page...
-    "temporadas": "Si el inmueble se alquila por temporadas",
+    "seasonalRental": "Si el inmueble se alquila por temporadas",
+    // don't think below 3 are in use anymore
     "precioAntiguo": "El precio antes de la rebaja",
     "precioAlquiler": "0 si el inmueble sólo es para venta",
     "precioVenta": "Precio de venta",

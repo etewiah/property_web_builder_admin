@@ -67,15 +67,106 @@ export default TabWithForm.extend({
   characteristicasInputFields: [
     //this comment tricks prettify ;) 
     {
+      labelTextTKey: "fieldLabels.numHabitaciones",
+      tooltipTextTKey: false,
+      fieldName: "numHabitaciones",
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 99,
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.numBanos",
+      tooltipTextTKey: false,
+      fieldName: "numBanos",
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 99,
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.numAseos",
+      tooltipTextTKey: false,
+      fieldName: "numAseos",
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 99,
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.garaje",
+      // tooltipTextTKey: "toolTips.garaje",
+      fieldName: "numGarajes",
+      // fieldType: "simpleSelect",
+      // fieldDbType: "boolean",
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 99,
+          }
+        }
+      }
+    },
+  ],
 
-     // eficienciaEnergia is saved on server as string
-     // commenting out till I decide on server side solution
-    //   labelTextTKey: "fieldLabels.eficienciaEnergia",
-    //   tooltipTextTKey: "toolTips.eficienciaEnergia",
-    //   fieldName: "eficienciaEnergia",
-    //   fieldType: "simpleSelect",
-    //   fieldDbType: "boolean",
-    // }, {
+  characteristicasInputFields2: [
+    //this comment tricks prettify ;) 
+    {
+      labelTextTKey: "fieldLabels.mParcela",
+      tooltipTextTKey: false,
+      fieldName: "mParcela",
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 1000000,
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.mConstruidos",
+      tooltipTextTKey: false,
+      fieldName: "mConstruidos",
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThanOrEqualTo: 1000000,
+          }
+        }
+      }
+    }, {
+
+      // eficienciaEnergia is saved on server as string
+      // commenting out till I decide on server side solution
+      //   labelTextTKey: "fieldLabels.eficienciaEnergia",
+      //   tooltipTextTKey: "toolTips.eficienciaEnergia",
+      //   fieldName: "eficienciaEnergia",
+      //   fieldType: "simpleSelect",
+      //   fieldDbType: "boolean",
+      // }, {
       labelTextTKey: "fieldLabels.anoConstr",
       tooltipTextTKey: false,
       fieldName: "anoConstr",
@@ -91,92 +182,8 @@ export default TabWithForm.extend({
           },
         }
       }
-    }, {
-      labelTextTKey: "fieldLabels.numHabitaciones",
-      tooltipTextTKey: false,
-      fieldName: "numHabitaciones",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.numBanos",
-      tooltipTextTKey: false,
-      fieldName: "numBanos",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.numAseos",
-      tooltipTextTKey: false,
-      fieldName: "numAseos",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.mParcela",
-      tooltipTextTKey: false,
-      fieldName: "mParcela",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.mConstruidos",
-      tooltipTextTKey: false,
-      fieldName: "mConstruidos",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
-    }, {
-      labelTextTKey: "fieldLabels.garaje",
-      tooltipTextTKey: "toolTips.garaje",
-      fieldName: "numGarajes",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-      // options: [{
-      //   value: 1,
-      //   titleKey: "Si"
-      // }, {
-      //   value: 0,
-      //   titleKey: "No"
-      // }]
     },
   ],
-
   mainInputFields: [{
     labelTextTKey: "fieldLabels.ref",
     tooltipTextTKey: "toolTips.ref",
@@ -184,8 +191,7 @@ export default TabWithForm.extend({
     fieldType: "simpleInput",
     inputType: "text",
     constraints: {
-      inputValue: {
-      }
+      inputValue: {}
     }
   }, {
     labelTextTKey: "fieldLabels.tipo",
@@ -220,10 +226,12 @@ export default TabWithForm.extend({
     savePropertyResource: function() {
       var propertyResource = this.get("resourceObject");
       var self = this;
+
       function success(result) {
         // triggerReset is an action in TabWithForm
         self.send("triggerReset");
       }
+
       function failure(reason) {
         // handle the error
       }
