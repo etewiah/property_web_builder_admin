@@ -19,7 +19,19 @@ export default Ember.Component.extend({
       // enclosing in div below ensures $frag.html() call later returns what I want
       var $frag = $("<div>" + rawContent + "</div>");
       $frag.find("h4").text(titleValue);
-      $frag.find("p").text(contentValue);
+      // $frag.find("p").text(contentValue);
+      // 
+      // var mainTextEl = $frag.find("p");
+      if ($frag.find(".ca-content").html()) {
+        $frag.find(".ca-content").html(contentValue);
+      }
+      else{
+        contentValue = "<div class='ca-content'>" + contentValue + "</div>";
+        $frag.find("p").replaceWith(contentValue);
+      }
+      // var mainText = $frag.find(".ca-content").html() || $frag.find("p").html();
+      // mainTextEl.replaceWith(contentValue);
+
       this.set("contentItem.raw" + capitalizedLang, $frag.html());
       this.sendAction("saveContentItemAction", contentItem);
       // TODO - ensure above is successfull before calling below
@@ -42,7 +54,6 @@ export default Ember.Component.extend({
       this.set("isEditing", false);
     },
     previewContent: function() {
-      debugger;
     }
   },
 
@@ -71,7 +82,6 @@ export default Ember.Component.extend({
         return titleValue;
       },
       // set(key, value) {
-      //   debugger;
       //   var capitalizedLang = this.get("languageSettings").capitalize();
       //   var rawContent = this.get("contentItem.raw" + capitalizedLang);
       //   return value;
@@ -85,7 +95,9 @@ export default Ember.Component.extend({
         var $frag = $("<div>" + rawContent + "</div>");
         // below would fail if I happened to have a raw string
         // var $frag = $(rawContent);
-        var mainText = $frag.find("p").text();
+        // var mainText = $frag.find("p").html();
+
+        var mainText = $frag.find(".ca-content").html() || $frag.find("p").html();
         // return this.get("contentItem.rawEn");
         this.set("originalContentValue", mainText);
         return mainText;

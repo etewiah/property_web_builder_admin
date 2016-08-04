@@ -1,19 +1,22 @@
+{{!--  --}}
 <div class="col-sm-12" style="padding-bottom: 3%;min-height: 160px;">
   <h4>{{t contentItem.labelKey }}  <span class="in-lang">({{t labelSuffixKey }})</span></h4>
 
   {{#if isEditing}}
       <div>
-        {{input value=titleValue type="text" rows="4" class="input-sm form-control fg-input"  }}
+        {{input value=titleValue type="text" rows="4" class="input-sm form-control fg-input ed-ca-head"  }}
       </div>
       <div>
-        {{textarea value=contentValue type="text" rows="4" class="input-sm form-control fg-input"  }}
+        {{wysiwyg-editor content=contentValue toolbarIn="hidden"}}
+
+        {{!--textarea value=contentValue type="text" rows="4" class="input-sm form-control fg-input"  --}}
       </div>
   {{else}}
     <h4>
       {{ titleValue }}
     </h4>
     <div>
-      {{ contentValue }}
+      {{{ contentValue }}}
     </div>
   {{/if}}
 

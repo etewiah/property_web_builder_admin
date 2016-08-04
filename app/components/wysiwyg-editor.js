@@ -4,7 +4,23 @@ export default Ember.Component.extend({
   classNames: ['wysiwyg-editor'],
   btnSize: 'btn-xs',
   // height: 120,
-  minHeight: 120,
+
+  toolbar: function() {
+    if (this.get("toolbarIn") === "hidden") {
+      return false;
+    }
+    return [
+      ['style', ['bold', 'italic', 'underline', 'clear']],
+      ['fontsize', ['fontsize']],
+      ['color', ['color']],
+      // ['para', ['ul', 'ol', 'paragraph']],
+      // ['height', ['height']],
+      ['insert', ['link']],
+      // ['table', ['table']],
+      // ['help', ['help']],
+      ['codeview', ['codeview']]
+    ];
+  }.property("toolbarIn"),
 
   willDestroyElement: function() {
     this.$('textarea').destroy();
@@ -13,7 +29,7 @@ export default Ember.Component.extend({
   setupEditor: function() {
     var _this = this;
     var btnSize = this.get('btnSize');
-    var minHeight = this.get('minHeight');
+    var toolbar = this.get('toolbar');
 
     // options here:
     // http://summernote.org/deep-dive/
@@ -26,17 +42,7 @@ export default Ember.Component.extend({
       // so used css to set it on .note-editable in _shame.scss
       minHeight: "200px",
       focus: true,
-      toolbar: [
-        ['style', ['bold', 'italic', 'underline', 'clear']],
-        ['fontsize', ['fontsize']],
-        ['color', ['color']],
-        // ['para', ['ul', 'ol', 'paragraph']],
-        // ['height', ['height']],
-        ['insert', ['link']],
-        // ['table', ['table']],
-        // ['help', ['help']],
-        ['codeview', ['codeview']]
-      ]
+      toolbar: toolbar
     });
 
     var content = this.get('content');

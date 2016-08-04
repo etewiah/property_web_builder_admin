@@ -1,5 +1,26 @@
+.ed-ca-head {
+  /*input for editing content area cols header*/
+  font-size: 18px;
+  padding: 10px;
+  color: black;
+}
+
+.note-editor {
+  /*by default there is 18px bottom margin*/
+  margin-bottom: 0px;
+}
+
+.note-toolbar,
+.note-editor .panel-heading {
+  /*better look for summernote toolbar and also less waste of space when 
+  toolbar not displayed*/
+  border-bottom-width: 0px;
+  padding: 0px;
+}
+
 .note-editor .note-editing-area .note-editable {
-  /**/
+  /* setting min height on summernote does not work so have to 
+  do it here */
   min-height: 120px;
 }
 
