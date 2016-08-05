@@ -44,23 +44,24 @@ Router.map(function() {
         path: "/:tabName"
       });
     });
+    // route below was previously called "content" internaly
     this.route("website", {
       path: "/website"
     }, function() {
       this.route("default", {
         path: "/"
       });
-      // not yet in use
-      // this.route("settings", function() {
-      //   this.route("default", {
-      //     path: "/"
-      //   });
-      //   this.route("tab", {
-      //     path: "/:tabName"
-      //   });
-      // });
       this.route("tab", {
         path: "/:tabName"
+      });
+
+      this.route("pages", function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("page", {
+          path: "/:pageName"
+        });
       });
     });
     // below route has been superceeded by 
