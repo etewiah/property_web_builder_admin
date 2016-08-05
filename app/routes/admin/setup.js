@@ -25,7 +25,7 @@ export default Ember.Route.extend({
         titleKey: "cards.website",
         promptKey: "cards.websitePrompt",
         linkParams: "",
-        link: "admin.content",
+        link: "admin.website",
         linkKey: "cards.websiteLink",
         tasks: [{
           titleKey: "tasks.changeLogo",
@@ -33,22 +33,22 @@ export default Ember.Route.extend({
           // linkParams: {"tabName": "general"},
           // above will result in route model not getting called
           linkParams: "general",
-          link: "admin.content.tab",
+          link: "admin.website.tab",
           icon: "fa fa-desktop fa-2x"
         }, {
           titleKey: "tasks.manageLandingCarousel",
           linkParams: "landing-carousel",
-          link: "admin.content.tab",
+          link: "admin.website.tab",
           icon: "fa fa-desktop fa-2x"
         }, {
           titleKey: "tasks.changeAboutUsText",
           linkParams: "about-us",
-          link: "admin.content.tab",
+          link: "admin.website.tab",
           icon: "fa fa-desktop fa-2x"
         }, {
           titleKey: "tasks.changeLegalText",
           linkParams: "legal",
-          link: "admin.content.tab",
+          link: "admin.website.tab",
           icon: "fa fa-desktop fa-2x"
         }]
       }, {

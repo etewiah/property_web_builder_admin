@@ -32,7 +32,7 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.agency.tab').tabName || "";
     controller.set("activeTabName", activeTabName.toLowerCase());
-    // controller.set("contentResources", this.modelFor('admin.content'));
+    // controller.set("contentResources", this.modelFor('admin.website'));
     controller.set("fieldKeys", model);
     controller.set("agencyDetails", this.modelFor("admin").agencyDetails);
     controller.set("primaryAddress", this.modelFor("admin").primaryAddress);

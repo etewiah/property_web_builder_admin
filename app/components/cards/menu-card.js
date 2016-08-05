@@ -13,7 +13,7 @@ export default Ember.Component.extend({
 
   defaultTodos: [{
     titleKey: "todos.createContent",
-    route: "admin.content",
+    route: "admin.website",
     completed: false
   }, {
     titleKey: "todos.companyDetails",

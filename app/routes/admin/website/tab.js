@@ -68,7 +68,7 @@ export default Ember.Route.extend({
   // setupController will not get called if model does not change
   // eg if I returned a query that was not dependant on params....
   setupController(controller, model) {
-    var activeTabName = this.paramsFor('admin.content.tab').tabName || "";
+    var activeTabName = this.paramsFor('admin.website.tab').tabName || "";
     activeTabName = activeTabName.toLowerCase();
     controller.set("activeTabName", activeTabName);
 
