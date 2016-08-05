@@ -161,7 +161,7 @@ export default TabWithForm.extend({
       constraints: {
         inputValue: {
           length: {
-            minimum: 2,
+            minimum: 1,
             tooShort: "needs to have %{count} characters or more"
           }
         }

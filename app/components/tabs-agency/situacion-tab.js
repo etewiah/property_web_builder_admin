@@ -79,11 +79,13 @@ export default TabWithForm.extend({
     var hasNoLatLng = (Em.isEmpty(this.get("resourceObject.latitude")) && Em.isEmpty(this.get("resourceObject.longitude")));
     return hasNoLatLng || this.get("isConfirming");
   }.property("isConfirming"),
-  
+
   situacionRightInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "zone",
+      fieldType: "spaceFiller",
+    }, {
+      labelTextTKey: "region",
       tooltipTextTKey: false,
       fieldName: "region",
       fieldType: "simpleInput",
@@ -119,20 +121,6 @@ export default TabWithForm.extend({
           }
         }
       }
-    }, {
-      labelTextTKey: "postCode",
-      tooltipTextTKey: false,
-      fieldName: "postal_code",
-      fieldType: "simpleInput",
-      inputType: "text",
-      constraints: {
-        inputValue: {
-          length: {
-            minimum: 2,
-            tooShort: "needs to have %{count} characters or more"
-          }
-        }
-      }
     }
   ],
   situacionLeftInputFields: [{
@@ -149,10 +137,26 @@ export default TabWithForm.extend({
           }
         }
       }
-    },{
-      labelTextTKey: "streetNumber",
+    },
+    // {
+    //   labelTextTKey: "streetNumber",
+    //   tooltipTextTKey: false,
+    //   fieldName: "street_number",
+    //   fieldType: "simpleInput",
+    //   inputType: "text",
+    //   constraints: {
+    //     inputValue: {
+    //       length: {
+    //         minimum: 1,
+    //         tooShort: "needs to have %{count} characters or more"
+    //       }
+    //     }
+    //   }
+    // },
+    {
+      labelTextTKey: "city",
       tooltipTextTKey: false,
-      fieldName: "street_number",
+      fieldName: "city",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {
@@ -164,9 +168,9 @@ export default TabWithForm.extend({
         }
       }
     }, {
-      labelTextTKey: "city",
+      labelTextTKey: "postCode",
       tooltipTextTKey: false,
-      fieldName: "city",
+      fieldName: "postal_code",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {

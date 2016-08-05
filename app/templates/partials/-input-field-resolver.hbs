@@ -1,3 +1,10 @@
+{{#if (eq inputField.fieldType "spaceFiller")}}
+<div class="form-group fg-float">
+<div class="fg-line" style="height: 57px;">
+  <label class="fg-label"></label>
+</div>
+</div>
+{{/if}}
 {{#if (eq inputField.fieldType "simpleInput")}}
     {{forms/simple-input  resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=inputField resourceObject=resourceObject}}
 {{/if}}
