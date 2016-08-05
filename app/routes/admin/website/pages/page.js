@@ -35,53 +35,31 @@ export default Ember.Route.extend({
 
 
   model(params) {
-    return this.store.query("webContent", {
-      filter: {
-        tag: params.pageName
-      }
-    });
+    // var whitelabelPrefix = location.hostname.split(".")[1].toLowerCase() ;
+    // var contentKey = whitelabelPrefix + "_" + params.pageName.toLowerCase();
+
+    var contentKey = params.pageName;
+    // .toLowerCase();
+    this.set("contentKey", contentKey);
+    return this.store.peekAll('webContent').filterBy("key", contentKey);
   },
   // setupController will not get called if model does not change
   // eg if I returned a query that was not dependant on params....
   setupController(controller, model) {
-    var activeTabName = this.paramsFor('admin.website.pages.page').pageName || "";
-    activeTabName = activeTabName.toLowerCase();
-    controller.set("activeTabName", activeTabName);
 
     controller.set("model", model);
+    controller.set("contentKey", this.get("contentKey"));
 
-    controller.set("agencyDetails", this.modelFor("admin").agencyDetails);
-    controller.set("tenantDetails", this.modelFor("admin").tenantDetails);
-    // controller.set("primaryAddress", this.modelFor("admin").primaryAddress);
-    // controller.set("currentUser", this.modelFor("admin").currentUser);
+    // controller.set("agencyDetails", this.modelFor("admin").agencyDetails);
+    // controller.set("tenantDetails", this.modelFor("admin").tenantDetails);
+    // debugger;
 
-
-    // before I would render all the components for the different tabs
-    // and hide or show them depending on which was active
-    // This meant initialization hooks which needed a dom element would fail
-    var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
-    controller.set("tabs-website-component", tabsWebsiteComponent);
+    // var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
+    // controller.set("tabs-website-component", tabsWebsiteComponent);
 
     var supportedLanguages = this.modelFor("admin").tenantDetails.supported_languages || ["es"];
     controller.set("languages", supportedLanguages);
 
-    controller.set("tabsList", [{
-        tabValue: "general",
-        tabTitleKey: "webContentSections.general"
-      }, {
-        tabValue: "landing-carousel",
-        tabTitleKey: "webContentSections.landingCarousel"
-      }, {
-        tabValue: "content-area-cols",
-        tabTitleKey: "webContentSections.contentAreaCols",
-      }, {
-        tabValue: "about-us",
-        tabTitleKey: "webContentSections.aboutUs"
-      }, {
-        tabValue: "legal",
-        tabTitleKey: "webContentSections.legal"
-      }
 
-    ]);
   }
 });

@@ -14,7 +14,7 @@
       {{!--
       <li class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a></li>
       --}} {{#each tabsList as |tab|}}
-      <li class={{if (eq tab.tabValue activeTabName) "active"}}>{{#link-to 'admin.website.tab' tab.tabValue}}{{t tab.tabTitleKey}}{{/link-to}}</li>
+      <li class={{if (eq tab.tabValue activeTabName) "active"}}>{{#link-to 'admin.website.pages.page' tab.tabValue}}{{ tab.tabTitleKey}}{{/link-to}}</li>
       {{/each}}
     </ul>
     <div class="tab-content">
