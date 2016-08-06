@@ -1,27 +1,53 @@
+.content-item-container {
+  /*style up summernote editable items when
+  not being edited*/
+  border-width: 1px;
+  border-style: outset;
+  padding: 5px;
+  margin: 12px 0px;
+  border-radius: 6px;
+  min-height: 50px;
+}
+
 .ed-ca-head {
   /*input for editing content area cols header*/
   font-size: 18px;
   padding: 10px;
   color: black;
+  border-width: 1px;
+  border-style: solid;
+  /* padding: 5px; */
+  margin: 12px 0px;
 }
 
 .note-editor {
   /*by default there is 18px bottom margin*/
-  margin-bottom: 0px;
+  /*margin-bottom: 0px;*/
 }
 
 .note-toolbar,
 .note-editor .panel-heading {
   /*better look for summernote toolbar and also less waste of space when 
   toolbar not displayed*/
-  border-bottom-width: 0px;
+  /*  border-bottom-width: 0px;
+  padding: 0px;
+*/
+}
+
+.note-editor .note-toolbar,
+.note-popover .note-toolbar
+/*.note-editor .popover-content,
+.note-popover .popover-content
+*/
+
+{
   padding: 0px;
 }
 
 .note-editor .note-editing-area .note-editable {
   /* setting min height on summernote does not work so have to 
   do it here */
-  min-height: 120px;
+  /*min-height: 120px;*/
 }
 
 .btn-edfile {

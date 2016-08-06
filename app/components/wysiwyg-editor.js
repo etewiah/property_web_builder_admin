@@ -24,8 +24,11 @@ export default Ember.Component.extend({
   }.property("toolbarIn"),
 
   willDestroyElement: function() {
-    this.$('#summernote').summernote('destroy');
-    // this.$('#summernote').destroy();
+    // had previously been using this.$('textarea')
+    // but that resulted in multiple editors being created
+    // each time I did something with this.$('textarea')
+    this.$('.summernote-ta').summernote('destroy');
+    // this.$('.summernote-ta').destroy();
   },
 
   // var content = this.get('content');
@@ -36,7 +39,7 @@ export default Ember.Component.extend({
 
     // options here:
     // http://summernote.org/deep-dive/
-    this.$('#summernote').summernote({
+    this.$('.summernote-ta').summernote({
       // height: height,
       // setting height above results in editor 
       // not auto expanding
@@ -51,9 +54,9 @@ export default Ember.Component.extend({
 
 
 
-    // this.$('#summernote').code(content);
+    // this.$('.summernote-ta').code(content);
     // above was for v 0.6.16
-    // this.$('#summernote').summernote('code', content);
+    // this.$('.summernote-ta').summernote('code', content);
     // above would be for v 0.8... but seems to pick
     // up content in textbox anyway
 
@@ -71,7 +74,7 @@ export default Ember.Component.extend({
   doUpdate: function() {
     // var content = this.$('.note-editable').html();
     // debugger;
-    var content = this.$('#summernote').summernote('code');
+    var content = this.$('.summernote-ta').summernote('code');
     this.set('content', content);
   }
 });

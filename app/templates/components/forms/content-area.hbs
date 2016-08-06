@@ -12,11 +12,13 @@
         {{!--textarea value=contentValue type="text" rows="4" class="input-sm form-control fg-input"  --}}
       </div>
   {{else}}
+    <div class="content-item-container" style="min-height:200px;">
     <h4>
       {{ titleValue }}
     </h4>
     <div>
       {{{ contentValue }}}
+    </div>
     </div>
   {{/if}}
 
