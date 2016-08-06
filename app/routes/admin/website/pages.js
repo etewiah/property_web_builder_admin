@@ -8,9 +8,12 @@ export default Ember.Route.extend({
 
 
   model(params) {
+    var whitelabelSuffix = location.hostname.split(".")[1].toLowerCase() ;
+    var contentTag = "wl_" + whitelabelSuffix;
+
     return this.store.query("webContent", {
       filter: {
-        tag: "wl"
+        tag: contentTag
       }
     });
   },

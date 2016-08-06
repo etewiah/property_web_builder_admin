@@ -7,6 +7,7 @@ export default Ember.Component.extend({
   actions: {
     deleteContentItem: function() {
       var itemToDelete = this.get("contentResources.firstObject");
+
       function success(contentItem) {
         // self.transitionToRoute('posts.show', post);
       }
@@ -25,9 +26,12 @@ export default Ember.Component.extend({
       // above will not work
       var store = this.get("store");
       var contentKey = this.get("contentKey");
+      var whitelabelSuffix = location.hostname.split(".")[1].toLowerCase();
+      var contentTag = "wl_" + whitelabelSuffix;
+
       var newItem = store.createRecord('webContent');
       newItem.set("key", contentKey);
-      newItem.set("tag", "wl");
+      newItem.set("tag", contentTag);
 
       var that = this;
 
