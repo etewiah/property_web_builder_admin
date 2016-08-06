@@ -97,7 +97,15 @@ module.exports = function(defaults) {
     destDir: "fonts"
   });
 
-
+  app.import("bower_components/summernote/dist/font/summernote.eot", {
+    destDir: "assets/font"
+  });
+  app.import("bower_components/summernote/dist/font/summernote.ttf", {
+    destDir: "assets/font"
+  });
+  app.import("bower_components/summernote/dist/font/summernote.woff", {
+    destDir: "assets/font"
+  });
 
   app.import('bower_components/datatables/media/js/jquery.dataTables.js');
   app.import('bower_components/datatables/media/js/dataTables.bootstrap.js');
@@ -124,7 +132,7 @@ module.exports = function(defaults) {
 
 
   app.import('bower_components/summernote/dist/summernote.js');
-  app.import('bower_components/summernote/dist/summernote-bs3.css');
+  // app.import('bower_components/summernote/dist/summernote-bs3.css');
   app.import('bower_components/summernote/dist/summernote.css');
 
   app.import('vendor/material-admin-functions.js');
