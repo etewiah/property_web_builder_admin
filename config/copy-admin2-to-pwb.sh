@@ -17,13 +17,14 @@ TARGET_CSS_DIR=../../../sites-2016-oct-pwb/pwb/vendor/assets/stylesheets
 cp ../dist/assets/inmo1-client*.css $TARGET_CSS_DIR/pwb-admin.scss
 cp ../dist/assets/vendor*.css $TARGET_CSS_DIR/pwb-admin-vendor.scss
 
-
-# FONT_FILES=../dist/fonts
-# for ff in $FONT_FILES
-# do
-#   echo $ff
-#   # cp -r $ff $TARGET_JS_DIR
-# done
+TARGET_FONTS_DIR=../../../sites-2016-oct-pwb/pwb/vendor/assets/fonts/pwb/fonts
+FONT_FILES=../dist/fonts/*
+for ff in $FONT_FILES
+do
+  echo $ff
+  cp $ff $TARGET_FONTS_DIR
+  # cp -r $ff $TARGET_JS_DIR
+done
 
 
 
