@@ -17,7 +17,8 @@ TARGET_CSS_DIR=../../../sites-2016-oct-pwb/pwb/vendor/assets/stylesheets
 cp ../dist/assets/inmo1-client*.css $TARGET_CSS_DIR/pwb-admin.scss
 cp ../dist/assets/vendor*.css $TARGET_CSS_DIR/pwb-admin-vendor.scss
 
-TARGET_FONTS_DIR=../../../sites-2016-oct-pwb/pwb/vendor/assets/fonts/pwb/fonts
+TARGET_FONTS_DIR=../../../sites-2016-oct-pwb/pwb/app/assets/fonts/fonts
+# ../../../sites-2016-oct-pwb/pwb/vendor/assets/fonts/pwb/fonts
 FONT_FILES=../dist/fonts/*
 for ff in $FONT_FILES
 do
@@ -26,6 +27,15 @@ do
   # cp -r $ff $TARGET_JS_DIR
 done
 
+SM_NOTE_TARGET_FONTS_DIR=../../../sites-2016-oct-pwb/pwb/app/assets/fonts/pwb_admin_panel/font
+# ../../../sites-2016-oct-pwb/pwb/vendor/assets/fonts/pwb/fonts
+SM_NOTE_FONT_FILES=../dist/assets/font/*
+for ff in $SM_NOTE_FONT_FILES
+do
+  echo $ff
+  cp $ff $SM_NOTE_TARGET_FONTS_DIR
+  # cp -r $ff $TARGET_JS_DIR
+done
 
 
 # before running this file, need to make 
