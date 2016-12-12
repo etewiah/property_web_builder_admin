@@ -26,8 +26,16 @@ export default DS.Model.extend({
     });
   },
   labelKey: Ember.computed('key', {
+    // the key used to translate label for this content
     get() {
-      var suffix = this.get("key") || this.get("tag").replace("-", "");
+      var strippedTag = this.get("tag").replace("-", "");
+      if (strippedTag === "landingcarousel") {
+        // in the case of carousel, I use
+        // tag as translation key
+        var suffix = strippedTag;
+      } else {
+        var suffix = this.get("key") || "";
+      }
       return "webContentLabels." + suffix;
     }
   }),
@@ -42,8 +50,8 @@ export default DS.Model.extend({
   tag: DS.attr(),
   contentPhotos: DS.attr({
     dontSerialize: true
-    // above works to prevent sending this attr to server
-    // cos of serializeAttribute override in serializer 
+      // above works to prevent sending this attr to server
+      // cos of serializeAttribute override in serializer 
   }),
   // I need to have above DS.attr to be able to use this below: 
   photoModels: Ember.computed('contentPhotos', function() {
