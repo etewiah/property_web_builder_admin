@@ -42,5 +42,8 @@
     "ember-i18n": "4.1.3",
     "ember-spectrum-color-picker": "0.4.1",
     "ember-truth-helpers": "1.1.0"
+  },
+  "dependencies": {
+    "rails-csrf": "^2.0.1"
   }
 }
