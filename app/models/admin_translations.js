@@ -1,4 +1,9 @@
+// const { Service, inject } = Ember;
+
 var AdminTranslations = Ember.Object.extend({
+
+  // i18n: inject.service(),
+
   // Though I only pass the id for one translation, on the server side
   // all translations with the i18n key will be deleted
   // not a great implementation - will need to revisit
@@ -45,27 +50,25 @@ var AdminTranslations = Ember.Object.extend({
   //   });
   // },
   save: function(complete, error) {
-    // when I save a translation client side
-    // on server, a duplicate translation with a field_key unique to 
-    // the current tenant gets created
-    var apiUrl = '/api/v1/translations/' + this.get("id") + '/duplicate_for_tenant';
-    // id above actually does not get used
-    this.postWithUrl(apiUrl, complete, error);
+    var apiUrl = '/api/v1/translations/' + this.get("id") + '/update_for_locale';
+
+      // TODO - for translations like "extras" which get used elsewhere in admin ui
+      // need to refetch them for i18n
+    this.sendData('PUT', apiUrl, complete, error);
   },
   addLocaleToExisting: function(complete, error) {
-    this.postWithUrl('/api/v1/translations/add_locale_translation', complete, error);
+    this.sendData('POST', '/api/v1/translations/create_for_locale', complete, error);
   },
   create: function(complete, error) {
-    this.postWithUrl('/api/v1/translations', complete, error);
+    this.sendData('POST', '/api/v1/translations', complete, error);
   },
-  postWithUrl: function(apiUrl, complete, error) {
+  sendData: function(ajaxType, apiUrl, complete, error) {
     var data = {};
     data = this.getProperties(Object.keys(this));
     var self = this;
     var apiUrl = apiUrl;
-
     return $.ajax(apiUrl, {
-      type: 'POST',
+      type: ajaxType,
       dataType: 'json',
       data: data
     }).then(function(result) {

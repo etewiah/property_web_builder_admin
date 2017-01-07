@@ -46,18 +46,21 @@ export default Ember.Component.extend({
       this.get("translationBatch").forEach(function(translation) {
         if (originalValues[translation.locale] !== translation.i18n_value) {
           translation.set("batch_key", this.get("batchKey"));
+          var successCallback = function(result) {
+            var i18n = this.get('i18n');
+            var newTranslation = {};
+            newTranslation[result.i18n_key] = result.i18n_value;
+            i18n.addTranslations(result.locale, newTranslation);
+            // above is needed to update i18n translations 
+            // fetched by translations fetcher service
+            originalValues[translation.locale] = translation.i18n_value;
+          }.bind(this);
           if (translation.id) {
-            translation.save(function(result) {
-              // if (result.success) {
-              // }
-              originalValues[translation.locale] = translation.i18n_value;
-            }.bind(this));
+            translation.save(successCallback);
           } else {
             // adding locale that isn't translated
             // to a bunch of existing translations 
-            translation.addLocaleToExisting(function(result) {
-              originalValues[translation.locale] = translation.i18n_value;
-            }.bind(this));
+            translation.addLocaleToExisting(successCallback);
           }
         }
         this.set("originalValues", originalValues);
@@ -84,7 +87,7 @@ export default Ember.Component.extend({
     var translationLabelItem = this.translationBatch.findBy("locale", this.get("i18n.locale"));
     if (translationLabelItem) {
       return translationLabelItem.i18n_value;
-    } else{
+    } else {
       // in unlikely event of no translation in current locale, use the first
       return this.translationBatch[0].i18n_value;
     }
