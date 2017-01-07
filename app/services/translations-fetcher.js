@@ -5,7 +5,7 @@ import Ember from "ember";
 import { request } from "ic-ajax";
 const { Service, inject } = Ember;
 
-const BASE_PATH = '/api/v1/client_translations/';
+const BASE_PATH = '/api/v1/translations/list/';
 
 export default Service.extend({
   i18n: inject.service(),
@@ -14,22 +14,20 @@ export default Service.extend({
     // var i18n = this.get('i18n');
     // locale is set in admin route and passed in here
     var translationsPath = BASE_PATH + locale;
-    return request(translationsPath).then(this._addTranslations.bind(this));
+    return request(translationsPath).then(this._addTranslations.bind(this, locale));
   },
 
-  _addTranslations(json) {
+  _addTranslations(locale,json) {
     const i18n = this.get('i18n');
-
-    Object.keys(json).forEach((locale) => {
-      var translations = {};
-      json[locale].forEach(function(item){
-        translations[item.i18n_key] = item.i18n_value;
-      });
-      i18n.addTranslations(locale, translations);
-    });
+    var translations = json[locale];
+    i18n.addTranslations(locale, translations);
+    // below was for when I was getting an array of i18n keys and values
     // Object.keys(json).forEach((locale) => {
-    //   i18n.addTranslations(locale, json[locale]);
+    //   var translations = {};
+    //   json[locale].forEach(function(item){
+    //     translations[item.i18n_key] = item.i18n_value;
+    //   });
+    //   i18n.addTranslations(locale, translations);
     // });
-
   }
 });

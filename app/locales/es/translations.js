@@ -343,36 +343,36 @@ export default Ember.merge(Ember.copy(en), {
     notAUrlVjs: "no es una URL válida",
   },
   
-  // some of these are in server side translations that come from seed file for each tenant
-  "webContentLabels": {
-    "suffixAr": "en Arabe",
-    "suffixFr": "en Francés",
-    "suffixIt": "en Italiano",
-    "suffixPt": "en Portugués",
-    "suffixDe": "en Alemán",
-    "suffixEn": "en Inglés",
-    "suffixEs": "en Español",
-    "privacyPolicy": "Texto de la política de privacidad",
-    "legalAdvice": "Texto del aviso legal",
-    "landingcarousel": "Texto del slider",
-    "cac1": "Columna 1",
-    "cac2": "Columna 2",
-    "cac3": "Columna 3",
-    // "tagLine": "Lema"
-    // "landingPageHeroEs": "Contenido para pagina principal en Español"
-  },
-  "webContentSections": {
-    "legal": "Aviso Legal",
-    "general": "General",
-    "landingCarousel": "Slider",
-    "home": "Home",
-    "contentAreaCols": "Columnas",
-    "sections": "Secciónes",
-    "info": {
-      "contentAreaCols": "Columnas del pagina principal"
-    }
+  // // some of these are in server side translations that come from seed file for each tenant
+  // "webContentLabels": {
+  //   "suffixAr": "en Arabe",
+  //   "suffixFr": "en Francés",
+  //   "suffixIt": "en Italiano",
+  //   "suffixPt": "en Portugués",
+  //   "suffixDe": "en Alemán",
+  //   "suffixEn": "en Inglés",
+  //   "suffixEs": "en Español",
+  //   "privacyPolicy": "Texto de la política de privacidad",
+  //   "legalAdvice": "Texto del aviso legal",
+  //   "landingcarousel": "Texto del slider",
+  //   "cac1": "Columna 1",
+  //   "cac2": "Columna 2",
+  //   "cac3": "Columna 3",
+  //   // "tagLine": "Lema"
+  //   // "landingPageHeroEs": "Contenido para pagina principal en Español"
+  // },
+  // "webContentSections": {
+  //   "legal": "Aviso Legal",
+  //   "general": "General",
+  //   "landingCarousel": "Slider",
+  //   "home": "Home",
+  //   "contentAreaCols": "Columnas",
+  //   "sections": "Secciónes",
+  //   "info": {
+  //     "contentAreaCols": "Columnas del pagina principal"
+  //   }
 
-  }
+  // }
 });
 
 

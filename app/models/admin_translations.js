@@ -6,7 +6,7 @@ var AdminTranslations = Ember.Object.extend({
     var data = this.getProperties(["locale", "i18n_value", "i18n_key", "batch_key"]);
     // data = this.getProperties( Object.keys(this) );
     var self = this;
-    var apiUrl = '/api/v1/lang/admin_translations/' + data.id;
+    var apiUrl = '/api/v1/translations/' + data.id;
     return $.ajax(apiUrl, {
       type: 'DELETE',
       dataType: 'json',
@@ -27,7 +27,7 @@ var AdminTranslations = Ember.Object.extend({
   //   var data = {};
   //   data = this.getProperties( Object.keys(this) );
   //   var self = this;
-  //   var apiUrl = '/api/v1/lang/admin_translations/' + data.id;
+  //   var apiUrl = '/api/v1/translations/' + data.id;
   //   return $.ajax(apiUrl, {
   //     type: 'POST',
   //     dataType: 'json',
@@ -48,15 +48,15 @@ var AdminTranslations = Ember.Object.extend({
     // when I save a translation client side
     // on server, a duplicate translation with a field_key unique to 
     // the current tenant gets created
-    var apiUrl = '/api/v1/lang/admin_translations/' + this.get("id") + '/duplicate_for_tenant';
+    var apiUrl = '/api/v1/translations/' + this.get("id") + '/duplicate_for_tenant';
     // id above actually does not get used
     this.postWithUrl(apiUrl, complete, error);
   },
   addLocaleToExisting: function(complete, error) {
-    this.postWithUrl('/api/v1/lang/admin_translations/add_locale_translation', complete, error);
+    this.postWithUrl('/api/v1/translations/add_locale_translation', complete, error);
   },
   create: function(complete, error) {
-    this.postWithUrl('/api/v1/lang/admin_translations', complete, error);
+    this.postWithUrl('/api/v1/translations', complete, error);
   },
   postWithUrl: function(apiUrl, complete, error) {
     var data = {};
@@ -85,7 +85,7 @@ var AdminTranslations = Ember.Object.extend({
 
 AdminTranslations.reopenClass({
   get: function(batchKey) {
-    var apiUrl = "/api/v1/lang/admin_translations/" + batchKey;
+    var apiUrl = "/api/v1/translations/batch/" + batchKey;
     return $.ajax(apiUrl, {
       type: 'GET',
       dataType: 'json'

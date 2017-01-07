@@ -148,55 +148,55 @@ export default {
     "confirmAddress": "Confirm new location"
   },
 
-  "fieldLabels": {
-    "forSearchWidget": "For search widget",
-    "obscureMap": "Hide exact address on website?",
-    "hideMap": "Hide map on website?",
-    "forSale": "For Sale?",
-    "priceSaleCurrent": "Current Price",
-    "saleDiscount": "saleDiscount",
-    "priceSaleOriginal": "Original Price",
-    "longTermRental": "Available for long term rental?",
-    "seasonalRental": "Available for seasonal rental?",
-    "priceRentalMonthlyHighSeason": "Price for high season rental",
-    "priceRentalMonthlyLowSeason": "Price for low season rental",
-    "priceRentalMonthlyStandardSeason": "Price for normal season rental",
-    "priceRentalMonthlyCurrent": "Current rental price (per month)",
-    "longTermRentalDiscount": "longTermRentalDiscount",
-    "priceRentalMonthlyOriginal": "Original rental price (per month)",
+  // "fieldLabels": {
+  //   "forSearchWidget": "For search widget",
+  //   "obscureMap": "Hide exact address on website?",
+  //   "hideMap": "Hide map on website?",
+  //   "forSale": "For Sale?",
+  //   "priceSaleCurrent": "Current Price",
+  //   "saleDiscount": "saleDiscount",
+  //   "priceSaleOriginal": "Original Price",
+  //   "longTermRental": "Available for long term rental?",
+  //   "seasonalRental": "Available for seasonal rental?",
+  //   "priceRentalMonthlyHighSeason": "Price for high season rental",
+  //   "priceRentalMonthlyLowSeason": "Price for low season rental",
+  //   "priceRentalMonthlyStandardSeason": "Price for normal season rental",
+  //   "priceRentalMonthlyCurrent": "Current rental price (per month)",
+  //   "longTermRentalDiscount": "longTermRentalDiscount",
+  //   "priceRentalMonthlyOriginal": "Original rental price (per month)",
 
 
-    "firstNames": "First Name",
-    "lastNames": "Last Names",
-    "visible": "Visible",
-    "highlighted": "Highlighted",
-    "label": "Label",
-    "companyName": "Company Name",
-    "primaryPhone": "Main phone number",
-    "otherPhone": "Other phone number",
-    "nationality": "Nationality",
-    "documentationType": "Documentation Type",
-    "documentationId": "Documentation Id",
-    "email": "Email",
-    "fax": "Fax",
-    "skype": "Skype",
-    "personTitle": "Title",
-    "description": "Description",
-    "title": "Title",
-  },
+  //   "firstNames": "First Name",
+  //   "lastNames": "Last Names",
+  //   "visible": "Visible",
+  //   "highlighted": "Highlighted",
+  //   "label": "Label",
+  //   "companyName": "Company Name",
+  //   "primaryPhone": "Main phone number",
+  //   "otherPhone": "Other phone number",
+  //   "nationality": "Nationality",
+  //   "documentationType": "Documentation Type",
+  //   "documentationId": "Documentation Id",
+  //   "email": "Email",
+  //   "fax": "Fax",
+  //   "skype": "Skype",
+  //   "personTitle": "Title",
+  //   "description": "Description",
+  //   "title": "Title",
+  // },
 
   // for header row in property listing
-  "propertyLabels": {
-    "highlighted": "Highlighted",
-    "locality": "Locality",
-    "actions": "Actions",
-    "zone": "Zone",
-    "price": "Price",
-    "rooms": "Rooms",
-    "visible": "Visible",
-    "reference": "Ref",
-    "type": "Type"
-  },
+  // "propertyLabels": {
+  //   "highlighted": "Highlighted",
+  //   "locality": "Locality",
+  //   "actions": "Actions",
+  //   "zone": "Zone",
+  //   "price": "Price",
+  //   "rooms": "Rooms",
+  //   "visible": "Visible",
+  //   "reference": "Ref",
+  //   "type": "Type"
+  // },
 
 
   // left nav
@@ -343,34 +343,34 @@ export default {
   },
   //fieldLabels.tituloIngles etc are on server side translations but no longer in use 
   // some of these are in server side translations that come from seed file for each tenant
-  "webContentLabels": {
-    "suffixAr": "in Arabic",
-    "suffixFr": "in French",
-    "suffixIt": "in Italian",
-    "suffixPt": "in Portuguese",
-    "suffixDe": "in German",
-    // "suffixEn": "en Inglés",
-    // "suffixEs": "en Español",
-    "privacyPolicy": "Privacy Policy",
-    "legalAdvice": "Legal Advice",
-    "landingcarousel": "Text for carousel image",
-    "cac1": "Column 1",
-    "cac2": "Column 2",
-    "cac3": "Column 3",
-    // "tagLine": "Lema"
-    // "landingPageHeroEs": "Contenido para pagina principal en Español"
-  },
-  "webContentSections": {
-    "legal": "Legal",
-    "general": "General",
-    "landingCarousel": "Landing Page Carousel",
-    "home": "Home",
-    "contentAreaCols": "Columns",
-    "sections": "Sections",
-    "info": {
-      "contentAreaCols": "Columns on the landing page giving an overview of the services you provide"
-    }
-  }
+  // "webContentLabels": {
+  //   "suffixAr": "in Arabic",
+  //   "suffixFr": "in French",
+  //   "suffixIt": "in Italian",
+  //   "suffixPt": "in Portuguese",
+  //   "suffixDe": "in German",
+  //   // "suffixEn": "en Inglés",
+  //   // "suffixEs": "en Español",
+  //   "privacyPolicy": "Privacy Policy",
+  //   "legalAdvice": "Legal Advice",
+  //   "landingcarousel": "Text for carousel image",
+  //   "cac1": "Column 1",
+  //   "cac2": "Column 2",
+  //   "cac3": "Column 3",
+  //   // "tagLine": "Lema"
+  //   // "landingPageHeroEs": "Contenido para pagina principal en Español"
+  // },
+  // "webContentSections": {
+  //   "legal": "Legal",
+  //   "general": "General",
+  //   "landingCarousel": "Landing Page Carousel",
+  //   "home": "Home",
+  //   "contentAreaCols": "Columns",
+  //   "sections": "Sections",
+  //   "info": {
+  //     "contentAreaCols": "Columns on the landing page giving an overview of the services you provide"
+  //   }
+  // }
 };
 
 
