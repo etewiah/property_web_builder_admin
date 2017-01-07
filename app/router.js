@@ -66,14 +66,14 @@ Router.map(function() {
     });
     // below route has been superceeded by 
     // /admin/properties/settings  and can be removed
-    this.route("translations", function() {
-      this.route("default", {
-        path: "/"
-      });
-      this.route("tab", {
-        path: "/:tabName"
-      });
-    });
+    // this.route("translations", function() {
+    //   this.route("default", {
+    //     path: "/"
+    //   });
+    //   this.route("tab", {
+    //     path: "/:tabName"
+    //   });
+    // });
     this.route("clients", {
       path: '/clients'
     }, function() {
