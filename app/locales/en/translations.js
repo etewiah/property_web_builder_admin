@@ -115,8 +115,8 @@ export default {
   "city": "City",
   "postCode": "Post Code",
   "region": "Region",
-  "zone": "Zone", 
-  "locality": "Locality", 
+  "zone": "Zone",
+  "locality": "Locality",
   "country": "Country",
 
   "properties": "Properties",
@@ -209,7 +209,8 @@ export default {
     "clientes": "Clients",
     "quit": "Go To Site",
     "list": "List",
-    "settings": "Settings"
+    "settings": "Settings",
+    "labels": "Labels"
   },
 
   // the header tabs within each left nav item:

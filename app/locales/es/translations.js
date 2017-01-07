@@ -209,7 +209,8 @@ export default Ember.merge(Ember.copy(en), {
     "clientes": "Clientes",
     "quit": "Ir a la web",
     "list": "Lista",
-    "settings": "Configuración"
+    "settings": "Configuración",
+    "labels": "Etiquetas"
   },
 
   // the header tabs within each left nav item:

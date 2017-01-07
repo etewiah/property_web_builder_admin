@@ -48,8 +48,8 @@ export default Ember.Route.extend({
           tabRoute: "admin.propiedades.list.default"
             // tabRoute: "admin.inicio"
         }, {
-          tabIconClass: "fa fa-gears",
-          tabTitleKey: "adminSections.settings",
+          tabIconClass: "fa fa-tags",
+          tabTitleKey: "adminSections.labels",
           tabRoute: "admin.propiedades.settings"
         }, {
           tabIconClass: "fa fa-plus",
