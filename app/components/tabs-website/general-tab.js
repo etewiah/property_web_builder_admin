@@ -10,7 +10,7 @@ export default TabWithForm.extend(OnReadyMixin, {
   // languages: ["En", "Es"],
   changedFields: [],
   availableLocaleFields: function() {
-    var availableLocalesArray = this.get("tenantDetails.available_locales") || ["en","fr"];
+    var availableLocalesArray = this.get("agencyDetails.available_locales") || ["en","fr"];
     // above looks like ["en","es"]
     var availableLocaleFields = [];
     availableLocalesArray.forEach(function(locale) {
@@ -64,8 +64,8 @@ export default TabWithForm.extend(OnReadyMixin, {
   },
   actions: {
     updateAppearance: function() {
-      var tenantDetails = this.get("tenantDetails");
-      tenantDetails.save(function(successResponse) {}.bind(this));
+      var agencyDetails = this.get("agencyDetails");
+      agencyDetails.save(function(successResponse) {}.bind(this));
     },
     addPhotosFromUrls: function(remoteUrls) {
       // not yet in use.....

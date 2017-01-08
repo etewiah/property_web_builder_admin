@@ -77,8 +77,8 @@ export default Ember.Route.extend({
     var agencyDetails = this.modelFor("admin").agencyDetails;
     controller.set("agencyDetails", agencyDetails);
     //TODO - replace tenantDetails with agencyDetails in child components and remove below...
-    controller.set("tenantDetails", agencyDetails);
-    // controller.set("tenantDetails", this.modelFor("admin").tenantDetails);
+    // controller.set("tenantDetails", agencyDetails);
+
     // controller.set("primaryAddress", this.modelFor("admin").primaryAddress);
     // controller.set("currentUser", this.modelFor("admin").currentUser);
 

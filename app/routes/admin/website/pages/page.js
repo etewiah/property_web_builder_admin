@@ -50,14 +50,10 @@ export default Ember.Route.extend({
     controller.set("model", model);
     controller.set("contentKey", this.get("contentKey"));
 
-    // controller.set("agencyDetails", this.modelFor("admin").agencyDetails);
-    // controller.set("tenantDetails", this.modelFor("admin").tenantDetails);
-    // debugger;
-
     // var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
     // controller.set("tabs-website-component", tabsWebsiteComponent);
 
-    var supportedLanguages = this.modelFor("admin").tenantDetails.supported_languages || ["es"];
+    var supportedLanguages = this.modelFor("admin").agencyDetails.supported_locales || ["es"];
     controller.set("languages", supportedLanguages);
 
 

@@ -24,7 +24,7 @@ export default Ember.Route.extend({
     // activeTabName = activeTabName.toLowerCase();
     // controller.set("activeTabName", activeTabName);
 
-    var supportedLanguages = this.modelFor("admin").tenantDetails.supported_languages || ["es"];
+    var supportedLanguages = this.modelFor("admin").agencyDetails.supported_locales || ["es"];
     controller.set("languages", supportedLanguages);
     var tabsList = [{
         tabValue: "general",
