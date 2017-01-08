@@ -6,11 +6,11 @@
     <div class="col-sm-4">
       <h4>Site Templates: (to implement)</h4>
     {{forms/radio-list  resetTrigger=resetTrigger 
-    valueChangedAction="updateAppearance"  fieldDetails=siteTemplateField resourceObject=tenantDetails fieldOptions=siteTemplateFieldKeys }}
+    valueChangedAction="updateAppearance"  fieldDetails=siteTemplateField resourceObject=agencyDetails fieldOptions=siteTemplateFieldKeys }}
 
 
       <h4>{{t "inTabLabels.siteLayout"}}</h4>
-    {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=siteLayoutField resourceObject=tenantDetails.style_variables fieldKeys=siteLayoutFieldKeys }}
+    {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=siteLayoutField resourceObject=agencyDetails.style_variables fieldKeys=siteLayoutFieldKeys }}
 
 
     </div>
@@ -22,7 +22,7 @@
         <div class="fg-line has- fg-toggled">
           {{spectrum-color-picker
               showPalette=true
-              color=tenantDetails.style_variables.primary_color
+              color=agencyDetails.style_variables.primary_color
               onChange=(action "updateAppearance")
               showInput=true
               preferredFormat="hex3"
@@ -35,7 +35,7 @@
         <div class="fg-line has- fg-toggled">
           {{spectrum-color-picker
               showPalette=true
-              color=tenantDetails.style_variables.secondary_color
+              color=agencyDetails.style_variables.secondary_color
               onChange=(action "updateAppearance")
               showInput=true
               preferredFormat="hex3"
@@ -48,7 +48,7 @@
         <div class="fg-line has- fg-toggled">
           {{spectrum-color-picker
               showPalette=true
-              color=tenantDetails.style_variables.action_color
+              color=agencyDetails.style_variables.action_color
               onChange=(action "updateAppearance")
               showInput=true
               preferredFormat="hex3"
@@ -61,7 +61,7 @@
 
     <div class="col-sm-4">
     <h4>Raw CSS</h4>
-        {{forms/simple-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=rawCssField resourceObject=tenantDetails }} 
+        {{forms/simple-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=rawCssField resourceObject=agencyDetails }} 
 
       {{ textarea value=contentValue type="text" rows="4" class="input-sm form-control fg-input"  }}
 

@@ -23,19 +23,20 @@ export default TabWithForm.extend(OnReadyMixin, {
   },
   siteTemplateField: {
     labelTextTKey: "",
-    fieldName: "site_template_id",
+    fieldName: "theme_name",
   },
   siteTemplateFieldKeys: function(){
     // var contentResources = this.get("contentResources");
 
     var fieldOptions = [];
-    var currentValue = this.get("tenantDetails.site_template_id") || "";
+    var currentValue = this.get("agencyDetails.theme_name") || "";
 
-    // fieldOptionKeys
-    this.get("contentResources.data").forEach(function(option) {
+    // contentResources here is the model passed to website/tab route
+    // -where tab is appearance it is a list of themes
+    this.get("contentResources").forEach(function(option) {
       var fieldOption = Ember.Object.create({
         value: option.id,
-        label: option.attributes.title,
+        label: option.name,
         checked: false
       });
       if (option.id === currentValue.toString()) {
@@ -66,10 +67,10 @@ export default TabWithForm.extend(OnReadyMixin, {
 
   actions: {
     updateAppearance: function() {
-      // tenantDetails are retrieved from the base route
+      // agencyDetails are retrieved from the base route
       // http://re-renting.propertysquares.dev:3000/api/v1/agency
-      var tenantDetails = this.get("tenantDetails");
-      tenantDetails.save(function(successResponse) {}.bind(this));
+      var agencyDetails = this.get("agencyDetails");
+      agencyDetails.save(function(successResponse) {}.bind(this));
     },
 
     saveContentItem: function(contentItem) {

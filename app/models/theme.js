@@ -10,13 +10,13 @@
 // work figuring out the promise object
 
 
-var SiteTemplate = Ember.Object.extend({
+var Theme = Ember.Object.extend({
 
 });
 
-SiteTemplate.reopenClass({
+Theme.reopenClass({
   getAll: function(fieldNames) {
-    var apiUrl = "/api/v1/site-templates";
+    var apiUrl = "/api/v1/themes";
     return $.ajax(apiUrl, {
       type: 'GET',
       dataType: 'json',
@@ -24,8 +24,8 @@ SiteTemplate.reopenClass({
         field_names: fieldNames
       }
     }).then(function(result) {
-      return SiteTemplate.create(result);
-      // return result;
+      // return Theme.create(result);
+      return result;
     }.bind(this), function(error) {
       return error;
     });
@@ -33,4 +33,4 @@ SiteTemplate.reopenClass({
 });
 
 
-export default SiteTemplate;
+export default Theme;

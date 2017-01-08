@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import SiteTemplate from '../../../models/site-template';
+import Theme from '../../../models/theme';
 // path is actually /admin/website
 
 export default Ember.Route.extend({
@@ -47,7 +47,7 @@ export default Ember.Route.extend({
       return this.store.findAll("section");
     }
     if (params.tabName === "appearance") {
-      return SiteTemplate.getAll();
+      return Theme.getAll();
       // july 2016: tried using ember store below but just too much
       // work figuring out the promise object
       // return this.store.findAll("siteTemplate").then(
