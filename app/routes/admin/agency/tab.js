@@ -38,15 +38,18 @@ export default Ember.Route.extend({
     controller.set("primaryAddress", this.modelFor("admin").primaryAddress);
     controller.set("currentUser", this.modelFor("admin").currentUser);
 
-    controller.set("tabsList", [{
-      tabValue: "general",
-      tabTitleKey: "agencySections.general"
-    }, {
-      tabValue: "location",
-      tabTitleKey: "agencySections.location"
-    }, {
-      tabValue: "user",
-      tabTitleKey: "agencySections.user"
-    }]);
+    // var defaultTablist = [{
+    //   tabValue: "general",
+    //   tabTitleKey: "agencySections.general"
+    // }, {
+    //   tabValue: "location",
+    //   tabTitleKey: "agencySections.location"
+    // }, {
+    //   tabValue: "user",
+    //   tabTitleKey: "agencySections.user"
+    // }];
+
+    var agencyTabsList = this.modelFor("admin").setup.get('agencyTabsList');
+    controller.set("tabsList",agencyTabsList);
   }
 });

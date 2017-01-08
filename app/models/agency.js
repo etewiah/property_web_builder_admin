@@ -49,8 +49,10 @@ Agency.reopenClass({
       var agency = Agency.create(result.agency);
       var primaryAddress = MasterAddress.create(result.primary_address);
       var currentUser = User.create(result.current_user);
+      var setup = Ember.Object.create(result.setup);
       return {
-        tenantDetails: tenant,
+        setup: setup,
+        // tenantDetails: tenant,
         agencyDetails: agency,
         primaryAddress: primaryAddress,
         currentUser: currentUser

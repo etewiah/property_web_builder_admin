@@ -74,8 +74,11 @@ export default Ember.Route.extend({
 
     controller.set("model", model);
 
-    controller.set("agencyDetails", this.modelFor("admin").agencyDetails);
-    controller.set("tenantDetails", this.modelFor("admin").tenantDetails);
+    var agencyDetails = this.modelFor("admin").agencyDetails;
+    controller.set("agencyDetails", agencyDetails);
+    //TODO - replace tenantDetails with agencyDetails in child components and remove below...
+    controller.set("tenantDetails", agencyDetails);
+    // controller.set("tenantDetails", this.modelFor("admin").tenantDetails);
     // controller.set("primaryAddress", this.modelFor("admin").primaryAddress);
     // controller.set("currentUser", this.modelFor("admin").currentUser);
 
@@ -86,7 +89,7 @@ export default Ember.Route.extend({
     var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
     controller.set("tabs-website-component", tabsWebsiteComponent);
 
-    var supportedLanguages = this.modelFor("admin").tenantDetails.supported_languages || ["es"];
+    var supportedLanguages = agencyDetails.supported_locales || ["es"];
     controller.set("languages", supportedLanguages);
 
     controller.set("tabsList", [{
