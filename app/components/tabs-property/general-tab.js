@@ -90,7 +90,8 @@ export default TabWithForm.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 99,
+            greaterThan: 0,
+            lessThanOrEqualTo: 999,
           }
         }
       }
@@ -103,8 +104,8 @@ export default TabWithForm.extend({
       constraints: {
         inputValue: {
           numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 99,
+            greaterThan: 0,
+            lessThanOrEqualTo: 999,
           }
         }
       }
@@ -118,7 +119,7 @@ export default TabWithForm.extend({
     //     inputValue: {
     //       numericality: {
     //         onlyInteger: true,
-    //         lessThanOrEqualTo: 99,
+    //         lessThanOrEqualTo: 999,
     //       }
     //     }
     //   }
@@ -134,7 +135,8 @@ export default TabWithForm.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 99,
+            greaterThan: 0,
+            lessThanOrEqualTo: 999,
           }
         }
       }
@@ -153,6 +155,7 @@ export default TabWithForm.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
+            greaterThan: 0,
             lessThanOrEqualTo: 1000000,
           }
         }
@@ -167,6 +170,7 @@ export default TabWithForm.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
+            greaterThan: 0,
             lessThanOrEqualTo: 1000000,
           }
         }
@@ -210,13 +214,13 @@ export default TabWithForm.extend({
   }, {
     labelTextTKey: "fieldLabels.tipo",
     tooltipTextTKey: "",
-    fieldName: "propertyTypeKey",
+    fieldName: "propTypeKey",
     fieldType: "dynamicSelect",
     optionsKey: "property-types",
   }, {
     labelTextTKey: "fieldLabels.estado",
     tooltipTextTKey: "",
-    fieldName: "propertyStateKey",
+    fieldName: "propStateKey",
     fieldType: "dynamicSelect",
     optionsKey: "property-states",
   }, {

@@ -121,8 +121,8 @@ export default DS.Model.extend({
   // mapaLng: DS.attr(),
   // codigoPostal: DS.attr(),
 
-  propertyStateKey: DS.attr(),
-  propertyTypeKey: DS.attr(),
+  propStateKey: DS.attr(),
+  propTypeKey: DS.attr(),
   // localidad: DS.attr(),
   // precioVenta: DS.attr(),
   highlighted: DS.attr(),

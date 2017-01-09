@@ -226,7 +226,6 @@ export default DS.Model.extend({
   // temporadas: DS.attr(),
 
 
-  origenPropiedad: DS.attr(),
 
   countBedrooms: DS.attr(),
   countBathrooms: DS.attr(),
@@ -241,12 +240,20 @@ export default DS.Model.extend({
   // mapaLng: DS.attr(),
   // codigoPostal: DS.attr(),
 
-  propertyStateKey: DS.attr(),
-  propertyTypeKey: DS.attr(),
+  propStateKey: DS.attr(),
+  propTypeKey: DS.attr(),
+
+  origenPropiedad: DS.attr(),
+  // above to be rep by below:
+  propOrigenKey: DS.attr(),
+
+  observacionesVenta: DS.attr(),
+  // above to be rep by below:
+  propLabelKey: DS.attr(),
+
   localidad: DS.attr(),
   precioVenta: DS.attr(),
   highlighted: DS.attr(),
-  observacionesVenta: DS.attr(),
   // archivado: DS.attr(),
   visible: DS.attr(),
 

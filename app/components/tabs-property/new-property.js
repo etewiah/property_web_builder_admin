@@ -38,8 +38,8 @@ export default TabWithForm.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThan: 2016,
-            greaterThan: 1500,
+            lessThan: 2018,
+            greaterThan: 1000,
             message: "Invalid date",
           },
         }
@@ -53,8 +53,9 @@ export default TabWithForm.extend({
       constraints: {
         inputValue: {
           numericality: {
+            greaterThan: 0,
             onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+            lessThanOrEqualTo: 999,
           }
         }
       }
@@ -67,8 +68,9 @@ export default TabWithForm.extend({
       constraints: {
         inputValue: {
           numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+            // onlyInteger: true,
+            greaterThan: 0,
+            lessThanOrEqualTo: 999,
           }
         }
       }
@@ -82,7 +84,7 @@ export default TabWithForm.extend({
     //     inputValue: {
     //       numericality: {
     //         onlyInteger: true,
-    //         lessThanOrEqualTo: 3000,
+    //         lessThanOrEqualTo: 1000000,
     //       }
     //     }
     //   }
@@ -96,7 +98,8 @@ export default TabWithForm.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+            greaterThan: 0,
+            lessThanOrEqualTo: 1000000,
           }
         }
       }
@@ -110,7 +113,8 @@ export default TabWithForm.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 3000,
+            greaterThan: 0,
+            lessThanOrEqualTo: 1000000,
           }
         }
       }
@@ -138,7 +142,7 @@ export default TabWithForm.extend({
   //     inputValue: {
   //       numericality: {
   //         onlyInteger: true,
-  //         lessThanOrEqualTo: 3000,
+  //         lessThanOrEqualTo: 1000000,
   //       }
   //     }
   //   }
@@ -152,7 +156,7 @@ export default TabWithForm.extend({
   //     inputValue: {
   //       numericality: {
   //         onlyInteger: true,
-  //         lessThanOrEqualTo: 3000,
+  //         lessThanOrEqualTo: 1000000,
   //       }
   //     }
   //   }
@@ -166,7 +170,7 @@ export default TabWithForm.extend({
   //     inputValue: {
   //       numericality: {
   //         onlyInteger: true,
-  //         lessThanOrEqualTo: 3000,
+  //         lessThanOrEqualTo: 1000000,
   //       }
   //     }
   //   }
@@ -174,21 +178,21 @@ export default TabWithForm.extend({
   {
     labelTextTKey: "fieldLabels.tipo",
     tooltipTextTKey: "",
-    fieldName: "propertyTypeKey",
+    fieldName: "propTypeKey",
     fieldType: "dynamicSelect",
     optionsKey: "property-types",
   }, {
     labelTextTKey: "fieldLabels.estado",
     tooltipTextTKey: "",
-    fieldName: "propertyStateKey",
+    fieldName: "propStateKey",
     fieldType: "dynamicSelect",
     optionsKey: "property-states",
-  }, {
-    labelTextTKey: "fieldLabels.origen",
-    tooltipTextTKey: "",
-    fieldName: "origenPropiedad",
-    fieldType: "dynamicSelect",
-    optionsKey: "property-origins"
+  // }, {
+  //   labelTextTKey: "fieldLabels.origen",
+  //   tooltipTextTKey: "",
+  //   fieldName: "origenPropiedad",
+  //   fieldType: "dynamicSelect",
+  //   optionsKey: "property-origins"
       // options: [{
       //   value: 0,
       //   titleKey: "Private"
