@@ -10,7 +10,7 @@ export default TabWithForm.extend(OnReadyMixin, {
   // languages: ["En", "Es"],
   changedFields: [],
   availableLocaleFields: function() {
-    var availableLocalesArray = this.get("agencyDetails.available_locales") || ["en","fr"];
+    var availableLocalesArray = this.get("agencyDetails.available_locales") || ["en", "fr"];
     // above looks like ["en","es"]
     var availableLocaleFields = [];
     availableLocalesArray.forEach(function(locale) {
@@ -26,16 +26,21 @@ export default TabWithForm.extend(OnReadyMixin, {
     // }
     return availableLocaleFields;
   }.property(),
-  // languageFields: [{
-  //   labelTextTKey: "es",
-  //   // tooltipTextTKey: "toolTips.visible",
-  //   fieldName: "es",
-  //   // fieldType: "simpleSelect",
-  //   // fieldDbType: "boolean",
-  // }, {
-  //   labelTextTKey: "en",
-  //   fieldName: "en",
-  // }],
+
+  currencyField: {
+    labelTextTKey: "fieldLabels.defaultCurrency",
+    fieldName: "default_currency",
+  },
+  currencyFieldKeys: [{
+    value: "EUR",
+    label: "Euros",
+  }, {
+    value: "GBP",
+    label: "UK Pounds",
+  }, {
+    value: "USD",
+    label: "Dollars",
+  }],
 
 
   // currencyField: {

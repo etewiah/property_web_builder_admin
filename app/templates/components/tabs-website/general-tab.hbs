@@ -8,6 +8,10 @@
       {{forms/supported-languages languageFields=availableLocaleFields supportedLanguages=agencyDetails.supported_locales
       valueChangedAction="updateAppearance" }}
 
+      {{forms/radio-list  resetTrigger=resetTrigger 
+    valueChangedAction="checkDirtyState"  fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys }}
+
+
       <h4>{{t "logo"}}</h4> 
       {{#if logoPhoto}}
       <table id="tabla_fotos" cellspacing="0">
@@ -95,7 +99,7 @@
 
       {{#each socialNetworkFields as |fieldDetails|}} 
 
-        {{forms/social-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=fieldDetails resourceObject=resourceObject}}
+        {{forms/social-input resetTrigger=resetTrigger  valueChangedAction="checkDirtyState" fieldDetails=fieldDetails resourceObject=resourceObject}}
       {{/each}}
     </div>
   </div>

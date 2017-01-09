@@ -11,7 +11,8 @@ export default Ember.Component.extend({
       this.set("resourceObject." + this.fieldDetails.fieldName, newFieldOption);
       var fieldName = this.get("fieldDetails.fieldName");
 
-      var hasChanged = (this.get("serverValue") !== newFieldOption);
+      var serverValue = this.get("serverValue");
+      var hasChanged = (serverValue !== newFieldOption);
       // var fieldOptionObjects = this.get("fieldOptionObjects");
       // fieldOptionObjects.forEach(function(fieldOptionObject) {
       //   fieldOptionObject.set("checked", false);
@@ -23,7 +24,11 @@ export default Ember.Component.extend({
       this.sendAction("valueChangedAction", {
         hasErrors: false,
         hasChanged: hasChanged,
-        fieldName: fieldName
+        fieldName: fieldName,
+        // below was add for extras which in case of cancelacion have to be unset individually
+        // but has turned out useful for agency which is not an ember-data model
+        // - allows me to go through and unset each value in case of cancelation
+        originalValue: serverValue
       });
     },
   },
@@ -60,9 +65,10 @@ export default Ember.Component.extend({
   }.on('init'),
   // each time I save to the server or cancel changes, I increment resetTrigger value
   savedOrCanceled: Ember.observer('resetTrigger', function() {
+    // in case of cancelation, tab-with-form will take care of resetting below:
     var serverValue = this.get("resourceObject." + this.fieldDetails.fieldName);
-    // 
     this.set("displayValue", serverValue);
+    // below is only really necessary when change has been saved to server (not when cancelled):
     this.set("serverValue", serverValue);
   }),
 
