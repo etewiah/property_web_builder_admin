@@ -144,9 +144,9 @@ export default TabWithForm.extend({
   characteristicasInputFields2: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.mParcela",
+      labelTextTKey: "fieldLabels.plotArea",
       tooltipTextTKey: false,
-      fieldName: "mParcela",
+      fieldName: "plotArea",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -158,9 +158,9 @@ export default TabWithForm.extend({
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.mConstruidos",
+      labelTextTKey: "fieldLabels.constructedArea",
       tooltipTextTKey: false,
-      fieldName: "mConstruidos",
+      fieldName: "constructedArea",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -181,9 +181,9 @@ export default TabWithForm.extend({
       //   fieldType: "simpleSelect",
       //   fieldDbType: "boolean",
       // }, {
-      labelTextTKey: "fieldLabels.anoConstr",
+      labelTextTKey: "fieldLabels.yearConstruction",
       tooltipTextTKey: false,
-      fieldName: "anoConstr",
+      fieldName: "yearConstruction",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {

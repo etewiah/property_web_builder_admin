@@ -232,10 +232,10 @@ export default DS.Model.extend({
   countBathrooms: DS.attr(),
   numAseos: DS.attr(),
   countGarages: DS.attr(),
-  mParcela: DS.attr(),
-  mConstruidos: DS.attr(),
+  plotArea: DS.attr(),
+  constructedArea: DS.attr(),
   eficienciaEnergia: DS.attr(),
-  anoConstr: DS.attr(),
+  yearConstruction: DS.attr(),
 
   // mapaLat: DS.attr(),
   // mapaLng: DS.attr(),
