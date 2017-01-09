@@ -56,12 +56,17 @@ export default Ember.Component.extend({
       var selectValue = fieldOptions.findBy("value", selected).value;
       this.set("resourceObject." + fieldName, selectValue);
 
-      var hasChanged = (this.get("originalValue") !== selectValue);
+      var originalValue = this.get("originalValue");
+      var hasChanged = (originalValue !== selectValue);
 
       this.sendAction("valueChangedAction", {
         hasErrors: false,
         hasChanged: hasChanged,
-        fieldName: fieldName
+        fieldName: fieldName,
+        // below was add for extras which in case of cancelacion have to be unset individually
+        // but has turned out useful for agency which is not an ember-data model
+        originalValue: originalValue
+
       });
 
     }.bind(this));
@@ -79,6 +84,9 @@ export default Ember.Component.extend({
   resetOriginalValue: Ember.observer('resetTrigger', function() {
     var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
     this.set("originalValue", inputValue);
+    this.$('.selectpicker').selectpicker('val', inputValue);
+    // this.$(".selectpicker").val(inputValue);
+    // this.$('.selectpicker').selectpicker('refresh');
   }),
 
 

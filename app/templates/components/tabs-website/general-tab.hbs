@@ -5,8 +5,8 @@
     <div class="col-sm-6">
 
       <h4>{{t "inTabLabels.supportedLanguages"}}</h4>
-      {{forms/supported-languages languageFields=availableLocaleFields supportedLanguages=agencyDetails.supported_locales
-      valueChangedAction="updateAppearance" }}
+      {{forms/supported-languages resetTrigger=resetTrigger  languageFields=availableLocaleFields supportedLanguages=agencyDetails.supported_locales
+      valueChangedAction="checkDirtyState" }}
 
       {{forms/radio-list  resetTrigger=resetTrigger 
     valueChangedAction="checkDirtyState"  fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys }}
@@ -86,7 +86,7 @@
 
 
       <h4>{{t "inTabLabels.siteLayout"}}</h4>
-      {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=siteLayoutField resourceObject=agencyDetails.style_variables fieldKeys=siteLayoutFieldKeys }}
+      {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=siteLayoutField resourceObject=agencyDetails fieldKeys=siteLayoutFieldKeys }}
       
       {{!-- 
       <h4>{{t "inTabLabels.currency"}}</h4> --}}
@@ -102,5 +102,7 @@
         {{forms/social-input resetTrigger=resetTrigger  valueChangedAction="checkDirtyState" fieldDetails=fieldDetails resourceObject=resourceObject}}
       {{/each}}
     </div>
+    {{partial "partials/manage-changes-buttons" }}
+
   </div>
 </div>

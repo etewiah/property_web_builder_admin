@@ -223,12 +223,12 @@ export default TabWithForm.extend({
     fieldName: "propStateKey",
     fieldType: "dynamicSelect",
     optionsKey: "property-states",
-  }, {
-    labelTextTKey: "fieldLabels.origen",
-    tooltipTextTKey: "",
-    fieldName: "origenPropiedad",
-    fieldType: "dynamicSelect",
-    optionsKey: "property-origins"
+  // }, {
+  //   labelTextTKey: "fieldLabels.origen",
+  //   tooltipTextTKey: "",
+  //   fieldName: "origenPropiedad",
+  //   fieldType: "dynamicSelect",
+  //   optionsKey: "property-origins"
       // options: [{
       //   value: 0,
       //   titleKey: "Private"

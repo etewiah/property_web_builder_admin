@@ -57,7 +57,7 @@ export default TabWithForm.extend(OnReadyMixin, {
   // },
   siteLayoutField: {
     labelTextTKey: "",
-    fieldName: "body_style",
+    fieldName: "style_variables.body_style",
     fieldType: "dynamicSelect",
     optionsKey: "layoutLabels",
   },
