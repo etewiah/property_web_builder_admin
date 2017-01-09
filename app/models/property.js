@@ -143,6 +143,7 @@ export default DS.Model.extend({
     return photoModels.sortBy("number");
   }),
 
+  currency: DS.attr(),
   reference: DS.attr(),
   titleEn: DS.attr(),
   titleEs: DS.attr(),

@@ -19,6 +19,19 @@ export default TabWithForm.extend({
     return languages;
   }.property(),
   // changedFields: [],
+  currencyField: {
+    labelTextTKey: "",
+    fieldName: "currency",
+  },
+  currencyFieldKeys: [{
+    value: "EUR",
+    label: "eeee",
+    // checked: true
+  }, {
+    value: "USD",
+    label: "dol",
+    // checked: false
+  }],
   visibilityInputFields: [
     //this comment tricks prettify ;) 
     {

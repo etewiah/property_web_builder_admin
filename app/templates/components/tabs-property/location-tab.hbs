@@ -18,10 +18,13 @@
       {{#each situacionRightInputFields as |inputField|}}
       {{partial "partials/input-field-resolver" }}
       {{/each}}
-      <h4>{{t "fieldLabels.forSearchWidget"}}</h4>
+{{!--
+  zones and locality not being used at the moment
+       <h4>{{t "fieldLabels.forSearchWidget"}}</h4>
       {{#each searchInputFields as |inputField|}}
       {{partial "partials/input-field-resolver" }}
       {{/each}}
+ --}} 
     </div>
   </div>
 {{/unless}}

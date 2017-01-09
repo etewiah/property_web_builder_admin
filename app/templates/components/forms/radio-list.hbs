@@ -6,15 +6,15 @@
 <div class="fg-line has-">
 
   <select class="selectpicker" style="display: none;">
-{{#each fieldOptions as |selectValue|}} 
-  <option value={{ selectValue.value }} >{{ selectValue.label }}</option>
+{{#each fieldOptionObjects as |selectValue|}} 
+  {{!-- <option value={{ selectValue.value }} >{{ selectValue.label }}</option> --}}
 {{/each}}
   </select>
 
-{{#each fieldOptions as |selectValue|}} 
-  <div class="radio m-b-15">
-    <label {{action "radioChanged" selectValue this}}>
-      <input type="radio"  
+{{#each fieldOptionObjects as |selectValue|}} 
+  <div class="radio m-b-15" >
+    <label >
+      <input type="radio" {{action "radioChanged" selectValue this }}  id={{ selectValue.value }}
        value={{ selectValue.value }} checked={{ selectValue.checked}}>
       <i class="input-helper"></i> {{ selectValue.label }}
     </label>

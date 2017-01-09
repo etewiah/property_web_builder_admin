@@ -27,6 +27,12 @@
             {{partial "partials/input-field-resolver" }}
         {{/each}}
         <br>
+        <div style="display:block;">          
+        <h4>{{t "propertyGeneralSections.portals" }}</h4>
+        {{forms/radio-list  resetTrigger=resetTrigger 
+    valueChangedAction="checkDirtyState"  fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys }}
+
+        </div>
         <div style="display:none;">          
         <h4>{{t "propertyGeneralSections.portals" }}</h4>
         {{#each portalesInputFields as |inputField|}} 
