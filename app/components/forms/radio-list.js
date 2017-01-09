@@ -8,16 +8,18 @@ export default Ember.Component.extend({
   actions: {
     radioChanged: function(newFieldOption, el) {
       // below will set site_template_id on tenant object to new value
-      this.set("resourceObject." + this.fieldDetails.fieldName, newFieldOption.value);
+      this.set("resourceObject." + this.fieldDetails.fieldName, newFieldOption);
       var fieldName = this.get("fieldDetails.fieldName");
 
-      var hasChanged = (this.get("originalValue") !== newFieldOption.value);
-      var fieldOptionObjects = this.get("fieldOptionObjects");
-      fieldOptionObjects.forEach(function(fieldOptionObject) {
-        fieldOptionObject.set("checked", false);
-      });
-      newFieldOption.set("checked", true);
-      debugger;
+      var hasChanged = (this.get("serverValue") !== newFieldOption);
+      // var fieldOptionObjects = this.get("fieldOptionObjects");
+      // fieldOptionObjects.forEach(function(fieldOptionObject) {
+      //   fieldOptionObject.set("checked", false);
+      // });
+      // newFieldOption.set("checked", true);
+      // Ember.run.scheduleOnce('afterRender', this, function() {
+      //   newFieldOption.set("checked", true);
+      // });
       this.sendAction("valueChangedAction", {
         hasErrors: false,
         hasChanged: hasChanged,
@@ -25,60 +27,43 @@ export default Ember.Component.extend({
       });
     },
   },
-  fieldOptionObjects: function() {
-    var fieldOptionObjects = [];
-    var currentValue = this.get("resourceObject." + this.fieldDetails.fieldName) || "";
-    this.get("fieldOptions").forEach(function(fieldOption) {
-      if (fieldOption.value === currentValue.toString()) {
-        fieldOption.checked = true;
-      }
-      else{
-        fieldOption.checked = false;
-      }      
-      var fieldOptionObject = Ember.Object.create(fieldOption);
-      // this.get("i18n").t(option).string || "Unknown";
-      fieldOptionObjects.push(fieldOptionObject);
-    }.bind(this));
-
-
-    return fieldOptionObjects.sortBy("label");
-  }.property("fieldOptions"),
-  // fieldOptions: function() {
-  //   var fieldOptions = [];
-  //   var currentValue = this.get("resourceObject." + this.fieldDetails.fieldName) || "";
-
-  //   // fieldOptionKeys
-  //   this.get("fieldKeys.data").forEach(function(option) {
-  //     var fieldOption = {
-  //       value: option.id,
-  //       label: option.attributes.title
-  //     };
-  //     if (option.id === currentValue.toString()) {
-  //       fieldOption.checked = "checked";
-  //     }
+  // fieldOptionObjects: function() {
+  //   var fieldOptionObjects = [];
+  //   // var displayValue = this.get("resourceObject." + this.fieldDetails.fieldName) || "";
+  //   this.get("fieldOptions").forEach(function(fieldOption) {
+  //     // if (fieldOption.value === displayValue.toString()) {
+  //     //   fieldOption.checked = true;
+  //     // } else {
+  //     //   fieldOption.checked = false;
+  //     // }
+  //     var fieldOptionObject = Ember.Object.create(fieldOption);
   //     // this.get("i18n").t(option).string || "Unknown";
-  //     fieldOptions.push(fieldOption);
+  //     fieldOptionObjects.push(fieldOptionObject);
   //   }.bind(this));
 
 
-  //   return fieldOptions.sortBy("label");
-  // }.property(),
+  //   return fieldOptionObjects.sortBy("label");
+  // }.property("fieldOptions"),
+
+
   setupComponent: function() {
     this.$(".ayuda").tooltip();
-
     // this.set("inputValue", this.get("resourceObject." + this.fieldDetails.fieldName));
   }.on('didInsertElement'),
 
   setOriginalValue: function() {
     // resourceObject obect contains the fields and current value of each field
     // find current value of the field we need to render
-    var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName) || "";
-    this.set("originalValue", inputValue.toString());
+    var serverValue = this.get("resourceObject." + this.fieldDetails.fieldName) || "";
+    this.set("serverValue", serverValue.toString());
+    this.set("displayValue", serverValue.toString());
   }.on('init'),
-  // each time I save to the server, I increment resetTrigger value
-  resetOriginalValue: Ember.observer('resetTrigger', function() {
-    var inputValue = this.get("resourceObject." + this.fieldDetails.fieldName);
-    this.set("originalValue", inputValue.toString());
+  // each time I save to the server or cancel changes, I increment resetTrigger value
+  savedOrCanceled: Ember.observer('resetTrigger', function() {
+    var serverValue = this.get("resourceObject." + this.fieldDetails.fieldName);
+    // 
+    this.set("displayValue", serverValue);
+    this.set("serverValue", serverValue);
   }),
 
 

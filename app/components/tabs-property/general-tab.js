@@ -20,7 +20,7 @@ export default TabWithForm.extend({
   }.property(),
   // changedFields: [],
   currencyField: {
-    labelTextTKey: "",
+    labelTextTKey: "fieldLabels.currency",
     fieldName: "currency",
   },
   currencyFieldKeys: [{
@@ -235,22 +235,23 @@ export default TabWithForm.extend({
       //   titleKey: "Bank"
       // }]
   }],
-  actions: {
-    savePropertyResource: function() {
-      var propertyResource = this.get("resourceObject");
-      var self = this;
+  // actions: {
+  // - was only used by property text editing
+  // - other prop edits go through tab-with-form
+  //   savePropertyResource: function() {
+  //     var propertyResource = this.get("resourceObject");
+  //     var self = this;
+  //     function success(result) {
+  //       // triggerReset is an action in TabWithForm
+  //       self.send("triggerReset");
+  //     }
 
-      function success(result) {
-        // triggerReset is an action in TabWithForm
-        self.send("triggerReset");
-      }
-
-      function failure(reason) {
-        // handle the error
-      }
-      propertyResource.save().then(success).catch(failure);
-    }
-  },
+  //     function failure(reason) {
+  //       // handle the error
+  //     }
+  //     propertyResource.save().then(success).catch(failure);
+  //   }
+  // },
   isActive: function() {
     return this.activeTabName.toLowerCase() === "general";
   }.property("activeTabName"),

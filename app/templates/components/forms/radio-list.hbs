@@ -1,26 +1,34 @@
+{{!-- https://github.com/yapplabs/ember-radio-button --}}
 {{#if fieldDetails.tooltipTextTKey}}
   <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a>
 {{/if}}
 
-  <label class="fg-label ">{{t fieldDetails.labelTextTKey }}</label>
+<label class="fg-label ">{{t fieldDetails.labelTextTKey }}</label>
 <div class="fg-line has-">
 
-  <select class="selectpicker" style="display: none;">
-{{#each fieldOptionObjects as |selectValue|}} 
-  {{!-- <option value={{ selectValue.value }} >{{ selectValue.label }}</option> --}}
-{{/each}}
-  </select>
-
-{{#each fieldOptionObjects as |selectValue|}} 
+{{#each fieldOptions as |selectValue|}} 
   <div class="radio m-b-15" >
-    <label >
-      <input type="radio" {{action "radioChanged" selectValue this }}  id={{ selectValue.value }}
-       value={{ selectValue.value }} checked={{ selectValue.checked}}>
+    <label>
+    {{radio-button
+    radioClass="input-helper"
+    value=selectValue.value
+    groupValue=displayValue
+    changed="radioChanged"}}
       <i class="input-helper"></i> {{ selectValue.label }}
     </label>
   </div>
 {{/each}}
 
+{{!-- {{#each fieldOptionObjects as |selectValue|}} 
+  <div class="radio m-b-15" >
+    <label  >
+      <input {{action "radioChanged" selectValue this}} type="radio"  id={{ selectValue.value }}
+       value={{ selectValue.value }} checked={{ selectValue.checked}}>
+      <i class="input-helper"></i> {{ selectValue.label }}
+    </label>
+  </div>
+{{/each}}
+ --}}
 
 
 </div>
