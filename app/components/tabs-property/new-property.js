@@ -45,9 +45,9 @@ export default TabWithForm.extend({
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.numHabitaciones",
+      labelTextTKey: "fieldLabels.countBedrooms",
       tooltipTextTKey: false,
-      fieldName: "numHabitaciones",
+      fieldName: "countBedrooms",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -59,9 +59,9 @@ export default TabWithForm.extend({
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.numBanos",
+      labelTextTKey: "fieldLabels.countBathrooms",
       tooltipTextTKey: false,
-      fieldName: "numBanos",
+      fieldName: "countBathrooms",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -72,20 +72,20 @@ export default TabWithForm.extend({
           }
         }
       }
-    }, {
-      labelTextTKey: "fieldLabels.numAseos",
-      tooltipTextTKey: false,
-      fieldName: "numAseos",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 3000,
-          }
-        }
-      }
+    // }, {
+    //   labelTextTKey: "fieldLabels.numAseos",
+    //   tooltipTextTKey: false,
+    //   fieldName: "numAseos",
+    //   fieldType: "simpleInput",
+    //   inputType: "number",
+    //   constraints: {
+    //     inputValue: {
+    //       numericality: {
+    //         onlyInteger: true,
+    //         lessThanOrEqualTo: 3000,
+    //       }
+    //     }
+    //   }
     }, {
       labelTextTKey: "fieldLabels.mParcela",
       tooltipTextTKey: false,

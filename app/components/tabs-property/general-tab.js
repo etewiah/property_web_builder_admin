@@ -25,12 +25,13 @@ export default TabWithForm.extend({
   },
   currencyFieldKeys: [{
     value: "EUR",
-    label: "eeee",
-    // checked: true
+    label: "Euros",
+  }, {
+    value: "GBP",
+    label: "UK Pounds",
   }, {
     value: "USD",
-    label: "dol",
-    // checked: false
+    label: "Dollars",
   }],
   visibilityInputFields: [
     //this comment tricks prettify ;) 
@@ -40,17 +41,17 @@ export default TabWithForm.extend({
       fieldName: "visible",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
-    }, {
-      labelTextTKey: "fieldLabels.highlighted",
-      tooltipTextTKey: "toolTips.highlighted",
-      fieldName: "highlighted",
-      fieldType: "simpleSelect",
-      fieldDbType: "boolean",
-    }, {
-      labelTextTKey: "fieldLabels.label",
-      fieldName: "observacionesVenta",
-      fieldType: "dynamicSelect",
-      optionsKey: "property-labels",
+    // }, {
+    //   labelTextTKey: "fieldLabels.highlighted",
+    //   tooltipTextTKey: "toolTips.highlighted",
+    //   fieldName: "highlighted",
+    //   fieldType: "simpleSelect",
+    //   fieldDbType: "boolean",
+    // }, {
+    //   labelTextTKey: "fieldLabels.label",
+    //   fieldName: "observacionesVenta",
+    //   fieldType: "dynamicSelect",
+    //   optionsKey: "property-labels",
     }
   ],
   portalesInputFields: [
@@ -80,9 +81,9 @@ export default TabWithForm.extend({
   characteristicasInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.numHabitaciones",
+      labelTextTKey: "fieldLabels.countBedrooms",
       tooltipTextTKey: false,
-      fieldName: "numHabitaciones",
+      fieldName: "countBedrooms",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -94,9 +95,9 @@ export default TabWithForm.extend({
         }
       }
     }, {
-      labelTextTKey: "fieldLabels.numBanos",
+      labelTextTKey: "fieldLabels.countBathrooms",
       tooltipTextTKey: false,
-      fieldName: "numBanos",
+      fieldName: "countBathrooms",
       fieldType: "simpleInput",
       inputType: "number",
       constraints: {
@@ -107,24 +108,24 @@ export default TabWithForm.extend({
           }
         }
       }
-    }, {
-      labelTextTKey: "fieldLabels.numAseos",
-      tooltipTextTKey: false,
-      fieldName: "numAseos",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThanOrEqualTo: 99,
-          }
-        }
-      }
+    // }, {
+    //   labelTextTKey: "fieldLabels.numAseos",
+    //   tooltipTextTKey: false,
+    //   fieldName: "numAseos",
+    //   fieldType: "simpleInput",
+    //   inputType: "number",
+    //   constraints: {
+    //     inputValue: {
+    //       numericality: {
+    //         onlyInteger: true,
+    //         lessThanOrEqualTo: 99,
+    //       }
+    //     }
+    //   }
     }, {
       labelTextTKey: "fieldLabels.garaje",
       // tooltipTextTKey: "toolTips.garaje",
-      fieldName: "numGarajes",
+      fieldName: "countGarages",
       // fieldType: "simpleSelect",
       // fieldDbType: "boolean",
       fieldType: "simpleInput",

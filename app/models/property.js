@@ -228,10 +228,10 @@ export default DS.Model.extend({
 
   origenPropiedad: DS.attr(),
 
-  numHabitaciones: DS.attr(),
-  numBanos: DS.attr(),
+  countBedrooms: DS.attr(),
+  countBathrooms: DS.attr(),
   numAseos: DS.attr(),
-  numGarajes: DS.attr(),
+  countGarages: DS.attr(),
   mParcela: DS.attr(),
   mConstruidos: DS.attr(),
   eficienciaEnergia: DS.attr(),
