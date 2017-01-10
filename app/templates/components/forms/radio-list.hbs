@@ -3,9 +3,13 @@
   <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a>
 {{/if}}
 
-<label class="fg-label ">{{t fieldDetails.labelTextTKey }}</label>
+{{#if fieldDetails.labelTextTKey}}
+  <label class="fg-label ">{{t fieldDetails.labelTextTKey }}</label>
+{{/if}}
+{{#if fieldDetails.headerTextTKey}}
+  <h4>{{t fieldDetails.headerTextTKey }}</h4>
+{{/if}}
 <div class="fg-line has-">
-
 {{#each fieldOptions as |selectValue|}} 
   <div class="radio m-b-15" >
     <label>

@@ -14,7 +14,6 @@ export default Ember.Component.extend({
       iconBase: 'fa',
       tickIcon: 'fa-check'
     });
-debugger;
     sp.on('change', function(evt) {
       // var fieldName = this.get("fieldDetails.fieldName");
       var selected = evt.target.value;

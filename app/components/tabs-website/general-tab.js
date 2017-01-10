@@ -28,7 +28,7 @@ export default TabWithForm.extend(OnReadyMixin, {
   }.property(),
 
   currencyField: {
-    labelTextTKey: "fieldLabels.defaultCurrency",
+    headerTextTKey: "fieldLabels.defaultCurrency",
     fieldName: "default_currency",
   },
   currencyFieldKeys: [{
@@ -104,16 +104,16 @@ export default TabWithForm.extend(OnReadyMixin, {
     //       // TODO - handle error
     //     }.bind(this));
     // },
-    saveContentItem: function(contentItem) {
-      function success(contentItem) {
-        // self.transitionToRoute('posts.show', post);
-      }
+    // saveContentItem: function(contentItem) {
+    //   function success(contentItem) {
+    //     // self.transitionToRoute('posts.show', post);
+    //   }
 
-      function failure(reason) {
-        // handle the error
-      }
-      contentItem.save().then(success).catch(failure);
-    }
+    //   function failure(reason) {
+    //     // handle the error
+    //   }
+    //   contentItem.save().then(success).catch(failure);
+    // }
   },
 
   // socialNetworkValues now

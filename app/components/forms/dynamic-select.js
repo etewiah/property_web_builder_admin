@@ -66,7 +66,6 @@ export default Ember.Component.extend({
         // below was add for extras which in case of cancelacion have to be unset individually
         // but has turned out useful for agency which is not an ember-data model
         originalValue: originalValue
-
       });
 
     }.bind(this));
