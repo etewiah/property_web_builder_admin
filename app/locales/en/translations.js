@@ -200,18 +200,18 @@ export default {
 
 
   // left nav
-  "adminSections": {
-    "start": "Home",
-    "agencyDetails": "Agency",
-    "content": "Website",
-    "translations": "Translations",
-    "properties": "Properties",
-    "clientes": "Clients",
-    "quit": "Go To Site",
-    "list": "List",
-    "settings": "Settings",
-    "labels": "Labels"
-  },
+  // "adminSections": {
+  //   "start": "Home",
+  //   "agencyDetails": "Agency",
+  //   "content": "Website",
+  //   "translations": "Translations",
+  //   "properties": "Properties",
+  //   "clientes": "Clients",
+  //   "quit": "Go To Site",
+  //   "list": "List",
+  //   "settings": "Settings",
+  //   "labels": "Labels"
+  // },
 
   // the header tabs within each left nav item:
   "agencySections": {

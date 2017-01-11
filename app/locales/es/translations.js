@@ -200,18 +200,18 @@ export default Ember.merge(Ember.copy(en), {
 
 
   // left nav
-  "adminSections": {
-    "start": "Inicio",
-    "agencyDetails": "Agencia",
-    "content": "Página Web",
-    "translations": "Traduciones",
-    "properties": "Propiedades",
-    "clientes": "Clientes",
-    "quit": "Ir a la web",
-    "list": "Lista",
-    "settings": "Configuración",
-    "labels": "Etiquetas"
-  },
+  // "adminSections": {
+  //   "start": "Inicio",
+  //   "agencyDetails": "Agencia",
+  //   "content": "Página Web",
+  //   "translations": "Traduciones",
+  //   "properties": "Propiedades",
+  //   "clientes": "Clientes",
+  //   "quit": "Ir a la web",
+  //   "list": "Lista",
+  //   "settings": "Configuración",
+  //   "labels": "Etiquetas"
+  // },
 
   // the header tabs within each left nav item:
   "agencySections": {

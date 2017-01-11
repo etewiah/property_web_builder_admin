@@ -1,3 +1,21 @@
+/**/
+.centered-header-link {
+  width: 80%;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+}
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width: 768px) {}
+
+
+/* Custom, iPhone Retina */
+
+@media only screen and (max-width: 320px) {}
+
 
 /* encabezado de arriba */
 
@@ -105,4 +123,3 @@ ul.idiomas li.selected,
 ul.idiomas li:hover {
   background: url('/assets/simple-nav-arrow.png') no-repeat top center;
 }
-

@@ -71,8 +71,11 @@ export default Ember.Route.extend({
         tabIconClass: "fa fa-user",
         tabTitleKey: "adminSections.agencyDetails",
         tabRoute: "admin.agency"
+      }, {
+        tabIconClass: "fa fa-info-circle",
+        tabTitleKey: "adminSections.about",
+        tabRoute: "admin.about"
       },
-
       // {
       //   tabIconClass: "fa fa-language",
       //   tabTitleKey: "adminSections.translations",
