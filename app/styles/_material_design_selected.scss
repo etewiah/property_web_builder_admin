@@ -8309,56 +8309,56 @@ body #content {
   animation-fill-mode: both;
 }
 .top-menu > li > a.tm-chat {
-  background-image: url("../img/icons/menu-2.png");
+  background-image: url("/assets/icons/menu-2.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .top-menu > li > a.tm-chat {
-    background-image: url("../img/icons/menu-2@2x.png");
+    background-image: url("/assets/icons/menu-2@2x.png");
     background-size: 18px 12px;
   }
 }
 .top-menu > li > a.tm-settings {
-  background-image: url("../img/icons/ellipsis.png");
+  background-image: url("/assets/icons/ellipsis.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .top-menu > li > a.tm-settings {
-    background-image: url("../img/icons/ellipsis@2x.png");
+    background-image: url("/assets/icons/ellipsis@2x.png");
     background-size: 24px 24px;
   }
 }
 .top-menu > li > a.tm-notification {
-  background-image: url("../img/icons/notification.png");
+  background-image: url("/assets/icons/notification.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .top-menu > li > a.tm-notification {
-    background-image: url("../img/icons/notification@2x.png");
+    background-image: url("/assets/icons/notification@2x.png");
     background-size: 24px 24px;
   }
 }
 .top-menu > li > a.tm-message {
-  background-image: url("../img/icons/message.png");
+  background-image: url("/assets/icons/message.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .top-menu > li > a.tm-message {
-    background-image: url("../img/icons/message@2x.png");
+    background-image: url("/assets/icons/message@2x.png");
     background-size: 24px 24px;
   }
 }
 .top-menu > li > a.tm-search {
-  background-image: url("../img/icons/search.png");
+  background-image: url("/assets/icons/search.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .top-menu > li > a.tm-search {
-    background-image: url("../img/icons/search@2x.png");
+    background-image: url("/assets/icons/search@2x.png");
     background-size: 24px 24px;
   }
 }
 .top-menu > li > a.tm-task {
-  background-image: url("../img/icons/task.png");
+  background-image: url("/assets/icons/task.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .top-menu > li > a.tm-task {
-    background-image: url("../img/icons/task@2x.png");
+    background-image: url("/assets/icons/task@2x.png");
     background-size: 24px 24px;
   }
 }
@@ -8411,7 +8411,7 @@ body #content {
   position: absolute;
   width: 100%;
   height: calc(100% - 70px);
-  background: url(../img/notifications.png) no-repeat center;
+  background: url(/assets/notifications.png) no-repeat center;
   -webkit-transition: all;
   -moz-transition: all;
   -o-transition: all;
@@ -8469,13 +8469,13 @@ body #content {
   border-radius: 2px;
   color: rgba(51, 51, 51, 0.69);
   background-color: rgba(255, 255, 255, 0.26);
-  background-image: url("../img/icons/search.png");
+  background-image: url("/assets/icons/search.png");
   background-repeat: no-repeat;
   background-position: 10px center;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   #top-search-wrap input[type="text"] {
-    background-image: url("../img/icons/search@2x.png");
+    background-image: url("/assets/icons/search@2x.png");
     background-size: 24px 24px;
   }
 }
@@ -9138,7 +9138,7 @@ input:focus {
   padding: 20px 20px 15px 20px;
 }
 #chat .chat-search .form-control {
-  background-image: url("../img/icons/search-2.png");
+  background-image: url("/assets/icons/search-2.png");
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 30px;
@@ -9151,7 +9151,7 @@ input:focus {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   #chat .chat-search .form-control {
-    background-image: url("../img/icons/search-2@2x.png");
+    background-image: url("/assets/icons/search-2@2x.png");
     background-size: 24px 24px;
   }
 }
@@ -9365,954 +9365,7 @@ input:focus {
 .card .card-body.card-padding-sm {
   padding: 15px;
 }
-.chart-edge {
-  margin: 20px -8px 0 -10px;
-  overflow: hidden;
-}
-.chart-edge .flot-chart {
-  bottom: -14px;
-}
-.charts-row {
-  margin-top: 50px;
-  margin-bottom: 20px;
-}
-.mini-charts-item {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  position: relative;
-  margin-bottom: 30px;
-}
-.mini-charts-item .chart {
-  padding: 15px;
-  float: left;
-}
-.mini-charts-item .chart.chart-pie {
-  margin: 0 20px;
-}
-.mini-charts-item .count {
-  overflow: hidden;
-  color: rgba(255, 255, 255, 0.9);
-  padding: 16px 12px;
-}
-.mini-charts-item .count > h2 {
-  margin: 0;
-  line-height: 100%;
-  font-size: 22px;
-  font-weight: 300;
-  color: #fff;
-}
-.mini-charts-item .count > small {
-  margin-bottom: 2px;
-  display: block;
-}
-.mini-charts-item .count > h2,
-.mini-charts-item .count > small {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.mini-charts-item > .clearfix,
-.mini-charts-item > .dl-horizontal dd,
-.mini-charts-item > .container,
-.mini-charts-item > .container-fluid,
-.mini-charts-item > .row,
-.mini-charts-item > .form-horizontal .form-group,
-.mini-charts-item > .btn-toolbar,
-.mini-charts-item > .btn-group-vertical > .btn-group,
-.mini-charts-item > .nav,
-.mini-charts-item > .navbar,
-.mini-charts-item > .navbar-header,
-.mini-charts-item > .navbar-collapse,
-.mini-charts-item > .pager,
-.mini-charts-item > .panel-body,
-.mini-charts-item > .modal-footer {
-  position: relative;
-  z-index: 1;
-}
-.mini-charts-item:before {
-  -webkit-transition: width;
-  -moz-transition: width;
-  -o-transition: width;
-  transition: width;
-  -webkit-transition-duration: 500ms;
-  transition-duration: 500ms;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
-  content: "";
-  width: 113px;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.mini-charts-item:hover .count {
-  color: #fff !important;
-}
-.mini-charts-item:hover:before {
-  width: 100%;
-}
-/*
- * Sparkline Tooltip
- */
-#jqstooltip {
-  min-width: 21px;
-  min-height: 23px;
-  text-align: center;
-  border: 0;
-  background: #fff;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  background-color: #fff;
-}
-#jqstooltip .jqsfield {
-  font-size: 12px;
-  font-weight: 700;
-  font-family: inherit;
-  text-align: center;
-  color: #333;
-}
-#jqstooltip .jqsfield > span {
-  display: none;
-}
-/*
- * Easy Pie Charts
- */
-.epc-item {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  position: relative;
-  margin-bottom: 30px;
-  padding: 30px 20px;
-  text-align: center;
-}
-.easy-pie {
-  display: inline-block;
-  position: relative;
-  padding: 0 5px 10px;
-}
-.easy-pie .percent {
-  position: absolute;
-  font-weight: 300;
-  width: 100%;
-  line-height: 100%;
-  left: 0;
-}
-.easy-pie .percent:after {
-  content: "%";
-}
-.easy-pie.main-pie .percent {
-  margin-top: 49px;
-  font-size: 50px;
-  text-align: center;
-}
-.easy-pie.main-pie .percent:not([class*="c-"]) {
-  color: rgba(255, 255, 255, 0.7);
-}
-.easy-pie.main-pie .percent:after {
-  font-size: 30px;
-}
-.easy-pie.main-pie .pie-title {
-  color: #fff;
-}
-.easy-pie:not(.main-pie) .percent {
-  font-size: 26px;
-  margin-top: 37px;
-}
-.easy-pie:not(.main-pie) .percent:after {
-  font-size: 20px;
-}
-.easy-pie .pie-title {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  bottom: -3px;
-  left: 0;
-}
-/*
- * Recet Items Table Chart
- */
-#recent-items-chart {
-  width: calc(100% + 19px);
-  height: 150px;
-  margin: -20px -10px 0;
-  bottom: -10px;
-}
-/*
- * Flot Chart
- */
-[class*="flot-chart"] {
-  width: 100%;
-  display: block;
-}
-.flot-chart {
-  height: 200px;
-}
-.flot-chart-pie {
-  height: 300px;
-}
-@media (min-width: 768px) {
-  .flot-chart-pie {
-    margin-bottom: 20px;
-  }
-}
-.flot-tooltip,
-#flotTip {
-  position: absolute;
-  color: #333;
-  display: none;
-  font-size: 12px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 3px 10px;
-  background-color: #fff;
-  z-index: 99999;
-}
-[class*="flc-"] {
-  text-align: center;
-  margin: 10px 0 5px;
-}
-[class*="flc-"] table {
-  display: inline-block;
-}
-[class*="flc-"] .legendColorBox > div {
-  border: #fff !important;
-}
-[class*="flc-"] .legendColorBox > div > div {
-  border-radius: 50%;
-}
-[class*="flc-"] .legendLabel {
-  padding: 0 8px 0 3px;
-}
-.dash-widget-item {
-  position: relative;
-  min-height: 380px;
-  margin-bottom: 30px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-}
-.dash-widget-item .dash-widget-header {
-  position: relative;
-}
-.dash-widget-item .dash-widget-header .actions {
-  display: none;
-  position: absolute;
-  right: 4px;
-  top: 6px;
-  padding: 0;
-  list-style: none;
-}
-.dash-widget-item .dash-widget-header .actions > li {
-  display: inline-block;
-  vertical-align: baseline;
-}
-.dash-widget-item .dash-widget-header .actions > li > a {
-  color: #fff;
-  font-size: 20px;
-}
-.dash-widget-item .dash-widget-footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-.dash-widget-item .dash-widget-title {
-  padding: 12px 20px;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  font-weight: 300;
-}
-.dash-widget-item:hover .dash-widget-header .actions {
-  display: block;
-}
-/*
- * Site Visits
- */
-#site-visits {
-  color: rgba(255, 255, 255, 0.9);
-}
-#site-visits .dash-widget-header {
-  padding-bottom: 38px;
-  background-color: rgba(0, 0, 0, 0.13);
-}
-#site-visits .dash-widget-title {
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.15);
-  color: rgba(255, 255, 255, 0.9);
-}
-#site-visits h3 {
-  color: rgba(255, 255, 255, 0.9);
-}
-/*
- * Best Selling Item
- */
-#best-selling {
-  background-color: #fff;
-}
-#best-selling .dash-widget-header > img {
-  width: 100%;
-  height: 155px;
-}
-#best-selling .dash-widget-header .dash-widget-title {
-  padding-bottom: 30px;
-  top: 0;
-  color: #fff;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#99000000', endColorstr='#00000000', GradientType=0);
-}
-#best-selling .dash-widget-header .main-item {
-  padding: 15px;
-  color: #fff;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#99000000', GradientType=0);
-}
-#best-selling .dash-widget-header .main-item > h2 {
-  font-weight: 400;
-  font-size: 20px;
-  margin: 5px 0 0 0;
-  line-height: 100%;
-  color: #fff;
-}
-/*
- * Weather
- */
-#weather-widget {
-  color: #fff;
-  padding: 20px 20px 0;
-}
-#weather-widget .weather-status {
-  font-size: 40px;
-  line-height: 100%;
-}
-#weather-widget .weather-icon {
-  text-align: center;
-  margin-top: 10px;
-  height: 150px;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* Weather Icons */
-}
-#weather-widget .weather-icon.wi-0 {
-  background-image: url("../img/icons/weather/0.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-0 {
-    background-image: url("../img/icons/weather/0@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-1 {
-  background-image: url("../img/icons/weather/1.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-1 {
-    background-image: url("../img/icons/weather/1@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-2 {
-  background-image: url("../img/icons/weather/2.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-2 {
-    background-image: url("../img/icons/weather/2@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-3 {
-  background-image: url("../img/icons/weather/3.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-3 {
-    background-image: url("../img/icons/weather/3@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-4 {
-  background-image: url("../img/icons/weather/2.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-4 {
-    background-image: url("../img/icons/weather/2@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-5 {
-  background-image: url("../img/icons/weather/5.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-5 {
-    background-image: url("../img/icons/weather/5@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-6 {
-  background-image: url("../img/icons/weather/5.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-6 {
-    background-image: url("../img/icons/weather/5@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-7 {
-  background-image: url("../img/icons/weather/5.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-7 {
-    background-image: url("../img/icons/weather/5@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-8 {
-  background-image: url("../img/icons/weather/5.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-8 {
-    background-image: url("../img/icons/weather/5@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-9 {
-  background-image: url("../img/icons/weather/9.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-9 {
-    background-image: url("../img/icons/weather/9@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-10 {
-  background-image: url("../img/icons/weather/5.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-10 {
-    background-image: url("../img/icons/weather/5@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-11 {
-  background-image: url("../img/icons/weather/9.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-11 {
-    background-image: url("../img/icons/weather/9@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-12 {
-  background-image: url("../img/icons/weather/9.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-12 {
-    background-image: url("../img/icons/weather/9@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-13 {
-  background-image: url("../img/icons/weather/9.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-13 {
-    background-image: url("../img/icons/weather/9@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-14 {
-  background-image: url("../img/icons/weather/9.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-14 {
-    background-image: url("../img/icons/weather/9@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-15 {
-  background-image: url("../img/icons/weather/5.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-15 {
-    background-image: url("../img/icons/weather/5@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-16 {
-  background-image: url("../img/icons/weather/9.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-16 {
-    background-image: url("../img/icons/weather/9@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-17 {
-  background-image: url("../img/icons/weather/5.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-17 {
-    background-image: url("../img/icons/weather/5@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-18 {
-  background-image: url("../img/icons/weather/18.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-18 {
-    background-image: url("../img/icons/weather/18@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-19 {
-  background-image: url("../img/icons/weather/19.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-19 {
-    background-image: url("../img/icons/weather/19@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-20 {
-  background-image: url("../img/icons/weather/19.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-20 {
-    background-image: url("../img/icons/weather/19@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-21 {
-  background-image: url("../img/icons/weather/19.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-21 {
-    background-image: url("../img/icons/weather/19@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-22 {
-  background-image: url("../img/icons/weather/19.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-22 {
-    background-image: url("../img/icons/weather/19@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-23 {
-  background-image: url("../img/icons/weather/19.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-23 {
-    background-image: url("../img/icons/weather/19@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-24 {
-  background-image: url("../img/icons/weather/24.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-24 {
-    background-image: url("../img/icons/weather/24@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-25 {
-  background-image: url("../img/icons/weather/24.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-25 {
-    background-image: url("../img/icons/weather/24@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-26 {
-  background-image: url("../img/icons/weather/26.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-26 {
-    background-image: url("../img/icons/weather/26@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-27 {
-  background-image: url("../img/icons/weather/27.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-27 {
-    background-image: url("../img/icons/weather/27@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-28 {
-  background-image: url("../img/icons/weather/28.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-28 {
-    background-image: url("../img/icons/weather/28@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-29 {
-  background-image: url("../img/icons/weather/27.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-29 {
-    background-image: url("../img/icons/weather/27@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-30 {
-  background-image: url("../img/icons/weather/28.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-30 {
-    background-image: url("../img/icons/weather/28@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-31 {
-  background-image: url("../img/icons/weather/31.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-31 {
-    background-image: url("../img/icons/weather/31@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-32 {
-  background-image: url("../img/icons/weather/32.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-32 {
-    background-image: url("../img/icons/weather/32@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-33 {
-  background-image: url("../img/icons/weather/31.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-33 {
-    background-image: url("../img/icons/weather/31@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-34 {
-  background-image: url("../img/icons/weather/32.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-34 {
-    background-image: url("../img/icons/weather/32@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-35 {
-  background-image: url("../img/icons/weather/5.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-35 {
-    background-image: url("../img/icons/weather/5@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-36 {
-  background-image: url("../img/icons/weather/32.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-36 {
-    background-image: url("../img/icons/weather/32@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-37 {
-  background-image: url("../img/icons/weather/2.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-37 {
-    background-image: url("../img/icons/weather/2@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-38 {
-  background-image: url("../img/icons/weather/2.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-38 {
-    background-image: url("../img/icons/weather/2@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-39 {
-  background-image: url("../img/icons/weather/2.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-39 {
-    background-image: url("../img/icons/weather/2@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-40 {
-  background-image: url("../img/icons/weather/5.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-40 {
-    background-image: url("../img/icons/weather/5@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-41 {
-  background-image: url("../img/icons/weather/5.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-41 {
-    background-image: url("../img/icons/weather/5@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-42 {
-  background-image: url("../img/icons/weather/9.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-42 {
-    background-image: url("../img/icons/weather/9@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-43 {
-  background-image: url("../img/icons/weather/5.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-43 {
-    background-image: url("../img/icons/weather/5@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-44 {
-  background-image: url("../img/icons/weather/27.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-44 {
-    background-image: url("../img/icons/weather/27@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-45 {
-  background-image: url("../img/icons/weather/2.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-45 {
-    background-image: url("../img/icons/weather/2@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-46 {
-  background-image: url("../img/icons/weather/18.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-46 {
-    background-image: url("../img/icons/weather/18@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-icon.wi-47 {
-  background-image: url("../img/icons/weather/2.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #weather-widget .weather-icon.wi-47 {
-    background-image: url("../img/icons/weather/2@2x.png");
-    background-size: 125px 125px;
-  }
-}
-#weather-widget .weather-info {
-  list-style: none;
-  padding: 0;
-  margin: 3px 0 0 0;
-}
-#weather-widget .weather-info > li {
-  display: inline-block;
-  border: 1px solid rgba(255, 255, 255, 0.39);
-  padding: 2px 10px 3px;
-  margin-right: 5px;
-}
-#weather-widget .weather-list {
-  background: rgba(0, 0, 0, 0.08);
-  padding: 5px 12px;
-  font-size: 16px;
-  height: 51px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-#weather-widget .weather-list > span {
-  margin-right: 7px;
-  font-weight: 300;
-  display: inline-block;
-  line-height: 40px;
-  vertical-align: top;
-}
-#weather-widget .weather-list > span.weather-list-icon {
-  width: 35px;
-  height: 35px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 30px 30px;
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-0 {
-  background-image: url('../img/icons/weather/0.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-1 {
-  background-image: url('../img/icons/weather/1.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-2 {
-  background-image: url('../img/icons/weather/2.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-3 {
-  background-image: url('../img/icons/weather/3.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-4 {
-  background-image: url('../img/icons/weather/2.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-5 {
-  background-image: url('../img/icons/weather/5.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-6 {
-  background-image: url('../img/icons/weather/5.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-7 {
-  background-image: url('../img/icons/weather/5.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-8 {
-  background-image: url('../img/icons/weather/5.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-9 {
-  background-image: url('../img/icons/weather/9.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-10 {
-  background-image: url('../img/icons/weather/5.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-11 {
-  background-image: url('../img/icons/weather/9.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-12 {
-  background-image: url('../img/icons/weather/9.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-13 {
-  background-image: url('../img/icons/weather/9.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-14 {
-  background-image: url('../img/icons/weather/9.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-15 {
-  background-image: url('../img/icons/weather/5.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-16 {
-  background-image: url('../img/icons/weather/9.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-17 {
-  background-image: url('../img/icons/weather/5.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-18 {
-  background-image: url('../img/icons/weather/18.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-19 {
-  background-image: url('../img/icons/weather/19.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-20 {
-  background-image: url('../img/icons/weather/19.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-21 {
-  background-image: url('../img/icons/weather/19.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-22 {
-  background-image: url('../img/icons/weather/19.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-23 {
-  background-image: url('../img/icons/weather/19.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-24 {
-  background-image: url('../img/icons/weather/24.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-25 {
-  background-image: url('../img/icons/weather/24.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-26 {
-  background-image: url('../img/icons/weather/26.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-27 {
-  background-image: url('../img/icons/weather/27.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-28 {
-  background-image: url('../img/icons/weather/28.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-29 {
-  background-image: url('../img/icons/weather/27.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-30 {
-  background-image: url('../img/icons/weather/28.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-31 {
-  background-image: url('../img/icons/weather/31.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-32 {
-  background-image: url('../img/icons/weather/32.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-33 {
-  background-image: url('../img/icons/weather/31.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-34 {
-  background-image: url('../img/icons/weather/32.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-35 {
-  background-image: url('../img/icons/weather/5.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-36 {
-  background-image: url('../img/icons/weather/32.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-37 {
-  background-image: url('../img/icons/weather/2.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-38 {
-  background-image: url('../img/icons/weather/2.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-39 {
-  background-image: url('../img/icons/weather/2.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-40 {
-  background-image: url('../img/icons/weather/5.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-41 {
-  background-image: url('../img/icons/weather/5.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-42 {
-  background-image: url('../img/icons/weather/9.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-43 {
-  background-image: url('../img/icons/weather/5.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-44 {
-  background-image: url('../img/icons/weather/27.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-45 {
-  background-image: url('../img/icons/weather/2.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-46 {
-  background-image: url('../img/icons/weather/18.png');
-}
-#weather-widget .weather-list > span.weather-list-icon.wi-47 {
-  background-image: url('../img/icons/weather/2.png');
-}
-#weather-widget .weather-list > span > i {
-  line-height: 100%;
-  font-size: 39px;
-}
+
 /*
  * Pie Charts
  */
@@ -10355,7 +9408,7 @@ input:focus {
   position: relative;
   height: 145px;
   width: 100%;
-  background-image: url('../img/headers/sm/4.png');
+  background-image: url('/assets/headers/sm/4.png');
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -11285,13 +10338,13 @@ html:not(.ie9) .select:before {
   background-color: #FFF;
   background-position: right calc(100% - 7px);
   background-repeat: no-repeat;
-  background-image: url("../img/select.png");
+  background-image: url("/assets/select.png");
   pointer-events: none;
   z-index: 5;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   html:not(.ie9) .select:before {
-    background-image: url("../img/select@2x.png");
+    background-image: url("/assets/select@2x.png");
     background-size: 12px 12px;
   }
 }
@@ -12355,6 +11408,10 @@ a.thumbnail.active {
   right: 30px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
 }
+
+
+
+
 #ms-menu-trigger {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -12932,38 +11989,38 @@ body.login-content:before {
   right: 35px;
 }
 .mejs-container .mejs-controls .mejs-play button {
-  background-image: url("../img/icons/play.png");
+  background-image: url("/assets/icons/play.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .mejs-container .mejs-controls .mejs-play button {
-    background-image: url("../img/icons/play@2x.png");
+    background-image: url("/assets/icons/play@2x.png");
     background-size: 15px 15px;
   }
 }
 .mejs-container .mejs-controls .mejs-pause button {
-  background-image: url("../img/icons/pause.png");
+  background-image: url("/assets/icons/pause.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .mejs-container .mejs-controls .mejs-pause button {
-    background-image: url("../img/icons/pause@2x.png");
+    background-image: url("/assets/icons/pause@2x.png");
     background-size: 15px 15px;
   }
 }
 .mejs-container .mejs-controls .mejs-mute button {
-  background-image: url("../img/icons/speaker.png");
+  background-image: url("/assets/icons/speaker.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .mejs-container .mejs-controls .mejs-mute button {
-    background-image: url("../img/icons/speaker@2x.png");
+    background-image: url("/assets/icons/speaker@2x.png");
     background-size: 15px 15px;
   }
 }
 .mejs-container .mejs-controls .mejs-unmute button {
-  background-image: url("../img/icons/speaker-2.png");
+  background-image: url("/assets/icons/speaker-2.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .mejs-container .mejs-controls .mejs-unmute button {
-    background-image: url("../img/icons/speaker-2@2x.png");
+    background-image: url("/assets/icons/speaker-2@2x.png");
     background-size: 15px 15px;
   }
 }
@@ -12972,11 +12029,11 @@ body.login-content:before {
   right: 5px;
 }
 .mejs-container .mejs-controls .mejs-fullscreen-button button {
-  background-image: url("../img/icons/fullscreen.png");
+  background-image: url("/assets/icons/fullscreen.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .mejs-container .mejs-controls .mejs-fullscreen-button button {
-    background-image: url("../img/icons/fullscreen@2x.png");
+    background-image: url("/assets/icons/fullscreen@2x.png");
     background-size: 15px 15px;
   }
 }
@@ -13285,13 +12342,13 @@ div.fc-row {
   background-color: #FFF;
   background-position: right calc(100% - 7px);
   background-repeat: no-repeat;
-  background-image: url("../img/select.png");
+  background-image: url("/assets/select.png");
   pointer-events: none;
   z-index: 5;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .bootstrap-select > .selectpicker:before {
-    background-image: url("../img/select@2x.png");
+    background-image: url("/assets/select@2x.png");
     background-size: 12px 12px;
   }
 }
@@ -13519,14 +12576,14 @@ div.fc-row {
   width: 13px;
   right: 0;
   z-index: 1;
-  background-image: url("../img/select.png");
+  background-image: url("/assets/select.png");
   background-position: right;
   background-repeat: no-repeat;
   content: "";
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .chosen-container-single:before {
-    background-image: url("../img/select@2x.png");
+    background-image: url("/assets/select@2x.png");
     background-size: 12px 12px;
   }
 }

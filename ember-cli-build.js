@@ -5,7 +5,11 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
     // below avoids the config/env.. meta tag in index.html
-    storeConfigInMeta: false
+    storeConfigInMeta: false,
+    fingerprint: {
+      exclude: ['img']
+      // prepend: 'https://subdomain.cloudfront.net/'
+    }
   });
 
   // Import ember droplet into global namespace (for file updload)
