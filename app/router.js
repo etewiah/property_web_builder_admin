@@ -55,6 +55,22 @@ Router.map(function() {
       this.route("tab", {
         path: "/:tabName"
       });
+      this.route("settings", function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tabName"
+        });
+      });
+      this.route("content", function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tabName"
+        });
+      });
 
       this.route("pages", function() {
         this.route("default", {
@@ -62,36 +78,6 @@ Router.map(function() {
         });
         this.route("page", {
           path: "/:pageName"
-        });
-      });
-    });
-    // below route has been superceeded by 
-    // /admin/properties/settings  and can be removed
-    // this.route("translations", function() {
-    //   this.route("default", {
-    //     path: "/"
-    //   });
-    //   this.route("tab", {
-    //     path: "/:tabName"
-    //   });
-    // });
-    this.route("clients", {
-      path: '/clients'
-    }, function() {
-      this.route("default", {
-        path: "/"
-      });
-      this.route("new", {
-        path: "/new"
-      });
-      this.route("edit", {
-        path: '/:id/edit'
-      }, function() {
-        this.route("default", {
-          path: "/"
-        });
-        this.route("tab", {
-          path: "/:tabName"
         });
       });
     });
@@ -136,7 +122,26 @@ Router.map(function() {
         });
       });
     });
-
+    this.route("clients", {
+      path: '/clients'
+    }, function() {
+      this.route("default", {
+        path: "/"
+      });
+      this.route("new", {
+        path: "/new"
+      });
+      this.route("edit", {
+        path: '/:id/edit'
+      }, function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tabName"
+        });
+      });
+    });
   });
   this.route('user');
   this.route('not-found', {

@@ -36,7 +36,8 @@ export default Ember.Component.extend({
   }.property("activeTabRoute"),
   subMenu: function(){
     // june 2016 - just adds some styles for submenu
-    return this.get("tab.tabRoute") === "admin.propiedades";
+    // return this.get("tab.tabRoute") === "admin.website";
+    return !!this.get("tab.subMenuItems");
   }.property(),
 
 
