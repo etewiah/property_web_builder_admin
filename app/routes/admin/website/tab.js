@@ -92,34 +92,39 @@ export default Ember.Route.extend({
     var supportedLanguages = agencyDetails.supported_locales || ["es"];
     controller.set("languages", supportedLanguages);
 
-    controller.set("tabsList", [{
-        tabValue: "general",
-        tabTitleKey: "webContentSections.general"
-      }, {
-        tabValue: "landing-carousel",
-        tabTitleKey: "webContentSections.landingCarousel"
-      }, {
-        //   tabValue: "sections",
-        //   tabTitleKey: "webContentSections.sections"
-        // }, {
-        tabValue: "content-area-cols",
-        tabTitleKey: "webContentSections.contentAreaCols",
-        // tabInfoKey: "webContentSections.info.contentAreaCols",
-      }, {
-        //   tabValue: "home",
-        //   tabTitleKey: "webContentSections.home"
-        // }, {
-        tabValue: "about-us",
-        tabTitleKey: "webContentSections.aboutUs"
-      }, {
-        tabValue: "legal",
-        tabTitleKey: "webContentSections.legal"
-      }
-      // , {
-      //   tabValue: "appearance",
-      //   tabTitleKey: "webContentSections.appearance"
-      // }
+    // controller.set("tabsList", [{
+    //     tabValue: "general",
+    //     tabTitleKey: "webContentSections.general"
+    //   }, {
+    //     tabValue: "landing-carousel",
+    //     tabTitleKey: "webContentSections.landingCarousel"
+    //   }, {
+    //     //   tabValue: "sections",
+    //     //   tabTitleKey: "webContentSections.sections"
+    //     // }, {
+    //     tabValue: "content-area-cols",
+    //     tabTitleKey: "webContentSections.contentAreaCols",
+    //     // tabInfoKey: "webContentSections.info.contentAreaCols",
+    //   }, {
+    //     //   tabValue: "home",
+    //     //   tabTitleKey: "webContentSections.home"
+    //     // }, {
+    //     tabValue: "about-us",
+    //     tabTitleKey: "webContentSections.aboutUs"
+    //   }, {
+    //     tabValue: "legal",
+    //     tabTitleKey: "webContentSections.legal"
+    //   }
+    //   // , {
+    //   //   tabValue: "appearance",
+    //   //   tabTitleKey: "webContentSections.appearance"
+    //   // }
 
-    ]);
+    // ]);
+
+    var websiteTabsList = this.modelFor("admin").setup.get('websiteTabsList');
+    controller.set("tabsList",websiteTabsList);
+
+
   }
 });
