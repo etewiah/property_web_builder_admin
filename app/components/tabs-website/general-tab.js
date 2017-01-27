@@ -42,19 +42,6 @@ export default TabWithForm.extend(OnReadyMixin, {
     label: "Dollars",
   }],
 
-
-  // currencyField: {
-  //   labelTextTKey: "",
-  //   fieldName: "body_style",
-  //   fieldType: "dynamicSelect",
-  //   optionsKey: "layoutLabels",
-  // },
-  // currencyFieldKeys: {
-  //   layoutLabels: [
-  //     "currency.eur",
-  //     "currency.usd"
-  //   ]
-  // },
   siteLayoutField: {
     labelTextTKey: "",
     fieldName: "style_variables.body_style",
@@ -68,98 +55,71 @@ export default TabWithForm.extend(OnReadyMixin, {
     ]
   },
   actions: {
-    updateAppearance: function() {
-      var agencyDetails = this.get("agencyDetails");
-      agencyDetails.save(function(successResponse) {}.bind(this));
-    },
-    addPhotosFromUrls: function(remoteUrls) {
-      // not yet in use.....
-      // TODO - validate remote urls..
-      var contentResources = this.get("contentResources");
-      // This isn't the most robust implementation - above relies on content with tag 
-      // corresponding to current route being available on server
-      // Below relies on that content containing an item with correct key
-      var contentWithPhotos = contentResources.findBy("key", "logo");
-      contentWithPhotos.addPhotosFromUrls(remoteUrls, function(successResponse) {
-        // this.actions.refreshPhotos(successResponse);
-        // note, below is send and not sendAction
-        this.send("refreshPhotos", successResponse);
-      }.bind(this));
-
-    },
-    refreshPhotos: function(response) {
-      // currently get the ff error the first time a photo is added
-      // Uncaught Error: Assertion Failed: calling set on destroyed object
-      // TODO - try fixing - perhaps with a refresh count property which
-      // aboutUsPhot can observe.....
-      this.set("logoPhoto", ContentPhoto.create(response));
-    },
-    // deletePhoto: function(photo) {
-    //   photo.remove(function(success) {
-    //       var photoModels = this.get("logoPhoto");
-    //       // console.log(photo);
-    //       photoModels.removeObject(photo);
-    //     }.bind(this),
-    //     function(error) {
-    //       // TODO - handle error
-    //     }.bind(this));
+    // updateAppearance: function() {
+    //   var agencyDetails = this.get("agencyDetails");
+    //   agencyDetails.save(function(successResponse) {}.bind(this));
     // },
-    // saveContentItem: function(contentItem) {
-    //   function success(contentItem) {
-    //     // self.transitionToRoute('posts.show', post);
-    //   }
+    // addPhotosFromUrls: function(remoteUrls) {
+    //   // not yet in use.....
+    //   // TODO - validate remote urls..
+    //   var contentResources = this.get("contentResources");
+    //   // This isn't the most robust implementation - above relies on content with tag 
+    //   // corresponding to current route being available on server
+    //   // Below relies on that content containing an item with correct key
+    //   var contentWithPhotos = contentResources.findBy("key", "logo");
+    //   contentWithPhotos.addPhotosFromUrls(remoteUrls, function(successResponse) {
+    //     // this.actions.refreshPhotos(successResponse);
+    //     // note, below is send and not sendAction
+    //     this.send("refreshPhotos", successResponse);
+    //   }.bind(this));
 
-    //   function failure(reason) {
-    //     // handle the error
-    //   }
-    //   contentItem.save().then(success).catch(failure);
-    // }
+    // },
+    // refreshPhotos: function(response) {
+    //   // currently get the ff error the first time a photo is added
+    //   // Uncaught Error: Assertion Failed: calling set on destroyed object
+    //   // TODO - try fixing - perhaps with a refresh count property which
+    //   // aboutUsPhot can observe.....
+    //   this.set("logoPhoto", ContentPhoto.create(response));
+    // },
   },
 
-  // socialNetworkValues now
-  // resourceObject: {
-  //   social_media: {
-  //     facebook: "ddd"
-  //   }
-  // },
-
-  socialNetworkFields: [{
-    fieldName: "social_media.facebook",
-    title: "Facebook",
-    class: "fa fa-facebook fa-2x"
-      // tooltipTextTKey: false,
-      // constraints: {
-      //   inputValue: {
-      //     url: {
-      //       message: "errors.notAUrlVjs"
-      //     }
-      //   }
-      // }
-  }, {
-    fieldName: "social_media.twitter",
-    title: "Twitter",
-    class: "fa fa-twitter fa-2x"
-  }, {
-    fieldName: "social_media.youtube",
-    title: "Youtube",
-    class: "fa fa-youtube fa-2x"
-  }, {
-    fieldName: "social_media.linkedin",
-    title: "LinkedIn",
-    class: "fa fa-linkedin fa-2x"
-  }, {
-    fieldName: "social_media.gplus",
-    title: "Google Plus",
-    class: "fa fa-google-plus fa-2x"
-  }, {
-    fieldName: "social_media.pinterest",
-    title: "Pinterest",
-    class: "fa fa-pinterest fa-2x"
-  }, {
-    fieldName: "social_media.instagram",
-    title: "Instagram",
-    class: "fa fa-instagram fa-2x"
-  }],
+  // socialNetworkFields: [{
+  //   fieldName: "social_media.facebook",
+  //   title: "Facebook",
+  //   class: "fa fa-facebook fa-2x"
+  //     // tooltipTextTKey: false,
+  //     // constraints: {
+  //     //   inputValue: {
+  //     //     url: {
+  //     //       message: "errors.notAUrlVjs"
+  //     //     }
+  //     //   }
+  //     // }
+  // }, {
+  //   fieldName: "social_media.twitter",
+  //   title: "Twitter",
+  //   class: "fa fa-twitter fa-2x"
+  // }, {
+  //   fieldName: "social_media.youtube",
+  //   title: "Youtube",
+  //   class: "fa fa-youtube fa-2x"
+  // }, {
+  //   fieldName: "social_media.linkedin",
+  //   title: "LinkedIn",
+  //   class: "fa fa-linkedin fa-2x"
+  // }, {
+  //   fieldName: "social_media.gplus",
+  //   title: "Google Plus",
+  //   class: "fa fa-google-plus fa-2x"
+  // }, {
+  //   fieldName: "social_media.pinterest",
+  //   title: "Pinterest",
+  //   class: "fa fa-pinterest fa-2x"
+  // }, {
+  //   fieldName: "social_media.instagram",
+  //   title: "Instagram",
+  //   class: "fa fa-instagram fa-2x"
+  // }],
 
 
 

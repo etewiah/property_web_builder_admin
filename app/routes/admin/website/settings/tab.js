@@ -46,7 +46,7 @@ export default Ember.Route.extend({
     if (params.tabName === "sections") {
       return this.store.findAll("section");
     }
-    if (params.tabName === "appearance") {
+    if (params.tabName === "template") {
       return Theme.getAll();
       // july 2016: tried using ember store below but just too much
       // work figuring out the promise object
@@ -61,9 +61,6 @@ export default Ember.Route.extend({
         tag: params.tabName
       }
     });
-    // return this.store.findAll('webContent'); 
-    // return params.tabName;
-    // return this.store.findRecord('webContent', "test");
   },
   // setupController will not get called if model does not change
   // eg if I returned a query that was not dependant on params....

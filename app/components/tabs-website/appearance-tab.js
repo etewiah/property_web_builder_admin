@@ -83,7 +83,28 @@ export default TabWithForm.extend(OnReadyMixin, {
         // handle the error
       }
       contentItem.save().then(success).catch(failure);
-    }
+    },
+    // addPhotosFromUrls: function(remoteUrls) {
+    //   // not yet in use.....
+    //   // TODO - validate remote urls..
+    //   var contentResources = this.get("contentResources");
+    //   // This isn't the most robust implementation - above relies on content with tag 
+    //   // corresponding to current route being available on server
+    //   // Below relies on that content containing an item with correct key
+    //   var contentWithPhotos = contentResources.findBy("key", "logo");
+    //   contentWithPhotos.addPhotosFromUrls(remoteUrls, function(successResponse) {
+    //     // this.actions.refreshPhotos(successResponse);
+    //     // note, below is send and not sendAction
+    //     this.send("refreshPhotos", successResponse);
+    //   }.bind(this));
+    // },
+    refreshPhotos: function(response) {
+      // currently get the ff error the first time a photo is added
+      // Uncaught Error: Assertion Failed: calling set on destroyed object
+      // TODO - try fixing - perhaps with a refresh count property which
+      // aboutUsPhot can observe.....
+      this.set("logoPhoto", ContentPhoto.create(response));
+    },
   },
 
   logoPhoto: function() {
