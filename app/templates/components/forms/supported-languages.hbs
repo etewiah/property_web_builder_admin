@@ -5,8 +5,39 @@
 {{/each}} 
 {{/if}}
 <div>
-  {{#each localesArrayWithValues as |fieldDetails|}} 
-
+  {{#each localesArrayWithValues as |fieldDetails|}}
+  <div class="fg-line m-b-15">
+    <div class="checkbox m-b-15">
+      <label>
+        <input type="checkbox" checked={{fieldDetails.value}}
+        onClick={{action "changeSupportedLocale" fieldDetails }}>
+        <i class="input-helper"></i>{{t fieldDetails.labelTextTKey }}
+      </label>
+    </div>
+{{!--     <div class="fg-line">
+      <label class="m-r-20">
+        {{input type="checkbox" name="isAdmin" checked=fieldDetails.value key-press="changeSupportedLocale"}}
+        <i class="input-helper"></i> {{t fieldDetails.labelTextTKey }}
+      </label>
+    </div> --}}
+    {{#each fieldDetails.localeVariants as |localeVariant| }}
+    <label class="radio radio-inline m-r-20">
+      {{radio-button radioClass="input-helper" value=localeVariant groupValue=fieldDetails.currentLocaleVariant }}
+      <i class="input-helper"></i> {{ localeVariant }}
+    </label>
+    {{/each}}
+    <br>
+    <div class="fg-line">
+      {{!--
+      <label class="radio radio-inline m-r-20">
+        {{radio-button radioClass="input-helper" value=true groupValue=fieldDetails.value changed="changeSupportedLocale"}}
+        <i class="input-helper"></i> {{t fieldDetails.labelTextTKey }}
+      </label>
+      --}} </div>
+    <br>
+  </div>
+  {{/each}} 
+  {{#each localesArrayWithValues as |fieldDetails|}}
   <div class="fg-line">
     {{#if fieldDetails.labelText}}
     <label class="fg-label arriba_label">{{fieldDetails.labelText }}</label>

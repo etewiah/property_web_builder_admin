@@ -6,7 +6,14 @@
       <h4>{{t "inTabLabels.supportedLanguages"}}</h4>
       {{forms/supported-languages resetTrigger=resetTrigger  languageFields=availableLocaleFields supportedLanguages=agencyDetails.supported_locales resourceObject=resourceObject
       valueChangedAction="checkDirtyState" }}
+    </div>
+    <div class="col-sm-6">
+      {{forms/radio-list  resetTrigger=resetTrigger 
+    valueChangedAction="checkDirtyState"  fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys }}
 
+
+    </div>
+    {{partial "partials/manage-changes-buttons" }}
 {{!--       <h4>{{t "logo"}}</h4> 
       {{#if logoPhoto}}
       <table id="tabla_fotos" cellspacing="0">
@@ -88,14 +95,7 @@
         {{!-- forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=currencyField resourceObject=agencyDetails.style_variables fieldKeys=currencyFieldKeys --}}
 
 
-    </div>
-    <div class="col-sm-6">
-      {{forms/radio-list  resetTrigger=resetTrigger 
-    valueChangedAction="checkDirtyState"  fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys }}
 
-
-    </div>
-    {{partial "partials/manage-changes-buttons" }}
 
   </div>
 </div>

@@ -6,6 +6,68 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   classNames: ['form-group', 'fg-float'],
   actions: {
+    changeSupportedLocale: function(fieldDetails, ev) {
+      // checkbox does not bind to fieldDetails automatically
+      // so has to be done manually here
+      fieldDetails.set("value", ev.target.checked);
+      // debugger;
+      var fieldName = "supported_locales";
+      var serverValue = this.get("serverValue");
+
+      var newLocales = [];
+      // take radioSets has which have been updated
+      var radioSets = this.get("localesArrayWithValues");
+      radioSets.forEach(function(radioSet) {
+        // convert to simple array suitable for server
+        if (radioSet.value) {
+          var currentLocaleVariant = radioSet.currentLocaleVariant || radioSet.localeVariants[0];
+          // below sets something like "es-es"
+          newLocales.push(currentLocaleVariant);
+          // newLocales.push(radioSet.localeVariants[0]);
+        }
+      });
+      // and set this on server field
+      this.set("resourceObject.supported_locales", newLocales);
+      // could have used radio-button friendly format to save to server
+      // but would make adding extra languages in the future tricky..
+
+      var hasChanged = false;
+      newLocales.forEach(function(newLocale) {
+        if (!serverValue.contains(newLocale)) {
+          hasChanged = true;
+        }
+      });
+      serverValue.forEach(function(sv) {
+        if (!newLocales.contains(sv)) {
+          hasChanged = true;
+        }
+      });
+      if (newLocales.length > 0) {
+        this.set("errors", []);
+        // this.set("supportedLanguages", newLocales);
+        // this.sendAction("valueChangedAction", {});
+        this.sendAction("valueChangedAction", {
+          hasErrors: false,
+          hasChanged: hasChanged,
+          fieldName: fieldName,
+          // below was add for extras which in case of cancelacion have to be unset individually
+          // but has turned out useful for agency which is not an ember-data model
+          originalValue: serverValue
+        });
+      } else {
+        this.set("errors", ["errors.languageRequired"]);
+
+        this.sendAction("valueChangedAction", {
+          hasErrors: true,
+          hasChanged: hasChanged,
+          fieldName: fieldName,
+          // below was add for extras which in case of cancelacion have to be unset individually
+          // but has turned out useful for agency which is not an ember-data model
+          originalValue: serverValue
+        });
+      }
+    },
+
     changeSupportedLanguage: function() {
       var fieldName = "supported_locales";
       var serverValue = this.get("serverValue");
@@ -25,17 +87,16 @@ export default Ember.Component.extend({
       // but would make adding extra languages in the future tricky..
 
       var hasChanged = false;
-      newLocales.forEach(function(newLocale){
+      newLocales.forEach(function(newLocale) {
         if (!serverValue.contains(newLocale)) {
           hasChanged = true;
         }
       });
-      serverValue.forEach(function(sv){
+      serverValue.forEach(function(sv) {
         if (!newLocales.contains(sv)) {
           hasChanged = true;
         }
       });
-
 
       if (newLocales.length > 0) {
         this.set("errors", []);
@@ -87,11 +148,18 @@ export default Ember.Component.extend({
     var localesArrayWithValues = [];
     languageFields.forEach(function(field) {
       var fieldObject = Ember.Object.create(field);
-      if (supportedLocales.includes(field.fieldName)) {
-        fieldObject.set("value", true);
-      } else {
-        fieldObject.set("value", false);
-      }
+          fieldObject.set("value", false);
+      field.localeVariants.forEach(function(localeVariant) {
+        if (supportedLocales.includes(localeVariant)) {
+          fieldObject.set("currentLocaleVariant", localeVariant);
+          fieldObject.set("value", true);
+        } 
+      });
+      // if (supportedLocales.includes(field.fieldName)) {
+      //   fieldObject.set("value", true);
+      // } else {
+      //   fieldObject.set("value", false);
+      // }
       localesArrayWithValues.push(fieldObject);
     });
     return localesArrayWithValues;
