@@ -68,12 +68,12 @@ export default Ember.Route.extend({
         tabTitleKey: "adminSections.content",
         tabRoute: "admin.website",
         subMenuItems: [{
-          tabIconClass: "fa fa-list",
-          tabTitleKey: "adminSections.list",
+          tabIconClass: "fa fa-gear",
+          tabTitleKey: "adminSections.websiteSettings",
           tabRoute: "admin.website.settings.default"
         }, {
-          tabIconClass: "fa fa-tags",
-          tabTitleKey: "adminSections.labels",
+          tabIconClass: "fa fa-newspaper-o",
+          tabTitleKey: "adminSections.websiteContent",
           tabRoute: "admin.website.content.default"
         }]
       }, {

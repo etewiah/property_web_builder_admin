@@ -52,9 +52,9 @@ Router.map(function() {
       this.route("default", {
         path: "/"
       });
-      this.route("tab", {
-        path: "/:tabName"
-      });
+      // this.route("tab", {
+      //   path: "/:tabName"
+      // });
       this.route("settings", function() {
         this.route("default", {
           path: "/"

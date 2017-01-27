@@ -92,9 +92,8 @@ export default Ember.Route.extend({
     var supportedLanguages = agencyDetails.supported_locales || ["es"];
     controller.set("languages", supportedLanguages);
 
-    var websiteTabsList = this.modelFor("admin").setup.get('websiteTabsList');
-    controller.set("tabsList",websiteTabsList);
-
+    var websiteContentTabsList = this.modelFor("admin").setup.get('websiteContentTabsList');
+    controller.set("tabsList",websiteContentTabsList);
 
   }
 });
