@@ -1,0 +1,129 @@
+{{!-- TODO? - might implement if there are enough options to move out of general-tab --}}
+<div role="tabpanel" class="tab-pane active" id="apariencia">
+  <div class="row">
+      {{partial "partials/manage-changes-buttons" }}
+
+    <div class="col-sm-4">
+      <h4>Site Templates: (to implement)</h4>
+    {{forms/radio-list  resetTrigger=resetTrigger 
+    valueChangedAction="updateAppearance"  fieldDetails=siteTemplateField resourceObject=agencyDetails fieldOptions=siteTemplateFieldKeys }}
+
+
+      <h4>{{t "inTabLabels.siteLayout"}}</h4>
+    {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=siteLayoutField resourceObject=agencyDetails.style_variables fieldKeys=siteLayoutFieldKeys }}
+
+
+    </div>
+
+    <div class="col-sm-4">
+
+      <h4>{{t "inTabLabels.colors"}}</h4>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          {{spectrum-color-picker
+              showPalette=true
+              color=agencyDetails.style_variables.primary_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+              palette='[["#e91b23","#563d7c"],["#3498db","#8ec449"],["#f1c40f","#d35400"]]'
+          }}
+        </div>
+        <label class="fg-label">{{t "inTabLabels.colorPrimary"}}</label>
+      </div>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          {{spectrum-color-picker
+              showPalette=true
+              color=agencyDetails.style_variables.secondary_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+              palette='[["#e91b23","#563d7c"],["#3498db","#8ec449"],["#f1c40f","#d35400"]]'
+          }}
+        </div>
+        <label class="fg-label">{{t "inTabLabels.colorSecondary"}}</label>
+      </div>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          {{spectrum-color-picker
+              showPalette=true
+              color=agencyDetails.style_variables.action_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+              palette='[["#e91b23","#563d7c"],["#3498db","#8ec449"],["#f1c40f","#d35400"]]'
+          }}
+        </div>
+        <label class="fg-label">{{t "inTabLabels.colorActions"}}</label>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+    <h4>Raw CSS</h4>
+        {{forms/simple-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=rawCssField resourceObject=agencyDetails }} 
+
+      {{ textarea value=contentValue type="text" rows="4" class="input-sm form-control fg-input"  }}
+
+    </div>
+ </div>
+  <div class="row" style="display:none;">
+    <div class="col-sm-4">
+      <h4>Colores</h4>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          <input type="color" class="input-sm form-control fg-input" value="#ff6166">
+        </div>
+        <label class="fg-label">Color principal</label>
+      </div>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          <input type="color" class="input-sm form-control fg-input" value="#f29910">
+        </div>
+        <label class="fg-label">Color secundario</label>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h4>Fuentes......</h4>
+      <div class="form-group fg-float">
+        <div class="fg-line has-">
+          <select id="fuente" class="">
+            <option value="montserrat">Montserrat</option>
+            <option value="oswald">Oswald</option>
+            <option value="slavo">Slavo</option>
+            <option value="roboto" selected="selected">Roboto</option>
+            <option value="opensans">Open Sans</option>
+            <option value="lobster">Lobster</option>
+            <option value="poiretone">Poiret One</option>
+            <option value="arvo">Arvo</option>
+            <option value="breeserif">Bree Serif</option>
+            <option value="anton">Anton</option>
+          </select>
+        </div>
+        <label class="fg-label arriba_label">Fuente: </label>
+      </div>
+      <p id="texto_ejemplo" class="roboto">Texto de ejemplo</p>
+    </div>
+    <div class="col-sm-4">
+      <h4>Otros</h4>
+      <div class="form-group fg-float">
+        <div class="fg-line has-">
+          <select class="selectpicker" style="display: none;">
+            <option>Panorámico</option>
+            <option>Caja</option>
+          </select>
+          <div class="btn-group bootstrap-select">
+            <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="Panorámico"><span class="filter-option pull-left">Panorámico</span>&nbsp;<span class="caret"></span></button>
+            <div class="dropdown-menu open">
+              <ul class="dropdown-menu inner selectpicker" role="menu">
+                <li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Panoramico</span>"><span class="text">Panorámico</span><span class="md md-done check-mark"></span></a></li>
+                <li data-original-index="1"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Caja</span>"><span class="text">Caja</span><span class="md md-done check-mark"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <label class="fg-label arriba_label">Modo de visualización: </label>
+      </div>
+    </div>
+  </div>
+</div>
