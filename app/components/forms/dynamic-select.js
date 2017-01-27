@@ -1,7 +1,7 @@
 import Ember from 'ember';
-
+// currently only used to select site layout
 export default Ember.Component.extend({
-  classNames: ['form-group', 'fg-float'],
+  classNames: ['form-group'],
   i18n: Ember.inject.service(),
   fieldOptions: function() {
     var fieldOptionKeys = this.get("fieldKeys")[this.get("fieldDetails.optionsKey")] || [];

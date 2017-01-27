@@ -7,7 +7,9 @@
 
 
       <h4>{{t "logo"}}</h4> 
+      <div class="form-group fg-float" style="margin-bottom: 50px;">
       {{#if logoPhoto}}
+      <div>
       <table id="tabla_fotos" cellspacing="0">
         <tr data-id_foto="1" id="1" class="foto_principal">
           <td>
@@ -29,12 +31,13 @@
           </td>
         </tr>
       </table>
+      </div>
       {{else}}
         <p><a class="btn btn-edfile">{{t "addLogo"}}
            {{#upload/x-droplet-upload-single url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} {{/upload/x-droplet-upload-single}}
         </a></p>
       {{/if}}
-
+      </div>
 
 
       <h4>{{t "inTabLabels.siteLayout"}}</h4>
@@ -42,7 +45,8 @@
 
 
 {{!-- 
-
+jan 2017:
+below would prompt to save changes which I don't want now:
     <h4>{{t "inTabLabels.siteLayout"}}</h4>
       {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=siteLayoutField resourceObject=agencyDetails fieldKeys=siteLayoutFieldKeys }} --}}
 

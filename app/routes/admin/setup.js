@@ -32,23 +32,23 @@ export default Ember.Route.extend({
           promptKey: "tasks.changeLogoPrompt",
           // linkParams: {"tabName": "general"},
           // above will result in route model not getting called
-          linkParams: "general",
-          link: "admin.website.tab",
+          linkParams: "appearance",
+          link: "admin.website.settings.tab",
           icon: "fa fa-desktop fa-2x"
         }, {
           titleKey: "tasks.manageLandingCarousel",
           linkParams: "landing-carousel",
-          link: "admin.website.tab",
+          link: "admin.website.content.tab",
           icon: "fa fa-desktop fa-2x"
         }, {
           titleKey: "tasks.changeAboutUsText",
           linkParams: "about-us",
-          link: "admin.website.tab",
+          link: "admin.website.content.tab",
           icon: "fa fa-desktop fa-2x"
         }, {
           titleKey: "tasks.changeLegalText",
           linkParams: "legal",
-          link: "admin.website.tab",
+          link: "admin.website.content.tab",
           icon: "fa fa-desktop fa-2x"
         }]
       }, {
