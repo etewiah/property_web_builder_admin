@@ -8688,7 +8688,7 @@ body #content {
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-#sidebar .main-menu > li.sub-menu > a:before {
+/*#sidebar .main-menu > li.sub-menu > a:before {
   content: "\f0fb";
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -8702,6 +8702,7 @@ body #content {
   -o-transform: scale(0);
   transform: scale(0);
 }
+*/
 #sidebar .main-menu > li.sub-menu > ul {
   list-style: none;
   background: #f7f7f7;
@@ -8724,6 +8725,8 @@ body #content {
 #sidebar .main-menu > li.sub-menu > ul > li:last-child > a {
   padding-bottom: 16px;
 }
+/*
+moved to _shame.scss
 #sidebar .main-menu > li.sub-menu.toggled > a:before {
   content: "\f0fb";
   -webkit-transform: scale(0) rotate(-90deg);
@@ -8737,7 +8740,7 @@ body #content {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
-}
+}*/
 #sidebar .main-menu > li.sub-menu.active > ul {
   display: block;
 }

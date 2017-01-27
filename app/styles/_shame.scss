@@ -1,3 +1,43 @@
+
+/*
+
+attempt to fix + and - indicators on sub-menu
+- not successfull...
+
+#sidebar .main-menu > li.sub-menu > a:before {
+  content: "\f0fb";
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+#sidebar .main-menu > li.sub-menu > a:after {
+  content: "\f111";
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+
+
+
+#sidebar .main-menu > li.sub-menu.sm-toggled > a:before {
+  content: "\f0fb";
+  -webkit-transform: scale(0) rotate(-90deg);
+  -ms-transform: scale(0) rotate(-90deg);
+  -o-transform: scale(0) rotate(-90deg);
+  transform: scale(0) rotate(-90deg);
+}
+#sidebar .main-menu > li.sub-menu.sm-toggled > a:after {
+  content: "\f111";
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+*/
+
+
 .content-item-container {
   /*style up summernote editable items when
   not being edited*/
