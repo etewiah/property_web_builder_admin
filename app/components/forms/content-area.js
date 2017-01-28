@@ -14,7 +14,7 @@ export default Ember.Component.extend({
       var titleValue = this.get("titleValue");
       var contentValue = this.get("contentValue");
 
-      var capitalizedLang = this.get("languageSettings").capitalize();
+      var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
       var rawContent = this.get("contentItem.raw" + capitalizedLang);
       // enclosing in div below ensures $frag.html() call later returns what I want
       var $frag = $("<div>" + rawContent + "</div>");
@@ -50,7 +50,7 @@ export default Ember.Component.extend({
       contentItem.rollbackAttributes();
       this.set("titleValue",this.get("originalTitleValue"));
       this.set("contentValue",this.get("originalContentValue"));
-      // this.set("contentValue", this.get("contentItem.raw" + this.get("languageSettings").capitalize() ));
+      // this.set("contentValue", this.get("contentItem.raw" + this.get("languageSettings").capitalize().split("-")[0] ));
       this.set("isEditing", false);
     },
     previewContent: function() {
@@ -59,13 +59,13 @@ export default Ember.Component.extend({
 
   // rawContent: Ember.computed('contentItem', {
   //   get(key) {
-  //       var capitalizedLang = this.get("languageSettings").capitalize();
+  //       var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
   //       // below gets localised raw content
   //       var rawContent = this.get("contentItem.raw" + capitalizedLang);
   //       return rawContent;
   //     },
   //     set(key, value) {
-  //       var capitalizedLang = this.get("languageSettings").capitalize();
+  //       var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
   //       // this.set("contentItem.rawEn", value);
   //       this.set("contentItem.raw" + capitalizedLang, value);
   //       return value;
@@ -74,7 +74,7 @@ export default Ember.Component.extend({
 
   titleValue: Ember.computed('contentItem', {
     get(key) {
-        var capitalizedLang = this.get("languageSettings").capitalize();
+        var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
         var rawContent = this.get("contentItem.raw" + capitalizedLang);
         var $frag = $("<div>" + rawContent + "</div>");
         var titleValue = $frag.find("h4").text();
@@ -82,14 +82,14 @@ export default Ember.Component.extend({
         return titleValue;
       },
       // set(key, value) {
-      //   var capitalizedLang = this.get("languageSettings").capitalize();
+      //   var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
       //   var rawContent = this.get("contentItem.raw" + capitalizedLang);
       //   return value;
       // }
   }),
   contentValue: Ember.computed('contentItem', {
     get(key) {
-        var capitalizedLang = this.get("languageSettings").capitalize();
+        var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
         // below gets localised raw content
         var rawContent = this.get("contentItem.raw" + capitalizedLang);
         var $frag = $("<div>" + rawContent + "</div>");
@@ -103,7 +103,7 @@ export default Ember.Component.extend({
         return mainText;
       },
       // set(key, value) {
-      //   var capitalizedLang = this.get("languageSettings").capitalize();
+      //   var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
       //   var rawContent = this.get("contentItem.raw" + capitalizedLang);
       //   return value;
       // }
@@ -115,7 +115,8 @@ export default Ember.Component.extend({
   }),
   labelSuffixKey: Ember.computed('contentItem', {
     get(key) {
-      var capitalizedLang = this.get("languageSettings").capitalize();
+      var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
+      debugger;
       return "webContentLabels.suffix" + capitalizedLang;
     }
   })

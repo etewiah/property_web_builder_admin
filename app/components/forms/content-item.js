@@ -20,7 +20,7 @@ export default Ember.Component.extend({
       var contentItem = this.get("contentItem");
       contentItem.rollbackAttributes();
       // debugger;
-      this.set("contentValue", this.get("contentItem.raw" + this.get("languageSettings").capitalize()));
+      this.set("contentValue", this.get("contentItem.raw" + this.get("languageSettings").capitalize().split("-")[0]));
       this.set("isEditing", false);
     },
     previewContent: function(){
@@ -31,12 +31,12 @@ export default Ember.Component.extend({
 
   contentValue: Ember.computed('contentItem', {
     get(key) {
-      var capitalizedLang = this.get("languageSettings").capitalize();
+      var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
         // return this.get("contentItem.rawEn");
         return this.get("contentItem.raw" + capitalizedLang);
       },
     set(key, value) {
-      var capitalizedLang = this.get("languageSettings").capitalize();
+      var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
       // this.set("contentItem.rawEn", value);
       this.set("contentItem.raw" + capitalizedLang, value);
       return value;
@@ -49,7 +49,7 @@ export default Ember.Component.extend({
   }),
   labelSuffixKey: Ember.computed('contentItem', {
     get(key) {
-      var capitalizedLang = this.get("languageSettings").capitalize();
+      var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
       return "webContentLabels.suffix" + capitalizedLang;
     }
   })
