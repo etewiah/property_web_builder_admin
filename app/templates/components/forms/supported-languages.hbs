@@ -11,34 +11,29 @@
       <label>
         <input type="checkbox" checked={{fieldDetails.value}}
         onClick={{action "changeSupportedLocale" fieldDetails }}>
-        <i class="input-helper"></i>{{t fieldDetails.labelTextTKey }}
+        <i class="input-helper"></i>
+        <strong>
+          {{t fieldDetails.labelTextTKey }}
+        </strong>
       </label>
     </div>
-{{!--     <div class="fg-line">
-      <label class="m-r-20">
-        {{input type="checkbox" name="isAdmin" checked=fieldDetails.value key-press="changeSupportedLocale"}}
-        <i class="input-helper"></i> {{t fieldDetails.labelTextTKey }}
-      </label>
-    </div> --}}
+    {{#if fieldDetails.value}}
+    <div class="m-l-15">
+    <div class="m-b-5">Variant:</div>
     {{#each fieldDetails.localeVariants as |localeVariant| }}
     <label class="radio radio-inline m-r-20">
-      {{radio-button radioClass="input-helper" value=localeVariant groupValue=fieldDetails.currentLocaleVariant }}
-      <i class="input-helper"></i> {{ localeVariant }}
+      {{radio-button radioClass="input-helper" value=localeVariant groupValue=fieldDetails.currentLocaleVariant
+      changed="changeSupportedLocale" }}
+      <i class="input-helper"></i> {{t localeVariant }}
     </label>
     {{/each}}
-    <br>
-    <div class="fg-line">
-      {{!--
-      <label class="radio radio-inline m-r-20">
-        {{radio-button radioClass="input-helper" value=true groupValue=fieldDetails.value changed="changeSupportedLocale"}}
-        <i class="input-helper"></i> {{t fieldDetails.labelTextTKey }}
-      </label>
-      --}} </div>
+    </div>
+    {{/if}}
     <br>
   </div>
   {{/each}} 
   {{#each localesArrayWithValues as |fieldDetails|}}
-  <div class="fg-line">
+{{!--   <div class="fg-line">
     {{#if fieldDetails.labelText}}
     <label class="fg-label arriba_label">{{fieldDetails.labelText }}</label>
     {{else}}
@@ -53,17 +48,8 @@
         {{radio-button radioClass="input-helper" value=false groupValue=fieldDetails.value changed="changeSupportedLanguage"}}
         <i class="input-helper"></i> {{ t "no" }}
       </label>
-      {{!--
-      <label class="radio radio-inline m-r-20">
-        <input type="radio" name={{ fieldDetails.fieldName }} value=true>
-        <i class="input-helper"></i>{{t "yes"}}
-      </label>
-      <label class="radio radio-inline m-r-2">
-        <input type="radio" name={{ fieldDetails.fieldName }} value=false>
-        <i class="input-helper"></i>{{t "no"}}
-      </label> --}}
     </div>
     <br>
-  </div>
+  </div> --}}
   {{/each}}
 </div>

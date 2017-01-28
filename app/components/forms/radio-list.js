@@ -1,5 +1,4 @@
-// created for selection of site template
-// and for now only works for setting site template..
+// used for selecting default currency
 import Ember from 'ember';
 
 export default Ember.Component.extend({

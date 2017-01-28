@@ -7,10 +7,12 @@ export default Ember.Component.extend({
   classNames: ['form-group', 'fg-float'],
   actions: {
     changeSupportedLocale: function(fieldDetails, ev) {
-      // checkbox does not bind to fieldDetails automatically
-      // so has to be done manually here
-      fieldDetails.set("value", ev.target.checked);
-      // debugger;
+      if (fieldDetails && ev) {
+        // checkbox does not bind to fieldDetails automatically
+        // so has to be done manually here
+        fieldDetails.set("value", ev.target.checked);
+        // debugger;
+      }
       var fieldName = "supported_locales";
       var serverValue = this.get("serverValue");
 
@@ -20,9 +22,12 @@ export default Ember.Component.extend({
       radioSets.forEach(function(radioSet) {
         // convert to simple array suitable for server
         if (radioSet.value) {
-          var currentLocaleVariant = radioSet.currentLocaleVariant || radioSet.localeVariants[0];
+          if (!!!radioSet.currentLocaleVariant) {
+            radioSet.set("currentLocaleVariant", radioSet.localeVariants[0]);
+          }
+          // var currentLocaleVariant = radioSet.currentLocaleVariant || radioSet.localeVariants[0];
           // below sets something like "es-es"
-          newLocales.push(currentLocaleVariant);
+          newLocales.push(radioSet.currentLocaleVariant);
           // newLocales.push(radioSet.localeVariants[0]);
         }
       });
@@ -148,12 +153,12 @@ export default Ember.Component.extend({
     var localesArrayWithValues = [];
     languageFields.forEach(function(field) {
       var fieldObject = Ember.Object.create(field);
-          fieldObject.set("value", false);
+      fieldObject.set("value", false);
       field.localeVariants.forEach(function(localeVariant) {
         if (supportedLocales.includes(localeVariant)) {
           fieldObject.set("currentLocaleVariant", localeVariant);
           fieldObject.set("value", true);
-        } 
+        }
       });
       // if (supportedLocales.includes(field.fieldName)) {
       //   fieldObject.set("value", true);
