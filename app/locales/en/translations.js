@@ -56,11 +56,11 @@ export default {
     "manageLandingCarousel": "Manage landing page carousel",
     "changeAboutUsText": "Change 'About Us' text",
     "managePropertyTypes": "Manage property types",
-    "managePropertyExtras": "Manage property extras"
+    "managePropertyExtras": "Manage property features"
   },
 
   "buttonLabels": {
-    "configureAvailableExtras": "Configure available extras",
+    "configureAvailableExtras": "Configure available features",
     "selectImagesToAdd": "Select images to add",
     "selectRemoteImages": "Add images from urls"
       //   "edit": "Edit",
@@ -251,7 +251,7 @@ export default {
     "location": "Location",
     // "description": "Description",
     "text": "Text",
-    "extras": "Extras",
+    "extras": "Features",
     "photos": "Photos",
     "sale": "Sale / Rental",
     "owner": "Owner"
@@ -265,11 +265,11 @@ export default {
     "generalData": "General Data",
     "characteristics": "Characteristics",
     "portals": "Web Portals",
-    "extras": "Extras",
+    "extras": "Features",
   },
 
   "translationsSections": {
-    "extras": "Extras",
+    "extras": "Features",
     "propertyTypes": "Property Types",
     "propertyOrigins": "Property Origins",
     "propertyStates": "Property States",

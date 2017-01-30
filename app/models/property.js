@@ -7,7 +7,7 @@ export default DS.Model.extend({
     var data = {
       ordered_photo_ids: orderedPhotoIds
     };
-    data["property_id"] = this.get("id");
+    data["prop_id"] = this.get("id");
     var self = this;
     var apiUrl = "/api/v1/properties/" + this.get("id") + "/order_photos";
     return $.ajax(apiUrl, {
@@ -16,7 +16,6 @@ export default DS.Model.extend({
       data: data
     }).then(function(result) {
       self.set("photos",result);
-      // debugger;
       // self.set("geo", result);
       if (complete) {
         complete(result);
@@ -83,7 +82,7 @@ export default DS.Model.extend({
     var propertyId = this.get("id");
     var data = {
       client_id: clientId,
-      property_id: propertyId
+      prop_id: propertyId
     };
     var self = this;
     var apiUrl = '/api/v1/properties/set_owner';
