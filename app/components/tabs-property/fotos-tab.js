@@ -7,7 +7,6 @@ export default Ember.Component.extend({
     var orderedPhotoIds = this.sortable.toArray().toString();
     var property = this.get("resourceObject");
     property.orderPropertyPhotos(orderedPhotoIds, function(successResponse) {
-      // debugger;
     }.bind(this));
   },
   setupSortable: function() {

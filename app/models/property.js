@@ -78,6 +78,7 @@ export default DS.Model.extend({
       }
     });
   },
+  // jan 2017 - currently not in use
   setOwner: function(clientId, complete, error) {
     var propertyId = this.get("id");
     var data = {

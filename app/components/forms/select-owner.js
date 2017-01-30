@@ -1,5 +1,5 @@
 import Ember from 'ember';
-
+// Jan 2017 - currently not in use
 
 export default Ember.Component.extend({
 

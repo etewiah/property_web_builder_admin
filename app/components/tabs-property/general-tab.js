@@ -2,6 +2,28 @@ import Ember from 'ember';
 import TabWithForm from "../base/tab-with-form";
 
 export default TabWithForm.extend({
+  i18n: Ember.inject.service(),
+  actions: {
+    deletePropertyResource: function() {
+      var propertyResource = this.get("resourceObject");
+      var self = this;
+
+      var message = i18n.t("alerts.navigatingFromChanges").toString();
+      sweetAlert(message);
+
+
+      function success(result) {
+        // triggerReset is an action in TabWithForm
+        self.send("triggerReset");
+      }
+
+      function failure(reason) {
+        // handle the error
+      }
+      debugger;
+      propertyResource.destroy().then(success).catch(failure);
+    }
+  },
   languages: function() {
     var supportedLanguages = this.get("supportedLanguages");
     var languages = [];
@@ -41,17 +63,17 @@ export default TabWithForm.extend({
       fieldName: "visible",
       fieldType: "simpleSelect",
       fieldDbType: "boolean",
-    // }, {
-    //   labelTextTKey: "fieldLabels.highlighted",
-    //   tooltipTextTKey: "toolTips.highlighted",
-    //   fieldName: "highlighted",
-    //   fieldType: "simpleSelect",
-    //   fieldDbType: "boolean",
-    // }, {
-    //   labelTextTKey: "fieldLabels.label",
-    //   fieldName: "observacionesVenta",
-    //   fieldType: "dynamicSelect",
-    //   optionsKey: "property-labels",
+      // }, {
+      //   labelTextTKey: "fieldLabels.highlighted",
+      //   tooltipTextTKey: "toolTips.highlighted",
+      //   fieldName: "highlighted",
+      //   fieldType: "simpleSelect",
+      //   fieldDbType: "boolean",
+      // }, {
+      //   labelTextTKey: "fieldLabels.label",
+      //   fieldName: "observacionesVenta",
+      //   fieldType: "dynamicSelect",
+      //   optionsKey: "property-labels",
     }
   ],
   portalesInputFields: [
@@ -109,20 +131,20 @@ export default TabWithForm.extend({
           }
         }
       }
-    // }, {
-    //   labelTextTKey: "fieldLabels.numAseos",
-    //   tooltipTextTKey: false,
-    //   fieldName: "numAseos",
-    //   fieldType: "simpleInput",
-    //   inputType: "number",
-    //   constraints: {
-    //     inputValue: {
-    //       numericality: {
-    //         onlyInteger: true,
-    //         lessThanOrEqualTo: 999,
-    //       }
-    //     }
-    //   }
+      // }, {
+      //   labelTextTKey: "fieldLabels.numAseos",
+      //   tooltipTextTKey: false,
+      //   fieldName: "numAseos",
+      //   fieldType: "simpleInput",
+      //   inputType: "number",
+      //   constraints: {
+      //     inputValue: {
+      //       numericality: {
+      //         onlyInteger: true,
+      //         lessThanOrEqualTo: 999,
+      //       }
+      //     }
+      //   }
     }, {
       labelTextTKey: "fieldLabels.garaje",
       // tooltipTextTKey: "toolTips.garaje",
@@ -223,22 +245,22 @@ export default TabWithForm.extend({
     fieldName: "propStateKey",
     fieldType: "dynamicSelect",
     optionsKey: "property-states",
-  // }, {
-  //   labelTextTKey: "fieldLabels.origen",
-  //   tooltipTextTKey: "",
-  //   fieldName: "origenPropiedad",
-  //   fieldType: "dynamicSelect",
-  //   optionsKey: "property-origins"
-      // options: [{
-      //   value: 0,
-      //   titleKey: "Private"
-      // }, {
-      //   value: 1,
-      //   titleKey: "Builder"
-      // }, {
-      //   value: 2,
-      //   titleKey: "Bank"
-      // }]
+    // }, {
+    //   labelTextTKey: "fieldLabels.origen",
+    //   tooltipTextTKey: "",
+    //   fieldName: "origenPropiedad",
+    //   fieldType: "dynamicSelect",
+    //   optionsKey: "property-origins"
+    // options: [{
+    //   value: 0,
+    //   titleKey: "Private"
+    // }, {
+    //   value: 1,
+    //   titleKey: "Builder"
+    // }, {
+    //   value: 2,
+    //   titleKey: "Bank"
+    // }]
   }],
   // actions: {
   // - was only used by property text editing

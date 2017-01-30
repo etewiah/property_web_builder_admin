@@ -10,7 +10,7 @@
 // can't get belongsTo r/n to work so just using normal object:
 export default Ember.Object.extend({
   remove: function(complete, error) {
-    var data = this.getProperties(["id", "property_id"]);
+    var data = this.getProperties(["id", "prop_id"]);
     var self = this;
     var apiUrl = '/api/v1/properties/photos/' + data.id ;
     return $.ajax(apiUrl, {
