@@ -116,7 +116,6 @@ export default Ember.Component.extend({
   labelSuffixKey: Ember.computed('contentItem', {
     get(key) {
       var capitalizedLang = this.get("languageSettings").capitalize().split("-")[0];
-      debugger;
       return "webContentLabels.suffix" + capitalizedLang;
     }
   })
