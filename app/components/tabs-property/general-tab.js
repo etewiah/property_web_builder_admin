@@ -4,26 +4,39 @@ import TabWithForm from "../base/tab-with-form";
 export default TabWithForm.extend({
   i18n: Ember.inject.service(),
   actions: {
-    deletePropertyResource: function() {
+    startDeleteProp: function() {
+      var i18n = this.get('i18n');
+      var message = i18n.t("alerts.deletingProperty").toString();
+      this.confirmDeleteProp(message);
+    }
+  },
+
+  confirmDeleteProp: function(message) {
+    sweetAlert({
+      title: "",
+      text: message,
+      // type: "input",
+      showCancelButton: true,
+      confirmButtonColor: "#337ab7",
+      closeOnConfirm: true,
+      animation: "slide-from-top",
+      // inputPlaceholder: "Your name"
+    }, function(inputValue) {
       var propertyResource = this.get("resourceObject");
       var self = this;
 
-      var message = i18n.t("alerts.navigatingFromChanges").toString();
-      sweetAlert(message);
-
-
       function success(result) {
-        // triggerReset is an action in TabWithForm
-        self.send("triggerReset");
+        self.get('router').transitionTo("admin.propiedades.list.default");
       }
-
       function failure(reason) {
         // handle the error
       }
-      debugger;
-      propertyResource.destroy().then(success).catch(failure);
-    }
+      // swal is an alias for sweetAlert
+      swal.close();
+      propertyResource.destroyRecord().then(success).catch(failure);
+    }.bind(this));
   },
+
   languages: function() {
     var supportedLanguages = this.get("supportedLanguages");
     var languages = [];
@@ -131,20 +144,6 @@ export default TabWithForm.extend({
           }
         }
       }
-      // }, {
-      //   labelTextTKey: "fieldLabels.numAseos",
-      //   tooltipTextTKey: false,
-      //   fieldName: "numAseos",
-      //   fieldType: "simpleInput",
-      //   inputType: "number",
-      //   constraints: {
-      //     inputValue: {
-      //       numericality: {
-      //         onlyInteger: true,
-      //         lessThanOrEqualTo: 999,
-      //       }
-      //     }
-      //   }
     }, {
       labelTextTKey: "fieldLabels.garaje",
       // tooltipTextTKey: "toolTips.garaje",

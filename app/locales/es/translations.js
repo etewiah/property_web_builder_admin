@@ -71,6 +71,7 @@ export default Ember.merge(Ember.copy(en), {
 
   "alerts": {
     "changesDetected": "Se han detectado cambios.",
+    "deletingProperty": "Por favor, confirma este cambio.",
     "navigatingFromChanges": "Tienes cambios sin guardar. Por favor, pulsa guardar o cancelar.",
     "visibleProperties": "Estas son las propiedades que están visibles en tu web",
     "hiddenProperties": "Estas propiedades NO están visibles en tu web",

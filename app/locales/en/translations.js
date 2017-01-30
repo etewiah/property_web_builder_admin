@@ -71,6 +71,7 @@ export default {
 
   "alerts": {
     "changesDetected": "You have unsaved changes.",
+    "deletingProperty": "Are you sure you want to delete this property.  This action cannot be undone.",
     "navigatingFromChanges": "You have unsaved changes. Please save or cancel your changes.",
     "visibleProperties": "These properties are visible on your website",
     "hiddenProperties": "These properties will not be shown on your website",
