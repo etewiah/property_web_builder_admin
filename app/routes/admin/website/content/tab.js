@@ -89,7 +89,11 @@ export default Ember.Route.extend({
     var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
     controller.set("tabs-website-component", tabsWebsiteComponent);
 
-    var supportedLanguages = agencyDetails.supported_locales || ["es"];
+    var supportedLanguages = agencyDetails.supported_locales || ["en"];
+    if (supportedLanguages.length < 1) {
+      // in case an empty array is returned from the server
+      supportedLanguages = ["en"];
+    }
     controller.set("languages", supportedLanguages);
 
     var websiteContentTabsList = this.modelFor("admin").setup.get('websiteContentTabsList');

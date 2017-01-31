@@ -1,4 +1,4 @@
-// 
+// - should move as many of these to server to make it easier to ask for help with translations..
 // keep line count same as es.
 // These translations get merged with 
 // server side translations here:

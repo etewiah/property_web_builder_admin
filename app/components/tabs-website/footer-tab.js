@@ -7,28 +7,22 @@ import TabWithForm from "../base/tab-with-form";
 
 
 export default TabWithForm.extend(OnReadyMixin, {
-  // languages: ["En", "Es"],
   changedFields: [],
-  // availableLocaleFields: function() {
-  //   var availableLocalesArray = this.get("agencyDetails.available_locales") || ["en", "fr"];
-  //   // above looks like ["en","es"]
-  //   var availableLocaleFields = [];
-  //   availableLocalesArray.forEach(function(locale) {
-  //     availableLocaleFields.push({
-  //       labelTextTKey: locale,
-  //       fieldName: locale
-  //     });
-  //   });
-  //   return availableLocaleFields;
-  // }.property(),
+  actions: {
+    saveContentItem: function(contentItem) {
+      function success(contentItem) {
+        // self.transitionToRoute('posts.show', post);
+      }
 
-  // actions: {
-  //   updateAppearance: function() {
-  //     var agencyDetails = this.get("agencyDetails");
-  //     agencyDetails.save(function(successResponse) {}.bind(this));
-  //   }
-  // },
-
+      function failure(reason) {
+        // handle the error
+      }
+      contentItem.save().then(success).catch(failure);
+    }
+  },
+  footerContentResources: function(){
+    debugger;
+  }.property("contentResources"),
   socialNetworkFields: [{
     fieldName: "social_media.facebook",
     title: "Facebook",
