@@ -74,14 +74,8 @@ export default Ember.Route.extend({
 
     controller.set("model", model);
 
-    var agencyDetails = this.modelFor("admin").agencyDetails;
-    controller.set("agencyDetails", agencyDetails);
-
-    //TODO - replace tenantDetails with agencyDetails in child components and remove below...
-    // controller.set("tenantDetails", agencyDetails);
-    // controller.set("primaryAddress", this.modelFor("admin").primaryAddress);
-    // controller.set("currentUser", this.modelFor("admin").currentUser);
-
+    var websiteDetails = this.modelFor("admin").websiteDetails;
+    controller.set("websiteDetails", websiteDetails);
 
     // before I would render all the components for the different tabs
     // and hide or show them depending on which was active
@@ -89,12 +83,7 @@ export default Ember.Route.extend({
     var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
     controller.set("tabs-website-component", tabsWebsiteComponent);
 
-    var supportedLanguages = agencyDetails.supported_locales || ["en"];
-    if (supportedLanguages.length < 1) {
-      // in case an empty array is returned from the server
-      supportedLanguages = ["en"];
-    }
-    controller.set("languages", supportedLanguages);
+    controller.set("languages", websiteDetails.supported_locales);
 
     var websiteContentTabsList = this.modelFor("admin").setup.get('websiteContentTabsList');
     controller.set("tabsList",websiteContentTabsList);

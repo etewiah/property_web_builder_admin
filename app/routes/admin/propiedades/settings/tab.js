@@ -19,8 +19,8 @@ export default Ember.Route.extend({
 
     controller.set("adminTranslations", model);
 
-    var supportedLocales = this.modelFor("admin").agencyDetails.supported_locales || ["es"];
-    controller.set("languages", supportedLocales);
+    var websiteDetails = this.modelFor("admin").websiteDetails;
+    controller.set("languages", websiteDetails.supported_locales);
 
 
     controller.set("tabsList", [{

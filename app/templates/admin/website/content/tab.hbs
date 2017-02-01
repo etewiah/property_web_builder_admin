@@ -5,10 +5,10 @@
     {{/each}}
   </ul>
   <div class="tab-content">
-        {{!-- resourceObject is used by "base/tab-with-form" to save  --}}
+        {{!-- resourceObject is used by "base/tab-with-form" to save - (footer content tab uses this)  --}}
         {{!-- contentResources is web-content from server filtered by tabname 
           except for sections (sections returned) and appearances (siteTemplates returned) tab --}}
-      {{component tabs-website-component activeTabName=activeTabName contentResources=model languages=languages resourceObject=agencyDetails agencyDetails=agencyDetails }}
+      {{component tabs-website-component activeTabName=activeTabName contentResources=model languages=languages resourceObject=websiteDetails agencyDetails=websiteDetails }}
     {{!-- {{content-tabs activeTabName=activeTabName contentResources=contentResources }} --}}
   </div>
 </div>

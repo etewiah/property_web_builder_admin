@@ -131,7 +131,7 @@ export default Ember.Component.extend({
   },
   // each time I save to the server, I increment resetTrigger value
   resetOriginalValue: Ember.observer('resetTrigger', function() {
-    var serverValue = this.get("resourceObject.supported_locales");
+    var serverValue = this.get("resourceObject.supported_locales") || [];
     var localesArrayWithValues = this.getLocalesArrayWithValues(serverValue);
     this.set("localesArrayWithValues", localesArrayWithValues);
   }),

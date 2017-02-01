@@ -20,9 +20,9 @@ export default TabWithForm.extend(OnReadyMixin, {
       contentItem.save().then(success).catch(failure);
     }
   },
-  footerContentResources: function(){
-    debugger;
-  }.property("contentResources"),
+  // footerContentResources: function(){
+  //   debugger;
+  // }.property("contentResources"),
   socialNetworkFields: [{
     fieldName: "social_media.facebook",
     title: "Facebook",

@@ -3,12 +3,20 @@ var Website = Ember.Object.extend({
   // social_media: attr('object', { defaultValue: {} }),
 
   // http://codebrief.com/2012/03/eight-ember-dot-js-gotchas-with-workarounds/
-  // init: function() {
-  //   this._super();
-  //   var socialMedia = this.get("social_media") || {};
-  //   // needed because some websites ended up with this set to null
-  //   this.set('social_media', socialMedia);
-  // },
+  init: function() {
+    this._super();
+    // checks in case values have not been set on server
+    // with default seeding rare but possible
+    var socialMedia = this.get("social_media") || {};
+    this.set('social_media', socialMedia);
+
+    var supportedLocales = this.get('supported_locales') || ["en-UK"];
+    if (supportedLocales.length < 1) {
+      // in case an empty array is returned from the server
+      supportedLocales = ["en-UK"];
+    }
+    this.set('supported_locales', supportedLocales);
+  },
 
   save: function(complete, error) {
     var websiteProperties = this.getProperties( Object.keys(this) );
