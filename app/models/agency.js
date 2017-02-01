@@ -1,7 +1,8 @@
 // import DS from 'ember-data';
 import MasterAddress from "../models/master_address";
 import User from "../models/user";
-import Tenant from "../models/tenant";
+import Website from "../models/website";
+// import Tenant from "../models/tenant";
 
 var Agency = Ember.Object.extend({
   save: function(complete, error) {
@@ -45,14 +46,14 @@ Agency.reopenClass({
       //   field_names: fieldNames
       // }
     }).then(function(result) {
-      var tenant = Tenant.create(result.tenant);
+      var website = Website.create(result.website);
       var agency = Agency.create(result.agency);
       var primaryAddress = MasterAddress.create(result.primary_address);
       var currentUser = User.create(result.current_user);
       var setup = Ember.Object.create(result.setup);
       return {
         setup: setup,
-        // tenantDetails: tenant,
+        websiteDetails: website,
         agencyDetails: agency,
         primaryAddress: primaryAddress,
         currentUser: currentUser

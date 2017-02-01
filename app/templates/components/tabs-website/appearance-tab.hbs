@@ -44,14 +44,14 @@
 
 
       <h4>{{t "inTabLabels.siteLayout"}}</h4>
-    {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=siteLayoutField resourceObject=agencyDetails.style_variables fieldKeys=siteLayoutFieldKeys }}
+    {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=siteLayoutField resourceObject=websiteDetails.style_variables fieldKeys=siteLayoutFieldKeys }}
 
 
 {{!-- 
 jan 2017:
 below would prompt to save changes which I don't want now:
     <h4>{{t "inTabLabels.siteLayout"}}</h4>
-      {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=siteLayoutField resourceObject=agencyDetails fieldKeys=siteLayoutFieldKeys }} --}}
+      {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=siteLayoutField resourceObject=websiteDetails fieldKeys=siteLayoutFieldKeys }} --}}
 
     </div>
 
@@ -62,7 +62,7 @@ below would prompt to save changes which I don't want now:
         <div class="fg-line has- fg-toggled">
           {{spectrum-color-picker
               showPalette=true
-              color=agencyDetails.style_variables.primary_color
+              color=websiteDetails.style_variables.primary_color
               onChange=(action "updateAppearance")
               showInput=true
               preferredFormat="hex3"
@@ -75,7 +75,7 @@ below would prompt to save changes which I don't want now:
         <div class="fg-line has- fg-toggled">
           {{spectrum-color-picker
               showPalette=true
-              color=agencyDetails.style_variables.secondary_color
+              color=websiteDetails.style_variables.secondary_color
               onChange=(action "updateAppearance")
               showInput=true
               preferredFormat="hex3"
@@ -88,7 +88,7 @@ below would prompt to save changes which I don't want now:
         <div class="fg-line has- fg-toggled">
           {{spectrum-color-picker
               showPalette=true
-              color=agencyDetails.style_variables.action_color
+              color=websiteDetails.style_variables.action_color
               onChange=(action "updateAppearance")
               showInput=true
               preferredFormat="hex3"
@@ -101,7 +101,7 @@ below would prompt to save changes which I don't want now:
 
     <div class="col-sm-12" style="display:none;">
     <h4>Raw CSS</h4>
-        {{forms/simple-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=rawCssField resourceObject=agencyDetails }} 
+        {{forms/simple-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=rawCssField resourceObject=websiteDetails }} 
 
       {{ textarea value=contentValue type="text" rows="4" class="input-sm form-control fg-input"  }}
 
