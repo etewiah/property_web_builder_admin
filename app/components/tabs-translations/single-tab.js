@@ -17,16 +17,16 @@ export default Ember.Component.extend({
     // var currentLocaleTranslations = this.get("adminTranslations.translations").filterBy("locale", currentLocale).sortBy("i18n_value");
     // above is only needed to get a unique correctly sorted list of keys that I can use
     // to create groupedTranslations (means a translation for the current admin locale must exist on the server)
-    // var languages = this.get("languages") || [];
+    // var locales = this.get("locales") || [];
     // debugger;
 
     var uniqueKeys = this.get("adminTranslations.translations").getEach("i18n_key").uniq();
     var groupedTranslations1 = [];
     var allAdminTranslations = this.get("adminTranslations.translations");
-    var supportedLanguages = this.get("languages");
+    var supportedLocales = this.get("locales");
     uniqueKeys.forEach(function(translateItemKey) {
       var translationsForKey = allAdminTranslations.filterBy("i18n_key", translateItemKey);
-      supportedLanguages.forEach(function(lang) {
+      supportedLocales.forEach(function(lang) {
         // console.log(translationsForKey);
         // below adds an empty new admintranslation in case a 
         // supported lang does not have a translation on the server
@@ -51,7 +51,7 @@ export default Ember.Component.extend({
       });
     });
 
-    // // sortorder below will be a bit random if there are significant differences between languages
+    // // sortorder below will be a bit random if there are significant differences between locales
     // // TODO - fix sortorder
     // var adminTranslations = this.get("adminTranslations.translations").sortBy("i18n_value");
     // var groupedTranslations1 = [];

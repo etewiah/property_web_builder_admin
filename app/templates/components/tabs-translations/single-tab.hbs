@@ -1,14 +1,14 @@
 <div role="tabpanel" class="tab-pane" id="descripcion">
 <div class="row">
   <div class="col-md-6">
-    {{forms/translation-input-new  locales=languages i18nKeyPrefix=adminTranslations.i18nKeyPrefix batchKey=adminTranslations.batchKey updateTranslationsArrayAction="updateTranslationsArray" }}    
+    {{forms/translation-input-new  locales=locales i18nKeyPrefix=adminTranslations.i18nKeyPrefix batchKey=adminTranslations.batchKey updateTranslationsArrayAction="updateTranslationsArray" }}    
   </div>
 </div>
 <div class="row">
   {{#each groupedTranslations1 as |translationBatchObject|}}
   <div class="col-md-3">
   {{!-- currently not using updateTranslationsArrayAction (just hiding translation when it is removed) --}}
-  {{forms/translation-input languages=languages  translationBatch=translationBatchObject.value updateTranslationsArrayAction="updateTranslationsArray" batchKey=adminTranslations.batchKey}}
+  {{forms/translation-input languages=locales  translationBatch=translationBatchObject.value updateTranslationsArrayAction="updateTranslationsArray" batchKey=adminTranslations.batchKey}}
   </div>
   {{/each}}    
 

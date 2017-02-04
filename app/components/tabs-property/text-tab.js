@@ -6,10 +6,11 @@ export default Ember.Component.extend({
     var supportedLanguages = this.get("supportedLanguages");
     var languages = [];
     supportedLanguages.forEach(function(language) {
-      var titleFieldName = "title" + language.capitalize();
-      var descriptionFieldName = "description" + language.capitalize();
+      var langKey = language.split("-")[0];
+      var titleFieldName = "title" + langKey.capitalize();
+      var descriptionFieldName = "description" + langKey.capitalize();
       languages.push({
-        languageKey: language,
+        languageKey: langKey,
         titleLabelKey: "fieldLabels.title",
         descriptionLabelKey: "fieldLabels.description",
         titleFieldName: titleFieldName,

@@ -11,10 +11,15 @@ var Website = Ember.Object.extend({
     this.set('social_media', socialMedia);
 
     var supportedLocales = this.get('supported_locales') || ["en-UK"];
+    var sl_without_variants = [];
     if (supportedLocales.length < 1) {
       // in case an empty array is returned from the server
       supportedLocales = ["en-UK"];
     }
+    supportedLocales.forEach(function(locale){
+      sl_without_variants.push(locale.split("-")[0]);
+    });
+    this.set('sl_without_variants', sl_without_variants);
     this.set('supported_locales', supportedLocales);
   },
 

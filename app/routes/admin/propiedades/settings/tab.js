@@ -20,7 +20,7 @@ export default Ember.Route.extend({
     controller.set("adminTranslations", model);
 
     var websiteDetails = this.modelFor("admin").websiteDetails;
-    controller.set("languages", websiteDetails.supported_locales);
+    controller.set("locales", websiteDetails.sl_without_variants);
 
 
     controller.set("tabsList", [{

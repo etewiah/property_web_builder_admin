@@ -37,22 +37,23 @@ export default TabWithForm.extend({
     }.bind(this));
   },
 
-  languages: function() {
-    var supportedLanguages = this.get("supportedLanguages");
-    var languages = [];
-    supportedLanguages.forEach(function(language) {
-      var titleFieldName = "title" + language.capitalize();
-      var descriptionFieldName = "description" + language.capitalize();
-      languages.push({
-        languageKey: language,
-        titleLabelKey: "fieldLabels.title",
-        descriptionLabelKey: "fieldLabels.description",
-        titleFieldName: titleFieldName,
-        descriptionFieldName: descriptionFieldName,
-      });
-    });
-    return languages;
-  }.property(),
+  // languages: function() {
+  //   var supportedLanguages = this.get("supportedLanguages");
+  //   var languages = [];
+  //   supportedLanguages.forEach(function(language) {
+  //     var langKey = language.split("-")[0];
+  //     var titleFieldName = "title" + langKey.capitalize();
+  //     var descriptionFieldName = "description" + langKey.capitalize();
+  //     languages.push({
+  //       languageKey: language,
+  //       titleLabelKey: "fieldLabels.title",
+  //       descriptionLabelKey: "fieldLabels.description",
+  //       titleFieldName: titleFieldName,
+  //       descriptionFieldName: descriptionFieldName,
+  //     });
+  //   });
+  //   return languages;
+  // }.property(),
   // changedFields: [],
   currencyField: {
     labelTextTKey: "fieldLabels.currency",
