@@ -1,4 +1,4 @@
-// used for selecting default currency
+// used for selecting default currency and area unit
 import Ember from 'ember';
 
 export default Ember.Component.extend({

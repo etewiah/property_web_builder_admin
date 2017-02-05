@@ -37,19 +37,31 @@ export default TabWithForm.extend(OnReadyMixin, {
   //   return availableLocaleFields;
   // }.property(),
 
+  areaUnitField: {
+    headerTextTKey: "fieldLabels.defaultAreaUnit",
+    fieldName: "default_area_unit",
+  },
+  areaUnitFieldKeys: [{
+    value: "sqmt",
+    labelTextTKey: "sqmt",
+  }, {
+    value: "sqft",
+    labelTextTKey: "sqft",
+  }],
+
   currencyField: {
     headerTextTKey: "fieldLabels.defaultCurrency",
     fieldName: "default_currency",
   },
   currencyFieldKeys: [{
     value: "EUR",
-    label: "Euros",
+    labelTextTKey: "eur",
   }, {
     value: "GBP",
-    label: "UK Pounds",
+    labelTextTKey: "gbp",
   }, {
     value: "USD",
-    label: "Dollars",
+    labelTextTKey: "usd",
   }],
 
   siteLayoutField: {
