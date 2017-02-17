@@ -8,19 +8,19 @@
       valueChangedAction="checkDirtyState" }}
     </div>
     <div class="col-sm-4">
-      <h4>{{t currencyField.headerTextTKey }}</h4>
+{{!--       <h4>{{t currencyField.headerTextTKey }}</h4>
       <div class="alert alert-info alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true"></span></button><i class="fa fa-lg fa-info"></i> {{t "info.defaultCurrency" }}  
-      </div>
-      {{forms/radio-list  resetTrigger=resetTrigger 
+      </div> --}}
+      {{forms/radio-list  resetTrigger=resetTrigger alertInfo="info.defaultCurrency"
     valueChangedAction="checkDirtyState"  fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys }}
     </div>
     <div class="col-sm-4">
-      <h4>{{t areaUnitField.headerTextTKey }}</h4>
+{{!--       <h4>{{t areaUnitField.headerTextTKey }}</h4>
       <div class="alert alert-info alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true"></span></button><i class="fa fa-lg fa-info"></i> {{t "info.defaultAreaUnit" }}  
-      </div>
-      {{forms/radio-list  resetTrigger=resetTrigger 
+      </div> --}}
+      {{forms/radio-list  resetTrigger=resetTrigger alertInfo="info.defaultAreaUnit"
     valueChangedAction="checkDirtyState"  fieldDetails=areaUnitField resourceObject=resourceObject fieldOptions=areaUnitFieldKeys }}
     </div>
     {{partial "partials/manage-changes-buttons" }}

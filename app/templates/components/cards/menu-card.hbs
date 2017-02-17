@@ -1,11 +1,15 @@
-<div class="card">
-  <div class="card-header ch-alt m-b-20">
+<div class="card blog-post">
+  <div class="bp-header">
+    <a href="" class="bp-title">
+      <h2>{{t details.promptKey }}</h2>
+    </a>
+  </div>
+{{!--   <div class="card-header ch-alt m-b-20">
     <h2>{{t details.titleKey }}<small>{{t details.promptKey }}</small></h2>
   </div>
-  <div class="card-body">
+ --}}  <div class="card-body">
     <div class="listview">
-      {{#each details.tasks as |task|}} {{#if task.linkParams }} 
-      {{#link-to task.link task.linkParams class="lv-item" }}
+      {{#each details.tasks as |task|}} {{#if task.linkParams }} {{#link-to task.link task.linkParams class="lv-item" }}
       <div class="media">
         <div class="pull-left">
           <i class={{task.icon}} style=""></i>
@@ -15,9 +19,7 @@
           <small class="lv-small">  </small>
         </div>
       </div>
-      {{/link-to}} 
-      {{else}} 
-      {{#link-to task.link class="lv-item" }}
+      {{/link-to}} {{else}} {{#link-to task.link class="lv-item" }}
       <div class="media">
         <div class="pull-left">
           <i class={{task.icon}} style=""></i>
@@ -27,9 +29,7 @@
           <small class="lv-small">  </small>
         </div>
       </div>
-      {{/link-to}} 
-      {{/if}} 
-      {{/each}} {{!-- {{#link-to details.link class="lv-footer" }} {{t details.linkKey}} {{/link-to}} --}}
+      {{/link-to}} {{/if}} {{/each}} {{!-- {{#link-to details.link class="lv-footer" }} {{t details.linkKey}} {{/link-to}} --}}
     </div>
   </div>
 </div>

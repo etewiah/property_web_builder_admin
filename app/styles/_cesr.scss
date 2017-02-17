@@ -1,107 +1,137 @@
+/*not in use*/
 /* fuentes */
 
-.montserrat{font-family: 'Montserrat', sans-serif;}
-.oswald{font-family: 'Oswald', sans-serif;}
-.slavo{font-family: 'Slabo 27px', serif;}
-.roboto{font-family: 'Roboto', sans-serif;}
-.opensans{font-family: 'Open Sans', sans-serif;}
-.lobster{font-family: 'Lobster', cursive;}
-.poiretone{font-family: 'Poiret One', cursive;}
-.arvo{font-family: 'Arvo', serif;}
-.breeserif{font-family: 'Bree Serif', serif;}
-.anton{font-family: 'Anton', sans-serif;}
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+.slavo {
+  font-family: 'Slabo 27px', serif;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.opensans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.lobster {
+  font-family: 'Lobster', cursive;
+}
+
+.poiretone {
+  font-family: 'Poiret One', cursive;
+}
+
+.arvo {
+  font-family: 'Arvo', serif;
+}
+
+.breeserif {
+  font-family: 'Bree Serif', serif;
+}
+
+.anton {
+  font-family: 'Anton', sans-serif;
+}
 
 
 /* general */
-.precio{
+
+.precio {
   color: red;
 }
 
-.sep{
+.sep {
   width: 100%;
   clear: both;
   float: left;
 }
 
-.sep20{
+.sep20 {
   width: 100%;
   clear: both;
   float: left;
   margin-top: 20px;
 }
 
-.sep25{
+.sep25 {
   width: 100%;
   clear: both;
   float: left;
   margin-top: 25px;
 }
 
-
-.sep30{
+.sep30 {
   width: 100%;
   clear: both;
   float: left;
   margin-top: 30px;
 }
 
-
-.sep50{
+.sep50 {
   width: 100%;
   clear: both;
   float: left;
   margin-top: 50px;
 }
 
-.sep70{
+.sep70 {
   width: 100%;
   clear: both;
   float: left;
   margin-top: 70px;
 }
 
-.sep100{
+.sep100 {
   width: 100%;
   clear: both;
   float: left;
   margin-top: 100px;
 }
 
-.text_center{
+.text_center {
   text-align: center;
 }
 
-.input-sm{
+.input-sm {
   font-size: 14px;
 }
 
-.input-group:not(.input-group-lg):not(.input-group-sm) .input-group-addon .fa{
+.input-group:not(.input-group-lg):not(.input-group-sm) .input-group-addon .fa {
   font-size: 23px;
   line-height: 100%;
 }
 
-.bootstrap-select.btn-group .btn .filter-option{
-  text-transform: none; /* evitar que los combos salgan en mayúsculas */
+.bootstrap-select.btn-group .btn .filter-option {
+  text-transform: none;
+  /* evitar que los combos salgan en mayúsculas */
 }
 
-
-.negro{
+.negro {
   color: #000;
 }
 
-.form-group{
+.form-group {
   position: relative;
-    display: block;
-    clear: both;
-    width: 100%;
+  display: block;
+  clear: both;
+  width: 100%;
 }
 
-div.card-header{
+div.card-header {
   border-bottom: 1px solid #eee;
   margin: 0;
   padding-bottom: 10px;
   background: #fafafa;
 }
+
 
 /*Ed july 2016 - below meant that dropdown for sitelayout would
 get hidden behind boundries of card-body:
@@ -109,97 +139,101 @@ http://gooddeals.propertysquares.dev:8080/en/admin/website/general
 div.card-body{overflow: hidden;}
 */
 
-
-input[disabled="disabled"], 
-input[disabled=""]{
+input[disabled="disabled"],
+input[disabled=""] {
   background: #eee !important;
-  padding:0 5px;
+  padding: 0 5px;
 }
 
 
 /* header */
-header#header{
-  background: #616161 !important; /* Rojo inmolite */
+
+header#header {
+  background: #616161 !important;
+  /* Rojo inmolite */
   box-shadow: 1px 1px 2px #555;
-  
 }
 
-#sidebar{
-  box-shadow: 1px 0px 1px rgba(0,0,0,.15) !important;
+#sidebar {
+  box-shadow: 1px 0px 1px rgba(0, 0, 0, .15) !important;
 }
-.logo img{
+
+.logo img {
   height: 50px;
   margin: -13px 0 0 0;
   padding: 10px;
   background: #fff;
 }
 
+
 /* menu */
-#sidebar .main-menu>li>a>i{
+
+#sidebar .main-menu>li>a>i {
   padding: 13px 0 0 0;
 }
 
-#sidebar li.selected{
+#sidebar li.selected {
   background: #eee;
 }
 
 
 /* breadcrumbs */
-div.seccion_breadcrumbs{
+
+div.seccion_breadcrumbs {
   margin-bottom: 0;
   position: relative;
 }
 
-div.seccion_breadcrumbs span{
+div.seccion_breadcrumbs span {
   float: left;
   padding: 8px 20px;
   font-weight: bold;
 }
 
-a.cerrar_breadcrumbs{
+a.cerrar_breadcrumbs {
   position: absolute;
   right: 10px;
   top: 9px;
   color: #777;
 }
 
-a.cerrar_breadcrumbs:hover{
+a.cerrar_breadcrumbs:hover {
   color: red;
 }
 
 
 /* inicio */
-div.listview div.media-body{
+
+div.listview div.media-body {
   position: relative;
 }
 
-.btn_editar_inicio{
+.btn_editar_inicio {
   position: absolute;
   right: 0;
   top: 0px;
   width: 35px;
   height: 35px;
-
 }
 
-.media-body a.email{
+.media-body a.email {
   display: inline;
 }
 
 
-
 /* propiedades */
+
 .bootgrid-header .search,
-.bootgrid-header .actions{
+.bootgrid-header .actions {
   float: left;
   margin-right: 10px;
 }
 
-#seccion_propiedades .tab-nav{
+#seccion_propiedades .tab-nav {
   clear: both;
 }
 
-a.btn_settings{
+a.btn_settings {
   background: #555;
 }
 
@@ -208,17 +242,15 @@ a.btn_editar_propiedad {
 }
 
 a.btn i,
-a.btn i:hover{
+a.btn i:hover {
   /* centrar verticalmente y anular rotaciones */
   display: block !important;
   position: relative !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
-
 }
 
-
-span.sele-idioma{
+span.sele-idioma {
   float: right;
   font-size: 12px;
   font-weight: normal;
@@ -226,38 +258,37 @@ span.sele-idioma{
 }
 
 
-
 /* editar propiedad */
-.form-group.fg-float{
+
+.form-group.fg-float {
   margin-top: 20px;
   clear: both;
   float: left;
   width: 100%;
 }
 
-.fg-float .fg-label{
+.fg-float .fg-label {
   color: #333;
 }
 
-.fg-line:not([class*=has-]):after{
+.fg-line:not([class*=has-]):after {
   background: #616161;
 }
 
-.selectpicker.form-control{
+.selectpicker.form-control {
   position: absolute;
 }
 
-.arriba_label{
+.arriba_label {
   margin-top: -27px;
 }
 
-.iconos_grande{
+.iconos_grande {
   font-size: 16px;
   color: #333;
 }
 
-
-a.ayuda{
+a.ayuda {
   background: #fafafa;
   display: block;
   border-radius: 50%;
@@ -273,108 +304,108 @@ a.ayuda{
   z-index: 27;
 }
 
-a.ayuda:hover{
+a.ayuda:hover {
   background: #eee;
 }
 
-#tabla_fotos{
+#tabla_fotos {
   width: 100%;
 }
 
-div.alert i{
+div.alert i {
   margin-right: 5px;
 }
 
-#tabla_fotos th{
+#tabla_fotos th {
   text-align: center;
 }
 
-#tabla_fotos td{
+#tabla_fotos td {
   max-width: 300px;
-    padding: 20px;
+  padding: 20px;
 }
 
-#tabla_fotos tr:nth-child(1){
+#tabla_fotos tr:nth-child(1) {
   background: #eee;
 }
 
-.foto_drag{
+.foto_drag {
   border: 1px solid #ccc;
   padding: 20px;
-  transform: scale(1.02,1.02);
+  transform: scale(1.02, 1.02);
   box-shadow: 1px 1px 2px #ccc;
 }
 
 
 /* clientes */
+
 .botones_criterios {
-    float: right;
-    margin: 10px 0 -30px;
-    z-index: 27;
+  float: right;
+  margin: 10px 0 -30px;
+  z-index: 27;
 }
 
-#tabla_prop_sele{
+#tabla_prop_sele {
   float: none;
-
 }
 
-.boton_anadir_pago{
+.boton_anadir_pago {
   margin: 0 50px 0 0;
   float: right;
 }
 
-.boton_anadir_actividad{
+.boton_anadir_actividad {
   margin: -20px 50px 0 0;
   float: right;
 }
 
 .boton_anadir_propiedad,
-.boton_anadir_cliente{
+.boton_anadir_cliente {
   position: absolute;
   right: 0;
   top: 35px;
 }
 
-.botones_editar a span{
+.botones_editar a span {
   margin-top: 7px;
 }
 
 
-
-
 /* configuración */
-#seccion_configuracion .tab-nav{
+
+#seccion_configuracion .tab-nav {
   clear: both;
 }
-
 
 
 /* perfil */
-#seccion_perfil .tab-nav{
+
+#seccion_perfil .tab-nav {
   clear: both;
 }
 
 
-
 /* web */
-div.seccion_web div.seo{
+
+div.seccion_web div.seo {
   position: relative;
 }
-.cambiar_logo{
+
+.cambiar_logo {
   clear: both;
   width: 100%;
   padding: 5px 5px 0 0;
   text-align: center;
 }
 
-div.botones_web{
+div.botones_web {
   position: absolute;
   top: 35px;
   right: 0px;
   margin: 0;
 }
 
-.seccion_web div#mapa{
+.seccion_web div#mapa {
   background: #eee;
   border: 3px solid #ddd;
   padding: 3px;
@@ -382,36 +413,28 @@ div.botones_web{
   margin-bottom: 30px;
 }
 
-p.boton_analytics button{
+p.boton_analytics button {
   margin: -40px 0 0 0;
   width: 100%;
 }
 
 
-
-
-
-
-
-
 /* media queries */
 
 @media (min-width: 768px) {
-  
-  div.seccion_breadcrumbs span{
+  div.seccion_breadcrumbs span {
     padding: 10px 5px 11px 25px;
     margin-right: 0;
   }
-
 }
 
-
 @media (max-width: 768px) {
-.tab-nav>li{
+  .tab-nav>li {
     display: block;
     float: none;
     width: 100%;
     clear: none;
   }
-
 }
+
+Ó

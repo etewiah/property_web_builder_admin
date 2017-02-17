@@ -1,11 +1,21 @@
+/*to stop info tip icon appearing over header as you scroll*/
+
+header#header {
+  z-index: 30;
+  background: #39c088;
+  /*3f51b5;*/
+}
+
+
 /*text in below wrapped in hidden-xs*/
+
 .centered-header-link {
   width: 80%;
   text-align: center;
 }
 
-@media (max-width: 991px) {
-}
+@media (max-width: 991px) {}
+
 
 /* Extra Small Devices, Phones */
 

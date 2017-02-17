@@ -1873,7 +1873,9 @@ input[type="search"] {
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
   margin-top: 0;
-  margin-left: 10px;
+  /*below looks wrong for language variant
+  selectors on xs screens*/
+  /*margin-left: 10px;*/
 }
 input[type="radio"][disabled],
 input[type="checkbox"][disabled],
@@ -10452,24 +10454,25 @@ html:not(.ie9) .select.fg-line:before {
 .fg-float .form-control::-webkit-input-placeholder {
   color: #ffffff;
 }
-.fg-float .fg-label {
+/*.fg-float .fg-label {
   -webkit-transition: all;
   -moz-transition: all;
   -o-transition: all;
   transition: all;
   -webkit-transition-duration: 200ms;
   transition-duration: 200ms;
-/*  position: absolute;
+  position: absolute;
   top: 5px;
 *//*  font-weight: 400;
-*/  
-  font-weight: bold;
-  /*color: #959595;*/
+  
+  font-weight: 500;
+  font-size: larger;
+  /*color: #959595;
   color: #595959;
   pointer-events: none;
   z-index: 0;
   left: 0;
-}
+}*/
 .fg-float .input-lg + .fg-label {
   font-size: 17px;
 }
