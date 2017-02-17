@@ -76,10 +76,6 @@ export default {
     "visibleProperties": "These properties are visible on your website",
     "hiddenProperties": "These properties will not be shown on your website",
     "clickMapToUpdate": "Click on map to select address or type directly below.",
-    "recPropPhotoSize": "Recommended size for a photo is 800px X 500px",
-    "recCarouselPhotoSize": "Recommended size for carousel images is 900px X 400px",
-    "recLogoPhotoSize": "Recommended size for logo is 120px X 80px",
-    "orderByDragging": "Drag and drop to order - first photo will be main photo."
   },
 
   "datatables": {

@@ -76,10 +76,6 @@ export default Ember.merge(Ember.copy(en), {
     "visibleProperties": "Estas son las propiedades que están visibles en tu web",
     "hiddenProperties": "Estas propiedades NO están visibles en tu web",
     "clickMapToUpdate": "Pincha en el mapa para actualizar la ubicación de la propiedad.",
-    "recPropPhotoSize": "Recommended size for a photo is 800px X 500px",
-    "recCarouselPhotoSize": "Recommended size for carousel images is 900px X 400px",
-    "recLogoPhotoSize": "Recommended size for logo is 120px X 80px",
-    "orderByDragging": "Pinche y arrastre sobre la fila para ordenar - la primera foto es la foto principal."
   },
 
   "datatables": {
