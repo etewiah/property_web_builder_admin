@@ -1,4 +1,42 @@
-/*not in use*/
+/*for translation inputs */
+
+.translation-card {
+  border: gray;
+  border-style: solid;
+  border-radius: 6px;
+}
+
+.btn-save-translation {
+  /*margin-top: 20%;*/
+}
+
+.translation-input-header {
+  text-align: center;
+  padding: 2%;
+  color: black;
+}
+
+.translation-input {
+/*  margin-left: 5%;
+  margin-bottom: 2%;
+  width: 90%;
+  color: #555555;*/
+  padding: 10px;
+}
+
+.form-group {
+  position: relative;
+  display: block;
+  clear: both;
+  width: 100%;
+}
+
+
+/*feb 2017 - above for translation inputs
+but fairly certain styles below no longer
+ in use*/
+
+
 /* fuentes */
 
 .montserrat {
@@ -118,13 +156,6 @@
   color: #000;
 }
 
-.form-group {
-  position: relative;
-  display: block;
-  clear: both;
-  width: 100%;
-}
-
 div.card-header {
   border-bottom: 1px solid #eee;
   margin: 0;
@@ -149,9 +180,9 @@ input[disabled=""] {
 /* header */
 
 header#header {
-  background: #616161 !important;
-  /* Rojo inmolite */
-  box-shadow: 1px 1px 2px #555;
+  /*  background: #616161 !important;
+*/
+  /*box-shadow: 1px 1px 2px #555;*/
 }
 
 #sidebar {
@@ -436,5 +467,3 @@ p.boton_analytics button {
     clear: none;
   }
 }
-
-Ó

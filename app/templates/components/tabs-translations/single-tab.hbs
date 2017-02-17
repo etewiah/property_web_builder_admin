@@ -6,7 +6,7 @@
 </div>
 <div class="row">
   {{#each groupedTranslations1 as |translationBatchObject|}}
-  <div class="col-md-3">
+  <div class="col-lg-3 col-md-6">
   {{!-- currently not using updateTranslationsArrayAction (just hiding translation when it is removed) --}}
   {{forms/translation-input languages=locales  translationBatch=translationBatchObject.value updateTranslationsArrayAction="updateTranslationsArray" batchKey=adminTranslations.batchKey}}
   </div>

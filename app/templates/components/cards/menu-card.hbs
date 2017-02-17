@@ -7,7 +7,8 @@
 {{!--   <div class="card-header ch-alt m-b-20">
     <h2>{{t details.titleKey }}<small>{{t details.promptKey }}</small></h2>
   </div>
- --}}  <div class="card-body">
+ --}}  
+  <div class="card-body">
     <div class="listview">
       {{#each details.tasks as |task|}} {{#if task.linkParams }} {{#link-to task.link task.linkParams class="lv-item" }}
       <div class="media">
