@@ -18,7 +18,7 @@ export default TabWithForm.extend({
   },
   mainInputFields: [{
       labelTextTKey: "fieldLabels.companyName",
-      // tooltipTextTKey: "toolTips.company_name",
+      // alertInfoTKey: "fieldLabels.company_name",
       fieldName: "company_name",
       fieldType: "simpleInput",
       inputType: "text",
@@ -32,7 +32,7 @@ export default TabWithForm.extend({
       }
     }, {
       labelTextTKey: "fieldLabels.primaryPhone",
-      // tooltipTextTKey: "toolTips.company_name",
+      // alertInfoTKey: "fieldLabels.info.primaryPhone",
       fieldName: "phone_number_primary",
       fieldType: "simpleInput",
       inputType: "text",
@@ -58,7 +58,50 @@ export default TabWithForm.extend({
         }
       }
     }
-
+  ],
+  emailInputFields: [{
+      labelTextTKey: "fieldLabels.primaryEmail",
+      // alertInfoTKey: "fieldLabels.info.primaryEmail",
+      fieldName: "email_primary",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.generalContactEmail",
+      alertInfoTKey: "fieldLabels.info.generalContactEmail",
+      fieldName: "email_for_general_contact_form",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }, {
+      labelTextTKey: "fieldLabels.propertyContactEmail",
+      alertInfoTKey: "fieldLabels.info.propertyContactEmail",
+      fieldName: "phone_number_other",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 2,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
+    }
   ],
   isActive: function() {
     return this.activeTabName.toLowerCase() === "general";

@@ -9,6 +9,10 @@
       <br>
     </div>
     <div class="col-sm-6">
+      {{#each emailInputFields as |inputField|}}
+      {{partial "partials/input-field-resolver" }}
+      {{/each}}
+      <br>
     </div>
   </div>
 </div>
