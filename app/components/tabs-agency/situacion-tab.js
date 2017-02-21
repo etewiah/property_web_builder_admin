@@ -49,8 +49,7 @@ export default TabWithForm.extend({
     updateConfirmedAddress: function(newAddressDetails) {
       var addressDetails = this.get("resourceObject");
       // addressDetails.latitude = newAddressDetails.latitude;
-      // addressDetails.longitude = newAddressDetails.longitude;
-      // addressDetails.direccionPropiedad = newAddressDetails.direccionPropiedad;
+      addressDetails.set("street_number", newAddressDetails.streetNumber);
       addressDetails.set("street_address", newAddressDetails.streetAddress);
       addressDetails.set("city", newAddressDetails.city);
       addressDetails.set("postal_code", newAddressDetails.postalCode);
@@ -83,7 +82,21 @@ export default TabWithForm.extend({
   situacionRightInputFields: [
     //this comment tricks prettify ;) 
     {
-      fieldType: "spaceFiller",
+    //   fieldType: "spaceFiller",
+    // }, {
+      labelTextTKey: "streetNumber",
+      tooltipTextTKey: false,
+      fieldName: "street_number",
+      fieldType: "simpleInput",
+      inputType: "text",
+      constraints: {
+        inputValue: {
+          length: {
+            minimum: 1,
+            tooShort: "needs to have %{count} characters or more"
+          }
+        }
+      }
     }, {
       labelTextTKey: "region",
       tooltipTextTKey: false,

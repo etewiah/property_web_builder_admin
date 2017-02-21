@@ -1,54 +1,37 @@
 {{#if isActive}}
 <div role="tabpanel" class="tab-pane" id="situacion">
-{{#unless hideInputFields}}
+  {{#unless hideInputFields}}
   <div class="row">
-
-
-{{!-- could use "partials/manage-changes-buttons" if action was saveResourceObject --}}
-{{#if hasChanged}}
-  {{#if hasErrors}}
-    {{!-- <div class="pull-left">{{t "prompts.fixErrors" }}</div>   --}}
-    {{else}}
-  {{/if}}
+    {{!-- could use "partials/manage-changes-buttons" if action was saveResourceObject --}} 
+    {{#if hasChanged}} 
+      {{#if hasErrors}} {{!--
+        <div class="pull-left">{{t "prompts.fixErrors" }}</div> --}} 
+        {{else}} 
+      {{/if}}
     <div class="col-sm-12">
-      <div class="alert alert-info " role="alert"><i class="fa fa-lg fa-info"></i> {{t "alerts.changesDetected"}} 
-        <button type="submit"  style="" class="btn btn-primary waves-effect" {{action "saveAddressDetails"}}>
+      <div class="alert alert-info " role="alert"><i class="fa fa-lg fa-info"></i> {{t "alerts.changesDetected"}}
+        <button type="submit" style="" class="btn btn-primary waves-effect" {{action "saveAddressDetails"}}>
           {{t "save"}}
         </button>
-        <button type="submit"  style="" class="btn btn-default waves-effect" 
-        {{action "cancelChanges" }}>
+        <button type="submit" style="" class="btn btn-default waves-effect" {{action "cancelChanges" }}>
           {{t "cancel"}}
-        </button> 
-
-
-    {{#if serverError}}
-    <div class="error-info">
-      <div class="pull-left">{{t "errors.genericServerError" }}</div>  
-    </div>
-    {{/if}}
-
+        </button>
+        {{#if serverError}}
+        <div class="error-info">
+          <div class="pull-left">{{t "errors.genericServerError" }}</div>
+        </div>
+        {{/if}}
       </div>
     </div>
-
-
-{{/if}}
-
-
-
-
+    {{/if}}
     <div class="col-sm-6">
-      {{#each situacionLeftInputFields as |inputField|}}
-      {{partial "partials/input-field-resolver" }}
-      {{/each}}
+      {{#each situacionLeftInputFields as |inputField|}} {{partial "partials/input-field-resolver" }} {{/each}}
     </div>
     <div class="col-sm-6">
-      {{#each situacionRightInputFields as |inputField|}}
-      {{partial "partials/input-field-resolver" }}
-      {{/each}}
+      {{#each situacionRightInputFields as |inputField|}} {{partial "partials/input-field-resolver" }} {{/each}}
     </div>
   </div>
-{{/unless}}
-
+  {{/unless}}
   <div class="row">
     <div class="col-sm-6">
       <div>
@@ -57,26 +40,25 @@
     </div>
     <div class="col-sm-6">
       {{#if isConfirming}}
-        <div >
+      <div>
         {{forms/update-location gmapLocationObject=gmapLocationObject updateLocationAction="updateConfirmedAddress" cancelAction="stopConfirming"}}
-        </div>
-        <div class="error-info">
+      </div>
+      <div class="error-info">
         {{#if serverError}}
-          <div class="pull-right">{{t "errors.genericServerError" }}</div>  
+        <div class="pull-right">{{t "errors.genericServerError" }}</div>
         {{/if}}
-        </div>
+      </div>
       {{else}}
       <div class="alert alert-info alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">×</span></button><i class="fa fa-lg fa-info"></i>{{t "alerts.clickMapToUpdate" }}
       </div>
-        <div>
-          {{geo/gmap-searchbox mapHolder=geo searchResults=geo.searchResults}}
-        </div>
-        <div>
-          {{geo/gmap-searchresults geo=geo searchResults=geo.searchResults  searchResultSelectedAction="updateFromSearch" }}
-        </div>      
-      {{/if}}
-      {{!--
+      <div>
+        {{geo/gmap-searchbox mapHolder=geo searchResults=geo.searchResults}}
+      </div>
+      <div>
+        {{geo/gmap-searchresults geo=geo searchResults=geo.searchResults searchResultSelectedAction="updateFromSearch" }}
+      </div>
+      {{/if}} {{!--
       <div id="pano">Aquí la vista panorámica</div>
       --}}
     </div>
