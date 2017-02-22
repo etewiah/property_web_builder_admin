@@ -28,6 +28,7 @@ export default TabWithForm.extend({
       function success(result) {
         self.get('router').transitionTo("admin.propiedades.list.default");
       }
+
       function failure(reason) {
         // handle the error
       }
@@ -37,24 +38,18 @@ export default TabWithForm.extend({
     }.bind(this));
   },
 
-  // languages: function() {
-  //   var supportedLanguages = this.get("supportedLanguages");
-  //   var languages = [];
-  //   supportedLanguages.forEach(function(language) {
-  //     var langKey = language.split("-")[0];
-  //     var titleFieldName = "title" + langKey.capitalize();
-  //     var descriptionFieldName = "description" + langKey.capitalize();
-  //     languages.push({
-  //       languageKey: language,
-  //       titleLabelKey: "fieldLabels.title",
-  //       descriptionLabelKey: "fieldLabels.description",
-  //       titleFieldName: titleFieldName,
-  //       descriptionFieldName: descriptionFieldName,
-  //     });
-  //   });
-  //   return languages;
-  // }.property(),
-  // changedFields: [],
+  areaUnitField: {
+    headerTextTKey: "fieldLabels.areaUnit",
+    fieldName: "areaUnit",
+  },
+  areaUnitFieldKeys: [{
+    value: "sqmt",
+    labelTextTKey: "sqmt",
+  }, {
+    value: "sqft",
+    labelTextTKey: "sqft",
+  }],
+
   currencyField: {
     headerTextTKey: "fieldLabels.currency",
     fieldName: "currency",
@@ -82,7 +77,7 @@ export default TabWithForm.extend({
   visibilityInputFields: [
     //this comment tricks prettify ;) 
     {
-      labelTextTKey: "fieldLabels.visible",
+      labelTextTKey: "fieldLabels.visibleOnWeb",
       tooltipTextTKey: "toolTips.visible",
       fieldName: "visible",
       fieldType: "simpleSelect",
@@ -172,7 +167,32 @@ export default TabWithForm.extend({
           }
         }
       }
-    },
+    }, {
+
+      // eficienciaEnergia is saved on server as string
+      // commenting out till I decide on server side solution
+      //   labelTextTKey: "fieldLabels.eficienciaEnergia",
+      //   tooltipTextTKey: "toolTips.eficienciaEnergia",
+      //   fieldName: "eficienciaEnergia",
+      //   fieldType: "simpleSelect",
+      //   fieldDbType: "boolean",
+      // }, {
+      labelTextTKey: "fieldLabels.yearConstruction",
+      tooltipTextTKey: false,
+      fieldName: "yearConstruction",
+      fieldType: "simpleInput",
+      inputType: "number",
+      constraints: {
+        inputValue: {
+          numericality: {
+            onlyInteger: true,
+            lessThan: 2016,
+            greaterThan: 1500,
+            message: "Invalid date",
+          },
+        }
+      }
+    }
   ],
 
   characteristicasInputFields2: [
@@ -207,32 +227,7 @@ export default TabWithForm.extend({
           }
         }
       }
-    }, {
-
-      // eficienciaEnergia is saved on server as string
-      // commenting out till I decide on server side solution
-      //   labelTextTKey: "fieldLabels.eficienciaEnergia",
-      //   tooltipTextTKey: "toolTips.eficienciaEnergia",
-      //   fieldName: "eficienciaEnergia",
-      //   fieldType: "simpleSelect",
-      //   fieldDbType: "boolean",
-      // }, {
-      labelTextTKey: "fieldLabels.yearConstruction",
-      tooltipTextTKey: false,
-      fieldName: "yearConstruction",
-      fieldType: "simpleInput",
-      inputType: "number",
-      constraints: {
-        inputValue: {
-          numericality: {
-            onlyInteger: true,
-            lessThan: 2016,
-            greaterThan: 1500,
-            message: "Invalid date",
-          },
-        }
-      }
-    },
+    }
   ],
   mainInputFields: [{
     labelTextTKey: "fieldLabels.ref",

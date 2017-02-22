@@ -292,7 +292,9 @@ span.sele-idioma {
 /* editar propiedad */
 
 .form-group.fg-float {
-  margin-top: 20px;
+  /*margin-top: 20px;
+  - jan 2017 - above was adding too much space when editing prop gen tab
+  */
   clear: both;
   float: left;
   width: 100%;
