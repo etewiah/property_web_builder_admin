@@ -47,12 +47,9 @@
     </div>
     <div class="col-sm-3">
       <div class="">
-        {{!--
-        <h4>{{t "propertyGeneralSections.characteristics" }}</h4> --}} 
         {{#each characteristicasInputFields2 as |inputField|}} {{partial "partials/input-field-resolver" }} {{/each}}
 
-        
-          {{forms/radio-list  resetTrigger=resetTrigger 
+        {{forms/radio-list  resetTrigger=resetTrigger 
     valueChangedAction="checkDirtyState"  fieldDetails=areaUnitField resourceObject=resourceObject fieldOptions=areaUnitFieldKeys }}
 
       </div>

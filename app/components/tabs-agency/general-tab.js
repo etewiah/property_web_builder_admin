@@ -90,7 +90,7 @@ export default TabWithForm.extend({
     }, {
       labelTextTKey: "fieldLabels.propertyContactEmail",
       alertInfoTKey: "fieldLabels.info.propertyContactEmail",
-      fieldName: "phone_number_other",
+      fieldName: "email_for_property_contact_form",
       fieldType: "simpleInput",
       inputType: "text",
       constraints: {
