@@ -1,13 +1,33 @@
 import Ember from 'ember';
 import AdminTranslations from "../../models/admin_translations";
+const {
+  Route,
+  inject
+} = Ember;
 
 export default Ember.Component.extend({
+  translationsFetcher: inject.service(),
+  i18n: inject.service(),
   actions: {
     updateTranslationsArray: function(translations, operation) {
       // below will add a newly created group of translations (at start of curr array)
       this.get("groupedTranslations1").unshiftObject({
         sortKey: "",
-        value: translations});
+        value: translations
+      });
+
+      // i18n.addTranslations(locale, translations);
+      // below will refetch translations from server and update locally.
+      // might be able to do this more efficiently with a direct call like
+      //     i18n.addTranslations(locale, translations);
+      // but below works too 
+      // - needed so that dropdown like "property type" etc update to 
+      // latest values
+      var i18n = this.get('i18n');
+      var localeToUse = i18n.get("locale") || "en";
+      var nt = this.get('translationsFetcher').fetch(localeToUse);
+
+
     }
   },
   i18n: Ember.inject.service(),
