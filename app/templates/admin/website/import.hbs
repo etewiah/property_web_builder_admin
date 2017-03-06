@@ -1,0 +1,19 @@
+<div class="card-header seo">
+  <h2>
+      {{t "contentForWebsite"}}
+    </h2>
+  <div role="group" class="botones_web" style="display:none;">
+    {{#link-to "admin.website" data-toggle="tooltip" title=(t "returnToWebsite") class="btn_settings btn btn-circulo btn-float waves-effect pull-right" }}
+    <i class="fa fa-arrow-left"></i> {{/link-to}}
+  </div>
+</div>
+<div class="card-body card-padding">
+  {{outlet}}
+  <div class="row">
+    <div class="col-sm-2">
+      <p><a class="btn btn-edfile">{{t "addAboutUsPhoto"}}...
+           {{#upload/x-droplet-import-data url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} {{/upload/x-droplet-import-data}}
+        </a></p>
+    </div>
+  </div>
+</div>

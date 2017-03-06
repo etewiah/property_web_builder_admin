@@ -36,7 +36,7 @@ export default Ember.Component.extend(Droplet, {
         var errorMessage = "Please try again";
         if (fileSize > 999999) {
           errorMessage = "Please ensure photo is less than 1mb";
-        };
+        }
         swal({
           title: "Sorry, there has been an error.",
           text: errorMessage,
@@ -65,7 +65,8 @@ export default Ember.Component.extend(Droplet, {
   },
   options: {
     useArray: true,
-    uploadImmediately: true
+    uploadImmediately: true,
+    includeXFileSize: true
     // requestMethod: Droplet.METHOD.PATCH
     // ...
     //   requestMethod – Changed the request verb from default POST;

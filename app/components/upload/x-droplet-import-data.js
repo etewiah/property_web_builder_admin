@@ -1,5 +1,6 @@
 import Ember from 'ember';
-
+// hbs for this renders upload/x-droplet-single-input
+// which is the input pop-up window
 
 //     $window.Droplet = Mixin.create({
 // droplet component sets mixin on global window object
@@ -32,6 +33,17 @@ export default Ember.Component.extend(Droplet, {
 
   // url: location.origin + '/upload',
   showProg: function() {
+    debugger;
+    if ((this.get("invalidFiles").length > 0) && (this.get("validFiles").length < 1)) {
+      debugger;
+      swal({
+        title: "Invalid file",
+        text: "Please ensure you are uploading a valid CSV file with the extension '.csv'.",
+        html: true,
+        showConfirmButton: true,
+      });
+      return;
+    }
     var uploadStatus = this.get("uploadStatus");
     if (uploadStatus.uploading) {
       var uploadingIcon = "<i class='fa fa-spinner fa-spin fa-3x fa-fw'></i><span class='sr-only'>Uploading Photo...</span>";
@@ -51,15 +63,19 @@ export default Ember.Component.extend(Droplet, {
         if (fileSize > 999999) {
           errorMessage = "Please ensure photo is less than 1mb";
         }
+        var that = this;
+        debugger;
+        this.set("invalidFiles",[]);
+        this.set("validFiles",[]);
+        this.sendAction('clearFiles');
         swal({
           title: "Sorry, there has been an error.",
           text: errorMessage,
           showConfirmButton: true,
         }, function() {
-          //       this.set("files", []);
-          // a bit drastic but it seems failed files queue up 
-          // and above does not fix it...
-          location.reload();
+          // - where multiple files can be selected
+          // I might need to do something here to clear the queue
+          // location.reload();
         });
         // 
       } else {
@@ -88,25 +104,27 @@ export default Ember.Component.extend(Droplet, {
       // var uploadedFiles = this.get("validFiles");
       // this.get("uploadedFiles") returns an empty array :(
       // below will add photos to array
-      this.sendAction("didUploadAction", response);
+      // this.sendAction("didUploadAction", response);
       // console.log("did an upload");
     }
   },
   options: {
-    // useArray: true
+    useArray: false,
     // requestMethod: Droplet.METHOD.PUT,
     uploadImmediately: true,
     // maximumSize: 200,
     maximumValidFiles: 1,
-    includeXFileSize: true
-      // ...
-      //   requestMethod – Changed the request verb from default POST;
-      // maximumSize – Set the maximum size for each individual file;
-      // maximumValidFiles – Amount of valid files permitted to be in the queue;
-      // uploadImmediately – Upload files as they're added to the queue;
-      // includeXFileSize – Whether to include the X-File-Size header for progress;
-      // useArray – Changes the FormData name of the file to either file[] or file;
-      // mimeTypes – List of valid MIME types – can also be changed with mimeTypes method;
+    includeXFileSize: true,
+    // ...
+    //   requestMethod – Changed the request verb from default POST;
+    // maximumSize – Set the maximum size for each individual file;
+    // maximumValidFiles – Amount of valid files permitted to be in the queue;
+    // uploadImmediately – Upload files as they're added to the queue;
+    // includeXFileSize – Whether to include the X-File-Size header for progress;
+    // useArray – Changes the FormData name of the file to either file[] or file;
+    mimeTypes: ['text/csv']
+      // mimeTypes: ['image/jpeg', 'image/jpg', 'image/gif', 'image/png', 'image/tiff', 'image/bmp'],
+      // – List of valid MIME types – can also be changed with mimeTypes method;
       // requestHeaders – Additional request headers to be sent;
       // requestPostData – Additional POST data to be sent;
   }

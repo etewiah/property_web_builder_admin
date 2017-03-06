@@ -80,6 +80,15 @@ Router.map(function() {
           path: "/:pageName"
         });
       });
+
+      this.route("import", function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tabName"
+        });
+      });
     });
     this.route("propiedades", {
       path: '/properties'
