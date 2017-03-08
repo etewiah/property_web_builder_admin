@@ -1,0 +1,27 @@
+<div role="tabpanel">
+  <ul data-tab-color="green" class="tab-nav" role="tablist" tabindex="1" style="overflow: hidden; outline: none;">
+    {{#each tabsList as |tab|}}
+    <li class={{if (eq tab.tabValue activeTabName) "active"}}>{{#link-to 'admin.website.import.tab' tab.tabValue}}{{t tab.tabTitleKey}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+  <div class="tab-content">
+    <div class="row">
+      <div class="col-sm-2">
+        <p><a class="btn btn-edfile">{{t activeTabObject.importLabelKey }}
+            {{#upload/x-droplet-import-data   
+            activeTabObject=activeTabObject didUploadAction=""}} 
+            {{/upload/x-droplet-import-data}}
+
+        </a></p>
+      </div>
+      {{!--
+      <div class="col-sm-2">
+        <p><a class="btn btn-edfile">{{t "btnLabels.importSiteContent"}}
+           {{#upload/x-droplet-import-data url=impContentEndpoint  didUploadAction="" ctx=this}} {{/upload/x-droplet-import-data}}
+        </a></p>
+      </div> --}}
+      <div class="col-sm-4">
+      </div>
+    </div>
+  </div>
+</div>

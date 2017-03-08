@@ -32,10 +32,16 @@ export default Ember.Component.extend(Droplet, {
   // type: 'file',
 
   // url: location.origin + '/upload',
+  url: function(){
+    var activeTabObject = this.get("activeTabObject");
+    // just don't get it but when importUrl below was 
+    // called importEndPoint, below would resolve to undefined....
+    return activeTabObject.importUrl;
+  },
   showProg: function() {
-    debugger;
+    // debugger;
     if ((this.get("invalidFiles").length > 0) && (this.get("validFiles").length < 1)) {
-      debugger;
+      // debugger;
       swal({
         title: "Invalid file",
         text: "Please ensure you are uploading a valid CSV file with the extension '.csv'.",
@@ -64,7 +70,7 @@ export default Ember.Component.extend(Droplet, {
           errorMessage = "Please ensure photo is less than 1mb";
         }
         var that = this;
-        debugger;
+        // debugger;
         this.set("invalidFiles",[]);
         this.set("validFiles",[]);
         this.sendAction('clearFiles');
@@ -101,6 +107,8 @@ export default Ember.Component.extend(Droplet, {
 
   hooks: {
     didUpload: function(response) {
+      this.sendAction("clearFiles");
+// debugger;
       // var uploadedFiles = this.get("validFiles");
       // this.get("uploadedFiles") returns an empty array :(
       // below will add photos to array
