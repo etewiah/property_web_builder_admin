@@ -13,7 +13,7 @@ module.exports = function(defaults) {
   });
 
   // Import ember droplet into global namespace (for file updload)
-  app.import('bower_components/ember-droplet/dist/ember-droplet.min.js');
+  app.import('bower_components/ember-droplet/dist/ember-droplet.js');
 
   app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');
 
