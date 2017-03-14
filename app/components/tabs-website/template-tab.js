@@ -29,7 +29,7 @@ export default TabWithForm.extend(OnReadyMixin, {
     // var contentResources = this.get("contentResources");
 
     var fieldOptions = [];
-    var currentValue = this.get("agencyDetails.theme_name") || "";
+    var currentValue = this.get("websiteDetails.theme_name") || "";
 
     // contentResources here is the model passed to website/tab route
     // -where tab is appearance it is a list of themes
@@ -67,17 +67,16 @@ export default TabWithForm.extend(OnReadyMixin, {
 
   actions: {
     updateAppearance: function() {
-      // agencyDetails are retrieved from the base route
+      // websiteDetails are retrieved from the base route
       // http://re-renting.propertysquares.dev:3000/api/v1/agency
-      var agencyDetails = this.get("agencyDetails");
-      agencyDetails.save(function(successResponse) {}.bind(this));
+      var websiteDetails = this.get("websiteDetails");
+      websiteDetails.save(function(successResponse) {}.bind(this));
     },
 
     saveContentItem: function(contentItem) {
       function success(contentItem) {
         // self.transitionToRoute('posts.show', post);
       }
-      debugger;
 
       function failure(reason) {
         // handle the error
