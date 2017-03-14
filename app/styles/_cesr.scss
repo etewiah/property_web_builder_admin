@@ -185,9 +185,6 @@ header#header {
   /*box-shadow: 1px 1px 2px #555;*/
 }
 
-#sidebar {
-  box-shadow: 1px 0px 1px rgba(0, 0, 0, .15) !important;
-}
 
 .logo img {
   height: 50px;
@@ -199,13 +196,19 @@ header#header {
 
 /* menu */
 
+/*
+below now in sidebar.scss
+#sidebar {
+  box-shadow: 1px 0px 1px rgba(0, 0, 0, .15) !important;
+}
+
 #sidebar .main-menu>li>a>i {
   padding: 13px 0 0 0;
 }
 
 #sidebar li.selected {
   background: #eee;
-}
+}*/
 
 
 /* breadcrumbs */
