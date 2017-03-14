@@ -6,6 +6,9 @@
   </ul>
   <div class="tab-content">
     <div class="row">
+      <div>
+      {{content/edmin-pages contentKey=contentKey contentResources=model languages=languages }}
+      </div>
       <div class="col-sm-2">
         <p><a class="btn btn-edfile">{{t activeTabObject.importLabelKey }}
             {{#upload/x-droplet-import-data   
