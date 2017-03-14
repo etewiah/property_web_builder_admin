@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import Theme from '../../../../models/theme';
-// path is actually /admin/website
 
 export default Ember.Route.extend({
   // tabsList: [{}],

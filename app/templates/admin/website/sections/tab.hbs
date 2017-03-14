@@ -9,20 +9,11 @@
       <div>
       {{content/edmin-pages contentKey=contentKey contentResources=model languages=languages }}
       </div>
-      <div class="col-sm-2">
-        <p><a class="btn btn-edfile">{{t activeTabObject.importLabelKey }}
-            {{#upload/x-droplet-import-data   
-            activeTabObject=activeTabObject didUploadAction=""}} 
-            {{/upload/x-droplet-import-data}}
+      <div class="col-sm-6">
 
-        </a></p>
+      {{tabs-website/sections-tab activeTabName=activeTabName contentResources=model languages=languages resourceObject=websiteDetails agencyDetails=websiteDetails }}
+
       </div>
-      {{!--
-      <div class="col-sm-2">
-        <p><a class="btn btn-edfile">{{t "btnLabels.importSiteContent"}}
-           {{#upload/x-droplet-import-data url=impContentEndpoint  didUploadAction="" ctx=this}} {{/upload/x-droplet-import-data}}
-        </a></p>
-      </div> --}}
       <div class="col-sm-4">
       </div>
     </div>

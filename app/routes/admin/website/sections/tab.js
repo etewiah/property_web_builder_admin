@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   actions: {},
 
   model(params) {
-    return {};
+    return this.store.findAll("section");
   },
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.website.sections.tab').tabName || "";
