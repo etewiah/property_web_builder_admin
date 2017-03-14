@@ -45,6 +45,14 @@ Router.map(function() {
         path: "/:tabName"
       });
     });
+    this.route("io", function() {
+      this.route("default", {
+        path: "/"
+      });
+      this.route("tab", {
+        path: "/:tabName"
+      });
+    });
     // route below was previously called "content" internaly
     this.route("website", {
       path: "/website"
