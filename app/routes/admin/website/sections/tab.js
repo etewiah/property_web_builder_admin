@@ -31,7 +31,7 @@ export default Ember.Route.extend({
   // setupController will not get called if model does not change
   // eg if I returned a query that was not dependant on params....
   setupController(controller, model) {
-    var activeTabName = this.paramsFor('admin.website.import.tab').tabName || "";
+    var activeTabName = this.paramsFor('admin.website.sections.tab').tabName || "";
     activeTabName = activeTabName.toLowerCase();
     controller.set("activeTabName", activeTabName);
 
@@ -40,9 +40,9 @@ export default Ember.Route.extend({
 
     // controller.set("languages", websiteDetails.supported_locales);
 
-    var importExportTabsList = this.modelFor("admin").setup.get('importExportTabsList');
-    controller.set("tabsList",importExportTabsList);
-    var activeTabObject = importExportTabsList.findBy("tabValue",activeTabName);
+    var websiteSectionsTabsList = this.modelFor("admin").setup.get('websiteSectionsTabsList');
+    controller.set("tabsList",websiteSectionsTabsList);
+    var activeTabObject = websiteSectionsTabsList.findBy("tabValue",activeTabName) || websiteSectionsTabsList[0];
     controller.set("activeTabObject", activeTabObject);
     var importUrl = activeTabObject.importUrl;
      // "/import/translations";

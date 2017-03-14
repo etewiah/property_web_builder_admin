@@ -125,6 +125,8 @@ export default {
   "editWebsite": "Edit Website",
   "settingsForWebsite": "Settings for Website",
   "contentForWebsite": "Content for Website", 
+  "sectionsForWebsite": "Website Sections",
+  "importExport": "Import and export data",
   "returnToWebsite": "Return to web",
   "settingsForProperties": "Settings for properties",
   "returnToProperties": "Return to properties",

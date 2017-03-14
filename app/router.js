@@ -89,7 +89,7 @@ Router.map(function() {
         });
       });
 
-      this.route("import", function() {
+      this.route("sections", function() {
         this.route("default", {
           path: "/"
         });

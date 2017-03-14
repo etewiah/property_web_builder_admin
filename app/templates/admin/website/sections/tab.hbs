@@ -1,7 +1,7 @@
 <div role="tabpanel">
   <ul data-tab-color="green" class="tab-nav" role="tablist" tabindex="1" style="overflow: hidden; outline: none;">
     {{#each tabsList as |tab|}}
-    <li class={{if (eq tab.tabValue activeTabName) "active"}}>{{#link-to 'admin.website.import.tab' tab.tabValue}}{{t tab.tabTitleKey}}{{/link-to}}</li>
+    <li class={{if (eq tab.tabValue activeTabName) "active"}}>{{#link-to 'admin.website.sections.tab' tab.tabValue}}{{t tab.tabTitleKey}}{{/link-to}}</li>
     {{/each}}
   </ul>
   <div class="tab-content">
