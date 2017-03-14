@@ -80,14 +80,14 @@ Router.map(function() {
         });
       });
 
-      // this.route("pages", function() {
-      //   this.route("default", {
-      //     path: "/"
-      //   });
-      //   this.route("page", {
-      //     path: "/:pageName"
-      //   });
-      // });
+      this.route("themes", function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("theme", {
+          path: "/:themeName"
+        });
+      });
 
       this.route("sections", function() {
         this.route("default", {

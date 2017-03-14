@@ -126,6 +126,7 @@ export default Ember.merge(Ember.copy(en), {
   "settingsForWebsite": "Configuración de la web",
   "contentForWebsite": "Contenido para la web", 
   "sectionsForWebsite": "Secciónes de la web",
+  "themesForWebsite": "Website Themes",
   "importExport": "Importar y exportar datos",
   "returnToWebsite": "Volver a la web",
   "settingsForProperties": "Configuración de propiedades",

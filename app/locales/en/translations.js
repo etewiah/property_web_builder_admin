@@ -126,6 +126,7 @@ export default {
   "settingsForWebsite": "Settings for Website",
   "contentForWebsite": "Content for Website", 
   "sectionsForWebsite": "Website Sections",
+  "themesForWebsite": "Website Themes",
   "importExport": "Import and export data",
   "returnToWebsite": "Return to web",
   "settingsForProperties": "Settings for properties",
