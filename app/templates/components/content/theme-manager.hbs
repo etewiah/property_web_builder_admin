@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="fg-line m-b-15">
+      <div class="checkbox m-b-15">
+        {{#if themeChecked}}
+        <label>
+          <strong>
+        {{t "btnLabels.activatedThemeInfo" }}
+      </strong>
+        </label>
+        {{else}}
+        <label>
+          <input type="checkbox" checked={{false}} onClick={{action "changeTheme" websiteDetails themeInView }}>
+          <i class="input-helper"></i>
+          <strong>
+          {{t "btnLabels.setThemePrompt" }}
+        </strong>
+        </label>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+  {{#each themeInView.screenshots as |screenshot|}}
+  <div class="col-sm-6">
+    <div>
+      <img style="width:100%;" src={{ screenshot }} alt="">
+    </div>
+  </div>
+  {{/each}}
+</div>
