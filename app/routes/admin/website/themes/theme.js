@@ -23,12 +23,5 @@ export default Ember.Route.extend({
     var websiteDetails = this.modelFor("admin").websiteDetails;
     controller.set("websiteDetails", websiteDetails);
 
-    // controller.set("siteTemplateField", this.siteTemplateField);
-
-    // var websiteSectionsTabsList = this.modelFor("admin").setup.get('websiteSectionsTabsList');
-    // controller.set("tabsList", websiteSectionsTabsList);
-    // var activeTabObject = websiteSectionsTabsList.findBy("tabValue", themeInViewId) || websiteSectionsTabsList[0];
-    // controller.set("activeTabObject", activeTabObject);
-    // var importUrl = activeTabObject.importUrl;
   }
 });

@@ -8,12 +8,10 @@ export default Ember.Route.extend({
   },
 
   model(params) {
-    return {};
+    return this.store.findAll("section");
   },
 
   setupController(controller, model) {
-
     controller.set("model", model);
-
   }
 });

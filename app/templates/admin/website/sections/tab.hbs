@@ -3,15 +3,23 @@
     {{#each tabsList as |tab|}}
     <li class={{if (eq tab.tabValue activeTabName) "active"}}>{{#link-to 'admin.website.sections.tab' tab.tabValue}}{{t tab.tabTitleKey}}{{/link-to}}</li>
     {{/each}}
+    {{#each sections as |tab|}}
+{{!--     <li class={{if (eq tab.linkKey activeTabName) "active"}}>{{#link-to 'admin.website.sections.tab' tab.linkKey}}{{t tab.linkKey}}{{/link-to}}</li>
+ --}}    {{/each}}
+    <li class="">{{#link-to 'admin.website.sections.tab' 'new'}}
+    new{{/link-to}}</li>
+
+
   </ul>
   <div class="tab-content">
+   {{content/section-manager sectionInView=sectionInView websiteDetails=websiteDetails }}
     <div class="row">
       <div>
       {{content/edmin-pages contentKey=contentKey contentResources=model languages=languages }}
       </div>
       <div class="col-sm-6">
 
-      {{tabs-website/sections-tab activeTabName=activeTabName contentResources=model languages=languages resourceObject=websiteDetails agencyDetails=websiteDetails }}
+
 
       </div>
       <div class="col-sm-4">
