@@ -5,9 +5,8 @@ import Ember from 'ember';
 // no need for TabWithForm here
 export default Ember.Component.extend({
  url: function(){
-    // var activeTabObject = this.get("activeTabObject");
-    // return activeTabObject.importUrl;
-    return "/import/properties/from_mls";
+    var activeTabObject = this.get("activeTabObject");
+    return activeTabObject.importUrl;
   },
   actions: {
 

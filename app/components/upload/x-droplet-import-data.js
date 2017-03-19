@@ -32,12 +32,12 @@ export default Ember.Component.extend(Droplet, {
   // type: 'file',
 
   // url: location.origin + '/upload',
-  url: function(){
-    var activeTabObject = this.get("activeTabObject");
-    // just don't get it but when importUrl below was 
-    // called importEndPoint, below would resolve to undefined....
-    return activeTabObject.importUrl;
-  },
+  // url: function(){
+  //   var activeTabObject = this.get("activeTabObject");
+  //   // just don't get it but when importUrl below was 
+  //   // called importEndPoint, below would resolve to undefined....
+  //   return activeTabObject.importUrl;
+  // },
   showProg: function() {
     // debugger;
     if ((this.get("invalidFiles").length > 0) && (this.get("validFiles").length < 1)) {
@@ -52,9 +52,9 @@ export default Ember.Component.extend(Droplet, {
     }
     var uploadStatus = this.get("uploadStatus");
     if (uploadStatus.uploading) {
-      var uploadingIcon = "<i class='fa fa-spinner fa-spin fa-3x fa-fw'></i><span class='sr-only'>Uploading Photo...</span>";
+      var uploadingIcon = "<i class='fa fa-spinner fa-spin fa-3x fa-fw'></i><span class='sr-only'>Uploading Data...</span>";
       swal({
-        title: "Uploading Photo",
+        title: "Uploading Data",
         text: uploadingIcon,
         html: true,
         showConfirmButton: false,
@@ -67,7 +67,7 @@ export default Ember.Component.extend(Droplet, {
         var fileSize = fileBeingUploaded ? fileBeingUploaded.getFileSize() : 0;
         var errorMessage = "Please try again";
         if (fileSize > 999999) {
-          errorMessage = "Please ensure photo is less than 1mb";
+          errorMessage = "Please ensure file is less than 1mb";
         }
         var that = this;
         // debugger;
@@ -99,7 +99,7 @@ export default Ember.Component.extend(Droplet, {
     addRemoteImages: function() {
       var remoteUrls = this.get("remoteUrls");
       // TODO - parse and validate for list of urls
-      this.sendAction("addPhotosFromUrlsAction", remoteUrls);
+      this.sendAction("addDatasFromUrlsAction", remoteUrls);
     },
     // uploadFiles: function() {
     // }
