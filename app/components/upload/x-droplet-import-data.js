@@ -39,9 +39,7 @@ export default Ember.Component.extend(Droplet, {
   //   return activeTabObject.importUrl;
   // },
   showProg: function() {
-    // debugger;
     if ((this.get("invalidFiles").length > 0) && (this.get("validFiles").length < 1)) {
-      // debugger;
       swal({
         title: "Invalid file",
         text: "Please ensure you are uploading a valid CSV file with the extension '.csv'.",
@@ -70,10 +68,9 @@ export default Ember.Component.extend(Droplet, {
           errorMessage = "Please ensure file is less than 1mb";
         }
         var that = this;
-        // debugger;
-        this.set("invalidFiles",[]);
-        this.set("validFiles",[]);
-        this.sendAction('clearFiles');
+        // this.set("invalidFiles", []);
+        // this.set("validFiles", []);
+        // this.sendAction('clearFiles');
         swal({
           title: "Sorry, there has been an error.",
           text: errorMessage,
@@ -85,7 +82,7 @@ export default Ember.Component.extend(Droplet, {
         });
         // 
       } else {
-        swal.close();
+        // swal.close();
       }
     }
 
@@ -106,13 +103,22 @@ export default Ember.Component.extend(Droplet, {
   },
 
   hooks: {
-    didUpload: function(response) {
-      this.sendAction("clearFiles");
-// debugger;
+    didUpload: function(result) {
+      var fileName = this.files[0].file.name || "unkown";
+      var importedItemsCount = JSON.parse(result.imported_items).length || 0;
+      var message = importedItemsCount + " items imported from " + fileName;
+      // this.set("invalidFiles", []);
+      // this.set("validFiles", []);
+      // this.sendAction('clearFiles');
+      swal({
+        title: "Import complete",
+        text: message,
+        showConfirmButton: true,
+      });
       // var uploadedFiles = this.get("validFiles");
       // this.get("uploadedFiles") returns an empty array :(
       // below will add photos to array
-      // this.sendAction("didUploadAction", response);
+      // this.sendAction("didUploadAction", result);
       // console.log("did an upload");
     }
   },

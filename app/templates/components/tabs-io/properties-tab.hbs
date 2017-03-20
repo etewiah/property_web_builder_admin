@@ -1,15 +1,11 @@
-<div>
-  <div>
-    <p><a href="/export/translations/all">Export all</a></p>
-  </div>
-</div>
 <div class="row">
-  <div class="col-sm-12">
-
-
-  </div>
-  <div class="col-sm-12">
-    <p><a class="btn btn-edfile">
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-12">
+        {{forms/radio-list resetTrigger=resetTrigger valueChangedAction="" fieldDetails=optionsField resourceObject=optionsObject fieldOptions=optionsFieldKeys }}
+      </div>
+      <div class="col-sm-12">
+        <p><a class="btn btn-edfile">
         Import properties
             {{#upload/x-droplet-import-data   
             url=url
@@ -17,6 +13,10 @@
             {{/upload/x-droplet-import-data}}
 
         </a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <p><a href="{{ exportUrl }}">Export properties</a></p>
   </div>
 </div>
-
