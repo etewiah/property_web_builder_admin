@@ -62,18 +62,16 @@ export default Ember.Route.extend({
       }
     });
   },
+
   // setupController will not get called if model does not change
   // eg if I returned a query that was not dependant on params....
   setupController(controller, model) {
     var activeTabName = this.paramsFor('admin.website.settings.tab').tabName || "";
     activeTabName = activeTabName.toLowerCase();
     controller.set("activeTabName", activeTabName);
-
     controller.set("model", model);
-
     var websiteDetails = this.modelFor("admin").websiteDetails;
     controller.set("websiteDetails", websiteDetails);
-
 
     // before I would render all the components for the different tabs
     // and hide or show them depending on which was active
@@ -86,6 +84,8 @@ export default Ember.Route.extend({
 
     var websiteSettingsTabsList = this.modelFor("admin").setup.get('websiteSettingsTabsList');
     controller.set("tabsList",websiteSettingsTabsList);
+
+controller.set("clientSetup", this.modelFor("admin").setup);
 
 
   }

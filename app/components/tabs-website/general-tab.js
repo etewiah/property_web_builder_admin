@@ -9,16 +9,7 @@ import TabWithForm from "../base/tab-with-form";
 export default TabWithForm.extend(OnReadyMixin, {
   // languages: ["En", "Es"],
   changedFields: [],
-  availableLocaleFields: [{
-      labelTextTKey: "es",
-      fieldName: "es",
-      localeVariants: ["es-ES","es-MX"]
-    }, {
-      labelTextTKey: "en",
-      fieldName: "en",
-      localeVariants: ["en-UK","en-US"]
-    }
-  ],
+
   // availableLocaleFields: function() {
   //   var availableLocalesArray = this.get("agencyDetails.available_locales") || ["en", "fr"];
   //   // above looks like ["en","es"]
@@ -53,16 +44,16 @@ export default TabWithForm.extend(OnReadyMixin, {
     headerTextTKey: "fieldLabels.defaultCurrency",
     fieldName: "default_currency",
   },
-  currencyFieldKeys: [{
-    value: "EUR",
-    labelTextTKey: "eur",
-  }, {
-    value: "GBP",
-    labelTextTKey: "gbp",
-  }, {
-    value: "USD",
-    labelTextTKey: "usd",
-  }],
+  // currencyFieldKeys: [{
+  //   value: "EUR",
+  //   labelTextTKey: "eur",
+  // }, {
+  //   value: "GBP",
+  //   labelTextTKey: "gbp",
+  // }, {
+  //   value: "USD",
+  //   labelTextTKey: "usd",
+  // }],
 
   siteLayoutField: {
     labelTextTKey: "",
@@ -105,55 +96,15 @@ export default TabWithForm.extend(OnReadyMixin, {
     // },
   },
 
-  // socialNetworkFields: [{
-  //   fieldName: "social_media.facebook",
-  //   title: "Facebook",
-  //   class: "fa fa-facebook fa-2x"
-  //     // tooltipTextTKey: false,
-  //     // constraints: {
-  //     //   inputValue: {
-  //     //     url: {
-  //     //       message: "errors.notAUrlVjs"
-  //     //     }
-  //     //   }
-  //     // }
-  // }, {
-  //   fieldName: "social_media.twitter",
-  //   title: "Twitter",
-  //   class: "fa fa-twitter fa-2x"
-  // }, {
-  //   fieldName: "social_media.youtube",
-  //   title: "Youtube",
-  //   class: "fa fa-youtube fa-2x"
-  // }, {
-  //   fieldName: "social_media.linkedin",
-  //   title: "LinkedIn",
-  //   class: "fa fa-linkedin fa-2x"
-  // }, {
-  //   fieldName: "social_media.gplus",
-  //   title: "Google Plus",
-  //   class: "fa fa-google-plus fa-2x"
-  // }, {
-  //   fieldName: "social_media.pinterest",
-  //   title: "Pinterest",
-  //   class: "fa fa-pinterest fa-2x"
-  // }, {
-  //   fieldName: "social_media.instagram",
-  //   title: "Instagram",
-  //   class: "fa fa-instagram fa-2x"
-  // }],
+  availableLocaleFields: function() {
+    var clientSetup = this.get("clientSetup");
+    return clientSetup.availableLocaleFields;
+  }.property("clientSetup"),
 
-
-
-  // logoPhoto: function() {
-  //   var contentResources = this.get("contentResources");
-  //   var logoContent = contentResources.findBy("key", "logo");
-  //   var logoPhoto = {};
-  //   if (logoContent) {
-  //     logoPhoto = logoContent.get("photoModels.firstObject") || {};
-  //   }
-  //   return logoPhoto;
-  // }.property("contentResources"),
+  currencyFieldKeys: function() {
+    var clientSetup = this.get("clientSetup");
+    return clientSetup.currencyFieldKeys;
+  }.property("clientSetup"),
 
   // editPhotoEndpoint: function() {
   //   var contentResources = this.get("contentResources");
