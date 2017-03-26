@@ -77,6 +77,9 @@ export default Ember.Route.extend({
     controller.set("fieldKeys", model);
 
     controller.set("changedFields", []);
+
+    controller.set("clientSetup", this.modelFor("admin").setup);
+
     // below doesn't quite work - not sure how to ensure promise is resolved before assigning it
     // var fieldKeys = this.get("configFetcher").getFieldKeys("").then(function(result){
     //   controller.set("fieldKeys", result);

@@ -54,16 +54,22 @@ export default TabWithForm.extend({
     headerTextTKey: "fieldLabels.currency",
     fieldName: "currency",
   },
-  currencyFieldKeys: [{
-    value: "EUR",
-    labelTextTKey: "eur",
-  }, {
-    value: "GBP",
-    labelTextTKey: "gbp",
-  }, {
-    value: "USD",
-    labelTextTKey: "usd",
-  }],
+  currencyFieldKeys: function() {
+    var clientSetup = this.get("clientSetup");
+    debugger;
+    return clientSetup.currencyFieldKeys;
+  }.property("clientSetup"),
+
+  // currencyFieldKeys: [{
+  //   value: "EUR",
+  //   labelTextTKey: "eur",
+  // }, {
+  //   value: "GBP",
+  //   labelTextTKey: "gbp",
+  // }, {
+  //   value: "USD",
+  //   labelTextTKey: "usd",
+  // }],
   //   currencyFieldKeys: [{
   //   value: "EUR",
   //   label: "Euros",

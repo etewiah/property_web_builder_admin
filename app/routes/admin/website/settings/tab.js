@@ -85,8 +85,6 @@ export default Ember.Route.extend({
     var websiteSettingsTabsList = this.modelFor("admin").setup.get('websiteSettingsTabsList');
     controller.set("tabsList",websiteSettingsTabsList);
 
-controller.set("clientSetup", this.modelFor("admin").setup);
-
-
+    controller.set("clientSetup", this.modelFor("admin").setup);
   }
 });
