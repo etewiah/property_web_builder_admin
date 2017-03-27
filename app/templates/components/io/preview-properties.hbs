@@ -1,0 +1,31 @@
+<table  class="tabla_propiedades table table-striped table-vmiddle datatables">
+  <thead>
+    <tr>
+      <th style="visibility: hidden;" >{{!--t "propertyColHeader.actions" --}}</th>
+      <th >Listing key</th>
+
+      <th  data-type="text" data-order="desc">Reference</th>
+
+      <th >{{t "propertyColHeader.type"}}</th>
+      {{!-- <th >{{t "propertyColHeader.price"}}</th> --}}
+      <th >{{t "propertyColHeader.bedrooms"}}</th>
+      <th >{{t "propertyColHeader.bathrooms"}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each properties as |property|}}
+    <tr id={{property.id }}>
+      <td>
+        <a href="" {{action "importProperty" property }} ><i class="fa fa-eye-slash"></i>import</a>
+      </td>
+      <td>{{ property.ListingKey }}</td>
+      <td>{{ property.reference }}</td>
+
+      <td>{{ property.propTypeKey }}</td>
+      {{!-- <td>{{ property.contextualPriceCents }}</td> --}}
+      <td>{{ property.countBedrooms }}</td>
+      <td>{{ property.countBathrooms }}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -44,6 +44,18 @@ export default TabWithForm.extend(OnReadyMixin, {
     headerTextTKey: "fieldLabels.defaultCurrency",
     fieldName: "default_currency",
   },
+
+
+  availableLocaleFields: function() {
+    var clientSetup = this.get("clientSetup");
+    return clientSetup.availableLocaleFields;
+  }.property("clientSetup"),
+
+  currencyFieldKeys: function() {
+    var clientSetup = this.get("clientSetup");
+    return clientSetup.currencyFieldKeys;
+  }.property("clientSetup"),
+  
   // currencyFieldKeys: [{
   //   value: "EUR",
   //   labelTextTKey: "eur",
@@ -96,15 +108,6 @@ export default TabWithForm.extend(OnReadyMixin, {
     // },
   },
 
-  availableLocaleFields: function() {
-    var clientSetup = this.get("clientSetup");
-    return clientSetup.availableLocaleFields;
-  }.property("clientSetup"),
-
-  currencyFieldKeys: function() {
-    var clientSetup = this.get("clientSetup");
-    return clientSetup.currencyFieldKeys;
-  }.property("clientSetup"),
 
   // editPhotoEndpoint: function() {
   //   var contentResources = this.get("contentResources");

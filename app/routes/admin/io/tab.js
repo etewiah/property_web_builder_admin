@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import AdminMeta from '../../../models/admin_meta';
+// import AdminMeta from '../../../models/admin_meta';
 
 export default Ember.Route.extend({
   // tabsList: [{}],
