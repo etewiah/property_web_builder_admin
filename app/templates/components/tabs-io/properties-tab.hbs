@@ -1,6 +1,13 @@
+{{#if propsRetrieved}}
+<div class="row">
+  <div class="col-sm-12">
+    {{io/preview-properties properties=propsRetrieved  }}
+  </div>
+</div>
+{{else}}
 <div class="row">
   <div class="col-sm-4">
-  {{forms/mls-importer}}
+    {{forms/mls-importer propsRetrieved=propsRetrieved }}
   </div>
   <div class="col-sm-4">
     <div class="row">
@@ -9,7 +16,7 @@
       </div>
       <div class="col-sm-12">
         <p><a class="btn btn-edfile">
-        Import properties
+            Upload properties
             {{#upload/x-droplet-import-data   
             url=url
             activeTabObject=activeTabObject didUploadAction=""}} 
@@ -23,3 +30,5 @@
     <p><a href="{{ exportUrl }}">Export properties</a></p>
   </div>
 </div>
+{{/if}}
+

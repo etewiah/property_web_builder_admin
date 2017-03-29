@@ -1,31 +1,65 @@
-<table  class="tabla_propiedades table table-striped table-vmiddle datatables">
-  <thead>
-    <tr>
-      <th style="visibility: hidden;" >{{!--t "propertyColHeader.actions" --}}</th>
-      <th >Listing key</th>
+<div class="row">
+  <div class="col-sm-12">
+    <p>The following properties were retrieved.
+    </p>
+  </div>
+  <div class="col-sm-12">
+    <table class="tabla_propiedades table table-striped table-vmiddle datatables">
+      <thead>
+        <tr>
+          <th>Reference</th>
+          <th>City</th>
+          <th>Street Name</th>
+          <th>Price</th>
+          {{!--
+          <th>{{t "propertyColHeader.price"}}</th> --}}
+          <th>{{t "propertyColHeader.bedrooms"}}</th>
+          <th>{{t "propertyColHeader.bathrooms"}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each properties as |property|}}
+        <tr id={{property.id }}>
+          <td style="display:none;">
+            <a href="" {{action "importProperty" property }}><i class="fa fa-eye-slash"></i>import</a>
+          </td>
+          <td>{{ property.reference }}</td>
+          <td>{{ property.city }}</td>
+          <td>{{ property.street_name }}</td>
+          <td>{{ property.price_sale_current }}</td>
+          {{!--
+          <td>{{ property.contextualPriceCents }}</td> --}}
+          <td>{{ property.countBedrooms }}</td>
+          <td>{{ property.countBathrooms }}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-12">
+    {{#if importAttempted}} 
+    {{#if success}}
+      <p>Properties successfully imported
+      <a class="btn" {{action "ackResult" properties}}>
+      OK
+      </a>
+      </p>
+      {{else}}
+      <p>Sorry, there has been an error importing the properties
+      <a class="btn" {{action "ackResult" properties}}>
+      OK
+      </a>
+      </p>
+    {{/if}}
 
-      <th  data-type="text" data-order="desc">Reference</th>
-
-      <th >{{t "propertyColHeader.type"}}</th>
-      {{!-- <th >{{t "propertyColHeader.price"}}</th> --}}
-      <th >{{t "propertyColHeader.bedrooms"}}</th>
-      <th >{{t "propertyColHeader.bathrooms"}}</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each properties as |property|}}
-    <tr id={{property.id }}>
-      <td>
-        <a href="" {{action "importProperty" property }} ><i class="fa fa-eye-slash"></i>import</a>
-      </td>
-      <td>{{ property.ListingKey }}</td>
-      <td>{{ property.reference }}</td>
-
-      <td>{{ property.propTypeKey }}</td>
-      {{!-- <td>{{ property.contextualPriceCents }}</td> --}}
-      <td>{{ property.countBedrooms }}</td>
-      <td>{{ property.countBathrooms }}</td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
+    {{else}}
+    <p><a class="btn btn-edfile" {{action "importAllProperties" properties}}>
+    Import properties into this website
+    </a>
+      <a class="btn" {{action "cancelImport" properties}}>
+    Cancel import
+    </a>
+    </p>
+    {{/if}}
+  </div>
+</div>
