@@ -5,39 +5,6 @@ import Ember from 'ember';
 //     $window.Droplet = Mixin.create({
 // droplet component sets mixin on global window object
 export default Ember.Component.extend(Droplet, {
-
-  // /**
-  //  * @property tagName
-  //  * @type {String}
-  //  */
-  // tagName: 'input',
-  // // tagName: 'div',
-
-  // /**
-  //  * @property classNames
-  //  * @type {String}
-  //  */
-  // classNames: 'files',
-
-  // *
-  //  * @property attributeBindings
-  //  * @type {Array}
-
-  // attributeBindings: ['disabled', 'name', 'type', 'multiple'],
-
-  // /**
-  //  * @property file
-  //  * @type {String}
-  //  */
-  // type: 'file',
-
-  // url: location.origin + '/upload',
-  // url: function(){
-  //   var activeTabObject = this.get("activeTabObject");
-  //   // just don't get it but when importUrl below was 
-  //   // called importEndPoint, below would resolve to undefined....
-  //   return activeTabObject.importUrl;
-  // },
   showProg: function() {
     if ((this.get("invalidFiles").length > 0) && (this.get("validFiles").length < 1)) {
       swal({
@@ -90,35 +57,33 @@ export default Ember.Component.extend(Droplet, {
   // }.on('init'),
 
   actions: {
-    selectRemoteImages: function() {
-      this.set("showRemoteImagesInput", true);
-    },
-    addRemoteImages: function() {
-      var remoteUrls = this.get("remoteUrls");
-      // TODO - parse and validate for list of urls
-      this.sendAction("addDatasFromUrlsAction", remoteUrls);
-    },
-    // uploadFiles: function() {
-    // }
+    // selectRemoteImages: function() {
+    //   this.set("showRemoteImagesInput", true);
+    // },
+    // addRemoteImages: function() {
+    //   var remoteUrls = this.get("remoteUrls");
+    //   // TODO - parse and validate for list of urls
+    //   this.sendAction("addDatasFromUrlsAction", remoteUrls);
+    // },
   },
 
   hooks: {
     didUpload: function(result) {
-      var fileName = this.files[0].file.name || "unkown";
-      var importedItemsCount = JSON.parse(result.imported_items).length || 0;
-      var message = importedItemsCount + " items imported from " + fileName;
-      // this.set("invalidFiles", []);
-      // this.set("validFiles", []);
-      // this.sendAction('clearFiles');
-      swal({
-        title: "Import complete",
-        text: message,
-        showConfirmButton: true,
-      });
-      // var uploadedFiles = this.get("validFiles");
-      // this.get("uploadedFiles") returns an empty array :(
-      // below will add photos to array
-      // this.sendAction("didUploadAction", result);
+      // var fileName = this.files[0].file.name || "unkown";
+      // var importedItemsCount = JSON.parse(result.imported_items).length || 0;
+      // var message = importedItemsCount + " items imported from " + fileName;
+      // // this.set("invalidFiles", []);
+      // // this.set("validFiles", []);
+      // // this.sendAction('clearFiles');
+      // swal({
+      //   title: "Import complete",
+      //   text: message,
+      //   showConfirmButton: true,
+      // });
+      // // var uploadedFiles = this.get("validFiles");
+      // // this.get("uploadedFiles") returns an empty array :(
+      swal.close();
+      this.sendAction("didUploadAction", result);
       // console.log("did an upload");
     }
   },

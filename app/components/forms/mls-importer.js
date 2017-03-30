@@ -9,13 +9,15 @@ export default Ember.Component.extend({
     getMlsData: function() {
       // var propsRetrieved = this.get("propsRetrieved") || [];
       var that = this;
-      var mlsProp = MlsConnector.getProperties("", function(result) {
-        // var prop = Property.create(result);
+      var mlsProp = MlsConnector.getProperties("", function(properties) {
+        // var prop = Property.create(properties);
         var store = that.get("store");
-        var prop = store.createRecord("property", result);
         var propsRetrieved = that.get("propsRetrieved") || [];
-        propsRetrieved.addObject(prop);
-        that.set("propsRetrieved", propsRetrieved)
+        properties.forEach(function(property) {
+          var prop = store.createRecord("property", property);
+          propsRetrieved.addObject(prop);
+        })
+        that.set("propsRetrieved", propsRetrieved);
       });
     }
   },

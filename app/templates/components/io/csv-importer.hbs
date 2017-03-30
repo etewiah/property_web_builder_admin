@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-12">
+    {{forms/radio-list resetTrigger=resetTrigger valueChangedAction="" fieldDetails=optionsField resourceObject=optionsObject fieldOptions=optionsFieldKeys }}
+  </div>
+  <div class="col-sm-12">
+    <p><a class="btn btn-edfile">
+            Upload properties
+            {{#upload/x-droplet-import-data   
+            url=url
+            activeTabObject=activeTabObject didUploadAction="processParsedProps"}} 
+            {{/upload/x-droplet-import-data}}
+
+        </a></p>
+  </div>
+</div>
