@@ -31,7 +31,7 @@ export default Ember.Component.extend({
   }.property(),
   optionsField: {
     fieldName: "selected_option",
-    headerTextTKey: "fieldLabels.defaultCurrency",
+    headerTextTKey: "fieldLabels.propCsvUploadPrompt",
   },
   optionsFieldKeys: [{
     value: "PWB",
