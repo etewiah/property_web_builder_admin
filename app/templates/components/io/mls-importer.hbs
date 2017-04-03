@@ -1,9 +1,30 @@
 <div class="row">
   <div class="col-sm-12">
+    <label class="fg-label m-t-20">RETS Login URL:</label>
+      {{input value=mlsDetails.login_url type="text"  class="input-sm form-control fg-input translation-input"  }}
   </div>
   <div class="col-sm-12">
-    <p><a class="btn btn-edfile" {{action "getMlsData"}}>
+    <label class="fg-label m-t-20">RETS Username:</label>
+      {{input value=mlsDetails.username type="text"  class="input-sm form-control fg-input translation-input"  }}
+  </div>
+  <div class="col-sm-12">
+    <label class="fg-label m-t-20">RETS Password:</label>
+      {{input value=mlsDetails.username type="text"  class="input-sm form-control fg-input translation-input"  }}
+  </div>
+  <div class="col-sm-12 m-t-20">
+    {{#if hasError}}
+      <p>Sorry, there has been an error retrieving the MLS data.
+      </p>
+      <p><a href="https://github.com/etewiah/property_web_builder/issues/2">Help us improve PropertyWebBuilder by telling us about the MLS you tried to use here.</a></p>
+      <p>
+      <a class="btn btn-edfile" {{action "ackError"}}>
+      OK
+      </a>
+      </p>
+      {{else}}
+      <p style="" class=""><a class="btn btn-edfile" {{action "getMlsData"}}>
     Retrieve from MLS
     </a></p>
+    {{/if}}
   </div>
 </div>

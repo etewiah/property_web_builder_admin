@@ -35,10 +35,10 @@ export default Ember.Component.extend({
   },
   optionsFieldKeys: [{
     value: "PWB",
-    labelTextTKey: "pwb",
+    labelTextTKey: "fieldLabels.pwbCsvFile",
   }, {
     value: "MLS",
-    labelTextTKey: "mls",
+    labelTextTKey: "fieldLabels.mlsCsvFile",
   }],
 
   actions: {

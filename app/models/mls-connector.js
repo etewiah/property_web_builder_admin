@@ -6,13 +6,13 @@ var MlsConnector = Ember.Object.extend({
 });
 
 MlsConnector.reopenClass({
-  getProperties: function(fieldNames,complete) {
-    var apiUrl = "/import/mls_exp";
+  getProperties: function(mlsDetails,complete,error) {
+    var apiUrl = "/import/mls";
     return $.ajax(apiUrl, {
       type: 'GET',
       dataType: 'json',
       data: {
-        field_names: fieldNames
+        mls_details: mlsDetails
       }
     }).then(function(result) {
       // debugger;
@@ -20,8 +20,10 @@ MlsConnector.reopenClass({
       if (complete) {
         complete(result);
       }
-    }.bind(this), function(error) {
-      return error;
+    }.bind(this), function(result) {
+      if (error) {
+        error(result);
+      }
     });
   }
 });
