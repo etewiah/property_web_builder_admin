@@ -1,35 +1,15 @@
 import Ember from 'ember';
-
 import OnReadyMixin from "../../mixins/on-ready";
 // all this just so the bs popover works..
 export default Ember.Component.extend(OnReadyMixin, {
-
   // !!!!!july 2016 - can't for the life of me get properties to refresh when route changes
-
-
-
-  // filteredProperties: function() {
-  //   if (this.get("propertiesStatus") === "hidden") {
-  //     // debugger;
-
-  //     return this.get("properties");
-  //   } else {
-  //     return this.get("properties");
-  //   }
-  // }.property("properties"),
-
-  // onPropertiesChange: function() {
-  //   // this.set("filteredProperties", this.get("properties"));
-  //   this.set("filteredProperties", []);
-  // }.observes('properties'),
-  // onPropertiesStatusChange: function() {
-  //   // this.set("filteredProperties", []);
-  //   this.set("filteredProperties", this.get("properties"));
-  // }.observes('propertiesStatus').on('init'),
-
-  // didUpdateAttrs() {
-  //   debugger;
-  // },
+  exportUrl: function() {
+    if (location.hostname === "localhost") {
+      return "http://localhost:3000/export/properties";
+    } else {
+      return "/export/properties"
+    }
+  }.property(),
 
   actions: {
     hideProperty: function(property) {

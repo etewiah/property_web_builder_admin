@@ -5,14 +5,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   store: Ember.inject.service('store'),
 
-  exportUrl: function() {
-    // 
-    if (location.hostname === "localhost") {
-      return "http://localhost:3000/export/properties";
-    } else {
-      return "/export/properties"
-    }
-  }.property(),
   url: function() {
     var selectedOption = this.get("optionsObject.selected_option");
     if (selectedOption === "MLS") {

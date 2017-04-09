@@ -34,6 +34,15 @@
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="visibles">
           <div class="row">
+            <div class="col-sm-12">
+              <a href="{{ exportUrl }}" download="prop2.csv">
+                <button type="submit" class="btn btn-edfile btn-sm m-t-10 waves-effect"> 
+                Download properties as a CSV file
+                </button>
+              </a>
+            </div>
+
+
             <div class="col-sm-12" style="display:none;">
               {{#if (eq propertiesStatus "visible")}}
                 <div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label={{t "close"}}><span aria-hidden="true">×</span></button><i class="fa fa-lg fa-check"></i>{{t "alerts.visibleProperties"}}

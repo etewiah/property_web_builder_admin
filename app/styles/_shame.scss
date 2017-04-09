@@ -4,7 +4,10 @@
   margin-bottom: 0px;
 }
 
-
+.dataTables_length, .dataTables_filter {
+  /* hide search and length display on property list*/
+  display: none;
+}
 /*
 
 attempt to fix + and - indicators on sub-menu

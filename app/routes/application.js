@@ -67,6 +67,9 @@ export default Ember.Route.extend({
       if (currentRouteName.indexOf("about") > 0) {
         activeTabRoute = "admin.about";
       }
+      if (currentRouteName.indexOf("io") > 0) {
+        activeTabRoute = "admin.io";
+      }
       if (currentRouteName.indexOf("translations") > 0) {
         activeTabRoute = "admin.translations";
       }
