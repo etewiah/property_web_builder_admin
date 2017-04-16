@@ -12,17 +12,23 @@ export default Ember.Route.extend({
 
 
   setupController(controller, model) {
-    var activeTabName = this.paramsFor('admin.io.tab').tabName || "";
+    var activeTabName = this.paramsFor('admin.io.properties.tab').tabName || "";
     activeTabName = activeTabName.toLowerCase();
     controller.set("activeTabName", activeTabName);
 
     controller.set("model", model);
-
     
-    activeTabName = "properties";
+    var importPropsComponent = "io/csv-importer";
+    if (activeTabName.toLowerCase().includes("mls")) {
+      importPropsComponent = "io/mls-importer";
+    }
+    controller.set("importerComponent", importPropsComponent);
 
-    var tabsWebsiteComponent = "tabs-io/" + activeTabName + "-tab";
-    controller.set("tabs-io-component", tabsWebsiteComponent);
+    var importPropertiesTabsList = this.modelFor("admin").setup.get('importPropertiesTabsList');
+    controller.set("tabsList",importPropertiesTabsList);
+    var activeTabObject = importPropertiesTabsList.findBy("tabValue",activeTabName) || importPropertiesTabsList[0];
+    controller.set("activeTabObject", activeTabObject);
+
   }
 
 

@@ -21,10 +21,6 @@ export default Ember.Route.extend({
 
     // controller.set("languages", websiteDetails.supported_locales);
 
-    var importPropertiesTabsList = this.modelFor("admin").setup.get('importPropertiesTabsList');
-    controller.set("tabsList",importPropertiesTabsList);
-    var activeTabObject = importPropertiesTabsList.findBy("tabValue",activeTabName) || importPropertiesTabsList[0];
-    controller.set("activeTabObject", activeTabObject);
 
   }
 

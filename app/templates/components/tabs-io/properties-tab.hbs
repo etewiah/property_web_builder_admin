@@ -6,13 +6,8 @@
 </div>
 {{else}}
 <div class="row">
-  <div class="col-sm-4">
-    {{io/csv-importer propsRetrieved=propsRetrieved }}
-  </div>
-  <div class="col-sm-4">
-    {{io/mls-importer propsRetrieved=propsRetrieved }}
-  </div>
-  <div class="col-sm-4">
+  <div class="col-sm-12">
+    {{component importer-component propsRetrieved=propsRetrieved }}
   </div>
 </div>
 {{/if}}
