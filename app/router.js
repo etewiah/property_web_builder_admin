@@ -49,9 +49,17 @@ Router.map(function() {
       this.route("default", {
         path: "/"
       });
-      this.route("tab", {
-        path: "/:tabName"
+      this.route("properties", function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tabName"
+        });
       });
+      // this.route("tab", {
+      //   path: "/:tabName"
+      // });
     });
     // route below was previously called "content" internaly
     this.route("website", {

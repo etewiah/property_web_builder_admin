@@ -2,11 +2,7 @@ import Ember from 'ember';
 // import AdminMeta from '../../../models/admin_meta';
 
 export default Ember.Route.extend({
-  // tabsList: [{}],
   actions: {
-    // editProperty(property) {
-    //   this.transitionTo("admin.propiedades.editar", property.get('idPropiedad'))
-    // }
   },
 
   // model(params) {
@@ -22,14 +18,8 @@ export default Ember.Route.extend({
 
     controller.set("model", model);
 
-
-    // controller.set("languages", websiteDetails.supported_locales);
-
-    var importExportTabsList = this.modelFor("admin").setup.get('importExportTabsList');
-    controller.set("tabsList",importExportTabsList);
-    var activeTabObject = importExportTabsList.findBy("tabValue",activeTabName) || importExportTabsList[0];
-    controller.set("activeTabObject", activeTabObject);
-    // var importUrl = activeTabObject.importUrl;
+    
+    activeTabName = "properties";
 
     var tabsWebsiteComponent = "tabs-io/" + activeTabName + "-tab";
     controller.set("tabs-io-component", tabsWebsiteComponent);
