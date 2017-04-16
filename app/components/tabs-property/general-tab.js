@@ -56,7 +56,6 @@ export default TabWithForm.extend({
   },
   currencyFieldKeys: function() {
     var clientSetup = this.get("clientSetup");
-    debugger;
     return clientSetup.currencyFieldKeys;
   }.property("clientSetup"),
 

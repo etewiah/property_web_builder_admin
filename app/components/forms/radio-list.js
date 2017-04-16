@@ -32,23 +32,12 @@ export default Ember.Component.extend({
       });
     },
   },
-  // fieldOptionObjects: function() {
-  //   var fieldOptionObjects = [];
-  //   // var displayValue = this.get("resourceObject." + this.fieldDetails.fieldName) || "";
-  //   this.get("fieldOptions").forEach(function(fieldOption) {
-  //     // if (fieldOption.value === displayValue.toString()) {
-  //     //   fieldOption.checked = true;
-  //     // } else {
-  //     //   fieldOption.checked = false;
-  //     // }
-  //     var fieldOptionObject = Ember.Object.create(fieldOption);
-  //     // this.get("i18n").t(option).string || "Unknown";
-  //     fieldOptionObjects.push(fieldOptionObject);
-  //   }.bind(this));
-
-
-  //   return fieldOptionObjects.sortBy("label");
-  // }.property("fieldOptions"),
+  shouldShowHeader: function() {
+    if (this.get("hideHeader")) {
+      return false;
+    }
+    return (this.get("fieldDetails.headerTextTKey"));
+  }.property("fieldDetails"),
 
 
   setupComponent: function() {
