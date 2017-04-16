@@ -1,14 +1,14 @@
 import Ember from 'ember';
-// import AdminMeta from '../../../models/admin_meta';
+import MlsConnector from "../../../../models/mls-connector";
 
 export default Ember.Route.extend({
   actions: {
   },
 
-  // model(params) {
-  //   // setupController will not get called if model does not change
-  //   return params;
-  // },
+  model(params) {
+    // setupController will not get called if model does not change
+    return MlsConnector.getAll();
+  },
 
 
   setupController(controller, model) {
@@ -19,7 +19,7 @@ export default Ember.Route.extend({
     controller.set("model", model);
     
     var importPropsComponent = "io/csv-importer";
-    if (activeTabName.toLowerCase().includes("mls")) {
+    if (activeTabName.includes("mls")) {
       importPropsComponent = "io/mls-importer";
     }
     controller.set("importerComponent", importPropsComponent);
