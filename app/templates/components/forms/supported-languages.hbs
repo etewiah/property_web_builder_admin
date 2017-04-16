@@ -16,6 +16,9 @@
           {{t fieldDetails.labelTextTKey }}
         </strong>
       </label>
+    {{#if fieldDetails.isNotComplete}}
+      <div>Warning: Support for this language is not complete</div>
+    {{/if}}
     </div>
     {{#if fieldDetails.value}}
     <div class="m-l-15">

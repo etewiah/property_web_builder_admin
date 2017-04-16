@@ -1,27 +1,22 @@
 <div role="tabpanel" class="tab-pane">
   <div class="row">
     {{partial "partials/manage-changes-buttons" }}
-
     <div class="col-sm-4">
-{{!--       <h4>{{t currencyField.headerTextTKey }}</h4>
-      <div class="alert alert-info alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true"></span></button><i class="fa fa-lg fa-info"></i> {{t "info.defaultCurrency" }}  
-      </div> --}}
-      {{forms/radio-list  resetTrigger=resetTrigger alertInfo="info.defaultCurrency"
-    valueChangedAction="checkDirtyState"  fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys }}
+      <h3>{{t "inTabLabels.supportedLanguages"}}</h3> {{forms/supported-languages resetTrigger=resetTrigger languageFields=availableLocaleFields supportedLanguages=agencyDetails.supported_locales resourceObject=resourceObject valueChangedAction="checkDirtyState" }}
+      <div>
+        <p>If you need another language, please mention it <a href="https://github.com/etewiah/property_web_builder/issues/4">here.</a> </p>
+      </div>
     </div>
     <div class="col-sm-4">
-{{!--       <h4>{{t areaUnitField.headerTextTKey }}</h4>
-      <div class="alert alert-info alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true"></span></button><i class="fa fa-lg fa-info"></i> {{t "info.defaultAreaUnit" }}  
-      </div> --}}
-      {{forms/radio-list  resetTrigger=resetTrigger alertInfo="info.defaultAreaUnit"
-    valueChangedAction="checkDirtyState"  fieldDetails=areaUnitField resourceObject=resourceObject fieldOptions=areaUnitFieldKeys }}
+      <h4>{{t currencyField.headerTextTKey }}</h4> 
+      {{forms/radio-list resetTrigger=resetTrigger alertInfo="info.defaultCurrency" valueChangedAction="checkDirtyState" fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys }}
     </div>
     <div class="col-sm-4">
-      <h3>{{t "inTabLabels.supportedLanguages"}}</h3>
-      {{forms/supported-languages resetTrigger=resetTrigger  languageFields=availableLocaleFields supportedLanguages=agencyDetails.supported_locales resourceObject=resourceObject
-      valueChangedAction="checkDirtyState" }}
+      {{!--
+      <h4>{{t areaUnitField.headerTextTKey }}</h4>
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true"></span></button><i class="fa fa-lg fa-info"></i> {{t "info.defaultAreaUnit" }}
+      </div> --}} {{forms/radio-list resetTrigger=resetTrigger alertInfo="info.defaultAreaUnit" valueChangedAction="checkDirtyState" fieldDetails=areaUnitField resourceObject=resourceObject fieldOptions=areaUnitFieldKeys }}
     </div>
     {{partial "partials/manage-changes-buttons" }}
   </div>
