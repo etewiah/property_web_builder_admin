@@ -6,17 +6,16 @@ var MlsConnector = Ember.Object.extend({
 });
 
 MlsConnector.reopenClass({
-  getProperties: function(mlsDetails, complete, error) {
-    var apiUrl = "/import/mls";
+  createProperties: function(properties, complete, error) {
+    var apiUrl = "/api/v1/properties/bulk_create";
+    var propertiesJSON = JSON.stringify(properties);
     return $.ajax(apiUrl, {
-      type: 'GET',
+      type: 'POST',
       dataType: 'json',
       data: {
-        mls_details: mlsDetails
+        propertiesJSON: propertiesJSON
       }
     }).then(function(result) {
-      // debugger;
-      // return MlsConnector.create(result);
       if (complete) {
         complete(result);
       }
@@ -26,6 +25,25 @@ MlsConnector.reopenClass({
       }
     });
   },
+  getProperties: function(mlsDetails, complete, error) {
+    var apiUrl = "/import/mls";
+    return $.ajax(apiUrl, {
+      type: 'GET',
+      dataType: 'json',
+      data: {
+        mls_details: mlsDetails
+      }
+    }).then(function(result) {
+      if (complete) {
+        complete(result);
+      }
+    }.bind(this), function(result) {
+      if (error) {
+        error(result);
+      }
+    });
+  },
+  // below will get metadata about different MLSs
   getAll: function() {
     var apiUrl = "/api/v1/mls";
     return $.ajax(apiUrl, {

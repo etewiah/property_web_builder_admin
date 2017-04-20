@@ -13,6 +13,7 @@ export default DS.Transform.extend({
 
   serialize: function(deserialized) {
     debugger;
+    // apr 2017 - can be removed??
     return deserialized * 100;
   }
 });
