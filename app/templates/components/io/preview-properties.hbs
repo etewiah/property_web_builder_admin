@@ -73,29 +73,5 @@
     </table>
   </div>
   <div class="col-sm-12">
-    {{#if importAttempted}} 
-    {{#if success}}
-      <p>Properties successfully imported
-      <a class="btn" {{action "ackResult" properties}}>
-      OK
-      </a>
-      </p>
-      {{else}}
-      <p>Sorry, there has been an error importing the properties
-      <a class="btn" {{action "ackResult" properties}}>
-      OK
-      </a>
-      </p>
-    {{/if}}
-
-    {{else}}
-    <p><a class="btn btn-edfile" {{action "importAllProperties" properties}}>
-    Import properties into this website
-    </a>
-      <a class="btn" {{action "cancelImport" properties}}>
-    Cancel import
-    </a>
-    </p>
-    {{/if}}
   </div>
 </div>

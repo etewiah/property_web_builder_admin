@@ -38,10 +38,12 @@ export default Ember.Component.extend({
     },
     ackResult: function(properties) {
       this.set("properties", null);
+      this.set("showPreviewProps", false);
     },
     cancelImport: function(properties) {
       this.set("importing", false);
       this.set("properties", null);
+      this.set("showPreviewProps", false);
     },
   },
 

@@ -1,11 +1,16 @@
 import Ember from 'ember';
-// import TabWithForm from "../base/tab-with-form";
 
-// export default TabWithForm.extend({
-// no need for TabWithForm here
 export default Ember.Component.extend({
-
+  onPropsRetrieved: function(){
+    var propsRetrieved = this.get("propsRetrieved");
+    if (propsRetrieved) {
+      this.set("showPreviewProps", true);
+    }
+  }.observes("propsRetrieved"),
   actions: {
-    // optionsChanged: function() {}
+    ackResult: function() {
+      this.set("propsRetrieved", null);
+      this.set("showPreviewProps", false);
+    },
   }
 });

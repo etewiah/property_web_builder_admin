@@ -4,6 +4,15 @@
   </div>
   <div class="col-sm-5">
     <div class="row">
+    {{#if retrieving}}
+      <div class="col-sm-6">
+      <p>Retrieving data</p>
+      </div>
+      <div class="col-sm-6">
+      <p><i class='fa fa-spinner fa-spin fa-3x fa-fw'></i><span class='sr-only'>
+      Retrieving ...</span></p>
+      </div>
+    {{else}}
       <div class="col-sm-12" style="display:none;">
         <label class="fg-label m-t-20">RETS Login URL:</label>
         {{input value=mlsDetails.login_url type="text" class="input-sm form-control fg-input translation-input" }}
@@ -18,20 +27,24 @@
       </div>
       <div class="col-sm-12 m-t-20">
         {{#if hasError}}
-        <p>Sorry, there has been an error retrieving the MLS data.
-        </p>
-        <p><a href="https://github.com/etewiah/property_web_builder/issues/2">Help us improve PropertyWebBuilder by telling us about the MLS you tried to use here.</a></p>
-        <p>
-          <a class="btn btn-edfile" {{action "ackError"}}>
-      OK
-      </a>
-        </p>
+          <p>Sorry, there has been an error retrieving the MLS data.
+          </p>
+          <p><a href="https://github.com/etewiah/property_web_builder/issues/2">Help us improve PropertyWebBuilder by telling us about the MLS you tried to use here.</a>
+          </p>
+          <p>
+            <a class="btn btn-edfile" {{action "ackError"}}>
+            OK
+            </a>
+          </p>
         {{else}}
-        <p style="" class=""><a class="btn btn-edfile" {{action "getMlsData"}}>
-    Retrieve from MLS
-    </a></p>
+        <p style="" class="">
+          <a class="btn btn-edfile" {{action "getMlsData"}}>
+          Retrieve from MLS
+          </a>
+        </p>
         {{/if}}
       </div>
+    {{/if}}
     </div>
   </div>
 </div>

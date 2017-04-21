@@ -1,7 +1,14 @@
-{{#if propsRetrieved}}
+{{#if showPreviewProps}}
 <div class="row">
   <div class="col-sm-12">
-    {{io/preview-properties properties=propsRetrieved  }}
+    {{#if propsRetrieved}}
+      {{io/preview-properties properties=propsRetrieved  showPreviewProps=showPreviewProps }}
+      {{else}}
+      <p>Sorry, no properties found</p>
+      <a class="btn" {{action "ackResult" }}>
+      OK
+      </a>
+   {{/if}}
   </div>
 </div>
 {{else}}

@@ -37,10 +37,12 @@ export default Ember.Component.extend({
       this.set("mlsDetails", mlsSelectionObject);
     },
     getMlsData: function() {
+      this.set("retrieving", true);
       // var propsRetrieved = this.get("propsRetrieved") || [];
       var that = this;
       MlsConnector.getProperties(this.get("mlsDetails"),
         function(properties) {
+          that.set("retrieving", false);
           // var prop = Property.create(properties);
           var store = that.get("store");
           var propsRetrieved = that.get("propsRetrieved") || [];
@@ -52,6 +54,7 @@ export default Ember.Component.extend({
         },
         function(error) {
           that.set("hasError", true);
+          that.set("retrieving", false);
         });
     },
     ackError: function() {
