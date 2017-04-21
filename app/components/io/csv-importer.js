@@ -40,8 +40,9 @@ export default Ember.Component.extend({
       var store = this.get("store");
       var propsRetrieved = this.get("propsRetrieved") || [];
       properties.forEach(function(property) {
-        var prop = store.createRecord("property", property);
-        propsRetrieved.addObject(prop);
+        // var prop = store.createRecord("property", property);
+        // propsRetrieved.addObject(prop);
+        propsRetrieved.addObject(property);
       })
       this.set("propsRetrieved", propsRetrieved);
     }

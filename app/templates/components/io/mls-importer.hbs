@@ -4,7 +4,7 @@
   </div>
   <div class="col-sm-5">
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-12" style="display:none;">
         <label class="fg-label m-t-20">RETS Login URL:</label>
         {{input value=mlsDetails.login_url type="text" class="input-sm form-control fg-input translation-input" }}
       </div>
@@ -14,7 +14,7 @@
       </div>
       <div class="col-sm-12">
         <label class="fg-label m-t-20">RETS Password:</label>
-        {{input value=mlsDetails.username type="text" class="input-sm form-control fg-input translation-input" }}
+        {{input value=mlsDetails.password type="text" class="input-sm form-control fg-input translation-input" }}
       </div>
       <div class="col-sm-12 m-t-20">
         {{#if hasError}}

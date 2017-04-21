@@ -27,12 +27,11 @@ MlsConnector.reopenClass({
   },
   getProperties: function(mlsDetails, complete, error) {
     var apiUrl = "/import/mls";
+    // just noticed that the data below gets sent as a querystring:
     return $.ajax(apiUrl, {
       type: 'GET',
       dataType: 'json',
-      data: {
-        mls_details: mlsDetails
-      }
+      data: mlsDetails
     }).then(function(result) {
       if (complete) {
         complete(result);

@@ -25,7 +25,12 @@
     value=selectValue.value
     groupValue=displayValue
     changed="radioChanged"}}
-      <i class="input-helper"></i> {{t selectValue.labelTextTKey }}
+      <i class="input-helper"></i> 
+      {{#if selectValue.labelTextTKey}}
+        {{t selectValue.labelTextTKey }}
+      {{else}}
+        {{ selectValue.labelText }}
+      {{/if}}
     </label>
   </div>
 {{/each}}

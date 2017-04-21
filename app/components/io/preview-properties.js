@@ -12,7 +12,6 @@ export default Ember.Component.extend({
       var that = this;
       this.set("importing", true);
 
-      // debugger;
       // MlsConnector below will also be called to create 
       // props from csv import etc...
       MlsConnector.createProperties(properties,
@@ -20,7 +19,6 @@ export default Ember.Component.extend({
           that.set("importAttempted", true);
           that.set("importing", false);
           that.set("importedItems", result);
-          // debugger;
           that.set("success", true);
         },
         function(error) {

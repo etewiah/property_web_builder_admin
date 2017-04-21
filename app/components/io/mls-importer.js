@@ -9,11 +9,10 @@ export default Ember.Component.extend({
   // },
   optionsObject: function() {
     var defaultMls = this.get("availableMLSs")[0];
-    this.set('mlsDetails', defaultMls.details);
+    this.set('mlsDetails', defaultMls);
     var optionsObject = Ember.Object.create({
       selected_option: defaultMls.value
     });
-    // debugger;
     return optionsObject;
   }.property(),
   optionsFieldKeys: function() {
@@ -35,8 +34,7 @@ export default Ember.Component.extend({
       var mlsSelectionValue = this.get('optionsObject.selected_option');
       var availableMLSs = this.get("availableMLSs");
       var mlsSelectionObject = availableMLSs.findBy("value", mlsSelectionValue);
-      // debugger;
-      this.set("mlsDetails", mlsSelectionObject.details);
+      this.set("mlsDetails", mlsSelectionObject);
     },
     getMlsData: function() {
       // var propsRetrieved = this.get("propsRetrieved") || [];
