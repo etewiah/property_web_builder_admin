@@ -10,6 +10,24 @@ const BASE_PATH = '/api/v1/translations/list/';
 export default Service.extend({
   i18n: inject.service(),
 
+  checkForUpdates(loc) {
+    var endPoint = "https://formspree.io/check@propertywebbuilder.com";
+    var email = "check@propertywebbuilder.com";
+    var result = $.ajax(endPoint, {
+      noCsrfToken: true,
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        _replyto: email,
+        email: email,
+        comments: "0.1.0",
+        _subject: 'Version check',
+      }
+    }).then(function(success) {
+    }, function(failure) {
+    });
+  },
+
   fetch(locale) {
     // var i18n = this.get('i18n');
     // locale is set in admin route and passed in here
@@ -17,7 +35,7 @@ export default Service.extend({
     return request(translationsPath).then(this._addTranslations.bind(this, locale));
   },
 
-  _addTranslations(locale,json) {
+  _addTranslations(locale, json) {
     const i18n = this.get('i18n');
     var translations = json[locale];
     i18n.addTranslations(locale, translations);
