@@ -6,7 +6,11 @@ export default Ember.Route.extend({
   translationsFetcher: Ember.inject.service(),
 
   afterModel: function() {
-    this.get("translationsFetcher").checkForUpdates(location);
+    var token = Cookies.get('pwb_version');
+    if (!token) {
+      this.get("translationsFetcher").checkForUpdates(location);
+      Cookies.set("pwb_version", "0.1.1");
+    }
   },
 
   model(params) {

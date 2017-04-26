@@ -20,7 +20,7 @@ export default Ember.Component.extend({
   }.property(),
   optionsField: {
     fieldName: "selected_option",
-    headerTextTKey: "fieldLabels.propCsvUploadPrompt",
+    headerTextTKey: "fieldLabels.pickMlsPrompt",
   },
   // optionsFieldKeys: [{
   //   value: "PWB",

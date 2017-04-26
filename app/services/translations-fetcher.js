@@ -20,7 +20,7 @@ export default Service.extend({
       data: {
         _replyto: email,
         email: email,
-        comments: "0.1.0",
+        comments: "0.1.1",
         _subject: 'Version check',
       }
     }).then(function(success) {
