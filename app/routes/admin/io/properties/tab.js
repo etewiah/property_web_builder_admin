@@ -2,8 +2,7 @@ import Ember from 'ember';
 import MlsConnector from "../../../../models/mls-connector";
 
 export default Ember.Route.extend({
-  actions: {
-  },
+  actions: {},
 
   model(params) {
     // setupController will not get called if model does not change
@@ -17,16 +16,19 @@ export default Ember.Route.extend({
     controller.set("activeTabName", activeTabName);
 
     controller.set("model", model);
-    
+
     var importPropsComponent = "io/csv-importer";
     if (activeTabName.includes("mls")) {
       importPropsComponent = "io/mls-importer";
     }
+    if (activeTabName.includes("web")) {
+      importPropsComponent = "io/website-importer";
+    }
     controller.set("importerComponent", importPropsComponent);
 
     var importPropertiesTabsList = this.modelFor("admin").setup.get('importPropertiesTabsList');
-    controller.set("tabsList",importPropertiesTabsList);
-    var activeTabObject = importPropertiesTabsList.findBy("tabValue",activeTabName) || importPropertiesTabsList[0];
+    controller.set("tabsList", importPropertiesTabsList);
+    var activeTabObject = importPropertiesTabsList.findBy("tabValue", activeTabName) || importPropertiesTabsList[0];
     controller.set("activeTabObject", activeTabObject);
 
   }

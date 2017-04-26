@@ -1,11 +1,8 @@
-// TODO - rename file to select_values
-
 var MlsConnector = Ember.Object.extend({
-
-
 });
 
 MlsConnector.reopenClass({
+  // TODO - rename below to bulkCreate and move to property model
   createProperties: function(properties, complete, error) {
     var apiUrl = "/api/v1/properties/bulk_create";
     var propertiesJSON = JSON.stringify(properties);
