@@ -11,7 +11,7 @@
       </div>
     {{else}}
       <div class="col-sm-12" style="">
-        <label class="fg-label m-t-20">Website URL:</label>
+        <label class="fg-label m-t-20">Webpage URL:</label>
         {{input value=websiteDetails.url type="text" class="input-sm form-control fg-input translation-input" }}
       </div>
 
@@ -19,7 +19,7 @@
         {{#if hasError}}
           <p>Sorry, there has been an error retrieving the webpage data.
           </p>
-          <p><a href="https://github.com/etewiah/property_web_builder/issues/2">Help us improve PropertyWebBuilder by telling us about the webpage you tried to use here.</a>
+          <p><a href="https://github.com/etewiah/property_web_builder/issues/13">Help us improve PropertyWebBuilder by telling us about the webpage you tried to use here.</a>
           </p>
           <p>
             <a class="btn btn-edfile" {{action "ackError"}}>
@@ -31,6 +31,9 @@
           <a class="btn btn-edfile" {{action "getWebpageData"}}>
           Retrieve from webpage
           </a>
+        </p>
+        <p><a href="https://github.com/etewiah/property_web_builder/issues/13">
+        This is an experimental feature. Help us improve it by giving feedback here.</a>
         </p>
         {{/if}}
       </div>

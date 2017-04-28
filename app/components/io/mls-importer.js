@@ -5,8 +5,40 @@ import Property from "../../models/property";
 export default Ember.Component.extend({
   store: Ember.inject.service('store'),
   // classNames: ['form-group', 'fg-float'],
-  // mlsDetails: {
-  // },
+  // updateValue: Ember.observer('mlsDetails', function() {
+  // }),
+  validateInput: function() {
+    var mlsDetails = this.get("mlsDetails");
+    var constraints = {
+      "mlsDetails.login_url": {
+        presence: {
+          message: "Please fill in all fields"
+        }
+      },
+      "mlsDetails.username": {
+        presence: {
+          message: "Please fill in all fields"
+        }
+      },
+      "mlsDetails.password": {
+        presence: {
+          message: "Please fill in all fields"
+        }
+      }
+    };
+
+    var validationErrors = validate({ mlsDetails: mlsDetails }, constraints, {
+      fullMessages: false
+    });
+    return validationErrors;
+    // debugger;
+    // if (validationErrors) {
+    //   this.set("validationErrors", validationErrors.mlsDetails);
+    // } else {
+    //   this.set("validationErrors", []);
+    // }
+
+  },
   optionsObject: function() {
     var defaultMls = this.get("availableMLSs")[0];
     this.set('mlsDetails', defaultMls);
@@ -37,6 +69,15 @@ export default Ember.Component.extend({
       this.set("mlsDetails", mlsSelectionObject);
     },
     getMlsData: function() {
+      var validationErrors = this.validateInput();
+      // debugger;
+      if (validationErrors) {
+        this.set("validationErrors", ["Please fill in all fields"]);
+        return;
+      }
+      else{
+        this.set("validationErrors", []);
+      }
       this.set("retrieving", true);
       // var propsRetrieved = this.get("propsRetrieved") || [];
       var that = this;
