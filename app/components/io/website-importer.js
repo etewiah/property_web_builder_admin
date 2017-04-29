@@ -24,6 +24,29 @@ export default Ember.Component.extend({
   },
   actions: {
     getWebpageData: function() {
+      var websiteDetails = this.get("websiteDetails");
+      var constraints = {
+        "url": {
+          presence: {
+            message: "Please enter a url."
+          },
+          url: {
+            message: "Please enter a valid url."
+          }
+        }
+      };
+
+      var validationErrors = validate( websiteDetails, constraints, {
+        fullMessages: false
+      });
+      if (validationErrors) {
+        this.set("validationErrors", validationErrors.url);
+        return;
+      } else {
+        this.set("validationErrors", []);
+      }
+
+
       this.set("retrieving", true);
       // var propsRetrieved = this.get("propsRetrieved") || [];
       var that = this;
