@@ -45,6 +45,34 @@ export default TabWithForm.extend(OnReadyMixin, {
     fieldName: "default_currency",
   },
 
+  defaultLocaleField: {
+    headerTextTKey: "fieldLabels.defaultLocale",
+    fieldName: "default_client_locale",
+  },
+  // defaultLocaleFieldKeys: [{
+  //   value: "sqmt",
+  //   labelTextTKey: "sqmt",
+  // }, {
+  //   value: "sqft",
+  //   labelTextTKey: "sqft",
+  // }],
+
+  defaultLocaleFieldKeys: function() {
+    var supportedLocales = this.get("resourceObject.supported_locales");
+    var defaultLocaleFieldKeys = [];
+    supportedLocales.forEach(function(locale){
+      var ltk = locale.split("-")[0];
+      defaultLocaleFieldKeys.push({
+        value: locale,
+        labelTextTKey: ltk
+      });
+    })
+    var defaultLocale = this.get("resourceObject.default_client_locale");
+    if (!supportedLocales.includes(defaultLocale)) {
+      this.set("resourceObject.default_client_locale", supportedLocales[0]);
+    }
+    return defaultLocaleFieldKeys;
+  }.property("resourceObject.supported_locales"),
 
   availableLocaleFields: function() {
     var clientSetup = this.get("clientSetup");

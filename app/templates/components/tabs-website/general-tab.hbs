@@ -10,12 +10,14 @@
       </div>
     </div>
     <div class="col-sm-4">
-      <h3>{{t currencyField.headerTextTKey }}</h3> 
-      {{forms/radio-list resetTrigger=resetTrigger alertInfo="info.defaultCurrency" valueChangedAction="checkDirtyState" fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys hideHeader=true }}
-    </div>
-    <div class="col-sm-4">
+      <h3>{{t defaultLocaleField.headerTextTKey }}</h3> 
+      {{forms/radio-list resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=defaultLocaleField resourceObject=resourceObject fieldOptions=defaultLocaleFieldKeys hideHeader=true }}
       <h3>{{t areaUnitField.headerTextTKey }}</h3>
       {{forms/radio-list resetTrigger=resetTrigger alertInfo="info.defaultAreaUnit" valueChangedAction="checkDirtyState" fieldDetails=areaUnitField resourceObject=resourceObject fieldOptions=areaUnitFieldKeys hideHeader=true }}
+    </div>
+    <div class="col-sm-4">
+      <h3>{{t currencyField.headerTextTKey }}</h3> 
+      {{forms/radio-list resetTrigger=resetTrigger alertInfo="info.defaultCurrency" valueChangedAction="checkDirtyState" fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys hideHeader=true }}
     </div>
     {{partial "partials/manage-changes-buttons" }}
   </div>
