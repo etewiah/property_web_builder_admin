@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Section from '../../../../models/section';
 import Theme from '../../../../models/theme';
 // path is actually /admin/website
 
@@ -43,8 +44,8 @@ export default Ember.Route.extend({
   // },
 
   model(params) {
-    if (params.tabName === "sections") {
-      return this.store.findAll("section");
+    if (params.tabName === "navigation") {
+      return Section.getAll();
     }
     if (params.tabName === "template") {
       return Theme.getAll();

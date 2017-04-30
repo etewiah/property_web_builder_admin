@@ -37,6 +37,8 @@ export default Ember.Component.extend({
       // but would make adding extra languages in the future tricky..
 
       var hasChanged = false;
+      // now figure out if values have changed from 
+      // that on the server
       newLocales.forEach(function(newLocale) {
         if (!serverValue.contains(newLocale)) {
           hasChanged = true;
@@ -73,61 +75,61 @@ export default Ember.Component.extend({
       }
     },
 
-    changeSupportedLanguage: function() {
-      var fieldName = "supported_locales";
-      var serverValue = this.get("serverValue");
+    // changeSupportedLanguage: function() {
+    //   var fieldName = "supported_locales";
+    //   var serverValue = this.get("serverValue");
 
-      var newLocales = [];
-      // take radioSets has which have been updated
-      var radioSets = this.get("localesArrayWithValues");
-      radioSets.forEach(function(radioSet) {
-        // convert to simple array suitable for server
-        if (radioSet.value) {
-          newLocales.push(radioSet.fieldName);
-        }
-      });
-      // and set this on server field
-      this.set("resourceObject.supported_locales", newLocales);
-      // could have used radio-button friendly format to save to server
-      // but would make adding extra languages in the future tricky..
+    //   var newLocales = [];
+    //   // take radioSets has which have been updated
+    //   var radioSets = this.get("localesArrayWithValues");
+    //   radioSets.forEach(function(radioSet) {
+    //     // convert to simple array suitable for server
+    //     if (radioSet.value) {
+    //       newLocales.push(radioSet.fieldName);
+    //     }
+    //   });
+    //   // and set this on server field
+    //   this.set("resourceObject.supported_locales", newLocales);
+    //   // could have used radio-button friendly format to save to server
+    //   // but would make adding extra languages in the future tricky..
 
-      var hasChanged = false;
-      newLocales.forEach(function(newLocale) {
-        if (!serverValue.contains(newLocale)) {
-          hasChanged = true;
-        }
-      });
-      serverValue.forEach(function(sv) {
-        if (!newLocales.contains(sv)) {
-          hasChanged = true;
-        }
-      });
+    //   var hasChanged = false;
+    //   newLocales.forEach(function(newLocale) {
+    //     if (!serverValue.contains(newLocale)) {
+    //       hasChanged = true;
+    //     }
+    //   });
+    //   serverValue.forEach(function(sv) {
+    //     if (!newLocales.contains(sv)) {
+    //       hasChanged = true;
+    //     }
+    //   });
 
-      if (newLocales.length > 0) {
-        this.set("errors", []);
-        // this.set("supportedLanguages", newLocales);
-        // this.sendAction("valueChangedAction", {});
-        this.sendAction("valueChangedAction", {
-          hasErrors: false,
-          hasChanged: hasChanged,
-          fieldName: fieldName,
-          // below was add for extras which in case of cancelacion have to be unset individually
-          // but has turned out useful for agency which is not an ember-data model
-          originalValue: serverValue
-        });
-      } else {
-        this.set("errors", ["errors.languageRequired"]);
+    //   if (newLocales.length > 0) {
+    //     this.set("errors", []);
+    //     // this.set("supportedLanguages", newLocales);
+    //     // this.sendAction("valueChangedAction", {});
+    //     this.sendAction("valueChangedAction", {
+    //       hasErrors: false,
+    //       hasChanged: hasChanged,
+    //       fieldName: fieldName,
+    //       // below was add for extras which in case of cancelacion have to be unset individually
+    //       // but has turned out useful for agency which is not an ember-data model
+    //       originalValue: serverValue
+    //     });
+    //   } else {
+    //     this.set("errors", ["errors.languageRequired"]);
 
-        this.sendAction("valueChangedAction", {
-          hasErrors: true,
-          hasChanged: hasChanged,
-          fieldName: fieldName,
-          // below was add for extras which in case of cancelacion have to be unset individually
-          // but has turned out useful for agency which is not an ember-data model
-          originalValue: serverValue
-        });
-      }
-    }
+    //     this.sendAction("valueChangedAction", {
+    //       hasErrors: true,
+    //       hasChanged: hasChanged,
+    //       fieldName: fieldName,
+    //       // below was add for extras which in case of cancelacion have to be unset individually
+    //       // but has turned out useful for agency which is not an ember-data model
+    //       originalValue: serverValue
+    //     });
+    //   }
+    // }
   },
   // each time I save to the server, I increment resetTrigger value
   resetOriginalValue: Ember.observer('resetTrigger', function() {
@@ -168,19 +170,6 @@ export default Ember.Component.extend({
       localesArrayWithValues.push(fieldObject);
     });
     return localesArrayWithValues;
-  },
-
-  // languageOptions: function() {
-  //   var supportedLanguages = this.get("supportedLanguages");
-  //   var languageOptions = {};
-  //   supportedLanguages.forEach(function(language) {
-  //     languageOptions[language] = true;
-  //   });
-  //   // languageOptions: {
-  //   //   en: true,
-  //   //   ca: false
-  //   // }
-  //   return languageOptions;
-  // }.property()
+  }
 
 });

@@ -1,0 +1,23 @@
+{{#if errors}} {{#each errors as |error|}}
+<div class="fg-float has-error">
+  <div class="help-block has-error">{{t error }}</div>
+</div>
+{{/each}} 
+{{/if}}
+<div>
+  {{#each siteSections.items as |sectionDetails|}}
+  <div class="fg-line m-b-15">
+    <div class="checkbox m-b-15">
+      <label>
+        <input type="checkbox" checked={{sectionDetails.visible}}
+        onClick={{action "changeSupportedLocale" sectionDetails }}>
+        <i class="input-helper"></i>
+        <strong>
+          {{ sectionDetails.link_key }}
+        </strong>
+      </label>
+    </div>
+    <br>
+  </div>
+  {{/each}} 
+</div>

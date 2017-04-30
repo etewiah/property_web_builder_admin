@@ -35,24 +35,4 @@
     <br>
   </div>
   {{/each}} 
-  {{#each localesArrayWithValues as |fieldDetails|}}
-{{!--   <div class="fg-line">
-    {{#if fieldDetails.labelText}}
-    <label class="fg-label arriba_label">{{fieldDetails.labelText }}</label>
-    {{else}}
-    <label class="fg-label arriba_label">{{t fieldDetails.labelTextTKey }}</label>
-    {{/if}}
-    <div class="fg-line">
-      <label class="radio radio-inline m-r-20">
-        {{radio-button radioClass="input-helper" value=true groupValue=fieldDetails.value changed="changeSupportedLanguage"}}
-        <i class="input-helper"></i> {{ t "yes" }}
-      </label>
-      <label class="radio radio-inline m-r-20">
-        {{radio-button radioClass="input-helper" value=false groupValue=fieldDetails.value changed="changeSupportedLanguage"}}
-        <i class="input-helper"></i> {{ t "no" }}
-      </label>
-    </div>
-    <br>
-  </div> --}}
-  {{/each}}
 </div>
