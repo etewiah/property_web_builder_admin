@@ -33,6 +33,11 @@ var Section = Ember.Object.extend({
         items: itemsString
       }
     }).then(function(result) {
+      // console.log(self);
+      var sortedItems = result.sortBy("sort_order");
+      // below has to be a deep copy so that changes to the original
+      // does not change them
+      self.set("pristineItems", sortedItems.copy(true));
       if (complete) {
         complete(result);
       }
@@ -55,10 +60,11 @@ Section.reopenClass({
         field_names: fieldNames
       }
     }).then(function(result) {
+      var sortedItems = result.sortBy("sort_order");
       // debugger;
       return Section.create({
-        items: result.sortBy("sort_order"),
-        pristineItems: result.copy(true)
+        items: sortedItems,
+        pristineItems: sortedItems.copy(true)
       });
       // return result;
     }.bind(this), function(error) {

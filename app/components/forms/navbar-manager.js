@@ -3,25 +3,28 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   classNames: ['form-group', 'fg-float'],
   actions: {
-    changeSupportedLocale: function(sectionDetails, ev) {
+    changeNavbarItem: function(sectionDetails, ev) {
+      var visibilityFieldName = this.get("visibilityFieldName");
       if (sectionDetails && ev) {
         // checkbox does not bind to sectionDetails automatically
         // so has to be done manually here
-        Ember.set(sectionDetails, "visible", ev.target.checked);
+        Ember.set(sectionDetails, visibilityFieldName, ev.target.checked);
         // debugger;
       }
       var hasChanged = false;
-      var serverNavItems = this.get("serverNavItems");
-      var siteSections = this.get("siteSections");
+      var serverNavItems = this.get("siteSections.pristineItems");
+      var editableNavItems = this.get("siteSections.items");
 
       // below is pretty useless
-      // var diff = Ember.compare(serverNavItems, siteSections.items);
+      // var diff = Ember.compare(serverNavItems, editableNavItems);
       // https://github.com/DockYard/ember-changeset
       // would be nice to use above for this - when I get the time
       serverNavItems.forEach(function(sv) {
-        var itemChanged = sv.visible !== siteSections.items.findBy("id",sv.id).visible
-        // debugger;
-        if (itemChanged) {
+        // var itemChanged = sv[visibilityFieldName] !== editableNavItems.findBy("id",sv.id)[visibilityFieldName];
+        // 
+        var topNavItemChanged = sv["show_in_top_nav"] !== editableNavItems.findBy("id",sv.id)["show_in_top_nav"];
+        var footerItemChanged = sv["show_in_footer"] !== editableNavItems.findBy("id",sv.id)["show_in_footer"];
+        if (topNavItemChanged || footerItemChanged) {
           hasChanged = true;
         }
       });
@@ -47,13 +50,9 @@ export default Ember.Component.extend({
   //   this.set("localesArrayWithValues", localesArrayWithValues);
   // }),
 
-  setOriginalValue: function() {
-    this.set("serverNavItems", this.get("siteSections.items").copy(true));
-  }.on('init'),
-
-  // getLocalesArrayWithValues: function(supportedLocales) {
-  //   return this.get("siteSections");
-  // },
+  // setOriginalValue: function() {
+  //   this.set("serverNavItems", this.get("siteSections.items").copy(true));
+  // }.on('init'),
 
 
 });
