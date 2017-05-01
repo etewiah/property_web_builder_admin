@@ -47,6 +47,12 @@ export default DS.Model.extend({
   rawEn: DS.attr(),
   rawEs: DS.attr(),
   rawAr: DS.attr(),
+  rawFr: DS.attr(),
+  rawDe: DS.attr(),
+  rawRu: DS.attr(),
+  rawPt: DS.attr(),
+  rawIt: DS.attr(),
+  rawNl: DS.attr(),
   tag: DS.attr(),
   contentPhotos: DS.attr({
     dontSerialize: true
