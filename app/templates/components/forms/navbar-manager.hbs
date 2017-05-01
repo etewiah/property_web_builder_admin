@@ -1,13 +1,13 @@
+<div class="m-t-20">
 {{#if errors}} {{#each errors as |error|}}
 <div class="fg-float has-error">
   <div class="help-block has-error">{{t error }}</div>
 </div>
 {{/each}} 
 {{/if}}
-<div>
   {{#each siteSections.items as |sectionDetails|}}
-  <div class="fg-line m-b-15">
-    <div class="checkbox m-b-15">
+  <div class="fg-line m-b-5 m-t-0">
+    <div class="checkbox m-b-5">
       <label>
         {{#if (eq visibilityFieldName "show_in_top_nav")}}
         <input type="checkbox" checked={{sectionDetails.show_in_top_nav}}
@@ -20,11 +20,10 @@
         <i class="input-helper"></i>          
         {{/if}}
         <strong>
-          {{ sectionDetails.link_key }}
+          {{t sectionDetails.translation_key }}
         </strong>
       </label>
     </div>
-    <br>
   </div>
   {{/each}} 
 </div>

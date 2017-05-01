@@ -224,17 +224,17 @@ export default {
   },
 
   // labels with a tab:
-  "inTabLabels": {
-    "currency": "Currency",
-    "colors": "Colours",
-    "socialLinks": "Social Links",
-    "siteLayout": "Site Layout",
-    "colorPrimary": "Primary Color",
-    "colorSecondary": "Secondary Color",
-    "colorActions": "Actions Color",
-    "supportedLanguages": "Supported Languages",
-    "visibility": "Visibility"
-  },
+  // "inTabLabels": {
+  //   "currency": "Currency",
+  //   "colors": "Colours",
+  //   "socialLinks": "Social Links",
+  //   "siteLayout": "Site Layout",
+  //   "colorPrimary": "Primary Color",
+  //   "colorSecondary": "Secondary Color",
+  //   "colorActions": "Actions Color",
+  //   "supportedLanguages": "Supported Languages",
+  //   "visibility": "Visibility"
+  // },
 
   "siteLayout": {
     "wide": "Wide",
@@ -343,57 +343,6 @@ export default {
     // below for validatejs - will need to figure out a way to do interpolation:
     tooShortVjs: "is too short",
     notAUrlVjs: "is not a valid URL",
-  },
-  //fieldLabels.tituloIngles etc are on server side translations but no longer in use 
-  // some of these are in server side translations that come from seed file for each tenant
-  // "webContentLabels": {
-  //   "suffixAr": "in Arabic",
-  //   "suffixFr": "in French",
-  //   "suffixIt": "in Italian",
-  //   "suffixPt": "in Portuguese",
-  //   "suffixDe": "in German",
-  //   // "suffixEn": "en Inglés",
-  //   // "suffixEs": "en Español",
-  //   "privacyPolicy": "Privacy Policy",
-  //   "legalAdvice": "Legal Advice",
-  //   "landingcarousel": "Text for carousel image",
-  //   "cac1": "Column 1",
-  //   "cac2": "Column 2",
-  //   "cac3": "Column 3",
-  //   // "tagLine": "Lema"
-  //   // "landingPageHeroEs": "Contenido para pagina principal en Español"
-  // },
-  // "webContentSections": {
-  //   "legal": "Legal",
-  //   "general": "General",
-  //   "landingCarousel": "Landing Page Carousel",
-  //   "home": "Home",
-  //   "contentAreaCols": "Columns",
-  //   "sections": "Sections",
-  //   "info": {
-  //     "contentAreaCols": "Columns on the landing page giving an overview of the services you provide"
-  //   }
-  // }
+  }
 };
 
-
-// "true": "Yes",
-// "false": "No",
-// "editproperty": "Edit a property",
-// "nuevoproperty": "Nuevo property",
-// "listadoproperties": "Listado de properties",
-
-// "webContentLabels": {
-//   "suffixEn": "en Inglés",
-//   "suffixEs": "en Español",
-//   "landingPageHero": "Contenido para pagina principal",
-//   "aboutUs": "Sobre Nosotros",
-//   // "tagLine": "Lema"
-//   // "landingPageHeroEs": "Contenido para pagina principal en Español"
-// },
-// "webContentSections": {
-//   "home": "Inicio",
-//   "aboutUs": "Sobre Nosotros",
-//   "sell": "Vender",
-//   "tagLine": "Lema"
-// },

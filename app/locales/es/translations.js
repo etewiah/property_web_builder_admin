@@ -224,17 +224,17 @@ export default Ember.merge(Ember.copy(en), {
   },
 
   // labels with a tab:
-  "inTabLabels": {
-    "currency": "Currency",
-    "colors": "Colores",
-    "socialLinks": "Redes sociales",
-    "siteLayout": "Modo de visualización",
-    "colorPrimary": "Color principal",
-    "colorSecondary": "Color secundario",
-    "colorActions": "Color acciones",
-    "supportedLanguages": "Idiomas",
-    "visibility": "Visibilidad"
-  },
+  // "inTabLabels": {
+  //   "currency": "Currency",
+  //   "colors": "Colores",
+  //   "socialLinks": "Redes sociales",
+  //   "siteLayout": "Modo de visualización",
+  //   "colorPrimary": "Color principal",
+  //   "colorSecondary": "Color secundario",
+  //   "colorActions": "Color acciones",
+  //   "supportedLanguages": "Idiomas",
+  //   "visibility": "Visibilidad"
+  // },
 
   "siteLayout": {
     "wide": "Panorámico",
