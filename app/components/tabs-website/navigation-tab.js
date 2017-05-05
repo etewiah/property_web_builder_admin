@@ -9,12 +9,9 @@ export default TabWithForm.extend(OnReadyMixin, {
   changedFields: [],
 
 
-  // siteSections: function() {
-  //   // debugger;
-  //   // var clientSetup = this.get("clientSetup");
-  //   // return clientSetup.availableLocaleFields;
-  //   return this.get("contentResources");
-  // }.property("clientSetup"),
+  supportedLanguages: function() {
+    return this.get("websiteDetails.supported_locales");
+  }.property("websiteDetails.supported_locales"),
 
   setResourceObject: function() {
     // need to change below so manage-changes-buttons partial has

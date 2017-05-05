@@ -1,0 +1,35 @@
+<div class="col-sm-12" style="padding-bottom: 3%;">
+{{#unless isAdding}}
+  <button type="submit" class="btn btn-primary btn-sm m-b-10 waves-effect" 
+  data-toggle="tooltip" title="{{t "toolTips.addNewEntry"}}"
+      {{action "startAdding" }}><i class="fa fa-plus"></i> {{t "toolTips.addNewEntry"}}
+  </button>
+{{/unless}}
+
+{{#if isAdding}}
+  <div class="pull-left" style="">
+    <button type="submit" class="btn btn-sm m-b-10 waves-effect pull-right btn-save-translation" 
+      data-toggle="tooltip" title="{{t "cancel"}}"
+      {{action "cancelAdding" contentItem }}><i class="fa fa-times"></i>
+    </button>
+    <button type="submit" class="btn btn-primary btn-sm m-r-10 m-b-10 waves-effect pull-right btn-save-translation" 
+      data-toggle="tooltip" title="{{t "save"}}"
+      {{action "createNavLink" contentItem }}><i class="fa fa-check"></i>
+    </button>
+  </div>
+
+  {{#each supportedLanguages as |translation|}}
+    <div class="fg-line {{if translation.errors 'has-error'}} ">
+      <label class="fg-label arriba_label">{{t translation }}:</label>
+      {{input value=translation.i18n_value type="text"  class="input-sm form-control fg-input translation-input"  }}
+    </div>
+
+    {{#if translation.errors}}
+      {{#each translation.errors as |error|}}
+        <small class="help-block">{{ error }}</small>  
+      {{/each}}
+    {{/if}}
+  {{/each}}
+
+{{/if}}
+</div>

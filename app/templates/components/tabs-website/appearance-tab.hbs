@@ -97,7 +97,46 @@ below would prompt to save changes which I don't want now:
         </div>
         <label class="fg-label">{{t "inTabLabels.colorActions"}}</label>
       </div>
-    </div>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          {{spectrum-color-picker
+              showPalette=true
+              color=websiteDetails.style_variables.footer_bg_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+              palette='[["#e91b23","#563d7c"],["#3498db","#8ec449"],["#f1c40f","#d35400"]]'
+          }}
+        </div>
+        <label class="fg-label">{{t "inTabLabels.colorFooterBg"}}</label>
+      </div>
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          {{spectrum-color-picker
+              showPalette=true
+              color=websiteDetails.style_variables.footer_main_text_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+              palette='[["#fff","#ccc"],["#aaa","#707070"],["#333","#000"]]'
+          }}
+        </div>
+        <label class="fg-label">{{t "inTabLabels.colorFooterMainText"}}</label>
+      </div> 
+      <div class="form-group fg-float">
+        <div class="fg-line has- fg-toggled">
+          {{spectrum-color-picker
+              showPalette=true
+              color=websiteDetails.style_variables.footer_sec_text_color
+              onChange=(action "updateAppearance")
+              showInput=true
+              preferredFormat="hex3"
+              palette='[["#fff","#ccc"],["#aaa","#707070"],["#333","#000"]]'
+          }}
+        </div>
+        <label class="fg-label">{{t "inTabLabels.colorFooterSecText"}}</label>
+      </div>
+     </div>
 
     <div class="col-sm-12" style="display:none;">
     <h4>Raw CSS</h4>
