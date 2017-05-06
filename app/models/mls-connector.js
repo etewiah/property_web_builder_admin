@@ -1,3 +1,5 @@
+// TODO - rename as property-importer
+// and merge with scapper
 var MlsConnector = Ember.Object.extend({
 });
 

@@ -18,6 +18,9 @@ export default Ember.Route.extend({
     controller.set("model", model);
 
     var importPropsComponent = "io/csv-importer";
+    if (activeTabName.includes("api")) {
+      importPropsComponent = "io/api-importer";
+    }
     if (activeTabName.includes("mls")) {
       importPropsComponent = "io/mls-importer";
     }

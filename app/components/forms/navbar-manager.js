@@ -3,6 +3,9 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   classNames: ['form-group', 'fg-float'],
   actions: {
+    startAddNewLink: function(){
+      debugger;
+    },
     changeNavbarItem: function(sectionDetails, ev) {
       var visibilityFieldName = this.get("visibilityFieldName");
       if (sectionDetails && ev) {

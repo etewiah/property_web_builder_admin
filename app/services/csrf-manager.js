@@ -2,7 +2,9 @@
 
 import Ember from 'ember';
 
-export default Ember.Object.extend({
+// export default Ember.Object.extend({
+export default Ember.Service.extend({
+  isServiceFactory: true,
   onAjaxComplete: function() {
     var _this = this;
     this.fetchToken();
