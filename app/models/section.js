@@ -1,4 +1,4 @@
-import DS from 'ember-data';
+// import DS from 'ember-data';
 
 // export default DS.Model.extend({
 
@@ -12,14 +12,16 @@ import DS from 'ember-data';
 //     return ContentPhoto.create(contentPhotos[0]);
 //   }),
 // });
-// apr 2017 - can't get jsonapi to work so changing from above to below
+// apr 2017 - on serverside default jsonapi index action returns nothing
+ // so using Ember.Object instead of DS.Model which works with jsonapi..
 var Section = Ember.Object.extend({
+// might need to rename Section to NavItems (plural)
   rollbackAttributes: function(){
+    // this allows me to cancel changes in form
     this.set("items", this.get("pristineItems").copy("deep"));
-    // debugger;
   },
   save: function(complete, error) {
-    // var data = this.getProperties(Object.keys(this));
+    // this is not like a normal save where I only update a single item
     var itemsString = JSON.stringify(this.get("items"));
     // rails isn't very good about being passed json arrays
     // so sending string to be parsed server side

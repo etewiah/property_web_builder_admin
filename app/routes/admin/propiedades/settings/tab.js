@@ -29,9 +29,9 @@ export default Ember.Route.extend({
     }, {
       tabValue: "property-types",
       tabTitleKey: "translationsSections.propertyTypes"
-    }, {
-      tabValue: "property-origins",
-      tabTitleKey: "translationsSections.propertyOrigins"
+    // }, {
+    //   tabValue: "property-origins",
+    //   tabTitleKey: "translationsSections.propertyOrigins"
     }, {
       tabValue: "property-states",
       tabTitleKey: "translationsSections.propertyStates"
