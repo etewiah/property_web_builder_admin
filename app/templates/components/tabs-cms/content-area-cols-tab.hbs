@@ -1,0 +1,21 @@
+<div role="tabpanel" class="tab-pane">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true"></span></button><i class="fa fa-lg fa-info"></i> {{t "webContentSections.info.contentAreaCols" }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    {{#each contentResources as |contentAreaItem| }}
+    <div class="col-sm-4">
+      <div class="" style="">
+        {{#each languages as |languageSettings|}} {{forms/content-area languageSettings=languageSettings contentItem=contentAreaItem saveContentItemAction="saveContentItem"}} 
+        {{/each}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="row">
+  </div>
+</div>

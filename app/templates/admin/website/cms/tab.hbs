@@ -1,0 +1,11 @@
+<div role="tabpanel">
+  <ul data-tab-color="green" class="tab-nav" role="tablist" tabindex="1" style="overflow: hidden; outline: none;">
+    {{#each tabsList as |tab|}}
+    <li class={{if (eq tab.tabValue activeTabName) "active"}}>{{#link-to 'admin.website.content.tab' tab.tabValue}}{{t tab.tabTitleKey}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+  <div class="tab-content">
+      {{tabs-cms/content-area-cols-tab activeTabName=activeTabName contentResources=model languages=languages resourceObject=websiteDetails agencyDetails=websiteDetails }}
+
+  </div>
+</div>

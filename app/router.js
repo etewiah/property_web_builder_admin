@@ -88,6 +88,15 @@ Router.map(function() {
         });
       });
 
+      // below is for experiments with comfy mex sofa
+      this.route("cms", function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tabName"
+        });
+      });
       this.route("themes", function() {
         this.route("default", {
           path: "/"

@@ -48,24 +48,24 @@ export default Ember.Component.extend({
   //   this.setNewTranslationBatch();
   // }.on('init'),
 
-  setNewTranslationBatch: function() {
-    var locales = this.get("locales") || [];
-    debugger;
-    var newTranslationBatch = [];
-    locales.forEach(function(locale) {
-      var translation = AdminTranslations.create({
-        locale: locale,
-        i18n_value: ""
-      });
-      newTranslationBatch.push(translation);
-    });
-    this.set("newTranslationBatch", newTranslationBatch);
-  },
+  // setNewTranslationBatch: function() {
+  //   var locales = this.get("locales") || [];
+  //   debugger;
+  //   var newTranslationBatch = [];
+  //   locales.forEach(function(locale) {
+  //     var translation = AdminTranslations.create({
+  //       locale: locale,
+  //       i18n_value: ""
+  //     });
+  //     newTranslationBatch.push(translation);
+  //   });
+  //   this.set("newTranslationBatch", newTranslationBatch);
+  // },
 
   // when tabs change, just discard pending new item
   tabChanged: Ember.observer('batchKey', function() {
     debugger;
-    this.setNewTranslationBatch();
+    // this.setNewTranslationBatch();
     this.set("isAdding", false);
   }),
 
