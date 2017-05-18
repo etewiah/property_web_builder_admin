@@ -1,57 +1,48 @@
 import Ember from 'ember';
-import Theme from '../../../../models/theme';
-// path is actually /admin/website
 
 export default Ember.Route.extend({
   // tabsList: [{}],
   i18n: Ember.inject.service(),
-  actions: {
-    // https://guides.emberjs.com/v1.10.0/routing/preventing-and-retrying-transitions/
-    // below should stop users from navigating away from a page with outstanding changes
-    // - does not work for social_media links on admin/website/general route though
-    // because object being operated on there is not the model from this controller..
-    willTransition: function(transition) {
-        var contentResources = this.controller.get("model");
-        // debugger;
-        var hasDirtyRecords = false;
-        contentResources.forEach(function(resource) {
-          if (resource.get("hasDirtyAttributes")) {
-            hasDirtyRecords = true;
-          }
-        });
-        var i18n = this.get('i18n');
-        // if (hasDirtyRecords &&
-        //     !confirm("Are you sure you want to abandon progress?")) {
-        if (hasDirtyRecords) {
-          var message = i18n.t("alerts.navigatingFromChanges").toString();
-          sweetAlert(message);
-          transition.abort();
-        } else {
-          // Bubble the `willTransition` action so that
-          // parent routes can decide whether or not to abort.
-          return true;
-        }
-      }
-      // editProperty(property) {
-      //   this.transitionTo("admin.propiedades.editar", property.get('idPropiedad'))
-      // }
-  },
-
-  // serialize: function (model) {
-  //   debugger;
-  //   return { claim_id: model.get('cla_seq'), claim_sub: model.get('cla_sub') };
+  // actions: {
+  //   // https://guides.emberjs.com/v1.10.0/routing/preventing-and-retrying-transitions/
+  //   // below should stop users from navigating away from a page with outstanding changes
+  //   // - does not work for social_media links on admin/website/general route though
+  //   // because object being operated on there is not the model from this controller..
+  //   willTransition: function(transition) {
+  //       var contentResources = this.controller.get("model");
+  //       // debugger;
+  //       var hasDirtyRecords = false;
+  //       contentResources.forEach(function(resource) {
+  //         if (resource.get("hasDirtyAttributes")) {
+  //           hasDirtyRecords = true;
+  //         }
+  //       });
+  //       var i18n = this.get('i18n');
+  //       // if (hasDirtyRecords &&
+  //       //     !confirm("Are you sure you want to abandon progress?")) {
+  //       if (hasDirtyRecords) {
+  //         var message = i18n.t("alerts.navigatingFromChanges").toString();
+  //         sweetAlert(message);
+  //         transition.abort();
+  //       } else {
+  //         // Bubble the `willTransition` action so that
+  //         // parent routes can decide whether or not to abort.
+  //         return true;
+  //       }
+  //     }
   // },
+
 
   model(params) {
 
-    return this.store.query("webContent", {
+    return this.store.query("cmsPage", {
       filter: {
-        tag: params.tabName
+        label: "services"
       }
     });
-    // return this.store.findAll('webContent'); 
+    // return this.store.findAll('cmsPage'); 
     // return params.tabName;
-    // return this.store.findRecord('webContent', "test");
+    // return this.store.findRecord('cmsPage', "test");
   },
   // setupController will not get called if model does not change
   // eg if I returned a query that was not dependant on params....

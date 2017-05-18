@@ -7,11 +7,11 @@
     </div>
   </div>
   <div class="row">
-    {{#each contentResources as |contentAreaItem| }}
+    {{#each contentResources as |cmsPages| }}
     <div class="col-sm-4">
       <div class="" style="">
-        {{#each languages as |languageSettings|}} {{forms/content-area languageSettings=languageSettings contentItem=contentAreaItem saveContentItemAction="saveContentItem"}} 
-        {{/each}}
+        {{forms/cms-area contentItem=cmsPages 
+        }}
       </div>
     </div>
     {{/each}}
