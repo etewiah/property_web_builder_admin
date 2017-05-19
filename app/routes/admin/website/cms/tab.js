@@ -34,10 +34,11 @@ export default Ember.Route.extend({
 
 
   model(params) {
-
+    var currentSection = this.modelFor("admin.website.cms");
+    var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", params.tabName);
     return this.store.query("cmsPage", {
       filter: {
-        label: "services"
+        label: cmsPartInfo.label
       }
     });
     // return this.store.findAll('cmsPage'); 
@@ -54,18 +55,14 @@ export default Ember.Route.extend({
     controller.set("model", model);
 
     var websiteDetails = this.modelFor("admin").websiteDetails;
-    controller.set("websiteDetails", websiteDetails);
-
-    // before I would render all the components for the different tabs
-    // and hide or show them depending on which was active
-    // This meant initialization hooks which needed a dom element would fail
-    var tabsWebsiteComponent = "tabs-website/" + activeTabName + "-tab";
-    controller.set("tabs-website-component", tabsWebsiteComponent);
+    // controller.set("websiteDetails", websiteDetails);
 
     controller.set("languages", websiteDetails.supported_locales);
 
-    var websiteContentTabsList = this.modelFor("admin").setup.get('websiteContentTabsList');
-    controller.set("tabsList",websiteContentTabsList);
+    var currentSection = this.modelFor("admin.website.cms");
+    var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", activeTabName);
+    controller.set("cmsPartsList", currentSection.cmsPartsList);
+    controller.set("cmsPartInfo", cmsPartInfo);
 
   }
 });

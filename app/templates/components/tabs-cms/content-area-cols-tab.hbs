@@ -8,9 +8,10 @@
   </div>
   <div class="row">
     {{#each contentResources as |cmsPages| }}
-    <div class="col-sm-4">
+    <div class="col-sm-12">
       <div class="" style="">
         {{forms/cms-area contentItem=cmsPages 
+        cmsPartInfo=cmsPartInfo
         }}
       </div>
     </div>

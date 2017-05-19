@@ -89,7 +89,9 @@ Router.map(function() {
       });
 
       // below is for experiments with comfy mex sofa
-      this.route("cms", function() {
+      this.route("cms", {
+        path: "/cms"
+      }, function() {
         this.route("default", {
           path: "/"
         });

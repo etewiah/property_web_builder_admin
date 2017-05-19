@@ -3,6 +3,13 @@
   <h4>{{t contentItem.label }}  <span class="in-lang">({{t labelSuffixKey }})</span></h4>
 
   {{#if isEditing}}
+    <div>
+    {{#each cmsPartInfo.editorBlocks as |blocksGroup|}}
+      <div>
+      {{ blocksGroup }}
+      </div>
+    {{/each}}
+    </div>
       <div>
         {{#each contentItem.blocks as |block| }}
         <div class="col-sm-12">
@@ -13,8 +20,6 @@
         </div>
         {{/each}}
 
-
-        {{!--textarea value=contentValue type="text" rows="4" class="input-sm form-control fg-input"  --}}
       </div>
   {{else}}
     <div class="content-item-container" style="min-height:200px;">
