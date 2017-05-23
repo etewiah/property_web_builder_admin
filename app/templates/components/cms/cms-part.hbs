@@ -1,0 +1,24 @@
+<div class="row">
+  {{#each colBlocks as |blocksGroup| }}
+  <div class="col-sm-4">
+    {{#each blocksGroup as |block| }}
+    <div class="">
+      <div>{{ block.identifier }}</div>
+      <div class="" style="">
+        {{wysiwyg-editor content=block.content toolbarIn="hidden"}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/each}}
+</div>
+<div>
+  {{#if isEditing}}
+  <button type="submit" class="pull-left btn btn-primary btn-sm m-t-10 m-r-10 waves-effect" {{action "saveBlocksContent" blocksContent }}>
+    {{t "save"}}
+  </button>
+  <button type="submit" class="pull-left btn btn-sm m-t-10 waves-effect" {{action "cancelEditing" }}>
+    {{t "cancel"}}
+  </button>
+  {{/if}}
+</div>

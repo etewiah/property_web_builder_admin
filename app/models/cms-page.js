@@ -10,6 +10,8 @@ export default DS.Model.extend({
   blocks: DS.attr(),
   tags: DS.attr(),
   categories: DS.attr(),
-  locale: DS.attr()
+  locale: DS.attr(),
+  contentCache: DS.attr()
+
 });
 
