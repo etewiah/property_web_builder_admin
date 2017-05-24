@@ -23,6 +23,8 @@
 })();
 
 
+// left nav click etc handled here:
+// /inmo1-client/app/components/left-nav.js
 $(document).ready(function(){
     /*
      * Top Search

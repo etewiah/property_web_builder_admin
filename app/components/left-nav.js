@@ -13,6 +13,16 @@ export default Ember.Component.extend({
       el.classList.add("sm-toggled");
     }
     el.setAttribute("class", el.classList.toString());
+    if ($('#mobileTest').is(':visible')) {
+      // device is = xs, sm or md
+      // so left nav needs to get hidden after it is clicke
+      $('#header').toggleClass('sidebar-toggled');
+      $('#menu-trigger').toggleClass('open');
+      $('#sidebar').toggleClass('toggled');
+    }
+    // else {
+    //   // device is >= md 
+    // }
   },
   tagName: 'li',
   // tagName: 'div',
