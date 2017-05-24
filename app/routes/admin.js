@@ -10,6 +10,10 @@ export default Ember.Route.extend({
   translationsFetcher: inject.service(),
   i18n: inject.service(),
 
+  afterModel: function() {
+    this.get("translationsFetcher").versionCheck();
+  },
+
   beforeModel: function(transition) {
     var localeToUse = transition.params.admin.locale;
     var i18n = this.get('i18n');

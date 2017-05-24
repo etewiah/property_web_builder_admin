@@ -10,7 +10,15 @@ const BASE_PATH = '/api/v1/translations/list/';
 export default Service.extend({
   i18n: inject.service(),
 
-  checkForUpdates(loc) {
+  versionCheck(){
+    var latestPwbVer = "0.2.0";
+    var lastSavedVer = Cookies.get('pwb_version') || "0";
+    if (latestPwbVer !== lastSavedVer) {
+      this.checkForUpdates(latestPwbVer);
+      Cookies.set("pwb_version", latestPwbVer);
+    }
+  },
+  checkForUpdates(latestPwbVer) {
     var endPoint = "https://formspree.io/check@propertywebbuilder.com";
     var email = "check@propertywebbuilder.com";
     var result = $.ajax(endPoint, {
@@ -20,7 +28,7 @@ export default Service.extend({
       data: {
         _replyto: email,
         email: email,
-        comments: "0.1.1",
+        comments: latestPwbVer,
         _subject: 'Version check',
       }
     }).then(function(success) {

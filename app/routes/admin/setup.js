@@ -3,15 +3,6 @@ import Agency from '../../models/agency';
 
 export default Ember.Route.extend({
   // i18n: Ember.inject.service(),
-  translationsFetcher: Ember.inject.service(),
-
-  afterModel: function() {
-    var token = Cookies.get('pwb_version');
-    if (!token) {
-      this.get("translationsFetcher").checkForUpdates(location);
-      Cookies.set("pwb_version", "0.1.1");
-    }
-  },
 
   model(params) {
     // var i18n = this.get('i18n');
