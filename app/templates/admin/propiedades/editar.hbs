@@ -17,7 +17,15 @@
               <i class="fa fa-bed"></i> <span>{{model.countBedrooms}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
               <i class="fa fa-tint"></i> 
               <span>{{model.countBathrooms}}<span>&nbsp;&nbsp;&nbsp;
-              <i class="fa fa-arrows"></i> <span>{{model.constructedArea}}m<sup>2</sup></span>
+              <i class="fa fa-arrows"></i> 
+              <span>{{model.constructedArea}}
+              {{#if (eq model.areaUnit "sqft")}}
+                sqft
+              {{/if}}
+              {{#if (eq model.areaUnit "sqmt")}}
+                m<sup>2</sup>
+              {{/if}}
+              </span>
               </span>
               </span>
             </p>
