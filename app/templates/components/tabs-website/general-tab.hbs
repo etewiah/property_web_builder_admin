@@ -17,7 +17,7 @@
       <h3>{{t currencyField.headerTextTKey }}</h3> 
       {{! forms/radio-list resetTrigger=resetTrigger alertInfo="info.defaultCurrency" valueChangedAction="checkDirtyState" fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys hideHeader=true }}
   
-      {{forms/dynamic-select resetTrigger=resetTrigger alertInfo="info.defaultCurrency" valueChangedAction="checkDirtyState"  fieldDetails=currencyField resourceObject=resourceObject fieldKeys=currencyFieldKeys }}
+      {{forms/dynamic-select fieldKeysReadyForUse=true resetTrigger=resetTrigger alertInfo="info.defaultCurrency" valueChangedAction="checkDirtyState"  fieldDetails=currencyField resourceObject=resourceObject fieldKeys=currencyFieldKeys }}
 
       <h3>{{t areaUnitField.headerTextTKey }}</h3>
       {{forms/radio-list resetTrigger=resetTrigger alertInfo="info.defaultAreaUnit" valueChangedAction="checkDirtyState" fieldDetails=areaUnitField resourceObject=resourceObject fieldOptions=areaUnitFieldKeys hideHeader=true }}

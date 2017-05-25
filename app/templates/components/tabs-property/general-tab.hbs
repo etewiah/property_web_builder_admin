@@ -23,7 +23,9 @@
           {{!--
           <h4>{{t "propertyGeneralSections.visibility" }}</h4> --}} {{#each visibilityInputFields as |inputField|}} {{partial "partials/input-field-resolver" }} {{/each}}
           <br>
-          {{forms/radio-list resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys }}
+
+          {{forms/dynamic-select resetTrigger=resetTrigger fieldKeysReadyForUse=true valueChangedAction="checkDirtyState"  fieldDetails=currencyField resourceObject=resourceObject fieldKeys=currencyFieldKeys }}
+          {{!forms/radio-list resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=currencyField resourceObject=resourceObject fieldOptions=currencyFieldKeys }}
 
 
           <div style="display:none;">

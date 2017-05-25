@@ -107,6 +107,8 @@ export default DS.Model.extend({
   // might be better to do translation of title on the server
   tTitle: Ember.computed('i18n.locale', function() {
     var titleLocalisedProp = "title" + this.get("i18n.locale").capitalize();
+    // may 2017 - don't think this is in use - accessing i18n here no 
+    // longer works anyway
     return this.get(titleLocalisedProp);
   }),
   // name: DS.attr('string'),

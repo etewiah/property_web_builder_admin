@@ -51,12 +51,21 @@ export default TabWithForm.extend({
   }],
 
   currencyField: {
-    headerTextTKey: "fieldLabels.currency",
+    labelTextTKey: "fieldLabels.currency",
+    // headerTextTKey: "fieldLabels.currency",
     fieldName: "currency",
   },
+  // currencyFieldKeys: function() {
+  //   var clientSetup = this.get("clientSetup");
+  //   return clientSetup.currencyFieldKeys;
+  // }.property("clientSetup"),
   currencyFieldKeys: function() {
-    var clientSetup = this.get("clientSetup");
-    return clientSetup.currencyFieldKeys;
+    var currencyFieldKeys = this.get("clientSetup.currencyFieldKeys") || [];
+    currencyFieldKeys.forEach(function(option) {
+      option.label = this.get("i18n").t(option.labelTextTKey).string || "";
+    }.bind(this));
+    return currencyFieldKeys.sortBy("label");
+    // TODO - avoid duplication in tabs-website general tab
   }.property("clientSetup"),
 
   visibilityInputFields: [

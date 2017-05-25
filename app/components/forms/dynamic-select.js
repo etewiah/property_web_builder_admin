@@ -4,8 +4,7 @@ export default Ember.Component.extend({
   classNames: ['form-group'],
   i18n: Ember.inject.service(),
   fieldOptions: function() {
-    if (this.get("fieldDetails.fieldName") === "default_currency") {
-      // TODO - avoid this hard-coding
+    if (this.get("fieldKeysReadyForUse")) {
       return this.get("fieldKeys");
     }
     var fieldOptionKeys = this.get("fieldKeys")[this.get("fieldDetails.optionsKey")] || [];

@@ -67,6 +67,7 @@ export default TabWithForm.extend(OnReadyMixin, {
       option.label = this.get("i18n").t(option.labelTextTKey).string || "";
     }.bind(this));
     return currencyFieldKeys.sortBy("label");
+    // TODO - avoid duplication in tabs-property general tab
   }.property("clientSetup"),
   
   // currencyFieldKeys: [{

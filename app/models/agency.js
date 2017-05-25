@@ -1,5 +1,6 @@
 // import DS from 'ember-data';
 import MasterAddress from "../models/master_address";
+import Setup from "../models/setup";
 import User from "../models/user";
 import Website from "../models/website";
 // import Tenant from "../models/tenant";
@@ -50,7 +51,7 @@ Agency.reopenClass({
       var agency = Agency.create(result.agency);
       var primaryAddress = MasterAddress.create(result.primary_address);
       var currentUser = User.create(result.current_user);
-      var setup = Ember.Object.create(result.setup);
+      var setup = Setup.create(result.setup);
       return {
         setup: setup,
         websiteDetails: website,
