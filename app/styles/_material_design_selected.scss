@@ -2926,6 +2926,12 @@ fieldset[disabled] .btn-link:focus {
   color: #777777;
   text-decoration: none;
 }
+
+/*ed - added to allow larger dynamic select*/
+.btn-md > .btn {
+  font-size: 15px;
+}
+
 .btn-lg,
 .btn-group-lg > .btn {
   padding: 10px 16px;
@@ -6834,6 +6840,8 @@ button.close {
   /*IE9 and below*/
 }
 .bootstrap-select > .btn {
+  font-size: 16px;
+  /*added above for dynamic select*/
   width: 100%;
   padding-right: 25px;
 }

@@ -7,26 +7,8 @@ import TabWithForm from "../base/tab-with-form";
 
 
 export default TabWithForm.extend(OnReadyMixin, {
-  // languages: ["En", "Es"],
+  i18n: Ember.inject.service(),
   changedFields: [],
-
-  // availableLocaleFields: function() {
-  //   var availableLocalesArray = this.get("agencyDetails.available_locales") || ["en", "fr"];
-  //   // above looks like ["en","es"]
-  //   var availableLocaleFields = [];
-  //   availableLocalesArray.forEach(function(locale) {
-  //     availableLocaleFields.push({
-  //       labelTextTKey: locale,
-  //       fieldName: locale
-  //     });
-  //   });
-  //   // above returns items suitable for forms/simple-boolean like:
-  //   // {
-  //   //   labelTextTKey: "en",
-  //   //   fieldName: "en",
-  //   // }
-  //   return availableLocaleFields;
-  // }.property(),
 
   areaUnitField: {
     headerTextTKey: "fieldLabels.defaultAreaUnit",
@@ -80,8 +62,11 @@ export default TabWithForm.extend(OnReadyMixin, {
   }.property("clientSetup"),
 
   currencyFieldKeys: function() {
-    var clientSetup = this.get("clientSetup");
-    return clientSetup.currencyFieldKeys;
+    var currencyFieldKeys = this.get("clientSetup.currencyFieldKeys") || [];
+    currencyFieldKeys.forEach(function(option) {
+      option.label = this.get("i18n").t(option.labelTextTKey).string || "";
+    }.bind(this));
+    return currencyFieldKeys.sortBy("label");
   }.property("clientSetup"),
   
   // currencyFieldKeys: [{

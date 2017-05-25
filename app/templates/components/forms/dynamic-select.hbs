@@ -2,9 +2,16 @@
   <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a>
 {{/if}}
 
+{{#if fieldDetails.labelTextTKey}}
   <label class="fg-label ">{{t fieldDetails.labelTextTKey }}</label>
-<div class="fg-line has-">
+{{/if}}
+{{#if alertInfo }}
+  <div class="alert alert-info alert-dismissible m-b-20" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true"></span></button><i class="fa fa-lg fa-info"></i> {{t alertInfo }}  
+  </div>
+{{/if}}
 
+<div class="fg-line has-">  
   <select class="selectpicker" style="display: none;">
 {{#each fieldOptions as |selectValue|}} 
   <option value={{ selectValue.value }} >{{ selectValue.label }}</option>

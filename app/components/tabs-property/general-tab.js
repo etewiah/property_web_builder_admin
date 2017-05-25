@@ -59,26 +59,6 @@ export default TabWithForm.extend({
     return clientSetup.currencyFieldKeys;
   }.property("clientSetup"),
 
-  // currencyFieldKeys: [{
-  //   value: "EUR",
-  //   labelTextTKey: "eur",
-  // }, {
-  //   value: "GBP",
-  //   labelTextTKey: "gbp",
-  // }, {
-  //   value: "USD",
-  //   labelTextTKey: "usd",
-  // }],
-  //   currencyFieldKeys: [{
-  //   value: "EUR",
-  //   label: "Euros",
-  // }, {
-  //   value: "GBP",
-  //   label: "UK Pounds",
-  // }, {
-  //   value: "USD",
-  //   label: "Dollars",
-  // }],
   visibilityInputFields: [
     //this comment tricks prettify ;) 
     {
