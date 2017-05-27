@@ -1,13 +1,30 @@
-// TODO - rename file to select_values
+// 
+//TODO - add getInfo method that replaces current info.js model
 
-var SelectValues = Ember.Object.extend({
+
+var AdminMeta = Ember.Object.extend({
 
 
 });
 
-SelectValues.reopenClass({
+AdminMeta.reopenClass({
+  getCmsPageMeta: function(pageSlug) {
+    var apiUrl = "/api/v1/cms-pages/meta/" + pageSlug;
+    return $.ajax(apiUrl, {
+      type: 'GET',
+      dataType: 'json'
+    }).then(function(result) {
+      return Ember.Object.create(result);
+      // return result;
+    }.bind(this), function(error) {
+      return error;
+    });
+  },
+
+
+  // TODO - rename below to getSelectValues
   get: function(fieldNames) {
-    var apiUrl = "/api/v1/select_values/" ;
+    var apiUrl = "/api/v1/select_values/";
     // eg
     // http://localhost:3000/api/v1/select_values/?field_names=property-origins%2C+property-types%2C+property-states%2C+property-labels
     return $.ajax(apiUrl, {
@@ -17,7 +34,7 @@ SelectValues.reopenClass({
         field_names: fieldNames
       }
     }).then(function(result) {
-      return SelectValues.create(result);
+      return Ember.Object.create(result);
       // return result;
     }.bind(this), function(error) {
       return error;
@@ -26,4 +43,4 @@ SelectValues.reopenClass({
 });
 
 
-export default SelectValues;
+export default AdminMeta;

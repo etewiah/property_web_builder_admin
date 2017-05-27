@@ -1,5 +1,4 @@
 import Ember from 'ember';
-// import AdminMeta from '../../../models/admin_meta';
 
 export default Ember.Route.extend({
   actions: {
@@ -17,11 +16,6 @@ export default Ember.Route.extend({
     controller.set("activeTabName", activeTabName);
 
     controller.set("model", model);
-
-
-    // controller.set("languages", websiteDetails.supported_locales);
-
-
   }
 
 

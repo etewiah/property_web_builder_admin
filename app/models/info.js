@@ -1,7 +1,9 @@
-// jan 2016 - currently used by
-// /Users/etewiah/Ed/sites-2015-spt/inmo1-client/app/routes/admin/setup.js
+// jan 2017 - currently used by
+// /inmo1-client/app/routes/admin/setup.js
 import DS from 'ember-data';
-// import { translationMacro as t } from "ember-i18n";
+// idea is to retrieve website actions list and links for home page from here
+// currently returning empty array
+// - TODO - include in admin_meta.js
 
 var Info = DS.Model.extend({
 

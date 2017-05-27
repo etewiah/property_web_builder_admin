@@ -6,10 +6,14 @@ export default Ember.Route.extend({
 
   model(params) {
     var currentSection = this.modelFor("admin.website.cms");
-    var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", params.tabName);
+    var label = "";
+    if (currentSection.get("cmsPartsList")) {
+      var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", params.tabName);
+      label = cmsPartInfo.label
+    }
     return this.store.query("cmsPage", {
       filter: {
-        label: cmsPartInfo.label
+        label: label
       }
     });
   },
