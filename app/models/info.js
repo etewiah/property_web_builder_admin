@@ -11,29 +11,7 @@ var Info = DS.Model.extend({
 });
 
 Info.reopenClass({
-  // get: function() {
-  //   // todo - set correct locale
-  //   var apiUrl = "/api/v1/es/info";
-  //   return $.ajax(apiUrl, {
-  //     type: 'GET',
-  //     dataType: 'json',
-  //     // data: {
-  //     //   field_names: fieldNames
-  //     // }
-  //   }).then(function(result) {
-  //     var Info = Info.create(result.Info);
-  //     var primaryAddress = MasterAddress.create(result.primary_address);
-  //     var currentUser = User.create(result.current_user);
-  //     debugger;
-  //     return {
-  //       InfoDetails: Info,
-  //       primaryAddress: primaryAddress,
-  //       currentUser: currentUser
-  //     };
-  //   }.bind(this), function(error) {
-  //     return error;
-  //   });
-  // }
+
 });
 
 

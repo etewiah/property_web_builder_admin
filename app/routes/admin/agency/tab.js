@@ -21,7 +21,8 @@ export default Ember.Route.extend({
       return {};
     } else {
       var adminMeta = AdminMeta.get(fieldNames);
-      // adminMeta is from http://localhost:3000/api/v1/lang/field_keys/
+      // adminMeta is from 
+      // http://localhost:3000/api/v1/select_values/?field_names=property-origins%2C+property-types%2C+property-states%2C+property-labels
       // and just returns a list of selectValues for provinces and propertyTypes..
       return adminMeta;
     }
