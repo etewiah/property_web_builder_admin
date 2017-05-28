@@ -1,13 +1,35 @@
 <div class="row">
   {{#each colBlocks as |blocksGroup| }}
-  <div class="col-sm-4">
+  <div class="{{colClass}}">
     {{#each blocksGroup as |block| }}
-    <div class="">
-      <div>{{ block.identifier }}</div>
-      <div class="" style="">
-        {{wysiwyg-editor content=block.content toolbarIn="hidden"}}
-      </div>
-    </div>
+      {{#if block.info.isImage}}
+      <div class="m-b-10">
+          <div>{{ block.label }}</div>
+        <p><a class="btn btn-edfile">{{t "addAboutUsPhoto"}}
+           {{#upload/x-droplet-upload-single url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} {{/upload/x-droplet-upload-single}}
+        </a></p>
+
+          <div class="" style="">
+            {{input value=block.content type="text"  class="input-sm form-control fg-input"  }}
+          </div>
+        </div>
+      {{/if}}
+      {{#if block.info.isSingleLineText }}
+      <div class="m-b-10">
+        <div>{{ block.label }}</div>
+        <div class="" style="">
+          {{input value=block.content type="text"  class="input-sm form-control fg-input"  }}
+        </div>
+      </div>      
+      {{/if}}
+      {{#if block.info.isMultipleLineText}}
+      <div class="m-b-10">
+        <div>{{ block.label }}</div>
+        <div class="" style="">
+          {{wysiwyg-editor content=block.content toolbarIn="hidden"}}
+        </div>
+      </div>      
+      {{/if}}
     {{/each}}
   </div>
   {{/each}}
