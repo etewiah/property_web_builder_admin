@@ -81,6 +81,20 @@ export default Ember.Route.extend({
           tabRoute: "admin.website.content"
         }]
       }, {
+        tabIconClass: "fa fa-newspaper-o",
+        tabTitleKey: "adminSections.pages",
+        tabRoute: "admin.pages",
+        subMenuItems: [{
+          tabIconClass: "",
+          tabTitleKey: "pages.aboutUs",
+          tabRoute: "admin.pages.page",
+          routeParam: "about-us"
+        }, {
+          tabIconClass: "",
+          tabTitleKey: "adminSections.websiteContent",
+          tabRoute: "admin.website.content"
+        }]
+      }, {
         tabIconClass: "fa fa-exchange",
         tabTitleKey: "adminSections.import",
         tabRoute: "admin.io"

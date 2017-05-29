@@ -61,6 +61,21 @@ Router.map(function() {
       //   path: "/:tabName"
       // });
     });
+    this.route("pages", function() {
+      this.route("default", {
+        path: "/"
+      });
+      this.route("page", {
+        path: "/:pageName"
+      }, function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tabName"
+        });
+      });
+    });
     // route below was previously called "content" internaly
     this.route("website", {
       path: "/website"
@@ -89,16 +104,16 @@ Router.map(function() {
       });
 
       // below is for experiments with comfy mex sofa
-      this.route("cms", {
-        path: "/cms/:pageName"
-      }, function() {
-        this.route("default", {
-          path: "/"
-        });
-        this.route("tab", {
-          path: "/:tabName"
-        });
-      });
+      // this.route("cms", {
+      //   path: "/cms/:pageName"
+      // }, function() {
+      //   this.route("default", {
+      //     path: "/"
+      //   });
+      //   this.route("tab", {
+      //     path: "/:tabName"
+      //   });
+      // });
       this.route("themes", function() {
         this.route("default", {
           path: "/"
