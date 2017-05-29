@@ -29,6 +29,9 @@ export default Ember.Component.extend({
           // exist on server 
           var rowBlock = allBlocks.findBy("identifier", rowsInfo.label) || {};
           rowBlock.info = rowsInfo;
+          // below needs to be set directly on block 
+          // so I can get it through strong_params on serverside
+          rowBlock.is_image = rowsInfo.isImage;
           rowBlocks.push(rowBlock);
         });
         colBlocks.push(rowBlocks);
@@ -36,10 +39,5 @@ export default Ember.Component.extend({
       // debugger;
       return colBlocks;
     }
-  }),
-  addPhotoEndpoint: function() {
-    debugger;
-    var addPhotoEndpoint = "/api/v1/cms-pages/photos/" + "1"+ "/" + "2";
-    return addPhotoEndpoint;
-  }.property("contentResources"),
+  })
 });

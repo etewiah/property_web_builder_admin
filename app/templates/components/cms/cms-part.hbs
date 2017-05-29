@@ -4,9 +4,13 @@
     {{#each blocksGroup as |block| }}
       {{#if block.info.isImage}}
       <div class="m-b-10">
-          <div>{{ block.label }}</div>
+        <div>{{ block.label }}</div>
+        {{#if block.content}}
+          <p><img style="max-width: 100%;" src="{{ block.content }}">  </p>          
+        {{/if}}
         <p><a class="btn btn-edfile">{{t "addAboutUsPhoto"}}
-           {{#upload/x-droplet-upload-single url=addPhotoEndpoint addPhotosFromUrlsAction="addPhotosFromUrls" didUploadAction="refreshPhotos"}} {{/upload/x-droplet-upload-single}}
+           {{#upload/img-upload-cms block=block
+           srcUrl=block.content }} {{/upload/img-upload-cms}}
         </a></p>
 
           <div class="" style="">
