@@ -10,8 +10,8 @@
     {{#each contentResources as |cmsPages| }}
     <div class="col-sm-12">
       <div class="" style="">
-        {{forms/cms-area contentItem=cmsPages 
-        cmsPartInfo=cmsPartInfo
+        {{forms/cms-area cmsPages=cmsPages 
+        cmsPartInfo=cmsPartInfo updateCachesAction="updateCaches"
         }}
       </div>
     </div>

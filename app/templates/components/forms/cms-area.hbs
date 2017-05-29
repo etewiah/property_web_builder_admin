@@ -1,15 +1,16 @@
 {{!-- based on 3 col section on langing page --}}
 <div class="col-sm-12" style="padding-bottom: 3%;min-height: 160px;">
-  <h4>{{t contentItem.label }}  <span class="in-lang">({{t labelSuffixKey }})</span></h4>
+  <h4>{{t cmsPages.label }}  <span class="in-lang">({{t labelSuffixKey }})</span></h4>
 
   {{#if isEditing}}
     <div>
-    {{cms/cms-part blocksInfo=cmsPartInfo.editorBlocks blocksContent=contentItem  isEditing=isEditing}}
+    {{cms/cms-part blocksInfo=cmsPartInfo.editorBlocks blocksContent=cmsPages
+    updateCachesAction="updateCaches"  isEditing=isEditing}}
     </div>
   {{else}}
 
     <div>
-    {{{ contentItem.contentCache }}}
+    {{{ cmsPages.contentCache }}}
     </div>
 
   {{/if}}

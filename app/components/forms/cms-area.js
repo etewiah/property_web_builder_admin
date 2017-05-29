@@ -5,37 +5,25 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   // isEditing: true,
   actions: {
-    // saveContentItem: function(contentItem) {
-    //   // debugger;
-    //   contentItem.save();
-    // },
+    updateCaches: function(updatedCaches) {
+      this.sendAction("updateCachesAction", updatedCaches);
+    },
     startEditing: function() {
       this.set("isEditing", true);
     },
     cancelEditing: function() {
-      // var contentItem = this.get("contentItem");
-      // contentItem.rollbackAttributes();
+      // var cmsPages = this.get("cmsPages");
+      // cmsPages.rollbackAttributes();
       // this.set("contentValue", this.get("originalContentValue"));
       // debugger;
       this.set("isEditing", false);
     },
     previewContent: function() {}
   },
-  // contentValue: Ember.computed('contentItem', {
-  //   get(key) {
-  //     debugger;
 
-  //     return "mainText";
-  //   },
-  // }),
-  // hasChanged: Ember.computed('', {
-  //   get(key) {
-  //     return true;
-  //   }
-  // }),
-  labelSuffixKey: Ember.computed('contentItem', {
+  labelSuffixKey: Ember.computed('cmsPages', {
     get(key) {
-      return "webContentLabels.suffix" + this.get("contentItem.locale").capitalize();
+      return "webContentLabels.suffix" + this.get("cmsPages.locale").capitalize();
     }
   })
 });

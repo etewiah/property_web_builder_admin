@@ -3,7 +3,13 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     saveBlocksContent: function(blocksContent) {
-      blocksContent.save();
+      var that = this;
+      blocksContent.save().then(function(result){
+        var updatedCaches = result.get("updatedCaches") || [];
+        if (updatedCaches.length > 0) {
+          that.sendAction("updateCachesAction", updatedCaches);
+        }
+      });
       this.set("isEditing", false);
     },
     cancelEditing: function() {

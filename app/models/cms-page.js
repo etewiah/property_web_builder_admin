@@ -11,7 +11,12 @@ export default DS.Model.extend({
   tags: DS.attr(),
   categories: DS.attr(),
   locale: DS.attr(),
-  contentCache: DS.attr()
+  contentCache: DS.attr(),
+  // below is only used when updating to 
+  // retrieve other caches that may have
+  // changed - eg, when image is updated 
+  // for one locale it should change for all
+  updatedCaches: DS.attr()
 
 });
 
