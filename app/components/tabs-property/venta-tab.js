@@ -21,7 +21,7 @@ export default TabWithForm.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 999999999,
+            lessThanOrEqualTo: 999999999999,
           }
         }
       }
@@ -41,7 +41,7 @@ export default TabWithForm.extend({
         inputValue: {
           numericality: {
             onlyInteger: true,
-            lessThanOrEqualTo: 999999999,
+            lessThanOrEqualTo: 999999999999,
           }
         }
       }
