@@ -11,7 +11,6 @@ export default Ember.Route.extend({
       var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", params.tabName);
       label = cmsPartInfo.label
     }
-    debugger;
     return this.store.query("cmsPage", {
       filter: {
         label: label
