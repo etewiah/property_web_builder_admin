@@ -10,6 +10,10 @@ export default TabWithForm.extend(OnReadyMixin, {
   i18n: Ember.inject.service(),
   changedFields: [],
 
+  analyticsField: {
+    labelTextTKey: "",
+    fieldName: "analytics_id",
+  },
   areaUnitField: {
     headerTextTKey: "fieldLabels.defaultAreaUnit",
     fieldName: "default_area_unit",
@@ -42,7 +46,7 @@ export default TabWithForm.extend(OnReadyMixin, {
   defaultLocaleFieldKeys: function() {
     var supportedLocales = this.get("resourceObject.supported_locales");
     var defaultLocaleFieldKeys = [];
-    supportedLocales.forEach(function(locale){
+    supportedLocales.forEach(function(locale) {
       var ltk = locale.split("-")[0];
       defaultLocaleFieldKeys.push({
         value: locale,
@@ -69,7 +73,7 @@ export default TabWithForm.extend(OnReadyMixin, {
     return currencyFieldKeys.sortBy("label");
     // TODO - avoid duplication in tabs-property general tab
   }.property("clientSetup"),
-  
+
   // currencyFieldKeys: [{
   //   value: "EUR",
   //   labelTextTKey: "eur",

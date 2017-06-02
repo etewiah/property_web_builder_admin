@@ -6,7 +6,7 @@
     <div class="col-md-4 col-sm-6 col-xs-12">
 
 
-      <h4>{{t "logo"}}</h4> 
+      <h3>{{t "logo"}}</h3> 
       <div class="alert alert-info alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true"></span></button><i class="fa fa-lg fa-info"></i> {{t "info.recLogoPhotoSize" }}  
       </div>
@@ -43,21 +43,21 @@
       </div>
 
 
-      <h4>{{t "inTabLabels.siteLayout"}}</h4>
+      <h3>{{t "inTabLabels.siteLayout"}}</h3>
     {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="updateAppearance"  fieldDetails=siteLayoutField resourceObject=websiteDetails.style_variables fieldKeys=siteLayoutFieldKeys }}
 
 
 {{!-- 
 jan 2017:
 below would prompt to save changes which I don't want now:
-    <h4>{{t "inTabLabels.siteLayout"}}</h4>
+    <h3>{{t "inTabLabels.siteLayout"}}</h3>
       {{forms/dynamic-select  resetTrigger=resetTrigger valueChangedAction="checkDirtyState"  fieldDetails=siteLayoutField resourceObject=websiteDetails fieldKeys=siteLayoutFieldKeys }} --}}
 
     </div>
 
     <div class="col-md-4 col-sm-6 col-xs-12">
 
-      <h4>{{t "inTabLabels.colors"}}</h4>
+      <h3>{{t "inTabLabels.colors"}}</h3>
       <div class="form-group fg-float">
         <div class="fg-line has- fg-toggled">
           {{spectrum-color-picker
@@ -139,7 +139,7 @@ below would prompt to save changes which I don't want now:
      </div>
 
     <div class="col-md-4 col-sm-6 col-xs-12" style="display:block;">
-    <h4>Raw CSS</h4>
+    <h3>Raw CSS</h3>
 
         {{forms/simple-input isTextArea=true resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=rawCssField resourceObject=websiteDetails }} 
 

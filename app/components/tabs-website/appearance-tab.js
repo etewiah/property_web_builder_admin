@@ -21,40 +21,33 @@ export default TabWithForm.extend(OnReadyMixin, {
       "siteLayout.boxed"
     ]
   },
-  siteTemplateField: {
-    labelTextTKey: "",
-    fieldName: "theme_name",
-  },
-  siteTemplateFieldKeys: function() {
-    var fieldOptions = [];
-    var currentValue = this.get("websiteDetails.theme_name") || "";
-
-    // contentResources here is the model passed to website/tab route
-    // -where tab is appearance it is a list of themes
-    this.get("contentResources").forEach(function(option) {
-      var fieldOption = Ember.Object.create({
-        value: option.id,
-        label: option.name,
-        checked: false
-      });
-      if (option.id === currentValue.toString()) {
-        fieldOption.checked = true;
-      }
-      // this.get("i18n").t(option).string || "Unknown";
-      fieldOptions.push(fieldOption);
-    }.bind(this));
-
-    return fieldOptions.sortBy("label");
-
-
-    // return contentResources;
-  }.property("contentResources"),
-  // siteTemplateFieldKeys: {
-  //   layoutLabels: [
-  //     "siteLayout.wide",
-  //     "siteLayout.boxed"
-  //   ]
+  // siteTemplateField: {
+  //   labelTextTKey: "",
+  //   fieldName: "theme_name",
   // },
+  // siteTemplateFieldKeys: function() {
+  //   var fieldOptions = [];
+  //   var currentValue = this.get("websiteDetails.theme_name") || "";
+
+  //   // contentResources here is the model passed to website/tab route
+  //   // -where tab is appearance it is a list of themes
+  //   this.get("contentResources").forEach(function(option) {
+  //     var fieldOption = Ember.Object.create({
+  //       value: option.id,
+  //       label: option.name,
+  //       checked: false
+  //     });
+  //     if (option.id === currentValue.toString()) {
+  //       fieldOption.checked = true;
+  //     }
+  //     // this.get("i18n").t(option).string || "Unknown";
+  //     fieldOptions.push(fieldOption);
+  //   }.bind(this));
+
+  //   return fieldOptions.sortBy("label");
+  //   // return contentResources;
+  // }.property("contentResources"),
+
   rawCssField: {
     labelTextTKey: "",
     fieldName: "raw_css",
