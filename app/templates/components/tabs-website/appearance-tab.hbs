@@ -3,7 +3,7 @@
   <div class="row">
       {{partial "partials/manage-changes-buttons" }}
 
-    <div class="col-sm-6">
+    <div class="col-md-4 col-sm-6 col-xs-12">
 
 
       <h4>{{t "logo"}}</h4> 
@@ -55,7 +55,7 @@ below would prompt to save changes which I don't want now:
 
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-md-4 col-sm-6 col-xs-12">
 
       <h4>{{t "inTabLabels.colors"}}</h4>
       <div class="form-group fg-float">
@@ -138,11 +138,13 @@ below would prompt to save changes which I don't want now:
       </div>
      </div>
 
-    <div class="col-sm-12" style="display:none;">
+    <div class="col-md-4 col-sm-6 col-xs-12" style="display:block;">
     <h4>Raw CSS</h4>
-        {{forms/simple-input resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=rawCssField resourceObject=websiteDetails }} 
 
-      {{ textarea value=contentValue type="text" rows="4" class="input-sm form-control fg-input"  }}
+        {{forms/simple-input isTextArea=true resetTrigger=resetTrigger valueChangedAction="checkDirtyState" fieldDetails=rawCssField resourceObject=websiteDetails }} 
+
+      <p>If you do not know what CSS is, you can ignore this section</p>
+
 
     </div>
  </div>

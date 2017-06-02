@@ -11,7 +11,12 @@
   </div>
 {{/if}}
 
+{{#if  isTextArea }}
+  {{ textarea value=inputValue type="text" rows="20" class="input-sm form-control fg-input" }}
+{{else}}
   {{input value=inputValue type=fieldDetails.inputType  class="input-sm form-control fg-input"  }}
+{{/if}}
+
 {{#if errors}}
 {{#each errors as |error|}}
   <small class="help-block">{{ error }}</small>  

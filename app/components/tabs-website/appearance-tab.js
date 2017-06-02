@@ -26,8 +26,6 @@ export default TabWithForm.extend(OnReadyMixin, {
     fieldName: "theme_name",
   },
   siteTemplateFieldKeys: function() {
-    // var contentResources = this.get("contentResources");
-
     var fieldOptions = [];
     var currentValue = this.get("websiteDetails.theme_name") || "";
 
@@ -45,7 +43,6 @@ export default TabWithForm.extend(OnReadyMixin, {
       // this.get("i18n").t(option).string || "Unknown";
       fieldOptions.push(fieldOption);
     }.bind(this));
-
 
     return fieldOptions.sortBy("label");
 
@@ -138,11 +135,5 @@ export default TabWithForm.extend(OnReadyMixin, {
     var addPhotoEndpoint = "/api/v1/web_contents/" + logoContent.id + "/photo";
     return addPhotoEndpoint;
   }.property("resourceObject.id"),
-
-
-  // -using dynamic components so no longer needed
-  // isVisible: function() {
-  //   return this.get("activeTabfieldName").toLowerCase() === "general";
-  // }.property("activeTabName"),
 
 });
