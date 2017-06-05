@@ -11,12 +11,13 @@ export default Service.extend({
   i18n: inject.service(),
 
   versionCheck(){
-    var latestPwbVer = "0.2.0";
+    var latestPwbVer = "1.0.0";
     var lastSavedVer = Cookies.get('pwb_version') || "0";
     if (latestPwbVer !== lastSavedVer) {
       this.checkForUpdates(latestPwbVer);
       Cookies.set("pwb_version", latestPwbVer);
     }
+    console.log("PWB version: " + latestPwbVer);
   },
   checkForUpdates(latestPwbVer) {
     var endPoint = "https://formspree.io/check@propertywebbuilder.com";

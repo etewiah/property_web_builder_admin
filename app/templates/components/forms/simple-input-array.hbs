@@ -1,0 +1,26 @@
+{{#if fieldDetails.tooltipTextTKey}}
+  <a class="ayuda" data-toggle="tooltip" title="" data-original-title={{t fieldDetails.tooltipTextTKey}}><i class="fa fa-info"></i></a>
+{{/if}}
+<div class="fg-line {{if errors 'has-error'}} ">
+  <label class="fg-label">{{t fieldDetails.labelTextTKey }}</label>
+
+{{#if fieldDetails.alertInfoTKey }}
+  <div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true"></span></button>
+    <i class="fa fa-info"></i> {{t fieldDetails.alertInfoTKey }}  
+  </div>
+{{/if}}
+
+        {{#each observableArray as |option|}}
+
+          {{input value=option.value  class="input-sm form-control fg-input"  }}
+
+        {{/each}}
+
+
+{{#if errors}}
+{{#each errors as |error|}}
+  <small class="help-block">{{ error }}</small>  
+{{/each}}
+{{/if}}
+</div>

@@ -52,7 +52,7 @@ export default TabWithForm.extend(OnReadyMixin, {
         value: locale,
         labelTextTKey: ltk
       });
-    })
+    });
     var defaultLocale = this.get("resourceObject.default_client_locale");
     if (!supportedLocales.includes(defaultLocale)) {
       this.set("resourceObject.default_client_locale", supportedLocales[0]);
