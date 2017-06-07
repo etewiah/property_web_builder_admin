@@ -2,15 +2,44 @@
   <div class="row">
     {{partial "partials/manage-changes-buttons" }}
     <div class="col-sm-3">
-      <h3>Search price options from:</h3>
+      <h3>Sale price from:</h3>
       {{forms/simple-input-array 
       rawArray=websiteDetails.sale_price_options_from
       observableArray=salePriceOptionsFrom
       fieldDetails=salePriceOptionsFromField
       resetTrigger=resetTrigger
       valueChangedAction="checkDirtyState" }}           
-
     </div>
+
+    <div class="col-sm-3">
+      <h3>Sale price till:</h3>
+      {{forms/simple-input-array 
+      rawArray=websiteDetails.sale_price_options_till
+      observableArray=salePriceOptionsTill
+      fieldDetails=salePriceOptionsTillField
+      resetTrigger=resetTrigger
+      valueChangedAction="checkDirtyState" }}           
+    </div>
+    <div class="col-sm-3">
+      <h3>Rent price from:</h3>
+      {{forms/simple-input-array 
+      rawArray=websiteDetails.rent_price_options_from
+      observableArray=rentPriceOptionsFrom
+      fieldDetails=rentPriceOptionsFromField
+      resetTrigger=resetTrigger
+      valueChangedAction="checkDirtyState" }}           
+    </div>
+
+    <div class="col-sm-3">
+      <h3>Rent price till:</h3>
+      {{forms/simple-input-array 
+      rawArray=websiteDetails.rent_price_options_till
+      observableArray=rentPriceOptionsTill
+      fieldDetails=rentPriceOptionsTillField
+      resetTrigger=resetTrigger
+      valueChangedAction="checkDirtyState" }}           
+    </div>
+
     {{partial "partials/manage-changes-buttons" }}
   </div>
 </div>
