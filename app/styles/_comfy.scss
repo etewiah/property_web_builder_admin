@@ -1,0 +1,22 @@
+/* over-rides of display styles */
+
+.wp-section {
+  .container {
+    width: auto;
+    ;
+  }
+}
+
+.comfy-display-container {
+  border: #d9edf7;
+  border-style: dashed;
+  border-radius: 10px;
+  padding: 25px 0px;
+}
+
+.comfy-edit-container {
+  border: #39c088;
+  border-style: dashed;
+  border-radius: 10px;
+  padding: 35px 12px 50px 12px;
+}

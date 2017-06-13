@@ -1,16 +1,24 @@
+.smaller-font {
+  font-size: smaller;
+}
+
 .error-notice {
   color: red;
 }
+
 .alert-info {
   /*blue info banners for sections*/
   padding: 6px 6px;
   margin-bottom: 0px;
 }
 
-.dataTables_length, .dataTables_filter {
+.dataTables_length,
+.dataTables_filter {
   /* hide search and length display on property list*/
   display: none;
 }
+
+
 /*
 
 attempt to fix + and - indicators on sub-menu
@@ -123,7 +131,6 @@ attempt to fix + and - indicators on sub-menu
   color: red;
   padding: 15px 0px;
 }
-
 
 
 /*http://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3/*/

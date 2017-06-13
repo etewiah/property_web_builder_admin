@@ -1,24 +1,29 @@
 {{!-- based on 3 col section on langing page --}}
-<div class="col-sm-12" style="padding-bottom: 3%;min-height: 160px;">
-  <h4>{{t cmsPages.label }}  <span class="in-lang">({{t labelSuffixKey }})</span></h4>
+<div class="" style="padding-bottom: 3%;min-height: 160px;">
+  <h3 class="text_center m-b-20">{{t cmsPartInfo.tabTitleKey }}  
+    <span class="smaller-font">({{t labelSuffixKey }})</span> 
+    {{#unless isEditing}}
+      <span class="m-l-10 smaller-font"  {{action "startEditing" }}><a href=""><i class="fa fa-pencil"></i> {{t "edit"}}</a></span>
+    {{/unless}}
+  </h3>
 
   {{#if isEditing}}
-    <div>
+    <div class="comfy-edit-container">
     {{cms/cms-part blocksInfo=cmsPartInfo.editorBlocks blocksContent=cmsPages
     updateCachesAction="updateCaches"  isEditing=isEditing}}
     </div>
   {{else}}
 
-    <div>
+    <div class="comfy-display-container">
     {{{ cmsPages.contentCache }}}
     </div>
 
   {{/if}}
 
   <div>
-    {{#unless isEditing}}
+{{!--     {{#unless isEditing}}
       <p class="m-t-10"  {{action "startEditing" }}><a href=""><i class="fa fa-pencil"></i> {{t "edit"}}</a></p>
-    {{/unless}}
+    {{/unless}} --}}
   </div>
 
 
