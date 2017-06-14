@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   actions: {
     saveBlocksContent: function(blocksContent) {
       var that = this;
-      blocksContent.save().then(function(result){
+      blocksContent.save().then(function(result) {
         var updatedCaches = result.get("updatedCaches") || [];
         if (updatedCaches.length > 0) {
           that.sendAction("updateCachesAction", updatedCaches);
@@ -16,7 +16,18 @@ export default Ember.Component.extend({
       this.set("isEditing", false);
     },
   },
-  colClass: "col-sm-3",
+  colClass: Ember.computed('blocksInfo', {
+    get(key) {
+      var blocksInfo = this.get("blocksInfo") || [];
+      if (blocksInfo.length === 3) {
+        return "col-sm-4";
+      }
+      if (blocksInfo.length === 4) {
+        return "col-sm-3";
+      }
+      return "col-sm-6";
+    }
+  }),
   colBlocks: Ember.computed('blocksInfo', {
     get(key) {
       var colBlocks = [];

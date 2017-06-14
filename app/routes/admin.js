@@ -91,8 +91,9 @@ export default Ember.Route.extend({
           routeParam: "about-us"
         }, {
           tabIconClass: "",
-          tabTitleKey: "adminSections.websiteContent",
-          tabRoute: "admin.website.content"
+          tabTitleKey: "pages.sell",
+          tabRoute: "admin.pages.page",
+          routeParam: "sell"
         }]
       }, {
         tabIconClass: "fa fa-exchange",
