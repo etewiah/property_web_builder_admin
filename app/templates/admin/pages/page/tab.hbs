@@ -7,6 +7,8 @@
   <div class="tab-content">
       {{! tabs-cms/cms-container activeTabName=activeTabName contentResources=model languages=languages cmsPartInfo=cmsPartInfo }}
 
-      {{component tabs-page-component activeTabName=activeTabName contentResources=model languages=languages resourceObject=websiteDetails agencyDetails=websiteDetails }}
+      {{!-- below needed to support legacy components - can revert to above once all legacy content editing is removed --}}
+
+      {{component tabs-page-component activeTabName=activeTabName contentResources=model languages=languages resourceObject=websiteDetails agencyDetails=websiteDetails cmsPartInfo=cmsPartInfo }}
   </div>
 </div>

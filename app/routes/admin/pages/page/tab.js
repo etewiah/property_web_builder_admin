@@ -48,6 +48,7 @@ export default Ember.Route.extend({
       // var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", null);
       if (currentSection.cmsPartsList.length < 2) {
+        // for legacy about-us pages etc, do not show tabs if there is only one
         controller.set("cmsPartsList", []);
       }
 
