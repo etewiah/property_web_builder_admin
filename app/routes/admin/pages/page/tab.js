@@ -6,6 +6,14 @@ export default Ember.Route.extend({
 
   model(params) {
     var currentSection = this.modelFor("admin.pages.page");
+    if (currentSection.isLegacy) {
+      // var tag = "legal";
+      return this.store.query("webContent", {
+        filter: {
+          tag: params.tabName
+        }
+      });
+    }
     var label = "";
     if (currentSection.get("cmsPartsList")) {
       var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", params.tabName);
@@ -32,9 +40,22 @@ export default Ember.Route.extend({
     controller.set("languages", websiteDetails.supported_locales);
 
     var currentSection = this.modelFor("admin.pages.page");
-    var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", activeTabName);
     controller.set("cmsPartsList", currentSection.cmsPartsList);
-    controller.set("cmsPartInfo", cmsPartInfo);
+
+    if (currentSection.isLegacy) {
+      var tabsPageComponent = "tabs-website/" + activeTabName + "-tab";
+      controller.set("tabs-page-component", tabsPageComponent);
+      // var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", activeTabName);
+      controller.set("cmsPartInfo", null);
+      if (currentSection.cmsPartsList.length < 2) {
+        controller.set("cmsPartsList", []);
+      }
+
+    } else {
+      controller.set("tabs-page-component", "tabs-cms/cms-container")
+      var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", activeTabName);
+      controller.set("cmsPartInfo", cmsPartInfo);
+    }
 
   }
 });

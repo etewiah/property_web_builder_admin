@@ -86,9 +86,24 @@ export default Ember.Route.extend({
         tabRoute: "admin.pages",
         subMenuItems: [{
           tabIconClass: "",
-          tabTitleKey: "pages.aboutUs",
+          tabTitleKey: "pages.legacyAboutUs",
           tabRoute: "admin.pages.page",
           routeParam: "about-us"
+        }, {
+          tabIconClass: "",
+          tabTitleKey: "pages.aboutUs",
+          tabRoute: "admin.pages.page",
+          routeParam: "about"
+        }, {
+          tabIconClass: "",
+          tabTitleKey: "pages.landing",
+          tabRoute: "admin.pages.page",
+          routeParam: "landing"
+        }, {
+          tabIconClass: "",
+          tabTitleKey: "pages.legal",
+          tabRoute: "admin.pages.page",
+          routeParam: "legal"
         }, {
           tabIconClass: "",
           tabTitleKey: "pages.sell",

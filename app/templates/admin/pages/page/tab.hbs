@@ -5,7 +5,8 @@
     {{/each}}
   </ul>
   <div class="tab-content">
-      {{tabs-cms/cms-container activeTabName=activeTabName contentResources=model languages=languages cmsPartInfo=cmsPartInfo }}
+      {{! tabs-cms/cms-container activeTabName=activeTabName contentResources=model languages=languages cmsPartInfo=cmsPartInfo }}
 
+      {{component tabs-page-component activeTabName=activeTabName contentResources=model languages=languages resourceObject=websiteDetails agencyDetails=websiteDetails }}
   </div>
 </div>
