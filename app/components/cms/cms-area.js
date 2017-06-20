@@ -12,8 +12,8 @@ export default Ember.Component.extend({
       this.set("isEditing", true);
     },
     cancelEditing: function() {
-      // var cmsPages = this.get("cmsPages");
-      // cmsPages.rollbackAttributes();
+      // var cmsPage = this.get("cmsPage");
+      // cmsPage.rollbackAttributes();
       // this.set("contentValue", this.get("originalContentValue"));
       // debugger;
       this.set("isEditing", false);
@@ -21,9 +21,10 @@ export default Ember.Component.extend({
     previewContent: function() {}
   },
 
-  labelSuffixKey: Ember.computed('cmsPages', {
+  labelSuffixKey: Ember.computed('cmsPage', {
     get(key) {
-      return "webContentLabels.suffix" + this.get("cmsPages.locale").capitalize();
+      // debugger;
+      return "webContentLabels.suffix" + this.get("cmsPage.locale").capitalize();
     }
   })
 });

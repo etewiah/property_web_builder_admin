@@ -8,10 +8,10 @@
     </div>
   </div>
   <div class="row">
-    {{#each contentResources as |cmsPages| }}
+    {{#each cmsPagesCollection as |cmsPage| }}
     <div class="col-sm-12">
       <div class="" style="">
-        {{cms/cms-area cmsPages=cmsPages 
+        {{cms/cms-area cmsPage=cmsPage 
         cmsPartInfo=cmsPartInfo updateCachesAction="updateCaches"
         }}
       </div>

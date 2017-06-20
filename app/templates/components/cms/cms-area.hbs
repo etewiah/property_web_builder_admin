@@ -9,13 +9,13 @@
 
   {{#if isEditing}}
     <div class="comfy-edit-container">
-    {{cms/cms-part blocksInfo=cmsPartInfo.editorBlocks blocksContent=cmsPages
+    {{cms/cms-part blocksInfo=cmsPartInfo.editorBlocks blocksContent=cmsPage
     updateCachesAction="updateCaches"  isEditing=isEditing}}
     </div>
   {{else}}
 
     <div class="comfy-display-container">
-    {{{ cmsPages.contentCache }}}
+    {{{ cmsPage.contentCache }}}
     </div>
 
   {{/if}}
