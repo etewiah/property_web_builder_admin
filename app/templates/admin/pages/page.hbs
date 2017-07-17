@@ -1,7 +1,7 @@
 <div class="card-header seo">
   <h2>
-      {{t model.pageTitleKey }}
-    </h2>
+      {{t "adminSections.pages" }}:  {{ currentPageTitle }}
+  </h2>
   <div role="group" class="botones_web" style="display:none;">
     {{#link-to "admin.website" data-toggle="tooltip" title=(t "returnToWebsite") class="btn_settings btn btn-circulo btn-float waves-effect pull-right" }}
     <i class="fa fa-arrow-left"></i> {{/link-to}}

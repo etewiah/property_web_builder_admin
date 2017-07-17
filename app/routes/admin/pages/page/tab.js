@@ -5,20 +5,21 @@ export default Ember.Route.extend({
   i18n: Ember.inject.service(),
 
   model(params) {
-    var currentSection = this.modelFor("admin.pages.page");
+    var currentPage = this.modelFor("admin.pages.page");
+    var currentSection = currentPage.details.cmsPartsList.findBy("tabValue", params.tabName);
     if (currentSection.isLegacy) {
-      // var tag = "legal";
       return this.store.query("webContent", {
         filter: {
           tag: params.tabName
         }
       });
     }
-    var label = "";
-    if (currentSection.get("cmsPartsList")) {
-      var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", params.tabName);
-      label = cmsPartInfo.label
-    }
+    var label = currentSection.label;
+    // if (currentPage.get("cmsPartsList")) {
+    //   var cmsPartInfo = currentPage.details.cmsPartsList.findBy("tabValue", params.tabName);
+    //   label = cmsPartInfo.label
+    // }
+    // debugger;
     return this.store.query("cmsPage", {
       filter: {
         label: label
@@ -39,22 +40,23 @@ export default Ember.Route.extend({
 
     controller.set("languages", websiteDetails.supported_locales);
 
-    var currentSection = this.modelFor("admin.pages.page");
-    controller.set("cmsPartsList", currentSection.cmsPartsList);
+    var currentPage = this.modelFor("admin.pages.page");
 
+    controller.set("cmsPartsList", currentPage.details.cmsPartsList);
+    var currentSection = currentPage.details.cmsPartsList.findBy("tabValue", activeTabName);
     if (currentSection.isLegacy) {
       var tabsPageComponent = "tabs-website/" + activeTabName + "-tab";
       controller.set("tabs-page-component", tabsPageComponent);
-      // var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", activeTabName);
+      // var cmsPartInfo = currentPage.details.cmsPartsList.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", null);
-      if (currentSection.cmsPartsList.length < 2) {
-        // for legacy about-us pages etc, do not show tabs if there is only one
-        controller.set("cmsPartsList", []);
-      }
+      // if (currentPage.details.cmsPartsList.length < 2) {
+      //   // for legacy about-us pages etc, do not show tabs if there is only one
+      //   controller.set("cmsPartsList", []);
+      // }
 
     } else {
       controller.set("tabs-page-component", "tabs-cms/cms-container")
-      var cmsPartInfo = currentSection.cmsPartsList.findBy("tabValue", activeTabName);
+      var cmsPartInfo = currentPage.details.cmsPartsList.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", cmsPartInfo);
     }
 

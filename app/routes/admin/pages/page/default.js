@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 
   beforeModel: function() {
     var currentPage = this.modelFor("admin.pages.page");
-    this.transitionTo("admin.pages.page.tab", currentPage.get("cmsPartsList.firstObject.tabValue"));
+    this.transitionTo("admin.pages.page.tab", currentPage.get("details.cmsPartsList.firstObject.tabValue"));
   },
 
 });
