@@ -37,7 +37,7 @@ export default Ember.Route.extend({
 
   setupController(controller, model) {
     // controller.set("agencyDetails", model.agency);
-    controller.set("leftNavItems", [{
+    var leftNavItems = [{
         tabIconClass: "fa fa-home",
         tabTitleKey: "adminSections.start",
         tabRoute: "admin.setup"
@@ -80,36 +80,39 @@ export default Ember.Route.extend({
           tabTitleKey: "adminSections.websiteContent",
           tabRoute: "admin.website.content"
         }]
-      // }, {
-      //   tabIconClass: "fa fa-newspaper-o",
-      //   tabTitleKey: "adminSections.pages",
-      //   tabRoute: "admin.pages",
-      //   subMenuItems: [{
-      //     tabIconClass: "",
-      //     tabTitleKey: "pages.legacyAboutUs",
-      //     tabRoute: "admin.pages.page",
-      //     routeParam: "about-us"
-      //   }, {
-      //     tabIconClass: "",
-      //     tabTitleKey: "pages.aboutUs",
-      //     tabRoute: "admin.pages.page",
-      //     routeParam: "about"
-      //   }, {
-      //     tabIconClass: "",
-      //     tabTitleKey: "pages.landing",
-      //     tabRoute: "admin.pages.page",
-      //     routeParam: "landing"
-      //   }, {
-      //     tabIconClass: "",
-      //     tabTitleKey: "pages.legal",
-      //     tabRoute: "admin.pages.page",
-      //     routeParam: "legal"
-      //   }, {
-      //     tabIconClass: "",
-      //     tabTitleKey: "pages.sell",
-      //     tabRoute: "admin.pages.page",
-      //     routeParam: "sell"
-      //   }]
+      }, {
+        tabIconClass: "fa fa-newspaper-o",
+        tabTitleKey: "adminSections.pages",
+        tabRoute: "admin.pages",
+        subMenuItems: [
+        // {
+        //   tabIconClass: "",
+        //   tabTitleKey: "pages.legacyAboutUs",
+        //   tabRoute: "admin.pages.page",
+        //   routeParam: "about-us"
+        // }, {
+        //   tabIconClass: "",
+        //   tabTitleKey: "pages.aboutUs",
+        //   tabRoute: "admin.pages.page",
+        //   routeParam: "about"
+        // }, {
+        //   tabIconClass: "",
+        //   tabTitleKey: "pages.landing",
+        //   tabRoute: "admin.pages.page",
+        //   routeParam: "landing"
+        // }, {
+        //   tabIconClass: "",
+        //   tabTitleKey: "pages.legal",
+        //   tabRoute: "admin.pages.page",
+        //   routeParam: "legal"
+        // }, {
+        //   tabIconClass: "",
+        //   tabTitleKey: "pages.sell",
+        //   tabRoute: "admin.pages.page",
+        //   routeParam: "sell"
+        // }
+
+        ]
       }, {
         tabIconClass: "fa fa-exchange",
         tabTitleKey: "adminSections.import",
@@ -160,6 +163,18 @@ export default Ember.Route.extend({
       //   tabRoute: "admin.default"
       // }
 
-    ]);
+    ];
+    var pagesNav = leftNavItems.findBy("tabTitleKey", "adminSections.pages");
+    var linkTitleKey = "link_title_" + this.get("i18n.locale");
+    var sortedPages = model.websiteDetails.pages_summary.sortBy("sort_order_top_nav");
+    sortedPages.forEach(function(page) {
+      var pageNav = {};
+      pageNav.tabRoute = "admin.pages.page";
+      pageNav.tabTitle = page[linkTitleKey];
+      pageNav.routeParam = page["slug"];
+      pagesNav.subMenuItems.pushObject(pageNav);
+    });
+
+    controller.set("leftNavItems", leftNavItems);
   }
 });
