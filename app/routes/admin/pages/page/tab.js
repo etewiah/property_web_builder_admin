@@ -19,7 +19,6 @@ export default Ember.Route.extend({
     //   var cmsPartInfo = currentPage.details.cmsPartsList.findBy("tabValue", params.tabName);
     //   label = cmsPartInfo.label
     // }
-    // debugger;
     return this.store.query("cmsPage", {
       filter: {
         label: label

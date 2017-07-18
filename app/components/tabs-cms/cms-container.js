@@ -3,28 +3,59 @@ import CmsPage from "../../models/cms-page";
 
 export default Ember.Component.extend({
   store: Ember.inject.service('store'),
+  i18n: Ember.inject.service(),
   // languages: ["En", "Es"],
   // might have to order cmsPages by language...
-  cmsPagesCollection: function() {
-    var cmsPagesCollection = this.get("contentResources");
+  // and filter out unsupported languages
+  filteredCmsPages: function() {
+    var cmsPages = this.get("contentResources");
+    // above is ember data coll which can be accessed so:
+    // cmsPages.get("content")[0].record.get("slug")
+    // cmsPages.get("content.firstObject.record.slug")
     var languages = this.get("languages");
-    if (cmsPagesCollection.get("content").length < 1) {
-      cmsPagesCollection = [];
-      var store = this.get("store");
+    var filteredCmsPages = [];
+    // var locales = this.get("i18n.locales");
+    var store = this.get("store");
+    // var cmsPartInfo = this.get("cmsPartInfo");
+    if (cmsPages.get("content").length > 0) {
+      // below filters out languages that are not enabled for site:
       languages.forEach(function(language) {
         var locale = language.split("-")[0];
-        var newPage = store.createRecord("cmsPage", {
-          slug: locale,
-          // siteId: 1,
-          // title: "title",
-          blocks: [{
-            content: "plhldr"
-          }]
-        });
-        cmsPagesCollection.pushObject(newPage);
-      })
+        var localePP = cmsPages.findBy("slug", locale);
+        if (!!!localePP) {
+          // where a locale has not been prepopulated, 
+          // I'll create new record for it here
+          var siteId = cmsPages.get("content.firstObject.record.siteId");
+          var layoutId = cmsPages.get("content.firstObject.record.layoutId");
+          var parentId = cmsPages.get("content.firstObject.record.parentId");
+          var label = cmsPages.get("content.firstObject.record.label");
+          localePP = store.createRecord("cmsPage", {
+            slug: locale,
+            siteId: siteId,
+            site_id: siteId,
+            label: label,
+            layoutId: layoutId,
+            parentId: parentId,
+            blocks: []
+          });
+          // debugger;
+        }
+        filteredCmsPages.pushObject(localePP);
+      });
+    } else {
+      // // in case pagePart has no content, I will go ahead and create 
+      // // records here
+      // languages.forEach(function(language) {
+      //   var newPage = store.createRecord("cmsPage", {
+      //     slug: locale,
+      //     blocks: [{
+      //       content: "plhldr"
+      //     }]
+      //   });
+      //   filteredCmsPages.pushObject(newPage);
+      // })
     }
-    return cmsPagesCollection;
+    return filteredCmsPages;
   }.property("contentResources"),
   actions: {
     updateCaches: function(updatedCaches) {

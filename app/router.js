@@ -71,6 +71,9 @@ Router.map(function() {
         this.route("default", {
           path: "/"
         });
+        this.route("settings", {
+          path: "/settings"
+        });
         this.route("tab", {
           path: "/:tabName"
         });

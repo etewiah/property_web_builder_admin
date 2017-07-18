@@ -1,12 +1,21 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  // represents a Comfy Mex Sofa page
+  // - in the context of PWB, it is used
+  // to display a section within a page
   // i18n: Ember.inject.service(),
   // title: DS.attr(),
   siteId: DS.attr(),
-  // above 2 are needed when creating
+  layoutId: DS.attr(),
+  parentId: DS.attr(),
+  // above 3 are needed when creating a new page
 
+  // below identifies group comfy page belongs to
+  // and decides which pwb page it goes into
   label: DS.attr(),
+  // below is proxy for locale 
+  // together with label will uniquely identify a comfy page
   slug: DS.attr(),
   fullPath: DS.attr(),
   blocks: DS.attr(),
@@ -26,4 +35,3 @@ export default DS.Model.extend({
   updatedCaches: DS.attr()
 
 });
-
