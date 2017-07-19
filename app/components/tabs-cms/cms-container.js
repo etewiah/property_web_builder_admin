@@ -4,23 +4,23 @@ import CmsPage from "../../models/cms-page";
 export default Ember.Component.extend({
   store: Ember.inject.service('store'),
   i18n: Ember.inject.service(),
-  // languages: ["En", "Es"],
-  // might have to order cmsPages by language...
-  // and filter out unsupported languages
+  // shortLocaleCodes: ["En", "Es"],
+  // might have to order cmsPages by locale...
+  // and filter out unsupported shortLocaleCodes
   filteredCmsPages: function() {
     var cmsPages = this.get("contentResources");
     // above is ember data coll which can be accessed so:
     // cmsPages.get("content")[0].record.get("slug")
     // cmsPages.get("content.firstObject.record.slug")
-    var languages = this.get("languages");
+    var shortLocaleCodes = this.get("shortLocaleCodes");
     var filteredCmsPages = [];
     // var locales = this.get("i18n.locales");
     var store = this.get("store");
     // var cmsPartInfo = this.get("cmsPartInfo");
     if (cmsPages.get("content").length > 0) {
-      // below filters out languages that are not enabled for site:
-      languages.forEach(function(language) {
-        var locale = language.split("-")[0];
+      // below filters out shortLocaleCodes that are not enabled for site:
+      shortLocaleCodes.forEach(function(locale) {
+        // var locale = locale.split("-")[0];
         var localePP = cmsPages.findBy("slug", locale);
         if (!!!localePP) {
           // where a locale has not been prepopulated, 
@@ -45,7 +45,7 @@ export default Ember.Component.extend({
     } else {
       // // in case pagePart has no content, I will go ahead and create 
       // // records here
-      // languages.forEach(function(language) {
+      // shortLocaleCodes.forEach(function(locale) {
       //   var newPage = store.createRecord("cmsPage", {
       //     slug: locale,
       //     blocks: [{

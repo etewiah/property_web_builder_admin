@@ -35,7 +35,8 @@ export default Ember.Route.extend({
     controller.set("model", model);
 
     var websiteDetails = this.modelFor("admin").websiteDetails;
-    controller.set("languages", websiteDetails.supported_locales);
+    // controller.set("languages", websiteDetails.supported_locales);
+    controller.set("shortLocaleCodes", websiteDetails.sl_without_variants);
 
     var currentPage = this.modelFor("admin.pages.page");
 
@@ -46,15 +47,12 @@ export default Ember.Route.extend({
       controller.set("tabs-page-component", tabsPageComponent);
       // var cmsPartInfo = currentPage.details.cmsPartsList.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", null);
-      // if (currentPage.details.cmsPartsList.length < 2) {
-      //   // for legacy about-us pages etc, do not show tabs if there is only one
-      //   controller.set("cmsPartsList", []);
-      // }
-
+    } else if(activeTabName === "raw") {
+      controller.set("tabs-page-component", "tabs-cms/page-html")      
     } else {
       controller.set("tabs-page-component", "tabs-cms/cms-container")
-      var cmsPartInfo = currentPage.details.cmsPartsList.findBy("tabValue", activeTabName);
-      controller.set("cmsPartInfo", cmsPartInfo);
+        // var cmsPartInfo = currentPage.details.cmsPartsList.findBy("tabValue", activeTabName);
+      controller.set("cmsPartInfo", currentSection);
     }
 
   }

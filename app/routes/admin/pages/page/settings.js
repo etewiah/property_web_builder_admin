@@ -13,7 +13,7 @@ export default Ember.Route.extend({
     controller.set("cmsPartsList", currentPage.details.cmsPartsList);
     controller.set("currentPage", currentPage);
     var websiteDetails = this.modelFor("admin").websiteDetails;
-    controller.set("supportedLocales", websiteDetails.sl_without_variants);
+    controller.set("shortLocaleCodes", websiteDetails.sl_without_variants);
 
   }
 });
