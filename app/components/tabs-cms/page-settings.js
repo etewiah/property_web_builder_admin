@@ -2,7 +2,7 @@ import Ember from 'ember';
 import TabWithForm from "../base/tab-with-form";
 
 export default TabWithForm.extend({
-  changedFields: [],
+  // changedFields: [],
 
   i18n: Ember.inject.service(),
   actions: {
@@ -26,7 +26,7 @@ export default TabWithForm.extend({
       pageTitleFields.pushObject(titleField);
     });
     return pageTitleFields;
-  }.property(),
+  }.property("resourceObject"),
 
   // linkTitleFields: function() {
   //   var linkTitleFields = [];
