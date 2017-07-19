@@ -39,6 +39,7 @@ export default Ember.Route.extend({
     controller.set("shortLocaleCodes", websiteDetails.sl_without_variants);
 
     var currentPage = this.modelFor("admin.pages.page");
+    controller.set("currentPage", currentPage);
 
     controller.set("cmsPartsList", currentPage.details.cmsPartsList);
     var currentSection = currentPage.details.cmsPartsList.findBy("tabValue", activeTabName);

@@ -1,20 +1,21 @@
 <div role="tabpanel" class="tab-pane">
   <div class="row">
-    {{partial "partials/manage-changes-buttons" }}
-
-    <div class="col-sm-12 col-md-8">
-      <h3 class="m-b-20">{{! t "fieldLabels.pageTitle"}}</h3>
+    <div class="col-sm-12">
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true"></span></button><i class="fa fa-lg fa-info"></i>
+          {{t "pageSections.rawHtml.info" }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
       <div class="m-t-20">
-        {{#each pageTitleFields as |inputField|}} 
-          {{partial "partials/input-field-resolver" }} 
-        {{/each}}
+          {{#each shortLocaleCodes as |shortLocaleCode|}} 
+            {{cms/raw-html shortLocaleCode=shortLocaleCode contentItem=currentPage}} 
+          {{/each}} 
         <br>
       </div>
     </div>
-    {{partial "partials/manage-changes-buttons" }}
-  </div>
-  <div class="row">
-
   </div>
   <div class="row">
   </div>
