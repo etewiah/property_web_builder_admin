@@ -8,19 +8,6 @@ var AdminMeta = Ember.Object.extend({
 });
 
 AdminMeta.reopenClass({
-  getCmsPageMeta: function(pageSlug) {
-    var apiUrl = "/api/v1/cms-pages/meta/" + pageSlug;
-    return $.ajax(apiUrl, {
-      type: 'GET',
-      dataType: 'json'
-    }).then(function(result) {
-      return Ember.Object.create(result);
-      // return result;
-    }.bind(this), function(error) {
-      return error;
-    });
-  },
-
 
   // TODO - rename below to getSelectValues
   get: function(fieldNames) {

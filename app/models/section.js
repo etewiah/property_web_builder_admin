@@ -63,7 +63,6 @@ Section.reopenClass({
       }
     }).then(function(result) {
       var sortedItems = result.sortBy("sort_order");
-      // debugger;
       return Section.create({
         items: sortedItems,
         pristineItems: sortedItems.copy(true)

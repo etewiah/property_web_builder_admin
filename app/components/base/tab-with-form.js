@@ -14,7 +14,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   // turns out setting changedFields here causes it to be shared by all that 
   // inherit from this which was causing problems
+  // so it is now set in components that inherit from this
   // changedFields: [],
+  // or for properties, here:
+  // /sites-2015-spt/inmo1-client/app/routes/admin/propiedades/editar/tab.js
   fieldsWithErrors: [],
 
   // can't think of a simpler way of doing this

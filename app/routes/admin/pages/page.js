@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import AdminMeta from '../../../models/admin_meta';
+import PwbPage from '../../../models/pwb_page';
 const {
   Route,
   inject
@@ -9,7 +9,7 @@ export default Ember.Route.extend({
   i18n: inject.service(),
 
   model(params) {
-    var currentPageMeta = AdminMeta.getCmsPageMeta(params.pageName);
+    var currentPageMeta = PwbPage.get(params.pageName);
     // "about-us");
     // var cmsSections = this.modelFor("admin").setup.get('cmsSections');
     // var currentPageMeta = cmsSections.findBy("tabValue", "about-us");

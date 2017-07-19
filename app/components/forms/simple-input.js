@@ -2,8 +2,8 @@ import Ember from 'ember';
 
 
 export default Ember.Component.extend({
+  i18n: Ember.inject.service(),
   classNames: ['form-group', 'fg-float'],
-
   lostFocus: function() {
     // fixes bug where unable to leave page with error in field
     // but unable to cancel changes either
@@ -41,11 +41,20 @@ export default Ember.Component.extend({
   }.on('didInsertElement'),
   // inputValue: null,
 
+  labelText: function() {
+    var labelText = this.get("fieldDetails.labelText");
+    if (labelText) {
+      return labelText;
+    } else {
+      var i18n = this.get('i18n');
+      var labelTextTKey = this.get("fieldDetails.labelTextTKey") || "";
+      return i18n.t(labelTextTKey).toString();
+    }
+  }.property("fieldDetails.labelText"),
+
   inputValue: function() {
     return this.get("resourceObject." + this.fieldDetails.fieldName);
   }.property("resourceObject"),
-
-
 
   //  http://blog.abuiles.com/blog/2015/03/30/removing-prototype-extensions-with-ember-watson/
   updateValue: Ember.observer('inputValue', function() {

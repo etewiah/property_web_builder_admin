@@ -35,8 +35,6 @@ export default Ember.Route.extend({
     controller.set("model", model);
 
     var websiteDetails = this.modelFor("admin").websiteDetails;
-    // controller.set("websiteDetails", websiteDetails);
-
     controller.set("languages", websiteDetails.supported_locales);
 
     var currentPage = this.modelFor("admin.pages.page");

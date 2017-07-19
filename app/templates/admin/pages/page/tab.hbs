@@ -1,5 +1,10 @@
 <div role="tabpanel">
   <ul data-tab-color="green" class="tab-nav" role="tablist" tabindex="1" style="overflow: hidden; outline: none;">
+    <li class="">
+    {{#link-to 'admin.pages.page.settings'}}
+      {{t "pageSections.pageTitle" }}
+    {{/link-to}}
+    </li>
     {{#each cmsPartsList as |tab|}}
     <li class={{if (eq tab.tabValue activeTabName) "active"}}>{{#link-to 'admin.pages.page.tab' tab.tabValue}}{{t tab.tabTitleKey }}{{/link-to}}</li>
     {{/each}}

@@ -1,0 +1,16 @@
+<div role="tabpanel">
+  <ul data-tab-color="green" class="tab-nav" role="tablist" tabindex="1" style="overflow: hidden; outline: none;">
+    <li class="active">
+    {{#link-to 'admin.pages.page.settings'}}
+      {{t "pageSections.pageTitle" }}
+    {{/link-to}}
+    </li>
+    {{#each cmsPartsList as |tab|}}
+    <li class="">{{#link-to 'admin.pages.page.tab' tab.tabValue}}{{t tab.tabTitleKey }}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+  <div class="tab-content">
+       {{tabs-cms/page-settings resourceObject=currentPage supportedLocales=supportedLocales }}
+
+  </div>
+</div>
