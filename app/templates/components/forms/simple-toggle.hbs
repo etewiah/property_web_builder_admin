@@ -4,20 +4,23 @@
 <div>
   <div class="toggle-switch" data-ts-color="green">
     {{#if fieldDetails.labelText}}
-      <label for="tswitch" class="ts-label">{{fieldDetails.labelText }}</label>
+      <label for="tswitch" class="ts-label">{{fieldDetails.labelText }} :</label>
     {{else}}
-      <label for="tswitch" class="ts-label">{{t fieldDetails.labelTextTKey }}</label>
+      <label for="tswitch" class="ts-label">{{t fieldDetails.labelTextTKey }} :</label>
     {{/if}}
+      <span class="m-r-10" style="text-transform: uppercase;">
+      {{#unless fieldDetails.toggleValue}}
+        {{t "no"}}
+      {{/unless}}
+      </span>
       <input id="tswitch" type="checkbox" hidden="hidden" checked={{fieldDetails.toggleValue}}
       onClick={{action "switchToggled" fieldDetails }}>
       <label for="tswitch" class="ts-helper"></label>
-      <span class="m-l-10" style="text-transform: uppercase;">(
+      <span class="m-l-10" style="text-transform: uppercase;">
       {{#if fieldDetails.toggleValue}}
         {{t "yes"}}
-      {{else}}
-        {{t "no"}} 
       {{/if}}
-      )</span>
+      </span>
     </div>
 </div>
 

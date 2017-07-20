@@ -4,9 +4,7 @@ import CmsPage from "../../models/cms-page";
 export default Ember.Component.extend({
   store: Ember.inject.service('store'),
   i18n: Ember.inject.service(),
-  // shortLocaleCodes: ["En", "Es"],
   // might have to order cmsPages by locale...
-  // and filter out unsupported shortLocaleCodes
   filteredCmsPages: function() {
     var cmsPages = this.get("contentResources");
     // above is ember data coll which can be accessed so:
@@ -43,7 +41,7 @@ export default Ember.Component.extend({
         filteredCmsPages.pushObject(localePP);
       });
     } else {
-      // // in case pagePart has no content, I will go ahead and create 
+      // // in case pagePart has no content, I could go ahead and create 
       // // records here
       // shortLocaleCodes.forEach(function(locale) {
       //   var newPage = store.createRecord("cmsPage", {
@@ -57,7 +55,36 @@ export default Ember.Component.extend({
     }
     return filteredCmsPages;
   }.property("contentResources"),
+  toggleVisField: function() {
+    var toggleVisField = {
+      labelText: "Visible on page",
+      fieldName: "visibleOnPage"
+    };
+    var pagePartLabel = this.get("contentResources.content.firstObject.record.label");
+    var visiblePageParts = this.get("currentPage.details.visiblePageParts") || [];
+    var pagePartVisibility = visiblePageParts.includes(pagePartLabel);
+    toggleVisField.toggleValue = pagePartVisibility;
+    return toggleVisField;
+  }.property("contentResources"),
   actions: {
+    changeVisibility: function(newVal) {
+      var currentPage = this.get("currentPage");
+      var pagePartLabel = this.get("contentResources.content.firstObject.record.label");
+      var visiblePageParts = this.get("currentPage.details.visiblePageParts") || [];
+
+      if (newVal) {
+        // TODO - will want to order this 
+        visiblePageParts.pushObject(pagePartLabel);
+      } else {
+        visiblePageParts.removeObject(pagePartLabel);
+      }
+      var self = this;
+      function success(result) {}
+      function failure(reason) {
+        // handle the error
+      }
+      currentPage.setPagePartVisibility(visiblePageParts, success, failure);
+    },
     updateCaches: function(updatedCaches) {
       var cmsPages = this.get("contentResources.content");
       // Where blocks contain images,

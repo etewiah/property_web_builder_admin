@@ -21,6 +21,28 @@ var PwbPage = Ember.Object.extend({
       }
     });
   },
+  setPagePartVisibility: function(visiblePageParts, complete, error) {
+    var pageSlug = this.get("slug");
+    var data = {
+      page_slug: pageSlug,
+      visible_page_parts: visiblePageParts
+    };
+    // var self = this;
+    var apiUrl = '/api/v1/pwb_page/page_part_visibility';
+    return $.ajax(apiUrl, {
+      type: 'PUT',
+      dataType: 'json',
+      data: data
+    }).then(function(result) {
+      if (complete) {
+        complete(result);
+      }
+    }, function(result) {
+      if (error) {
+        error(result);
+      }
+    });
+  },
 
 });
 

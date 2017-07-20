@@ -6,6 +6,12 @@
           {{t cmsPartInfo.tabInfoKey }}
       </div>
     </div>
+    <div class="col-sm-12">
+      <div class="m-20">
+        {{forms/simple-toggle resetTrigger=resetTrigger valueChangedAction="changeVisibility" fieldDetails=toggleVisField  }}
+      </div>
+    </div>
+
   </div>
   <div class="row">
     {{#each filteredCmsPages as |cmsPage| }}
