@@ -61,16 +61,16 @@ export default Ember.Component.extend({
       fieldName: "visibleOnPage"
     };
     var pagePartLabel = this.get("contentResources.content.firstObject.record.label");
-    var visiblePageParts = this.get("currentPage.details.visiblePageParts") || [];
+    var visiblePageParts = this.get("currentPwbPage.details.visiblePageParts") || [];
     var pagePartVisibility = visiblePageParts.includes(pagePartLabel);
     toggleVisField.toggleValue = pagePartVisibility;
     return toggleVisField;
   }.property("contentResources"),
   actions: {
     changeVisibility: function(newVal) {
-      var currentPage = this.get("currentPage");
+      var currentPwbPage = this.get("currentPwbPage");
       var pagePartLabel = this.get("contentResources.content.firstObject.record.label");
-      var visiblePageParts = this.get("currentPage.details.visiblePageParts") || [];
+      var visiblePageParts = this.get("currentPwbPage.details.visiblePageParts") || [];
 
       if (newVal) {
         // TODO - will want to order this 
@@ -83,7 +83,7 @@ export default Ember.Component.extend({
       function failure(reason) {
         // handle the error
       }
-      currentPage.setPagePartVisibility(visiblePageParts, success, failure);
+      currentPwbPage.setPagePartVisibility(visiblePageParts, success, failure);
     },
     updateCaches: function(updatedCaches) {
       var cmsPages = this.get("contentResources.content");

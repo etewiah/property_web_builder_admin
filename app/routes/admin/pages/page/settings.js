@@ -19,8 +19,8 @@ export default Ember.Route.extend({
   },
 
   model(params) {
-    var currentPage = this.modelFor("admin.pages.page");
-    return currentPage;
+    var currentPwbPage = this.modelFor("admin.pages.page");
+    return currentPwbPage;
   },
   setupController(controller, model) {
     // debugger;
@@ -30,7 +30,7 @@ export default Ember.Route.extend({
     // controller.set("model", model);
     // var websiteDetails = this.modelFor("admin").websiteDetails;
     controller.set("changedFields", []);
-    // var currentPage = this.modelFor("admin.pages.page");
+    // var currentPwbPage = this.modelFor("admin.pages.page");
     controller.set("cmsPartsList", model.details.cmsPartsList);
     controller.set("model", model);
     var websiteDetails = this.modelFor("admin").websiteDetails;

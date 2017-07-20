@@ -23,8 +23,8 @@ export default Ember.Route.extend({
   //   }
   // },
   model(params) {
-    var currentPage = this.modelFor("admin.pages.page");
-    var currentSection = currentPage.details.cmsPartsList.findBy("tabValue", params.tabName);
+    var currentPwbPage = this.modelFor("admin.pages.page");
+    var currentSection = currentPwbPage.details.cmsPartsList.findBy("tabValue", params.tabName);
     if (currentSection.isLegacy) {
       return this.store.query("webContent", {
         filter: {
@@ -33,8 +33,8 @@ export default Ember.Route.extend({
       });
     }
     var label = currentSection.label;
-    // if (currentPage.get("cmsPartsList")) {
-    //   var cmsPartInfo = currentPage.details.cmsPartsList.findBy("tabValue", params.tabName);
+    // if (currentPwbPage.get("cmsPartsList")) {
+    //   var cmsPartInfo = currentPwbPage.details.cmsPartsList.findBy("tabValue", params.tabName);
     //   label = cmsPartInfo.label
     // }
     return this.store.query("cmsPage", {
@@ -56,21 +56,21 @@ export default Ember.Route.extend({
     // controller.set("languages", websiteDetails.supported_locales);
     controller.set("shortLocaleCodes", websiteDetails.sl_without_variants);
 
-    var currentPage = this.modelFor("admin.pages.page");
-    controller.set("currentPage", currentPage);
+    var currentPwbPage = this.modelFor("admin.pages.page");
+    controller.set("currentPwbPage", currentPwbPage);
 
-    controller.set("cmsPartsList", currentPage.details.cmsPartsList);
-    var currentSection = currentPage.details.cmsPartsList.findBy("tabValue", activeTabName);
+    controller.set("cmsPartsList", currentPwbPage.details.cmsPartsList);
+    var currentSection = currentPwbPage.details.cmsPartsList.findBy("tabValue", activeTabName);
     if (currentSection.isLegacy) {
       var tabsPageComponent = "tabs-website/" + activeTabName + "-tab";
       controller.set("tabs-page-component", tabsPageComponent);
-      // var cmsPartInfo = currentPage.details.cmsPartsList.findBy("tabValue", activeTabName);
+      // var cmsPartInfo = currentPwbPage.details.cmsPartsList.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", null);
     } else if (activeTabName === "raw") {
       controller.set("tabs-page-component", "tabs-cms/page-html")
     } else {
       controller.set("tabs-page-component", "tabs-cms/cms-container")
-        // var cmsPartInfo = currentPage.details.cmsPartsList.findBy("tabValue", activeTabName);
+        // var cmsPartInfo = currentPwbPage.details.cmsPartsList.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", currentSection);
     }
 
