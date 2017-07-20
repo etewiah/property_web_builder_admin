@@ -3,6 +3,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   beforeModel: function() {
-    this.transitionTo("admin.website.content.tab", "landing-carousel");
+    this.transitionTo("admin.website.content.tab", "footer");
   },
 });

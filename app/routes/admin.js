@@ -76,8 +76,8 @@ export default Ember.Route.extend({
           tabTitleKey: "adminSections.websiteSettings",
           tabRoute: "admin.website.settings"
         }, {
-          tabIconClass: "fa fa-newspaper-o",
-          tabTitleKey: "adminSections.websiteContent",
+          tabIconClass: "fa fa-keyboard-o",
+          tabTitleKey: "webContentSections.footer",
           tabRoute: "admin.website.content"
         }]
       }, {

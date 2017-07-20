@@ -85,7 +85,8 @@ export default Ember.Route.extend({
 
     controller.set("languages", websiteDetails.supported_locales);
 
-    var websiteContentTabsList = this.modelFor("admin").setup.get('websiteContentTabsList');
+    var websiteContentTabsList = [];
+    // this.modelFor("admin").setup.get('websiteContentTabsList');
     controller.set("tabsList",websiteContentTabsList);
 
   }
