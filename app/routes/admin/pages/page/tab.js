@@ -66,7 +66,7 @@ export default Ember.Route.extend({
       controller.set("tabs-page-component", tabsPageComponent);
       // var cmsPartInfo = currentPwbPage.details.cmsPartsList.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", null);
-    } else if (activeTabName === "raw") {
+    } else if (activeTabName === "html") {
       controller.set("tabs-page-component", "tabs-cms/page-html")
     } else {
       controller.set("tabs-page-component", "tabs-cms/cms-container")

@@ -7,21 +7,29 @@ export default Ember.Component.extend({
       labelText: "Visible on page",
       fieldName: "visibleOnPage"
     };
-    toggleVisField.toggleValue = this.get("currentPwbPage.visible");
+    var visiblePageParts = this.get("currentPwbPage.details.visiblePageParts") || [];
+    var pagePartVisibility = visiblePageParts.includes("raw_html");
+    toggleVisField.toggleValue = pagePartVisibility;
     return toggleVisField;
   }.property("currentPwbPage"),
   actions: {
     changeVisibility: function(newVal) {
       var currentPwbPage = this.get("currentPwbPage");
-      currentPwbPage.set("visible", newVal);
+      var pagePartLabel = "raw_html"
+      var visiblePageParts = this.get("currentPwbPage.details.visiblePageParts") || [];
+
+      if (newVal) {
+        // TODO - will want to order this 
+        visiblePageParts.pushObject(pagePartLabel);
+      } else {
+        visiblePageParts.removeObject(pagePartLabel);
+      }
       var self = this;
-
       function success(result) {}
-
       function failure(reason) {
         // handle the error
       }
-      currentPwbPage.save(success, failure);
+      currentPwbPage.setPagePartVisibility(visiblePageParts, success, failure);
     }
   }
 
