@@ -3,13 +3,13 @@
     {{partial "partials/manage-changes-buttons" }}
     <div class="col-sm-4">
       <h3>{{t "inTabLabels.topNav"}}</h3> 
-      {{forms/navbar-manager supportedLanguages=supportedLanguages resetTrigger=resetTrigger siteSections=contentResources visibilityFieldName="show_in_top_nav" valueChangedAction="checkDirtyState" }}
+      {{forms/navbar-manager supportedLanguages=supportedLanguages siteSections=contentResources.topNavLinks changedLinks=changedFields hasChanged=hasChanged }}
       <div>
       </div>
     </div>
     <div class="col-sm-4">
       <h3>{{t "inTabLabels.footer"}}</h3> 
-      {{forms/navbar-manager supportedLanguages=supportedLanguages resetTrigger=resetTrigger siteSections=contentResources visibilityFieldName="show_in_footer" valueChangedAction="checkDirtyState" }}
+      {{forms/navbar-manager supportedLanguages=supportedLanguages siteSections=contentResources.footerLinks changedLinks=changedFields hasChanged=hasChanged }}
     </div>
     {{partial "partials/manage-changes-buttons" }}
   </div>

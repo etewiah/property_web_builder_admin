@@ -18,6 +18,7 @@ export default Ember.Component.extend({
   // changedFields: [],
   // or for properties, here:
   // /sites-2015-spt/inmo1-client/app/routes/admin/propiedades/editar/tab.js
+  // For navigation-tab I'm setting hasChanged value directly
   fieldsWithErrors: [],
 
   // can't think of a simpler way of doing this
@@ -51,7 +52,6 @@ export default Ember.Component.extend({
         var objectToRemove = changedFields.findBy("fieldName", changedFieldInfo.fieldName);
         changedFields.removeObject(objectToRemove);
       }
-
       // if we have more than one field that has changed
       // consider this component as "hasChanged"
       var hasChanged = (changedFields.length > 0);
@@ -103,6 +103,7 @@ export default Ember.Component.extend({
       var resourceObject = this.get("resourceObject");
       if (typeof resourceObject.rollbackAttributes === "function") {
         // for propertyResource which uses ember data:
+        // and links where I've defined my own rollbackAttributes
         resourceObject.rollbackAttributes();
       } else {
         var changedFields = this.get("changedFields");

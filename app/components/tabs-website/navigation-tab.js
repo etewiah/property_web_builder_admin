@@ -5,13 +5,13 @@ import OnReadyMixin from "../../mixins/on-ready";
 import TabWithForm from "../base/tab-with-form";
 
 export default TabWithForm.extend(OnReadyMixin, {
-  // languages: ["En", "Es"],
   changedFields: [],
+  hasChanged: false,
+  // changedLinks: [],
 
-
-  supportedLanguages: function() {
-    return this.get("websiteDetails.supported_locales");
-  }.property("websiteDetails.supported_locales"),
+  // supportedLanguages: function() {
+  //   return this.get("websiteDetails.supported_locales");
+  // }.property("websiteDetails.supported_locales"),
 
   setResourceObject: function() {
     // need to change below so manage-changes-buttons partial has
@@ -19,8 +19,10 @@ export default TabWithForm.extend(OnReadyMixin, {
     this.set("resourceObject", this.get("contentResources"))
   }.on('init'),
 
-  actions: {
-
-  },
+  // actions: {
+  //   triggerReset: function() {
+  //     debugger;
+  //   }
+  // }
 
 });

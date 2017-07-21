@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Section from '../../../../models/section';
+import Link from '../../../../models/link';
 import Theme from '../../../../models/theme';
 // path is actually /admin/website
 
@@ -45,7 +45,7 @@ export default Ember.Route.extend({
 
   model(params) {
     if (params.tabName === "navigation") {
-      return Section.getAll();
+      return Link.getAll(this.get('i18n.locale'));
     }
     if (params.tabName === "template") {
       return Theme.getAll();

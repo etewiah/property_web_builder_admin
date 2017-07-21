@@ -5,15 +5,22 @@
 </div>
 {{/each}} 
 {{/if}}
-  {{#each siteSections as |sectionDetails|}}
+  {{#each siteSections.items as |sectionDetails|}}
   <div class="fg-line m-b-5 m-t-0">
     <div class="checkbox m-b-5">
       <label>
-        <input type="checkbox" checked={{sectionDetails.visible}}
+        {{#if (eq visibilityFieldName "show_in_top_nav")}}
+        <input type="checkbox" checked={{sectionDetails.show_in_top_nav}}
         onClick={{action "changeNavbarItem" sectionDetails }}>
         <i class="input-helper"></i>          
+        {{/if}}
+        {{#if (eq visibilityFieldName "show_in_footer")}}
+        <input type="checkbox" checked={{sectionDetails.show_in_footer}}
+        onClick={{action "changeNavbarItem" sectionDetails }}>
+        <i class="input-helper"></i>          
+        {{/if}}
         <strong>
-          {{ sectionDetails.link_title }}
+          {{ sectionDetails.slug }}
         </strong>
       </label>
     </div>
