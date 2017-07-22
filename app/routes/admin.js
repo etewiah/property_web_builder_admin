@@ -166,12 +166,12 @@ export default Ember.Route.extend({
     ];
     var pagesNav = leftNavItems.findBy("tabTitleKey", "adminSections.pages");
     var linkTitleKey = "link_title_" + this.get("i18n.locale");
-    var sortedPages = model.websiteDetails.pages_summary.sortBy("sort_order_top_nav");
+    var sortedPages = model.websiteDetails.admin_page_links.sortBy("sort_order_top_nav");
     sortedPages.forEach(function(page) {
       var pageNav = {};
       pageNav.tabRoute = "admin.pages.page";
       pageNav.tabTitle = page[linkTitleKey];
-      pageNav.routeParam = page["slug"];
+      pageNav.routeParam = page["page_slug"];
       pagesNav.subMenuItems.pushObject(pageNav);
     });
 
