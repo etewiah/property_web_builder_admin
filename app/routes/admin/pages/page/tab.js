@@ -3,25 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   // tabsList: [{}],
   i18n: Ember.inject.service(),
-  // actions: {
-  //   willTransition: function(transition) {
-  //     debugger;
-  //     var changedFields = this.controller.get("changedFields");
-  //     var i18n = this.get('i18n');
 
-  //     // if (property.get("hasDirtyAttributes")) {
-  //     // using above was too flakey - sometimes a null input field would change to "" when you type and delete..
-  //     if (changedFields.length > 0) {
-  //       var message = i18n.t("alerts.navigatingFromChanges").toString();
-  //       sweetAlert(message);
-  //       transition.abort();
-  //     } else {
-  //       // Bubble the `willTransition` action so that
-  //       // parent routes can decide whether or not to abort.
-  //       return true;
-  //     }
-  //   }
-  // },
   model(params) {
     var currentPwbPage = this.modelFor("admin.pages.page");
     var currentSection = currentPwbPage.details.cmsPartsList.findBy("tabValue", params.tabName);

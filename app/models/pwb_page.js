@@ -5,8 +5,32 @@ var PwbPage = Ember.Object.extend({
     var data = {
       page: pageProperties
     };
-    // var self = this;
+    // strong params on server ensures 
+    // only a few fields will get updated
     var apiUrl = '/api/v1/pwb_page';
+    return $.ajax(apiUrl, {
+      type: 'PUT',
+      dataType: 'json',
+      data: data
+    }).then(function(result) {
+      if (complete) {
+        complete(result);
+      }
+    }, function(result) {
+      if (error) {
+        error(result);
+      }
+    });
+  },
+  saveFragment: function(fragmentDetails, complete, error) {
+    var pageSlug = this.get("slug");
+    var fragmentDetailsJson = fragmentDetails.getProperties("blocks","locale","label");
+    var data = {
+      page_slug: pageSlug,
+      fragment_details: fragmentDetailsJson
+    };
+    // var self = this;
+    var apiUrl = '/api/v1/pwb_page/page_fragment';
     return $.ajax(apiUrl, {
       type: 'PUT',
       dataType: 'json',

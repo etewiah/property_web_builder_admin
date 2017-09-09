@@ -1,0 +1,33 @@
+{{#if currrentBlockInfoRow.isImage}}
+<div class="m-b-10">
+  <div>{{ currrentBlockInfoRow.label }}</div>
+  {{#if fragmentBlock.content}}
+    <p><img style="max-width: 100%;" src="{{ fragmentBlock.content }}">  </p>          
+  {{/if}}
+  <p><a class="btn btn-edfile">{{t "editor.pickPhoto"}}
+     {{#upload/img-upload-cms block=currrentBlockInfoRow
+     srcUrl=fragmentBlock.content }} {{/upload/img-upload-cms}}
+  </a></p>
+
+    <div class="" style="">
+      {{input value=fragmentBlock.content type="text"  class="input-sm form-control fg-input"  }}
+    </div>
+  </div>
+{{/if}}
+{{#if currrentBlockInfoRow.isSingleLineText }}
+<div class="m-b-10">
+  <div>{{ currrentBlockInfoRow.label }}</div>
+  <div class="" style="">
+    {{input value=fragmentBlock.content type="text"  class="input-sm form-control fg-input"  }}
+  </div>
+</div>      
+{{/if}}
+{{#if currrentBlockInfoRow.isMultipleLineText}}
+<div class="m-b-10">
+  <div>{{ currrentBlockInfoRow.label }}</div>
+  <div class="" style="">
+    {{wysiwyg-editor content=fragmentBlock.content toolbarIn="hidden"}}
+  </div>
+</div>      
+{{/if}}
+

@@ -1,0 +1,23 @@
+<div class="row">
+  {{#each blocksInfo as |blocksInfoCol| }}
+  <div class="{{colClass}}">
+    {{#each blocksInfoCol as |blockInfoRow| }}
+      {{cms/fragment-editor-field  
+        currrentBlockInfoRow=blockInfoRow boundValues=boundValues
+        }}
+    {{/each}}
+  </div>
+  {{/each}}
+</div>
+<div class="row">
+</div>
+<div>
+  {{#if isEditing}}
+  <button type="submit" class="pull-left btn btn-primary btn-sm m-t-10 m-r-10 waves-effect" {{action "savePageFragment" }}>
+    {{t "save"}}
+  </button>
+  <button type="submit" class="pull-left btn btn-sm m-t-10 waves-effect" {{action "cancelEditing" }}>
+    {{t "cancel"}}
+  </button>
+  {{/if}}
+</div>
