@@ -23,15 +23,9 @@ export default Ember.Route.extend({
     return currentPwbPage;
   },
   setupController(controller, model) {
-    // debugger;
-    // var activeTabName = this.paramsFor('admin.pages.page.tab').tabName || "";
-    // activeTabName = activeTabName.toLowerCase();
-    // controller.set("activeTabName", activeTabName);
-    // controller.set("model", model);
-    // var websiteDetails = this.modelFor("admin").websiteDetails;
     controller.set("changedFields", []);
-    // var currentPwbPage = this.modelFor("admin.pages.page");
-    controller.set("cmsPartsList", model.details.cmsPartsList);
+    // below for navigation tabs
+    controller.set("cmsPartsList", model.fragment_configs);
     controller.set("model", model);
     var websiteDetails = this.modelFor("admin").websiteDetails;
     controller.set("shortLocaleCodes", websiteDetails.sl_without_variants);

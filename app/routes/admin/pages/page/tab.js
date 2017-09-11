@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 
   model(params) {
     var currentPwbPage = this.modelFor("admin.pages.page");
-    var currentSection = currentPwbPage.details.cmsPartsList.findBy("tabValue", params.tabName);
+    var currentSection = currentPwbPage.fragment_configs.findBy("tabValue", params.tabName);
     if (currentSection.isLegacy) {
       return this.store.query("webContent", {
         filter: {
@@ -38,19 +38,20 @@ export default Ember.Route.extend({
     var currentPwbPage = this.modelFor("admin.pages.page");
     controller.set("currentPwbPage", currentPwbPage);
 
-    controller.set("cmsPartsList", currentPwbPage.details.cmsPartsList);
-    var currentSection = currentPwbPage.details.cmsPartsList.findBy("tabValue", activeTabName);
+    // below for navigation tabs
+    controller.set("cmsPartsList", currentPwbPage.fragment_configs);
+    var currentSection = currentPwbPage.fragment_configs.findBy("tabValue", activeTabName);
     if (currentSection.isLegacy) {
       var tabsPageComponent = "tabs-website/" + activeTabName + "-tab";
       controller.set("tabs-page-component", tabsPageComponent);
-      // var cmsPartInfo = currentPwbPage.details.cmsPartsList.findBy("tabValue", activeTabName);
+      // var cmsPartInfo = currentPwbPage.fragment_configs.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", null);
     } else if (activeTabName === "html") {
       // raw-html which is stored in page
       controller.set("tabs-page-component", "tabs-cms/page-html")
     } else {
       controller.set("tabs-page-component", "tabs-cms/fragments-container")
-        // var cmsPartInfo = currentPwbPage.details.cmsPartsList.findBy("tabValue", activeTabName);
+        // var cmsPartInfo = currentPwbPage.fragment_configs.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", currentSection);
     }
 

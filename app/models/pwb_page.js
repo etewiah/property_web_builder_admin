@@ -1,5 +1,19 @@
 var PwbPage = Ember.Object.extend({
 
+  pageFragments: function() {
+    return this.get("page_fragments") || [];
+  }.property("page_fragments"),
+
+  getLocaleFragment: function(locale, label){
+    var pageFragments = this.get("page_fragments") || [];
+    var labeledFragments = pageFragments[label] || [];
+    if (labeledFragments) {
+      return labeledFragments[locale];
+    } else {
+      return {};
+    }
+  },
+
   save: function(complete, error) {
     var pageProperties = this.getProperties(Object.keys(this));
     var data = {
