@@ -15,15 +15,12 @@ export default Ember.Route.extend({
       });
     }
     var label = currentSection.label;
-    // if (currentPwbPage.get("cmsPartsList")) {
-    //   var cmsPartInfo = currentPwbPage.details.cmsPartsList.findBy("tabValue", params.tabName);
-    //   label = cmsPartInfo.label
-    // }
-    return this.store.query("cmsPage", {
-      filter: {
-        label: label
-      }
-    });
+    return {};
+    // return this.store.query("cmsPage", {
+    //   filter: {
+    //     label: label
+    //   }
+    // });
   },
   // setupController will not get called if model does not change
   // eg if I returned a query that was not dependant on params....
@@ -49,9 +46,10 @@ export default Ember.Route.extend({
       // var cmsPartInfo = currentPwbPage.details.cmsPartsList.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", null);
     } else if (activeTabName === "html") {
+      // raw-html which is stored in page
       controller.set("tabs-page-component", "tabs-cms/page-html")
     } else {
-      controller.set("tabs-page-component", "tabs-cms/cms-container")
+      controller.set("tabs-page-component", "tabs-cms/fragments-container")
         // var cmsPartInfo = currentPwbPage.details.cmsPartsList.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", currentSection);
     }

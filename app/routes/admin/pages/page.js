@@ -17,7 +17,7 @@ export default Ember.Route.extend({
   },
   actions: {},
   setupController(controller, model) {
-    var linkTitleKey = "link_title_" + this.get("i18n.locale");
+    var linkTitleKey = "page_title_" + this.get("i18n.locale");
     controller.set("currentPwbPageTitle", model[linkTitleKey]);
   }
 });

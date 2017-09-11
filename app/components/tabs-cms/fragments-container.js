@@ -36,7 +36,6 @@ export default Ember.Component.extend({
   //           parentId: parentId,
   //           blocks: []
   //         });
-  //         // debugger;
   //       }
   //       filteredCmsPages.pushObject(localePP);
   //     });
@@ -50,18 +49,17 @@ export default Ember.Component.extend({
       labelText: "Visible on page",
       fieldName: "visibleOnPage"
     };
-    var pagePartLabel = this.get("contentResources.content.firstObject.record.label");
+    var pagePartLabel = this.get("cmsPartInfo.label");
     var visiblePageParts = this.get("currentPwbPage.details.visiblePageParts") || [];
     var pagePartVisibility = visiblePageParts.includes(pagePartLabel);
     toggleVisField.toggleValue = pagePartVisibility;
     return toggleVisField;
-  }.property("contentResources"),
+  }.property(),
   actions: {
     changeVisibility: function(newVal) {
       var currentPwbPage = this.get("currentPwbPage");
-      var pagePartLabel = this.get("contentResources.content.firstObject.record.label");
+      var pagePartLabel = this.get("cmsPartInfo.label");
       var visiblePageParts = this.get("currentPwbPage.details.visiblePageParts") || [];
-
       if (newVal) {
         // TODO - will want to order this 
         visiblePageParts.pushObject(pagePartLabel);
