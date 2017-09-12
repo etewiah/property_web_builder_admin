@@ -6,16 +6,18 @@ export default Ember.Route.extend({
 
   model(params) {
     var currentPwbPage = this.modelFor("admin.pages.page");
-    var currentSection = currentPwbPage.fragment_configs.findBy("tabValue", params.tabName);
-    if (currentSection.isLegacy) {
+    var currentFragmentConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", params.tabName);
+    if (currentFragmentConfig && currentFragmentConfig.isLegacy) {
       return this.store.query("webContent", {
         filter: {
           tag: params.tabName
         }
       });
     }
-    var label = currentSection.label;
+    // data for each page fragment is saved in page
+    // and does not need to be retrieved here 
     return {};
+    // var label = currentFragmentConfig.label;
     // return this.store.query("cmsPage", {
     //   filter: {
     //     label: label
@@ -39,20 +41,19 @@ export default Ember.Route.extend({
     controller.set("currentPwbPage", currentPwbPage);
 
     // below for navigation tabs
-    controller.set("cmsPartsList", currentPwbPage.fragment_configs);
-    var currentSection = currentPwbPage.fragment_configs.findBy("tabValue", activeTabName);
-    if (currentSection.isLegacy) {
+    controller.set("cmsPartsList", currentPwbPage.get("fragmentConfigs"));
+
+    var currentFragmentConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", activeTabName);
+    if (currentFragmentConfig && currentFragmentConfig.isLegacy) {
       var tabsPageComponent = "tabs-website/" + activeTabName + "-tab";
       controller.set("tabs-page-component", tabsPageComponent);
-      // var cmsPartInfo = currentPwbPage.fragment_configs.findBy("tabValue", activeTabName);
       controller.set("cmsPartInfo", null);
     } else if (activeTabName === "html") {
       // raw-html which is stored in page
       controller.set("tabs-page-component", "tabs-cms/page-html")
     } else {
       controller.set("tabs-page-component", "tabs-cms/fragments-container")
-        // var cmsPartInfo = currentPwbPage.fragment_configs.findBy("tabValue", activeTabName);
-      controller.set("cmsPartInfo", currentSection);
+      controller.set("cmsPartInfo", currentFragmentConfig);
     }
 
   }

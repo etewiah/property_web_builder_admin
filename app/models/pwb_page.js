@@ -1,5 +1,13 @@
 var PwbPage = Ember.Object.extend({
 
+
+  fragmentConfigs: function() {
+    var pageSetup = this.get("setup.fragment_configs") || [];
+    // debugger;
+    return pageSetup;
+  }.property("setup"),
+// fragment_configs
+
   pageFragments: function() {
     return this.get("page_fragments") || [];
   }.property("page_fragments"),

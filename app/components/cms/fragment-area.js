@@ -6,7 +6,6 @@ export default Ember.Component.extend({
   // isEditing: true,
   currentLocaleFragment: function() {
     var currentLocaleFragment = this.get("pwbPage").getLocaleFragment(this.get("locale"), this.get("cmsPartInfo.label"));
-    // var currentLocaleFragment = this.get("pwbPage.details.fragments")[this.cmsPartInfo.label][this.get("locale")];
     if (!currentLocaleFragment) {
       currentLocaleFragment = {
         blocks: {}
@@ -21,7 +20,6 @@ export default Ember.Component.extend({
   setupComponent: function() {
     var fragmentHtml = { content: "" }
     var currentLocaleFragment = this.get("pwbPage").getLocaleFragment(this.get("locale"), this.get("cmsPartInfo.label"));
-    // var currentFragment = this.get("pwbPage.pageFragments")[this.cmsPartInfo.label][this.get("locale")];
     if (currentLocaleFragment && currentLocaleFragment.html) {
       fragmentHtml.content = currentLocaleFragment.html;
     } 
