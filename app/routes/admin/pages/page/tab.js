@@ -41,7 +41,7 @@ export default Ember.Route.extend({
     controller.set("currentPwbPage", currentPwbPage);
 
     // below for navigation tabs
-    controller.set("cmsPartsList", currentPwbPage.get("fragmentConfigs"));
+    controller.set("fragmentConfigs", currentPwbPage.get("fragmentConfigs"));
 
     var currentFragmentConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", activeTabName);
     if (currentFragmentConfig && currentFragmentConfig.isLegacy) {

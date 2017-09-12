@@ -25,8 +25,8 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     controller.set("changedFields", []);
     // below for navigation tabs
-    controller.set("cmsPartsList", model.get("fragmentConfigs"));
-    // controller.set("cmsPartsList", model.fragment_configs);
+    controller.set("fragmentConfigs", model.get("fragmentConfigs"));
+    // controller.set("fragmentConfigs", model.fragment_configs);
     controller.set("model", model);
     var websiteDetails = this.modelFor("admin").websiteDetails;
     controller.set("shortLocaleCodes", websiteDetails.sl_without_variants);
