@@ -29,7 +29,7 @@ var PwbPage = Ember.Object.extend({
     };
     // strong params on server ensures 
     // only a few fields will get updated
-    var apiUrl = '/api/v1/pwb_page';
+    var apiUrl = '/api/v1/pages';
     return $.ajax(apiUrl, {
       type: 'PUT',
       dataType: 'json',
@@ -52,7 +52,7 @@ var PwbPage = Ember.Object.extend({
       fragment_details: fragmentDetailsJson
     };
     // var self = this;
-    var apiUrl = '/api/v1/pwb_page/page_fragment';
+    var apiUrl = '/api/v1/pages/page_fragment';
     return $.ajax(apiUrl, {
       type: 'PUT',
       dataType: 'json',
@@ -74,7 +74,7 @@ var PwbPage = Ember.Object.extend({
       visible_page_parts: visiblePageParts
     };
     // var self = this;
-    var apiUrl = '/api/v1/pwb_page/page_part_visibility';
+    var apiUrl = '/api/v1/pages/page_part_visibility';
     return $.ajax(apiUrl, {
       type: 'PUT',
       dataType: 'json',
@@ -94,7 +94,7 @@ var PwbPage = Ember.Object.extend({
 
 PwbPage.reopenClass({
   get: function(pageSlug) {
-    var apiUrl = "/api/v1/pwb_page/" + pageSlug;
+    var apiUrl = "/api/v1/pages/" + pageSlug;
     return $.ajax(apiUrl, {
       type: 'GET',
       dataType: 'json'

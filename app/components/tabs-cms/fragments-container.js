@@ -50,7 +50,7 @@ export default Ember.Component.extend({
       fieldName: "visibleOnPage"
     };
     var pagePartLabel = this.get("cmsPartInfo.label");
-    var visiblePageParts = this.get("currentPwbPage.details.visiblePageParts") || [];
+    var visiblePageParts = this.get("currentPwbPage.visible_page_parts") || [];
     var pagePartVisibility = visiblePageParts.includes(pagePartLabel);
     toggleVisField.toggleValue = pagePartVisibility;
     return toggleVisField;
@@ -59,7 +59,7 @@ export default Ember.Component.extend({
     changeVisibility: function(newVal) {
       var currentPwbPage = this.get("currentPwbPage");
       var pagePartLabel = this.get("cmsPartInfo.label");
-      var visiblePageParts = this.get("currentPwbPage.details.visiblePageParts") || [];
+      var visiblePageParts = this.get("currentPwbPage.visible_page_parts") || [];
       if (newVal) {
         // TODO - will want to order this 
         visiblePageParts.pushObject(pagePartLabel);
