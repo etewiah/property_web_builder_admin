@@ -13,8 +13,9 @@ var PwbPage = Ember.Object.extend({
   }.property("page_fragments"),
 
   getLocaleFragmentHtml: function(locale, label){
+    var pageContentKey = this.get("slug") + "_" + label;
     var pageContents = this.get("page_contents");
-    var pageContent = pageContents.findBy("key", label);
+    var pageContent = pageContents.findBy("key", pageContentKey);
     if (pageContent) {
       var contentKey = "raw_" + locale;
       return pageContent[contentKey];

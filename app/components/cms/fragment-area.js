@@ -15,16 +15,24 @@ export default Ember.Component.extend({
     currentLocaleFragment.label = this.get("cmsPartInfo.label");
     return currentLocaleFragment;
     // return Ember.Object.create(currentLocaleFragment);
-  }.property("pwbPage"),
+  }.property("pwbPage", "activeTabName"),
 
-  setupComponent: function() {
+  fragmentHtml: function(){
     var fragmentHtml = { content: "" }
     var html = this.get("pwbPage").getLocaleFragmentHtml(this.get("locale"), this.get("cmsPartInfo.label"));
     if (html) {
       fragmentHtml.content = html;
     }
-    this.set("fragmentHtml", fragmentHtml);
-  }.on('didInsertElement'),
+    return fragmentHtml;
+  }.property("pwbPage", "activeTabName"),
+  // setupComponent: function() {
+  //   var fragmentHtml = { content: "" }
+  //   var html = this.get("pwbPage").getLocaleFragmentHtml(this.get("locale"), this.get("cmsPartInfo.label"));
+  //   if (html) {
+  //     fragmentHtml.content = html;
+  //   }
+  //   this.set("fragmentHtml", fragmentHtml);
+  // }.on('didInsertElement'),
 
 
   actions: {

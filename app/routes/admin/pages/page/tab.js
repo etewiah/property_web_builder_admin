@@ -48,9 +48,9 @@ export default Ember.Route.extend({
       var tabsPageComponent = "tabs-website/" + activeTabName + "-tab";
       controller.set("tabs-page-component", tabsPageComponent);
       controller.set("cmsPartInfo", null);
-    } else if (activeTabName === "html") {
-      // raw-html which is stored in page
-      controller.set("tabs-page-component", "tabs-cms/page-html")
+    // } else if (activeTabName === "html") {
+    //   // raw-html which is stored in page
+    //   controller.set("tabs-page-component", "tabs-cms/page-html")
     } else {
       controller.set("tabs-page-component", "tabs-cms/fragments-container")
       controller.set("cmsPartInfo", currentFragmentConfig);

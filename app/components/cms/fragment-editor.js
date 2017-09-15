@@ -32,13 +32,16 @@ export default Ember.Component.extend({
   colClass: Ember.computed('blocksInfo', {
     get(key) {
       var blocksInfo = this.get("blocksInfo") || [];
+      if (blocksInfo.length === 2) {
+        return "col-sm-6";
+      }
       if (blocksInfo.length === 3) {
         return "col-sm-4";
       }
       if (blocksInfo.length === 4) {
         return "col-sm-3";
       }
-      return "col-sm-6";
+      return "col-sm-12";
     }
   }),
   boundValues: Ember.computed('blocksInfo', {

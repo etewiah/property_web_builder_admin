@@ -1,6 +1,6 @@
 {{#if currrentBlockInfoRow.isImage}}
 <div class="m-b-10">
-  <div>{{ currrentBlockInfoRow.label }}</div>
+  <div>{{! currrentBlockInfoRow.label }}</div>
   {{#if fragmentBlock.content}}
     <p><img style="max-width: 100%;" src="{{ fragmentBlock.content }}">  </p>          
   {{/if}}
@@ -16,7 +16,7 @@
 {{/if}}
 {{#if currrentBlockInfoRow.isSingleLineText }}
 <div class="m-b-10">
-  <div>{{ currrentBlockInfoRow.label }}</div>
+  <div>{{! currrentBlockInfoRow.label }}</div>
   <div class="" style="">
     {{input value=fragmentBlock.content type="text"  class="input-sm form-control fg-input"  }}
   </div>
@@ -24,10 +24,17 @@
 {{/if}}
 {{#if currrentBlockInfoRow.isMultipleLineText}}
 <div class="m-b-10">
-  <div>{{ currrentBlockInfoRow.label }}</div>
+  <div>{{! currrentBlockInfoRow.label }}</div>
   <div class="" style="">
     {{wysiwyg-editor content=fragmentBlock.content toolbarIn="hidden"}}
   </div>
 </div>      
 {{/if}}
-
+{{#if currrentBlockInfoRow.isHtml}}
+<div class="m-b-10">
+  <div>{{! currrentBlockInfoRow.label }}</div>
+  <div class="" style="">
+    {{wysiwyg-editor content=fragmentBlock.content }}
+  </div>
+</div>      
+{{/if}}
