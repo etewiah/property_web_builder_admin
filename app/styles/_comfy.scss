@@ -12,6 +12,9 @@
   border-style: dashed;
   border-radius: 10px;
   padding: 25px 0px;
+  .container {
+    max-width: 100%;
+  }
 }
 
 .comfy-edit-container {

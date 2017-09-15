@@ -5,25 +5,25 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   // isEditing: true,
   currentLocaleFragment: function() {
-    var currentLocaleFragment = this.get("pwbPage").getLocaleFragment(this.get("locale"), this.get("cmsPartInfo.label"));
+    var currentLocaleFragment = this.get("pwbPage").getLocaleFragmentBlocks(this.get("locale"), this.get("cmsPartInfo.label"));
     if (!currentLocaleFragment) {
       currentLocaleFragment = {
         blocks: {}
       };
-      currentLocaleFragment.locale = this.get("locale");
-      currentLocaleFragment.label = this.get("cmsPartInfo.label");
     }
+    currentLocaleFragment.locale = this.get("locale");
+    currentLocaleFragment.label = this.get("cmsPartInfo.label");
     return currentLocaleFragment;
     // return Ember.Object.create(currentLocaleFragment);
   }.property("pwbPage"),
 
   setupComponent: function() {
     var fragmentHtml = { content: "" }
-    var currentLocaleFragment = this.get("pwbPage").getLocaleFragment(this.get("locale"), this.get("cmsPartInfo.label"));
-    if (currentLocaleFragment && currentLocaleFragment.html) {
-      fragmentHtml.content = currentLocaleFragment.html;
-    } 
-    this.set("fragmentHtml",fragmentHtml);
+    var html = this.get("pwbPage").getLocaleFragmentHtml(this.get("locale"), this.get("cmsPartInfo.label"));
+    if (html) {
+      fragmentHtml.content = html;
+    }
+    this.set("fragmentHtml", fragmentHtml);
   }.on('didInsertElement'),
 
 

@@ -12,7 +12,18 @@ var PwbPage = Ember.Object.extend({
     return this.get("page_fragments") || [];
   }.property("page_fragments"),
 
-  getLocaleFragment: function(locale, label){
+  getLocaleFragmentHtml: function(locale, label){
+    var pageContents = this.get("page_contents");
+    var pageContent = pageContents.findBy("key", label);
+    if (pageContent) {
+      var contentKey = "raw_" + locale;
+      return pageContent[contentKey];
+    } else {
+      return "";
+    }
+  },
+
+  getLocaleFragmentBlocks: function(locale, label){
     var pageFragments = this.get("page_fragments") || [];
     var labeledFragments = pageFragments[label] || [];
     if (labeledFragments) {

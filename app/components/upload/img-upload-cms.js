@@ -21,7 +21,7 @@ export default EmberUploader.FileField.extend({
     uploader.on('progress', e => {
       // Handle progress changes
       // Use `e.percent` to get percentage
-  
+
       var uploadingIcon = "<i class='fa fa-spinner fa-spin fa-3x fa-fw'></i><span class='sr-only'>Uploading Photo...</span>";
       swal({
         title: "Uploading Photo",
@@ -31,9 +31,18 @@ export default EmberUploader.FileField.extend({
       });
     });
 
+    uploader.on('didError', (jqXHR, textStatus, errorThrown) => {
+      // Handle unsuccessful upload
+      swal.close();
+      swal({
+        title: "Sorry, there has been an error.",
+        text: "Unable to upload this photo. Please try again.",
+        showConfirmButton: true,
+      });
+    });
 
     uploader.on('didUpload', response => {
-      this.set("srcUrl", response.image.url);
+      this.set("srcUrl", response.image_url);
       swal.close();
 
       // S3 will return XML with url
