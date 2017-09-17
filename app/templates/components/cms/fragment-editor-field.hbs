@@ -6,7 +6,8 @@
   {{/if}}
   <p><a class="btn btn-edfile">{{t "editor.pickPhoto"}}
      {{#upload/img-upload-cms block=currrentBlockInfoRow
-     srcUrl=fragmentBlock.content fragmentBlock=fragmentBlock }} {{/upload/img-upload-cms}}
+     fragmentLabel=fragmentLabel pageSlug=pageSlug
+     srcUrl=fragmentBlock.content }} {{/upload/img-upload-cms}}
   </a></p>
 
     <div class="" style="display:none;">
