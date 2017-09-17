@@ -1,7 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  fragmentBlock: Ember.computed('blocksInfo', {
+  actions: {
+    pickPhoto: function(photo) {
+      this.set("fragmentBlock.content", photo.image.url);
+    },
+  },
+  // find the intersection of the currrentBlockInfoRow (field in question)
+  // and retrieve the content of that row from boundValuesBlocks
+  fragmentBlock: Ember.computed('blocksInfo', 'currrentBlockInfoRow', {
     get(key) {
       var currrentBlockInfoRow = this.get("currrentBlockInfoRow");
       var boundValues = this.get("boundValues");
@@ -11,6 +18,8 @@ export default Ember.Component.extend({
       if (blockWithContent) {
         return blockWithContent;
       } else {
+        // if there is no content for this row in boundValuesBlocks
+        // we will create a placeholder
         blockWithContent = {
           content: ""
         };

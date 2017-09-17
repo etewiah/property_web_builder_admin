@@ -3,6 +3,7 @@
   <div class="{{colClass}}">
     {{#each blocksInfoCol as |blockInfoRow| }}
       {{cms/fragment-editor-field  
+          contentPhotos=contentPhotos
         pageSlug=pwbPage.slug fragmentLabel=currentLocaleFragment.label
         currrentBlockInfoRow=blockInfoRow boundValues=boundValues
         }}

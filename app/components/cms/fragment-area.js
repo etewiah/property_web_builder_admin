@@ -17,6 +17,10 @@ export default Ember.Component.extend({
     // return Ember.Object.create(currentLocaleFragment);
   }.property("pwbPage", "activeTabName"),
 
+  contentPhotos: function(){
+    return this.get("pwbPage").getLocaleFragmentContentPhotos(this.get("cmsPartInfo.label")) || [];
+  }.property("pwbPage", "activeTabName"),
+
   fragmentHtml: function(){
     var fragmentHtml = { content: "" }
     var html = this.get("pwbPage").getLocaleFragmentHtml(this.get("locale"), this.get("cmsPartInfo.label"));

@@ -3,7 +3,6 @@ import EmberUploader from 'ember-uploader';
 export default EmberUploader.FileField.extend({
   uploadEndpoint: function() {
     var uploadEndpoint = "/api/v1/pages/photos/" + this.get("pageSlug") + "/" + this.get("fragmentLabel") + "/" + this.get("block.label");
-    debugger;
     return uploadEndpoint;
   }.property("block"),
   filesDidChange: function(files) {

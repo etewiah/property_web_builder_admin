@@ -4,12 +4,31 @@
   {{#if fragmentBlock.content}}
     <p><img style="max-width: 100%;" src="{{ fragmentBlock.content }}">  </p>          
   {{/if}}
-  <p><a class="btn btn-edfile">{{t "editor.pickPhoto"}}
+  <p>
+  <a class="btn btn-edfile">{{t "editor.pickPhoto"}}
      {{#upload/img-upload-cms block=currrentBlockInfoRow
      fragmentLabel=fragmentLabel pageSlug=pageSlug
      srcUrl=fragmentBlock.content }} {{/upload/img-upload-cms}}
-  </a></p>
+  </a>
+  </p>
 
+    <div>
+      {{#each contentPhotos as |photo| }}
+      <div class="foto_principal" style="height:400px;float:left;" data-id={{ photo.id }}>
+        <div style="max-width: 270px;">
+          <div class="thumbnail">
+            <div class="text-center" style="margin-bottom: -40px;">
+              <button type="button" class="btn btn-icon command-delete" {{action "pickPhoto" photo }}>
+                <span class="md md-check"></span>
+              </button>
+            </div>
+            <img src={{ photo.image.url }} alt="">
+          </div>
+        </div>
+        <div class="" style="display:none;">{{ photo.id }}</div>
+      </div>
+      {{/each}}
+    </div>
     <div class="" style="display:none;">
       {{input value=fragmentBlock.content type="text"  class="input-sm form-control fg-input"  }}
     </div>

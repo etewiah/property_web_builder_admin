@@ -12,6 +12,19 @@ var PwbPage = Ember.Object.extend({
     return this.get("page_fragments") || [];
   }.property("page_fragments"),
 
+  // gets all uploaded images associated with this content so
+  // a picker can be used to select which to use
+  getLocaleFragmentContentPhotos: function(label){
+    var pageContentKey = this.get("slug") + "_" + label;
+    var pageContents = this.get("page_contents");
+    var pageContent = pageContents.findBy("key", pageContentKey);
+    if (pageContent) {
+      return pageContent["content_photos"];
+    } else {
+      return "";
+    }
+  },
+
   getLocaleFragmentHtml: function(locale, label){
     var pageContentKey = this.get("slug") + "_" + label;
     var pageContents = this.get("page_contents");
