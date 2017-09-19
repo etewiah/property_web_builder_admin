@@ -22,20 +22,13 @@ export default Ember.Component.extend({
   }.property("pwbPage", "activeTabName"),
 
   fragmentHtml: function(){
-    var fragmentHtml = { content: "" }
-    var html = this.get("pwbPage").getLocaleFragmentHtml(this.get("locale"), this.get("cmsPartInfo.label"));
-    if (html) {
-      fragmentHtml.content = html;
-    }
-    return fragmentHtml;
+    var contentKey = "raw_" + this.get("locale");
+    var raw = this.get("fragmentContent").content[contentKey] || "";
+    // need to nest this in an object so I have an object.value
+    // construct that can be updated by fragment-editor
+    return { raw: raw};
   }.property("pwbPage", "activeTabName"),
   // setupComponent: function() {
-  //   var fragmentHtml = { content: "" }
-  //   var html = this.get("pwbPage").getLocaleFragmentHtml(this.get("locale"), this.get("cmsPartInfo.label"));
-  //   if (html) {
-  //     fragmentHtml.content = html;
-  //   }
-  //   this.set("fragmentHtml", fragmentHtml);
   // }.on('didInsertElement'),
 
 

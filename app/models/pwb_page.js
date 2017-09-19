@@ -8,16 +8,16 @@ var PwbPage = Ember.Object.extend({
   }.property("setup"),
 // fragment_configs
 
-  pageFragments: function() {
-    return this.get("page_fragments") || [];
-  }.property("page_fragments"),
+  // pageFragments: function() {
+  //   return this.get("page_fragment_blocks") || [];
+  // }.property("page_fragment_blocks"),
 
   // gets all uploaded images associated with this content so
   // a picker can be used to select which to use
   getLocaleFragmentContentPhotos: function(label){
-    var pageContentKey = this.get("slug") + "_" + label;
+    // var pageContentKey = this.get("slug") + "_" + label;
     var pageContents = this.get("page_contents");
-    var pageContent = pageContents.findBy("key", pageContentKey);
+    var pageContent = pageContents.findBy("content_fragment_key", label);
     if (pageContent) {
       return pageContent["content_photos"];
     } else {
@@ -25,20 +25,27 @@ var PwbPage = Ember.Object.extend({
     }
   },
 
-  getLocaleFragmentHtml: function(locale, label){
-    var pageContentKey = this.get("slug") + "_" + label;
+  getFragmentContent: function(label){
+    // var pageContentKey = this.get("slug") + "_" + label;
     var pageContents = this.get("page_contents");
-    var pageContent = pageContents.findBy("key", pageContentKey);
-    if (pageContent) {
-      var contentKey = "raw_" + locale;
-      return pageContent[contentKey];
-    } else {
-      return "";
-    }
+    var pageContent = pageContents.findBy("content_fragment_key", label) || {};
+    return pageContent;
   },
 
+  // getLocaleFragmentHtml: function(locale, label){
+  //   // var pageContentKey = this.get("slug") + "_" + label;
+  //   var pageContents = this.get("page_contents");
+  //   var pageContent = pageContents.findBy("content_fragment_key", label);
+  //   if (pageContent) {
+  //     var contentKey = "raw_" + locale;
+  //     return pageContent[contentKey];
+  //   } else {
+  //     return "";
+  //   }
+  // },
+
   getLocaleFragmentBlocks: function(locale, label){
-    var pageFragments = this.get("page_fragments") || [];
+    var pageFragments = this.get("page_fragment_blocks") || [];
     var labeledFragments = pageFragments[label] || [];
     if (labeledFragments) {
       return labeledFragments[locale];
@@ -92,11 +99,14 @@ var PwbPage = Ember.Object.extend({
       }
     });
   },
-  setPagePartVisibility: function(visiblePageParts, complete, error) {
+  setPagePartVisibility: function(pageFragmentLabel, cmd, complete, error) {
     var pageSlug = this.get("slug");
+    debugger;
     var data = {
       page_slug: pageSlug,
-      visible_page_parts: visiblePageParts
+      cmd: cmd,
+      page_fragment_label: pageFragmentLabel
+      // visible_page_parts: visiblePageParts
     };
     // var self = this;
     var apiUrl = '/api/v1/pages/page_part_visibility';

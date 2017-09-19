@@ -11,8 +11,7 @@ export default Ember.Component.extend({
 
       function success(result) {
         console.log(that);
-        // var fragmentHtml = this.get("fragmentHtml");
-        that.set("fragmentHtml.content", result.html);
+        that.set("fragmentHtml.raw", result.html);
       }
 
       function failure(reason) {
