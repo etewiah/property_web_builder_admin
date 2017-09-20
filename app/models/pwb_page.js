@@ -3,7 +3,6 @@ var PwbPage = Ember.Object.extend({
 
   fragmentConfigs: function() {
     var pageSetup = this.get("setup.fragment_configs") || [];
-    // debugger;
     return pageSetup;
   }.property("setup"),
 // fragment_configs
@@ -101,7 +100,6 @@ var PwbPage = Ember.Object.extend({
   },
   setPagePartVisibility: function(pageFragmentLabel, cmd, complete, error) {
     var pageSlug = this.get("slug");
-    debugger;
     var data = {
       page_slug: pageSlug,
       cmd: cmd,

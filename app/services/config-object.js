@@ -29,6 +29,9 @@ export default Ember.Service.extend({
   }, {
     locale: "ru",
     titleKey: "russian"
+  }, {
+    locale: "pt",
+    titleKey: "portuguese"
   }],
 
   currentSite: function() {
