@@ -1,6 +1,6 @@
 # chmod 755 copy-admin2-to-pwb.sh
 
-
+# - current as of aug 2017
 
 # TARGET_DIR=../../inmo1/public/fe/admin2-client/$(date +%Y-%m-%d)
 # rm -r $TARGET_DIR
