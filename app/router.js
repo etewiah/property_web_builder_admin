@@ -195,6 +195,17 @@ Router.map(function() {
           path: "/:tabName"
         });
       });
+      this.route("list", {
+        path: '/list'
+      }, function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("filter", {
+          path: "/:filter"
+        });
+      });
+
     });
   });
   this.route('user');

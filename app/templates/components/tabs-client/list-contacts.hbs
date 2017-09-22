@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="card-header sep25">
+        <h2>{{t "clientsList" }}</h2>
+
+        <div role="group" class="boton_anadir_propiedad">
+          {{#link-to "admin.clients.new" data-toggle="tooltip" 
+          title=(t "addProperty") class="btn_editar_propiedad btn bgm-cyan btn-circulo btn-float waves-effect" }} 
+           <i class="md md-add"></i>
+          {{/link-to}}  
+        </div>
+
+  </div>
+  <div class="card-body card-padding card-with-extra-header">
+    <div role="tabpanel" >
+      <ul class="tab-nav" role="tablist" style="display:none;">
+        <li class={{if (eq propertiesStatus "all") "active"}}>
+          {{#link-to 'admin.clients.list.filter' 'all' aria-controls="visibles" role="tab" }} {{t "all"}}{{/link-to}}
+        </li>
+        <li class={{if (eq propertiesStatus "visible") "active"}}>
+          {{#link-to 'admin.clients.list.filter' 'visible' aria-controls="visibles" role="tab" }} {{t "visible"}}{{/link-to}}
+        </li>
+        <li class={{if (eq propertiesStatus "hidden") "active"}}>
+          {{#link-to 'admin.clients.list.filter' 'hidden' aria-controls="visibles" role="tab" }} {{t "hidden"}}{{/link-to}}
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="visibles">
+          <div class="row">
+            <div class="col-sm-12" style="display:none;">
+              <a href="{{ exportUrl }}" download="prop2.csv">
+                <button type="submit" class="btn btn-edfile btn-sm m-t-10 waves-effect"> 
+                Download contacts as a CSV file
+                </button>
+              </a>
+            </div>
+
+            <div class="col-sm-12">
+
+              {{tabs-client/data-table-contacts contacts=contacts 
+              hidePropertyAction="hideProperty" }}
+            </div>
+          </div>
+          {{!-- above is col-sm-12 end --}}
+        </div>
+      </div>
+      {{!-- above is tab-content end --}}
+    </div>
+  </div>
+  {{!-- above is card-body end --}}
+</div>

@@ -1,0 +1,26 @@
+<table  class="tabla_propiedades table table-striped table-vmiddle datatables">
+  <thead>
+    <tr>
+      <th style="visibility:hidden;" >Actions</th>
+      <th >{{t "fieldLabels.firstNames"}}</th>
+      <th >{{t "fieldLabels.lastNames"}}</th>
+      <th  data-type="text" data-order="desc">Reference</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each contacts as |contact|}}
+    <tr id={{contact.id }}>
+      <td>
+        {{#link-to 'admin.clients.edit' contact.id}}
+          <i class="fa fa-pencil"></i>{{t "edit"}}
+        {{/link-to}}&nbsp;
+
+      </td>
+      <td>{{ contact.firstNames }}</td>
+      <td>{{ contact.lastNames }}</td>
+      <td>{{ contact.propTypeKey }}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
