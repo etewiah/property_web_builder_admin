@@ -3,7 +3,7 @@
         <h2>{{t "clientsList" }}</h2>
 
         <div role="group" class="boton_anadir_propiedad">
-          {{#link-to "admin.clients.new" data-toggle="tooltip" 
+          {{#link-to "admin.contacts.new" data-toggle="tooltip" 
           title=(t "addProperty") class="btn_editar_propiedad btn bgm-cyan btn-circulo btn-float waves-effect" }} 
            <i class="md md-add"></i>
           {{/link-to}}  
@@ -14,13 +14,13 @@
     <div role="tabpanel" >
       <ul class="tab-nav" role="tablist" style="display:none;">
         <li class={{if (eq propertiesStatus "all") "active"}}>
-          {{#link-to 'admin.clients.list.filter' 'all' aria-controls="visibles" role="tab" }} {{t "all"}}{{/link-to}}
+          {{#link-to 'admin.contacts.list.filter' 'all' aria-controls="visibles" role="tab" }} {{t "all"}}{{/link-to}}
         </li>
         <li class={{if (eq propertiesStatus "visible") "active"}}>
-          {{#link-to 'admin.clients.list.filter' 'visible' aria-controls="visibles" role="tab" }} {{t "visible"}}{{/link-to}}
+          {{#link-to 'admin.contacts.list.filter' 'visible' aria-controls="visibles" role="tab" }} {{t "visible"}}{{/link-to}}
         </li>
         <li class={{if (eq propertiesStatus "hidden") "active"}}>
-          {{#link-to 'admin.clients.list.filter' 'hidden' aria-controls="visibles" role="tab" }} {{t "hidden"}}{{/link-to}}
+          {{#link-to 'admin.contacts.list.filter' 'hidden' aria-controls="visibles" role="tab" }} {{t "hidden"}}{{/link-to}}
         </li>
       </ul>
       <div class="tab-content">

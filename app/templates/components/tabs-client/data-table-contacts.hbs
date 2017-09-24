@@ -12,13 +12,13 @@
     {{#each contacts as |contact|}}
     <tr id={{contact.id }}>
       <td>
-        {{#link-to 'admin.clients.edit' contact.id}}
+        {{#link-to 'admin.contacts.edit' contact.id}}
           <i class="fa fa-pencil"></i>{{t "edit"}}
         {{/link-to}}&nbsp;
 
       </td>
-      <td>{{ contact.firstNames }}</td>
-      <td>{{ contact.lastNames }}</td>
+      <td>{{ contact.first_name }}</td>
+      <td>{{ contact.last_name }}</td>
       <td>{{ contact.propTypeKey }}</td>
     </tr>
     {{/each}}

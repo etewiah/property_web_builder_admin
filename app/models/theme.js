@@ -1,11 +1,3 @@
-// import DS from 'ember-data';
-
-// export default DS.Model.extend({
-
-//   title: DS.attr()
-
-// });
-
 // july 2016: tried using ember store above but just too much
 // work figuring out the promise object
 

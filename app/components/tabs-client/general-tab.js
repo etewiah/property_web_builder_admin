@@ -31,7 +31,7 @@ export default TabWithForm.extend({
     optionsKey: "person-titles",
   }, {
     labelTextTKey: "fieldLabels.firstNames",
-    fieldName: "firstNames",
+    fieldName: "first_name",
     fieldType: "simpleInput",
     inputType: "text",
     constraints: {

@@ -17,18 +17,15 @@ export default TabWithForm.extend({
       }
 
       function failure(reason) {
-        debugger;
         // handle the error
       }
-      clientResource.save().then(transitionToClient).catch(failure);
-
-
+      clientResource.saveNew(transitionToClient, failure);
     }
   },
 
   leftSideInputFields: [{
     labelTextTKey: "fieldLabels.firstNames",
-    fieldName: "firstNames",
+    fieldName: "first_name",
     fieldType: "simpleInput",
     inputType: "text",
     constraints: {

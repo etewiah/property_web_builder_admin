@@ -105,18 +105,6 @@ Router.map(function() {
           path: "/:tabName"
         });
       });
-
-      // below is for experiments with comfy mex sofa
-      // this.route("cms", {
-      //   path: "/cms/:pageName"
-      // }, function() {
-      //   this.route("default", {
-      //     path: "/"
-      //   });
-      //   this.route("tab", {
-      //     path: "/:tabName"
-      //   });
-      // });
       this.route("themes", function() {
         this.route("default", {
           path: "/"
@@ -205,7 +193,36 @@ Router.map(function() {
           path: "/:filter"
         });
       });
-
+    });
+    this.route("contacts", {
+      path: '/contacts'
+    }, function() {
+      this.route("default", {
+        path: "/"
+      });
+      this.route("new", {
+        path: "/new"
+      });
+      this.route("edit", {
+        path: '/:id/edit'
+      }, function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("tab", {
+          path: "/:tabName"
+        });
+      });
+      this.route("list", {
+        path: '/list'
+      }, function() {
+        this.route("default", {
+          path: "/"
+        });
+        this.route("filter", {
+          path: "/:filter"
+        });
+      });
     });
   });
   this.route('user');
