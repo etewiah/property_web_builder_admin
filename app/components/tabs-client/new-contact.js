@@ -13,7 +13,7 @@ export default TabWithForm.extend({
 
       function transitionToClient(clientResource) {
         // router is injected here through an initializer
-        self.get('router').transitionTo('admin.clients.edit', clientResource.id);
+        self.get('router').transitionTo('admin.contacts.edit', clientResource.id);
       }
 
       function failure(reason) {

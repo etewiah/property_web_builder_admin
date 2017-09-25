@@ -1,5 +1,55 @@
-{{#if isActive}}
-        <table id="data-table-command" class="tabla_propiedades table table-striped table-vmiddle">
+{{!-- {{#if isActive}}
+ --}}
+{{#if contactHasProperties}}
+<table  class="tabla_propiedades table table-striped table-vmiddle datatables">
+  <thead>
+    <tr>
+      <th style="visibility: hidden;" >{{!--t "propertyColHeader.actions" --}}</th>
+      <th >{{t "propertyColHeader.visible"}}</th>
+
+      <th  data-type="text" data-order="desc">Reference</th>
+
+      <th >{{t "propertyColHeader.type"}}</th>
+      {{!-- <th >{{t "propertyColHeader.price"}}</th> --}}
+      <th >{{t "propertyColHeader.bedrooms"}}</th>
+      <th >{{t "propertyColHeader.bathrooms"}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each resourceObject.properties  as |property|}}
+    <tr id={{property.id }}>
+      <td>
+        {{#link-to 'admin.propiedades.editar' property.id}}
+          <i class="fa fa-pencil"></i>{{t "edit"}}
+        {{/link-to}}&nbsp;
+
+        <div style="display:none;">
+        {{#if showingVisibleProperties}}
+            <a href="" {{action "hideProperty" property }} ><i class="fa fa-eye-slash"></i>{{t "hide"}}</a>
+        {{else}}
+          <a href="" {{action "unHideProperty" property }} ><i class="fa fa-eye"></i>{{t "show"}}</a>  
+        {{/if}}
+        </div>
+
+      </td>
+      <td>{{t property.visible }}</td>
+      <td>{{ property.reference }}</td>
+      {{!-- <td>{{t property.highlighted }}</td> --}}
+{{!--       <td>{{ property.localityTitle }}</td>
+      <td>{{ property.zoneTitle }}</td>
+ --}}      
+      <td>{{t property.propTypeKey }}</td>
+      {{!-- <td>{{ property.contextualPriceCents }}</td> --}}
+      <td>{{ property.countBedrooms }}</td>
+      <td>{{ property.countBathrooms }}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+
+{{!--         <table id="data-table-command" class="tabla_propiedades table table-striped table-vmiddle">
             <thead>
                 <tr>
                     <th data-column-id="id" data-type="text" data-order="desc">Ref</th>
@@ -17,22 +67,11 @@
 
           {{#each resourceObject.properties as |property|}} 
             <tr >
-{{!--               <td>{{ property.tTitle }}</td>
-              <td>{{t property.destacado }}</td>
-              <td>{{t property.localidad }}</td>
-              <td>{{ property.zonaDireccion }}</td>
-              <td>{{ property.tTipoPropiedad }}</td>
-              <td>{{ property.precioVenta }}</td>
-              <td>{{ property.countBedrooms }}</td>
-              <td>{{t property.visible }}</td>
-              <td>
-              <button type="button" class="btn btn-icon command-edit btn_editar_inicio" {{action "removePropertyForClient" property.id }} data-id_propiedad="1">
-              <i class="md md-edit"><i class="fa fa-trash"></i></i>
-              </button>
-              </td>
- --}}            </tr>
+             </tr>
           {{/each}} 
 
             </tbody>
-        </table>
+        </table> --}}
+{{else}}
+<h3>This contact has no associated properties</h3>
 {{/if}}

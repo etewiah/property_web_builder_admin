@@ -41,9 +41,9 @@ export default Ember.Route.extend({
     controller.set("tabsList", [{
       tabValue: "general",
       tabTitleKey: "propertySections.general"
-    }, {
-      tabValue: "location",
-      tabTitleKey: "propertySections.location"
+    // }, {
+    //   tabValue: "location",
+    //   tabTitleKey: "propertySections.location"
     }, {
       tabValue: "properties",
       tabTitleKey: "properties"
