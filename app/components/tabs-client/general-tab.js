@@ -44,7 +44,7 @@ export default TabWithForm.extend({
     }
   }, {
     labelTextTKey: "fieldLabels.lastNames",
-    fieldName: "lastNames",
+    fieldName: "last_name",
     fieldType: "simpleInput",
     inputType: "text",
     constraints: {
