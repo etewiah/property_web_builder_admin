@@ -1,0 +1,320 @@
+/* fragment editor container*/
+
+
+/*.wp-section {
+  .container {
+    width: auto;
+    ;
+  }
+}*/
+
+.comfy-display-container {
+  border: #d9edf7;
+  border-style: dashed;
+  border-radius: 10px;
+  padding: 25px 0px;
+  .container {
+    max-width: 100%;
+  }
+}
+
+.comfy-edit-container {
+  border: #39c088;
+  border-style: dashed;
+  border-radius: 10px;
+  padding: 35px 12px 50px 12px;
+}
+
+
+
+
+/*for displaying main header*/
+
+.jumbotron {
+  padding: 0px;
+}
+
+.carousel-1 {
+  overflow: hidden;
+  margin-bottom: 20px
+}
+
+.carousel-1.carousel-fixed-height .carousel-inner {
+  height: 440px
+}
+
+.carousel-1.carousel-fixed-height .item {
+  height: 440px
+}
+
+.carousel-1 .carousel-control {
+  color: #f8f8f8
+}
+
+.carousel-1 .carousel-control.left {
+  left: -40px
+}
+
+.carousel-1 .carousel-control.right {
+  right: -40px
+}
+
+.carousel-1 .carousel-control:hover {
+  color: #fff
+}
+
+.carousel-1 .carousel-control i {
+  position: absolute;
+  top: 50%;
+  margin-top: -18px;
+  font-size: 36px;
+  font-weight: 600
+}
+
+.carousel-1 .item {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0
+}
+
+.carousel-1 .item-dark {
+  color: #fff
+}
+
+.carousel-1 .item-light {
+  color: #fff
+}
+
+.carousel-1 .item img {
+  width: 100%
+}
+
+.carousel-1 p {
+  font-size: 16px
+}
+
+.carousel-1 .object {
+  position: absolute;
+  top: 38px;
+  right: 50%;
+  margin-left: 15px;
+  width: 568px;
+  height: 320px;
+  overflow: hidden
+}
+
+.carousel-1 .object.fluid {
+  width: 100%;
+  left: 0;
+  margin: 0
+}
+
+.carousel-1 .object iframe {
+  width: 100% !important
+}
+
+.carousel-1 .caption-bottom {
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(52, 152, 219, 0.8)
+}
+
+.carousel-1 .caption-bottom .title {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 600
+}
+
+.carousel-1 .caption-bottom .subtitle {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 400
+}
+
+.carousel-1 .text-shadow {
+  text-shadow: 2px 2px 2px #888
+}
+
+#homepageCarousel {
+  margin-bottom: 0;
+}
+
+.carousel-1 {
+  .subtitle-sm,
+  .subtitle {
+    font-size: 24px;
+    margin: 5px 0 15px 0;
+    padding: 0;
+    display: block;
+    /*line-height: 26px*/
+  }
+  .list-carousel {
+    padding: 0px;
+    font-size: 20px;
+  }
+  .carousel-content {
+    padding: 50px 40px;
+    font-size: xx-large;
+  }
+  .shade {
+    background: gray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+  }
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+  }
+  .mask.mask-1 {
+    /* background:url(../images/patterns/slash-it.png); */
+    background: gray;
+  }
+  .mask.mask-2 {
+    background: url(../images/patterns/dark-exa.png);
+    opacity: .4
+  }
+}
+
+@media (max-width: 991px) {
+  /*  .carousel-1 .description-left {
+  position: absolute;
+  width: 40%;
+  top: 50px;
+  left: 20px;
+  margin-left: 20px;
+  width: 514px;
+  height: 290px;
+}*/
+}
+
+
+
+/*about us services*/
+
+.services-section {
+  /*float: left;*/
+  width: 100%;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  border-top: 1px solid #e0eded;
+  border-bottom: 1px solid #e0eded;
+  background: #fcfcfc;
+}
+
+.services-section .container .services-wrapper {
+  margin-top: 45px;
+  /*  float: left;
+  width: 100%;
+*/
+}
+
+.services-section .container .services-wrapper .single-service {
+  width: 100% !important;
+  /* having to use above to override col-md-4 which I foolishly
+  include in db content - impossible to add margin between cols the 
+  way it was structured */
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 400px;
+  overflow: hidden;
+  /*above not the best - have to figure out solution for when users
+  enter text that exceeds height */
+  border: 1px solid #e0eded;
+  background-color: #FFF;
+  text-align: center;
+  padding: 5;
+  transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+}
+
+.services-section .container .services-wrapper .single-service h4 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 30px;
+  transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+}
+
+.services-section .container .services-wrapper .single-service p {
+  font-size: 15px;
+  font-weight: 400;
+  /*  color:#bababa;
+*/
+}
+
+.services-section .container .services-wrapper .single-service .icon-service {
+  color: #B2B2B2;
+  font-size: 45px;
+  border: 1px solid #B2B2B2;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+  transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+}
+
+.services-section .container .services-wrapper .single-service .bordered {
+  /*border: 2px solid #0095e6;*/
+  width: 25%;
+  margin: 13px auto -4px;
+  transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+}
+
+.services-section .container .services-wrapper .single-service .top-bordered {
+  margin: 0 auto;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+}
+
+.services-section .container .services-wrapper .single-service:hover .top-bordered {
+  opacity: 1;
+}
+
+.services-section .container .services-wrapper .single-service p {
+  text-align: left;
+  padding: 2%;
+}
+
+.services-section .container .services-wrapper .single-service h4 {
+  text-align: center;
+}
+
+.services-section .container .services-wrapper .single-service .icon-service {
+  text-align: center;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+  width: 110px;
+  padding: 30px;
+  margin: 13px 0;
+}

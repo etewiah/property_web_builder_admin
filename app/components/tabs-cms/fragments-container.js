@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     var pageFragmentLabel = this.get("cmsPartInfo.label");
     var fragmentContent = this.get("currentPwbPage").getFragmentContent(pageFragmentLabel);
     return fragmentContent;
-  }.property("currentPwbPage"),
+  }.property("currentPwbPage","cmsPartInfo.label"),
   toggleVisField: function() {
     var toggleVisField = {
       labelText: "Visible on page",
