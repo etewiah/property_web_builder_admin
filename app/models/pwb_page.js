@@ -25,10 +25,10 @@ var PwbPage = Ember.Object.extend({
 
   // gets all uploaded images associated with this content so
   // a picker can be used to select which to use
-  getLocaleFragmentContentPhotos: function(label){
-    // var pageContentKey = this.get("slug") + "_" + label;
+  getLocaleFragmentContentPhotos: function(fragment_key){
+    // var pageContentKey = this.get("slug") + "_" + fragment_key;
     var pageContents = this.get("page_contents");
-    var pageContent = pageContents.findBy("content_fragment_key", label);
+    var pageContent = pageContents.findBy("content_fragment_key", fragment_key);
     if (pageContent) {
       return pageContent["content_photos"];
     } else {
@@ -36,34 +36,22 @@ var PwbPage = Ember.Object.extend({
     }
   },
 
-  getFragmentContent: function(label){
-    // var pageContentKey = this.get("slug") + "_" + label;
+  getFragmentContent: function(fragment_key){
+    // var pageContentKey = this.get("slug") + "_" + fragment_key;
     var pageContents = this.get("page_contents");
-    var pageContent = pageContents.findBy("content_fragment_key", label) || {};
+    var pageContent = pageContents.findBy("content_fragment_key", fragment_key) || {};
     return pageContent;
   },
 
-  // getLocaleFragmentHtml: function(locale, label){
-  //   // var pageContentKey = this.get("slug") + "_" + label;
-  //   var pageContents = this.get("page_contents");
-  //   var pageContent = pageContents.findBy("content_fragment_key", label);
-  //   if (pageContent) {
-  //     var contentKey = "raw_" + locale;
-  //     return pageContent[contentKey];
+  // getLocaleFragmentBlocks: function(locale, label){
+  //   var pageFragments = this.get("page_fragment_blocks") || [];
+  //   var labeledFragments = pageFragments[label] || [];
+  //   if (labeledFragments) {
+  //     return labeledFragments[locale];
   //   } else {
-  //     return "";
+  //     return {};
   //   }
   // },
-
-  getLocaleFragmentBlocks: function(locale, label){
-    var pageFragments = this.get("page_fragment_blocks") || [];
-    var labeledFragments = pageFragments[label] || [];
-    if (labeledFragments) {
-      return labeledFragments[locale];
-    } else {
-      return {};
-    }
-  },
 
   save: function(complete, error) {
     var pageProperties = this.getProperties(Object.keys(this));
@@ -89,7 +77,7 @@ var PwbPage = Ember.Object.extend({
   },
   saveFragment: function(fragmentDetails, complete, error) {
     var pageSlug = this.get("slug");
-    var fragmentDetailsJson = fragmentDetails.getProperties("blocks","locale","label");
+    var fragmentDetailsJson = fragmentDetails.getProperties("blocks","locale","fragment_key");
     var data = {
       page_slug: pageSlug,
       fragment_details: fragmentDetailsJson

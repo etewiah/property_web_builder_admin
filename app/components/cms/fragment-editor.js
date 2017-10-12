@@ -45,12 +45,17 @@ export default Ember.Component.extend({
   }),
   boundValues: Ember.computed('blocksInfo', {
     get(key) {
-      var currentLocaleFragment = this.get("currentLocaleFragment");
-      if (!currentLocaleFragment.blocks) {
-        currentLocaleFragment.blocks = {};
-      }
+      var locale = this.get("locale");
+      var blockContents = this.get("currentPagePart.block_contents");
+      var currentLocaleBlockContents = blockContents[locale] || {blocks: {}};
+      // var currentLocaleBlockContents = this.get("currentLocaleBlockContents");
+      // if (!currentLocaleBlockContents.blocks) {
+      //   currentLocaleBlockContents.blocks = {};
+      // }
+      currentLocaleBlockContents.fragment_key = this.get("currentPagePart.fragment_key");
+      currentLocaleBlockContents.locale = locale;
       return Ember.Object.create(
-        currentLocaleFragment
+        currentLocaleBlockContents
       );
     }
   })
