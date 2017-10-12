@@ -6,7 +6,7 @@
     {{/link-to}}
     </li>
     {{#each pageParts as |tab|}}
-    <li class={{if (eq tab.fragment_key activeTabName) "active"}}>{{#link-to 'admin.pages.page.tab' tab.fragment_key}}{{t tab.tabTitleKey }}{{/link-to}}</li>
+    <li class={{if (eq tab.fragment_key activeTabName) "active"}}>{{#link-to 'admin.pages.page.tab' tab.fragment_key}}{{t tab.editor_setup.tabTitleKey }}{{/link-to}}</li>
     {{/each}}
   </ul>
   <div class="tab-content">
