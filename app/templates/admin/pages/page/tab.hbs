@@ -10,9 +10,9 @@
     {{/each}}
   </ul>
   <div class="tab-content">
-      {{!tabs-cms/fragments-container activeTabName=activeTabName contentResources=model languages=languages cmsPartInfo=cmsPartInfo shortLocaleCodes=shortLocaleCodes currentPwbPage=currentPwbPage }}
+      {{!tabs-cms/fragments-container activeTabName=activeTabName contentResources=model languages=languages currentPagePart=currentPagePart shortLocaleCodes=shortLocaleCodes currentPwbPage=currentPwbPage }}
 
 
-      {{component tabs-page-component activeTabName=activeTabName contentResources=model resourceObject=websiteDetails agencyDetails=websiteDetails cmsPartInfo=cmsPartInfo shortLocaleCodes=shortLocaleCodes currentPwbPage=currentPwbPage }}
+      {{component tabs-page-component activeTabName=activeTabName contentResources=model resourceObject=websiteDetails agencyDetails=websiteDetails currentPagePart=currentPagePart shortLocaleCodes=shortLocaleCodes currentPwbPage=currentPwbPage }}
   </div>
 </div>

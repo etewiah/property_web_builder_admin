@@ -6,13 +6,10 @@ var PwbPage = Ember.Object.extend({
   //   return pageSetup;
   // }.property("setup"),
 
-  // below used to figure out how to layout editor
-  editorConfigForPagePart: function(pagePartFragmentKey) {
-    var pagePart = this.get("page_parts").findBy("fragment_key", pagePartFragmentKey);
-    var editorConfigForPagePart = pagePart ? pagePart.editor_setup : {};
-    // TODO - change .label below to .fragmentKey
-    editorConfigForPagePart.label = pagePartFragmentKey;
-    return editorConfigForPagePart;
+  // below used to figure out how to layout editor etc
+  getPagePart: function(pagePartFragmentKey) {
+    var pagePart = this.get("page_parts").findBy("fragment_key", pagePartFragmentKey) || {};
+    return pagePart;
   },
 
   // used for tabs under each page

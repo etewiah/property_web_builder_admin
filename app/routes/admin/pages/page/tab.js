@@ -6,8 +6,8 @@ export default Ember.Route.extend({
 
   model(params) {
     var currentPwbPage = this.modelFor("admin.pages.page");
-    // var editorConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", params.tabName);
-    // if (editorConfig && editorConfig.isLegacy) {
+    // var currentPagePart = currentPwbPage.get("fragmentConfigs").findBy("tabValue", params.tabName);
+    // if (currentPagePart && currentPagePart.isLegacy) {
     //   debugger;
     //   return this.store.query("webContent", {
     //     filter: {
@@ -40,20 +40,20 @@ export default Ember.Route.extend({
     controller.set("pageParts", currentPwbPage.get("pageParts"));
     // controller.set("fragmentConfigs", currentPwbPage.get("fragmentConfigs"));
 
-    var editorConfig = currentPwbPage.editorConfigForPagePart(activeTabName);
-    // var editorConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", activeTabName);
-    // if (editorConfig && editorConfig.isLegacy) {
+    var currentPagePart = currentPwbPage.getPagePart(activeTabName);
+    // var currentPagePart = currentPwbPage.get("fragmentConfigs").findBy("tabValue", activeTabName);
+    // if (currentPagePart && currentPagePart.isLegacy) {
     //   debugger;
     //   var tabsPageComponent = "tabs-website/" + activeTabName + "-tab";
     //   controller.set("tabs-page-component", tabsPageComponent);
-    //   controller.set("cmsPartInfo", null);
+    //   controller.set("currentPagePart", null);
     // } else {
     //   controller.set("tabs-page-component", "tabs-cms/fragments-container")
-    //   controller.set("cmsPartInfo", editorConfig);
+    //   controller.set("currentPagePart", currentPagePart);
     // }
 
     controller.set("tabs-page-component", "tabs-cms/fragments-container")
-    controller.set("cmsPartInfo", editorConfig);
+    controller.set("currentPagePart", currentPagePart);
 
 
   }
