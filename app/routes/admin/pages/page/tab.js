@@ -6,8 +6,9 @@ export default Ember.Route.extend({
 
   model(params) {
     var currentPwbPage = this.modelFor("admin.pages.page");
-    var currentFragmentConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", params.tabName);
-    if (currentFragmentConfig && currentFragmentConfig.isLegacy) {
+    var editorConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", params.tabName);
+    if (editorConfig && editorConfig.isLegacy) {
+      debugger;
       return this.store.query("webContent", {
         filter: {
           tag: params.tabName
@@ -17,7 +18,7 @@ export default Ember.Route.extend({
     // data for each page fragment is saved in page
     // and does not need to be retrieved here 
     return {};
-    // var label = currentFragmentConfig.label;
+    // var label = editorConfig.label;
     // return this.store.query("cmsPage", {
     //   filter: {
     //     label: label
@@ -43,8 +44,10 @@ export default Ember.Route.extend({
     // below for navigation tabs
     controller.set("fragmentConfigs", currentPwbPage.get("fragmentConfigs"));
 
-    var currentFragmentConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", activeTabName);
-    if (currentFragmentConfig && currentFragmentConfig.isLegacy) {
+    var editorConfig = currentPwbPage.editorConfigForPagePart(activeTabName);
+    // var editorConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", activeTabName);
+    if (editorConfig && editorConfig.isLegacy) {
+      debugger;
       var tabsPageComponent = "tabs-website/" + activeTabName + "-tab";
       controller.set("tabs-page-component", tabsPageComponent);
       controller.set("cmsPartInfo", null);
@@ -53,7 +56,7 @@ export default Ember.Route.extend({
     //   controller.set("tabs-page-component", "tabs-cms/page-html")
     } else {
       controller.set("tabs-page-component", "tabs-cms/fragments-container")
-      controller.set("cmsPartInfo", currentFragmentConfig);
+      controller.set("cmsPartInfo", editorConfig);
     }
 
   }

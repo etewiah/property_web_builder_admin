@@ -5,7 +5,15 @@ var PwbPage = Ember.Object.extend({
     var pageSetup = this.get("setup.fragment_configs") || [];
     return pageSetup;
   }.property("setup"),
-// fragment_configs
+
+  // below used to figure out how to layout editor
+  editorConfigForPagePart: function(pagePartFragmentKey) {
+    var pagePart = this.get("page_parts").findBy("fragment_key", pagePartFragmentKey);
+    var editorConfigForPagePart = pagePart.editor_setup;
+    // TODO - change .label below to .fragmentKey
+    editorConfigForPagePart.label = pagePartFragmentKey;
+    return editorConfigForPagePart;
+  },
 
   // pageFragments: function() {
   //   return this.get("page_fragment_blocks") || [];
