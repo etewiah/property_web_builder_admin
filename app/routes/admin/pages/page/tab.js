@@ -6,24 +6,19 @@ export default Ember.Route.extend({
 
   model(params) {
     var currentPwbPage = this.modelFor("admin.pages.page");
-    var editorConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", params.tabName);
-    if (editorConfig && editorConfig.isLegacy) {
-      debugger;
-      return this.store.query("webContent", {
-        filter: {
-          tag: params.tabName
-        }
-      });
-    }
+    // var editorConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", params.tabName);
+    // if (editorConfig && editorConfig.isLegacy) {
+    //   debugger;
+    //   return this.store.query("webContent", {
+    //     filter: {
+    //       tag: params.tabName
+    //     }
+    //   });
+    // }
+
     // data for each page fragment is saved in page
     // and does not need to be retrieved here 
     return {};
-    // var label = editorConfig.label;
-    // return this.store.query("cmsPage", {
-    //   filter: {
-    //     label: label
-    //   }
-    // });
   },
   // setupController will not get called if model does not change
   // eg if I returned a query that was not dependant on params....
@@ -42,22 +37,24 @@ export default Ember.Route.extend({
     controller.set("currentPwbPage", currentPwbPage);
 
     // below for navigation tabs
-    controller.set("fragmentConfigs", currentPwbPage.get("fragmentConfigs"));
+    controller.set("pageParts", currentPwbPage.get("pageParts"));
+    // controller.set("fragmentConfigs", currentPwbPage.get("fragmentConfigs"));
 
     var editorConfig = currentPwbPage.editorConfigForPagePart(activeTabName);
     // var editorConfig = currentPwbPage.get("fragmentConfigs").findBy("tabValue", activeTabName);
-    if (editorConfig && editorConfig.isLegacy) {
-      debugger;
-      var tabsPageComponent = "tabs-website/" + activeTabName + "-tab";
-      controller.set("tabs-page-component", tabsPageComponent);
-      controller.set("cmsPartInfo", null);
-    // } else if (activeTabName === "html") {
-    //   // raw-html which is stored in page
-    //   controller.set("tabs-page-component", "tabs-cms/page-html")
-    } else {
-      controller.set("tabs-page-component", "tabs-cms/fragments-container")
-      controller.set("cmsPartInfo", editorConfig);
-    }
+    // if (editorConfig && editorConfig.isLegacy) {
+    //   debugger;
+    //   var tabsPageComponent = "tabs-website/" + activeTabName + "-tab";
+    //   controller.set("tabs-page-component", tabsPageComponent);
+    //   controller.set("cmsPartInfo", null);
+    // } else {
+    //   controller.set("tabs-page-component", "tabs-cms/fragments-container")
+    //   controller.set("cmsPartInfo", editorConfig);
+    // }
+
+    controller.set("tabs-page-component", "tabs-cms/fragments-container")
+    controller.set("cmsPartInfo", editorConfig);
+
 
   }
 });

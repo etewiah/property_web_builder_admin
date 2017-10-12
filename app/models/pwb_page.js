@@ -1,19 +1,26 @@
 var PwbPage = Ember.Object.extend({
 
 
-  fragmentConfigs: function() {
-    var pageSetup = this.get("setup.fragment_configs") || [];
-    return pageSetup;
-  }.property("setup"),
+  // fragmentConfigs: function() {
+  //   var pageSetup = this.get("setup.fragment_configs") || [];
+  //   return pageSetup;
+  // }.property("setup"),
 
   // below used to figure out how to layout editor
   editorConfigForPagePart: function(pagePartFragmentKey) {
     var pagePart = this.get("page_parts").findBy("fragment_key", pagePartFragmentKey);
-    var editorConfigForPagePart = pagePart.editor_setup;
+    var editorConfigForPagePart = pagePart ? pagePart.editor_setup : {};
     // TODO - change .label below to .fragmentKey
     editorConfigForPagePart.label = pagePartFragmentKey;
     return editorConfigForPagePart;
   },
+
+  // used for tabs under each page
+  pageParts: function() {
+    // TODO - filter and sort
+    var pageParts = this.get("page_parts");
+    return pageParts;
+  }.property("page_parts"),
 
   // pageFragments: function() {
   //   return this.get("page_fragment_blocks") || [];

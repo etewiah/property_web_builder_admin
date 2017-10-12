@@ -5,8 +5,8 @@
       {{t "pageSections.pageTitle" }}
     {{/link-to}}
     </li>
-    {{#each fragmentConfigs as |tab|}}
-    <li class="">{{#link-to 'admin.pages.page.tab' tab.tabValue}}{{t tab.tabTitleKey }}{{/link-to}}</li>
+    {{#each pageParts as |tab|}}
+    <li class="">{{#link-to 'admin.pages.page.tab' tab.fragment_key}}{{t tab.tabTitleKey }}{{/link-to}}</li>
     {{/each}}
   </ul>
   <div class="tab-content">

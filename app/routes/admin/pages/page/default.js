@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   i18n: Ember.inject.service(),
 
   beforeModel: function() {
-    this.transitionTo("admin.pages.page.tab", "html")
+    this.transitionTo("admin.pages.page.tab", "content_html")
   },
 
 });
