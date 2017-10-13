@@ -5,7 +5,8 @@ export default Ember.Component.extend({
   i18n: Ember.inject.service(),
 
   fragmentContent: function() {
-    var pageFragmentLabel = this.get("currentPagePart.fragment_key");
+    var pageFragmentLabel = this.get("activeTabName");
+     // this.get("currentPagePart.fragment_key");
     var fragmentContent = this.get("currentPwbPage").getFragmentContent(pageFragmentLabel);
     return fragmentContent;
   }.property("currentPwbPage","currentPagePart.fragment_key"),

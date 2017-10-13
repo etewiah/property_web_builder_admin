@@ -52,7 +52,7 @@ export default Ember.Route.extend({
     //   controller.set("currentPagePart", currentPagePart);
     // }
 
-    controller.set("tabs-page-component", "tabs-cms/fragments-container")
+    // controller.set("tabs-page-component", "tabs-cms/fragments-container")
     controller.set("currentPagePart", currentPagePart);
 
 
