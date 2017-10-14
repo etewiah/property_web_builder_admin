@@ -12,7 +12,8 @@
   <div class="tab-content">
       {{!tabs-cms/fragments-container activeTabName=activeTabName contentResources=model languages=languages currentPagePart=currentPagePart shortLocaleCodes=shortLocaleCodes currentPwbPage=currentPwbPage }}
 
-
-      {{tabs-cms/fragments-container activeTabName=activeTabName   currentPagePart=currentPagePart shortLocaleCodes=shortLocaleCodes currentPwbPage=currentPwbPage }}
+      {{#if currentPagePart}}
+        {{tabs-cms/fragments-container activeTabName=activeTabName   currentPagePart=currentPagePart shortLocaleCodes=shortLocaleCodes currentPwbPage=currentPwbPage }}      
+      {{/if}}
   </div>
 </div>

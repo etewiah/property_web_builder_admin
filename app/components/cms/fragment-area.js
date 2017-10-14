@@ -23,7 +23,8 @@ export default Ember.Component.extend({
 
   fragmentHtml: function(){
     var contentKey = "raw_" + this.get("locale");
-    var raw = this.get("fragmentContent").content[contentKey] || "";
+    var contentLocaleArray = this.get("fragmentContent").content || [];
+    var raw = contentLocaleArray[contentKey] || "";
     // need to nest this in an object so I have an object.value
     // construct that can be updated by fragment-editor
     return { raw: raw};

@@ -8,7 +8,7 @@ var PwbPage = Ember.Object.extend({
 
   // below used to figure out how to layout editor etc
   getPagePart: function(pagePartFragmentKey) {
-    var pagePart = this.get("page_parts").findBy("fragment_key", pagePartFragmentKey) || {};
+    var pagePart = this.get("page_parts").findBy("fragment_key", pagePartFragmentKey) || null;
     return pagePart;
   },
 
