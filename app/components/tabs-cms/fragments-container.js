@@ -4,6 +4,10 @@ export default Ember.Component.extend({
   store: Ember.inject.service('store'),
   i18n: Ember.inject.service(),
 
+  isRailsPart: function() {
+    var isRailsPart = this.get("currentPagePart.is_rails_part");
+    return isRailsPart;
+  }.property("currentPwbPage","currentPagePart.is_rails_part"),
   fragmentContent: function() {
     var pageFragmentLabel = this.get("activeTabName");
      // this.get("currentPagePart.page_part_key");

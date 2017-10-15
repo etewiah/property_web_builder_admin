@@ -13,6 +13,13 @@
     </div>
 
   </div>
+  {{#if isRailsPart}}
+  <div class="row">
+    <div class="col-sm-12">
+    <h3>{{t "pageSections.notEditable"}}</h3>
+    </div>
+  </div>
+  {{else}}
   <div class="row">
     {{#each shortLocaleCodes as |locale| }}
     <div class="col-sm-12">
@@ -26,6 +33,5 @@
     </div>
     {{/each}}
   </div>
-  <div class="row">
-  </div>
+  {{/if}}
 </div>
