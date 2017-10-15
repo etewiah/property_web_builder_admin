@@ -12,7 +12,7 @@
     "jquery": "^1.11.3",
     "loader.js": "ember-cli/loader.js#3.2.1",
     "qunit": "~1.18.0",
-    "font-awesome": "~4.4.0",
+    "font-awesome": "~4.7.0",
     "bootstrap-select": "~1.7.4",
     "spectrum": "~1.8.0",
     "sweetalert": "^1.1.3",
