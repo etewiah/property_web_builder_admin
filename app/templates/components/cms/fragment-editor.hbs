@@ -4,7 +4,7 @@
     {{#each blocksInfoCol as |blockInfoRow| }}
       {{cms/fragment-editor-field  
           contentPhotos=contentPhotos
-        pageSlug=pwbPage.slug fragmentLabel=currentPagePart.fragment_key
+        pageSlug=pwbPage.slug fragmentLabel=currentPagePart.page_part_key
         currrentBlockInfoRow=blockInfoRow boundValues=boundValues
         }}
     {{/each}}

@@ -52,7 +52,7 @@ export default Ember.Component.extend({
       // if (!currentLocaleBlockContents.blocks) {
       //   currentLocaleBlockContents.blocks = {};
       // }
-      currentLocaleBlockContents.fragment_key = this.get("currentPagePart.fragment_key");
+      currentLocaleBlockContents.page_part_key = this.get("currentPagePart.page_part_key");
       currentLocaleBlockContents.locale = locale;
       return Ember.Object.create(
         currentLocaleBlockContents

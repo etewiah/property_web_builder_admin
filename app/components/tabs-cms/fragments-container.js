@@ -6,26 +6,26 @@ export default Ember.Component.extend({
 
   fragmentContent: function() {
     var pageFragmentLabel = this.get("activeTabName");
-     // this.get("currentPagePart.fragment_key");
+     // this.get("currentPagePart.page_part_key");
     var fragmentContent = this.get("currentPwbPage").getFragmentContent(pageFragmentLabel);
     return fragmentContent;
-  }.property("currentPwbPage","currentPagePart.fragment_key"),
+  }.property("currentPwbPage","currentPagePart.page_part_key"),
   toggleVisField: function() {
     var toggleVisField = {
       labelText: "Visible on page",
       fieldName: "visibleOnPage"
     };
-    var pageFragmentLabel = this.get("currentPagePart.fragment_key");
+    var pageFragmentLabel = this.get("currentPagePart.page_part_key");
     // var visiblePageParts = this.get("currentPwbPage.visible_page_parts") || [];
     // var pagePartVisibility = visiblePageParts.includes(pageFragmentLabel);
     var fragmentContent = this.get("currentPwbPage").getFragmentContent(pageFragmentLabel);
     toggleVisField.toggleValue = fragmentContent.visible_on_page;
     return toggleVisField;
-  }.property("currentPagePart.fragment_key"),
+  }.property("currentPagePart.page_part_key"),
   actions: {
     changeVisibility: function(newVal) {
       var currentPwbPage = this.get("currentPwbPage");
-      var pageFragmentLabel = this.get("currentPagePart.fragment_key");
+      var pageFragmentLabel = this.get("currentPagePart.page_part_key");
       // var visiblePageParts = this.get("currentPwbPage.visible_page_parts") || [];
       var cmd = "setAsHidden";
       if (newVal) {

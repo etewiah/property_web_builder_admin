@@ -8,7 +8,7 @@ var PwbPage = Ember.Object.extend({
 
   // below used to figure out how to layout editor etc
   getPagePart: function(pagePartFragmentKey) {
-    var pagePart = this.get("page_parts").findBy("fragment_key", pagePartFragmentKey) || null;
+    var pagePart = this.get("page_parts").findBy("page_part_key", pagePartFragmentKey) || null;
     return pagePart;
   },
 
@@ -25,10 +25,10 @@ var PwbPage = Ember.Object.extend({
 
   // gets all uploaded images associated with this content so
   // a picker can be used to select which to use
-  getLocaleFragmentContentPhotos: function(fragment_key){
-    // var pageContentKey = this.get("slug") + "_" + fragment_key;
+  getLocaleFragmentContentPhotos: function(page_part_key){
+    // var pageContentKey = this.get("slug") + "_" + page_part_key;
     var pageContents = this.get("page_contents");
-    var pageContent = pageContents.findBy("content_fragment_key", fragment_key);
+    var pageContent = pageContents.findBy("content_page_part_key", page_part_key);
     if (pageContent) {
       return pageContent["content_photos"];
     } else {
@@ -36,10 +36,10 @@ var PwbPage = Ember.Object.extend({
     }
   },
 
-  getFragmentContent: function(fragment_key){
-    // var pageContentKey = this.get("slug") + "_" + fragment_key;
+  getFragmentContent: function(page_part_key){
+    // var pageContentKey = this.get("slug") + "_" + page_part_key;
     var pageContents = this.get("page_contents");
-    var pageContent = pageContents.findBy("content_fragment_key", fragment_key) || {};
+    var pageContent = pageContents.findBy("content_page_part_key", page_part_key) || {};
     return pageContent;
   },
 
@@ -77,7 +77,7 @@ var PwbPage = Ember.Object.extend({
   },
   saveFragment: function(fragmentDetails, complete, error) {
     var pageSlug = this.get("slug");
-    var fragmentDetailsJson = fragmentDetails.getProperties("blocks","locale","fragment_key");
+    var fragmentDetailsJson = fragmentDetails.getProperties("blocks","locale","page_part_key");
     var data = {
       page_slug: pageSlug,
       fragment_details: fragmentDetailsJson

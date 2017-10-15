@@ -8,7 +8,6 @@ export default Ember.Route.extend({
     var currentPwbPage = this.modelFor("admin.pages.page");
     // var currentPagePart = currentPwbPage.get("fragmentConfigs").findBy("tabValue", params.tabName);
     // if (currentPagePart && currentPagePart.isLegacy) {
-    //   debugger;
     //   return this.store.query("webContent", {
     //     filter: {
     //       tag: params.tabName
@@ -43,7 +42,6 @@ export default Ember.Route.extend({
     var currentPagePart = currentPwbPage.getPagePart(activeTabName);
     // var currentPagePart = currentPwbPage.get("fragmentConfigs").findBy("tabValue", activeTabName);
     // if (currentPagePart && currentPagePart.isLegacy) {
-    //   debugger;
     //   var tabsPageComponent = "tabs-website/" + activeTabName + "-tab";
     //   controller.set("tabs-page-component", tabsPageComponent);
     //   controller.set("currentPagePart", null);
@@ -53,8 +51,7 @@ export default Ember.Route.extend({
     // }
 
     // controller.set("tabs-page-component", "tabs-cms/fragments-container")
+
     controller.set("currentPagePart", currentPagePart);
-
-
   }
 });
