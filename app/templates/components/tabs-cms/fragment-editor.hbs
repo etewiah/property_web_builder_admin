@@ -2,7 +2,7 @@
   {{#each blocksInfo as |blocksInfoCol| }}
   <div class="{{colClass}}">
     {{#each blocksInfoCol as |blockInfoRow| }}
-      {{cms/fragment-editor-field  
+      {{tabs-cms/fragment-editor-field  
           contentPhotos=contentPhotos
         pageSlug=pwbPage.slug fragmentLabel=currentPagePart.page_part_key
         currrentBlockInfoRow=blockInfoRow boundValues=boundValues

@@ -103,7 +103,7 @@ var PwbPage = Ember.Object.extend({
     var data = {
       page_slug: pageSlug,
       cmd: cmd,
-      page_fragment_label: pageFragmentLabel
+      page_part_key: pageFragmentLabel
       // visible_page_parts: visiblePageParts
     };
     // var self = this;
