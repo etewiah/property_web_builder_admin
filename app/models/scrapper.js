@@ -21,7 +21,8 @@ Scapper.reopenClass({
     });
   },
   getProperties: function(websiteDetails, complete, error) {
-    var apiUrl = "/import/scrapper";
+    // var apiUrl = "/import/scrapper";
+    var apiUrl = "/io/api/v1/listings";
     // just noticed that the data below gets sent as a querystring:
     return $.ajax(apiUrl, {
       type: 'GET',

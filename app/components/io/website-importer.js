@@ -51,12 +51,12 @@ export default Ember.Component.extend({
       // var propsRetrieved = this.get("propsRetrieved") || [];
       var that = this;
       Scrapper.getProperties(this.get("websiteDetails"),
-        function(properties) {
+        function(result) {
           that.set("retrieving", false);
           // var prop = Property.create(properties);
           var propsRetrieved = that.get("propsRetrieved") || [];
-          properties.forEach(function(property) {
-            propsRetrieved.addObject(property);
+          result.listings.forEach(function(listing) {
+            propsRetrieved.addObject(listing);
           })
           that.set("propsRetrieved", propsRetrieved);
         },

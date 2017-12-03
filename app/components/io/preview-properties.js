@@ -14,6 +14,13 @@ export default Ember.Component.extend({
 
       // MlsConnector below will also be called to create 
       // props from csv import etc...
+
+      // properties.forEach(function(property) {
+      //   ['unknown_fields', 'strange_key_1'].forEach(function(k) {
+      //     delete property[k];
+      //   });
+      // });
+
       MlsConnector.createProperties(properties,
         function(result) {
           that.set("importAttempted", true);
