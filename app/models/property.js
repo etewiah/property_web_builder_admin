@@ -156,6 +156,10 @@ export default DS.Model.extend({
   titleDe: DS.attr(),
   titleRu: DS.attr(),
   titlePt: DS.attr(),
+  titleIt: DS.attr(),
+  titleNl: DS.attr(),
+  titleVi: DS.attr(),
+  titleTr: DS.attr(),
   descriptionAr: DS.attr(),
   descriptionEn: DS.attr(),
   descriptionEs: DS.attr(),
@@ -164,6 +168,11 @@ export default DS.Model.extend({
   descriptionDe: DS.attr(),
   descriptionRu: DS.attr(),
   descriptionPt: DS.attr(),
+  descriptionIt: DS.attr(),
+  descriptionNl: DS.attr(),
+  descriptionVi: DS.attr(),
+  descriptionTr: DS.attr(),
+
 
   streetAddress: DS.attr(),
   streetNumber: DS.attr(),
