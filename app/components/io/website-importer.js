@@ -36,7 +36,7 @@ export default Ember.Component.extend({
         }
       };
 
-      var validationErrors = validate( websiteDetails, constraints, {
+      var validationErrors = validate(websiteDetails, constraints, {
         fullMessages: false
       });
       if (validationErrors) {
@@ -54,14 +54,20 @@ export default Ember.Component.extend({
         function(result) {
           that.set("retrieving", false);
           // var prop = Property.create(properties);
-          var propsRetrieved = that.get("propsRetrieved") || [];
-          result.listings.forEach(function(listing) {
-            propsRetrieved.addObject(listing);
-          })
-          that.set("propsRetrieved", propsRetrieved);
+          if (result.success) {
+            var propsRetrieved = that.get("propsRetrieved") || [];
+            result.listings.forEach(function(listing) {
+              propsRetrieved.addObject(listing);
+            })
+            that.set("propsRetrieved", propsRetrieved);
+          } else {
+            that.set("errorMessage", result.error_message);
+            that.set("hasError", true);
+          }
         },
         function(error) {
           that.set("hasError", true);
+          that.set("errorMessage", "Sorry, there has been an error retrieving the webpage data.");
           that.set("retrieving", false);
         });
     },

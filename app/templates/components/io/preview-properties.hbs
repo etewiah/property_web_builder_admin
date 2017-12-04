@@ -1,45 +1,16 @@
 <div class="row">
   <div class="col-sm-12">
-  {{#unless importAttempted}}
-    {{#if importing}}
-    <p>Importing properties into this website</p>
+    {{#unless importAttempted}} 
+      {{#if importing}}
+      <p>Importing properties into this website</p>
       {{else}}
-    <p>The following properties were retrieved.
-    </p>
-    {{/if}}
-  {{/unless}}
-  </div>
- <div class="col-sm-12">
-    {{#if importAttempted}} 
-    {{#if success}}
-      <p>{{ importedItems.new_props.length }} properties imported</p>
-      {{#if (gt importedItems.existing_props.length 0)}}
-      <p>{{ importedItems.existing_props.length }} existing properties not imported</p>        
-      {{/if}}
-      <p>
-      <a class="btn" {{action "ackResult" properties}}>
-      OK
-      </a>
+      <p>The following properties were retrieved.
       </p>
-    {{else}}
-      <p>Sorry, there has been an error importing the properties
-      <a class="btn" {{action "ackResult" properties}}>
-      OK
-      </a>
-      </p>
-    {{/if}}
-
-    {{else}}
-    <p><a class="btn btn-edfile" {{action "importAllProperties" properties}}>
-    Import properties into this website
-    </a>
-      <a class="btn" {{action "cancelImport" properties}}>
-    Cancel import
-    </a>
-    </p>
-    {{/if}}
+      {{/if}} 
+    {{/unless}}
   </div>
-    <div class="col-sm-12">
+  <div class="col-sm-12">
+    {{#unless importAttempted}} 
     <table class="tabla_propiedades table table-striped table-vmiddle datatables">
       <thead>
         <tr>
@@ -71,7 +42,36 @@
         {{/each}}
       </tbody>
     </table>
+    {{/unless}} 
   </div>
+  <div class="col-sm-12">
+    {{#if importAttempted}} {{#if success}}
+    <p>{{ importedItems.new_props.length }} property imported</p>
+    {{#if (gt importedItems.existing_props.length 0)}}
+    <p>{{ importedItems.existing_props.length }} existing properties not imported</p>
+    {{/if}}
+    <p>
+      <a class="btn" {{action "ackResult" properties}}>
+      OK
+      </a>
+    </p>
+    {{else}}
+    <p>Sorry, there has been an error importing the properties
+      <a class="btn" {{action "ackResult" properties}}>
+      OK
+      </a>
+    </p>
+    {{/if}} {{else}}
+    <p><a class="btn btn-edfile" {{action "importAllProperties" properties}}>
+    Import properties into this website
+    </a>
+      <a class="btn" {{action "cancelImport" properties}}>
+    Cancel import
+    </a>
+    </p>
+    {{/if}}
+  </div>
+
   <div class="col-sm-12">
   </div>
 </div>
