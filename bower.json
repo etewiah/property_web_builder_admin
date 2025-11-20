@@ -1,7 +1,6 @@
 {
   "name": "inmo1-client",
   "dependencies": {
-    "ember": "^2.0.0",
     "ember-cli-shims": "ember-cli/ember-cli-shims#0.0.4",
     "ember-cli-test-loader": "ember-cli-test-loader#0.1.3",
     "ember-data": "^2.0.0",
@@ -20,7 +19,6 @@
     "ember-droplet": "2.1.3"
   },
   "resolutions": {
-    "ember": "^2.0.0",
     "validate": "~0.9.0",
     "summernote": "~0.8.1"
   },

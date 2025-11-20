@@ -64,19 +64,19 @@ module.exports = function(defaults) {
   });
 
   // datatables uses these fonts:
-  app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot", {
+  app.import("bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot", {
     destDir: "fonts"
   });
-  app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg", {
+  app.import("bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg", {
     destDir: "fonts"
   });
-  app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf", {
+  app.import("bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf", {
     destDir: "fonts"
   });
-  app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff", {
+  app.import("bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff", {
     destDir: "fonts"
   });
-  app.import("bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2", {
+  app.import("bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2", {
     destDir: "fonts"
   });
 
