@@ -14,14 +14,14 @@ export function initialize(application) {
   // application.inject('model', 'configObject', 'service:configObject');
 
   // http://eclips3.net/2014/08/07/ember-rsvp-errors-swallowed/
-  // Ember.RSVP.on('error', function(reason) {
-  //   console.group('Ember.RSVP error:');
-  //   console.info(reason);
-  //   console.groupEnd();
-  //   // /Users/etewiah/Ed/sites-2014-aug/discourse_4_chatty_maps/app/views/common/_discourse_javascript.html.erb
-  //   // below should bubble it up to logster
-  //   window.onerror(reason && reason.message, null, null, null, reason);
-  // });
+  Ember.RSVP.on('error', function(reason) {
+    console.group('Ember.RSVP error:');
+    console.info(reason);
+    console.groupEnd();
+    // /Users/etewiah/Ed/sites-2014-aug/discourse_4_chatty_maps/app/views/common/_discourse_javascript.html.erb
+    // below should bubble it up to logster
+    // window.onerror(reason && reason.message, null, null, null, reason);
+  });
 
 }
 

@@ -28,6 +28,7 @@
     "ember-cli-htmlbars": "^6.0.1",
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-sass": "^10.0.1",
+    "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-uglify": "^3.0.0",
     "ember-data": "~3.28.0",
@@ -37,6 +38,7 @@
     "ember-qunit": "^5.1.4",
     "ember-resolver": "^8.0.2",
     "ember-source": "~3.28.0",
+    "ic-ajax": "^2.0.2",
     "loader.js": "^4.7.0",
     "qunit-dom": "^1.6.0",
     "sass": "^1.32.0"

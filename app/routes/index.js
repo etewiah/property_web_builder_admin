@@ -8,8 +8,10 @@ export default Ember.Route.extend({
   i18n: inject.service(),
 
   beforeModel: function(transition) {
+    console.log("Index Route beforeModel hit");
     // var localeToUse = transition.params.admin.locale;
     var i18n = this.get('i18n');
+    console.log("i18n locale:", i18n.locale);
     this.transitionTo("admin.setup", i18n.locale);
 
     // if (i18n.get("locales").contains(localeToUse)) {

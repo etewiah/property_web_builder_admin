@@ -7,12 +7,16 @@ export default Ember.Route.extend({
   model(params) {
     // var i18n = this.get('i18n');
     var lang_code = this.paramsFor("admin").locale || "es";
-    return this.store.query("info", {
-      filter: {
-        key: "welcome",
-        lang_code: lang_code
-      }
-    });
+    // return this.store.query("info", {
+    //   filter: {
+    //     key: "welcome",
+    //     lang_code: lang_code
+    //   }
+    // });
+    return Ember.RSVP.resolve([{
+      title: "Welcome to PropertyWebBuilder",
+      raw: "This is a mock welcome message."
+    }]);
     // return this.store.findAll('webContent'); 
     // return params.tabName;
     // return this.store.findRecord('webContent', "test");

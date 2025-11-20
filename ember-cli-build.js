@@ -160,6 +160,8 @@ module.exports = function(defaults) {
   // // app.import('vendor/jquery.pagedown-bootstrap.combined.js');
   // // app.import('vendor/jquery.pagedown-bootstrap.css');
   // app.import('vendor/jquery.cookie.js');
+  app.import('vendor/ember-shim.js');
+
 
   // app.import('vendor/lazyYT/lazyYT.js');
   // app.import('vendor/lazyYT/lazyYT.css');

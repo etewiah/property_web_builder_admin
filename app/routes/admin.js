@@ -15,9 +15,12 @@ export default Ember.Route.extend({
   },
 
   beforeModel: function(transition) {
-    var localeToUse = transition.params.admin.locale;
+    console.log("Admin Route beforeModel hit");
+    var params = (transition.params && transition.params.admin) || {};
+    var localeToUse = params.locale;
+    console.log("localeToUse:", localeToUse);
     var i18n = this.get('i18n');
-    if (i18n.get("locales").contains(localeToUse)) {
+    if (i18n.get("locales").includes(localeToUse)) {
       // if the locale param passed in is valid, lets set and use that
       i18n.set("locale", localeToUse);
     } else {
@@ -30,12 +33,15 @@ export default Ember.Route.extend({
 
 
   model() {
+    console.log("Admin Route model hook hit");
     var agencyDetails = Agency.get();
+    console.log("Agency details:", agencyDetails);
     return agencyDetails;
   },
 
 
   setupController(controller, model) {
+    console.log("Admin Route setupController hit", model);
     // controller.set("agencyDetails", model.agency);
     var leftNavItems = [{
         tabIconClass: "fa fa-home",

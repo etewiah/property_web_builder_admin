@@ -9,11 +9,18 @@ var App;
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
+console.log('App starting...');
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
   Resolver: Resolver
 });
+
+Ember.onerror = function(error) {
+  console.error("Ember.onerror:", error);
+};
+
+console.log("Resolver:", Resolver);
 
 loadInitializers(App, config.modulePrefix);
 
