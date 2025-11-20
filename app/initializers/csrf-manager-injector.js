@@ -1,4 +1,4 @@
-export function initialize(container, application) {
+export function initialize(application) {
   application.inject('route', 'csrfManager', 'service:csrfManager');
   application.inject('controller', 'csrfManager', 'service:csrfManager');
 }

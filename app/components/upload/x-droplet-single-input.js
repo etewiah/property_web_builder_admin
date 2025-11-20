@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend(Droplet.SingleInput, {
+export default Ember.Component.extend(DropletSingleInput, {
 
   /**
    * @property tagName

@@ -1,4 +1,4 @@
-export function initialize(container, application) {
+export function initialize(application) {
 
   // not quite sure where might have been a better place to set this:
   // $.cookie.defaults.path = "/";

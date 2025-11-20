@@ -67,7 +67,7 @@ export default Ember.Component.extend(Droplet, {
     useArray: true,
     uploadImmediately: true,
     includeXFileSize: true
-    // requestMethod: Droplet.METHOD.PATCH
+    // requestMethod: DropletMETHOD.PATCH
     // ...
     //   requestMethod – Changed the request verb from default POST;
     // maximumSize – Set the maximum size for each individual file;

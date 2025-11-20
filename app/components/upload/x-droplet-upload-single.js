@@ -94,7 +94,7 @@ export default Ember.Component.extend(Droplet, {
   },
   options: {
     // useArray: true
-    // requestMethod: Droplet.METHOD.PUT,
+    // requestMethod: DropletMETHOD.PUT,
     uploadImmediately: true,
     // maximumSize: 200,
     maximumValidFiles: 1,
