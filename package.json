@@ -21,7 +21,7 @@
   "devDependencies": {
     "bower": "^1.8.14",
     "broccoli-asset-rev": "^3.0.0",
-    "ember-auto-import": "^2.11.2",
+    "ember-auto-import": "^1.12.0",
     "ember-cli": "~3.28.0",
     "ember-cli-app-version": "^5.0.0",
     "ember-cli-babel": "^7.26.6",
@@ -39,7 +39,6 @@
     "ember-qunit": "^5.1.4",
     "ember-resolver": "^8.0.2",
     "ember-source": "~3.28.0",
-    "ic-ajax": "^2.0.2",
     "loader.js": "^4.7.0",
     "qunit-dom": "^1.6.0",
     "sass": "^1.32.0"
